@@ -18,7 +18,7 @@
 ---
 
 # JumpinLlama Extra Feature Settings:
-![Jumpin Settings](https://github.com/Technetium1/TinychatTheme/raw/master/JI_Theme_Example.PNG)
+![Jumpin Settings](https://github.com/SmokeyLlama/jumpinllama/raw/master/JI_Theme_Features.PNG)
 
 ---
 # Need more help?

@@ -11,7 +11,7 @@
   * [**Firefox Extension**](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/)
   * [**Opera Extension**](https://addons.opera.com/en/extensions/details/tampermonkey-beta/)
 ---
-# Change your settings to allow automatic updating every 6-12 hours!:
+# Change settings to allow automatic updating every 6-12 hours!:
 
 ![Tampermonkey Settings](https://github.com/Technetium1/TinychatTheme/raw/master/Tampermonkey_Settings.png)
 

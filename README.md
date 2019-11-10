@@ -11,16 +11,15 @@
   * [**Firefox Extension**](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/)
   * [**Opera Extension**](https://addons.opera.com/en/extensions/details/tampermonkey-beta/)
 ---
-# JumpinLlama Extra Feature Settings:
-![Jumpin Settings](http://smokeyllama.com/images/JI_Theme_Example.PNG)
-
----
-
 # Change your settings to allow automatic updating every 6-12 hours!:
 
 ![Tampermonkey Settings](https://github.com/Technetium1/TinychatTheme/raw/master/Tampermonkey_Settings.png)
 
 ---
 
+# JumpinLlama Extra Feature Settings:
+![Jumpin Settings](https://github.com/Technetium1/TinychatTheme/raw/master/JI_Theme_Example.PNG)
+
+---
 # Need more help?
-[<img src="https://discordapp.com/assets/e4923594e694a21542a489471ecffa50.svg" width="160" height="90" alt="Discord Invite" title="Join Discord">](https://discord.gg/UpDZMB3)
+[<img src="https://discordapp.com/assets/e4923594e694a21542a489471ecffa50.svg" width="160" height="90" alt="Discord Invite" title="Join Discord">](https://discord.gg/F4EHtQy)

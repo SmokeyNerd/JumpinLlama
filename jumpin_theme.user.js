@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.26
+// @version      2019.27
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -18,8 +18,9 @@
 // @grant        GM_listValues
 // @run-at       document-start
 // @license      MIT
-// @updateURL    https://anceldesigns.000webhostapp.com/scripts/JumpLlama_Dark_Room.user.js
-// @require      http://www.smokeyllama.com/scripts/jscolor.js
+// @updateURL    https://github.com/SmokeyLlama/jumpinllama/raw/master/jumpin_theme.user.js
+// @downloadURL  https://github.com/SmokeyLlama/jumpinllama/raw/master/jumpin_theme.user.js
+// @require      https://github.com/SmokeyLlama/jumpinllama/raw/master/jscolor.js
 
 
 // ==/UserScript==

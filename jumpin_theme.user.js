@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.30
+// @version      2019.31
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -2217,7 +2217,7 @@ background-color: transparent;
 .splatmode .chat__Feed{
 
 margin-left: 30px;}
-.splatmode .chat__MessageBody > span:nth-child(2) {margin-left:10px;}
+.splatmode .chat__MessageBody > span:nth-child(2) {margin-left:10px;display:inline-block;}
 .splatmode .chat__MessageBody {
 margin-left: 36px
     position: relative;

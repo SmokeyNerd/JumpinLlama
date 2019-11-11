@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.29
+// @version      2019.30
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -220,11 +220,14 @@ border:1px solid black;
 
 .chat__Message {
     padding-right: 0;}
-
+.chat__MessageBody  {padding-right: 10px;padding-left: 10px;}
 .chat__MessageBody-status {
     color: #fff;
     background-color: #22add5;
-    min-height: 18px;}
+    min-height: 18px;
+    padding-left: 10px;padding-right: 10px;}
+
+
 
 .chat__MessageBody-link {
     color:#ff0000;}
@@ -256,7 +259,7 @@ div.modal__Body > form > input {
     display:block;
     height: 240px;}
 .user_bg .feature_menu {
-height: 320px !important;}
+height: 350px !important;}
 .llama_menu #toggle_menu {
     width:unset;}
 
@@ -401,6 +404,8 @@ border-radius: 25px;}
 .chat__UserListItem {
     border: 1px solid black;
     border-radius: 6px;}
+
+
 
 /*------------------------------------------------------------------------------------- PINK_THEME ---*/
 :root {
@@ -3561,4 +3566,3 @@ function Toggle_Theme_Splat (zEvent) {
         body.classList.remove("custommode","pinkmode","greenmode","bluemode","mauvemode","orangemode","redmode","purplemode","blackmode","smashmode","budsmode");
 //END OTHER THEMES
 };
-

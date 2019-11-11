@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.27
+// @version      2019.28
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -123,80 +123,10 @@ function addGlobalStyle(css) {
 addGlobalStyle( `
 
 /*----- THEME_VARIABLES ---------------------------*/
-.custommode .chat__FeedWrapper {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    background: var(--custommode-bgcolor);
-    touch-action: none;
-}
+
 :root {
 
     --user-bg-image: none;
-    --custommode-bgcolor: #004D91;
-    --custommode-lightbgcolor: #CFCFCF;
-    --custommode-bordercolor: #FFFFFF;
-    --custommode-textcolor: #000000;
-
-    --blackmode-bgcolor: #191919;
-    --blackmode-bordercolor: #313131;
-    --blackmode-lightbgcolor: #2C2F33;
-    --blackmode-textcolor: #fff;
-
-    --textcolor: black;
-    --bgcolor: white;
-    --nightmode-bgcolor: #2d373a;
-    --nightmode-trimcolor: #3c4a4e;
-    --nightmode-textcolor: #9faaad;
-    --nightmode-textSecondarycolor: #4e5f65;
-    --nightmode-headerButtonscolor: #3986a7;
-    --nightmodeBlack-bgcolor: black;
-    --nightmodeBlack-trimcolor: #222;
-
-    --pinkmode-bgcolor: #ffd1dc;
-    --pinkmode-bordercolor: #ea98ab;
-    --pinkmode-lightbgcolor: #ffe1e6;
-    --pinkmode-textcolor: #aa8991;
-
-    --greenmode-bgcolor: #042500;
-    --greenmode-bordercolor: #217c16;
-    --greenmode-lightbgcolor: #00500d;
-    --greenmode-textcolor: #fff;
-
-    --bluemode-bgcolor: #111949;
-    --bluemode-bordercolor: #596ce0;
-    --bluemode-lightbgcolor: #2a388b;
-    --bluemode-textcolor: #fff;
-
-    --mauvemode-bgcolor: #9168b2;
-    --mauvemode-bordercolor: #d6b7ef;
-    --mauvemode-lightbgcolor: #BF8FE5;
-    --mauvemode-textcolor: #000000;
-
-    --orangemode-bgcolor: #b33700;
-    --orangemode-bordercolor: #ff8d10;
-    --orangemode-lightbgcolor: #ff4f00;
-    --orangemode-textcolor: #000000;
-
-    --redmode-bgcolor: #590000;
-    --redmode-bordercolor: #d02323;
-    --redmode-lightbgcolor: #860000;
-    --redmode-textcolor: #fff;
-
-    --purplemode-bgcolor: #280048;
-    --purplemode-bordercolor: #b14fff;
-    --purplemode-lightbgcolor: #550098;
-    --purplemode-textcolor: #fff;
-
-    --budsmode-bgcolor: #000000;
-    --budsmode-bordercolor: #005900;
-    --budsmode-lightbgcolor: #000000;
-    --budsmode-textcolor: #fff;
-    --budsmode-headerbg: url(https://i.ibb.co/jDC8w3C/weed-wallpaper-1920x1080.jpg);
-    --budsmode-roombg: url(https://i.ibb.co/5YKLsSK/wp2565886.jpg);
-    --budsmode-userbg: url(https://i.ibb.co/5YKLsSK/wp2565886.jpg);
-    --budsmode-chatbg: url(https://i.ibb.co/5YKLsSK/wp2565886.jpg);
-    --budsmode-ptt: url(https://i.ibb.co/W2tyNNs/cannabis-PNG17.png);
 
     --smash-bgcolor: #282828;
     --smash-bordercolor: #3c3c3c;
@@ -208,20 +138,20 @@ addGlobalStyle( `
     --smash-chatbg: url(https://i.ibb.co/ZSYHQs7/chat.jpg);
     --smash-ptt: url(https://i.ibb.co/7KSTsdj/smash-clipart-87526.png);
 
-    --splat-bgcolor: #282828;
-    --splat-bordercolor: #3c3c3c;
-    --splat-lightbgcolor: #282828;
-    --splat-textcolor: #FFFFFF;
-    --splat-headerbg: url(https://i.ibb.co/XsTjVk0/splay-bg-header2.png);
-    --splat-roombg: url(https://i.ibb.co/C18JNgK/splatbg.jpg);
-    --splat-userbg: url(https://i.ibb.co/7nrB9LT/test.png);
-    --splat-chatbg: url(https://i.ibb.co/TrKBZFn/splat-chat-bg3.png);
-    --splat-ptt: url(https://i.ibb.co/3dHQVhC/splat-mic2.png);
-    --splat-innerchatbg: url(https://i.ibb.co/vBXky7C/splat-chat-bg.png);
-    --splat-messagebg: url(https://i.ibb.co/FWFnhc4/messagebg.png);
-    --splat-squid: url(https://i.ibb.co/FKNpP6D/squid.png);
-    --splat-squid2: url(https://i.ibb.co/KLGF7FH/squid2.png);
-    --splat-squid3: url(https://i.ibb.co/Wc9D0Xj/squid3.png);
+    --splatmode-bgcolor: #282828;
+    --splatmode-bordercolor: #51bc02;
+    --splatmode-lightbgcolor: #282828;
+    --splatmode-textcolor: #FFFFFF;
+    --splatmode-headerbg: url(https://i.ibb.co/XsTjVk0/splay-bg-header2.png);
+    --splatmode-roombg: url(https://i.ibb.co/C18JNgK/splatbg.jpg);
+    --splatmode-userbg: url(https://i.ibb.co/7nrB9LT/test.png);
+    --splatmode-chatbg: url(https://i.ibb.co/TrKBZFn/splat-chat-bg3.png);
+    --splatmode-ptt: url(https://i.ibb.co/3dHQVhC/splat-mic2.png);
+    --splatmode-innerchatbg: url(https://i.ibb.co/vBXky7C/splat-chat-bg.png);
+    --splatmode-messagebg: url(https://i.ibb.co/FWFnhc4/messagebg.png);
+    --splatmode-squid: url(https://i.ibb.co/FKNpP6D/squid.png);
+    --splatmode-squid2: url(https://i.ibb.co/KLGF7FH/squid2.png);
+    --splatmode-squid3: url(https://i.ibb.co/Wc9D0Xj/squid3.png);
 }
 
 /* ------- BUBBLE CHAT ----- */
@@ -231,34 +161,22 @@ addGlobalStyle( `
 }
 
 .bubble_chat .chat__MessageHandle {
-    flex-shrink: 0;
-    padding: 0 .5em 0 0;
-    cursor: pointer;
-    margin-bottom: 5px;
-    padding-left: 10px;
-    margin: 8px;
-    background-color: #2C2F33;
-    border-radius: 3px;
+    padding-left: 11px;
+    display: block;
+    background-color: transparent;
+    border-radius: 25px;
     margin: 0px;
     position: relative;
-    left: 8px;
-    margin-right: 16px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    z-index: 10;
+    top: 0px;
 }
-
+.bubble_chat .chat__MessageBody > span:nth-child(2) {margin-left:10px;display: inline-block;}
 .bubble_chat .chat__MessageBody {
-    padding-top: 20px;
+border:1px solid black;
     position: relative;
-    top: -17px;
-    margin: 0px;
-    margin-bottom: 5px;
-    padding-left: 10px;
-    margin: 8px;
-    color: #000 !important;
+    top:-17px;
+    margin-top: 15px !important;
     background-color: #cfcfcf;
-    border-radius: 3px;
+    border-radius: 25px;
     margin-bottom: 0px;
     margin-top: 0px;
 }
@@ -337,7 +255,8 @@ div.modal__Body > form > input {
     color:#000;
     display:block;
     height: 240px;}
-
+.user_bg .feature_menu {
+height: 320px !important;}
 .llama_menu #toggle_menu {
     width:unset;}
 
@@ -390,230 +309,9 @@ div.modal__Body > form > input {
     display: unset;
     top: -5px;
     left: 5px;}
-/* ------------------------------ PINK_LLAMA_MENU ----------------------------------- */
-.pinkmode .llama_menu .feature_menu {
-    color: var(--pinkmode-textcolor);}
 
-.pinkmode #Extra_Menu {
-    color: var(--pinkmode-textcolor);}
 
-.pinkmode #toggle_menu {
-    color: var(--pinkmode-textcolor);
-    background-color: var(--pinkmode-bgcolor);
-    border-color: var(--pinkmode-bordercolor);
-    -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 0 3px;
-    -moz-box-shadow: rgba(0,0,0,0.8) 0 0 3px;
-    box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;}
 
-.pinkmode .feature_menu {
-    color: var(--pinkmode-textcolor);
-    background-color: var(--pinkmode-bgcolor);
-    border-color: var(--pinkmode-bordercolor);
-    -webkit-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
-    -moz-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
-    box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);}
-
-.pinkmode .menu_header {
-    background-color:  var(--pinkmode-lightbgcolor);
-    color: var(--pinkmode-textcolor);}
-
-.pinkmode .menu_section {
-    color: var(--pinkmode-textcolor);}
-
-.pinkmode .settings_header {
-    color: var(--pinkmode-textcolor);}
-/* ------------------------------ GREEN_LLAMA_MENU ----------------------------------- */
-.greenmode .llama_menu .feature_menu {
-    color: var(--greenmode-textcolor);}
-
-.greenmode #Extra_Menu {
-    color: var(--greenmode-textcolor);}
-
-.greenmode #toggle_menu {
-    color: var(--greenmode-textcolor);
-    background-color: var(--greenmode-bgcolor);
-    border-color: var(--greenmode-bordercolor);
-    -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 0 3px;
-    -moz-box-shadow: rgba(0,0,0,0.8) 0 0 3px;
-    box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;}
-
-.greenmode .feature_menu {
-    color: var(--greenmode-textcolor);
-    background-color: var(--greenmode-bgcolor);
-    border-color: var(--greenmode-bordercolor);
-    -webkit-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
-    -moz-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
-    box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);}
-
-.greenmode .menu_header {
-    background-color:  var(--greenmode-lightbgcolor);
-    color: var(--greenmode-textcolor);}
-
-.greenmode .menu_section {
-    color: var(--greenmode-textcolor);}
-
-.greenmode .settings_header {
-    color: var(--greenmode-textcolor);}
-/* ------------------------------ BLUE_LLAMA_MENU ----------------------------------- */
-.bluemode .llama_menu .feature_menu {
-    color: var(--bluemode-textcolor);}
-
-.bluemode #Extra_Menu {
-    color: var(--bluemode-textcolor);}
-
-.bluemode #toggle_menu {
-    color: var(--bluemode-textcolor);
-    background-color: var(--bluemode-bgcolor);
-    border-color: var(--bluemode-bordercolor);
-    -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 0 3px;
-    -moz-box-shadow: rgba(0,0,0,0.8) 0 0 3px;
-    box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;}
-
-.bluemode .feature_menu {
-    color: var(--bluemode-textcolor);
-    background-color: var(--bluemode-bgcolor);
-    border-color: var(--bluemode-bordercolor);
-    -webkit-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
-    -moz-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
-    box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);}
-
-.bluemode .menu_header {
-    background-color:  var(--bluemode-lightbgcolor);
-    color: var(--bluemode-textcolor);}
-
-.bluemode .menu_section {
-    color: var(--bluemode-textcolor);}
-
-.bluemode .settings_header {
-    color: var(--bluemode-textcolor);}
-/* ------------------------------ MAUVE_LLAMA_MENU ----------------------------------- */
-.mauvemode .llama_menu .feature_menu {
-    color: var(--mauvemode-textcolor);}
-
-.mauvemode #Extra_Menu {
-    color: var(--mauvemode-textcolor);}
-
-.mauvemode #toggle_menu {
-    color: var(--mauvemode-textcolor);
-    background-color: var(--mauvemode-bgcolor);
-    border-color: var(--mauvemode-bordercolor);
-    -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 0 3px;
-    -moz-box-shadow: rgba(0,0,0,0.8) 0 0 3px;
-    box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;}
-
-.mauvemode .feature_menu {
-    color: var(--mauvemode-textcolor);
-    background-color: var(--mauvemode-bgcolor);
-    border-color: var(--mauvemode-bordercolor);
-    -webkit-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
-    -moz-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
-    box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);}
-
-.mauvemode .menu_header {
-    background-color:  var(--mauvemode-lightbgcolor);
-    color: var(--mauvemode-textcolor);}
-
-.mauvemode .menu_section {
-    color: var(--mauvemode-textcolor);}
-
-.mauvemode .settings_header {
-    color: var(--mauvemode-textcolor);}
-/* ------------------------------ ORANGE_LLAMA_MENU ----------------------------------- */
-.orangemode .llama_menu .feature_menu {
-    color: var(--orangemode-textcolor);}
-
-.orangemode #Extra_Menu {
-    color: var(--orangemode-textcolor);}
-
-.orangemode #toggle_menu {
-    color: var(--orangemode-textcolor);
-    background-color: var(--orangemode-bgcolor);
-    border-color: var(--orangemode-bordercolor);
-    -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 0 3px;
-    -moz-box-shadow: rgba(0,0,0,0.8) 0 0 3px;
-    box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;}
-
-.orangemode .feature_menu {
-    color: var(--orangemode-textcolor);
-    background-color: var(--orangemode-bgcolor);
-    border-color: var(--orangemode-bordercolor);
-    -webkit-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
-    -moz-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
-    box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);}
-
-.orangemode .menu_header {
-    background-color:  var(--orangemode-lightbgcolor);
-    color: var(--orangemode-textcolor);}
-
-.orangemode .menu_section {
-    color: var(--orangemode-textcolor);}
-
-.orangemode .settings_header {
-    color: var(--orangemode-textcolor);}
-/* ------------------------------ RED_LLAMA_MENU ----------------------------------- */
-.redmode .llama_menu .feature_menu {
-    color: var(--redmode-textcolor);}
-
-.redmode #Extra_Menu {
-    color: var(--redmode-textcolor);}
-
-.redmode #toggle_menu {
-    color: var(--redmode-textcolor);
-    background-color: var(--redmode-bgcolor);
-    border-color: var(--redmode-bordercolor);
-    -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 0 3px;
-    -moz-box-shadow: rgba(0,0,0,0.8) 0 0 3px;
-    box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;}
-
-.redmode .feature_menu {
-    color: var(--redmode-textcolor);
-    background-color: var(--redmode-bgcolor);
-    border-color: var(--redmode-bordercolor);
-    -webkit-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
-    -moz-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
-    box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);}
-
-.redmode .menu_header {
-    background-color:  var(--redmode-lightbgcolor);
-    color: var(--redmode-textcolor);}
-
-.redmode .menu_section {
-    color: var(--redmode-textcolor);}
-
-.redmode .settings_header {
-    color: var(--redmode-textcolor);}
-/* ------------------------------ PURPLE_LLAMA_MENU ----------------------------------- */
-.purplemode .llama_menu .feature_menu {
-    color: var(--purplemode-textcolor);}
-
-.purplemode #Extra_Menu {
-    color: var(--purplemode-textcolor);}
-
-.purplemode #toggle_menu {
-    color: var(--purplemode-textcolor);
-    background-color: var(--purplemode-bgcolor);
-    border-color: var(--purplemode-bordercolor);
-    -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 0 3px;
-    -moz-box-shadow: rgba(0,0,0,0.8) 0 0 3px;
-    box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;}
-
-.purplemode .feature_menu {
-    color: var(--purplemode-textcolor);
-    background-color: var(--purplemode-bgcolor);
-    border-color: var(--purplemode-bordercolor);
-    -webkit-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
-    -moz-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
-    box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);}
-
-.purplemode .menu_header {
-    background-color:  var(--purplemode-lightbgcolor);
-    color: var(--purplemode-textcolor);}
-
-.purplemode .menu_section {
-    color: var(--purplemode-textcolor);}
-
-.purplemode .settings_header {
-    color: var(--purplemode-textcolor);}
 /* ------------------------------ BUDS_LLAMA_MENU ----------------------------------- */
 .budsmode .llama_menu .feature_menu {
     color: var(--blackmode-textcolor);}
@@ -646,38 +344,6 @@ div.modal__Body > form > input {
 
 .budsmode .settings_header {
     color: var(--blackmode-textcolor);}
-/* ------------------------------ BLACK_LLAMA_MENU ----------------------------------- */
-.blackmode .llama_menu .feature_menu {
-    color: var(--blackmode-textcolor);}
-
-.blackmode #Extra_Menu {
-    color: var(--blackmode-textcolor);}
-
-.blackmode #toggle_menu {
-    color: var(--blackmode-textcolor);
-    background-color: var(--blackmode-bgcolor);
-    border-color: var(--blackmode-bordercolor);
-    -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 0 3px;
-    -moz-box-shadow: rgba(0,0,0,0.8) 0 0 3px;
-    box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;}
-
-.blackmode .feature_menu {
-    color: var(--blackmode-textcolor);
-    background-color: var(--blackmode-bgcolor);
-    border-color: var(--blackmode-bordercolor);
-    -webkit-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
-    -moz-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
-    box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);}
-
-.blackmode .menu_header {
-    background-color:  var(--blackmode-lightbgcolor);
-    color: var(--blackmode-textcolor);}
-
-.blackmode .menu_section {
-    color: var(--blackmode-textcolor);}
-
-.blackmode .settings_header {
-    color: var(--blackmode-textcolor);}
 
 /* ------------------------------ MINI_YT ----------------------------------- */
 .mini_yt .youtube__VideoContainer {
@@ -698,25 +364,154 @@ div.modal__Body > form > input {
 .cams__Cam-audioActive {
     z-index: 12;}
 
+
+
+.cams__Header {
+    border-radius: 100px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background: #c7cfd9;
+    border:1px solid black;
+    border-right:0px;}
+.chat__Header {
+    border-radius: 100px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border:1px solid black;
+    border-left:0px;}
+
+.custommode .chat__FeedWrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background: var(--custommode-bgcolor);
+    touch-action: none;
+}
+
+.chat__HeaderOption {
+    border-radius: 5px;
+    margin: 2px;
+    min-height: 27px;border:1px solid black;
+}
+
+.cams, .chat, .chat__FeedWrapper {background:transparent;}
+.chat__MessageBody {
+border-radius: 25px;}
+
+.chat__UserListItem {
+    border: 1px solid black;
+    border-radius: 6px;}
+
 /*------------------------------------------------------------------------------------- PINK_THEME ---*/
+:root {
+    --pinkmode-bgcolor: #ffd1dc;
+    --pinkmode-bordercolor: #ea98ab;
+    --pinkmode-lightbgcolor: #ffe1e6;
+    --pinkmode-textcolor: #ea98ab;}
+.pinkmode .scroll-shadow {background: var(--pinkmode-bgcolor);background-color: var(--pinkmode-bgcolor);}
+.pinkmode .modal__Body {background: var(--pinkmode-bgcolor);}
+.pinkmode > .reg_checkmark, .pinkmode > .check_head {
+    color: var(--pinkmode-bordercolor);}
+
+.pinkmode .reg_checkmark {
+    background-color: var(--pinkmode-lightbgcolor);
+    border-color: var(--pinkmode-bordercolor);
+}
+
+.pinkmode .reg_checkmark:after {
+    border-color: var(--pinkmode-bordercolor) !important;
+}
+
+.pinkmode > .reg_checkmark:hover input ~ .checkmark {background-color: var(--pinkmode-bgcolor);}
+
+.pinkmode #theme_wizard, #theme_wizard > option.pink_mode {
+    background-color: var(--pinkmode-bgcolor);
+    border-color: var(--pinkmode-bordercolor);
+color:var(--pinkmode-textcolor);}
+
+/* ------------------------------ PINK_LLAMA_MENU ----------------------------------- */
+.pinkmode .llama_menu .feature_menu {
+    color: var(--pinkmode-textcolor);}
+
+.pinkmode #Extra_Menu {
+    color: var(--pinkmode-textcolor);}
+
+.pinkmode #toggle_menu {
+    color: var(--pinkmode-textcolor);
+    background-color: var(--pinkmode-bgcolor);
+    border-color: var(--pinkmode-bordercolor);}
+
+.pinkmode .feature_menu {
+    color: var(--pinkmode-textcolor);
+    background-color: var(--pinkmode-bgcolor);
+    border-color: var(--pinkmode-bordercolor);
+    -webkit-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
+    -moz-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
+    box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);}
+
+.pinkmode .menu_header {
+    background-color:  var(--pinkmode-lightbgcolor);
+    color: var(--pinkmode-textcolor);}
+
+.pinkmode .menu_section {
+    color: var(--pinkmode-textcolor);}
+
+.pinkmode .settings_header {
+    color: var(--pinkmode-textcolor);}
+
+/*--END LLAMA MENU--*/
+
+.pinkmode .roomHeader__LogoText,
+.pinkmode .tabs__Item,
+.pinkmode .tabs__Item.active
+{color:var(--pinkmode-textcolor);}
+.pinkmode .cams__InfoCount {color:var(--pinkmode-textcolor);}
+.pinkmode .cams__InfoLabel {color:var(--pinkmode-textcolor);}
+.pinkmode .cams__RoomName {color:var(--pinkmode-textcolor);}
+.pinkmode .roomHeader__UserAction {
+background-color:var(--pinkmode-bordercolor);
+color:var(--pinkmode-bgcolor);
+border-color:var(--pinkmode-bordercolor);}
+.pinkmode .mobileHidden {color:var(--pinkmode-bgcolor);}
+.pinkmode .button-default {color:var(--pinkmode-bgcolor);background-color:var(--pinkmode-bordercolor);}
+.pinkmode .button-white {background-color:var(--pinkmode-bordercolor);}
+.pinkmode .fa-envelope:before {color:var(--pinkmode-bgcolor);}
+.pinkmode .chat__UserListItem {
+    border-color:var(--pinkmode-bordercolor);
+background-color:var(--pinkmode-bordercolor);}
+.pinkmode .fa-clipboard:before {color:var(--pinkmode-bgcolor);}
+
+.pinkmode .fa-user:before {color:var(--pinkmode-bgcolor);}
+
+.pinkmode .userList__UserHandle-current {color:var(--pinkmode-bgcolor);}
+
+.pinkmode .mediaSources__SourceWrapper {background-color:var(--pinkmode-bordercolor);}
+.pinkmode .tabs__Item.active::after {background-color:var(--pinkmode-bordercolor);}
+.pinkmode.ltr_layout .chat__UserList {border-color:var(--pinkmode-bordercolor);}
+.pinkmode #Chat_Hider::after {background:var(--pinkmode-bordercolor);}
+.pinkmode #UserList_Hider::after {background:var(--pinkmode-bordercolor);}
+.pinkmode.ltr_layout #LTR_Toggle::after {background:var(--pinkmode-bordercolor);}
+
+.pinkmode .room {background-color:var(--pinkmode-lightbgcolor);}
 .pinkmode .modal__Window {border: 1px solid var(--pinkmode-bordercolor);}
+.pinkmode .chat__HeaderOption {border-color: var(--pinkmode-bordercolor);background-color: var(--pinkmode-bordercolor);color: var(--pinkmode-lightbgcolor);}
+
+.pinkmode .fa.fa-gear:before, .pinkmode .icon--hd {color: var(--pinkmode-lightbgcolor);}
+
 .pinkmode .chat__MessageBody {
-    color: var(--pinkmode-textcolor) !important;
-    background-color: var(--pinkmode-bgcolor);}
+    background-color: var(--pinkmode-bgcolor);
+    border-color: var(--pinkmode-bordercolor);}
 
 .pinkmode .chat__MessageBody-status {
     color: var(--pinkmode-textcolor);
     background-color: var(--pinkmode-lightbgcolor);
     border-color: var(--pinkmode-bordercolor);}
 
-.pinkmode .chat__MessageHandle {
-    background-color: var(--pinkmode-bgcolor);}
-
 .pinkmode .chat__MessageBody-link {
     color:#ff0000;}
 
 .pinkmode .chat__MessageTimestamp {
-    color: #fff;}
+    color: var(--pinkmode-textcolor);}
 
 .pinkmode .chat__Message:hover .chat__MessageTimestamp {
     color: var(--pinkmode-textcolor);}
@@ -734,7 +529,7 @@ div.modal__Body > form > input {
     border-color:#7289DA;}
 
 .pinkmode .modal__Header {
-    background-color: var(--pinkmode-bgcolor);
+    background-color: var(--pinkmode-bordercolor);
     border-color:  var(--pinkmode-bordercolor);
     border-bottom: 0px;}
 
@@ -755,27 +550,22 @@ div.modal__Body > form > input {
     background-color: var(--pinkmode-bordercolor);}
 
 /* --------- CAMERAS --------- */
-.pinkmode .cams {
-    background:  var(--pinkmode-lightbgcolor) !important;}
 
 .pinkmode .cams__Header {
-    background-color:  var(--pinkmode-bgcolor) !important;}
+    background-color:  var(--pinkmode-bgcolor) !important;
+    border-color: var(--pinkmode-bordercolor);}
 
 .pinkmode .cams__Cam {
     border-color:  var(--pinkmode-bordercolor) !important;}
 
-.pinkmode .button-default {
-    background-color: var(--pinkmode-bordercolor) !important;
-    color: var(--pinkmode-textcolor) !important;}
 
 
 /* --------- CHAT --------- */
-
 .pinkmode .chat__Header {
-    background-color: var(--pinkmode-bgcolor) !important;}
+    background-color: var(--pinkmode-bgcolor) !important;
+    border-color: var(--pinkmode-bordercolor);}
 
 .pinkmode .chat__FeedWrapper {
-    background-color: var(--pinkmode-lightbgcolor);
     border-color: var(--pinkmode-bordercolor);}
 
 .pinkmode .chat__InputWrapper {
@@ -803,33 +593,115 @@ div.modal__Body > form > input {
     background-color: var(--pinkmode-bgcolor);}
 
 /*------------------------------------------------------------------------------------- GREEN_THEME ---*/
-.greenmode .modal__Window {border: 1px solid var(--greenmode-bordercolor);}
-.greenmode .cams__RoomName {
-color: var(--greenmode-textcolor);
-}
-.greenmode .cams__InfoCount {
-color: var(--greenmode-lightbgcolor);
-}
-.greenmode .tabs__Item {color: var(--greenmode-lightbgcolor);}
+:root {
+    --greenmode-bgcolor: #042500;
+    --greenmode-bordercolor: #217c16;
+    --greenmode-lightbgcolor: #00500d;
+    --greenmode-textcolor: #fff;}
 
+.greenmode .modal__Body {background: var(--greenmode-bgcolor);background-color: var(--greenmode-bgcolor);}
+.greenmode .scroll-shadow {background-color: var(--greenmode-bgcolor);background: var(--greenmode-bgcolor);}
+.greenmode > .reg_checkmark, .greenmode > .check_head {color: var(--greenmode-bordercolor);}
+
+.greenmode .reg_checkmark {
+    background-color: var(--greenmode-lightbgcolor);
+    border-color: var(--greenmode-bordercolor);
+}
+
+.greenmode .reg_checkmark:after {
+    border-color: var(--greenmode-bordercolor) !important;
+}
+
+.greenmode > .reg_checkmark:hover input ~ .checkmark {background-color: var(--greenmode-bgcolor);}
+
+.greenmode #theme_wizard, #theme_wizard > option.green_mode {
+    background-color: var(--greenmode-lightbgcolor);
+    border-color: var(--greenmode-bordercolor);
+color:var(--greenmode-textcolor);}
+
+/* ------------------------------ green_LLAMA_MENU ----------------------------------- */
+.greenmode .llama_menu .feature_menu {
+    color: var(--greenmode-textcolor);}
+
+.greenmode #Extra_Menu {
+    color: var(--greenmode-textcolor);}
+
+.greenmode #toggle_menu {
+    color: var(--greenmode-textcolor);
+    background-color: var(--greenmode-bgcolor);
+    border-color: var(--greenmode-bordercolor);}
+
+.greenmode .feature_menu {
+    color: var(--greenmode-textcolor);
+    background-color: var(--greenmode-bgcolor);
+    border-color: var(--greenmode-bordercolor);
+    -webkit-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
+    -moz-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
+    box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);}
+
+.greenmode .menu_header {
+    background-color:  var(--greenmode-lightbgcolor);
+    color: var(--greenmode-textcolor);}
+
+.greenmode .menu_section {
+    color: var(--greenmode-textcolor);}
+
+.greenmode .settings_header {
+    color: var(--greenmode-textcolor);}
+
+/*--END LLAMA MENU--*/
+
+.greenmode .roomHeader__LogoText,
+.greenmode .tabs__Item,
+.greenmode .tabs__Item.active
+{color:var(--greenmode-textcolor);}
+.greenmode .cams__InfoCount {color:var(--greenmode-textcolor);}
+.greenmode .cams__InfoLabel {color:var(--greenmode-textcolor);}
+.greenmode .cams__RoomName {color:var(--greenmode-textcolor);}
+.greenmode .roomHeader__UserAction {
+background-color:var(--greenmode-bordercolor);
+color:var(--greenmode-bgcolor);
+border-color:var(--greenmode-bordercolor);}
+.greenmode .mobileHidden {color:var(--greenmode-bgcolor);}
+.greenmode .button-default {color:var(--greenmode-bgcolor);background-color:var(--greenmode-bordercolor);}
+.greenmode .button-white {background-color:var(--greenmode-bordercolor);}
+.greenmode .fa-envelope:before {color:var(--greenmode-bgcolor);}
+.greenmode .chat__UserListItem {
+    border-color:var(--greenmode-bordercolor);
+background-color:var(--greenmode-bordercolor);}
+.greenmode .fa-clipboard:before {color:var(--greenmode-bgcolor);}
+
+.greenmode .fa-user:before {color:var(--greenmode-bgcolor);}
+
+.greenmode .userList__UserHandle-current {color:var(--greenmode-bgcolor);}
+
+.greenmode .mediaSources__SourceWrapper {background-color:var(--greenmode-bordercolor);}
+.greenmode .tabs__Item.active::after {background-color:var(--greenmode-bordercolor);}
+.greenmode.ltr_layout .chat__UserList {border-color:var(--greenmode-bordercolor);}
+.greenmode #Chat_Hider::after {background:var(--greenmode-bordercolor);}
+.greenmode #UserList_Hider::after {background:var(--greenmode-bordercolor);}
+.greenmode.ltr_layout #LTR_Toggle::after {background:var(--greenmode-bordercolor);}
+
+.greenmode .room {background-color:var(--greenmode-lightbgcolor);}
+.greenmode .modal__Window {border: 1px solid var(--greenmode-bordercolor);}
+.greenmode .chat__HeaderOption {border-color: var(--greenmode-bordercolor);background-color: var(--greenmode-bordercolor);color: var(--greenmode-lightbgcolor);}
+
+.greenmode .fa.fa-gear:before, .greenmode .icon--hd {color: var(--greenmode-lightbgcolor);}
 
 .greenmode .chat__MessageBody {
-    color: var(--greenmode-textcolor) !important;
-    background-color: var(--greenmode-bgcolor);}
+    background-color: var(--greenmode-bgcolor);
+    border-color: var(--greenmode-bordercolor);}
 
 .greenmode .chat__MessageBody-status {
     color: var(--greenmode-textcolor);
     background-color: var(--greenmode-lightbgcolor);
     border-color: var(--greenmode-bordercolor);}
 
-.greenmode .chat__MessageHandle {
-    background-color: var(--greenmode-bgcolor);}
-
 .greenmode .chat__MessageBody-link {
     color:#ff0000;}
 
 .greenmode .chat__MessageTimestamp {
-    color: #fff;}
+    color: var(--greenmode-textcolor);}
 
 .greenmode .chat__Message:hover .chat__MessageTimestamp {
     color: var(--greenmode-textcolor);}
@@ -843,11 +715,11 @@ color: var(--greenmode-lightbgcolor);
 /* --------- CHANGE NICKNAME --------- */
 
 .greenmode .modal__Body, .greenmode .modal__Footer {
-    background-color: var(--greenmode-lightbgcolor) !important;
+    background-color: var(--greenmode-bgcolor) !important;
     border-color:#7289DA;}
 
 .greenmode .modal__Header {
-    background-color: var(--greenmode-lightbgcolor);
+    background-color: var(--greenmode-bordercolor);
     border-color:  var(--greenmode-bordercolor);
     border-bottom: 0px;}
 
@@ -859,7 +731,7 @@ color: var(--greenmode-lightbgcolor);
     border-color:  var(--greenmode-bordercolor) !important;
     background-color: var(--greenmode-bgcolor) !important;}
 
-.greenmode .button-green {
+.greenmode .button-blue {
     background-color: var(--greenmode-bordercolor);
     color:  var(--greenmode-lightbgcolor);
     border:1px solid  var(--greenmode-bordercolor);}
@@ -867,30 +739,23 @@ color: var(--greenmode-lightbgcolor);
 .greenmode .chat__ShareCopy {
     background-color: var(--greenmode-bordercolor);}
 
-.greenmode .userList__UserHandle {color: var(--greenmode-lightbgcolor)}
-
 /* --------- CAMERAS --------- */
-.greenmode .cams {
-    background:  var(--greenmode-lightbgcolor) !important;}
 
 .greenmode .cams__Header {
-    background-color:  var(--greenmode-bgcolor) !important;}
+    background-color:  var(--greenmode-bgcolor) !important;
+    border-color: var(--greenmode-bordercolor);}
 
 .greenmode .cams__Cam {
     border-color:  var(--greenmode-bordercolor) !important;}
 
-.greenmode .button-default {
-    background-color: var(--greenmode-bordercolor) !important;
-    color: var(--greenmode-textcolor) !important;}
 
 
 /* --------- CHAT --------- */
-
 .greenmode .chat__Header {
-    background-color: var(--greenmode-bgcolor) !important;}
+    background-color: var(--greenmode-bgcolor) !important;
+    border-color: var(--greenmode-bordercolor);}
 
 .greenmode .chat__FeedWrapper {
-    background-color: var(--greenmode-lightbgcolor);
     border-color: var(--greenmode-bordercolor);}
 
 .greenmode .chat__InputWrapper {
@@ -915,39 +780,118 @@ color: var(--greenmode-lightbgcolor);
     background-color: var(--greenmode-bordercolor);}
 
 .greenmode .chat__UserListItem+.chat__UserListItem:hover {
-    background-color: var(--greenmode-lightbgcolor);
-color:  var(--greenmode-textcolor) !important;}
+    background-color: var(--greenmode-bgcolor);}
+/*------------------------------------------------------------------------------------- blue_THEME ---*/
+:root {
+    --bluemode-bgcolor: #111949;
+    --bluemode-bordercolor: #596ce0;
+    --bluemode-lightbgcolor: #2a388b;
+    --bluemode-textcolor: #fff;}
 
-.greenmode .chat__UserListItem+.userList__UserHandle:hover {
-color:  var(--greenmode-textcolor) !important;}
-/*------------------------------------------------------------------------------------- BLUE_THEME ---*/
+.bluemode .scroll-shadow {background: var(--bluemode-bgcolor);background-color: var(--bluemode-bgcolor);}
+.bluemode .modal__Body {background: var(--bluemode-bgcolor);}
+.bluemode > .reg_checkmark, .bluemode > .check_head {
+    color: var(--bluemode-bordercolor);}
+
+.bluemode .reg_checkmark {
+    background-color: var(--bluemode-lightbgcolor);
+    border-color: var(--bluemode-bordercolor);
+}
+
+.bluemode .reg_checkmark:after {
+    border-color: var(--bluemode-bordercolor) !important;
+}
+
+.bluemode > .reg_checkmark:hover input ~ .checkmark {background-color: var(--bluemode-bgcolor);}
+
+.bluemode #theme_wizard, #theme_wizard > option.blue_mode {
+    background-color: var(--bluemode-lightbgcolor);
+    border-color: var(--bluemode-bordercolor);
+color:var(--bluemode-textcolor);}
+
+/* ------------------------------ blue_LLAMA_MENU ----------------------------------- */
+.bluemode .llama_menu .feature_menu {
+    color: var(--bluemode-textcolor);}
+
+.bluemode #Extra_Menu {
+    color: var(--bluemode-textcolor);}
+
+.bluemode #toggle_menu {
+    color: var(--bluemode-textcolor);
+    background-color: var(--bluemode-bgcolor);
+    border-color: var(--bluemode-bordercolor);}
+
+.bluemode .feature_menu {
+    color: var(--bluemode-textcolor);
+    background-color: var(--bluemode-bgcolor);
+    border-color: var(--bluemode-bordercolor);
+    -webkit-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
+    -moz-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
+    box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);}
+
+.bluemode .menu_header {
+    background-color:  var(--bluemode-lightbgcolor);
+    color: var(--bluemode-textcolor);}
+
+.bluemode .menu_section {
+    color: var(--bluemode-textcolor);}
+
+.bluemode .settings_header {
+    color: var(--bluemode-textcolor);}
+
+/*--END LLAMA MENU--*/
+
+.bluemode .roomHeader__LogoText,
+.bluemode .tabs__Item,
+.bluemode .tabs__Item.active
+{color:var(--bluemode-textcolor);}
+.bluemode .cams__InfoCount {color:var(--bluemode-textcolor);}
+.bluemode .cams__InfoLabel {color:var(--bluemode-textcolor);}
+.bluemode .cams__RoomName {color:var(--bluemode-textcolor);}
+.bluemode .roomHeader__UserAction {
+background-color:var(--bluemode-bordercolor);
+color:var(--bluemode-bgcolor);
+border-color:var(--bluemode-bordercolor);}
+.bluemode .mobileHidden {color:var(--bluemode-bgcolor);}
+.bluemode .button-default {color:var(--bluemode-bgcolor);background-color:var(--bluemode-bordercolor);}
+.bluemode .button-white {background-color:var(--bluemode-bordercolor);}
+.bluemode .fa-envelope:before {color:var(--bluemode-bgcolor);}
+.bluemode .chat__UserListItem {
+    border-color:var(--bluemode-bordercolor);
+background-color:var(--bluemode-bordercolor);}
+.bluemode .fa-clipboard:before {color:var(--bluemode-bgcolor);}
+
+.bluemode .fa-user:before {color:var(--bluemode-bgcolor);}
+
+.bluemode .userList__UserHandle-current {color:var(--bluemode-bgcolor);}
+
+.bluemode .mediaSources__SourceWrapper {background-color:var(--bluemode-bordercolor);}
+.bluemode .tabs__Item.active::after {background-color:var(--bluemode-bordercolor);}
+.bluemode.ltr_layout .chat__UserList {border-color:var(--bluemode-bordercolor);}
+.bluemode #Chat_Hider::after {background:var(--bluemode-bordercolor);}
+.bluemode #UserList_Hider::after {background:var(--bluemode-bordercolor);}
+.bluemode.ltr_layout #LTR_Toggle::after {background:var(--bluemode-bordercolor);}
+
+.bluemode .room {background-color:var(--bluemode-lightbgcolor);}
 .bluemode .modal__Window {border: 1px solid var(--bluemode-bordercolor);}
-.bluemode .cams__RoomName {
-color: var(--bluemode-textcolor);
-}
-.bluemode .cams__InfoCount {
-color: var(--bluemode-lightbgcolor);
-}
-.bluemode .tabs__Item {color: var(--bluemode-lightbgcolor);}
+.bluemode .chat__HeaderOption {border-color: var(--bluemode-bordercolor);background-color: var(--bluemode-bordercolor);color: var(--bluemode-lightbgcolor);}
 
+.bluemode .fa.fa-gear:before, .bluemode .icon--hd {color: var(--bluemode-lightbgcolor);}
 
 .bluemode .chat__MessageBody {
-    color: var(--bluemode-textcolor) !important;
-    background-color: var(--bluemode-bgcolor);}
+    background-color: var(--bluemode-bgcolor);
+    border-color: var(--bluemode-bordercolor);}
 
 .bluemode .chat__MessageBody-status {
     color: var(--bluemode-textcolor);
     background-color: var(--bluemode-lightbgcolor);
     border-color: var(--bluemode-bordercolor);}
 
-.bluemode .chat__MessageHandle {
-    background-color: var(--bluemode-bgcolor);}
-
 .bluemode .chat__MessageBody-link {
     color:#ff0000;}
 
 .bluemode .chat__MessageTimestamp {
-    color: #fff;}
+    color: var(--bluemode-textcolor);}
 
 .bluemode .chat__Message:hover .chat__MessageTimestamp {
     color: var(--bluemode-textcolor);}
@@ -961,11 +905,11 @@ color: var(--bluemode-lightbgcolor);
 /* --------- CHANGE NICKNAME --------- */
 
 .bluemode .modal__Body, .bluemode .modal__Footer {
-    background-color: var(--bluemode-lightbgcolor) !important;
+    background-color: var(--bluemode-bgcolor) !important;
     border-color:#7289DA;}
 
 .bluemode .modal__Header {
-    background-color: var(--bluemode-lightbgcolor);
+    background-color: var(--bluemode-bordercolor);
     border-color:  var(--bluemode-bordercolor);
     border-bottom: 0px;}
 
@@ -985,30 +929,23 @@ color: var(--bluemode-lightbgcolor);
 .bluemode .chat__ShareCopy {
     background-color: var(--bluemode-bordercolor);}
 
-.bluemode .userList__UserHandle {color: var(--bluemode-lightbgcolor)}
-
 /* --------- CAMERAS --------- */
-.bluemode .cams {
-    background:  var(--bluemode-lightbgcolor) !important;}
 
 .bluemode .cams__Header {
-    background-color:  var(--bluemode-bgcolor) !important;}
+    background-color:  var(--bluemode-bgcolor) !important;
+    border-color: var(--bluemode-bordercolor);}
 
 .bluemode .cams__Cam {
     border-color:  var(--bluemode-bordercolor) !important;}
 
-.bluemode .button-default {
-    background-color: var(--bluemode-bordercolor) !important;
-    color: var(--bluemode-textcolor) !important;}
 
 
 /* --------- CHAT --------- */
-
 .bluemode .chat__Header {
-    background-color: var(--bluemode-bgcolor) !important;}
+    background-color: var(--bluemode-bgcolor) !important;
+    border-color: var(--bluemode-bordercolor);}
 
 .bluemode .chat__FeedWrapper {
-    background-color: var(--bluemode-lightbgcolor);
     border-color: var(--bluemode-bordercolor);}
 
 .bluemode .chat__InputWrapper {
@@ -1033,39 +970,119 @@ color: var(--bluemode-lightbgcolor);
     background-color: var(--bluemode-bordercolor);}
 
 .bluemode .chat__UserListItem+.chat__UserListItem:hover {
-    background-color: var(--bluemode-lightbgcolor);
-color:  var(--bluemode-textcolor) !important;}
+    background-color: var(--bluemode-bgcolor);}
 
-.bluemode .chat__UserListItem+.userList__UserHandle:hover {
-color:  var(--bluemode-textcolor) !important;}
-/*------------------------------------------------------------------------------------- MAUVE_THEME ---*/
+
+/*------------------------------------------------------------------------------------- mauve_THEME ---*/
+:root {
+    --mauvemode-bgcolor: #9168b2;
+    --mauvemode-bordercolor: #d6b7ef;
+    --mauvemode-lightbgcolor: #BF8FE5;
+    --mauvemode-textcolor: #000000;}
+
+.mauvemode .modal__Body {background: var(--mauvemode-bgcolor);background-color: var(--mauvemode-bgcolor);}
+.mauvemode .scroll-shadow {background-color: var(--mauvemode-bgcolor);background: var(--mauvemode-bgcolor);}
+.mauvemode > .reg_checkmark, .mauvemode > .check_head {color: var(--mauvemode-bordercolor);}
+
+.mauvemode .reg_checkmark {
+    background-color: var(--mauvemode-lightbgcolor);
+    border-color: var(--mauvemode-bordercolor);
+}
+
+.mauvemode .reg_checkmark:after {
+    border-color: var(--mauvemode-bordercolor) !important;
+}
+
+.mauvemode > .reg_checkmark:hover input ~ .checkmark {background-color: var(--mauvemode-bgcolor);}
+
+.mauvemode #theme_wizard, #theme_wizard > option.mauve_mode {
+    background-color: var(--mauvemode-lightbgcolor);
+    border-color: var(--mauvemode-bordercolor);
+color:var(--mauvemode-textcolor);}
+
+/* ------------------------------ mauve_LLAMA_MENU ----------------------------------- */
+.mauvemode .llama_menu .feature_menu {
+    color: var(--mauvemode-textcolor);}
+
+.mauvemode #Extra_Menu {
+    color: var(--mauvemode-textcolor);}
+
+.mauvemode #toggle_menu {
+    color: var(--mauvemode-textcolor);
+    background-color: var(--mauvemode-bgcolor);
+    border-color: var(--mauvemode-bordercolor);}
+
+.mauvemode .feature_menu {
+    color: var(--mauvemode-textcolor);
+    background-color: var(--mauvemode-bgcolor);
+    border-color: var(--mauvemode-bordercolor);
+    -webkit-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
+    -moz-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
+    box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);}
+
+.mauvemode .menu_header {
+    background-color:  var(--mauvemode-lightbgcolor);
+    color: var(--mauvemode-textcolor);}
+
+.mauvemode .menu_section {
+    color: var(--mauvemode-textcolor);}
+
+.mauvemode .settings_header {
+    color: var(--mauvemode-textcolor);}
+
+/*--END LLAMA MENU--*/
+
+.mauvemode .roomHeader__LogoText,
+.mauvemode .tabs__Item,
+.mauvemode .tabs__Item.active
+{color:var(--mauvemode-textcolor);}
+.mauvemode .cams__InfoCount {color:var(--mauvemode-textcolor);}
+.mauvemode .cams__InfoLabel {color:var(--mauvemode-textcolor);}
+.mauvemode .cams__RoomName {color:var(--mauvemode-textcolor);}
+.mauvemode .roomHeader__UserAction {
+background-color:var(--mauvemode-bordercolor);
+color:var(--mauvemode-bgcolor);
+border-color:var(--mauvemode-bordercolor);}
+.mauvemode .mobileHidden {color:var(--mauvemode-bgcolor);}
+.mauvemode .button-default {color:var(--mauvemode-bgcolor);background-color:var(--mauvemode-bordercolor);}
+.mauvemode .button-white {background-color:var(--mauvemode-bordercolor);}
+.mauvemode .fa-envelope:before {color:var(--mauvemode-bgcolor);}
+.mauvemode .chat__UserListItem {
+    border-color:var(--mauvemode-bordercolor);
+background-color:var(--mauvemode-bordercolor);}
+.mauvemode .fa-clipboard:before {color:var(--mauvemode-bgcolor);}
+
+.mauvemode .fa-user:before {color:var(--mauvemode-bgcolor);}
+
+.mauvemode .userList__UserHandle-current {color:var(--mauvemode-bgcolor);}
+
+.mauvemode .mediaSources__SourceWrapper {background-color:var(--mauvemode-bordercolor);}
+.mauvemode .tabs__Item.active::after {background-color:var(--mauvemode-bordercolor);}
+.mauvemode.ltr_layout .chat__UserList {border-color:var(--mauvemode-bordercolor);}
+.mauvemode #Chat_Hider::after {background:var(--mauvemode-bordercolor);}
+.mauvemode #UserList_Hider::after {background:var(--mauvemode-bordercolor);}
+.mauvemode.ltr_layout #LTR_Toggle::after {background:var(--mauvemode-bordercolor);}
+
+.mauvemode .room {background-color:var(--mauvemode-lightbgcolor);}
 .mauvemode .modal__Window {border: 1px solid var(--mauvemode-bordercolor);}
-.mauvemode .cams__RoomName {
-color: var(--mauvemode-textcolor);
-}
-.mauvemode .cams__InfoCount {
-color: var(--mauvemode-lightbgcolor);
-}
-.mauvemode .tabs__Item {color: var(--mauvemode-lightbgcolor);}
+.mauvemode .chat__HeaderOption {border-color: var(--mauvemode-bordercolor);background-color: var(--mauvemode-bordercolor);color: var(--mauvemode-lightbgcolor);}
 
+.mauvemode .fa.fa-gear:before, .mauvemode .icon--hd {color: var(--mauvemode-lightbgcolor);}
 
 .mauvemode .chat__MessageBody {
-    color: var(--mauvemode-textcolor) !important;
-    background-color: var(--mauvemode-bgcolor);}
+    background-color: var(--mauvemode-bgcolor);
+    border-color: var(--mauvemode-bordercolor);}
 
 .mauvemode .chat__MessageBody-status {
     color: var(--mauvemode-textcolor);
     background-color: var(--mauvemode-lightbgcolor);
     border-color: var(--mauvemode-bordercolor);}
 
-.mauvemode .chat__MessageHandle {
-    background-color: var(--mauvemode-bgcolor);}
-
 .mauvemode .chat__MessageBody-link {
     color:#ff0000;}
 
 .mauvemode .chat__MessageTimestamp {
-    color: #fff;}
+    color: var(--mauvemode-textcolor);}
 
 .mauvemode .chat__Message:hover .chat__MessageTimestamp {
     color: var(--mauvemode-textcolor);}
@@ -1079,11 +1096,11 @@ color: var(--mauvemode-lightbgcolor);
 /* --------- CHANGE NICKNAME --------- */
 
 .mauvemode .modal__Body, .mauvemode .modal__Footer {
-    background-color: var(--mauvemode-lightbgcolor) !important;
+    background-color: var(--mauvemode-bgcolor) !important;
     border-color:#7289DA;}
 
 .mauvemode .modal__Header {
-    background-color: var(--mauvemode-lightbgcolor);
+    background-color: var(--mauvemode-bordercolor);
     border-color:  var(--mauvemode-bordercolor);
     border-bottom: 0px;}
 
@@ -1095,7 +1112,7 @@ color: var(--mauvemode-lightbgcolor);
     border-color:  var(--mauvemode-bordercolor) !important;
     background-color: var(--mauvemode-bgcolor) !important;}
 
-.mauvemode .button-mauve {
+.mauvemode .button-blue {
     background-color: var(--mauvemode-bordercolor);
     color:  var(--mauvemode-lightbgcolor);
     border:1px solid  var(--mauvemode-bordercolor);}
@@ -1103,30 +1120,23 @@ color: var(--mauvemode-lightbgcolor);
 .mauvemode .chat__ShareCopy {
     background-color: var(--mauvemode-bordercolor);}
 
-.mauvemode .userList__UserHandle {color: var(--mauvemode-lightbgcolor)}
-
 /* --------- CAMERAS --------- */
-.mauvemode .cams {
-    background:  var(--mauvemode-lightbgcolor) !important;}
 
 .mauvemode .cams__Header {
-    background-color:  var(--mauvemode-bgcolor) !important;}
+    background-color:  var(--mauvemode-bgcolor) !important;
+    border-color: var(--mauvemode-bordercolor);}
 
 .mauvemode .cams__Cam {
     border-color:  var(--mauvemode-bordercolor) !important;}
 
-.mauvemode .button-default {
-    background-color: var(--mauvemode-bordercolor) !important;
-    color: var(--mauvemode-textcolor) !important;}
 
 
 /* --------- CHAT --------- */
-
 .mauvemode .chat__Header {
-    background-color: var(--mauvemode-bgcolor) !important;}
+    background-color: var(--mauvemode-bgcolor) !important;
+    border-color: var(--mauvemode-bordercolor);}
 
 .mauvemode .chat__FeedWrapper {
-    background-color: var(--mauvemode-lightbgcolor);
     border-color: var(--mauvemode-bordercolor);}
 
 .mauvemode .chat__InputWrapper {
@@ -1151,39 +1161,119 @@ color: var(--mauvemode-lightbgcolor);
     background-color: var(--mauvemode-bordercolor);}
 
 .mauvemode .chat__UserListItem+.chat__UserListItem:hover {
-    background-color: var(--mauvemode-lightbgcolor);
-color:  var(--mauvemode-textcolor) !important;}
+    background-color: var(--mauvemode-bgcolor);}
 
-.mauvemode .chat__UserListItem+.userList__UserHandle:hover {
-color:  var(--mauvemode-textcolor) !important;}
-/*------------------------------------------------------------------------------------- ORANGE_THEME ---*/
+
+/*------------------------------------------------------------------------------------- orange_THEME ---*/
+:root {
+    --orangemode-bgcolor: #b33700;
+    --orangemode-bordercolor: #ff8d10;
+    --orangemode-lightbgcolor: #ff4f00;
+    --orangemode-textcolor: #000000;}
+
+.orangemode .modal__Body {background: var(--orangemode-bgcolor);background-color: var(--orangemode-bgcolor);}
+.orangemode .scroll-shadow {background-color: var(--orangemode-bgcolor);background: var(--orangemode-bgcolor);}
+.orangemode > .reg_checkmark, .orangemode > .check_head {color: var(--orangemode-bordercolor);}
+
+.orangemode .reg_checkmark {
+    background-color: var(--orangemode-lightbgcolor);
+    border-color: var(--orangemode-bordercolor);
+}
+
+.orangemode .reg_checkmark:after {
+    border-color: var(--orangemode-bordercolor) !important;
+}
+
+.orangemode > .reg_checkmark:hover input ~ .checkmark {background-color: var(--orangemode-bgcolor);}
+
+.orangemode #theme_wizard, #theme_wizard > option.orange_mode {
+    background-color: var(--orangemode-lightbgcolor);
+    border-color: var(--orangemode-bordercolor);
+color:var(--orangemode-textcolor);}
+
+/* ------------------------------ orange_LLAMA_MENU ----------------------------------- */
+.orangemode .llama_menu .feature_menu {
+    color: var(--orangemode-textcolor);}
+
+.orangemode #Extra_Menu {
+    color: var(--orangemode-textcolor);}
+
+.orangemode #toggle_menu {
+    color: var(--orangemode-textcolor);
+    background-color: var(--orangemode-bgcolor);
+    border-color: var(--orangemode-bordercolor);}
+
+.orangemode .feature_menu {
+    color: var(--orangemode-textcolor);
+    background-color: var(--orangemode-bgcolor);
+    border-color: var(--orangemode-bordercolor);
+    -webkit-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
+    -moz-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
+    box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);}
+
+.orangemode .menu_header {
+    background-color:  var(--orangemode-lightbgcolor);
+    color: var(--orangemode-textcolor);}
+
+.orangemode .menu_section {
+    color: var(--orangemode-textcolor);}
+
+.orangemode .settings_header {
+    color: var(--orangemode-textcolor);}
+
+/*--END LLAMA MENU--*/
+
+.orangemode .roomHeader__LogoText,
+.orangemode .tabs__Item,
+.orangemode .tabs__Item.active
+{color:var(--orangemode-textcolor);}
+.orangemode .cams__InfoCount {color:var(--orangemode-textcolor);}
+.orangemode .cams__InfoLabel {color:var(--orangemode-textcolor);}
+.orangemode .cams__RoomName {color:var(--orangemode-textcolor);}
+.orangemode .roomHeader__UserAction {
+background-color:var(--orangemode-bordercolor);
+color:var(--orangemode-bgcolor);
+border-color:var(--orangemode-bordercolor);}
+.orangemode .mobileHidden {color:var(--orangemode-bgcolor);}
+.orangemode .button-default {color:var(--orangemode-bgcolor);background-color:var(--orangemode-bordercolor);}
+.orangemode .button-white {background-color:var(--orangemode-bordercolor);}
+.orangemode .fa-envelope:before {color:var(--orangemode-bgcolor);}
+.orangemode .chat__UserListItem {
+    border-color:var(--orangemode-bordercolor);
+background-color:var(--orangemode-bordercolor);}
+.orangemode .fa-clipboard:before {color:var(--orangemode-bgcolor);}
+
+.orangemode .fa-user:before {color:var(--orangemode-bgcolor);}
+
+.orangemode .userList__UserHandle-current {color:var(--orangemode-bgcolor);}
+
+.orangemode .mediaSources__SourceWrapper {background-color:var(--orangemode-bordercolor);}
+.orangemode .tabs__Item.active::after {background-color:var(--orangemode-bordercolor);}
+.orangemode.ltr_layout .chat__UserList {border-color:var(--orangemode-bordercolor);}
+.orangemode #Chat_Hider::after {background:var(--orangemode-bordercolor);}
+.orangemode #UserList_Hider::after {background:var(--orangemode-bordercolor);}
+.orangemode.ltr_layout #LTR_Toggle::after {background:var(--orangemode-bordercolor);}
+
+.orangemode .room {background-color:var(--orangemode-lightbgcolor);}
 .orangemode .modal__Window {border: 1px solid var(--orangemode-bordercolor);}
-.orangemode .cams__RoomName {
-color: var(--orangemode-textcolor);
-}
-.orangemode .cams__InfoCount {
-color: var(--orangemode-lightbgcolor);
-}
-.orangemode .tabs__Item {color: var(--orangemode-lightbgcolor);}
+.orangemode .chat__HeaderOption {border-color: var(--orangemode-bordercolor);background-color: var(--orangemode-bordercolor);color: var(--orangemode-lightbgcolor);}
 
+.orangemode .fa.fa-gear:before, .orangemode .icon--hd {color: var(--orangemode-lightbgcolor);}
 
 .orangemode .chat__MessageBody {
-    color: var(--orangemode-textcolor) !important;
-    background-color: var(--orangemode-bgcolor);}
+    background-color: var(--orangemode-bgcolor);
+    border-color: var(--orangemode-bordercolor);}
 
 .orangemode .chat__MessageBody-status {
     color: var(--orangemode-textcolor);
     background-color: var(--orangemode-lightbgcolor);
     border-color: var(--orangemode-bordercolor);}
 
-.orangemode .chat__MessageHandle {
-    background-color: var(--orangemode-bgcolor);}
-
 .orangemode .chat__MessageBody-link {
     color:#ff0000;}
 
 .orangemode .chat__MessageTimestamp {
-    color: #fff;}
+    color: var(--orangemode-textcolor);}
 
 .orangemode .chat__Message:hover .chat__MessageTimestamp {
     color: var(--orangemode-textcolor);}
@@ -1197,11 +1287,11 @@ color: var(--orangemode-lightbgcolor);
 /* --------- CHANGE NICKNAME --------- */
 
 .orangemode .modal__Body, .orangemode .modal__Footer {
-    background-color: var(--orangemode-lightbgcolor) !important;
+    background-color: var(--orangemode-bgcolor) !important;
     border-color:#7289DA;}
 
 .orangemode .modal__Header {
-    background-color: var(--orangemode-lightbgcolor);
+    background-color: var(--orangemode-bordercolor);
     border-color:  var(--orangemode-bordercolor);
     border-bottom: 0px;}
 
@@ -1213,7 +1303,7 @@ color: var(--orangemode-lightbgcolor);
     border-color:  var(--orangemode-bordercolor) !important;
     background-color: var(--orangemode-bgcolor) !important;}
 
-.orangemode .button-orange {
+.orangemode .button-blue {
     background-color: var(--orangemode-bordercolor);
     color:  var(--orangemode-lightbgcolor);
     border:1px solid  var(--orangemode-bordercolor);}
@@ -1221,30 +1311,23 @@ color: var(--orangemode-lightbgcolor);
 .orangemode .chat__ShareCopy {
     background-color: var(--orangemode-bordercolor);}
 
-.orangemode .userList__UserHandle {color: var(--orangemode-lightbgcolor)}
-
 /* --------- CAMERAS --------- */
-.orangemode .cams {
-    background:  var(--orangemode-lightbgcolor) !important;}
 
 .orangemode .cams__Header {
-    background-color:  var(--orangemode-bgcolor) !important;}
+    background-color:  var(--orangemode-bgcolor) !important;
+    border-color: var(--orangemode-bordercolor);}
 
 .orangemode .cams__Cam {
     border-color:  var(--orangemode-bordercolor) !important;}
 
-.orangemode .button-default {
-    background-color: var(--orangemode-bordercolor) !important;
-    color: var(--orangemode-textcolor) !important;}
 
 
 /* --------- CHAT --------- */
-
 .orangemode .chat__Header {
-    background-color: var(--orangemode-bgcolor) !important;}
+    background-color: var(--orangemode-bgcolor) !important;
+    border-color: var(--orangemode-bordercolor);}
 
 .orangemode .chat__FeedWrapper {
-    background-color: var(--orangemode-lightbgcolor);
     border-color: var(--orangemode-bordercolor);}
 
 .orangemode .chat__InputWrapper {
@@ -1269,39 +1352,119 @@ color: var(--orangemode-lightbgcolor);
     background-color: var(--orangemode-bordercolor);}
 
 .orangemode .chat__UserListItem+.chat__UserListItem:hover {
-    background-color: var(--orangemode-lightbgcolor);
-color:  var(--orangemode-textcolor) !important;}
+    background-color: var(--orangemode-bgcolor);}
 
-.orangemode .chat__UserListItem+.userList__UserHandle:hover {
-color:  var(--orangemode-textcolor) !important;}
-/*------------------------------------------------------------------------------------- RED_THEME ---*/
+
+/*------------------------------------------------------------------------------------- red_THEME ---*/
+:root {
+    --redmode-bgcolor: #590000;
+    --redmode-bordercolor: #d02323;
+    --redmode-lightbgcolor: #860000;
+    --redmode-textcolor: #fff;}
+
+.redmode .modal__Body {background: var(--redmode-bgcolor);background-color: var(--redmode-bgcolor);}
+.redmode .scroll-shadow {background-color: var(--redmode-bgcolor);background: var(--redmode-bgcolor);}
+.redmode > .reg_checkmark, .redmode > .check_head {color: var(--redmode-bordercolor);}
+
+.redmode .reg_checkmark {
+    background-color: var(--redmode-lightbgcolor);
+    border-color: var(--redmode-bordercolor);
+}
+
+.redmode .reg_checkmark:after {
+    border-color: var(--redmode-bordercolor) !important;
+}
+
+.redmode > .reg_checkmark:hover input ~ .checkmark {background-color: var(--redmode-bgcolor);}
+
+.redmode #theme_wizard, #theme_wizard > option.red_mode {
+    background-color: var(--redmode-lightbgcolor);
+    border-color: var(--redmode-bordercolor);
+color:var(--redmode-textcolor);}
+
+/* ------------------------------ red_LLAMA_MENU ----------------------------------- */
+.redmode .llama_menu .feature_menu {
+    color: var(--redmode-textcolor);}
+
+.redmode #Extra_Menu {
+    color: var(--redmode-textcolor);}
+
+.redmode #toggle_menu {
+    color: var(--redmode-textcolor);
+    background-color: var(--redmode-bgcolor);
+    border-color: var(--redmode-bordercolor);}
+
+.redmode .feature_menu {
+    color: var(--redmode-textcolor);
+    background-color: var(--redmode-bgcolor);
+    border-color: var(--redmode-bordercolor);
+    -webkit-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
+    -moz-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
+    box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);}
+
+.redmode .menu_header {
+    background-color:  var(--redmode-lightbgcolor);
+    color: var(--redmode-textcolor);}
+
+.redmode .menu_section {
+    color: var(--redmode-textcolor);}
+
+.redmode .settings_header {
+    color: var(--redmode-textcolor);}
+
+/*--END LLAMA MENU--*/
+
+.redmode .roomHeader__LogoText,
+.redmode .tabs__Item,
+.redmode .tabs__Item.active
+{color:var(--redmode-textcolor);}
+.redmode .cams__InfoCount {color:var(--redmode-textcolor);}
+.redmode .cams__InfoLabel {color:var(--redmode-textcolor);}
+.redmode .cams__RoomName {color:var(--redmode-textcolor);}
+.redmode .roomHeader__UserAction {
+background-color:var(--redmode-bordercolor);
+color:var(--redmode-bgcolor);
+border-color:var(--redmode-bordercolor);}
+.redmode .mobileHidden {color:var(--redmode-bgcolor);}
+.redmode .button-default {color:var(--redmode-bgcolor);background-color:var(--redmode-bordercolor);}
+.redmode .button-white {background-color:var(--redmode-bordercolor);}
+.redmode .fa-envelope:before {color:var(--redmode-bgcolor);}
+.redmode .chat__UserListItem {
+    border-color:var(--redmode-bordercolor);
+background-color:var(--redmode-bordercolor);}
+.redmode .fa-clipboard:before {color:var(--redmode-bgcolor);}
+
+.redmode .fa-user:before {color:var(--redmode-bgcolor);}
+
+.redmode .userList__UserHandle-current {color:var(--redmode-bgcolor);}
+
+.redmode .mediaSources__SourceWrapper {background-color:var(--redmode-bordercolor);}
+.redmode .tabs__Item.active::after {background-color:var(--redmode-bordercolor);}
+.redmode.ltr_layout .chat__UserList {border-color:var(--redmode-bordercolor);}
+.redmode #Chat_Hider::after {background:var(--redmode-bordercolor);}
+.redmode #UserList_Hider::after {background:var(--redmode-bordercolor);}
+.redmode.ltr_layout #LTR_Toggle::after {background:var(--redmode-bordercolor);}
+
+.redmode .room {background-color:var(--redmode-lightbgcolor);}
 .redmode .modal__Window {border: 1px solid var(--redmode-bordercolor);}
-.redmode .cams__RoomName {
-color: var(--redmode-textcolor);
-}
-.redmode .cams__InfoCount {
-color: var(--redmode-lightbgcolor);
-}
-.redmode .tabs__Item {color: var(--redmode-lightbgcolor);}
+.redmode .chat__HeaderOption {border-color: var(--redmode-bordercolor);background-color: var(--redmode-bordercolor);color: var(--redmode-lightbgcolor);}
 
+.redmode .fa.fa-gear:before, .redmode .icon--hd {color: var(--redmode-lightbgcolor);}
 
 .redmode .chat__MessageBody {
-    color: var(--redmode-textcolor) !important;
-    background-color: var(--redmode-bgcolor);}
+    background-color: var(--redmode-bgcolor);
+    border-color: var(--redmode-bordercolor);}
 
 .redmode .chat__MessageBody-status {
     color: var(--redmode-textcolor);
     background-color: var(--redmode-lightbgcolor);
     border-color: var(--redmode-bordercolor);}
 
-.redmode .chat__MessageHandle {
-    background-color: var(--redmode-bgcolor);}
-
 .redmode .chat__MessageBody-link {
     color:#ff0000;}
 
 .redmode .chat__MessageTimestamp {
-    color: #fff;}
+    color: var(--redmode-textcolor);}
 
 .redmode .chat__Message:hover .chat__MessageTimestamp {
     color: var(--redmode-textcolor);}
@@ -1315,11 +1478,11 @@ color: var(--redmode-lightbgcolor);
 /* --------- CHANGE NICKNAME --------- */
 
 .redmode .modal__Body, .redmode .modal__Footer {
-    background-color: var(--redmode-lightbgcolor) !important;
+    background-color: var(--redmode-bgcolor) !important;
     border-color:#7289DA;}
 
 .redmode .modal__Header {
-    background-color: var(--redmode-lightbgcolor);
+    background-color: var(--redmode-bordercolor);
     border-color:  var(--redmode-bordercolor);
     border-bottom: 0px;}
 
@@ -1331,7 +1494,7 @@ color: var(--redmode-lightbgcolor);
     border-color:  var(--redmode-bordercolor) !important;
     background-color: var(--redmode-bgcolor) !important;}
 
-.redmode .button-red {
+.redmode .button-blue {
     background-color: var(--redmode-bordercolor);
     color:  var(--redmode-lightbgcolor);
     border:1px solid  var(--redmode-bordercolor);}
@@ -1339,30 +1502,23 @@ color: var(--redmode-lightbgcolor);
 .redmode .chat__ShareCopy {
     background-color: var(--redmode-bordercolor);}
 
-.redmode .userList__UserHandle {color: var(--redmode-lightbgcolor)}
-
 /* --------- CAMERAS --------- */
-.redmode .cams {
-    background:  var(--redmode-lightbgcolor) !important;}
 
 .redmode .cams__Header {
-    background-color:  var(--redmode-bgcolor) !important;}
+    background-color:  var(--redmode-bgcolor) !important;
+    border-color: var(--redmode-bordercolor);}
 
 .redmode .cams__Cam {
     border-color:  var(--redmode-bordercolor) !important;}
 
-.redmode .button-default {
-    background-color: var(--redmode-bordercolor) !important;
-    color: var(--redmode-textcolor) !important;}
 
 
 /* --------- CHAT --------- */
-
 .redmode .chat__Header {
-    background-color: var(--redmode-bgcolor) !important;}
+    background-color: var(--redmode-bgcolor) !important;
+    border-color: var(--redmode-bordercolor);}
 
 .redmode .chat__FeedWrapper {
-    background-color: var(--redmode-lightbgcolor);
     border-color: var(--redmode-bordercolor);}
 
 .redmode .chat__InputWrapper {
@@ -1387,39 +1543,118 @@ color: var(--redmode-lightbgcolor);
     background-color: var(--redmode-bordercolor);}
 
 .redmode .chat__UserListItem+.chat__UserListItem:hover {
-    background-color: var(--redmode-lightbgcolor);
-color:  var(--redmode-textcolor) !important;}
+    background-color: var(--redmode-bgcolor);}
 
-.redmode .chat__UserListItem+.userList__UserHandle:hover {
-color:  var(--redmode-textcolor) !important;}
-/*------------------------------------------------------------------------------------- PURPLE_THEME ---*/
+/*------------------------------------------------------------------------------------- purple_THEME ---*/
+:root {
+    --purplemode-bgcolor: #280048;
+    --purplemode-bordercolor: #b14fff;
+    --purplemode-lightbgcolor: #550098;
+    --purplemode-textcolor: #fff;}
+
+.purplemode .modal__Body {background: var(--purplemode-bgcolor);background-color: var(--purplemode-bgcolor);}
+.purplemode .scroll-shadow {background-color: var(--purplemode-bgcolor);background: var(--purplemode-bgcolor);}
+.purplemode > .reg_checkmark, .purplemode > .check_head {color: var(--purplemode-bordercolor);}
+
+.purplemode .reg_checkmark {
+    background-color: var(--purplemode-lightbgcolor);
+    border-color: var(--purplemode-bordercolor);
+}
+
+.purplemode .reg_checkmark:after {
+    border-color: var(--purplemode-bordercolor) !important;
+}
+
+.purplemode > .reg_checkmark:hover input ~ .checkmark {background-color: var(--purplemode-bgcolor);}
+
+.purplemode #theme_wizard, #theme_wizard > option.purple_mode {
+    background-color: var(--purplemode-lightbgcolor);
+    border-color: var(--purplemode-bordercolor);
+color:var(--purplemode-textcolor);}
+
+/* ------------------------------ purple_LLAMA_MENU ----------------------------------- */
+.purplemode .llama_menu .feature_menu {
+    color: var(--purplemode-textcolor);}
+
+.purplemode #Extra_Menu {
+    color: var(--purplemode-textcolor);}
+
+.purplemode #toggle_menu {
+    color: var(--purplemode-textcolor);
+    background-color: var(--purplemode-bgcolor);
+    border-color: var(--purplemode-bordercolor);}
+
+.purplemode .feature_menu {
+    color: var(--purplemode-textcolor);
+    background-color: var(--purplemode-bgcolor);
+    border-color: var(--purplemode-bordercolor);
+    -webkit-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
+    -moz-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
+    box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);}
+
+.purplemode .menu_header {
+    background-color:  var(--purplemode-lightbgcolor);
+    color: var(--purplemode-textcolor);}
+
+.purplemode .menu_section {
+    color: var(--purplemode-textcolor);}
+
+.purplemode .settings_header {
+    color: var(--purplemode-textcolor);}
+
+/*--END LLAMA MENU--*/
+
+.purplemode .roomHeader__LogoText,
+.purplemode .tabs__Item,
+.purplemode .tabs__Item.active
+{color:var(--purplemode-textcolor);}
+.purplemode .cams__InfoCount {color:var(--purplemode-textcolor);}
+.purplemode .cams__InfoLabel {color:var(--purplemode-textcolor);}
+.purplemode .cams__RoomName {color:var(--purplemode-textcolor);}
+.purplemode .roomHeader__UserAction {
+background-color:var(--purplemode-bordercolor);
+color:var(--purplemode-bgcolor);
+border-color:var(--purplemode-bordercolor);}
+.purplemode .mobileHidden {color:var(--purplemode-bgcolor);}
+.purplemode .button-default {color:var(--purplemode-bgcolor);background-color:var(--purplemode-bordercolor);}
+.purplemode .button-white {background-color:var(--purplemode-bordercolor);}
+.purplemode .fa-envelope:before {color:var(--purplemode-bgcolor);}
+.purplemode .chat__UserListItem {
+    border-color:var(--purplemode-bordercolor);
+background-color:var(--purplemode-bordercolor);}
+.purplemode .fa-clipboard:before {color:var(--purplemode-bgcolor);}
+
+.purplemode .fa-user:before {color:var(--purplemode-bgcolor);}
+
+.purplemode .userList__UserHandle-current {color:var(--purplemode-bgcolor);}
+
+.purplemode .mediaSources__SourceWrapper {background-color:var(--purplemode-bordercolor);}
+.purplemode .tabs__Item.active::after {background-color:var(--purplemode-bordercolor);}
+.purplemode.ltr_layout .chat__UserList {border-color:var(--purplemode-bordercolor);}
+.purplemode #Chat_Hider::after {background:var(--purplemode-bordercolor);}
+.purplemode #UserList_Hider::after {background:var(--purplemode-bordercolor);}
+.purplemode.ltr_layout #LTR_Toggle::after {background:var(--purplemode-bordercolor);}
+
+.purplemode .room {background-color:var(--purplemode-lightbgcolor);}
 .purplemode .modal__Window {border: 1px solid var(--purplemode-bordercolor);}
-.purplemode .cams__RoomName {
-color: var(--purplemode-textcolor);
-}
-.purplemode .cams__InfoCount {
-color: var(--purplemode-lightbgcolor);
-}
-.purplemode .tabs__Item {color: var(--purplemode-lightbgcolor);}
+.purplemode .chat__HeaderOption {border-color: var(--purplemode-bordercolor);background-color: var(--purplemode-bordercolor);color: var(--purplemode-lightbgcolor);}
 
+.purplemode .fa.fa-gear:before, .purplemode .icon--hd {color: var(--purplemode-lightbgcolor);}
 
 .purplemode .chat__MessageBody {
-    color: var(--purplemode-textcolor) !important;
-    background-color: var(--purplemode-bgcolor);}
+    background-color: var(--purplemode-bgcolor);
+    border-color: var(--purplemode-bordercolor);}
 
 .purplemode .chat__MessageBody-status {
     color: var(--purplemode-textcolor);
     background-color: var(--purplemode-lightbgcolor);
     border-color: var(--purplemode-bordercolor);}
 
-.purplemode .chat__MessageHandle {
-    background-color: var(--purplemode-bgcolor);}
-
 .purplemode .chat__MessageBody-link {
     color:#ff0000;}
 
 .purplemode .chat__MessageTimestamp {
-    color: #fff;}
+    color: var(--purplemode-textcolor);}
 
 .purplemode .chat__Message:hover .chat__MessageTimestamp {
     color: var(--purplemode-textcolor);}
@@ -1433,11 +1668,11 @@ color: var(--purplemode-lightbgcolor);
 /* --------- CHANGE NICKNAME --------- */
 
 .purplemode .modal__Body, .purplemode .modal__Footer {
-    background-color: var(--purplemode-lightbgcolor) !important;
+    background-color: var(--purplemode-bgcolor) !important;
     border-color:#7289DA;}
 
 .purplemode .modal__Header {
-    background-color: var(--purplemode-lightbgcolor);
+    background-color: var(--purplemode-bordercolor);
     border-color:  var(--purplemode-bordercolor);
     border-bottom: 0px;}
 
@@ -1449,7 +1684,7 @@ color: var(--purplemode-lightbgcolor);
     border-color:  var(--purplemode-bordercolor) !important;
     background-color: var(--purplemode-bgcolor) !important;}
 
-.purplemode .button-purple {
+.purplemode .button-blue {
     background-color: var(--purplemode-bordercolor);
     color:  var(--purplemode-lightbgcolor);
     border:1px solid  var(--purplemode-bordercolor);}
@@ -1457,30 +1692,23 @@ color: var(--purplemode-lightbgcolor);
 .purplemode .chat__ShareCopy {
     background-color: var(--purplemode-bordercolor);}
 
-.purplemode .userList__UserHandle {color: var(--purplemode-lightbgcolor)}
-
 /* --------- CAMERAS --------- */
-.purplemode .cams {
-    background:  var(--purplemode-lightbgcolor) !important;}
 
 .purplemode .cams__Header {
-    background-color:  var(--purplemode-bgcolor) !important;}
+    background-color:  var(--purplemode-bgcolor) !important;
+    border-color: var(--purplemode-bordercolor);}
 
 .purplemode .cams__Cam {
     border-color:  var(--purplemode-bordercolor) !important;}
 
-.purplemode .button-default {
-    background-color: var(--purplemode-bordercolor) !important;
-    color: var(--purplemode-textcolor) !important;}
 
 
 /* --------- CHAT --------- */
-
 .purplemode .chat__Header {
-    background-color: var(--purplemode-bgcolor) !important;}
+    background-color: var(--purplemode-bgcolor) !important;
+    border-color: var(--purplemode-bordercolor);}
 
 .purplemode .chat__FeedWrapper {
-    background-color: var(--purplemode-lightbgcolor);
     border-color: var(--purplemode-bordercolor);}
 
 .purplemode .chat__InputWrapper {
@@ -1505,167 +1733,333 @@ color: var(--purplemode-lightbgcolor);
     background-color: var(--purplemode-bordercolor);}
 
 .purplemode .chat__UserListItem+.chat__UserListItem:hover {
-    background-color: var(--purplemode-lightbgcolor);
-color:  var(--purplemode-textcolor) !important;}
+    background-color: var(--purplemode-bgcolor);}
 
-.purplemode .chat__UserListItem+.userList__UserHandle:hover {
-color:  var(--purplemode-textcolor) !important;}
-/*------------------------------------------------------------------------------------- BLACK_THEME ---*/
 
-.blackmode .modal__Window {border: 1px solid #7289DA;}
-.blackmode .cams {
-    background-color:  #191919 !important;}
+/*------------------------------------------------------------------------------------- black_THEME ---*/
+:root {
+    --blackmode-bgcolor: #2C2F33;
+    --blackmode-bordercolor: #7289DA;
+    --blackmode-lightbgcolor: #191919;
+    --blackmode-textcolor: #fff;
+    --blackmode-lightbordercolor: #313131;}
 
-.bubble_chat.blackmode .chat__MessageBody {
-    color: #fff !important;
-    background-color: #2a2a2a;}
+.blackmode .modal__Body {background: var(--blackmode-bgcolor);background-color: var(--blackmode-bgcolor);}
+.blackmode .scroll-shadow {background-color: var(--blackmode-bgcolor);background: var(--blackmode-bgcolor);}
+.blackmode > .reg_checkmark, .blackmode > .check_head {color: var(--blackmode-bordercolor);}
+
+.blackmode .reg_checkmark {
+    background-color: var(--blackmode-lightbgcolor);
+    border-color: var(--blackmode-bordercolor);
+}
+
+.blackmode .reg_checkmark:after {
+    border-color: var(--blackmode-bordercolor) !important;
+}
+
+.blackmode > .reg_checkmark:hover input ~ .checkmark {background-color: var(--blackmode-bgcolor);}
+
+.blackmode #theme_wizard, #theme_wizard > option.black_mode {
+    background-color: var(--blackmode-lightbgcolor);
+    border-color: var(--blackmode-bordercolor);
+color:var(--blackmode-textcolor);}
+
+/* ------------------------------ black_LLAMA_MENU ----------------------------------- */
+.blackmode .llama_menu .feature_menu {
+    color: var(--blackmode-textcolor);}
+
+.blackmode #Extra_Menu {
+    color: var(--blackmode-textcolor);}
+
+.blackmode #toggle_menu {
+    color: var(--blackmode-textcolor);
+    background-color: var(--blackmode-bgcolor);
+    border-color: var(--blackmode-bordercolor);}
+
+.blackmode .feature_menu {
+    color: var(--blackmode-textcolor);
+    background-color: var(--blackmode-bgcolor);
+    border-color: var(--blackmode-bordercolor);
+    -webkit-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
+    -moz-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
+    box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);}
+
+.blackmode .menu_header {
+    background-color:  var(--blackmode-lightbgcolor);
+    color: var(--blackmode-textcolor);}
+
+.blackmode .menu_section {
+    color: var(--blackmode-textcolor);}
+
+.blackmode .settings_header {
+    color: var(--blackmode-textcolor);}
+
+/*--END LLAMA MENU--*/
+
+.blackmode .roomHeader__LogoText,
+.blackmode .tabs__Item,
+.blackmode .tabs__Item.active
+{color:var(--blackmode-textcolor);}
+.blackmode .cams__InfoCount {color:var(--blackmode-textcolor);}
+.blackmode .cams__InfoLabel {color:var(--blackmode-textcolor);}
+.blackmode .cams__RoomName {color:var(--blackmode-textcolor);}
+.blackmode .roomHeader__UserAction {
+background-color:var(--blackmode-bordercolor);
+color:var(--blackmode-bgcolor);
+border-color:var(--blackmode-bordercolor);}
+.blackmode .mobileHidden {color:var(--blackmode-bgcolor);}
+.blackmode .button-default {color:var(--blackmode-bgcolor);background-color:var(--blackmode-bordercolor);}
+.blackmode .button-white {background-color:var(--blackmode-bordercolor);}
+.blackmode .fa-envelope:before {color:var(--blackmode-bgcolor);}
+.blackmode .chat__UserListItem {
+    border-color:var(--blackmode-bordercolor);
+background-color:var(--blackmode-bordercolor);}
+.blackmode .fa-clipboard:before {color:var(--blackmode-bgcolor);}
+
+.blackmode .fa-user:before {color:var(--blackmode-bgcolor);}
+
+.blackmode .userList__UserHandle-current {color:var(--blackmode-bgcolor);}
+
+.blackmode .mediaSources__SourceWrapper {background-color:var(--blackmode-bordercolor);}
+.blackmode .tabs__Item.active::after {background-color:var(--blackmode-bordercolor);}
+.blackmode.ltr_layout .chat__UserList {border-color:var(--blackmode-bordercolor);}
+.blackmode #Chat_Hider::after {background:var(--blackmode-bordercolor);}
+.blackmode #UserList_Hider::after {background:var(--blackmode-bordercolor);}
+.blackmode.ltr_layout #LTR_Toggle::after {background:var(--blackmode-bordercolor);}
+
+.blackmode .room {background-color:var(--blackmode-lightbgcolor);}
+.blackmode .modal__Window {border: 1px solid var(--blackmode-bordercolor);}
+.blackmode .chat__HeaderOption {border-color: var(--blackmode-bordercolor);background-color: var(--blackmode-bordercolor);color: var(--blackmode-lightbgcolor);}
+
+.blackmode .fa.fa-gear:before, .blackmode .icon--hd {color: var(--blackmode-lightbgcolor);}
+
+.blackmode .chat__MessageBody {
+    background-color: var(--blackmode-bgcolor);
+    border-color: var(--blackmode-bordercolor);}
 
 .blackmode .chat__MessageBody-status {
-    color: #fff;
-    background-color: #2a2a2a;
-    border-color: #7289DA;}
-
-.bubble_chat.blackmode .chat__MessageHandle {
-    background-color: #2C2F33;}
-
-.blackmode .chat__MessageHandle {
-}
+    color: var(--blackmode-textcolor);
+    background-color: var(--blackmode-lightbgcolor);
+    border-color: var(--blackmode-bordercolor);}
 
 .blackmode .chat__MessageBody-link {
     color:#ff0000;}
 
 .blackmode .chat__MessageTimestamp {
-    color: #626262;}
+    color: var(--blackmode-textcolor);}
 
 .blackmode .chat__Message:hover .chat__MessageTimestamp {
-    color:#7289DA;}
+    color: var(--blackmode-textcolor);}
 
 .blackmode .roomHeader {
-    background-color: #191919;}
+    background-color: var(--blackmode-lightbgcolor);}
+
+.blackmode .privateMessages__Empty{
+    background-color: var(--blackmode-bgcolor);}
 
 /* --------- CHANGE NICKNAME --------- */
 
 .blackmode .modal__Body, .blackmode .modal__Footer {
-    background-color: #2C2F33 !important;
+    background-color: var(--blackmode-bgcolor) !important;
     border-color:#7289DA;}
 
 .blackmode .modal__Header {
-    background-color: #191919 !important;
-    border-color: #7289DA;
+    background-color: var(--blackmode-bordercolor);
+    border-color:  var(--blackmode-bordercolor);
     border-bottom: 0px;}
 
 .blackmode .modal__SubText {
-    color: #7289DA !important;}
+    color:  var(--blackmode-textcolor) !important;}
 
 .blackmode .input {
-    color: #dadfe5 !important;
-    border-color: #7289DA !important;
-    background-color: #191919 !important;}
+    color:  var(--blackmode-textcolor) !important;
+    border-color:  var(--blackmode-bordercolor) !important;
+    background-color: var(--blackmode-bgcolor) !important;}
 
 .blackmode .button-blue {
-    background-color: #7289DA;
-    color: #f2e5bc;}
+    background-color: var(--blackmode-bordercolor);
+    color:  var(--blackmode-lightbgcolor);
+    border:1px solid  var(--blackmode-bordercolor);}
 
 .blackmode .chat__ShareCopy {
-    background-color:#7289DA;}
+    background-color: var(--blackmode-bordercolor);}
 
 /* --------- CAMERAS --------- */
 
 .blackmode .cams__Header {
-    background-color: #2C2F33 !important;}
+    background-color:  var(--blackmode-bgcolor) !important;
+    border-color: var(--blackmode-bordercolor);border:0px;}
 
 .blackmode .cams__Cam {
-    border-color: #313131 !important;}
+    border-color:  var(--blackmode-bordercolor) !important;}
 
-.blackmode .button-default {
-    background-color: #2C2F33 !important;
-    color: white !important;}
 
 
 /* --------- CHAT --------- */
-
 .blackmode .chat__Header {
-    background-color: #2C2F33 !important;}
+    background-color: var(--blackmode-bgcolor) !important;
+    border-color: var(--blackmode-bordercolor);border:0px;}
 
 .blackmode .chat__FeedWrapper {
-    background-color: #191919;
-    border-color: #313131;}
+    border-color: var(--blackmode-lightbordercolor);}
 
 .blackmode .chat__InputWrapper {
-    border-color: #2C2F33;
-    background-color: #2C2F33;}
+    border-color: var(--blackmode-bordercolor);
+    background-color: var(--blackmode-bgcolor);}
 
 .blackmode .input::placeholder {
-    color: #2C2F33;}
+    color: var(--blackmode-textcolor);}
 
 .blackmode .input::focus {
-    border-color: #7289DA;}
+    border-color: var(--blackmode-bordercolor);}
 
 /* --------- USERS LIST --------- */
 .blackmode .chat__UserList {
-    background-color: #191919;}
-
+    background-color: var(--blackmode-bgcolor);}
+.blackmode .chat__Feed{border-left-color: var(--blackmode-lightbordercolor);}
 .blackmode .layout--horizontal .chat__UserList {
-    border-left-color: #313131;}
+    border-color: var(--blackmode-lightbordercolor);}
 
 .blackmode .chat__UserListItem+.chat__UserListItem {
-    border-top-color: #504945;
-    background-color: #313131;}
+    border-top-color: var(--blackmode-bordercolor);
+    background-color: var(--blackmode-bordercolor);}
 
 .blackmode .chat__UserListItem+.chat__UserListItem:hover {
-    background-color: #7289DA;}
-/*------------------------------------------------------------------------------------- BUDS_THEME ---*/
+    background-color: var(--blackmode-bgcolor);}
 
-.budsmode .cams__RoomName {
-color: var(--budsmode-textcolor);
-}
-.budsmode .cams__InfoCount {
-color: var(--budsmode-bordercolor);
-}
-.budsmode .tabs__Item {color: var(--budsmode-bordercolor);}
+/*------------------------------------------------------------------------------------- buds_THEME ---*/
+:root {
+    --budsmode-bgcolor: #000000;
+    --budsmode-bordercolor: #005900;
+    --budsmode-lightbgcolor: #000000;
+    --budsmode-textcolor: #fff;
+    --budsmode-headerbg: url(https://i.ibb.co/jDC8w3C/weed-wallpaper-1920x1080.jpg);
+    --budsmode-roombg: url(https://i.ibb.co/5YKLsSK/wp2565886.jpg);
+    --budsmode-userbg: url(https://i.ibb.co/5YKLsSK/wp2565886.jpg);
+    --budsmode-chatbg: url(https://i.ibb.co/5YKLsSK/wp2565886.jpg);
+    --budsmode-ptt: url(https://i.ibb.co/W2tyNNs/cannabis-PNG17.png);}
 
+.budsmode .modal__Body {background: var(--budsmode-bgcolor);background-color: var(--budsmode-bgcolor);}
+.budsmode .scroll-shadow {background-color: var(--budsmode-bgcolor);background: var(--budsmode-bgcolor);}
+.budsmode > .reg_checkmark, .budsmode > .check_head {color: var(--budsmode-bordercolor);}
+
+.budsmode .reg_checkmark {
+    background-color: var(--budsmode-lightbgcolor);
+    border-color: var(--budsmode-bordercolor);
+}
+
+.budsmode .reg_checkmark:after {
+    border-color: var(--budsmode-bordercolor) !important;
+}
+
+.budsmode > .reg_checkmark:hover input ~ .checkmark {background-color: var(--budsmode-bgcolor);}
+
+.budsmode #theme_wizard, #theme_wizard > option.buds_mode {
+    background-color: var(--budsmode-bgcolor);
+    border-color: var(--budsmode-bordercolor);
+color:var(--budsmode-textcolor);}
+
+/* ------------------------------ buds_LLAMA_MENU ----------------------------------- */
+.budsmode .llama_menu .feature_menu {
+    color: var(--budsmode-textcolor);}
+
+.budsmode #Extra_Menu {
+    color: var(--budsmode-textcolor);}
+
+.budsmode #toggle_menu {
+    color: var(--budsmode-textcolor);
+    background-color: var(--budsmode-bgcolor);
+    border-color: var(--budsmode-bordercolor);}
+
+.budsmode .feature_menu {
+    color: var(--budsmode-textcolor);
+    background-color: var(--budsmode-bgcolor);
+    border-color: var(--budsmode-bordercolor);
+    -webkit-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
+    -moz-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
+    box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);}
+
+.budsmode .menu_header {
+    background-color:  var(--budsmode-lightbgcolor);
+    color: var(--budsmode-textcolor);}
+
+.budsmode .menu_section {
+    color: var(--budsmode-textcolor);}
+
+.budsmode .settings_header {
+    color: var(--budsmode-textcolor);}
+
+/*--END LLAMA MENU--*/
+
+.budsmode .roomHeader__LogoText,
+.budsmode .tabs__Item,
+.budsmode .tabs__Item.active
+{color:var(--budsmode-textcolor);}
+.budsmode .cams__InfoCount {color:var(--budsmode-textcolor);}
+.budsmode .cams__InfoLabel {color:var(--budsmode-textcolor);}
+.budsmode .cams__RoomName {color:var(--budsmode-textcolor);}
+.budsmode .roomHeader__UserAction {
+background-color:var(--budsmode-bordercolor);
+color:var(--budsmode-bgcolor);
+border-color:var(--budsmode-bordercolor);}
+.budsmode .mobileHidden {color:var(--budsmode-bgcolor);}
+.budsmode .button-default {color:var(--budsmode-bgcolor);background-color:var(--budsmode-bordercolor);}
+.budsmode .button-white {background-color:var(--budsmode-bordercolor);}
+.budsmode .fa-envelope:before {color:var(--budsmode-bgcolor);}
+.budsmode .chat__UserListItem {
+    border-color:var(--budsmode-bordercolor);
+background-color:var(--budsmode-bordercolor);}
+.budsmode .fa-clipboard:before {color:var(--budsmode-bgcolor);}
+
+.budsmode .fa-user:before {color:var(--budsmode-bgcolor);}
+
+.budsmode .userList__UserHandle-current {color:var(--budsmode-bgcolor);}
+
+.budsmode .mediaSources__SourceWrapper {background-color:var(--budsmode-bordercolor);}
+.budsmode .tabs__Item.active::after {background-color:var(--budsmode-bordercolor);}
+.budsmode.ltr_layout .chat__UserList {border-color:var(--budsmode-bordercolor);}
+.budsmode #Chat_Hider::after {background:var(--budsmode-bordercolor);}
+.budsmode #UserList_Hider::after {background:var(--budsmode-bordercolor);}
+.budsmode.ltr_layout #LTR_Toggle::after {background:var(--budsmode-bordercolor);}
+
+.budsmode .room {background-color:var(--budsmode-lightbgcolor);background-image: var(--budsmode-roombg);}
+.budsmode .modal__Window {border: 1px solid var(--budsmode-bordercolor);}
+.budsmode .chat__HeaderOption {border-color: var(--budsmode-bordercolor);background-color: var(--budsmode-bordercolor);color: var(--budsmode-lightbgcolor);}
+
+.budsmode .fa.fa-gear:before, .budsmode .icon--hd {color: var(--budsmode-lightbgcolor);}
 
 .budsmode .chat__MessageBody {
-    color: var(--budsmode-textcolor) !important;
-    background-color: var(--budsmode-bordercolor);}
+    background-color: var(--budsmode-bgcolor);
+    border-color: var(--budsmode-bordercolor);}
 
 .budsmode .chat__MessageBody-status {
     color: var(--budsmode-textcolor);
     background-color: var(--budsmode-lightbgcolor);
     border-color: var(--budsmode-bordercolor);}
 
-.budsmode .chat__MessageHandle {
-    background-color: var(--budsmode-bgcolor);
-    border: 1px solid var(--budsmode-bordercolor);
-}
-
 .budsmode .chat__MessageBody-link {
     color:#ff0000;}
 
 .budsmode .chat__MessageTimestamp {
-    color: #fff;}
+    color: var(--budsmode-textcolor);}
 
 .budsmode .chat__Message:hover .chat__MessageTimestamp {
     color: var(--budsmode-textcolor);}
 
 .budsmode .roomHeader {
-    background-color: var(--budsmode-lightbgcolor);
-    background-image: var(--budsmode-headerbg);}
+    background-color: var(--budsmode-lightbgcolor);}
 
 .budsmode .privateMessages__Empty{
     background-color: var(--budsmode-bgcolor);}
 
 /* --------- CHANGE NICKNAME --------- */
-.budsmode .modal__Window {border: 1px solid var(--budsmode-bordercolor);}
 
 .budsmode .modal__Body, .budsmode .modal__Footer {
-    background-image: var(--budsmode-headerbg);
-    background-color: var(--budsmode-lightbgcolor) !important;
+    background-color: var(--budsmode-bgcolor) !important;
     border-color:#7289DA;}
 
 .budsmode .modal__Header {
-    background-image: var(--buds-headerbg);
-    background-color: var(--budsmode-lightbgcolor);
+    background-color: var(--budsmode-bordercolor);
     border-color:  var(--budsmode-bordercolor);
     border-bottom: 0px;}
 
@@ -1677,7 +2071,7 @@ color: var(--budsmode-bordercolor);
     border-color:  var(--budsmode-bordercolor) !important;
     background-color: var(--budsmode-bgcolor) !important;}
 
-.budsmode .button-buds {
+.budsmode .button-blue {
     background-color: var(--budsmode-bordercolor);
     color:  var(--budsmode-lightbgcolor);
     border:1px solid  var(--budsmode-bordercolor);}
@@ -1685,34 +2079,24 @@ color: var(--budsmode-bordercolor);
 .budsmode .chat__ShareCopy {
     background-color: var(--budsmode-bordercolor);}
 
-.budsmode .userList__UserHandle {color: var(--budsmode-lightbgcolor)}
-
 /* --------- CAMERAS --------- */
-.budsmode .cams {
-    background-image: var(--budsmode-roombg);}
 
 .budsmode .cams__Header {
     background-color:  var(--budsmode-bgcolor) !important;
-    background-image:  var(--budsmode-roombg) !important;}
+    border-color: var(--budsmode-bordercolor);}
 
 .budsmode .cams__Cam {
     border-color:  var(--budsmode-bordercolor) !important;}
 
-.budsmode .button-default {
-    background-color: var(--budsmode-bordercolor) !important;
-    color: var(--budsmode-textcolor) !important;}
 
 
 /* --------- CHAT --------- */
-
 .budsmode .chat__Header {
     background-color: var(--budsmode-bgcolor) !important;
-    background-image: var(--budsmode-roombg);}
+    border-color: var(--budsmode-bordercolor);}
 
 .budsmode .chat__FeedWrapper {
-    background-color: var(--budsmode-lightbgcolor);
-    border-color: var(--budsmode-bordercolor);
-    background-image: var(--budsmode-roombg);}
+    border-color: var(--budsmode-bordercolor);}
 
 .budsmode .chat__InputWrapper {
     border-color: var(--budsmode-bordercolor);
@@ -1726,7 +2110,6 @@ color: var(--budsmode-bordercolor);
 
 /* --------- USERS LIST --------- */
 .budsmode .chat__UserList {
-    background-image: var(--budsmode-roombg);
     background-color: var(--budsmode-bgcolor);}
 
 .budsmode .layout--horizontal .chat__UserList {
@@ -1737,41 +2120,351 @@ color: var(--budsmode-bordercolor);
     background-color: var(--budsmode-bordercolor);}
 
 .budsmode .chat__UserListItem+.chat__UserListItem:hover {
-    background-color: var(--budsmode-lightbgcolor);
-color:  var(--budsmode-textcolor) !important;}
+    background-color: var(--budsmode-bgcolor);}
 
-.budsmode .chat__UserListItem+.userList__UserHandle:hover {
-color:  var(--budsmode-textcolor) !important;}
+/*------------------------------------------------------------------------------------- SPLAT_THEME ---*/
+
+.splatmode .cams__RoomName {
+color: var(--splatmode-textcolor);
+}
+.splatmode .cams__InfoCount {
+color: var(--splatmode-bordercolor);
+}
+.splatmode .tabs__Item {color: var(--splatmode-bordercolor);}
 
 
-/*------------------------------------------------------------------------------------- CUSTOM_THEME ---*/
+.splatmode .roomHeader {
+    background-color: transparent;}
+
+.splatmode .privateMessages__Empty{
+    background-color: var(--splatmode-bgcolor);}
+
+/* --------- CHANGE NICKNAME --------- */
+.splatmode .modal__Window {border: 1px solid var(--splatmode-bordercolor);}
+
+.splatmode .modal__Body, .splatmode .modal__Footer {
+    background-image: var(--splatmode-userbg);
+    background-color: var(--splatmode-lightbgcolor) !important;
+    border-color:#7289DA;opacity:0.7;}
+
+.splatmode .modal__Header {
+opacity:0.7;
+    background-image: var(--splatmode-userbg);
+    background-color: var(--splatmode-lightbgcolor);
+    border-color:  var(--splatmode-bordercolor);
+    border-bottom: 0px;}
+
+.splatmode .modal__SubText {
+    color:  var(--splatmode-textcolor) !important;}
+
+.splatmode .input {
+    color:  var(--splatmode-textcolor) !important;
+    border-color:  var(--splatmode-bordercolor) !important;
+    background-color: var(--splatmode-bgcolor) !important;}
+
+.splatmode .button-buds {
+    background-color: var(--splatmode-bordercolor);
+    color:  var(--splatmode-lightbgcolor);
+    border:1px solid  var(--splatmode-bordercolor);}
+
+.splatmode .chat__ShareCopy {
+    background-color: var(--splatmode-bordercolor);}
+
+.splatmode .userList__UserHandle {color: var(--splatmode-lightbgcolor)}
+
+/* --------- CAMERAS --------- */
+.splatmode .cams {
+background-color: transparent;
+    background: transparent;}
+
+.splatmode .cams__Header {
+    background-color:  transparent !important;
+    background-image:  var(--splatmode-userbg) !important;border-radius: 100px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;}
+
+.splatmode .cams__Cam {
+    border-color:  var(--splatmode-bordercolor) !important;}
+
+.splatmode .button-default {
+    background-color: var(--splatmode-bordercolor) !important;
+    color: var(--splatmode-textcolor) !important;}
+
+
+/* --------- CHAT --------- */
+
+
+/*----bubble--*/
+.splatmode .chat__Message {
+    display: block;
+    padding-right: 0;
+}
+
+.splatmode .chat__MessageHandle {
+    padding-left: 11px;
+    display: block;
+    background-color: #2C2F33;
+    border-radius: 3px;
+    margin: 0px;
+    position: relative;
+    top: 0px;
+}
+.splatmode .chat__Feed{
+
+margin-left: 30px;}
+.splatmode .chat__MessageBody > span:nth-child(2) {margin-left:10px;}
+.splatmode .chat__MessageBody {
+margin-left: 36px
+    position: relative;
+    top:-17px;
+    margin-top: 15px !important;
+    background-color: #cfcfcf;
+    border-radius: 25px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.splatmode .chat__MessageBody-status {
+    color: #fff;
+    background-color: #22add5;
+    bordeR: 1px solid #22add5;
+    margin-top: 17px;
+    min-height: 18px;
+}
+
+.splatmode .chat__MessageTimestamp {
+    position: relative;
+    top: -17px;
+    left: -13px;
+    float: right;
+    color: #626262;
+    cursor: default;
+}
+
+.splatmode .chat__MessageHandle:after {
+    display:none;}
+/*----bubble end--*/
+
+
+.splatmode .chat {background-color: transparent;
+    background: transparent;}
+
+.splatmode .chat__Header {
+    background-color: transparent !important;
+background-image: var(--splatmode-headerbg);
+    background-position: right;
+border-radius: 100px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;}
+
+.splatmode .layout--horizontal .chat__FeedWrapper {
+    background-color: transparent;border:0px;
+    background-image: var(--splatmode-chatbg);
+    background-size: contain;
+    background-position: right center;
+    background-repeat: repeat-y;
+    animation: animatedBackground 10s linear infinite;
+}
+.splatmode .chat__Feed {border:0px;}
+.splatmode .chat__FeedWrapper {
+    background-color: transparent;border:0px;
+    background-image: var(--splatmode-userbg);
+}
+.splatmode .room {    background-image: var(--splatmode-roombg);
+    background-repeat: no-repeat;
+    background-size: cover;}
+
+.splatmode .chat__InputWrapper {
+    border-color: var(--splatmode-bordercolor);
+    background-color: var(--splatmode-bgcolor);}
+
+.splatmode .input::placeholder {
+    color: var(--splatmode-textcolor);}
+
+.splatmode .input::focus {
+    border-color: var(--splatmode-bordercolor);}
+
+.splatmode .chat__MessageBody {
+background-image: var(--splatmode-messagebg);
+    color: var(--splatmode-textcolor) !important;
+    background-color: var(--splatmode-bordercolor);}
+
+.splatmode .chat__MessageBody-status {
+    background-image: var(--splatmode-headerbg);
+    background-color: transparent;
+    background-position: right;
+    background-blend-mode: multiply;
+
+    background-position-y: 89px;
+    background-color: var(--splatmode-lightbgcolor);
+    border-color: var(--splatmode-bordercolor);}
+
+.splatmode .chat__MessageHandle {
+color:black;
+    background-color: transparent;
+    border: 0px solid var(--splatmode-bordercolor);
+}
+
+.splatmode .chat__MessageBody-link {
+    color:#ff0000;}
+
+.splatmode .chat__MessageTimestamp {
+    color: #fff;}
+
+.splatmode .chat__Message:hover .chat__MessageTimestamp {
+    color: var(--splatmode-textcolor);}
+
+.splatmode #toggle_chat,.splatmode #toggle_userlist,.splatmode #toggle_ltr {color:#51bc02;}
+
+/* --------- USERS LIST --------- */
+
+.splatmode .chat__UserListItem {background-image: var(--splatmode-messagebg);    border: 1px solid #51bc02;border-radius:12px;}
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 0 100%; }
+}
+.splatmode .chat__HeaderOption {
+background-image: var(--splatmode-messagebg);
+    border-radius: 5px;
+    margin: 2px;
+    min-height: 27px;}
+.splatmode .chat__UserList {background-image: var(--splatmode-userbg);
+    background-color: transparent;
+
+    width: 175px;
+margin-bottom: 19px;
+    margin: 10px;
+    margin-top: 0px;
+}
+.splatmode .layout--horizontal .chat__UserList {
+    border-radius: 50px;    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+.splatmode .layout--horizontal .chat__UserList {
+border:0px;
+    border-left-color: var(--splatmode-bordercolor);}
+
+.splatmode .chat__UserListItem+.chat__UserListItem {
+    border-top-color: var(--splatmode-bordercolor);
+    background-color: var(--splatmode-bordercolor);}
+
+.splatmode .chat__UserListItem+.chat__UserListItem:hover {
+    background-color: var(--splatmode-lightbgcolor);
+color:  var(--splatmode-textcolor) !important;}
+
+.splatmode .chat__UserListItem+.userList__UserHandle:hover {
+color:  var(--splatmode-textcolor) !important;}
+
+/*------------------------------------------------------------------------------------- custom_THEME ---*/
+:root {
+    --custommode-bgcolor: #22add5;
+    --custommode-bordercolor: #c7cfd9;
+    --custommode-lightbgcolor: #FFFFFF;
+    --custommode-textcolor: #000000;}
+
+.custommode .modal__Body {background: var(--custommode-bgcolor);background-color: var(--custommode-bgcolor);}
+.custommode .scroll-shadow {background-color: var(--custommode-bgcolor);background: var(--custommode-bgcolor);}
+.custommode > .reg_checkmark, .custommode > .check_head {color: var(--custommode-bordercolor);}
+
+.custommode .reg_checkmark {
+    background-color: var(--custommode-lightbgcolor);
+    border-color: var(--custommode-bordercolor);
+}
+
+.custommode .reg_checkmark:after {
+    border-color: var(--custommode-bordercolor) !important;
+}
+
+.custommode > .reg_checkmark:hover input ~ .checkmark {background-color: var(--custommode-bgcolor);}
+
+.custommode #theme_wizard, #theme_wizard > option.custom_mode {
+    background-color: var(--custommode-bgcolor);
+    border-color: var(--custommode-bordercolor);
+color:var(--custommode-textcolor);}
+
+/* ------------------------------ custom_LLAMA_MENU ----------------------------------- */
+.custommode .llama_menu .feature_menu {
+    color: var(--custommode-textcolor);}
+
+.custommode #Extra_Menu {
+    color: var(--custommode-textcolor);}
+
+.custommode #toggle_menu {
+    color: var(--custommode-textcolor);
+    background-color: var(--custommode-bgcolor);
+    border-color: var(--custommode-bordercolor);}
+
+.custommode .feature_menu {
+    color: var(--custommode-textcolor);
+    background-color: var(--custommode-bgcolor);
+    border-color: var(--custommode-bordercolor);
+    -webkit-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
+    -moz-box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);
+    box-shadow: 6px 9px 25px -15px rgba(0,0,0,0.69);}
+
+.custommode .menu_header {
+    background-color:  var(--custommode-lightbgcolor);
+    color: var(--custommode-textcolor);}
+
+.custommode .menu_section {
+    color: var(--custommode-textcolor);}
+
+.custommode .settings_header {
+    color: var(--custommode-textcolor);}
+
+/*--END LLAMA MENU--*/
+
+.custommode .roomHeader__LogoText,
+.custommode .tabs__Item,
+.custommode .tabs__Item.active
+{color:var(--custommode-textcolor);}
+.custommode .cams__InfoCount {color:var(--custommode-textcolor);}
+.custommode .cams__InfoLabel {color:var(--custommode-textcolor);}
+.custommode .cams__RoomName {color:var(--custommode-textcolor);}
+.custommode .roomHeader__UserAction {
+background-color:var(--custommode-bordercolor);
+color:var(--custommode-bgcolor);
+border-color:var(--custommode-bordercolor);}
+.custommode .mobileHidden {color:var(--custommode-bgcolor);}
+.custommode .button-default {color:var(--custommode-bgcolor);background-color:var(--custommode-bordercolor);}
+.custommode .button-white {background-color:var(--custommode-bordercolor);}
+.custommode .fa-envelope:before {color:var(--custommode-bgcolor);}
+.custommode .chat__UserListItem {
+    border-color:var(--custommode-bordercolor);
+background-color:var(--custommode-bordercolor);}
+.custommode .fa-clipboard:before {color:var(--custommode-bgcolor);}
+
+.custommode .fa-user:before {color:var(--custommode-bgcolor);}
+
+.custommode .userList__UserHandle-current {color:var(--custommode-bgcolor);}
+
+.custommode .mediaSources__SourceWrapper {background-color:var(--custommode-bordercolor);}
+.custommode .tabs__Item.active::after {background-color:var(--custommode-bordercolor);}
+.custommode.ltr_layout .chat__UserList {border-color:var(--custommode-bordercolor);}
+.custommode #Chat_Hider::after {background:var(--custommode-bordercolor);}
+.custommode #UserList_Hider::after {background:var(--custommode-bordercolor);}
+.custommode.ltr_layout #LTR_Toggle::after {background:var(--custommode-bordercolor);}
+
+.custommode .room {background-color:var(--custommode-lightbgcolor);}
 .custommode .modal__Window {border: 1px solid var(--custommode-bordercolor);}
-.custommode .cams__RoomName {
-color: var(--custommode-textcolor);
-}
-.custommode .cams__InfoCount {
-color: var(--custommode-lightbgcolor);
-}
-.custommode .tabs__Item {color: var(--custommode-lightbgcolor);}
+.custommode .chat__HeaderOption {border-color: var(--custommode-bordercolor);background-color: var(--custommode-bordercolor);color: var(--custommode-lightbgcolor);}
 
+.custommode .fa.fa-gear:before, .custommode .icon--hd {color: var(--custommode-lightbgcolor);}
 
 .custommode .chat__MessageBody {
-    color: var(--custommode-textcolor) !important;
-    background-color: var(--custommode-bgcolor);}
+    background-color: var(--custommode-bgcolor);
+    border-color: var(--custommode-bordercolor);}
 
 .custommode .chat__MessageBody-status {
     color: var(--custommode-textcolor);
     background-color: var(--custommode-lightbgcolor);
     border-color: var(--custommode-bordercolor);}
 
-.custommode .chat__MessageHandle {
-    background-color: var(--custommode-bgcolor);}
-
 .custommode .chat__MessageBody-link {
     color:#ff0000;}
 
 .custommode .chat__MessageTimestamp {
-    color: #fff;}
+    color: var(--custommode-textcolor);}
 
 .custommode .chat__Message:hover .chat__MessageTimestamp {
     color: var(--custommode-textcolor);}
@@ -1785,11 +2478,11 @@ color: var(--custommode-lightbgcolor);
 /* --------- CHANGE NICKNAME --------- */
 
 .custommode .modal__Body, .custommode .modal__Footer {
-    background-color: var(--custommode-lightbgcolor) !important;
+    background-color: var(--custommode-bgcolor) !important;
     border-color:#7289DA;}
 
 .custommode .modal__Header {
-    background-color: var(--custommode-lightbgcolor);
+    background-color: var(--custommode-bordercolor);
     border-color:  var(--custommode-bordercolor);
     border-bottom: 0px;}
 
@@ -1801,7 +2494,7 @@ color: var(--custommode-lightbgcolor);
     border-color:  var(--custommode-bordercolor) !important;
     background-color: var(--custommode-bgcolor) !important;}
 
-.custommode .button-purple {
+.custommode .button-blue {
     background-color: var(--custommode-bordercolor);
     color:  var(--custommode-lightbgcolor);
     border:1px solid  var(--custommode-bordercolor);}
@@ -1809,30 +2502,23 @@ color: var(--custommode-lightbgcolor);
 .custommode .chat__ShareCopy {
     background-color: var(--custommode-bordercolor);}
 
-.custommode .userList__UserHandle {color: var(--custommode-lightbgcolor)}
-
 /* --------- CAMERAS --------- */
-.custommode .cams {
-    background:  var(--custommode-lightbgcolor) !important;}
 
 .custommode .cams__Header {
-    background-color:  var(--custommode-bgcolor) !important;}
+    background-color:  var(--custommode-bgcolor) !important;
+    border-color: var(--custommode-bordercolor);}
 
 .custommode .cams__Cam {
     border-color:  var(--custommode-bordercolor) !important;}
 
-.custommode .button-default {
-    background-color: var(--custommode-bordercolor) !important;
-    color: var(--custommode-textcolor) !important;}
 
 
 /* --------- CHAT --------- */
-
 .custommode .chat__Header {
-    background-color: var(--custommode-bgcolor) !important;}
+    background-color: var(--custommode-bgcolor) !important;
+    border-color: var(--custommode-bordercolor);}
 
 .custommode .chat__FeedWrapper {
-    background-color: var(--custommode-lightbgcolor);
     border-color: var(--custommode-bordercolor);}
 
 .custommode .chat__InputWrapper {
@@ -1857,14 +2543,10 @@ color: var(--custommode-lightbgcolor);
     background-color: var(--custommode-bordercolor);}
 
 .custommode .chat__UserListItem+.chat__UserListItem:hover {
-    background-color: var(--custommode-lightbgcolor);
-color:  var(--custommode-textcolor) !important;}
-
-.custommode .chat__UserListItem+.userList__UserHandle:hover {
-color:  var(--custommode-textcolor) !important;}
+    background-color: var(--custommode-bgcolor);}
 
 /* ----------------------------------------------------- END_THEMES -----------------------------------*/
-.pinkmode #toggle_chat {color: var(--pinkmode-bgcolor);}
+.pinkmode #toggle_chat {color: var(--pinkmode-textcolor);}
 .greenmode #toggle_chat {color: var(--greenmode-bgcolor);}
 .bluemode #toggle_chat {color: var(--bluemode-bgcolor);}
 .mauvemode #toggle_chat {color: var(--mauvemode-bgcolor);}
@@ -1872,9 +2554,9 @@ color:  var(--custommode-textcolor) !important;}
 .redmode #toggle_chat {color: var(--redmode-bgcolor);}
 .purplemode #toggle_chat {color: var(--purplemode-bgcolor);}
 .blackmode #toggle_chat {color: #2C2F33;}
-.budsmode #toggle_chat {color: var(--budsmode-bgcolor);}
+.budsmode #toggle_chat {color: var(--budsmode-textcolor);}
 
-.pinkmode #toggle_userlist {color: var(--pinkmode-bgcolor);}
+.pinkmode #toggle_userlist {color: var(--pinkmode-textcolor);}
 .greenmode #toggle_userlist {color: var(--greenmode-bgcolor);}
 .bluemode #toggle_userlist {color: var(--bluemode-bgcolor);}
 .mauvemode #toggle_userlist {color: var(--mauvemode-bgcolor);}
@@ -1882,9 +2564,9 @@ color:  var(--custommode-textcolor) !important;}
 .redmode #toggle_userlist {color: var(--redmode-bgcolor);}
 .purplemode #toggle_userlist {color: var(--purplemode-bgcolor);}
 .blackmode #toggle_userlist {color: #2C2F33;}
-.budsmode #toggle_userlist {color: var(--budsmode-bgcolor);}
+.budsmode #toggle_userlist {color: var(--budsmode-textcolor);}
 
-.pinkmode #toggle_ltr {color: var(--pinkmode-bgcolor);}
+.pinkmode #toggle_ltr {color: var(--pinkmode-textcolor);}
 .greenmode #toggle_ltr {color: var(--greenmode-bgcolor);}
 .bluemode #toggle_ltr {color: var(--bluemode-bgcolor);}
 .mauvemode #toggle_ltr {color: var(--mauvemode-bgcolor);}
@@ -1892,7 +2574,7 @@ color:  var(--custommode-textcolor) !important;}
 .redmode #toggle_ltr {color: var(--redmode-bgcolor);}
 .purplemode #toggle_ltr {color: var(--purplemode-bgcolor);}
 .blackmode #toggle_ltr {color: #2C2F33;}
-.budsmode #toggle_ltr {color: var(--budsmode-bgcolor);}
+.budsmode #toggle_ltr {color: var(--budsmode-textcolor);}
 
 
 /* ------------------------------ CHAT_HIDER ----------------------------------- */
@@ -1965,6 +2647,20 @@ content: " ";
 .hide_chat.hide_userlist .room {grid-template-rows: 50px calc(100% - 50px);}
 
 /*---------------------------------------------------------LTR-----------------------------------*/
+.ltr_layout .cams__Header {
+    border-radius: 100px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+border-left:0px;
+}
+.ltr_layout .chat__Header {
+    border-radius: 100px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+border-right:0px;border-left:1px;
+}
+
+
 .hide_userlist.ltr_layout .room.layout--horizontal {
     grid-template-columns: 0.5fr 1fr 60rem;
 }
@@ -2115,77 +2811,10 @@ z-index:1;
 .check_head {
     position: relative;
     left: -12px;
-    top: 3px;}
+    top: 3px;
+}
 
-.pinkmode > .checkmark, .pinkmode > .check_head {
-    color: var(--pinkmode-bordercolor);}
-.greenmode > .checkmark, .greenmode > .check_head {
-    color: var(--greenmode-textcolor);}
-.bluemode > .checkmark, .bluemode > .check_head {
-    color: var(--bluemode-textcolor);}
-.mauvemode > .checkmark, .mauvemode > .check_head {
-    color: var(--mauvemode-textcolor);}
-.orangemode > .checkmark, .orangemode > .check_head {
-    color: var(--orangemode-textcolor);}
-.redmode > .checkmark, .redmode > .check_head {
-    color: var(--redmode-textcolor);}
-.purplemode > .checkmark, .purplemode > .check_head  {
-    color: var(--purplemode-textcolor);}
-.blackmode > .checkmark, .blackmode > .check_head  {
-    color: var(--blackmode-textcolor);}
-.budsmoded > .checkmark, .budsmoded > .check_head  {
-    color: var(--budsmode-textcolor);}
-.pinkmode > .checkmark, .pinkmode > .check_head {
-    border-color: var(--pinkmode-bordercolor);}
-.greenmode > .checkmark, .greenmode > .check_head {
-    color: var(--greenmode-textcolor);}
-.bluemode > .checkmark, .bluemode > .check_head {
-    color: var(--bluemode-textcolor);}
-.mauvemode > .checkmark, .mauvemode > .check_head {
-    color: var(--mauvemode-textcolor);}
-.orangemode > .checkmark, .orangemode > .check_head {
-    color: var(--orangemode-textcolor);}
-.redmode > .checkmark, .redmode > .check_head {
-    color: var(--redmode-textcolor);}
-.purplemode > .checkmark, .purplemode > .check_head  {
-    color: var(--purplemode-textcolor);}
-.blackmode > .checkmark, .blackmode > .check_head  {
-    color: var(--blackmode-textcolor);}
-.budsmoded > .checkmark, .budsmoded > .check_head  {
-    color: var(--budsmode-textcolor);}
 
-.pinkmode > .checkmark {
-    background-color: var(--pinkmode-lightbgcolor);
-    border-color: var(--pinkmode-bordercolor);
-}
-.greenmode > .checkmark {
-    background-color: var(--greenmode-lightbgcolor);
-    border-color: var(--greenmode-bordercolor);
-}
-.bluemode > .checkmark {
-    background-color: var(--bluemode-lightbgcolor);
-    border-color: var(--bluemode-bordercolor);
-}
-.mauvemode > .checkmark {
-    background-color: var(--mauvemode-lightbgcolor);
-    border-color: var(--mauvemode-bordercolor);
-}
-.orangemode > .checkmark {
-    background-color: var(--orangemode-lightbgcolor);
-    border-color: var(--orangemode-bordercolor);
-}
-.redmode > .checkmark{
-    background-color: var(--redmode-lightbgcolor);
-    border-color: var(--redmode-bordercolor);
- }
-.purplemode > .checkmark  {
-    background-color: var(--purplemode-lightbgcolor);
-    border-color: var(--purplemode-bordercolor);
- }
-.blackmode > .checkmark  {
-    background-color: var(--blackmode-lightbgcolor);
-    border-color: var(--blackmode-bordercolor);
-}
 .budsmoded > .checkmark  {
     background-image: var(--budsmode-headerbg);
     border-color: var(--budsmode-bordercolor);
@@ -2193,15 +2822,6 @@ z-index:1;
 
 .checkmark.budsmode{background-image: url(https://i.imgur.com/fuLugA8.jpg);background-size: 167px;}
 .container:hover {opacity:0.7;}
-.pinkmode > .checkmark:hover input ~ .checkmark {background-color: var(--pinkmode-bgcolor);}
-.greenmode > .checkmark:hover input ~ .checkmark {background-color: var(--greenmode-bgcolor);}
-.bluemode > .checkmark:hover input ~ .checkmark {background-color: var(--bluemode-bgcolor);}
-.mauvemode > .checkmark:hover input ~ .checkmark {background-color: var(--mauvemode-bgcolor);}
-.orangemode > .checkmark:hover input ~ .checkmark {background-color: var(--orangemode-bgcolor);}
-.redmode > .checkmark:hover input ~ .checkmark {background-color: var(--redmode-bgcolor);}
-.purplemode > .checkmark:hover input ~ .checkmark {background-color: var(--purplemode-bgcolor);}
-.blackmode > .checkmark:hover input ~ .checkmark {background-color: var(--blackmode-bgcolor);}
-.budsmode > .checkmark:hover input ~ .checkmark {background-color: var(--budsmode-bgcolor);}
 
 
 .custommode #enable_custom_mode {display: block;}
@@ -2209,8 +2829,13 @@ z-index:1;
 .custommode.llama_menu .feature_menu{height: 220px;}
 #enable_custom_mode > label > input {position: relative;opacity: 1;cursor: pointer;height: 20px;width: 100px;left: -9px;top: 3px;border-radius: 2px;border: 1px solid #ccc;padding: 0px 0px 0px 5px;}
 
+
+
 .user_bg .cams__ContainerInternal {background-image: var(--user-bg-image);}
 
+.user_bg.ubg_cover_on .cams__ContainerInternal {background-size:cover;}
+.user_bg.ubg_repeat_on .cams__ContainerInternal {background-repeat:no-repeat;}
+.user_bg.ubg_center_on .cams__ContainerInternal {background-position:center center;}
 #Theme_Selector {
     position: absolute;
     left: 430px;
@@ -2223,53 +2848,13 @@ width: 132px;
     height: 33px;
     border-radius: 3px;}
 
-.pinkmode #theme_wizard, #theme_wizard > option.pink_mode {
-    background-color: var(--pinkmode-bgcolor);
-    border-color: var(--pinkmode-bordercolor);
-color:var(--pinkmode-textcolor);}
-
-
-.greenmode #theme_wizard,#theme_wizard > option.green_mode {
-color:var(--greenmode-textcolor);
-    background-color: var(--greenmode-lightbgcolor);
-    border-color: var(--greenmode-bordercolor);}
-
-.bluemode #theme_wizard,#theme_wizard > option.blue_mode {
-color:var(--bluemode-textcolor);
-    background-color: var(--bluemode-lightbgcolor);
-    border-color: var(--bluemode-bordercolor);}
-
-.mauvemode #theme_wizard,#theme_wizard > option.mauve_mode {
-color:var(--mauvemode-textcolor);
-    background-color: var(--mauvemode-lightbgcolor);
-    border-color: var(--mauvemode-bordercolor);}
-
-.orangemode #theme_wizard,#theme_wizard > option.orange_mode {
-color:var(--orangemode-textcolor);
-    background-color: var(--orangemode-lightbgcolor);
-    border-color: var(--orangemode-bordercolor);}
-
-.redmode #theme_wizard,#theme_wizard > option.red_mode {
-color:var(--redmode-textcolor);
-    background-color: var(--redmode-lightbgcolor);
-    border-color: var(--redmode-bordercolor);}
-
-.purplemode #theme_wizard,#theme_wizard > option.purple_mode {
-color:var(--purplemode-textcolor);
-    background-color: var(--purplemode-lightbgcolor);
-    border-color: var(--purplemode-bordercolor);}
-
-.blackmode #theme_wizard,#theme_wizard > option.black_mode {
-color:var(--blackmode-textcolor);
-    background-color: var(--blackmode-lightbgcolor);
-    border-color: var(--blackmode-bordercolor);}
 
 .budsmode #theme_wizard,#theme_wizard > option.buds_mode {
 color:var(--budsmode-textcolor);
     background-color: var(--budsmode-lightbgcolor);
     border-color: var(--budsmode-bordercolor);}
-
-
+.user_bg_settings {display:none;}
+.user_bg .user_bg_settings {display:block;}
 
 ` );
 
@@ -2291,6 +2876,7 @@ ThemeNode.innerHTML = (`
   <option value="PURPLE" class="purple_mode">PURPLE</option>
   <option value="BLACK" class="black_mode">BLACK</option>
   <option value="BUDS" class="buds_mode">BUDS</option>
+  <option value="SPLAT" class="splat_mode">SPLATOON</option>
 </select>` );
 
 ThemeNode.setAttribute ('id', 'Theme_Selector');
@@ -2347,25 +2933,26 @@ zNode.innerHTML = ( `
 
 <div id="enable_custom_mode">
             <span class="menu_header" style="position: relative;top: 1px;padding: 0px 15px;">
-Use Color Pickers to select Custom Colors
+Custom Colors
             </span>
             <label class="container">
-                <span class="check_head">Color 1</span>
+                <span class="check_head" style="display: inline-block;width: 100px;">Box Color</span>
                 <input class="jscolor {zIndex:'2000'}"  type='text' name="server" id="colorSelection1" value="#004D91"></input>
             </label>
             <label class="container">
-                <span class="check_head">Color 2</span>
+                <span class="check_head" style="display: inline-block;width: 100px;">Background</span>
                 <input class="jscolor {zIndex:'2000'}"  type='text' name="server" id="colorSelection2" value="#CFCFCF"></input>
             </label>
             <label class="container">
-                <span class="check_head">Color 3</span>
+                <span class="check_head" style="display: inline-block;width: 100px;">Border</span>
                 <input class="jscolor {zIndex:'2000'}"  type='text' name="server" id="colorSelection3" value="#FFFFFF"></input>
             </label>
             <label class="container">
-                <span class="check_head">Color 4</span>
+                <span class="check_head" style="display: inline-block;width: 100px;">Text</span>
                 <input class="jscolor {zIndex:'2000'}" type='text' name="server" id="colorSelection4" value="#000000"></input>
             </label>
-            <label style="position:relative;left:37px;">
+            <label style="position:relative;left:10px;">
+                <input id="Reset_Llama_Color" type="button" style="opacity: 1;cursor: pointer;height: 26px;width: 80px;" value="RESET"/>
                 <input id="Preview_Llama_Color" type="button" style="opacity: 1;cursor: pointer;height: 26px;width: 86px;" value="PREVIEW"/>
                 <input id="Save_Llama_Color" type="button" style="opacity: 1;cursor: pointer;height: 26px;width: 80px;" value="SAVE"/>
             </label>
@@ -2402,17 +2989,36 @@ Use Color Pickers to select Custom Colors
                 <span class="check_head">Bubble Chat</span>
             </label>
 
+            <span class="menu_header">
+                USER CAM BG
+            </span>
             <label class="container">
                 <input id="toggle_userbg" type="checkbox">
                 <span class="reg_checkmark"></span>
                 <span class="check_head">CAM BG</span>
             </label>
-            <label style="position: relative;top: -3px;left: 12px;">
+<div class="user_bg_settings">
+            <label style="position: relative;top: -3px;left: 10px;">
                 <input type='text' name="server" id="bgSelection1" placeholder="URL to image.." style="opacity: 1;cursor: pointer;height: 20px;width: 122px;border-radius: 2px;border: 1px solid #ccc;padding: 0px 0px 0px 5px;"/>
                 <input id="Save_Llama_BG" type="button" style="opacity: 1;cursor: pointer;height: 26px;width: 26px;border-radius: 5px;border: 1px solid black;" value="✔"/>
                 <input id="Remove_Llama_BG" type="button" style="opacity: 1;cursor: pointer;height: 26px;width: 26px;border-radius: 5px;border: 1px solid black;" value="✘"/>
             </label>
-
+            <label class="container">
+                <input id="toggle_userbg_cover" type="checkbox">
+                <span class="reg_checkmark"></span>
+                <span class="check_head">CAM BG STRETCH</span>
+            </label>
+            <label class="container">
+                <input id="toggle_userbg_repeat" type="checkbox">
+                <span class="reg_checkmark"></span>
+                <span class="check_head">CAM BG NO-REPEAT</span>
+            </label>
+            <label class="container">
+                <input id="toggle_userbg_center" type="checkbox">
+                <span class="reg_checkmark"></span>
+                <span class="check_head">CENTER</span>
+            </label>
+</div>
 
             <span class="menu_header">
                 THEME SETTINGS
@@ -2453,6 +3059,7 @@ document.addEventListener('input', function (event) {
     if (event.target.value === 'PURPLE') {Toggle_Theme_Purple();}
     if (event.target.value === 'BLACK') {Toggle_Theme_Black();}
     if (event.target.value === 'BUDS') {Toggle_Theme_Buds();}
+    if (event.target.value === 'SPLAT') {Toggle_Theme_Splat();}
 
 }, false);
 
@@ -2499,10 +3106,14 @@ if(theme_status == "custommode"){
 
 document.getElementById ("Preview_Llama_Color").addEventListener ("click", Preview_Llama_Color, false);
 document.getElementById ("Save_Llama_Color").addEventListener ("click", Save_Llama_Color, false);
+document.getElementById ("Reset_Llama_Color").addEventListener ("click", Reset_Llama_Color, false);
 document.getElementById ("Save_Llama_BG").addEventListener ("click", Save_Llama_BG, false);
 document.getElementById ("Remove_Llama_BG").addEventListener ("click", Remove_Llama_BG, false);
 document.getElementById ("theme_custommode").addEventListener ("click", Toggle_Theme_Custom, false);
 document.getElementById ("toggle_userbg").addEventListener ("click", Toggle_User_BG, false);
+document.getElementById ("toggle_userbg_cover").addEventListener ("click", User_BG_Cover, false);
+document.getElementById ("toggle_userbg_repeat").addEventListener ("click", User_BG_Repeat, false);
+document.getElementById ("toggle_userbg_center").addEventListener ("click", User_BG_Center, false);
 
 //----------------------------------------------------------------- CUSTOM_MODE_TOGGLE -----------------------------------------------------------------
 
@@ -2516,6 +3127,49 @@ function Toggle_Theme_Custom (zEvent) {
         body.classList.remove("pinkmode","greenmode","bluemode","mauvemode","orangemode","redmode","purplemode","blackmode","budsmode","smashmode","splatmode","dark");
 //END OTHER THEMES
 };
+
+//----------------------------------------------------------------- USER_BG_COVER -----------------------------------------------------------------
+var user_bg_cover = localStorage.getItem('user_bg_cover');
+if(user_bg_cover){body.classList.add(user_bg_cover)}
+if(user_bg_cover){document.getElementById("toggle_userbg_cover").checked = true;}
+
+function User_BG_Cover (zEvent) {
+    var user_bg_cover_new = "ubg_cover_on";
+    var user_bg_cover_current = localStorage.getItem('user_bg_cover');
+        body.classList.toggle(user_bg_cover_new);
+        if(user_bg_cover_current != user_bg_cover_new){localStorage.setItem('user_bg_cover', user_bg_cover_new);}
+        if(user_bg_cover_current == user_bg_cover_new){localStorage.setItem('user_bg_cover', '');}
+};
+
+//----------------------------------------------------------------- USER_BG_REPEAT -----------------------------------------------------------------
+var user_bg_repeat = localStorage.getItem('user_bg_repeat');
+if(user_bg_repeat){body.classList.add(user_bg_repeat)}
+if(user_bg_repeat){document.getElementById("toggle_userbg_repeat").checked = true;}
+
+function User_BG_Repeat (zEvent) {
+    var user_bg_repeat_new = "ubg_repeat_on";
+    var user_bg_repeat_current = localStorage.getItem('user_bg_repeat');
+        body.classList.toggle(user_bg_repeat_new);
+        if(user_bg_repeat_current != user_bg_repeat_new){localStorage.setItem('user_bg_repeat', user_bg_repeat_new);}
+        if(user_bg_repeat_current == user_bg_repeat_new){localStorage.setItem('user_bg_repeat', '');}
+};
+
+//----------------------------------------------------------------- USER_BG_CENTER -----------------------------------------------------------------
+var user_bg_center = localStorage.getItem('user_bg_center');
+if(user_bg_center){body.classList.add(user_bg_center)}
+if(user_bg_center){document.getElementById("toggle_userbg_center").checked = true;}
+
+var theme_selector_status = localStorage.getItem('theme_selector');
+if(theme_selector_status){body.classList.add(theme_selector_status)}
+
+function User_BG_Center (zEvent) {
+    var user_bg_center_new = "ubg_center_on";
+    var user_bg_center_current = localStorage.getItem('user_bg_center');
+        body.classList.toggle(user_bg_center_new);
+        if(user_bg_center_current != user_bg_center_new){localStorage.setItem('user_bg_center', user_bg_center_new);}
+        if(user_bg_center_current == user_bg_center_new){localStorage.setItem('user_bg_center', '');}
+};
+
 
 //----------------------------------------------------------------- CUSTOM_MODE_SAVE -----------------------------------------------------------------
 
@@ -2560,6 +3214,36 @@ function Preview_Llama_Color (zEvent) {
             document.documentElement.style.setProperty('--custommode-lightbgcolor', '#' + llama_input2);
             document.documentElement.style.setProperty('--custommode-bordercolor', '#' + llama_input3);
             document.documentElement.style.setProperty('--custommode-textcolor', '#' + llama_input4);
+};
+
+//----------------------------------------------------------------- CUSTOM_MODE_RESET -----------------------------------------------------------------
+
+function Reset_Llama_Color (zEvent) {
+    var llama_color1 = localStorage.getItem('llama_color1');
+    var llama_color2 = localStorage.getItem('llama_color2');
+    var llama_color3 = localStorage.getItem('llama_color3');
+    var llama_color4 = localStorage.getItem('llama_color4');
+    var llama_input1 = "22add5";
+    var llama_input2 = "c7cfd9";
+    var llama_input3 = "FFFFFF";
+    var llama_input4 = "000000";
+
+        if(llama_input1 != ""){
+            document.getElementById("theme_custommode").checked = true;
+            document.documentElement.style.setProperty('--custommode-bgcolor', '#' + llama_input1);
+            document.documentElement.style.setProperty('--custommode-lightbgcolor', '#' + llama_input2);
+            document.documentElement.style.setProperty('--custommode-bordercolor', '#' + llama_input3);
+            document.documentElement.style.setProperty('--custommode-textcolor', '#' + llama_input4);
+            localStorage.setItem('llama_color1', llama_input1);
+            localStorage.setItem('llama_color2', llama_input2);
+            localStorage.setItem('llama_color3', llama_input3);
+            localStorage.setItem('llama_color4', llama_input4);
+        } else {
+            document.getElementById("CustomMode").checked = false;
+            localStorage.setItem('llama_color1', '');
+            localStorage.setItem('llama_color2', '');
+            localStorage.setItem('llama_color3', '');
+            localStorage.setItem('llama_color4', '');}
 };
 
 //----------------------------------------------------------------- CAM_BG_TOGGLE -----------------------------------------------------------------
@@ -2649,14 +3333,14 @@ function Toggle_Chat (cEvent) {
 
 //----------------------------------------------------------------- USER_LIST_TOGGLE -----------------------------------------------------------------
 
-var userlist_Status = localStorage.getItem('ul');
+var userlist_Status = localStorage.getItem('user_status');
 if(userlist_Status){body.classList.add(userlist_Status);}
 
 document.getElementById ("UserList_Hider").addEventListener ("click", Toggle_UserList, false);
 function Toggle_UserList (cEvent) {
-    var userlist_Status = localStorage.getItem('chat')
+    var userlist_Status = localStorage.getItem('user_status')
         body.classList.toggle("hide_userlist");
-        if(userlist_Status != "hide_userlist"){localStorage.setItem('ul', 'hide_userlist');} else {localStorage.setItem('ul', '');}
+        if(userlist_Status != "hide_userlist"){localStorage.setItem('user_status', 'hide_userlist');} else {localStorage.setItem('user_status', '');}
 };
 
 //----------------------------------------------------------------- LTR_TOGGLE -----------------------------------------------------------------
@@ -2733,7 +3417,7 @@ if(theme_status == "redmode"){document.getElementById("theme_wizard").selectedIn
 if(theme_status == "purplemode"){document.getElementById("theme_wizard").selectedIndex = 8;}
 if(theme_status == "blackmode"){document.getElementById("theme_wizard").selectedIndex = 9;}
 if(theme_status == "budsmode"){document.getElementById("theme_wizard").selectedIndex = 10;}
-
+if(theme_status == "splatmode"){document.getElementById("theme_wizard").selectedIndex = 11;}
 //----------------------------------------------------------------- THEME_TOGGLE_DEFAULT -----------------------------------------------------------------
 
 function Toggle_Theme_Default (zEvent) {
@@ -2857,6 +3541,19 @@ function Toggle_Theme_Buds (zEvent) {
         if(theme_status == color_choice){localStorage.setItem('theme', '');}
 //REMOVE OTHER THEMES ON BODY TAG
         body.classList.remove("custommode","pinkmode","greenmode","bluemode","mauvemode","orangemode","redmode","purplemode","blackmode","smashmode","splatmode");
+//END OTHER THEMES
+};
+
+//----------------------------------------------------------------- THEME_TOGGLE_SPLAT -----------------------------------------------------------------
+
+function Toggle_Theme_Splat (zEvent) {
+    var color_choice = "splatmode";
+    var theme_status = localStorage.getItem('theme');
+        body.classList.toggle(color_choice);
+        if(theme_status != color_choice){localStorage.setItem('theme', color_choice);}
+        if(theme_status == color_choice){localStorage.setItem('theme', '');}
+//REMOVE OTHER THEMES ON BODY TAG
+        body.classList.remove("custommode","pinkmode","greenmode","bluemode","mauvemode","orangemode","redmode","purplemode","blackmode","smashmode","budsmode");
 //END OTHER THEMES
 };
 

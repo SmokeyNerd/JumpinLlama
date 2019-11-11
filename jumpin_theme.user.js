@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.28
+// @version      2019.29
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -2855,6 +2855,11 @@ color:var(--budsmode-textcolor);
     border-color: var(--budsmode-bordercolor);}
 .user_bg_settings {display:none;}
 .user_bg .user_bg_settings {display:block;}
+
+.splatmode #theme_wizard,#theme_wizard > option.buds_mode {
+color:var(--budsmode-textcolor);
+    background-color: var(--splatmode-bordercolor);
+    border-color: var(--splatmode-bordercolor);}
 
 ` );
 

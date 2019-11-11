@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.31
+// @version      2019.32
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -218,21 +218,21 @@ border:1px solid black;
 
 /* ------------------ MAIN_MESSAGES ------------------ */
 
-.chat__Message {
-    padding-right: 0;}
-.chat__MessageBody  {padding-right: 10px;padding-left: 10px;}
-.chat__MessageBody-status {
-    color: #fff;
-    background-color: #22add5;
-    min-height: 18px;
-    padding-left: 10px;padding-right: 10px;}
-
-
-
-.chat__MessageBody-link {
-    color:#ff0000;}
-
+.chat__Message {padding-right: 0;}
+.chat__MessageBody-link {color:#ff0000;}
 .chat__Message:hover .chat__MessageTimestamp {color:#7289DA;}
+
+.chat__MessageBody  {
+	border-radius: 25px;
+	padding-right: 10px;
+	padding-left: 10px;}
+.chat__MessageBody-status {
+	border-radius: 2px;
+	color: #fff;
+	background-color: #22add5;
+	min-height: 18px;
+	padding-left: 2px;
+	padding-right: 2px;}
 
 
 /* ------------------ CHANGE_NICKNAME ------------------ */
@@ -398,8 +398,7 @@ height: 350px !important;}
 }
 
 .cams, .chat, .chat__FeedWrapper {background:transparent;}
-.chat__MessageBody {
-border-radius: 25px;}
+
 
 .chat__UserListItem {
     border: 1px solid black;

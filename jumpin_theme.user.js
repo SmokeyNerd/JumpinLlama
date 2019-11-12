@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.34
+// @version      2019.35
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -1819,8 +1819,8 @@ border-color:var(--blackmode-bordercolor);}
 .blackmode .fa-envelope:before {color:#7289da;}
 .blackmode .chat__UserListItem {
     border-color:var(--blackmode-lightbordercolor);
-background-color:#272727;}
-.blackmode .fa-clipboard:before {color:var(--blackmode-bgcolor);}
+background-color:var(--blackmode-bordercolor);}
+.blackmode .fa-clipboard:before {color:#7289da;}
 
 .blackmode .fa-user:before {color:var(--blackmode-lightbordercolor);}
 
@@ -1835,9 +1835,9 @@ background-color:#272727;}
 
 .blackmode .room {background-color:var(--blackmode-lightbgcolor);}
 .blackmode .modal__Window {border: 1px solid #7289da;}
-.blackmode .chat__HeaderOption {border-color: var(--blackmode-bordercolor);background-color: var(--blackmode-bordercolor);color: var(--blackmode-lightbgcolor);}
+.blackmode .chat__HeaderOption {border-color: var(--blackmode-bordercolor);background-color: var(--blackmode-bordercolor);color: #7289da;}
 
-.blackmode .fa.fa-gear:before, .blackmode .icon--hd {color: var(--blackmode-lightbgcolor);}
+.blackmode .fa.fa-gear:before, .blackmode .icon--hd {color: #7289da;}
 
 .blackmode .chat__MessageBody {
     background-color: var(--blackmode-bgcolor);
@@ -1884,7 +1884,7 @@ background-color:#272727;}
 
 .blackmode .button-blue {
     background-color: var(--blackmode-bordercolor);
-    color:  var(--blackmode-lightbgcolor);
+    color:  #7289DA;
     border:1px solid  var(--blackmode-bordercolor);}
 
 .blackmode .chat__ShareCopy {
@@ -1926,10 +1926,10 @@ background-color:#272727;}
 .blackmode .layout--horizontal .chat__UserList {
     border-color: var(--blackmode-lightbordercolor);}
 
-.blackmode .chat__UserListItem+.chat__UserListItem {
+.blackmode .chat__UserListItem {
     background-color: var(--blackmode-bordercolor);}
 
-.blackmode .chat__UserListItem+.chat__UserListItem:hover {
+.blackmode .chat__UserListItem:hover {
     background-color: var(--blackmode-bgcolor);}
 
 .blackmode #new > svg > path,

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.33
+// @version      2019.34
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -1744,8 +1744,8 @@ background-color:var(--purplemode-bordercolor);}
 
 /*------------------------------------------------------------------------------------- black_THEME ---*/
 :root {
-    --blackmode-bgcolor: #2C2F33;
-    --blackmode-bordercolor: #7289DA;
+--blackmode-bgcolor: #2C2F33;
+    --blackmode-bordercolor: #23272a;
     --blackmode-lightbgcolor: #191919;
     --blackmode-textcolor: #fff;
     --blackmode-lightbordercolor: #313131;}
@@ -1811,30 +1811,30 @@ color:var(--blackmode-textcolor);}
 .blackmode .cams__RoomName {color:var(--blackmode-textcolor);}
 .blackmode .roomHeader__UserAction {
 background-color:var(--blackmode-bordercolor);
-color:var(--blackmode-bgcolor);
+color:white;
 border-color:var(--blackmode-bordercolor);}
-.blackmode .mobileHidden {color:var(--blackmode-bgcolor);}
+.blackmode .mobileHidden {color:#7289da;}
 .blackmode .button-default {color:var(--blackmode-bgcolor);background-color:var(--blackmode-bordercolor);}
 .blackmode .button-white {background-color:var(--blackmode-bordercolor);}
-.blackmode .fa-envelope:before {color:var(--blackmode-bgcolor);}
+.blackmode .fa-envelope:before {color:#7289da;}
 .blackmode .chat__UserListItem {
-    border-color:var(--blackmode-bordercolor);
-background-color:var(--blackmode-bordercolor);}
+    border-color:var(--blackmode-lightbordercolor);
+background-color:#272727;}
 .blackmode .fa-clipboard:before {color:var(--blackmode-bgcolor);}
 
-.blackmode .fa-user:before {color:var(--blackmode-bgcolor);}
+.blackmode .fa-user:before {color:var(--blackmode-lightbordercolor);}
 
-.blackmode .userList__UserHandle-current {color:var(--blackmode-bgcolor);}
+.blackmode .userList__UserHandle-current {color:white;}
 
 .blackmode .mediaSources__SourceWrapper {background-color:var(--blackmode-bordercolor);}
-.blackmode .tabs__Item.active::after {background-color:var(--blackmode-bordercolor);}
+.blackmode .tabs__Item.active::after {background-color:#7289da;}
 .blackmode.ltr_layout .chat__UserList {border-color:var(--blackmode-bordercolor);}
-.blackmode #Chat_Hider::after {background:var(--blackmode-bordercolor);}
-.blackmode #UserList_Hider::after {background:var(--blackmode-bordercolor);}
-.blackmode.ltr_layout #LTR_Toggle::after {background:var(--blackmode-bordercolor);}
+.blackmode #Chat_Hider::after {background:#7289da;}
+.blackmode #UserList_Hider::after {background:#7289da;}
+.blackmode.ltr_layout #LTR_Toggle::after {background:#7289da;}
 
 .blackmode .room {background-color:var(--blackmode-lightbgcolor);}
-.blackmode .modal__Window {border: 1px solid var(--blackmode-bordercolor);}
+.blackmode .modal__Window {border: 1px solid #7289da;}
 .blackmode .chat__HeaderOption {border-color: var(--blackmode-bordercolor);background-color: var(--blackmode-bordercolor);color: var(--blackmode-lightbgcolor);}
 
 .blackmode .fa.fa-gear:before, .blackmode .icon--hd {color: var(--blackmode-lightbgcolor);}
@@ -1921,17 +1921,21 @@ background-color:var(--blackmode-bordercolor);}
 
 /* --------- USERS LIST --------- */
 .blackmode .chat__UserList {
-    background-color: var(--blackmode-bgcolor);}
+    background-color: var(--blackmode-lightbgcolor);}
 .blackmode .chat__Feed{border-left-color: var(--blackmode-lightbordercolor);}
 .blackmode .layout--horizontal .chat__UserList {
     border-color: var(--blackmode-lightbordercolor);}
 
 .blackmode .chat__UserListItem+.chat__UserListItem {
-    border-top-color: var(--blackmode-bordercolor);
     background-color: var(--blackmode-bordercolor);}
 
 .blackmode .chat__UserListItem+.chat__UserListItem:hover {
     background-color: var(--blackmode-bgcolor);}
+
+.blackmode #new > svg > path,
+#app > div > div.roomHeader > div > a.button.button-floating.button-icon.button-red.roomHeader__UserAction > svg > path,
+#app > div > div.cams > div.cams__Header > div.cams__HeaderActions > button > svg > path
+ {color:#7289da !important;}
 
 /*------------------------------------------------------------------------------------- buds_THEME ---*/
 :root {

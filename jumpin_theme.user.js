@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.36
+// @version      2019.37
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -123,7 +123,8 @@ function addGlobalStyle(css) {
 addGlobalStyle( `
 
 /*----- THEME_VARIABLES ---------------------------*/
-
+.button-blue:hover {opacity:0.6;}
+.chat__HeaderOption:hover {opacity:0.6;}
 :root {
 
     --user-bg-image: none;

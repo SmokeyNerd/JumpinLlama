@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.35
+// @version      2019.36
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -213,7 +213,7 @@ padding-left: 15px;
 .layout--horizontal .chat__UserList {
     border-left-color: #313131;
 }
-.chat__UserListItem+.chat__UserListItem {
+.chat__UserListItem {
     border-radius: 5px;
     margin-top: 5px;
 }
@@ -591,11 +591,11 @@ background-color:var(--pinkmode-bordercolor);}
 .pinkmode .layout--horizontal .chat__UserList {
     border-left-color: var(--pinkmode-bordercolor);}
 
-.pinkmode .chat__UserListItem+.chat__UserListItem {
+.pinkmode .chat__UserListItem {
     border-top-color: var(--pinkmode-bordercolor);
     background-color: var(--pinkmode-bordercolor);}
 
-.pinkmode .chat__UserListItem+.chat__UserListItem:hover {
+.pinkmode .chat__UserListItem:hover {
     background-color: var(--pinkmode-bgcolor);}
 
 /*------------------------------------------------------------------------------------- GREEN_THEME ---*/
@@ -781,11 +781,11 @@ background-color:var(--greenmode-bordercolor);}
 .greenmode .layout--horizontal .chat__UserList {
     border-left-color: var(--greenmode-bordercolor);}
 
-.greenmode .chat__UserListItem+.chat__UserListItem {
+.greenmode .chat__UserListItem {
     border-top-color: var(--greenmode-bordercolor);
     background-color: var(--greenmode-bordercolor);}
 
-.greenmode .chat__UserListItem+.chat__UserListItem:hover {
+.greenmode .chat__UserListItem:hover {
     background-color: var(--greenmode-bgcolor);}
 /*------------------------------------------------------------------------------------- blue_THEME ---*/
 :root {
@@ -971,11 +971,11 @@ background-color:var(--bluemode-bordercolor);}
 .bluemode .layout--horizontal .chat__UserList {
     border-left-color: var(--bluemode-bordercolor);}
 
-.bluemode .chat__UserListItem+.chat__UserListItem {
+.bluemode .chat__UserListItem {
     border-top-color: var(--bluemode-bordercolor);
     background-color: var(--bluemode-bordercolor);}
 
-.bluemode .chat__UserListItem+.chat__UserListItem:hover {
+.bluemode .chat__UserListItem:hover {
     background-color: var(--bluemode-bgcolor);}
 
 
@@ -1162,11 +1162,11 @@ background-color:var(--mauvemode-bordercolor);}
 .mauvemode .layout--horizontal .chat__UserList {
     border-left-color: var(--mauvemode-bordercolor);}
 
-.mauvemode .chat__UserListItem+.chat__UserListItem {
+.mauvemode .chat__UserListItem {
     border-top-color: var(--mauvemode-bordercolor);
     background-color: var(--mauvemode-bordercolor);}
 
-.mauvemode .chat__UserListItem+.chat__UserListItem:hover {
+.mauvemode .chat__UserListItem:hover {
     background-color: var(--mauvemode-bgcolor);}
 
 
@@ -1353,11 +1353,11 @@ background-color:var(--orangemode-bordercolor);}
 .orangemode .layout--horizontal .chat__UserList {
     border-left-color: var(--orangemode-bordercolor);}
 
-.orangemode .chat__UserListItem+.chat__UserListItem {
+.orangemode .chat__UserListItem {
     border-top-color: var(--orangemode-bordercolor);
     background-color: var(--orangemode-bordercolor);}
 
-.orangemode .chat__UserListItem+.chat__UserListItem:hover {
+.orangemode .chat__UserListItem:hover {
     background-color: var(--orangemode-bgcolor);}
 
 
@@ -1544,11 +1544,11 @@ background-color:var(--redmode-bordercolor);}
 .redmode .layout--horizontal .chat__UserList {
     border-left-color: var(--redmode-bordercolor);}
 
-.redmode .chat__UserListItem+.chat__UserListItem {
+.redmode .chat__UserListItem {
     border-top-color: var(--redmode-bordercolor);
     background-color: var(--redmode-bordercolor);}
 
-.redmode .chat__UserListItem+.chat__UserListItem:hover {
+.redmode .chat__UserListItem:hover {
     background-color: var(--redmode-bgcolor);}
 
 /*------------------------------------------------------------------------------------- purple_THEME ---*/
@@ -1734,11 +1734,11 @@ background-color:var(--purplemode-bordercolor);}
 .purplemode .layout--horizontal .chat__UserList {
     border-left-color: var(--purplemode-bordercolor);}
 
-.purplemode .chat__UserListItem+.chat__UserListItem {
+.purplemode .chat__UserListItem {
     border-top-color: var(--purplemode-bordercolor);
     background-color: var(--purplemode-bordercolor);}
 
-.purplemode .chat__UserListItem+.chat__UserListItem:hover {
+.purplemode .chat__UserListItem:hover {
     background-color: var(--purplemode-bgcolor);}
 
 
@@ -2125,11 +2125,11 @@ background-color:var(--budsmode-bordercolor);}
 .budsmode .layout--horizontal .chat__UserList {
     border-left-color: var(--budsmode-bordercolor);}
 
-.budsmode .chat__UserListItem+.chat__UserListItem {
+.budsmode .chat__UserListItem {
     border-top-color: var(--budsmode-bordercolor);
     background-color: var(--budsmode-bordercolor);}
 
-.budsmode .chat__UserListItem+.chat__UserListItem:hover {
+.budsmode .chat__UserListItem:hover {
     background-color: var(--budsmode-bgcolor);}
 
 /*------------------------------------------------------------------------------------- SPLAT_THEME ---*/
@@ -2354,11 +2354,11 @@ margin-bottom: 19px;
 border:0px;
     border-left-color: var(--splatmode-bordercolor);}
 
-.splatmode .chat__UserListItem+.chat__UserListItem {
+.splatmode .chat__UserListItem {
     border-top-color: var(--splatmode-bordercolor);
     background-color: var(--splatmode-bordercolor);}
 
-.splatmode .chat__UserListItem+.chat__UserListItem:hover {
+.splatmode .chat__UserListItem:hover {
     background-color: var(--splatmode-lightbgcolor);
 color:  var(--splatmode-textcolor) !important;}
 
@@ -2548,11 +2548,11 @@ background-color:var(--custommode-bordercolor);}
 .custommode .layout--horizontal .chat__UserList {
     border-left-color: var(--custommode-bordercolor);}
 
-.custommode .chat__UserListItem+.chat__UserListItem {
+.custommode .chat__UserListItem {
     border-top-color: var(--custommode-bordercolor);
     background-color: var(--custommode-bordercolor);}
 
-.custommode .chat__UserListItem+.chat__UserListItem:hover {
+.custommode .chat__UserListItem:hover {
     background-color: var(--custommode-bgcolor);}
 
 /* ----------------------------------------------------- END_THEMES -----------------------------------*/

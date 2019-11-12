@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.32
+// @version      2019.33
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -176,9 +176,9 @@ border:1px solid black;
     top:-17px;
     margin-top: 15px !important;
     background-color: #cfcfcf;
-    border-radius: 25px;
+    border-radius: 15px;
     margin-bottom: 0px;
-    margin-top: 0px;
+    margin-top: 0px;margin-right: 10px;
 }
 
 .bubble_chat .chat__MessageBody-status {
@@ -187,6 +187,8 @@ border:1px solid black;
     bordeR: 1px solid #22add5;
     margin-top: 17px;
     min-height: 18px;
+padding-left: 15px;
+    padding-right: 15px;
 }
 
 .bubble_chat .chat__MessageTimestamp {
@@ -223,7 +225,7 @@ border:1px solid black;
 .chat__Message:hover .chat__MessageTimestamp {color:#7289DA;}
 
 .chat__MessageBody  {
-	border-radius: 25px;
+	border-radius: 10px;
 	padding-right: 10px;
 	padding-left: 10px;}
 .chat__MessageBody-status {

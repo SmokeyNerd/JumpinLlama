@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.38
+// @version      2019.39
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -256,13 +256,14 @@ div.modal__Body > form > input {
 .cams__RoomDisplayPic {border-radius: 100px;}
 
 
+
 /* ------------------------------ LLAMA_MENU ----------------------------------- */
 .llama_menu .feature_menu {
     color:#000;
     display:block;
-    height: 240px;}
+    height: 150px;}
 .user_bg .feature_menu {
-height: 350px !important;}
+    height: 240px !important;}
 .llama_menu #toggle_menu {
     width:unset;}
 
@@ -2325,7 +2326,7 @@ color:black;
 .splatmode .chat__Message:hover .chat__MessageTimestamp {
     color: var(--splatmode-textcolor);}
 
-.splatmode #toggle_chat,.splatmode #toggle_userlist,.splatmode #toggle_ltr {color:#51bc02;}
+
 
 /* --------- USERS LIST --------- */
 
@@ -2557,49 +2558,9 @@ background-color:var(--custommode-bordercolor);}
     background-color: var(--custommode-bgcolor);}
 
 /* ----------------------------------------------------- END_THEMES -----------------------------------*/
-.pinkmode #toggle_chat {color: var(--pinkmode-textcolor);}
-.greenmode #toggle_chat {color: var(--greenmode-bgcolor);}
-.bluemode #toggle_chat {color: var(--bluemode-bgcolor);}
-.mauvemode #toggle_chat {color: var(--mauvemode-bgcolor);}
-.orangemode #toggle_chat {color: var(--orangemode-bgcolor);}
-.redmode #toggle_chat {color: var(--redmode-bgcolor);}
-.purplemode #toggle_chat {color: var(--purplemode-bgcolor);}
-.blackmode #toggle_chat {color: #2C2F33;}
-.budsmode #toggle_chat {color: var(--budsmode-textcolor);}
-
-.pinkmode #toggle_userlist {color: var(--pinkmode-textcolor);}
-.greenmode #toggle_userlist {color: var(--greenmode-bgcolor);}
-.bluemode #toggle_userlist {color: var(--bluemode-bgcolor);}
-.mauvemode #toggle_userlist {color: var(--mauvemode-bgcolor);}
-.orangemode #toggle_userlist {color: var(--orangemode-bgcolor);}
-.redmode #toggle_userlist {color: var(--redmode-bgcolor);}
-.purplemode #toggle_userlist {color: var(--purplemode-bgcolor);}
-.blackmode #toggle_userlist {color: #2C2F33;}
-.budsmode #toggle_userlist {color: var(--budsmode-textcolor);}
-
-.pinkmode #toggle_ltr {color: var(--pinkmode-textcolor);}
-.greenmode #toggle_ltr {color: var(--greenmode-bgcolor);}
-.bluemode #toggle_ltr {color: var(--bluemode-bgcolor);}
-.mauvemode #toggle_ltr {color: var(--mauvemode-bgcolor);}
-.orangemode #toggle_ltr {color: var(--orangemode-bgcolor);}
-.redmode #toggle_ltr {color: var(--redmode-bgcolor);}
-.purplemode #toggle_ltr {color: var(--purplemode-bgcolor);}
-.blackmode #toggle_ltr {color: #2C2F33;}
-.budsmode #toggle_ltr {color: var(--budsmode-textcolor);}
 
 
 /* ------------------------------ CHAT_HIDER ----------------------------------- */
-
-#Chat_Hider, #UserList_Hider, #LTR_Toggle {
-    text-transform: uppercase;
-    font-weight: 700;
-    cursor: pointer;
-    padding: 23px 13px 13px 13px;
-    font-size: 1em;
-    background-color: transparent;
-    float: left;}
-
-#Chat_Hider:hover {background-color: rgba(255,255,255,.05);}
 
 .toggle_chat {display:none;}
 
@@ -2609,45 +2570,14 @@ background-color:var(--custommode-bordercolor);}
 .hide_chat .chat__UserList {width: 100%;}
 .hide_chat .room.layout--horizontal {grid-template-columns: 1fr 1fr 20rem;}
 .hide_userlist .room.layout--horizontal {grid-template-columns: 1fr 1fr 40rem;}
-.hide_chat #Chat_Hider::after{display:none;}
-.hide_chat #UserList_Hider {right:0px;}
-.hide_chat #Chat_Hider {right:66px;}
 
-#Chat_Hider::after{
-content: " ";
-    display: block;
-    background: #1b8cb5;
-    height: 2px;
-    /* width: 56%; */
-    position: absolute;
-    bottom: 1px;
-    left: 0px;
-    width: 83px;}
 
 /* ------------------------------ USER_LIST_HIDER ----------------------------------- */
 
-.hide_userlist #UserList_Hider::after {display:none;}
-
-#UserList_Hider:hover {background-color: rgba(255,255,255,.05);}
-
 .hide_userlist .chat__UserList {display:none;}
 
-#UserList_Hider::after{
-    content: " ";
-    display: block;
-    background: #1b8cb5;
-    height: 2px;
-    position: absolute;
-    bottom: 1px;
-    left: 83px;
-    width: 64px;}
+/* ------------------------------ LTR_LAYOUT -----------------------------------*/
 
-/*---------------------------------------------------------TEST---*/
-
-#Chat_Extras {
-    position: absolute;
-    top: 0px;
-    left: 220px;}
 
 .hide_chat.hide_userlist .room.layout--horizontal {grid-template-columns: 1fr 1fr 0rem;}
 
@@ -2670,7 +2600,6 @@ border-left:0px;
     border-bottom-right-radius: 0px;
 border-right:0px;border-left:1px;
 }
-
 
 .hide_userlist.ltr_layout .room.layout--horizontal {
     grid-template-columns: 0.5fr 1fr 60rem;
@@ -2697,24 +2626,10 @@ screen and (min-height: 480px) and (min-width: 2500px) {
     grid-template-columns: 0fr 1fr 20rem;
 }
 
-#LTR_Toggle::after {display:none;}
-
 .ltr_layout.hide_chat.hide_userlist .chat {
     display: none;}
 
 .ltr_layout.hide_chat.hide_userlist .room.layout--horizontal {grid-template-columns: 0fr 1fr 0rem;}
-
-#LTR_Toggle:hover {background-color: rgba(255,255,255,.05);}
-
-.ltr_layout #LTR_Toggle::after{
-    content: " ";
-    display: block;
-    background: #1b8cb5;
-    height: 2px;
-    position: absolute;
-    bottom: 1px;
-    left: 147px;
-    width: 46px;}
 
 .ltr_layout .chat__UserList {
     border-right: 1px solid #313131;}
@@ -2852,9 +2767,7 @@ z-index:1;
     left: 430px;
 }
 
-.theme_selector_on #theme_wizard {display:block;}
-#theme_wizard {
-display:none;
+#theme_wizard {display:block;
 width: 132px;
     height: 33px;
     border-radius: 3px;}
@@ -2872,32 +2785,77 @@ color:var(--budsmode-textcolor);
     background-color: var(--splatmode-bordercolor);
     border-color: var(--splatmode-bordercolor);}
 
+
+
+/* ------------------------------ LLAMA_CHAT_MENU ----------------------------------- */
+
+.open_llama_chat #Llama_Chat {
+    display: block;
+    top: 51.7%;
+    position: absolute;
+    right: 11px;
+    border-radius: 3px;
+}
+
+#Llama_Chat {
+    display: none;
+    width: 154px;
+z-index:4000;
+}
+
+.hide_userlist.hide_chat.open_llama_chat #Llama_Chat {
+    top: -205px;
+}
+
+.room.layout--horizontal > div.chat > div.chat__Header > div.chat__HeaderOptions > div {    top: 94px !important;}
+
+/* ------------------------------ LLAMA_CAM_MENU ----------------------------------- */
+
+.open_llama_cam #Llama_Cam {
+    display: block;
+    top: 58%;
+    position: absolute;
+    right: 11px;
+    border-radius: 3px;
+}
+
+#Llama_Cam {
+    display: none;
+    width: 154px;
+z-index:4000;
+}
+
+.hide_userlist.hide_chat.open_llama_chat #Llama_Cam {
+    top: -205px;
+}
+
+.room.layout--horizontal > div.chat > div.chat__Header > div.chat__HeaderOptions > div {    top: 94px !important;}
+
+/* ------------------------------ LLAMA_THEME_MENU ----------------------------------- */
+
+.open_llama_theme #Llama_Theme {
+    display: block;
+    top: 58%;
+    position: absolute;
+    right: 11px;
+    border-radius: 3px;background: #f7f7f7;
+}
+
+#Llama_Theme {
+    display: none;
+    width: 154px;height:90px;
+z-index:4000;
+}
+
+.hide_userlist.hide_chat.open_llama_theme #Llama_Theme {
+    top: -205px;
+}
+
+.room.layout--horizontal > div.chat > div.chat__Header > div.chat__HeaderOptions > div {    top: 94px !important;}
+
 ` );
 
 //----------------------------------------------------------------- LLAMA_MENU -----------------------------------------------------------------*/
-
-//------------ THEME_SELECTOR_CREATOR ----------------*/
-var ThemeNode = document.createElement ('div');
-
-ThemeNode.innerHTML = (`
-<select id="theme_wizard">
-  <option value="">Select Theme..</option>
-  <option value="Default Theme">Default Theme</option>
-  <option value="PINK" class="pink_mode">PINK</option>
-  <option value="GREEN" class="green_mode">GREEN</option>
-  <option value="BLUE" class="blue_mode">BLUE</option>
-  <option value="MAUVE" class="mauve_mode">MAUVE</option>
-  <option value="ORANGE" class="orange_mode">ORANGE</option>
-  <option value="RED" class="red_mode">RED</option>
-  <option value="PURPLE" class="purple_mode">PURPLE</option>
-  <option value="BLACK" class="black_mode">BLACK</option>
-  <option value="BUDS" class="buds_mode">BUDS</option>
-  <option value="SPLAT" class="splat_mode">SPLATOON</option>
-</select>` );
-
-ThemeNode.setAttribute ('id', 'Theme_Selector');
-document.body.appendChild (ThemeNode);
-
 
 //------------ LLAMA_NOTICE_CREATOR ----------------*/
 var NoticeNode = document.createElement ('div');
@@ -2910,30 +2868,6 @@ NoticeNode.innerHTML = (`
 NoticeNode.setAttribute ('id', 'Llama_Notice');
 document.body.appendChild (NoticeNode);
 
-//------------ HIDE_CHAT_USERLIST_CREATOR ----------------*/
-var ceNode = document.createElement ('div');
-
-ceNode.innerHTML = (`
-<div id="Chat_Hider">
-<label style="cursor:pointer;">
-<div id="toggle_chat">Chat Log</div>
-</label>
-</div>
-
-<div id="UserList_Hider">
-<label style="cursor:pointer;">
-<div id="toggle_userlist">Users</div>
-</label>
-</div>
-
-<div id="LTR_Toggle">
-<label style="cursor:pointer;">
-<div id="toggle_ltr">LTR</div>
-</label>
-</div>` );
-
-ceNode.setAttribute ('id', 'Chat_Extras');
-document.body.appendChild (ceNode);
 
 //------------ LLAMA_MENU_CREATOR ----------------*/
 var zNode = document.createElement ('div');
@@ -2988,23 +2922,6 @@ Custom Colors
                 <span class="check_head">Mini Youtube</span>
             </label>
 
-            <label class="container">
-                <input id="cam_border" type="checkbox">
-                <span class="reg_checkmark"></span>
-                <span class="check_head">Remove Cam Borders</span>
-            </label>
-
-            <label class="container">
-                <input id="cam_space" type="checkbox">
-                <span class="reg_checkmark"></span>
-                <span class="check_head">Remove Cam Spacing</span>
-            </label>
-            <label class="container">
-                <input id="bubble_chat" type="checkbox">
-                <span class="reg_checkmark"></span>
-                <span class="check_head">Bubble Chat</span>
-            </label>
-
             <span class="menu_header">
                 USER CAM BG
             </span>
@@ -3039,11 +2956,6 @@ Custom Colors
             <span class="menu_header">
                 THEME SETTINGS
             </span>
-            <label class="container" style="margin-top: 2px;">
-                <input id="show_themes" type="checkbox">
-                <span class="reg_checkmark"></span>
-                <span class="check_head">Toggle Theme Dropdown</span>
-            </label>
             <label class="container">
                 <input id="theme_custommode" type="checkbox">
                 <span class="reg_checkmark"></span>
@@ -3083,6 +2995,180 @@ document.addEventListener('input', function (event) {
 
 document.getElementById ("toggle_menu").addEventListener ("click", Toggle_Menu, false);
 function Toggle_Menu (zEvent) {body.classList.toggle("llama_menu");Toggle_Notice();};
+
+
+//------------ LLAMA_MORE_MENU_OPTIONS ----------------*/
+
+var chat_option_activator = 'activate'
+if(chat_option_activator != 'llama_chat_menu'){setTimeout(Toggle_Llama_Chat_Options, 3000);}
+
+function Toggle_Llama_Chat_Options (zEvent) {
+
+var lr = document.getElementsByClassName("room")[0];
+lr.id="llama_Room"
+var xz = document.getElementsByClassName("chat__HeaderOptions")[1];
+xz.id="chat__HeaderOptions"
+var el = document.getElementById("chat__HeaderOptions");
+
+
+//------------ CHAT_ICON ----------------*/
+var newEl = document.createElement('label');
+newEl.className = "button chat__HeaderOption";
+newEl.setAttribute ('id', 'chat__llamaOption');
+newEl.innerHTML = (`
+<i class="fa fa-user-cog"></i>
+` );
+
+el.appendChild(newEl);
+el.insertBefore(newEl, null);
+el.insertBefore(newEl, el.childNodes[3] || null);
+//------------ CHAT_MENU ----------------*/
+var newChatMenu = document.createElement('div');
+newChatMenu.className = "dropdown__Options";
+newChatMenu.setAttribute ('id', 'Llama_Chat');
+newChatMenu.innerHTML = (`
+<div class="dropdown__Option dropdown__Option-header">Chat settings</div>
+<label class="dropdown__Option" id="llama_bubble_chat">Bubble Chat<input id="bubble_chat_checkbox" class="jic-checkbox" type="checkbox"></label>
+
+<label class="dropdown__Option" id="chat_llama_hide">Toggle Chat<input id="hide_chat_checkbox" class="jic-checkbox" type="checkbox"></label>
+
+<label class="dropdown__Option" id="userlist_llama_hide">Toggle Userlist<input id="hide_userlist_checkbox" class="jic-checkbox" type="checkbox"></label>
+
+<label class="dropdown__Option">LTR Mode<input class="jic-checkbox" type="checkbox"></label>
+
+` );
+
+el.insertBefore(newChatMenu, el.childNodes[4] || null);
+document.getElementById ("chat__llamaOption").addEventListener ("click", Toggle_Chat_Llama, false);
+
+document.getElementById ("llama_bubble_chat").addEventListener ("click", Toggle_Bubble_Chat, false);
+var bubble_status = localStorage.getItem('bubble_status');
+if(bubble_status == "bubble_chat"){document.getElementById("bubble_chat_checkbox").checked = true;}
+
+document.getElementById ("chat_llama_hide").addEventListener ("click", Toggle_Chat, false);
+var chat_Status = localStorage.getItem('chat');
+if(chat_Status == "hide_chat"){document.getElementById("hide_chat_checkbox").checked = true;}
+
+document.getElementById ("userlist_llama_hide").addEventListener ("click", Toggle_UserList, false);
+var userlist_Status = localStorage.getItem('user_status');
+if(userlist_Status == "hide_userlist"){document.getElementById("hide_userlist_checkbox").checked = true;}
+
+document.getElementById ("ChatSettings").addEventListener ("click", Hide_Llama_Chat_Options, false);
+
+//------------ GRID_ICON ----------------*/
+var newCamIcon = document.createElement('label');
+newCamIcon.className = "button chat__HeaderOption";
+newCamIcon.setAttribute ('id', 'cam__llamaOption');
+newCamIcon.innerHTML = (`
+<i class="fa fa-th-large"></i>
+` );
+
+el.appendChild(newCamIcon);
+el.insertBefore(newCamIcon, null);
+el.insertBefore(newCamIcon, el.childNodes[4] || null);
+//------------ GRID_MENU ----------------*/
+var newCamMenu = document.createElement('div');
+newCamMenu.className = "dropdown__Options";
+newCamMenu.setAttribute ('id', 'Llama_Cam');
+newCamMenu.innerHTML = (`
+<div class="dropdown__Option dropdown__Option-header">Cam Settings</div>
+<label class="dropdown__Option" id="cam_border_llama">Cam Borders<input id="cam_border_checkbox" class="jic-checkbox" type="checkbox"></label>
+
+<label class="dropdown__Option" id="cam_spacing_llama">Cam Spacing<input id="cam_spacing_checkbox" class="jic-checkbox" type="checkbox"></label>
+
+` );
+
+el.insertBefore(newCamMenu, el.childNodes[4] || null);
+document.getElementById ("cam__llamaOption").addEventListener ("click", Toggle_Cam_Llama, false);
+
+document.getElementById ("cam_border_llama").addEventListener ("click", Toggle_No_Border, false);
+var border_status = localStorage.getItem('no_border');
+if(border_status == "no_border"){document.getElementById("cam_border_checkbox").checked = true;}
+
+document.getElementById ("cam_spacing_llama").addEventListener ("click", Toggle_No_Padding, false);
+var pad_status = localStorage.getItem('no_padding');
+if(pad_status == "no_padding"){document.getElementById("cam_spacing_checkbox").checked = true;}
+
+//------------ THEME_ICON ----------------*/
+var newThemeIcon = document.createElement('label');
+newThemeIcon.className = "button chat__HeaderOption";
+newThemeIcon.setAttribute ('id', 'theme__llamaOption');
+newThemeIcon.innerHTML = (`
+<i class="fa fa-palette"></i>
+` );
+
+el.appendChild(newThemeIcon);
+el.insertBefore(newThemeIcon, null);
+el.insertBefore(newThemeIcon, el.childNodes[6] || null);
+
+//------------ THEME_MENU ----------------*/
+var newThemeMenu = document.createElement('div');
+newThemeMenu.className = "dropdown__Options";
+newThemeMenu.setAttribute ('id', 'Llama_Theme');
+newThemeMenu.innerHTML = (`
+<div class="dropdown__Option dropdown__Option-header">Theme Settings</div>
+<label class="dropdown__Option" id="cam_border_llama" style="padding-top: 30px;">
+<select id="theme_wizard">
+  <option value="">Select Theme..</option>
+  <option value="Default Theme">Default Theme</option>
+  <option value="PINK" class="pink_mode">PINK</option>
+  <option value="GREEN" class="green_mode">GREEN</option>
+  <option value="BLUE" class="blue_mode">BLUE</option>
+  <option value="MAUVE" class="mauve_mode">MAUVE</option>
+  <option value="ORANGE" class="orange_mode">ORANGE</option>
+  <option value="RED" class="red_mode">RED</option>
+  <option value="PURPLE" class="purple_mode">PURPLE</option>
+  <option value="BLACK" class="black_mode">BLACK</option>
+  <option value="BUDS" class="buds_mode">BUDS</option>
+  <option value="SPLAT" class="splat_mode">SPLATOON</option>
+</select>
+</label>
+` );
+
+el.insertBefore(newThemeMenu, el.childNodes[4] || null);
+document.getElementById ("theme__llamaOption").addEventListener ("click", Toggle_Theme_Llama, false);
+
+//------- SET DROPDOWN CHOICE -------
+if(theme_status == ""){document.getElementById("theme_wizard").selectedIndex = 0;}
+if(theme_status == "pinkmode"){document.getElementById("theme_wizard").selectedIndex = 2;}
+if(theme_status == "greenmode"){document.getElementById("theme_wizard").selectedIndex = 3;}
+if(theme_status == "bluemode"){document.getElementById("theme_wizard").selectedIndex = 4;}
+if(theme_status == "mauvemode"){document.getElementById("theme_wizard").selectedIndex = 5;}
+if(theme_status == "orangemode"){document.getElementById("theme_wizard").selectedIndex = 6;}
+if(theme_status == "redmode"){document.getElementById("theme_wizard").selectedIndex = 7;}
+if(theme_status == "purplemode"){document.getElementById("theme_wizard").selectedIndex = 8;}
+if(theme_status == "blackmode"){document.getElementById("theme_wizard").selectedIndex = 9;}
+if(theme_status == "budsmode"){document.getElementById("theme_wizard").selectedIndex = 10;}
+if(theme_status == "splatmode"){document.getElementById("theme_wizard").selectedIndex = 11;}
+
+};
+function Toggle_Chat_Llama (zEvent) {body.classList.toggle("open_llama_chat");Hide_Llama_Theme_Options();};
+function Toggle_Cam_Llama (zEvent) {body.classList.toggle("open_llama_cam");Hide_Llama_Theme_Options();};
+function Toggle_Theme_Llama (zEvent) {body.classList.toggle("open_llama_theme");};
+
+function Hide_Llama_Chat_Options (zEvent) {
+body.classList.remove("open_llama_chat");
+};
+function Hide_Llama_Cam_Options (zEvent) {
+body.classList.remove("open_llama_cam");
+};
+function Hide_Llama_Theme_Options (zEvent) {
+body.classList.remove("open_llama_theme");
+};
+
+//------------ OTHER_SHIT ----------------*/
+window.addEventListener('click', function(e){
+  if (document.getElementById('chat__llamaOption').contains(e.target)){} else{Hide_Llama_Chat_Options(); }
+  if (document.getElementById('cam__llamaOption').contains(e.target)){} else{Hide_Llama_Cam_Options(); }
+});
+
+
+//--- TEST 2----------
+
+function Enter_Cheers (zEvent) {
+    var text = document.getElementById("chat__input");
+    text.value += "cheers!";
+};
 
 //----------------------------------------------------------------- HIDE_NOTICE -----------------------------------------------------------------
 
@@ -3306,28 +3392,12 @@ function Remove_Llama_BG (zEvent) {
 };
 
 
-//----------------------------------------------------------------- THEME_SELECTOR_TOGGLE -----------------------------------------------------------------
 
-var theme_selector_status = localStorage.getItem('theme_selector');
-if(theme_selector_status){body.classList.add(theme_selector_status)}
-
-if(theme_selector_status == "theme_selector_on"){document.getElementById("show_themes").checked = true;}
-document.getElementById ("show_themes").addEventListener ("click", Toggle_Theme_Selector, false);
-
-function Toggle_Theme_Selector (zEvent) {
-    var turn_theme_select_on = 'theme_selector_on';
-    var theme_select = localStorage.getItem('theme_selector');
-        body.classList.toggle(turn_theme_select_on);
-        if(theme_select != turn_theme_select_on){localStorage.setItem('theme_selector', turn_theme_select_on);} else {localStorage.setItem('theme_selector', '');}
-};
 
 //----------------------------------------------------------------- BUBBLE_CHAT_TOGGLE -----------------------------------------------------------------
 
 var bubble_status = localStorage.getItem('bubble_status');
 if(bubble_status){body.classList.add(bubble_status)}
-if(bubble_status == "bubble_chat"){document.getElementById("bubble_chat").checked = true;}
-
-document.getElementById ("bubble_chat").addEventListener ("click", Toggle_Bubble_Chat, false);
 
 function Toggle_Bubble_Chat (zEvent) {
     var bubble_status = localStorage.getItem('bubble_status');
@@ -3338,8 +3408,6 @@ function Toggle_Bubble_Chat (zEvent) {
 
 var chat_Status = localStorage.getItem('chat');
 if(chat_Status){body.classList.add(chat_Status);}
-
-document.getElementById ("Chat_Hider").addEventListener ("click", Toggle_Chat, false);
 
 function Toggle_Chat (cEvent) {
     var chat_Status = localStorage.getItem('chat')
@@ -3352,7 +3420,6 @@ function Toggle_Chat (cEvent) {
 var userlist_Status = localStorage.getItem('user_status');
 if(userlist_Status){body.classList.add(userlist_Status);}
 
-document.getElementById ("UserList_Hider").addEventListener ("click", Toggle_UserList, false);
 function Toggle_UserList (cEvent) {
     var userlist_Status = localStorage.getItem('user_status')
         body.classList.toggle("hide_userlist");
@@ -3364,8 +3431,6 @@ function Toggle_UserList (cEvent) {
 var ltr_Status = localStorage.getItem('ltr');
 if(ltr_Status){body.classList.add(ltr_Status);}
 
-document.getElementById ("LTR_Toggle").addEventListener ("click", Toggle_LTR, false);
-
 function Toggle_LTR (cEvent) {
     var ltr_Status = localStorage.getItem('ltr')
         body.classList.toggle("ltr_layout");
@@ -3376,9 +3441,6 @@ function Toggle_LTR (cEvent) {
 
 var border_status = localStorage.getItem('no_border');
 if(border_status){body.classList.add(border_status)}
-if(border_status == "no_border"){document.getElementById("cam_border").checked = true;}
-
-document.getElementById ("cam_border").addEventListener ("click", Toggle_No_Border, false);
 
 function Toggle_No_Border (zEvent) {
     var yt_status = localStorage.getItem('no_border');
@@ -3392,9 +3454,6 @@ function Toggle_No_Border (zEvent) {
 
 var pad_status = localStorage.getItem('no_padding');
 if(pad_status){body.classList.add(pad_status)}
-if(pad_status == "no_padding"){document.getElementById("cam_space").checked = true;}
-
-document.getElementById ("cam_space").addEventListener ("click", Toggle_No_Padding, false);
 
 function Toggle_No_Padding (zEvent) {
     var pad_status = localStorage.getItem('no_padding');
@@ -3422,18 +3481,7 @@ function Toggle_MiniYT (zEvent) {
 
 if(theme_status){body.classList.add(theme_status)}
 
-//------- SET DROPDOWN CHOICE -------
-if(theme_status == ""){document.getElementById("theme_wizard").selectedIndex = 0;}
-if(theme_status == "pinkmode"){document.getElementById("theme_wizard").selectedIndex = 2;}
-if(theme_status == "greenmode"){document.getElementById("theme_wizard").selectedIndex = 3;}
-if(theme_status == "bluemode"){document.getElementById("theme_wizard").selectedIndex = 4;}
-if(theme_status == "mauvemode"){document.getElementById("theme_wizard").selectedIndex = 5;}
-if(theme_status == "orangemode"){document.getElementById("theme_wizard").selectedIndex = 6;}
-if(theme_status == "redmode"){document.getElementById("theme_wizard").selectedIndex = 7;}
-if(theme_status == "purplemode"){document.getElementById("theme_wizard").selectedIndex = 8;}
-if(theme_status == "blackmode"){document.getElementById("theme_wizard").selectedIndex = 9;}
-if(theme_status == "budsmode"){document.getElementById("theme_wizard").selectedIndex = 10;}
-if(theme_status == "splatmode"){document.getElementById("theme_wizard").selectedIndex = 11;}
+
 //----------------------------------------------------------------- THEME_TOGGLE_DEFAULT -----------------------------------------------------------------
 
 function Toggle_Theme_Default (zEvent) {

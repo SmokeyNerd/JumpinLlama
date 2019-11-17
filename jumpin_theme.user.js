@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.46
+// @version      2019.47
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -2998,7 +2998,6 @@ LlamaNoticeNode.innerHTML = (`
 
 
 </label>
-<div id="toggle_menu">Loading SmokeyLlama...</div>
 ` );
 
 LlamaNoticeNode.setAttribute ('id', 'New_Llama_Notice');
@@ -3009,7 +3008,7 @@ document.body.appendChild (LlamaNoticeNode);
 var CustomColorNode = document.createElement ('div');
 
 CustomColorNode.innerHTML = (`
-<div id="toggle_menu"></div>
+<div id="toggle_menu">Loading SmokeyLlama...</div>
 
 <div class="dropdown__Options" id="Llama_Custom">
 <div class="dropdown__Option dropdown__Option-header">Custom Settings</div>

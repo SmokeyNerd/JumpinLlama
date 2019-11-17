@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.55
+// @version      2019.56
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -3370,7 +3370,7 @@ whatsNew_Box.insertBefore(WhatsNewIcon, whatsNew_Box.childNodes[0] || null);
 document.getElementById ("New_Llama_Notice").addEventListener ("click", Toggle_Notice, false);
 document.getElementById ("Toggle_New_Llama_Notice").addEventListener ("click", Toggle_Notice, false);
 
-//------------ Whats_New8 ----------------*/
+//------------ Hide_Header ----------------*/
 var HeaderHideIcon = document.createElement('label');
 HeaderHideIcon.className = "LlamaOption_chat";
 HeaderHideIcon.setAttribute ('id', 'Toggle_Hide_Header');

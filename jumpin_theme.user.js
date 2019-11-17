@@ -1,12 +1,10 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.47
+// @version      2019.48
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
-// @exclude      https://jumpin.chat/
-// @exclude      https://jumpin.chat/directory
 // @exclude      https://jumpin.chat/support*
 // @exclude      https://jumpin.chat/contact
 // @exclude      https://jumpin.chat/privacy
@@ -123,6 +121,115 @@ function addGlobalStyle(css) {
 addGlobalStyle( `
 
 /*----- THEME_VARIABLES ---------------------------*/
+
+.hero {height:250px;background-position: top center !important;}
+.hero__Message {
+    padding-top: 17.6rem;}
+
+.pinkmode .header {background-color: var(--pinkmode-lightbgcolor);}
+.greenmode .header {background-color: var(--greenmode-lightbgcolor);}
+.bluemode .header {background-color: var(--bluemode-lightbgcolor);}
+.mauvemode .header {background-color: var(--mauvemode-lightbgcolor);}
+.orangemode .header {background-color: var(--orangemode-lightbgcolor);}
+.redmode .header {background-color: var(--redmode-lightbgcolor);}
+.purplemode .header {background-color: var(--purplemode-lightbgcolor);}
+.blackmode .header {background-color: var(--blackmode-lightbgcolor);}
+.budsmode .header {background-color: var(--budsmode-lightbgcolor);}
+.splatmode .header {background-color: var(--splatmode-lightbgcolor);}
+
+.pinkmode .full-width--white, .pinkmode .fill-height {background-color: var(--pinkmode-bgcolor);}
+.greenmode .full-width--white, .greenmode .fill-height {background-color: var(--greenmode-bgcolor);}
+.bluemode .full-width--white, .bluemode .fill-height {background-color: var(--bluemode-bgcolor);}
+.mauvemode .full-width--white, .mauvemode .fill-height {background-color: var(--mauvemode-bgcolor);}
+.orangemode .full-width--white, .orangemode .fill-height {background-color: var(--orangemode-bgcolor);}
+.redmode .full-width--white, .redmode .fill-height {background-color: var(--redmode-bgcolor);}
+.purplemode .full-width--white, .purplemode .fill-height {background-color: var(--purplemode-bgcolor);}
+.blackmode .full-width--white, .blackmode .fill-height {background-color: var(--blackmode-bgcolor);}
+.budsmode .full-width--white, .budsmode .fill-height {background-color: var(--budsmode-bgcolor);}
+.splatmode .full-width--white, .splatmode .fill-height {background-color: var(--splatmode-bgcolor);}
+
+.pinkmode .room__Item {background-color: var(--pinkmode-lightbgcolor);}
+.greenmode .room__Item {background-color: var(--greenmode-lightbgcolor);}
+.bluemode .room__Item {background-color: var(--bluemode-lightbgcolor);}
+.mauvemode .room__Item {background-color: var(--mauvemode-lightbgcolor);}
+.orangemode .room__Item {background-color: var(--orangemode-lightbgcolor);}
+.redmode .room__Item {background-color: var(--redmode-lightbgcolor);}
+.purplemode .room__Item {background-color: var(--purplemode-lightbgcolor);}
+.blackmode .room__Item {background-color: var(--blackmode-lightbgcolor);}
+.budsmode .room__Item {background-color: var(--budsmode-lightbgcolor);}
+.splatmode .room__Item {background-color: var(--splatmode-lightbgcolor);}
+
+.pinkmode .section-header,
+.pinkmode .room__Name,
+.pinkmode .fas,
+.pinkmode .room__Broadcasters,
+.pinkmode .room__Viewers,
+.pinkmode .room__DetailsDescription {color: var(--pinkmode-textcolor);}
+
+.greenmode .section-header,
+.greenmode .room__Name,
+.greenmode .fas,
+.greenmode .room__Broadcasters,
+.greenmode .room__Viewers,
+.greenmode .room__DetailsDescription {color: var(--greenmode-textcolor);}
+
+.bluemode .section-header,
+.bluemode .room__Name,
+.bluemode .fas,
+.bluemode .room__Broadcasters,
+.bluemode .room__Viewers,
+.bluemode .room__DetailsDescription {color: var(--bluemode-textcolor);}
+
+.mauvemode .section-header,
+.mauvemode .room__Name,
+.mauvemode .fas,
+.mauvemode .room__Broadcasters,
+.mauvemode .room__Viewers,
+.mauvemode .room__DetailsDescription {color: var(--mauvemode-textcolor);}
+
+.orangemode .section-header,
+.orangemode .room__Name,
+.orangemode .fas,
+.orangemode .room__Broadcasters,
+.orangemode .room__Viewers,
+.orangemode .room__DetailsDescription {color: var(--orangemode-textcolor);}
+
+.redmode .section-header,
+.redmode .room__Name,
+.redmode .fas,
+.redmode .room__Broadcasters,
+.redmode .room__Viewers,
+.redmode .room__DetailsDescription {color: var(--redmode-textcolor);}
+
+.purplemode .section-header,
+.purplemode .room__Name,
+.purplemode .fas,
+.purplemode .room__Broadcasters,
+.purplemode .room__Viewers,
+.purplemode .room__DetailsDescription {color: var(--purplemode-textcolor);}
+
+.blackmode .section-header,
+.blackmode .room__Name,
+.blackmode .fas,
+.blackmode .room__Broadcasters,
+.blackmode .room__Viewers,
+.blackmode .room__DetailsDescription {color: var(--blackmode-textcolor);}
+
+.budsmode .section-header,
+.budsmode .room__Name,
+.budsmode .fas,
+.budsmode .room__Broadcasters,
+.budsmode .room__Viewers,
+.budsmode .room__DetailsDescription {color: var(--budsmode-textcolor);}
+
+.splatmode .section-header,
+.splatmode .room__Name,
+.splatmode .fas,
+.splatmode .room__Broadcasters,
+.splatmode .room__Viewers,
+.splatmode .room__DetailsDescription {color: var(--splatmode-textcolor);}
+
+
 .button-blue:hover {opacity:0.6;}
 .chat__HeaderOption:hover {opacity:0.6;}
 :root {

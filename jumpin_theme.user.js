@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.40
+// @version      2019.41
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -222,6 +222,7 @@ padding-left: 15px;
 /* ------------------ MAIN_MESSAGES ------------------ */
 
 .chat__Message {padding-right: 0;}
+.chat__Message {margin-top:0px !important;}
 .chat__MessageBody-link {color:#ff0000;}
 .chat__Message:hover .chat__MessageTimestamp {color:#7289DA;}
 
@@ -504,7 +505,7 @@ background-color:var(--pinkmode-bordercolor);}
 
 .pinkmode .fa.fa-gear:before, .pinkmode .icon--hd {color: var(--pinkmode-lightbgcolor);}
 
-.pinkmode .chat__MessageBody {
+.bubble_chat.pinkmode .chat__MessageBody {
     background-color: var(--pinkmode-bgcolor);
     border-color: var(--pinkmode-bordercolor);}
 
@@ -694,7 +695,7 @@ background-color:var(--greenmode-bordercolor);}
 
 .greenmode .fa.fa-gear:before, .greenmode .icon--hd {color: var(--greenmode-lightbgcolor);}
 
-.greenmode .chat__MessageBody {
+.bubble_chat.greenmode .chat__MessageBody {
     background-color: var(--greenmode-bgcolor);
     border-color: var(--greenmode-bordercolor);}
 
@@ -703,7 +704,7 @@ background-color:var(--greenmode-bordercolor);}
     background-color: var(--greenmode-lightbgcolor);
     border-color: var(--greenmode-bordercolor);}
 
-.greenmode .chat__MessageBody-link {
+.greenmode.chat__MessageBody-link {
     color:#ff0000;}
 
 .greenmode .chat__MessageTimestamp {
@@ -884,7 +885,7 @@ background-color:var(--bluemode-bordercolor);}
 
 .bluemode .fa.fa-gear:before, .bluemode .icon--hd {color: var(--bluemode-lightbgcolor);}
 
-.bluemode .chat__MessageBody {
+.bubble_chat.bluemode .chat__MessageBody {
     background-color: var(--bluemode-bgcolor);
     border-color: var(--bluemode-bordercolor);}
 
@@ -1075,7 +1076,7 @@ background-color:var(--mauvemode-bordercolor);}
 
 .mauvemode .fa.fa-gear:before, .mauvemode .icon--hd {color: var(--mauvemode-lightbgcolor);}
 
-.mauvemode .chat__MessageBody {
+.bubble_chat.mauvemode .chat__MessageBody {
     background-color: var(--mauvemode-bgcolor);
     border-color: var(--mauvemode-bordercolor);}
 
@@ -1266,7 +1267,7 @@ background-color:var(--orangemode-bordercolor);}
 
 .orangemode .fa.fa-gear:before, .orangemode .icon--hd {color: var(--orangemode-lightbgcolor);}
 
-.orangemode .chat__MessageBody {
+.bubble_chat.orangemode .chat__MessageBody {
     background-color: var(--orangemode-bgcolor);
     border-color: var(--orangemode-bordercolor);}
 
@@ -1457,7 +1458,7 @@ background-color:var(--redmode-bordercolor);}
 
 .redmode .fa.fa-gear:before, .redmode .icon--hd {color: var(--redmode-lightbgcolor);}
 
-.redmode .chat__MessageBody {
+.bubble_chat.redmode .chat__MessageBody {
     background-color: var(--redmode-bgcolor);
     border-color: var(--redmode-bordercolor);}
 
@@ -1647,7 +1648,7 @@ background-color:var(--purplemode-bordercolor);}
 
 .purplemode .fa.fa-gear:before, .purplemode .icon--hd {color: var(--purplemode-lightbgcolor);}
 
-.purplemode .chat__MessageBody {
+.bubble_chat.purplemode .chat__MessageBody {
     background-color: var(--purplemode-bgcolor);
     border-color: var(--purplemode-bordercolor);}
 
@@ -1839,7 +1840,7 @@ background-color:var(--blackmode-bordercolor);}
 
 .blackmode .fa.fa-gear:before, .blackmode .icon--hd {color: #7289da;}
 
-.blackmode .chat__MessageBody {
+.bubble_chat.blackmode .chat__MessageBody {
     background-color: var(--blackmode-bgcolor);
     border-color: var(--blackmode-bordercolor);}
 

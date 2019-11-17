@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.42
+// @version      2019.43
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -2792,7 +2792,7 @@ color:var(--budsmode-textcolor);
 .llama_robo.open_llama_chat #Llama_Chat {width:175px;}
 .open_llama_chat #Llama_Chat {
     display: block;
-    top: 51.7%;
+    top: 49%;
     position: absolute;
     right: 11px;
     border-radius: 3px;

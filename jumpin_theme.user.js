@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.50
+// @version      2019.51
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -508,9 +508,14 @@ div.modal__Body > form > input {
 
 /* ------------------------------ MINI_YT ----------------------------------- */
 .mini_yt .youtube__VideoContainer {
-    width:100px !important;
-    height:100px !important;}
-
+    width: 350px !important;
+    height: 100px !important;
+    position: absolute;
+    left: 187px;
+    top: -56px;}
+.mini_yt .youtube__VideoContainer > div > iframe {
+    width: 350px !important;
+    border-radius:10px;}
 /* ------------------------------ NO_CAM_BORDERS ----------------------------------- */
 .no_border .cams__Cam {
     border:0px;

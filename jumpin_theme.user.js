@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.43
+// @version      2019.44
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -3303,7 +3303,7 @@ if(robo_status){body.classList.add(llama_robo);}
 function Toggle_Robo_Llama (cEvent) {
     var robo_status = localStorage.getItem('robo_status')
         body.classList.toggle("llama_robo");
-        if(userlist_Status != "llama_robo"){localStorage.setItem('robo_status', 'llama_robo');} else {localStorage.setItem('user_status', '');}
+        if(robo_status != "llama_robo"){localStorage.setItem('robo_status', 'llama_robo');} else {localStorage.setItem('robo_status', '');}
 };
 
 //----------------------------------------------------------------- HIDE_NOTICE -----------------------------------------------------------------

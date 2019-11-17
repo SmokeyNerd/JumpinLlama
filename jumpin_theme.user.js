@@ -1,16 +1,11 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.48
+// @version      2019.49
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
-// @exclude      https://jumpin.chat/support*
-// @exclude      https://jumpin.chat/contact
-// @exclude      https://jumpin.chat/privacy
-// @exclude      https://jumpin.chat/terms
-// @exclude      https://jumpin.chat/help*
-// @exclude      https://jumpin.chat/profile*
+
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        GM_listValues
@@ -126,6 +121,29 @@ addGlobalStyle( `
 .hero__Message {
     padding-top: 17.6rem;}
 
+.profile__Container {border-radius:10px;}
+
+.pinkmode .profile__Container {background-color: var(--pinkmode-bgcolor);border-color: var(--pinkmode-textcolor);}
+.greenmode .profile__Container {background-color: var(--greenmode-bgcolor);border-color: var(--greenmode-textcolor);}
+.bluemode .profile__Container {background-color: var(--bluemode-bgcolor);border-color: var(--bluemode-textcolor);}
+.orangemode .profile__Container {background-color: var(--orangemode-bgcolor);border-color: var(--orangemode-textcolor);}
+.redmode .profile__Container {background-color: var(--redmode-bgcolor);border-color: var(--redmode-textcolor);}
+.purplemode .profile__Container {background-color: var(--purplemode-bgcolor);border-color: var(--purplemode-textcolor);}
+.blackmode .profile__Container {background-color: var(--blackmode-bgcolor);border-color: var(--blackmode-textcolor);}
+.budsmode .profile__Container {background-color: var(--budsmode-bgcolor);border-color: var(--budsmode-textcolor);}
+.splatmode .profile__Container {background-color: var(--splatmode-bgcolor);border-color: var(--splatmode-textcolor);}
+
+body.pinkmode, {background-color: var(--pinkmode-bgcolor);}
+.greenmode, body {background-color: var(--greenmode-bgcolor);}
+.bluemode, body {background-color: var(--bluemode-bgcolor);}
+.mauvemode, body {background-color: var(--mauvemode-bgcolor);}
+.orangemode, body {background-color: var(--orangemode-bgcolor);}
+.redmode, body {background-color: var(--redmode-bgcolor);}
+.purplemode, body {background-color: var(--purplemode-bgcolor);}
+.blackmode, body {background-color: var(--blackmode-bgcolor);}
+.budsmode, body {background-color: var(--budsmode-bgcolor);}
+.splatmode, body {background-color: var(--splatmode-bgcolor);}
+
 .pinkmode .header {background-color: var(--pinkmode-lightbgcolor);}
 .greenmode .header {background-color: var(--greenmode-lightbgcolor);}
 .bluemode .header {background-color: var(--bluemode-lightbgcolor);}
@@ -137,16 +155,46 @@ addGlobalStyle( `
 .budsmode .header {background-color: var(--budsmode-lightbgcolor);}
 .splatmode .header {background-color: var(--splatmode-lightbgcolor);}
 
-.pinkmode .full-width--white, .pinkmode .fill-height {background-color: var(--pinkmode-bgcolor);}
-.greenmode .full-width--white, .greenmode .fill-height {background-color: var(--greenmode-bgcolor);}
-.bluemode .full-width--white, .bluemode .fill-height {background-color: var(--bluemode-bgcolor);}
-.mauvemode .full-width--white, .mauvemode .fill-height {background-color: var(--mauvemode-bgcolor);}
-.orangemode .full-width--white, .orangemode .fill-height {background-color: var(--orangemode-bgcolor);}
-.redmode .full-width--white, .redmode .fill-height {background-color: var(--redmode-bgcolor);}
-.purplemode .full-width--white, .purplemode .fill-height {background-color: var(--purplemode-bgcolor);}
-.blackmode .full-width--white, .blackmode .fill-height {background-color: var(--blackmode-bgcolor);}
-.budsmode .full-width--white, .budsmode .fill-height {background-color: var(--budsmode-bgcolor);}
-.splatmode .full-width--white, .splatmode .fill-height {background-color: var(--splatmode-bgcolor);}
+.pinkmode .full-width--white,
+.pinkmode .fill-height,
+.pinkmode .full-width{background-color: var(--pinkmode-bgcolor);}
+
+.greenmode .full-width--white,
+.greenmode .fill-height,
+.greenmode .full-width{background-color: var(--greenmode-bgcolor);}
+
+.bluemode .full-width--white,
+.bluemode .fill-height,
+.bluemode .full-width{background-color: var(--bluemode-bgcolor);}
+
+.mauvemode .full-width--white,
+.mauvemode .fill-height,
+.mauvemode .full-width{background-color: var(--mauvemode-bgcolor);}
+
+.orangemode .full-width--white,
+.orangemode .fill-height,
+.orangemode .full-width{background-color: var(--orangemode-bgcolor);}
+
+.redmode .full-width--white,
+.redmode .fill-height,
+.redmode .full-width{background-color: var(--redmode-bgcolor);}
+
+.purplemode .full-width--white,
+.purplemode .fill-height,
+.purplemode .full-width{background-color: var(--purplemode-bgcolor);}
+
+.blackmode .full-width--white,
+.blackmode .fill-height,
+.blackmode .full-width{background-color: var(--blackmode-bgcolor);}
+
+.budsmode .full-width--white,
+.budsmode .fill-height,
+.budsmode  .full-width{background-color: var(--budsmode-bgcolor);}
+
+.splatmode .full-width--white,
+.splatmode .fill-height,
+.splatmode  .full-width{background-color: var(--splatmode-bgcolor);}
+
 
 .pinkmode .room__Item {background-color: var(--pinkmode-lightbgcolor);}
 .greenmode .room__Item {background-color: var(--greenmode-lightbgcolor);}

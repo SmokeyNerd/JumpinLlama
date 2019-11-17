@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.39
+// @version      2019.40
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -261,9 +261,8 @@ div.modal__Body > form > input {
 .llama_menu .feature_menu {
     color:#000;
     display:block;
-    height: 150px;}
-.user_bg .feature_menu {
-    height: 240px !important;}
+    height: 35px;}
+
 .llama_menu #toggle_menu {
     width:unset;}
 
@@ -304,8 +303,7 @@ div.modal__Body > form > input {
     display:block;}
 
 .menu_section {
-    color:#000;
-    float:left;}
+    color:#000;}
 
 .settings_header {
     display:none;}
@@ -2769,7 +2767,7 @@ z-index:1;
 
 #theme_wizard {display:block;
 width: 132px;
-    height: 33px;
+
     border-radius: 3px;}
 
 
@@ -2843,7 +2841,7 @@ z-index:4000;
 
 #Llama_Theme {
     display: none;
-    width: 154px;height:90px;
+    width: 175px;height:90px;
 z-index:4000;
 }
 
@@ -2853,21 +2851,105 @@ z-index:4000;
 
 .room.layout--horizontal > div.chat > div.chat__Header > div.chat__HeaderOptions > div {    top: 94px !important;}
 
+.user_bg.open_llama_theme #Llama_Theme {    height: 250px;top: 41%;}
+
+
+.dark .user_bg_settings {border-color: #665c54;
+    color: #fbf1c7;background-color: #504945;}
+#New_Llama_Notice {
+    z-index: 6000;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1em;
+
+    border-radius: 10px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 0 10px;
+    -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+    box-shadow: rgba(0, 0, 0, 0.8) 0 0 10px;}
+#New_Llama_Notice{color:#ccc;}
+
+.dark #New_Llama_Notice {color:white;}
+
+.hide_notice #New_Llama_Notice {display:none;}
+
+
+#close_box {
+
+    width: 40%;
+    background: black;
+    margin: 0 auto;padding:10px 0px;border-radius:50px;border:1px solid red;
+}
+.theme_alert_notice {
+position: fixed;
+    top: 15%;
+    /* right: 50%; */
+    width: 100%;
+
+}
+
+.feat_title {width:200px;displaY: inline-block;text-align:left;}
 ` );
 
 //----------------------------------------------------------------- LLAMA_MENU -----------------------------------------------------------------*/
 
-//------------ LLAMA_NOTICE_CREATOR ----------------*/
-var NoticeNode = document.createElement ('div');
 
-NoticeNode.innerHTML = (`
+//------------ LLAMA_NOTICE_CREATOR ----------------*/
+var LlamaNoticeNode = document.createElement ('div');
+
+LlamaNoticeNode.innerHTML = (`
 <label style="cursor:pointer;">
-<div id="toggle_notice">CLICK THE LLAMA FOR EXTRA FEATURES/THEMES!</div>
+
+<div class="theme_alert_notice">
+<div id="close_box"><center><h2>Thank you for installing MY Jumpin Theme!</h2>
+<hr style="width:90%;border-color:red;">
+<div class="feat_info">
+<div style="float:left;width:50%;">Theme Last Updated: 11/16/2019</div>
+<div style="">Feedback? <a href="http://www.smokeyllama.com/" target="_blank" style="color:red;">smokeyllama.com</a></div>
+</div>
+<hr style="width:90%;border-color:red;">
+<img src="http://smokeyllama.com/images/SmokeyLlama.png"><br>
+<hr style="width:90%;border-color:red;">
+<h2>Features/Icons Added:</h2>
+
+<div class="features_added">
+<label class="button chat__HeaderOption" title="Chat Settings" style="background-color:white;color: #ccc !important;">
+<i class="fa fa-user-cog"></i>
+</label><div class="feat_title">Chat Settings</div>
+<br>
+<label class="button chat__HeaderOption" title="Camera Border Settings" style="background-color:white;color: #ccc !important;">
+<i class="fa fa-th-large"></i>
+</label><div class="feat_title">Camera Border Settings</div>
+<br>
+<label class="button chat__HeaderOption" title="Theme Settings" style="background-color:white;color: #ccc !important;">
+<i class="fa fa-palette"></i>
+</label><div class="feat_title">Theme Settings</div>
+<br>
+<label class="button chat__HeaderOption" title="Make Youtube Smaller" style="background-color:white;color: #ccc !important;">
+<i class="fa fa-compress-arrows-alt"></i>
+</label><div class="feat_title">Make Youtube Smaller</div>
+<br>
+<label class="button chat__HeaderOption" title="SET CUSTOM COLORS" style="background-color:white;color: #ccc !important;">
+<img src="https://cdn1.iconfinder.com/data/icons/MetroStation-PNG/128/MB__Llama.png" width="20px">
+</label><div class="feat_title">SET CUSTOM COLORS</div>
+
+</div>
+
+<br><br>
+(Click Anywhere to close)
+</center></div>
+</div>
+
+
 </label>` );
 
-NoticeNode.setAttribute ('id', 'Llama_Notice');
-document.body.appendChild (NoticeNode);
-
+LlamaNoticeNode.setAttribute ('id', 'New_Llama_Notice');
+document.body.appendChild (LlamaNoticeNode);
 
 //------------ LLAMA_MENU_CREATOR ----------------*/
 var zNode = document.createElement ('div');
@@ -2879,7 +2961,22 @@ zNode.innerHTML = ( `
 </div>
 
 <div id="feature_menu" class="feature_menu">
-    <div class="menu_section" style="margin-right: 10px;">
+<div class="menu_section">
+<span class="menu_header">
+THEME SETTINGS
+</span>
+<label class="container">
+    <input id="theme_custommode" type="checkbox">
+    <span class="reg_checkmark"></span>
+    <span class="check_head">Enable Custom Theme</span><br/>
+</label>
+
+
+</div>
+
+
+
+<div class="menu_section" style="margin-bottom: 10px;">
 
 <div id="enable_custom_mode">
             <span class="menu_header" style="position: relative;top: 1px;padding: 0px 15px;">
@@ -2908,63 +3005,9 @@ Custom Colors
             </label>
 </div>
 
-
-
-    </div>
-        <div class="menu_section">
-            <span class="menu_header">
-                SETTINGS
-            </span>
-
-            <label class="container" style="margin-top: 2px;">
-                <input id="mini_yt" type="checkbox">
-                <span class="reg_checkmark"></span>
-                <span class="check_head">Mini Youtube</span>
-            </label>
-
-            <span class="menu_header">
-                USER CAM BG
-            </span>
-            <label class="container">
-                <input id="toggle_userbg" type="checkbox">
-                <span class="reg_checkmark"></span>
-                <span class="check_head">CAM BG</span>
-            </label>
-<div class="user_bg_settings">
-            <label style="position: relative;top: -3px;left: 10px;">
-                <input type='text' name="server" id="bgSelection1" placeholder="URL to image.." style="opacity: 1;cursor: pointer;height: 20px;width: 122px;border-radius: 2px;border: 1px solid #ccc;padding: 0px 0px 0px 5px;"/>
-                <input id="Save_Llama_BG" type="button" style="opacity: 1;cursor: pointer;height: 26px;width: 26px;border-radius: 5px;border: 1px solid black;" value="✔"/>
-                <input id="Remove_Llama_BG" type="button" style="opacity: 1;cursor: pointer;height: 26px;width: 26px;border-radius: 5px;border: 1px solid black;" value="✘"/>
-            </label>
-            <label class="container">
-                <input id="toggle_userbg_cover" type="checkbox">
-                <span class="reg_checkmark"></span>
-                <span class="check_head">CAM BG STRETCH</span>
-            </label>
-            <label class="container">
-                <input id="toggle_userbg_repeat" type="checkbox">
-                <span class="reg_checkmark"></span>
-                <span class="check_head">CAM BG NO-REPEAT</span>
-            </label>
-            <label class="container">
-                <input id="toggle_userbg_center" type="checkbox">
-                <span class="reg_checkmark"></span>
-                <span class="check_head">CENTER</span>
-            </label>
+</div>
 </div>
 
-            <span class="menu_header">
-                THEME SETTINGS
-            </span>
-            <label class="container">
-                <input id="theme_custommode" type="checkbox">
-                <span class="reg_checkmark"></span>
-                <span class="check_head">Enable Custom Theme</span><br/>
-            </label>
-
-
-                </div>
-                </div>
 ` );
 
 
@@ -2972,24 +3015,6 @@ Custom Colors
 zNode.setAttribute ('id', 'Extra_Menu');
 document.body.appendChild (zNode);
 
-
-document.addEventListener('input', function (event) {
-
-	// Only run for #theme_wizard select
-	if (event.target.id !== 'theme_wizard') return;
-	if (event.target.value === 'Default Theme') {Toggle_Theme_Default();}
-	if (event.target.value === 'PINK') {Toggle_Theme_Pink();}
-	if (event.target.value === 'GREEN') {Toggle_Theme_Green();}
-	if (event.target.value === 'BLUE') {Toggle_Theme_Blue();}
-    if (event.target.value === 'MAUVE') {Toggle_Theme_Mauve();}
-    if (event.target.value === 'ORANGE') {Toggle_Theme_Orange();}
-    if (event.target.value === 'RED') {Toggle_Theme_Red();}
-    if (event.target.value === 'PURPLE') {Toggle_Theme_Purple();}
-    if (event.target.value === 'BLACK') {Toggle_Theme_Black();}
-    if (event.target.value === 'BUDS') {Toggle_Theme_Buds();}
-    if (event.target.value === 'SPLAT') {Toggle_Theme_Splat();}
-
-}, false);
 
 //----------------------------------------------------------------- SHOW_HIDE_LLAMA_MENU -----------------------------------------------------------------
 
@@ -3010,11 +3035,31 @@ var xz = document.getElementsByClassName("chat__HeaderOptions")[1];
 xz.id="chat__HeaderOptions"
 var el = document.getElementById("chat__HeaderOptions");
 
+var chatShare = document.getElementsByClassName("chat__Share")[0];
+chatShare.id="chat__Share"
+var chatShare_box = document.getElementById("chat__Share");
+
+//------------ MINI_YT_ICON ----------------*/
+var MiniYTIcon = document.createElement('label');
+MiniYTIcon.className = "button chat__HeaderOption";
+MiniYTIcon.setAttribute ('id', 'miniyt__llamaOption');
+MiniYTIcon.setAttribute ('title', 'Mini Youtube Player');
+MiniYTIcon.innerHTML = (`
+<i class="fa fa-compress-arrows-alt"></i>
+` );
+
+chatShare_box.appendChild(MiniYTIcon);
+chatShare_box.insertBefore(MiniYTIcon, null);
+chatShare_box.insertBefore(MiniYTIcon, chatShare_box.childNodes[3] || null);
+
+document.getElementById ("miniyt__llamaOption").addEventListener ("click", Toggle_MiniYT, false);
+
 
 //------------ CHAT_ICON ----------------*/
 var newEl = document.createElement('label');
 newEl.className = "button chat__HeaderOption";
 newEl.setAttribute ('id', 'chat__llamaOption');
+newEl.setAttribute ('title', 'Extra Chat Options');
 newEl.innerHTML = (`
 <i class="fa fa-user-cog"></i>
 ` );
@@ -3059,6 +3104,7 @@ document.getElementById ("ChatSettings").addEventListener ("click", Hide_Llama_C
 var newCamIcon = document.createElement('label');
 newCamIcon.className = "button chat__HeaderOption";
 newCamIcon.setAttribute ('id', 'cam__llamaOption');
+newCamIcon.setAttribute ('title', 'Extra Camera Options');
 newCamIcon.innerHTML = (`
 <i class="fa fa-th-large"></i>
 ` );
@@ -3072,6 +3118,7 @@ newCamMenu.className = "dropdown__Options";
 newCamMenu.setAttribute ('id', 'Llama_Cam');
 newCamMenu.innerHTML = (`
 <div class="dropdown__Option dropdown__Option-header">Cam Settings</div>
+
 <label class="dropdown__Option" id="cam_border_llama">Cam Borders<input id="cam_border_checkbox" class="jic-checkbox" type="checkbox"></label>
 
 <label class="dropdown__Option" id="cam_spacing_llama">Cam Spacing<input id="cam_spacing_checkbox" class="jic-checkbox" type="checkbox"></label>
@@ -3093,6 +3140,7 @@ if(pad_status == "no_padding"){document.getElementById("cam_spacing_checkbox").c
 var newThemeIcon = document.createElement('label');
 newThemeIcon.className = "button chat__HeaderOption";
 newThemeIcon.setAttribute ('id', 'theme__llamaOption');
+newThemeIcon.setAttribute ('title', 'Theme Options');
 newThemeIcon.innerHTML = (`
 <i class="fa fa-palette"></i>
 ` );
@@ -3107,7 +3155,8 @@ newThemeMenu.className = "dropdown__Options";
 newThemeMenu.setAttribute ('id', 'Llama_Theme');
 newThemeMenu.innerHTML = (`
 <div class="dropdown__Option dropdown__Option-header">Theme Settings</div>
-<label class="dropdown__Option" id="cam_border_llama" style="padding-top: 30px;">
+
+<label class="dropdown__Option" id="cam_border_llama">
 <select id="theme_wizard">
   <option value="">Select Theme..</option>
   <option value="Default Theme">Default Theme</option>
@@ -3123,10 +3172,70 @@ newThemeMenu.innerHTML = (`
   <option value="SPLAT" class="splat_mode">SPLATOON</option>
 </select>
 </label>
+
+<label class="dropdown__Option" id="cam_bg_llama">Background Image<input id="cam_bg_checkbox" class="jic-checkbox" type="checkbox"></label>
+
+<div class="user_bg_settings">
+<label style="position: relative;left: 10px;">
+
+Image URL:<input type='text' name="server" id="bgSelection1" placeholder="URL to image.." style="opacity: 1;cursor: pointer; margin-top: 10px;width: 150px;border-radius: 2px;border: 1px solid #ccc;"/></label>
+
+<label class="dropdown__Option"><input id="Save_Llama_BG" type="button" value="✔" style="border-radius: 10px;width: 45%;border: 0px;"/>&nbsp;<input id="Remove_Llama_BG" type="button" value="✘" style="border-radius: 10px;width: 45%;border: 0px;"/></label>
+
+<label class="dropdown__Option" id="toggle_userbg_cover">CAM BG : STRETCH<input id="cam_bg_cover" class="jic-checkbox" type="checkbox"></label>
+<label class="dropdown__Option" id="toggle_userbg_repeat">CAM BG : NO-REPEAT<input id="cam_bg_repeat" class="jic-checkbox" type="checkbox"></label>
+<label class="dropdown__Option" id="toggle_userbg_center">CAM BG : CENTER<input id="cam_bg_center" class="jic-checkbox" type="checkbox"></label>
+
+</div>
 ` );
 
 el.insertBefore(newThemeMenu, el.childNodes[4] || null);
 document.getElementById ("theme__llamaOption").addEventListener ("click", Toggle_Theme_Llama, false);
+document.getElementById ("cam_bg_llama").addEventListener ("click", Toggle_User_BG, false);
+
+document.getElementById ("cam_spacing_llama").addEventListener ("click", Toggle_No_Padding, false);
+
+document.getElementById ("Save_Llama_BG").addEventListener ("click", Save_Llama_BG, false);
+document.getElementById ("Remove_Llama_BG").addEventListener ("click", Remove_Llama_BG, false);
+document.getElementById ("toggle_userbg_cover").addEventListener ("click", User_BG_Cover, false);
+document.getElementById ("toggle_userbg_repeat").addEventListener ("click", User_BG_Repeat, false);
+document.getElementById ("toggle_userbg_center").addEventListener ("click", User_BG_Center, false);
+
+document.addEventListener('input', function (event) {
+
+	// Only run for #theme_wizard select
+	if (event.target.id !== 'theme_wizard') return;
+	if (event.target.value === 'Default Theme') {Toggle_Theme_Default();}
+	if (event.target.value === 'PINK') {Toggle_Theme_Pink();}
+	if (event.target.value === 'GREEN') {Toggle_Theme_Green();}
+	if (event.target.value === 'BLUE') {Toggle_Theme_Blue();}
+    if (event.target.value === 'MAUVE') {Toggle_Theme_Mauve();}
+    if (event.target.value === 'ORANGE') {Toggle_Theme_Orange();}
+    if (event.target.value === 'RED') {Toggle_Theme_Red();}
+    if (event.target.value === 'PURPLE') {Toggle_Theme_Purple();}
+    if (event.target.value === 'BLACK') {Toggle_Theme_Black();}
+    if (event.target.value === 'BUDS') {Toggle_Theme_Buds();}
+    if (event.target.value === 'SPLAT') {Toggle_Theme_Splat();}
+
+}, false);
+
+var llama_bg = localStorage.getItem('llama_bg1');
+var llama_bg_reloader = localStorage.getItem('llama_bg1_reload');
+
+if(llama_bg != ''){document.documentElement.style.setProperty('--user-bg-image', llama_bg);}
+if(llama_bg){document.getElementById("bgSelection1").value = llama_bg_reloader;}
+
+var user_bg_cover = localStorage.getItem('user_bg_cover');
+if(user_bg_cover){document.getElementById("cam_bg_cover").checked = true;}
+
+var user_bg_repeat = localStorage.getItem('user_bg_repeat');
+if(user_bg_repeat){document.getElementById("cam_bg_repeat").checked = true;}
+
+var user_bg_center = localStorage.getItem('user_bg_center');
+if(user_bg_center){document.getElementById("cam_bg_center").checked = true;}
+
+var userbg_status = localStorage.getItem('userbg');
+if(userbg_status == "user_bg"){document.getElementById("cam_bg_checkbox").checked = true;}
 
 //------- SET DROPDOWN CHOICE -------
 if(theme_status == ""){document.getElementById("theme_wizard").selectedIndex = 0;}
@@ -3173,10 +3282,10 @@ function Enter_Cheers (zEvent) {
 //----------------------------------------------------------------- HIDE_NOTICE -----------------------------------------------------------------
 
 var llama_notice_status = localStorage.getItem('llama_notice');
-var llama_version = 2019.10
+var llama_version = 2019.25
 if(llama_notice_status == llama_version){body.classList.add("hide_notice")}
 
-document.getElementById ("toggle_notice").addEventListener ("click", Toggle_Notice, false);
+document.getElementById ("New_Llama_Notice").addEventListener ("click", Toggle_Notice, false);
 
 function Toggle_Notice (zEvent) {
     var llama_notice_status = localStorage.getItem('llama_notice');
@@ -3209,13 +3318,10 @@ if(theme_status == "custommode"){
 document.getElementById ("Preview_Llama_Color").addEventListener ("click", Preview_Llama_Color, false);
 document.getElementById ("Save_Llama_Color").addEventListener ("click", Save_Llama_Color, false);
 document.getElementById ("Reset_Llama_Color").addEventListener ("click", Reset_Llama_Color, false);
-document.getElementById ("Save_Llama_BG").addEventListener ("click", Save_Llama_BG, false);
-document.getElementById ("Remove_Llama_BG").addEventListener ("click", Remove_Llama_BG, false);
+
 document.getElementById ("theme_custommode").addEventListener ("click", Toggle_Theme_Custom, false);
-document.getElementById ("toggle_userbg").addEventListener ("click", Toggle_User_BG, false);
-document.getElementById ("toggle_userbg_cover").addEventListener ("click", User_BG_Cover, false);
-document.getElementById ("toggle_userbg_repeat").addEventListener ("click", User_BG_Repeat, false);
-document.getElementById ("toggle_userbg_center").addEventListener ("click", User_BG_Center, false);
+
+
 
 //----------------------------------------------------------------- CUSTOM_MODE_TOGGLE -----------------------------------------------------------------
 
@@ -3233,7 +3339,6 @@ function Toggle_Theme_Custom (zEvent) {
 //----------------------------------------------------------------- USER_BG_COVER -----------------------------------------------------------------
 var user_bg_cover = localStorage.getItem('user_bg_cover');
 if(user_bg_cover){body.classList.add(user_bg_cover)}
-if(user_bg_cover){document.getElementById("toggle_userbg_cover").checked = true;}
 
 function User_BG_Cover (zEvent) {
     var user_bg_cover_new = "ubg_cover_on";
@@ -3246,7 +3351,6 @@ function User_BG_Cover (zEvent) {
 //----------------------------------------------------------------- USER_BG_REPEAT -----------------------------------------------------------------
 var user_bg_repeat = localStorage.getItem('user_bg_repeat');
 if(user_bg_repeat){body.classList.add(user_bg_repeat)}
-if(user_bg_repeat){document.getElementById("toggle_userbg_repeat").checked = true;}
 
 function User_BG_Repeat (zEvent) {
     var user_bg_repeat_new = "ubg_repeat_on";
@@ -3259,10 +3363,7 @@ function User_BG_Repeat (zEvent) {
 //----------------------------------------------------------------- USER_BG_CENTER -----------------------------------------------------------------
 var user_bg_center = localStorage.getItem('user_bg_center');
 if(user_bg_center){body.classList.add(user_bg_center)}
-if(user_bg_center){document.getElementById("toggle_userbg_center").checked = true;}
 
-var theme_selector_status = localStorage.getItem('theme_selector');
-if(theme_selector_status){body.classList.add(theme_selector_status)}
 
 function User_BG_Center (zEvent) {
     var user_bg_center_new = "ubg_center_on";
@@ -3351,10 +3452,9 @@ function Reset_Llama_Color (zEvent) {
 //----------------------------------------------------------------- CAM_BG_TOGGLE -----------------------------------------------------------------
 
 function Toggle_User_BG (zEvent) {
-    var color_choice = "user_bg";
     var userbg_status = localStorage.getItem('userbg');
-        body.classList.toggle(color_choice);
-        if(userbg_status != ""){localStorage.setItem('userbg', color_choice);} else {localStorage.setItem('userbg', '');}
+        body.classList.toggle("user_bg");
+        if(userbg_status != "user_bg"){localStorage.setItem('userbg', 'user_bg');} else {localStorage.setItem('userbg', '');}
 };
 
 //----------------------------------------------------------------- SAVE_CAM_BG -----------------------------------------------------------------
@@ -3365,9 +3465,7 @@ var llama_bg_reloader = localStorage.getItem('llama_bg1_reload');
 var userbg_status = localStorage.getItem('userbg');
 
 if(userbg_status){body.classList.add(userbg_status)}
-if(userbg_status == "user_bg"){document.getElementById("toggle_userbg").checked = true;}
 if(llama_bg != ''){document.documentElement.style.setProperty('--user-bg-image', llama_bg);}
-if(llama_bg){document.getElementById("bgSelection1").value = llama_bg_reloader;}
 
 function Save_Llama_BG (zEvent) {
     var llama_bg1 = localStorage.getItem('llama_bg1');
@@ -3466,9 +3564,6 @@ function Toggle_No_Padding (zEvent) {
 
 var yt_status = localStorage.getItem('yt');
 if(yt_status){body.classList.add(yt_status)}
-if(yt_status == "mini_yt"){document.getElementById("mini_yt").checked = true;}
-
-document.getElementById ("mini_yt").addEventListener ("click", Toggle_MiniYT, false);
 
 function Toggle_MiniYT (zEvent) {
     var yt_status = localStorage.getItem('yt');

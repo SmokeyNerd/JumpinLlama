@@ -2740,15 +2740,63 @@ background-color:var(--custommode-bordercolor);}
 
 /* ------------------------------ LTR_LAYOUT -----------------------------------*/
 
+.hide_chat.hide_userlist.open_llama_chat .layout--horizontal #Llama_Chat,
+.hide_chat.hide_userlist.open_llama_cam .layout--horizontal #Llama_Cam,
+.hide_chat.hide_userlist.open_llama_theme .layout--horizontal #Llama_Theme {
+    position: absolute;
+    left: -161px;
+    top: 87px !important}
 
+.hide_chat.hide_userlist.open_llama_chat #Llama_Chat,
+.hide_chat.hide_userlist.open_llama_cam #Llama_Cam,
+.hide_chat.hide_userlist.open_llama_theme #Llama_Theme {
+position: absolute;
+    right: 75px;
+    top: -187px !important;}
+
+.hide_chat.hide_userlist .layout--horizontal #chat__llamaOption {
+    position: absolute;
+    top: 45px !important;
+    left: -143px !important;}
+.hide_chat.hide_userlist .layout--horizontal #cam__llamaOption {
+    position: absolute;
+    top: 45px !important;
+    left: -100px !important;}
+.hide_chat.hide_userlist .layout--horizontal #theme__llamaOption {
+    position: absolute;
+    top: 45px !important;
+    left: -57px !important;}
 .hide_chat.hide_userlist .room.layout--horizontal {grid-template-columns: 1fr 1fr 0rem;}
-
 .hide_chat.hide_userlist .chat {position: relative;top: 260px;}
-
 .hide_chat.hide_userlist .chat {position: relative;top: -40px;}
-
 .hide_chat.hide_userlist .room {grid-template-rows: 50px calc(100% - 50px);}
 
+.hide_chat.open_llama_theme .layout--horizontal #Llama_Theme,
+.hide_chat.open_llama_cam .layout--horizontal #Llama_Cam,
+.hide_chat.open_llama_chat .layout--horizontal #Llama_Chat {
+    position: absolute;
+    right: 205px;
+    top: 97px !important;}
+
+.hide_chat .layout--horizontal #chat__llamaOption {
+    position: relative;
+    top: 0px !important;
+    left: -290px !important;
+}
+.hide_chat .layout--horizontal #cam__llamaOption {
+    position: relative;
+    top: 0px !important;
+    left: -290px !important;
+}
+.hide_chat .layout--horizontal #theme__llamaOption {
+    position: relative;
+    top: 0px !important;
+    left: -290px !important;
+}
+
+
+.hide_chat.hide_userlist .cams__Header {padding-right: 150px;}
+.hide_chat .cams__Header {padding-right: 150px;}
 /*---------------------------------------------------------LTR-----------------------------------*/
 .ltr_layout .cams__Header {
     border-radius: 100px;
@@ -2960,9 +3008,7 @@ color:var(--budsmode-textcolor);
 z-index:4000;
 }
 
-.hide_userlist.hide_chat.open_llama_chat #Llama_Chat {
-    top: -205px;
-}
+
 
 .room.layout--horizontal > div.chat > div.chat__Header > div.chat__HeaderOptions > div {    top: 94px !important;}
 
@@ -2982,9 +3028,7 @@ z-index:4000;
 z-index:4000;
 }
 
-.hide_userlist.hide_chat.open_llama_chat #Llama_Cam {
-    top: -205px;
-}
+
 
 
 /* ------------------------------ LLAMA_CUSTOM_MENU ----------------------------------- */
@@ -3025,9 +3069,6 @@ z-index:4000;
 z-index:4000;
 }
 
-.hide_userlist.hide_chat.open_llama_theme #Llama_Theme {
-    top: -205px;
-}
 
 .room.layout--horizontal > div.chat > div.chat__Header > div.chat__HeaderOptions > div {    top: 94px !important;}
 
@@ -3170,65 +3211,65 @@ CustomColorNode.innerHTML = (`
 <div class="dropdown__Options" id="Llama_Custom">
 <div class="dropdown__Option dropdown__Option-header">Custom Settings<input id="Reset_Llama_Color" type="button" style="cursor:pointer;border-radius: 10px;width: 30%;border: 1px solid #ccc;" value="RESET"/></div>
 
-            <label class="dropdown__Option">
+            <span class="dropdown__Option">
                 <span>Header</span>
                 <input class="jscolor {zIndex:'5000'}"  type='text' name="server" id="llama_header_bgcolor_selection" value="#22ADD5" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
-            </label>
-            <label class="dropdown__Option">
+            </span>
+            <span class="dropdown__Option">
                 <span>Bars</span>
                 <input class="jscolor {zIndex:'5000'}"  type='text' name="server" id="llama_bars_bgcolor_selection" value="#C7CFD9" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
-            </label>
-            <label class="dropdown__Option">
+            </span>
+            <span class="dropdown__Option">
                 <span>Cam BG</span>
                 <input class="jscolor {zIndex:'5000'}"  type='text' name="server" id="llama_cams_bgcolor_selection" value="#FFFFFF" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
-            </label>
+            </span>
 
-            <label class="dropdown__Option">
+            <span class="dropdown__Option">
                 <span>Button BG</span>
                 <input class="jscolor {zIndex:'5000'}" type='text' name="server" id="llama_button_bgcolor_selection" value="#C7CFD9" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
-            </label>
-            <label class="dropdown__Option">
+            </span>
+            <span class="dropdown__Option">
                 <span>Button Border</span>
                 <input class="jscolor {zIndex:'5000'}" type='text' name="server" id="llama_button_bordercolor_selection" value="#000000" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
-            </label>
-            <label class="dropdown__Option">
+            </span>
+            <span class="dropdown__Option">
                 <span>Button Text</span>
                 <input class="jscolor {zIndex:'5000'}" type='text' name="server" id="llama_button_textcolor_selection" value="#FFFFFF" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
-            </label>
+            </span>
 
-            <label class="dropdown__Option">
+            <span class="dropdown__Option">
                 <span>Chat BG</span>
                 <input class="jscolor {zIndex:'5000'}" type='text' name="server" id="llama_chat_bgcolor_selection" value="#22ADD5" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
-            </label>
-            <label class="dropdown__Option">
+            </span>
+            <span class="dropdown__Option">
                 <span>Bubble Chat BG</span>
                 <input class="jscolor {zIndex:'5000'}" type='text' name="server" id="llama_chat_bubble_bgcolor_selection" value="#C7CFD9" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
-            </label>
-            <label class="dropdown__Option">
+            </span>
+            <span class="dropdown__Option">
                 <span>Bubble Chat Border</span>
                 <input class="jscolor {zIndex:'5000'}" type='text' name="server" id="llama_chat_bubble_bordercolor_selection" value="#FFFFFF" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
-            </label>
+            </span>
 
-            <label class="dropdown__Option">
+            <span class="dropdown__Option">
                 <span>UserList BG</span>
                 <input class="jscolor {zIndex:'5000'}" type='text' name="server" id="llama_user_bgcolor_selection" value="#22ADD5" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
-            </label>
-            <label class="dropdown__Option">
+            </span>
+            <span class="dropdown__Option">
                 <span>User BG</span>
                 <input class="jscolor {zIndex:'5000'}" type='text' name="server" id="llama_username_bgcolor_selection" value="#C7CFD9" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
-            </label>
-            <label class="dropdown__Option">
+            </span>
+            <span class="dropdown__Option">
                 <span>Username Text</span>
                 <input class="jscolor {zIndex:'5000'}" type='text' name="server" id="llama_username_textcolor_selection" value="#FFFFFF" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
-            </label>
+            </span>
 
-            <label class="dropdown__Option">
+            <span class="dropdown__Option">
                 <input id="Preview_Llama_Color" type="button" style="cursor:pointer;border-radius: 10px;width: 100%;border: 1px solid #ccc;" value="PREVIEW"></input>
-            </label>
+            </span>
 
-            <label class="dropdown__Option">
+            <span class="dropdown__Option">
                 <input id="Save_Llama_Color" type="button" style="cursor:pointer;border-radius: 10px;width: 100%;border: 1px solid #ccc;" value="SAVE"></input>
-            </label>
+            </span>
 </div>
 
 
@@ -3260,7 +3301,7 @@ var whatsNew_Box = document.getElementById("whatsNew_Box");
 
 //------------ Whats_New ----------------*/
 var WhatsNewIcon = document.createElement('label');
-WhatsNewIcon.className = "button button-floating button-icon button--text roomHeader__UserAction";
+WhatsNewIcon.className = "button button-floating button-icon button--text roomHeader__UserAction LlamaOption_chat";
 WhatsNewIcon.setAttribute ('id', 'Toggle_New_Llama_Notice');
 WhatsNewIcon.setAttribute ('title', 'Whats New SmokeyLlama');
 WhatsNewIcon.innerHTML = (`
@@ -3277,7 +3318,7 @@ document.getElementById ("Toggle_New_Llama_Notice").addEventListener ("click", T
 
 //------------ MINI_YT_ICON ----------------*/
 var MiniYTIcon = document.createElement('label');
-MiniYTIcon.className = "button chat__HeaderOption";
+MiniYTIcon.className = "button chat__HeaderOption LlamaOption_miniyt";
 MiniYTIcon.setAttribute ('id', 'miniyt__llamaOption');
 MiniYTIcon.setAttribute ('title', 'Mini Youtube Player');
 MiniYTIcon.innerHTML = (`
@@ -3293,7 +3334,7 @@ document.getElementById ("miniyt__llamaOption").addEventListener ("click", Toggl
 
 //------------ CHAT_ICON ----------------*/
 var newEl = document.createElement('label');
-newEl.className = "button chat__HeaderOption";
+newEl.className = "button chat__HeaderOption LlamaOption_chat";
 newEl.setAttribute ('id', 'chat__llamaOption');
 newEl.setAttribute ('title', 'Extra Chat Options');
 newEl.innerHTML = (`
@@ -3309,15 +3350,15 @@ newChatMenu.className = "dropdown__Options";
 newChatMenu.setAttribute ('id', 'Llama_Chat');
 newChatMenu.innerHTML = (`
 <div class="dropdown__Option dropdown__Option-header">Chat settings</div>
-<label class="dropdown__Option" id="llama_robo">Roboto Font<input id="llama_robo_checkbox" class="jic-checkbox" type="checkbox"></label>
+<span class="dropdown__Option" id="llama_robo">Roboto Font<input id="llama_robo_checkbox" class="jic-checkbox" type="checkbox"></span>
 
-<label class="dropdown__Option" id="llama_bubble_chat">Bubble Chat<input id="bubble_chat_checkbox" class="jic-checkbox" type="checkbox"></label>
+<span class="dropdown__Option" id="llama_bubble_chat">Bubble Chat<input id="bubble_chat_checkbox" class="jic-checkbox" type="checkbox"></span>
 
-<label class="dropdown__Option" id="chat_llama_hide">Toggle Chat<input id="hide_chat_checkbox" class="jic-checkbox" type="checkbox"></label>
+<span class="dropdown__Option" id="chat_llama_hide">Toggle Chat<input id="hide_chat_checkbox" class="jic-checkbox" type="checkbox"></span>
 
-<label class="dropdown__Option" id="userlist_llama_hide">Toggle Userlist<input id="hide_userlist_checkbox" class="jic-checkbox" type="checkbox"></label>
+<span class="dropdown__Option" id="userlist_llama_hide">Toggle Userlist<input id="hide_userlist_checkbox" class="jic-checkbox" type="checkbox"></span>
 
-<label class="dropdown__Option">LTR Mode<input class="jic-checkbox" type="checkbox"></label>
+<span class="dropdown__Option">LTR Mode<input class="jic-checkbox" type="checkbox"></span>
 
 ` );
 
@@ -3361,9 +3402,9 @@ newCamMenu.setAttribute ('id', 'Llama_Cam');
 newCamMenu.innerHTML = (`
 <div class="dropdown__Option dropdown__Option-header">Cam Settings</div>
 
-<label class="dropdown__Option" id="cam_border_llama">Cam Borders<input id="cam_border_checkbox" class="jic-checkbox" type="checkbox"></label>
+<span class="dropdown__Option" id="cam_border_llama">Cam Borders<input id="cam_border_checkbox" class="jic-checkbox" type="checkbox"></span>
 
-<label class="dropdown__Option" id="cam_spacing_llama">Cam Spacing<input id="cam_spacing_checkbox" class="jic-checkbox" type="checkbox"></label>
+<span class="dropdown__Option" id="cam_spacing_llama">Cam Spacing<input id="cam_spacing_checkbox" class="jic-checkbox" type="checkbox"></span>
 
 ` );
 
@@ -3416,19 +3457,19 @@ newThemeMenu.innerHTML = (`
 </select>
 </label>
 
-<label class="dropdown__Option" id="cam_bg_llama">Background Image<input id="cam_bg_checkbox" class="jic-checkbox" type="checkbox"></label>
+<span class="dropdown__Option" id="cam_bg_llama">Background Image<input id="cam_bg_checkbox" class="jic-checkbox" type="checkbox"></span>
 
 <div class="user_bg_settings">
 <div class="dropdown__Option dropdown__Option-header">BG Image Settings</div>
-<label style="position: relative;left: 10px;">
+<span style="position: relative;left: 10px;">
 
-Image URL:<input type='text' name="server" id="bgSelection1" placeholder="URL to image.." style="opacity: 1;cursor: pointer; margin-top: 10px;width: 150px;border-radius: 2px;border: 1px solid #ccc;"/></label>
+Image URL:<input type='text' name="server" id="bgSelection1" placeholder="URL to image.." style="opacity: 1;cursor: pointer; margin-top: 10px;width: 150px;border-radius: 2px;border: 1px solid #ccc;"/></span>
 
-<label class="dropdown__Option"><input id="Save_Llama_BG" type="button" value="✔" style="border-radius: 10px;width: 45%;border: 0px;"/>&nbsp;<input id="Remove_Llama_BG" type="button" value="✘" style="border-radius: 10px;width: 45%;border: 0px;"/></label>
+<span class="dropdown__Option"><input id="Save_Llama_BG" type="button" value="✔" style="border-radius: 10px;width: 45%;border: 0px;"/>&nbsp;<input id="Remove_Llama_BG" type="button" value="✘" style="border-radius: 10px;width: 45%;border: 0px;"/></span>
 
-<label class="dropdown__Option" id="toggle_userbg_cover">CAM BG : STRETCH<input id="cam_bg_cover" class="jic-checkbox" type="checkbox"></label>
-<label class="dropdown__Option" id="toggle_userbg_repeat">CAM BG : NO-REPEAT<input id="cam_bg_repeat" class="jic-checkbox" type="checkbox"></label>
-<label class="dropdown__Option" id="toggle_userbg_center">CAM BG : CENTER<input id="cam_bg_center" class="jic-checkbox" type="checkbox"></label>
+<span class="dropdown__Option" id="toggle_userbg_cover">CAM BG : STRETCH<input id="cam_bg_cover" class="jic-checkbox" type="checkbox"></span>
+<span class="dropdown__Option" id="toggle_userbg_repeat">CAM BG : NO-REPEAT<input id="cam_bg_repeat" class="jic-checkbox" type="checkbox"></span>
+<span class="dropdown__Option" id="toggle_userbg_center">CAM BG : CENTER<input id="cam_bg_center" class="jic-checkbox" type="checkbox"></span>
 
 </div>
 
@@ -3547,7 +3588,8 @@ if(robo_status){body.classList.add(llama_robo);}
 function Toggle_Robo_Llama (cEvent) {
     var robo_status = localStorage.getItem('robo_status')
         body.classList.toggle("llama_robo");
-        if(robo_status != "llama_robo"){localStorage.setItem('robo_status', 'llama_robo');} else {localStorage.setItem('robo_status', '');}
+        if(robo_status != "llama_robo"){localStorage.setItem('robo_status', 'llama_robo');document.getElementById("llama_robo_checkbox").checked = true;
+                                       } else {localStorage.setItem('robo_status', '');document.getElementById("llama_robo_checkbox").checked = false;}
 };
 
 //----------------------------------------------------------------- HIDE_NOTICE -----------------------------------------------------------------
@@ -3639,8 +3681,8 @@ function User_BG_Cover (zEvent) {
     var user_bg_cover_new = "ubg_cover_on";
     var user_bg_cover_current = localStorage.getItem('user_bg_cover');
         body.classList.toggle(user_bg_cover_new);
-        if(user_bg_cover_current != user_bg_cover_new){localStorage.setItem('user_bg_cover', user_bg_cover_new);}
-        if(user_bg_cover_current == user_bg_cover_new){localStorage.setItem('user_bg_cover', '');}
+        if(user_bg_cover_current != user_bg_cover_new){localStorage.setItem('user_bg_cover', user_bg_cover_new);document.getElementById("cam_bg_cover").checked = true;}
+        if(user_bg_cover_current == user_bg_cover_new){localStorage.setItem('user_bg_cover', '');document.getElementById("cam_bg_cover").checked = false;}
 };
 
 //----------------------------------------------------------------- USER_BG_REPEAT -----------------------------------------------------------------
@@ -3651,8 +3693,8 @@ function User_BG_Repeat (zEvent) {
     var user_bg_repeat_new = "ubg_repeat_on";
     var user_bg_repeat_current = localStorage.getItem('user_bg_repeat');
         body.classList.toggle(user_bg_repeat_new);
-        if(user_bg_repeat_current != user_bg_repeat_new){localStorage.setItem('user_bg_repeat', user_bg_repeat_new);}
-        if(user_bg_repeat_current == user_bg_repeat_new){localStorage.setItem('user_bg_repeat', '');}
+        if(user_bg_repeat_current != user_bg_repeat_new){localStorage.setItem('user_bg_repeat', user_bg_repeat_new);document.getElementById("cam_bg_repeat").checked = true;}
+        if(user_bg_repeat_current == user_bg_repeat_new){localStorage.setItem('user_bg_repeat', '');document.getElementById("cam_bg_repeat").checked = false;}
 };
 
 //----------------------------------------------------------------- USER_BG_CENTER -----------------------------------------------------------------
@@ -3664,8 +3706,8 @@ function User_BG_Center (zEvent) {
     var user_bg_center_new = "ubg_center_on";
     var user_bg_center_current = localStorage.getItem('user_bg_center');
         body.classList.toggle(user_bg_center_new);
-        if(user_bg_center_current != user_bg_center_new){localStorage.setItem('user_bg_center', user_bg_center_new);}
-        if(user_bg_center_current == user_bg_center_new){localStorage.setItem('user_bg_center', '');}
+        if(user_bg_center_current != user_bg_center_new){localStorage.setItem('user_bg_center', user_bg_center_new);document.getElementById("cam_bg_center").checked = true;}
+        if(user_bg_center_current == user_bg_center_new){localStorage.setItem('user_bg_center', '');document.getElementById("cam_bg_center").checked = false;}
 };
 
 //----------------------------------------------------------------- CUSTOM_MODE_PREVIEW -----------------------------------------------------------------
@@ -3906,7 +3948,8 @@ function Reset_Llama_Color (zEvent) {
 function Toggle_User_BG (zEvent) {
     var userbg_status = localStorage.getItem('userbg');
         body.classList.toggle("user_bg");
-        if(userbg_status != "user_bg"){localStorage.setItem('userbg', 'user_bg');} else {localStorage.setItem('userbg', '');}
+        if(userbg_status != "user_bg"){localStorage.setItem('userbg', 'user_bg');document.getElementById("cam_bg_checkbox").checked = true;
+                                      } else {localStorage.setItem('userbg', '');document.getElementById("cam_bg_checkbox").checked = false;}
 };
 
 //----------------------------------------------------------------- SAVE_CAM_BG -----------------------------------------------------------------
@@ -3952,7 +3995,8 @@ if(bubble_status){body.classList.add(bubble_status)}
 function Toggle_Bubble_Chat (zEvent) {
     var bubble_status = localStorage.getItem('bubble_status');
         body.classList.toggle("bubble_chat");
-        if(bubble_status != "bubble_chat"){localStorage.setItem('bubble_status', 'bubble_chat');} else {localStorage.setItem('bubble_status', '');}
+        if(bubble_status != "bubble_chat"){localStorage.setItem('bubble_status', 'bubble_chat');document.getElementById("bubble_chat_checkbox").checked = true;
+                                          } else {localStorage.setItem('bubble_status', '');document.getElementById("bubble_chat_checkbox").checked = false;}
 };
 //----------------------------------------------------------------- CHAT_TOGGLE -----------------------------------------------------------------
 
@@ -3962,7 +4006,8 @@ if(chat_Status){body.classList.add(chat_Status);}
 function Toggle_Chat (cEvent) {
     var chat_Status = localStorage.getItem('chat')
         body.classList.toggle("hide_chat");
-        if(chat_Status != "hide_chat"){localStorage.setItem('chat', 'hide_chat');} else {localStorage.setItem('chat', '');}
+        if(chat_Status != "hide_chat"){localStorage.setItem('chat', 'hide_chat');document.getElementById("hide_chat_checkbox").checked = true;
+                                      } else {localStorage.setItem('chat', '');document.getElementById("hide_chat_checkbox").checked = false;}
 };
 
 //----------------------------------------------------------------- USER_LIST_TOGGLE -----------------------------------------------------------------
@@ -3971,9 +4016,12 @@ var userlist_Status = localStorage.getItem('user_status');
 if(userlist_Status){body.classList.add(userlist_Status);}
 
 function Toggle_UserList (cEvent) {
+
+
     var userlist_Status = localStorage.getItem('user_status')
         body.classList.toggle("hide_userlist");
-        if(userlist_Status != "hide_userlist"){localStorage.setItem('user_status', 'hide_userlist');} else {localStorage.setItem('user_status', '');}
+        if(userlist_Status != "hide_userlist"){localStorage.setItem('user_status', 'hide_userlist');document.getElementById("hide_userlist_checkbox").checked = true;
+                                              } else {localStorage.setItem('user_status', '');document.getElementById("hide_userlist_checkbox").checked = false;}
 };
 
 //----------------------------------------------------------------- LTR_TOGGLE -----------------------------------------------------------------
@@ -3995,8 +4043,9 @@ if(border_status){body.classList.add(border_status)}
 function Toggle_No_Border (zEvent) {
     var yt_status = localStorage.getItem('no_border');
         body.classList.toggle("no_border");
-        if(yt_status != "no_border"){localStorage.setItem('no_border', 'no_border');}
-        if(yt_status == "no_border"){localStorage.setItem('no_border', '');}
+
+        if(yt_status != "no_border"){localStorage.setItem('no_border', 'no_border');document.getElementById("cam_border_checkbox").checked = true;}
+        if(yt_status == "no_border"){localStorage.setItem('no_border', '');document.getElementById("cam_border_checkbox").checked = false;}
 };
 
 
@@ -4008,8 +4057,8 @@ if(pad_status){body.classList.add(pad_status)}
 function Toggle_No_Padding (zEvent) {
     var pad_status = localStorage.getItem('no_padding');
         body.classList.toggle("no_padding");
-        if(pad_status != "no_padding"){localStorage.setItem('no_padding', 'no_padding');}
-        if(pad_status == "no_padding"){localStorage.setItem('no_padding', '');}
+        if(pad_status != "no_padding"){localStorage.setItem('no_padding', 'no_padding');document.getElementById("cam_spacing_checkbox").checked = true;}
+        if(pad_status == "no_padding"){localStorage.setItem('no_padding', '');document.getElementById("cam_spacing_checkbox").checked = true;}
 };
 
 //----------------------------------------------------------------- TOGGLE_MINI_YT -----------------------------------------------------------------

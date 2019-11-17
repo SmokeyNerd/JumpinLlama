@@ -114,7 +114,60 @@ function addGlobalStyle(css) {
 }
 
 addGlobalStyle( `
+.hide_header #app {margin-top: -50px;}
 
+.hide_header #Toggle_Hide_Header {
+    top: 50px;
+    border:1px solid #ccc;
+    border-top:0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;}
+
+.hide_header #header_up {display:none;}
+#header_up {display:block;}
+.hide_header #header_down {display:block;}
+#header_down {display:none;}
+
+#Toggle_Hide_Header {
+    cursor:pointer;
+    position: absolute;
+    top: 35px;
+    left: 25%;
+    height: 10px !important;
+    background-color: #272727;
+    padding: 3px 15px;
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border:1px solid #ccc;border-bottom: 0px;
+}
+#header_hide_icon {position:relative;top:0px;}
+.hide_header #header_hide_icon {position:relative;top:-3px;}
+
+.pinkmode #header_up, .pinkmode #header_down {color: var(--pinkmode-bordercolor);}
+.greenmode #header_up, .greenmode #header_down {color: var(--greenmode-bordercolor);}
+.bluemode #header_up, .bluemode #header_down {color: var(--bluemode-bordercolor);}
+.mauvemode #header_up, .mauvemode #header_down {color: var(--mauvemode-bordercolor);}
+.orangemode #header_up, .orangemode #header_down {color: var(--orangemode-bordercolor);}
+.redmode #header_up, .redmode #header_down {color: var(--redmode-bordercolor);}
+.purplemode #header_up, .purplemode #header_down {color: var(--purplemode-bordercolor);}
+.blackmode #header_up, .blackmode #header_down {color: var(--blackmode-bordercolor);}
+.splatmode #header_up, .splatmode #header_down {color: var(--splatmode-bordercolor);}
+
+.pinkmode #Toggle_Hide_Header {background-color: var(--pinkmode-bgcolor);border-color: var(--pinkmode-bordercolor);}
+.greenmode #Toggle_Hide_Header {background-color: var(--greenmode-bgcolor);border-color: var(--greenmode-bordercolor);color: var(--greenmode-bordercolor);}
+.bluemode #Toggle_Hide_Header {background-color: var(--bluemode-bgcolor);border-color: var(--bluemode-bordercolor);}
+.mauvemode #Toggle_Hide_Header {background-color: var(--mauvemode-bgcolor);border-color: var(--mauvemode-bordercolor);}
+.orangemode #Toggle_Hide_Header {background-color: var(--orangemode-bgcolor);border-color: var(--orangemode-bordercolor);}
+.redmode #Toggle_Hide_Header {background-color: var(--redmode-bgcolor);border-color: var(--redmode-bordercolor);}
+.purplemode #Toggle_Hide_Header {background-color: var(--purplemode-bgcolor);border-color: var(--purplemode-bordercolor);}
+.blackmode #Toggle_Hide_Header {background-color: var(--blackmode-bgcolor);border-color: var(--blackmode-bordercolor);}
+.splatmode #Toggle_Hide_Header {background-color: var(--splatmode-bgcolor);border-color: var(--splatmode-bordercolor);}
+
+#Toggle_Hide_Header:hover {opacity:0.6;}
+#apps {position:absolute;width: 50%;top:50px;}
 /*----- THEME_VARIABLES ---------------------------*/
 
 .hero {height:250px;background-position: top center !important;}
@@ -3299,6 +3352,7 @@ var whatsNew = document.getElementsByClassName("roomHeader__UserActions")[0];
 whatsNew.id="whatsNew_Box"
 var whatsNew_Box = document.getElementById("whatsNew_Box");
 
+
 //------------ Whats_New ----------------*/
 var WhatsNewIcon = document.createElement('label');
 WhatsNewIcon.className = "button button-floating button-icon button--text roomHeader__UserAction LlamaOption_chat";
@@ -3315,6 +3369,21 @@ whatsNew_Box.insertBefore(WhatsNewIcon, null);
 whatsNew_Box.insertBefore(WhatsNewIcon, whatsNew_Box.childNodes[0] || null);
 document.getElementById ("New_Llama_Notice").addEventListener ("click", Toggle_Notice, false);
 document.getElementById ("Toggle_New_Llama_Notice").addEventListener ("click", Toggle_Notice, false);
+
+//------------ Whats_New8 ----------------*/
+var HeaderHideIcon = document.createElement('label');
+HeaderHideIcon.className = "LlamaOption_chat";
+HeaderHideIcon.setAttribute ('id', 'Toggle_Hide_Header');
+HeaderHideIcon.setAttribute ('title', 'Hide Header');
+HeaderHideIcon.innerHTML = (`
+<span id="header_hide_icon"><i class="fas fa-chevron-up" id="header_up"></i><i class="fas fa-chevron-down" id="header_down"></i></span>
+` );
+
+
+whatsNew_Box.appendChild(HeaderHideIcon);
+whatsNew_Box.insertBefore(HeaderHideIcon, null);
+whatsNew_Box.insertBefore(HeaderHideIcon, whatsNew_Box.childNodes[0] || null);
+document.getElementById ("Toggle_Hide_Header").addEventListener ("click", Toggle_Hide_Header, false);
 
 //------------ MINI_YT_ICON ----------------*/
 var MiniYTIcon = document.createElement('label');
@@ -3382,6 +3451,7 @@ var userlist_Status = localStorage.getItem('user_status');
 if(userlist_Status == "hide_userlist"){document.getElementById("hide_userlist_checkbox").checked = true;}
 
 document.getElementById ("ChatSettings").addEventListener ("click", Hide_Llama_Chat_Options, false);
+
 
 //------------ GRID_ICON ----------------*/
 var newCamIcon = document.createElement('label');
@@ -3596,6 +3666,17 @@ function Toggle_Robo_Llama (cEvent) {
 
 function Toggle_Notice (zEvent) {
         body.classList.toggle("hide_notice");
+};
+
+var header_status = localStorage.getItem('header_status');
+var hide_header = 'hide_header'
+if(header_status){body.classList.add(hide_header);}
+
+function Toggle_Hide_Header (zEvent) {
+    var header_status = localStorage.getItem('header_status')
+        body.classList.toggle("hide_header");
+        if(header_status != "hide_header"){localStorage.setItem('header_status', 'hide_header');
+                                       } else {localStorage.setItem('header_status', '');}
 };
 
 //----------------------------------------------------------------- CUSTOM_MODE -----------------------------------------------------------------

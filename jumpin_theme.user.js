@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.62
+// @version      2019.63
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -2706,7 +2706,70 @@ chatShare_box.insertBefore(MiniYTIcon, chatShare_box.childNodes[3] || null);
 
 document.getElementById ("miniyt__llamaOption").addEventListener ("click", Toggle_MiniYT, false);
 
+//------------ GAMES_ICON ----------------*/
+var GamesIcon = document.createElement('label');
+GamesIcon.className = "button chat__HeaderOption LlamaOption_miniyt";
+GamesIcon.setAttribute ('id', 'games__llamaOption');
+GamesIcon.setAttribute ('title', 'Mini Game Window');
+GamesIcon.innerHTML = (`
+<i class="fas fa-gamepad"></i>
+` );
 
+chatShare_box.appendChild(GamesIcon);
+chatShare_box.insertBefore(GamesIcon, null);
+chatShare_box.insertBefore(GamesIcon, chatShare_box.childNodes[4] || null);
+
+document.getElementById ("games__llamaOption").addEventListener ("click", Toggle_Games, false);
+//------------ GAMES_MENU ----------------*/
+var newGamesMenu = document.createElement('div');
+newGamesMenu.className = "dropdown__Options";
+newGamesMenu.setAttribute ('id', 'Llama_Games');
+newGamesMenu.innerHTML = (`
+<style>
+#game_window {display:none;}
+.game_window #game_window {
+    display:block;
+    position: absolute;
+    bottom: 50px;
+    z-index: 6000;
+    left: 200px;
+    height: 530px;
+    width: 350px;
+    border:1px solid #23272a;
+    border-radius:10px;}
+
+.games_home_button {display:none;}
+.game_window .games_home_button {
+    display: block;
+    position: absolute;
+    bottom: 473px;
+    z-index: 6000;
+    left: 168px;
+    height: 35px;
+    width: 31px;
+    background-color: #313131;
+    border: 1px solid #23272a;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;}
+.games_home_button:hover {background-color:#191919;}
+
+.pinkmode .fa-gamepad {color: var(--pinkmode-lightbgcolor);}
+.greenmode .fa-gamepad {color: var(--greenmode-lightbgcolor);}
+.bluemode .fa-gamepad {color: var(--bluemode-lightbgcolor);}
+.mauvemode .fa-gamepad {color: var(--mauvemode-lightbgcolor);}
+.orangemode .fa-gamepad {color: var(--orangemode-lightbgcolor);}
+.redmode .fa-gamepad {color: var(--redmode-lightbgcolor);}
+.purplemode .fa-gamepad {color: var(--purplemode-lightbgcolor);}
+.blackmode .fa-gamepad {color: #7289da;}
+.budsmode .fa-gamepad {color: var(--budsmode-lightbgcolor);}
+.splatmode .fa-gamepad {color: var(--splatmode-lightbgcolor);}
+.custommode .fa-gamepad {color: var(--custommodebutton-textcolor);}
+</style>
+<div class="games_home_button" title="Game Homepage"><a href="https://smokeyllama.glitch.me/game_list.html" target="game_window"><i class="fas fa-home" style="padding: 11px;"></i></a></div>
+<iframe src="https://smokeyllama.glitch.me/game_list.html" class="" id="game_window"  name="game_window"></iframe>
+` );
+el.insertBefore(newGamesMenu, el.childNodes[4] || null);
 //------------ CHAT_ICON ----------------*/
 var newEl = document.createElement('label');
 newEl.className = "button chat__HeaderOption LlamaOption_chat";
@@ -3057,6 +3120,10 @@ function Toggle_Hide_Header (zEvent) {
         body.classList.toggle("hide_header");
         if(header_status != "hide_header"){localStorage.setItem('header_status', 'hide_header');
                                        } else {localStorage.setItem('header_status', '');}
+};
+
+function Toggle_Games (zEvent) {
+        body.classList.toggle("game_window");
 };
 
 //----------------------------------------------------------------- CUSTOM_MODE -----------------------------------------------------------------

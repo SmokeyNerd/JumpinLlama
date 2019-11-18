@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.57
+// @version      2019.58
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -14,6 +14,7 @@
 // @updateURL    https://github.com/SmokeyLlama/jumpinllama/raw/master/jumpin_theme.user.js
 // @downloadURL  https://github.com/SmokeyLlama/jumpinllama/raw/master/jumpin_theme.user.js
 // @require      https://github.com/SmokeyLlama/jumpinllama/raw/master/jscolor.js
+
 
 
 // ==/UserScript==
@@ -3022,9 +3023,18 @@ z-index:1;
 .user_bg .chat__UserList {background-image: var(--user-bg3-image);}
 .user_bg .roomHeader {background-image: var(--user-bg-image);}
 
-.user_bg.ubg_cover_on .cams__ContainerInternal {background-size:cover;}
-.user_bg.ubg_repeat_on .cams__ContainerInternal {background-repeat:no-repeat;}
-.user_bg.ubg_center_on .cams__ContainerInternal {background-position:center center;}
+.user_bg.cam_cover_on .cams__ContainerInternal {background-size:cover;}
+.user_bg.cam_repeat_on .cams__ContainerInternal {background-repeat:no-repeat;}
+.user_bg.cam_center_on .cams__ContainerInternal {background-position:center center;}
+
+.user_bg.chat_cover_on .chat__FeedWrapper {background-size:cover;}
+.user_bg.chat_repeat_on .chat__FeedWrapper {background-repeat:no-repeat;}
+.user_bg.chat_center_on .chat__FeedWrapper {background-position:center center;}
+
+.user_bg.userlist_cover_on .chat__UserList {background-size:cover;}
+.user_bg.userlist_repeat_on .chat__UserList {background-repeat:no-repeat;}
+.user_bg.userlist_center_on .chat__UserList {background-position:center center;}
+
 #Theme_Selector {
     position: absolute;
     left: 430px;
@@ -3130,7 +3140,7 @@ z-index:4000;
 
 .room.layout--horizontal > div.chat > div.chat__Header > div.chat__HeaderOptions > div {    top: 94px !important;}
 
-.user_bg.open_llama_theme #Llama_Theme {    height: 420px;top: 16%;}
+.user_bg.open_llama_theme #Llama_Theme {    height: 450px;top: 12%;}
 
 
 
@@ -3572,9 +3582,36 @@ newThemeMenu.innerHTML = (`
 
 <span class="dropdown__Option"><input id="Save_Llama_BG" type="button" value="✔" style="border-radius: 10px;width: 45%;border: 0px;"/>&nbsp;<input id="Remove_Llama_BG" type="button" value="✘" style="border-radius: 10px;width: 45%;border: 0px;"/></span>
 
-<span class="dropdown__Option" id="toggle_userbg_cover">CAM BG : STRETCH<input id="cam_bg_cover" class="jic-checkbox" type="checkbox"></span>
-<span class="dropdown__Option" id="toggle_userbg_repeat">CAM BG : NO-REPEAT<input id="cam_bg_repeat" class="jic-checkbox" type="checkbox"></span>
-<span class="dropdown__Option" id="toggle_userbg_center">CAM BG : CENTER<input id="cam_bg_center" class="jic-checkbox" type="checkbox"></span>
+<span class="dropdown__Option no_hover" style="font-size: 10px; margin-left: 53px;">
+COVER | REPEAT | CENTER
+</span>
+
+<span class="dropdown__Option no_hover">
+CAM BG
+<span style="margin-right: 20px;">
+<input id="cam_bg_cover" class="jic-checkbox" type="checkbox" style="cursor:pointer;">
+<input id="cam_bg_repeat" class="jic-checkbox" type="checkbox" style="cursor:pointer;">
+<input id="cam_bg_center" class="jic-checkbox" type="checkbox" style="cursor:pointer;">
+</span>
+</span>
+
+<span class="dropdown__Option no_hover">
+CHAT BG
+<span style="margin-right: 20px;">
+<input id="chat_bg_cover" class="jic-checkbox" type="checkbox" style="cursor:pointer;">
+<input id="chat_bg_repeat" class="jic-checkbox" type="checkbox" style="cursor:pointer;">
+<input id="chat_bg_center" class="jic-checkbox" type="checkbox" style="cursor:pointer;">
+</span>
+</span>
+
+<span class="dropdown__Option no_hover">
+USER BG
+<span style="margin-right: 20px;">
+<input id="userlist_bg_cover" class="jic-checkbox" type="checkbox" style="cursor:pointer;">
+<input id="userlist_bg_repeat" class="jic-checkbox" type="checkbox" style="cursor:pointer;">
+<input id="userlist_bg_center" class="jic-checkbox" type="checkbox" style="cursor:pointer;">
+</span>
+</span>
 
 </div>
 
@@ -3590,13 +3627,8 @@ document.getElementById ("Preview_Llama_Color").addEventListener ("click", Previ
 document.getElementById ("Save_Llama_Color").addEventListener ("click", Save_Llama_Color, false);
 document.getElementById ("Reset_Llama_Color").addEventListener ("click", Reset_Llama_Color, false);
 
-
-
 document.getElementById ("Save_Llama_BG").addEventListener ("click", Save_Llama_BG, false);
 document.getElementById ("Remove_Llama_BG").addEventListener ("click", Remove_Llama_BG, false);
-document.getElementById ("toggle_userbg_cover").addEventListener ("click", User_BG_Cover, false);
-document.getElementById ("toggle_userbg_repeat").addEventListener ("click", User_BG_Repeat, false);
-document.getElementById ("toggle_userbg_center").addEventListener ("click", User_BG_Center, false);
 
 document.addEventListener('input', function (event) {
 
@@ -3616,6 +3648,18 @@ document.addEventListener('input', function (event) {
     if (event.target.value === 'CUSTOM') {Toggle_Theme_Custom();Save_Llama_Color();}
 }, false);
 
+document.getElementById ("cam_bg_cover").addEventListener ("click", Cam_BG_Cover, false);
+document.getElementById ("cam_bg_repeat").addEventListener ("click", Cam_BG_Repeat, false);
+document.getElementById ("cam_bg_center").addEventListener ("click", Cam_BG_Center, false);
+
+document.getElementById ("chat_bg_cover").addEventListener ("click", Chat_BG_Cover, false);
+document.getElementById ("chat_bg_repeat").addEventListener ("click", Chat_BG_Repeat, false);
+document.getElementById ("chat_bg_center").addEventListener ("click", Chat_BG_Center, false);
+
+document.getElementById ("userlist_bg_cover").addEventListener ("click", Userlist_BG_Cover, false);
+document.getElementById ("userlist_bg_repeat").addEventListener ("click", Userlist_BG_Repeat, false);
+document.getElementById ("userlist_bg_center").addEventListener ("click", Userlist_BG_Center, false);
+
 var llama_bg = localStorage.getItem('llama_bg1');
 var llama_bg_reloader = localStorage.getItem('llama_bg1_reload');
 if(llama_bg != ''){document.documentElement.style.setProperty('--user-bg-image', llama_bg);}
@@ -3631,14 +3675,32 @@ var llama_bg3_reloader = localStorage.getItem('llama_bg3_reload');
 if(llama_bg3 != ''){document.documentElement.style.setProperty('--user-bg3-image', llama_bg3);}
 if(llama_bg3){document.getElementById("bgSelection3").value = llama_bg_reloader3;}
 
-var user_bg_cover = localStorage.getItem('user_bg_cover');
-if(user_bg_cover){document.getElementById("cam_bg_cover").checked = true;}
+var cam_bg_cover = localStorage.getItem('cam_bg_cover');
+if(cam_bg_cover){document.getElementById("cam_bg_cover").checked = true;}
 
-var user_bg_repeat = localStorage.getItem('user_bg_repeat');
-if(user_bg_repeat){document.getElementById("cam_bg_repeat").checked = true;}
+var cam_bg_repeat = localStorage.getItem('cam_bg_repeat');
+if(cam_bg_repeat){document.getElementById("cam_bg_repeat").checked = true;}
 
-var user_bg_center = localStorage.getItem('user_bg_center');
-if(user_bg_center){document.getElementById("cam_bg_center").checked = true;}
+var cam_bg_center = localStorage.getItem('cam_bg_center');
+if(cam_bg_center){document.getElementById("cam_bg_center").checked = true;}
+
+var chat_bg_cover = localStorage.getItem('chat_bg_cover');
+if(chat_bg_cover){document.getElementById("chat_bg_cover").checked = true;}
+
+var chat_bg_repeat = localStorage.getItem('chat_bg_repeat');
+if(chat_bg_repeat){document.getElementById("chat_bg_repeat").checked = true;}
+
+var chat_bg_center = localStorage.getItem('chat_bg_center');
+if(chat_bg_center){document.getElementById("chat_bg_center").checked = true;}
+
+var userlist_bg_cover = localStorage.getItem('userlist_bg_cover');
+if(userlist_bg_cover){document.getElementById("userlist_bg_cover").checked = true;}
+
+var userlist_bg_repeat = localStorage.getItem('userlist_bg_repeat');
+if(userlist_bg_repeat){document.getElementById("userlist_bg_repeat").checked = true;}
+
+var userlist_bg_center = localStorage.getItem('userlist_bg_center');
+if(userlist_bg_center){document.getElementById("userlist_bg_center").checked = true;}
 
 var userbg_status = localStorage.getItem('userbg');
 if(userbg_status == "user_bg"){document.getElementById("cam_bg_checkbox").checked = true;}
@@ -3658,7 +3720,6 @@ if(theme_status == "blackmode"){document.getElementById("theme_wizard").selected
 if(theme_status == "budsmode"){document.getElementById("theme_wizard").selectedIndex = 10;}
 if(theme_status == "splatmode"){document.getElementById("theme_wizard").selectedIndex = 11;}
 if(theme_status == "custommode"){document.getElementById("theme_wizard").selectedIndex = 12;}
-
 
 };
 
@@ -3798,41 +3859,114 @@ function Toggle_Theme_Custom (zEvent) {
 //END OTHER THEMES
 };
 
-//----------------------------------------------------------------- USER_BG_COVER -----------------------------------------------------------------
-var user_bg_cover = localStorage.getItem('user_bg_cover');
-if(user_bg_cover){body.classList.add(user_bg_cover)};
+//----------------------------------------------------------------- CAM_BG_COVER -----------------------------------------------------------------
+var cam_bg_cover = localStorage.getItem("cam_bg_cover");
+if(cam_bg_cover){body.classList.add("cam_cover_on")};
 
-function User_BG_Cover (zEvent) {
-    var user_bg_cover_new = "ubg_cover_on";
-    var user_bg_cover_current = localStorage.getItem('user_bg_cover');
-        body.classList.toggle(user_bg_cover_new);
-        if(user_bg_cover_current != user_bg_cover_new){localStorage.setItem('user_bg_cover', user_bg_cover_new);document.getElementById("cam_bg_cover").checked = true;}
-        if(user_bg_cover_current == user_bg_cover_new){localStorage.setItem('user_bg_cover', '');document.getElementById("cam_bg_cover").checked = false;}
+function Cam_BG_Cover (zEvent) {
+    var cam_bg_cover_new = "cam_cover_on";
+    var cam_bg_cover_current = localStorage.getItem('cam_bg_cover');
+        body.classList.toggle(cam_bg_cover_new);
+        if(cam_bg_cover_current != cam_bg_cover_new){localStorage.setItem('cam_bg_cover', cam_bg_cover_new);document.getElementById("cam_bg_cover").checked = true;
+                                      } else {localStorage.setItem('cam_bg_cover', '');document.getElementById("cam_bg_cover").checked = false;}
 };
 
-//----------------------------------------------------------------- USER_BG_REPEAT -----------------------------------------------------------------
-var user_bg_repeat = localStorage.getItem('user_bg_repeat');
-if(user_bg_repeat){body.classList.add(user_bg_repeat)};
+//----------------------------------------------------------------- CAM_BG_REPEAT -----------------------------------------------------------------
+var cam_bg_repeat = localStorage.getItem('cam_bg_repeat');
+if(cam_bg_repeat){body.classList.add(cam_bg_repeat)};
 
-function User_BG_Repeat (zEvent) {
-    var user_bg_repeat_new = "ubg_repeat_on";
-    var user_bg_repeat_current = localStorage.getItem('user_bg_repeat');
-        body.classList.toggle(user_bg_repeat_new);
-        if(user_bg_repeat_current != user_bg_repeat_new){localStorage.setItem('user_bg_repeat', user_bg_repeat_new);document.getElementById("cam_bg_repeat").checked = true;}
-        if(user_bg_repeat_current == user_bg_repeat_new){localStorage.setItem('user_bg_repeat', '');document.getElementById("cam_bg_repeat").checked = false;}
+function Cam_BG_Repeat (zEvent) {
+    var cam_bg_repeat_new = "cam_repeat_on";
+    var cam_bg_repeat_current = localStorage.getItem('cam_bg_repeat');
+        body.classList.toggle(cam_bg_repeat_new);
+        if(cam_bg_repeat_current != cam_bg_repeat_new){localStorage.setItem('cam_bg_repeat', cam_bg_repeat_new);document.getElementById("cam_bg_repeat").checked = true;}
+        if(cam_bg_repeat_current == cam_bg_repeat_new){localStorage.setItem('cam_bg_repeat', '');document.getElementById("cam_bg_repeat").checked = false;}
 };
 
-//----------------------------------------------------------------- USER_BG_CENTER -----------------------------------------------------------------
-var user_bg_center = localStorage.getItem('user_bg_center');
-if(user_bg_center){body.classList.add(user_bg_center)};
+//----------------------------------------------------------------- CAM_BG_CENTER -----------------------------------------------------------------
+var cam_bg_center = localStorage.getItem('cam_bg_center');
+if(cam_bg_center){body.classList.add(cam_bg_center)};
+
+function Cam_BG_Center (zEvent) {
+    var cam_bg_center_new = "cam_center_on";
+    var cam_bg_center_current = localStorage.getItem('cam_bg_center');
+        body.classList.toggle(cam_bg_center_new);
+        if(cam_bg_center_current != cam_bg_center_new){localStorage.setItem('cam_bg_center', cam_bg_center_new);document.getElementById("cam_bg_center").checked = true;}
+        if(cam_bg_center_current == cam_bg_center_new){localStorage.setItem('cam_bg_center', '');document.getElementById("cam_bg_center").checked = false;}
+};
 
 
-function User_BG_Center (zEvent) {
-    var user_bg_center_new = "ubg_center_on";
-    var user_bg_center_current = localStorage.getItem('user_bg_center');
-        body.classList.toggle(user_bg_center_new);
-        if(user_bg_center_current != user_bg_center_new){localStorage.setItem('user_bg_center', user_bg_center_new);document.getElementById("cam_bg_center").checked = true;}
-        if(user_bg_center_current == user_bg_center_new){localStorage.setItem('user_bg_center', '');document.getElementById("cam_bg_center").checked = false;}
+//----------------------------------------------------------------- Chat_BG_COVER -----------------------------------------------------------------
+var chat_bg_cover = localStorage.getItem("chat_bg_cover");
+if(chat_bg_cover){body.classList.add("chat_cover_on")};
+
+function Chat_BG_Cover (zEvent) {
+    var chat_bg_cover_new = "chat_cover_on";
+    var chat_bg_cover_current = localStorage.getItem('chat_bg_cover');
+        body.classList.toggle(chat_bg_cover_new);
+        if(chat_bg_cover_current != chat_bg_cover_new){localStorage.setItem('chat_bg_cover', chat_bg_cover_new);document.getElementById("chat_bg_cover").checked = true;
+                                      } else {localStorage.setItem('chat_bg_cover', '');document.getElementById("chat_bg_cover").checked = false;}
+};
+
+//----------------------------------------------------------------- Chat_BG_REPEAT -----------------------------------------------------------------
+var chat_bg_repeat = localStorage.getItem('chat_bg_repeat');
+if(chat_bg_repeat){body.classList.add(chat_bg_repeat)};
+
+function Chat_BG_Repeat (zEvent) {
+    var chat_bg_repeat_new = "chat_repeat_on";
+    var chat_bg_repeat_current = localStorage.getItem('chat_bg_repeat');
+        body.classList.toggle(chat_bg_repeat_new);
+        if(chat_bg_repeat_current != chat_bg_repeat_new){localStorage.setItem('chat_bg_repeat', chat_bg_repeat_new);document.getElementById("chat_bg_repeat").checked = true;}
+        if(chat_bg_repeat_current == chat_bg_repeat_new){localStorage.setItem('chat_bg_repeat', '');document.getElementById("chat_bg_repeat").checked = false;}
+};
+
+//----------------------------------------------------------------- Chat_BG_CENTER -----------------------------------------------------------------
+var chat_bg_center = localStorage.getItem('chat_bg_center');
+if(chat_bg_center){body.classList.add(chat_bg_center)};
+
+function Chat_BG_Center (zEvent) {
+    var chat_bg_center_new = "chat_center_on";
+    var chat_bg_center_current = localStorage.getItem('chat_bg_center');
+        body.classList.toggle(chat_bg_center_new);
+        if(chat_bg_center_current != chat_bg_center_new){localStorage.setItem('chat_bg_center', chat_bg_center_new);document.getElementById("chat_bg_center").checked = true;}
+        if(chat_bg_center_current == chat_bg_center_new){localStorage.setItem('chat_bg_center', '');document.getElementById("chat_bg_center").checked = false;}
+};
+
+
+//----------------------------------------------------------------- Userlist_BG_COVER -----------------------------------------------------------------
+var userlist_bg_cover = localStorage.getItem("userlist_bg_cover");
+if(userlist_bg_cover){body.classList.add("userlist_cover_on")};
+
+function Userlist_BG_Cover (zEvent) {
+    var userlist_bg_cover_new = "userlist_cover_on";
+    var userlist_bg_cover_current = localStorage.getItem('userlist_bg_cover');
+        body.classList.toggle(userlist_bg_cover_new);
+        if(userlist_bg_cover_current != userlist_bg_cover_new){localStorage.setItem('userlist_bg_cover', userlist_bg_cover_new);document.getElementById("userlist_bg_cover").checked = true;
+                                      } else {localStorage.setItem('userlist_bg_cover', '');document.getElementById("userlist_bg_cover").checked = false;}
+};
+
+//----------------------------------------------------------------- Userlist_BG_REPEAT -----------------------------------------------------------------
+var userlist_bg_repeat = localStorage.getItem('userlist_bg_repeat');
+if(userlist_bg_repeat){body.classList.add(userlist_bg_repeat)};
+
+function Userlist_BG_Repeat (zEvent) {
+    var userlist_bg_repeat_new = "userlist_repeat_on";
+    var userlist_bg_repeat_current = localStorage.getItem('userlist_bg_repeat');
+        body.classList.toggle(userlist_bg_repeat_new);
+        if(userlist_bg_repeat_current != userlist_bg_repeat_new){localStorage.setItem('userlist_bg_repeat', userlist_bg_repeat_new);document.getElementById("userlist_bg_repeat").checked = true;}
+        if(userlist_bg_repeat_current == userlist_bg_repeat_new){localStorage.setItem('userlist_bg_repeat', '');document.getElementById("userlist_bg_repeat").checked = false;}
+};
+
+//----------------------------------------------------------------- Userlist_BG_CENTER -----------------------------------------------------------------
+var userlist_bg_center = localStorage.getItem('userlist_bg_center');
+if(userlist_bg_center){body.classList.add(userlist_bg_center)};
+
+function Userlist_BG_Center (zEvent) {
+    var userlist_bg_center_new = "userlist_center_on";
+    var userlist_bg_center_current = localStorage.getItem('userlist_bg_center');
+        body.classList.toggle(userlist_bg_center_new);
+        if(userlist_bg_center_current != userlist_bg_center_new){localStorage.setItem('userlist_bg_center', userlist_bg_center_new);document.getElementById("userlist_bg_center").checked = true;}
+        if(userlist_bg_center_current == userlist_bg_center_new){localStorage.setItem('userlist_bg_center', '');document.getElementById("userlist_bg_center").checked = false;}
 };
 
 //----------------------------------------------------------------- CUSTOM_MODE_PREVIEW -----------------------------------------------------------------

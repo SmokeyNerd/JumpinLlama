@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.63
+// @version      2019.64
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -130,7 +130,7 @@ addGlobalStyle( `
     cursor:pointer;
     position: absolute;
     top: 35px;
-    left: 25%;
+    left: 283px;
     height: 10px !important;
     background-color: #272727;
     padding: 3px 15px;
@@ -160,6 +160,16 @@ addGlobalStyle( `
 .blackmode #Toggle_Hide_Header {background-color: var(--blackmode-bgcolor);border-color: var(--blackmode-bordercolor);}
 .splatmode #Toggle_Hide_Header {background-color: var(--splatmode-bgcolor);border-color: var(--splatmode-bordercolor);}
 .custommode #Toggle_Hide_Header {background-color: var(--custommodebars-bgcolor) !important;border-color: var(--custommodebars-bgcolor);}
+
+.pinkmode .cams__RoomDescription {color: var(--pinkmode-textcolor);}
+.greenmode .cams__RoomDescription {color: var(--bluemode-textcolor);}
+.bluemode .cams__RoomDescription {color: var(--bluemode-textcolor);}
+.mauvemode .cams__RoomDescription {color: var(--mauvemode-textcolor);}
+.orangemode .cams__RoomDescription {color: var(--orangemode-textcolor);}
+.redmode .cams__RoomDescription {color: var(--redmode-textcolor);}
+.purplemode .cams__RoomDescription {color: var(--purplemode-textcolor);}
+.splaymode .cams__RoomDescription {color: var(--splaymode-textcolor);}
+.customemode .cams__RoomDescription {color: var(--customemode-textcolor);}
 
 #Toggle_Hide_Header:hover {opacity:0.6;}
 #apps {position:absolute;width: 50%;top:50px;}
@@ -1705,10 +1715,10 @@ background-color:var(--blackmode-bordercolor);}
     --budsmode-bordercolor: #005900;
     --budsmode-lightbgcolor: #000000;
     --budsmode-textcolor: #fff;
-    --budsmode-headerbg: url(https://i.ibb.co/jDC8w3C/weed-wallpaper-1920x1080.jpg);
-    --budsmode-roombg: url(https://i.ibb.co/5YKLsSK/wp2565886.jpg);
-    --budsmode-userbg: url(https://i.ibb.co/5YKLsSK/wp2565886.jpg);
-    --budsmode-chatbg: url(https://i.ibb.co/5YKLsSK/wp2565886.jpg);
+    --budsmode-headerbg: url(https://kpfa.org/wp-content/uploads/2015/10/weed-wallpaper-65.jpg);
+    --budsmode-roombg: url(https://kpfa.org/wp-content/uploads/2015/10/weed-wallpaper-65.jpg);
+    --budsmode-userbg: url(https://kpfa.org/wp-content/uploads/2015/10/weed-wallpaper-65.jpg);
+    --budsmode-chatbg: url(https://kpfa.org/wp-content/uploads/2015/10/weed-wallpaper-65.jpg);
     --budsmode-ptt: url(https://i.ibb.co/W2tyNNs/cannabis-PNG17.png);}
 .budsmode .modal__Body {background: var(--budsmode-bgcolor);background-color: var(--budsmode-bgcolor);}
 .budsmode .scroll-shadow {background-color: var(--budsmode-bgcolor);background: var(--budsmode-bgcolor);}
@@ -2363,6 +2373,15 @@ z-index:1;
 .purplemode.user_bg .chat__FeedWrapper {background-color: var(--purplemode-lightbgcolor);}
 .blackmode.user_bg .chat__FeedWrapper {background-color: var(--blackmode-lightbgcolor);}
 .budsmode.user_bg .chat__FeedWrapper {background-color: var(--budsmode-lightbgcolor);}
+
+.pinkmode .userList__UserHandle {color: var(--pinkmode-bgcolor);}
+.greenmode .userList__UserHandle {color: var(--greenmode-textcolor);}
+.bluemode .userList__UserHandle {color: var(--bluemode-textcolor);}
+.mauvemode .userList__UserHandle {color: var(--mauvemode-textcolor);}
+.orangemode .userList__UserHandle {color: var(--orangemode-textcolor);}
+.redmode .userList__UserHandle {color: var(--redmode-textcolor);}
+.purplemode .userList__UserHandle {color: var(--purplemode-textcolor);}
+.budsmode .userList__UserHandle {color: var(--budsmode-textcolor);}
 
 
 .user_bg .chat__UserList {background-image: var(--user-bg3-image);}

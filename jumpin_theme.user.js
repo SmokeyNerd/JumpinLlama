@@ -336,6 +336,8 @@ body.pinkmode, {background-color: var(--pinkmode-bgcolor);}
 :root {
 
     --user-bg-image: none;
+    --user-bg2-image: none;
+    --user-bg3-image: none;
 
     --smash-bgcolor: #282828;
     --smash-bordercolor: #3c3c3c;
@@ -3016,6 +3018,9 @@ z-index:1;
 
 
 .user_bg .cams__ContainerInternal {background-image: var(--user-bg-image);}
+.user_bg .chat__FeedWrapper {background-image: var(--user-bg2-image);}
+.user_bg .chat__UserList {background-image: var(--user-bg3-image);}
+.user_bg .roomHeader {background-image: var(--user-bg-image);}
 
 .user_bg.ubg_cover_on .cams__ContainerInternal {background-size:cover;}
 .user_bg.ubg_repeat_on .cams__ContainerInternal {background-repeat:no-repeat;}
@@ -3049,7 +3054,7 @@ color:var(--budsmode-textcolor);
 .llama_robo.open_llama_chat #Llama_Chat {width:175px;}
 .open_llama_chat #Llama_Chat {
     display: block;
-    top: 49%;
+    top: 44%;
     position: absolute;
     right: 11px;
     border-radius: 3px;
@@ -3069,7 +3074,7 @@ z-index:4000;
 
 .open_llama_cam #Llama_Cam {
     display: block;
-    top: 58%;
+    top: 54%;
     position: absolute;
     right: 11px;
     border-radius: 3px;
@@ -3125,7 +3130,7 @@ z-index:4000;
 
 .room.layout--horizontal > div.chat > div.chat__Header > div.chat__HeaderOptions > div {    top: 94px !important;}
 
-.user_bg.open_llama_theme #Llama_Theme {    height: 282px;top: 38%;}
+.user_bg.open_llama_theme #Llama_Theme {    height: 420px;top: 16%;}
 
 
 
@@ -3195,6 +3200,9 @@ src: url('data:application/font-ttf;base64,AAEAAAAQAQAABAAAR0RFRgsxCzIAAbicAAAAQ
 
 #Save_Llama_Color:hover {background-color:green;}
 #Preview_Llama_Color:hover {background-color:yellow;}
+
+.no_hover:hover {background: #f7f7f7;cursor:default;}
+.no_hoverbackground-color: #d8d8d8 !important;}
 ` );
 
 //----------------------------------------------------------------- LLAMA_MENU -----------------------------------------------------------------*/
@@ -3531,9 +3539,36 @@ newThemeMenu.innerHTML = (`
 
 <div class="user_bg_settings">
 <div class="dropdown__Option dropdown__Option-header">BG Image Settings</div>
-<span style="position: relative;left: 10px;">
 
-Image URL:<input type='text' name="server" id="bgSelection1" placeholder="URL to image.." style="opacity: 1;cursor: pointer; margin-top: 10px;width: 150px;border-radius: 2px;border: 1px solid #ccc;"/></span>
+<span class="dropdown__Option no_hover">
+
+<i class="fas fa-video" style="color:#5a6370;"></i>
+<span style="position: relative; left: -34px;">CAM BG Image URL</span>
+</span>
+
+<span class="dropdown__Option">
+<input type='text' name="server" id="bgSelection1" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 150px;border-radius: 2px;border: 1px solid #ccc;"/>
+</span>
+
+<span class="dropdown__Option no_hover">
+
+<i class="fas fa-comments" style="color:#5a6370;"></i>
+<span style="position: relative; left: -28px;">CHAT BG Image URL</span>
+</span>
+
+<span class="dropdown__Option">
+<input type='text' name="server" id="bgSelection2" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 150px;border-radius: 2px;border: 1px solid #ccc;"/>
+</span>
+
+<span class="dropdown__Option no_hover">
+
+<i class="fas fa-users" style="color:#5a6370;"></i>
+<span style="position: relative; left: -19px;">USERS BG Image URL</span>
+</span>
+
+<span class="dropdown__Option">
+<input type='text' name="server" id="bgSelection3" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 150px;border-radius: 2px;border: 1px solid #ccc;"/>
+</span>
 
 <span class="dropdown__Option"><input id="Save_Llama_BG" type="button" value="✔" style="border-radius: 10px;width: 45%;border: 0px;"/>&nbsp;<input id="Remove_Llama_BG" type="button" value="✘" style="border-radius: 10px;width: 45%;border: 0px;"/></span>
 
@@ -3583,9 +3618,18 @@ document.addEventListener('input', function (event) {
 
 var llama_bg = localStorage.getItem('llama_bg1');
 var llama_bg_reloader = localStorage.getItem('llama_bg1_reload');
-
 if(llama_bg != ''){document.documentElement.style.setProperty('--user-bg-image', llama_bg);}
 if(llama_bg){document.getElementById("bgSelection1").value = llama_bg_reloader;}
+
+var llama_bg2 = localStorage.getItem('llama_bg2');
+var llama_bg2_reloader = localStorage.getItem('llama_bg2_reload');
+if(llama_bg2 != ''){document.documentElement.style.setProperty('--user-bg2-image', llama_bg2);}
+if(llama_bg2){document.getElementById("bgSelection2").value = llama_bg_reloader2;}
+
+var llama_bg3 = localStorage.getItem('llama_bg3');
+var llama_bg3_reloader = localStorage.getItem('llama_bg3_reload');
+if(llama_bg3 != ''){document.documentElement.style.setProperty('--user-bg3-image', llama_bg3);}
+if(llama_bg3){document.getElementById("bgSelection3").value = llama_bg_reloader3;}
 
 var user_bg_cover = localStorage.getItem('user_bg_cover');
 if(user_bg_cover){document.getElementById("cam_bg_cover").checked = true;}
@@ -4036,18 +4080,35 @@ function Toggle_User_BG (zEvent) {
 //----------------------------------------------------------------- SAVE_CAM_BG -----------------------------------------------------------------
 
 var bg_status = localStorage.getItem('user_bg');
+var userbg_status = localStorage.getItem('userbg');
+
 var llama_bg = localStorage.getItem('llama_bg1');
 var llama_bg_reloader = localStorage.getItem('llama_bg1_reload');
-var userbg_status = localStorage.getItem('userbg');
+
+var llama_bg2 = localStorage.getItem('llama_bg2');
+var llama_bg_reloader2 = localStorage.getItem('llama_bg2_reload');
+
+var llama_bg3 = localStorage.getItem('llama_bg3');
+var llama_bg_reloader3 = localStorage.getItem('llama_bg3_reload');
 
 if(userbg_status){body.classList.add(userbg_status)}
 if(llama_bg != ''){document.documentElement.style.setProperty('--user-bg-image', llama_bg);}
 
+if(userbg_status){body.classList.add(userbg_status)}
+if(llama_bg2 != ''){document.documentElement.style.setProperty('--user-bg2-image', llama_bg2);}
+
+if(userbg_status){body.classList.add(userbg_status)}
+if(llama_bg3 != ''){document.documentElement.style.setProperty('--user-bg3-image', llama_bg3);}
+
 function Save_Llama_BG (zEvent) {
     var llama_bg1 = localStorage.getItem('llama_bg1');
+    var llama_bg2 = localStorage.getItem('llama_bg2');
+    var llama_bg3 = localStorage.getItem('llama_bg3');
     var llama_bginput1 = document.getElementById('bgSelection1').value;
+    var llama_bginput2 = document.getElementById('bgSelection2').value;
+    var llama_bginput3 = document.getElementById('bgSelection3').value;
 
-        if(llama_bginput1 != ""){
+if(llama_bginput1 != ""){
             var llama_bginput1_url = 'url(' + llama_bginput1 + ')';
             document.documentElement.style.setProperty('--user-bg-image', llama_bginput1_url);
             localStorage.setItem('llama_bg1_reload', llama_bginput1);
@@ -4056,6 +4117,26 @@ function Save_Llama_BG (zEvent) {
             document.documentElement.style.setProperty('--user-bg-image', 'none');
             localStorage.setItem('llama_bg1_reload', '');
             localStorage.setItem('llama_bg1', '');}
+
+if(llama_bginput2 != ""){
+            var llama_bginput2_url = 'url(' + llama_bginput2 + ')';
+            document.documentElement.style.setProperty('--user-bg2-image', llama_bginput2_url);
+            localStorage.setItem('llama_bg2_reload', llama_bginput2);
+            localStorage.setItem('llama_bg2', llama_bginput2_url);
+        } else {
+            document.documentElement.style.setProperty('--user-bg3-image', 'none');
+            localStorage.setItem('llama_bg2_reload', '');
+            localStorage.setItem('llama_bg2', '');}
+
+if(llama_bginput3 != ""){
+            var llama_bginput3_url = 'url(' + llama_bginput3 + ')';
+            document.documentElement.style.setProperty('--user-bg3-image', llama_bginput3_url);
+            localStorage.setItem('llama_bg3_reload', llama_bginput3);
+            localStorage.setItem('llama_bg3', llama_bginput3_url);
+        } else {
+            document.documentElement.style.setProperty('--user-bg3-image', 'none');
+            localStorage.setItem('llama_bg3_reload', '');
+            localStorage.setItem('llama_bg3', '');}
 };
 
 function Remove_Llama_BG (zEvent) {
@@ -4063,6 +4144,16 @@ function Remove_Llama_BG (zEvent) {
             document.documentElement.style.setProperty('--user-bg-image', 'none');
             localStorage.setItem('llama_bg1_reload', '');
             localStorage.setItem('llama_bg1', '');
+
+            document.getElementById("bgSelection2").value = '';
+            document.documentElement.style.setProperty('--user-bg2-image', 'none');
+            localStorage.setItem('llama_bg2_reload', '');
+            localStorage.setItem('llama_bg2', '');
+
+            document.getElementById("bgSelection3").value = '';
+            document.documentElement.style.setProperty('--user-bg3-image', 'none');
+            localStorage.setItem('llama_bg3_reload', '');
+            localStorage.setItem('llama_bg3', '');
 };
 
 

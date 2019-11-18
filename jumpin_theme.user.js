@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.60
+// @version      2019.61
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -111,6 +111,8 @@ function addGlobalStyle(css) {
 }
 
 addGlobalStyle( `
+
+.button--text {text-shadow:none;}
 .hide_header #app {margin-top: -50px;}
 .hide_header #Toggle_Hide_Header {
     top: 50px;
@@ -2351,6 +2353,10 @@ z-index:1;
 .user_bg .chat__FeedWrapper {background-image: var(--user-bg2-image);}
 .user_bg .chat__UserList {background-image: var(--user-bg3-image);}
 .user_bg .roomHeader {background-image: var(--user-bg-image);}
+.user_bg.cam_cover_on .roomHeader {background-size:cover;}
+.user_bg.cam_repeat_on .roomHeader {background-repeat:no-repeat;}
+.user_bg.cam_center_on .roomHeader {background-position:center center;}
+.user_bg .room {background-image: var(--user-bg-image);}
 
 .user_bg.cam_cover_on .cams__ContainerInternal {background-size:cover;}
 .user_bg.cam_repeat_on .cams__ContainerInternal {background-repeat:no-repeat;}
@@ -2837,7 +2843,7 @@ newThemeMenu.innerHTML = (`
 <span class="dropdown__Option"><input id="Save_Llama_BG" type="button" value="✔ Apply Images" style="border-radius: 10px;width: 100%;border: 0px;"/>
 </span>
 
-<span class="dropdown__Option no_hover" style="font-size: 10px; margin-left: 53px;">
+<span class="dropdown__Option no_hover" style="font-size: 8px; margin-left: 53px;">
 COVER | REPEAT | CENTER
 </span>
 <span class="dropdown__Option no_hover">

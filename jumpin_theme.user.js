@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.61
+// @version      2019.62
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -159,6 +159,8 @@ addGlobalStyle( `
 .purplemode #Toggle_Hide_Header {background-color: var(--purplemode-bgcolor);border-color: var(--purplemode-bordercolor);}
 .blackmode #Toggle_Hide_Header {background-color: var(--blackmode-bgcolor);border-color: var(--blackmode-bordercolor);}
 .splatmode #Toggle_Hide_Header {background-color: var(--splatmode-bgcolor);border-color: var(--splatmode-bordercolor);}
+.custommode #Toggle_Hide_Header {background-color: var(--custommodebars-bgcolor) !important;border-color: var(--custommodebars-bgcolor);}
+
 #Toggle_Hide_Header:hover {opacity:0.6;}
 #apps {position:absolute;width: 50%;top:50px;}
 /*----- THEME_VARIABLES ---------------------------*/
@@ -1963,7 +1965,7 @@ border-radius: 100px;
     background-color: transparent;border:0px;
     background-image: var(--splatmode-userbg);
 }
-.splatmode .room {    background-image: var(--splatmode-roombg);
+.splatmode .room {    background-image: var(--splatmode-roombg) !important;
     background-repeat: no-repeat;
     background-size: cover;}
 .splatmode .chat__InputWrapper {
@@ -1997,7 +1999,7 @@ color:black;
 .splatmode .chat__Message:hover .chat__MessageTimestamp {
     color: var(--splatmode-textcolor);}
 /* --------- USERS LIST --------- */
-.splatmode .chat__UserListItem {background-image: var(--splatmode-messagebg);    border: 1px solid #51bc02;border-radius:12px;}
+.splatmode .chat__UserListItem {background-image: var(--splatmode-messagebg) !important;    border: 1px solid #51bc02;border-radius:12px;}
 @keyframes animatedBackground {
 	from { background-position: 0 0; }
 	to { background-position: 0 100%; }
@@ -2007,7 +2009,7 @@ background-image: var(--splatmode-messagebg);
     border-radius: 5px;
     margin: 2px;
     min-height: 27px;}
-.splatmode .chat__UserList {background-image: var(--splatmode-userbg);
+.splatmode .chat__UserList {background-image: var(--splatmode-userbg) !important;
     background-color: transparent;
     width: 175px;
 margin-bottom: 19px;
@@ -2351,6 +2353,18 @@ z-index:1;
 #enable_custom_mode > label > input {position: relative;opacity: 1;cursor: pointer;height: 20px;width: 100px;left: -9px;top: 3px;border-radius: 2px;border: 1px solid #ccc;padding: 0px 0px 0px 5px;}
 .user_bg .cams__ContainerInternal {background-image: var(--user-bg-image);}
 .user_bg .chat__FeedWrapper {background-image: var(--user-bg2-image);}
+
+.pinkmode.user_bg .chat__FeedWrapper {background-color: var(--pinkmode-lightbgcolor);}
+.greenmode.user_bg .chat__FeedWrapper {background-color: var(--greenmode-lightbgcolor);}
+.bluemode.user_bg .chat__FeedWrapper {background-color: var(--bluemode-lightbgcolor);}
+.mauvemode.user_bg .chat__FeedWrapper {background-color: var(--mauvemode-lightbgcolor);}
+.orangemode.user_bg .chat__FeedWrapper {background-color: var(--orangemode-lightbgcolor);}
+.redmode.user_bg .chat__FeedWrapper {background-color: var(--redmode-lightbgcolor);}
+.purplemode.user_bg .chat__FeedWrapper {background-color: var(--purplemode-lightbgcolor);}
+.blackmode.user_bg .chat__FeedWrapper {background-color: var(--blackmode-lightbgcolor);}
+.budsmode.user_bg .chat__FeedWrapper {background-color: var(--budsmode-lightbgcolor);}
+
+
 .user_bg .chat__UserList {background-image: var(--user-bg3-image);}
 .user_bg .roomHeader {background-image: var(--user-bg-image);}
 .user_bg.cam_cover_on .roomHeader {background-size:cover;}

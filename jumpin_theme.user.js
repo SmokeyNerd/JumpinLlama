@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    https://www.smokeyllama.com
-// @version      2019.74
+// @version      2019.75
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -2672,7 +2672,7 @@ function Toggle_Llama_Chat_Options (zEvent) {
   whatsNew.id = 'whatsNew_Box'
   var whatsNew_Box = document.getElementById('whatsNew_Box')
 
-// ------------ Whats_New ----------------*/
+  // ------------ Whats_New ----------------*/
   var WhatsNewIcon = document.createElement('label')
   WhatsNewIcon.className = 'button button-floating button-icon button--text roomHeader__UserAction LlamaOption_chat'
   WhatsNewIcon.setAttribute('id', 'Toggle_New_Llama_Notice')
@@ -2688,7 +2688,7 @@ function Toggle_Llama_Chat_Options (zEvent) {
   document.getElementById('New_Llama_Notice').addEventListener('click', Toggle_Notice, false)
   document.getElementById('Toggle_New_Llama_Notice').addEventListener('click', Toggle_Notice, false)
 
-// ------------ Hide_Header ----------------*/
+  // ------------ Hide_Header ----------------*/
   var HeaderHideIcon = document.createElement('label')
   HeaderHideIcon.className = 'LlamaOption_chat'
   HeaderHideIcon.setAttribute('id', 'Toggle_Hide_Header')
@@ -2702,7 +2702,7 @@ function Toggle_Llama_Chat_Options (zEvent) {
   whatsNew_Box.insertBefore(HeaderHideIcon, whatsNew_Box.childNodes[0] || null)
   document.getElementById('Toggle_Hide_Header').addEventListener('click', Toggle_Hide_Header, false)
 
-// ------------ MINI_YT_ICON ----------------*/
+  // ------------ MINI_YT_ICON ----------------*/
   var MiniYTIcon = document.createElement('label')
   MiniYTIcon.className = 'button chat__HeaderOption LlamaOption_miniyt'
   MiniYTIcon.setAttribute('id', 'miniyt__llamaOption')
@@ -2717,7 +2717,7 @@ function Toggle_Llama_Chat_Options (zEvent) {
 
   document.getElementById('miniyt__llamaOption').addEventListener('click', Toggle_MiniYT, false)
 
-// ------------ GAMES_ICON ----------------*/
+  // ------------ GAMES_ICON ----------------*/
   var GamesIcon = document.createElement('label')
   GamesIcon.className = 'button chat__HeaderOption LlamaOption_miniyt'
   GamesIcon.setAttribute('id', 'games__llamaOption')
@@ -2732,7 +2732,7 @@ function Toggle_Llama_Chat_Options (zEvent) {
   chatShare_box.insertBefore(GamesIcon, chatShare_box.childNodes[4] || null)
 
   document.getElementById('games__llamaOption').addEventListener('click', Toggle_Games, false)
-// ------------ GAMES_MENU ----------------*/
+  // ------------ GAMES_MENU ----------------*/
   var newGamesMenu = document.createElement('div')
   newGamesMenu.className = 'dropdown__Options'
   newGamesMenu.setAttribute('id', 'Llama_Games')
@@ -2786,7 +2786,7 @@ body {overflow:hidden;}
 
 `)
   el.insertBefore(newGamesMenu, el.childNodes[4] || null)
-// ------------ CHAT_ICON ----------------*/
+  // ------------ CHAT_ICON ----------------*/
   var newEl = document.createElement('label')
   newEl.className = 'button chat__HeaderOption LlamaOption_chat'
   newEl.setAttribute('id', 'chat__llamaOption')
@@ -2798,7 +2798,7 @@ body {overflow:hidden;}
   el.appendChild(newEl)
   el.insertBefore(newEl, null)
   el.insertBefore(newEl, el.childNodes[3] || null)
-// ------------ CHAT_MENU ----------------*/
+  // ------------ CHAT_MENU ----------------*/
   var newChatMenu = document.createElement('div')
   newChatMenu.className = 'dropdown__Options'
   newChatMenu.setAttribute('id', 'Llama_Chat')
@@ -2836,7 +2836,7 @@ body {overflow:hidden;}
 
   document.getElementById('ChatSettings').addEventListener('click', Hide_Llama_Chat_Options, false)
 
-// ------------ GRID_ICON ----------------*/
+  // ------------ GRID_ICON ----------------*/
   var newCamIcon = document.createElement('label')
   newCamIcon.className = 'button chat__HeaderOption'
   newCamIcon.setAttribute('id', 'cam__llamaOption')
@@ -2848,7 +2848,7 @@ body {overflow:hidden;}
   el.appendChild(newCamIcon)
   el.insertBefore(newCamIcon, null)
   el.insertBefore(newCamIcon, el.childNodes[4] || null)
-// ------------ GRID_MENU ----------------*/
+  // ------------ GRID_MENU ----------------*/
   var newCamMenu = document.createElement('div')
   newCamMenu.className = 'dropdown__Options'
   newCamMenu.setAttribute('id', 'Llama_Cam')
@@ -2869,7 +2869,7 @@ body {overflow:hidden;}
   var pad_status = localStorage.getItem('no_padding')
   if (pad_status === 'no_padding') { document.getElementById('cam_spacing_checkbox').checked = true }
 
-// ------------ THEME_ICON ----------------*/
+  // ------------ THEME_ICON ----------------*/
   var newThemeIcon = document.createElement('label')
   newThemeIcon.className = 'button chat__HeaderOption'
   newThemeIcon.setAttribute('id', 'theme__llamaOption')
@@ -2882,7 +2882,7 @@ body {overflow:hidden;}
   el.insertBefore(newThemeIcon, null)
   el.insertBefore(newThemeIcon, el.childNodes[6] || null)
 
-// ------------ THEME_MENU ----------------*/
+  // ------------ THEME_MENU ----------------*/
   var newThemeMenu = document.createElement('div')
   newThemeMenu.className = 'dropdown__Options'
   newThemeMenu.setAttribute('id', 'Llama_Theme')
@@ -3062,7 +3062,7 @@ USER BG
 
   var theme_status = localStorage.getItem('theme')
 
-// ------- SET DROPDOWN CHOICE -------
+  // ------- SET DROPDOWN CHOICE -------
   if (theme_status === '') { document.getElementById('theme_wizard').selectedIndex = 0 }
   if (theme_status === 'pinkmode') { document.getElementById('theme_wizard').selectedIndex = 2 }
   if (theme_status === 'greenmode') { document.getElementById('theme_wizard').selectedIndex = 3 }
@@ -3076,7 +3076,7 @@ USER BG
   if (theme_status === 'splatmode') { document.getElementById('theme_wizard').selectedIndex = 11 }
   if (theme_status === 'custommode') { document.getElementById('theme_wizard').selectedIndex = 12 }
 
-// Make the DIV element draggable:
+  // Make the DIV element draggable:
   dragElement(document.getElementById('mydiv'))
 
   function dragElement (elmnt) {
@@ -3092,23 +3092,23 @@ USER BG
     function dragMouseDown (e) {
       e = e || window.event
       e.preventDefault()
-    // get the mouse cursor position at startup:
+      // get the mouse cursor position at startup:
       pos3 = e.clientX
       pos4 = e.clientY
       document.onmouseup = closeDragElement
-    // call a function whenever the cursor moves:
+      // call a function whenever the cursor moves:
       document.onmousemove = elementDrag
     }
 
     function elementDrag (e) {
       e = e || window.event
       e.preventDefault()
-    // calculate the new cursor position:
+      // calculate the new cursor position:
       pos1 = pos3 - e.clientX
       pos2 = pos4 - e.clientY
       pos3 = e.clientX
       pos4 = e.clientY
-    // set the element's new position:
+      // set the element's new position:
       elmnt.style.top = (elmnt.offsetTop - pos2) + 'px'
       elmnt.style.left = (elmnt.offsetLeft - pos1) + 'px'
     }
@@ -3773,7 +3773,7 @@ function Toggle_MiniYT (zEvent) {
 
 function Toggle_Theme_Default (zEvent) {
   localStorage.setItem('theme', '')
-// REMOVE OTHER THEMES ON BODY TAG
+  // REMOVE OTHER THEMES ON BODY TAG
   body.classList.remove('custommode', 'pinkmode', 'greenmode', 'bluemode', 'mauvemode', 'orangemode', 'redmode', 'purplemode', 'blackmode', 'whitemode', 'budsmode', 'smashmode', 'splatmode', 'dark')
 // END OTHER THEMES
 }
@@ -3786,7 +3786,7 @@ function Toggle_Theme_Pink (zEvent) {
   body.classList.toggle(color_choice)
   if (theme_status !== color_choice) { localStorage.setItem('theme', color_choice) }
   if (theme_status === color_choice) { localStorage.setItem('theme', '') }
-// REMOVE OTHER THEMES ON BODY TAG
+  // REMOVE OTHER THEMES ON BODY TAG
   body.classList.remove('custommode', 'greenmode', 'bluemode', 'mauvemode', 'orangemode', 'redmode', 'purplemode', 'blackmode', 'whitemode', 'budsmode', 'smashmode', 'splatmode', 'dark')
 // END OTHER THEMES
 }
@@ -3799,7 +3799,7 @@ function Toggle_Theme_Green (zEvent) {
   body.classList.toggle(color_choice)
   if (theme_status !== color_choice) { localStorage.setItem('theme', color_choice) }
   if (theme_status === color_choice) { localStorage.setItem('theme', '') }
-// REMOVE OTHER THEMES ON BODY TAG
+  // REMOVE OTHER THEMES ON BODY TAG
   body.classList.remove('custommode', 'pinkmode', 'bluemode', 'mauvemode', 'orangemode', 'redmode', 'purplemode', 'blackmode', 'budsmode', 'smashmode', 'splatmode', 'dark')
 // END OTHER THEMES
 }
@@ -3812,7 +3812,7 @@ function Toggle_Theme_Blue (zEvent) {
   body.classList.toggle(color_choice)
   if (theme_status !== color_choice) { localStorage.setItem('theme', color_choice) }
   if (theme_status === color_choice) { localStorage.setItem('theme', '') }
-// REMOVE OTHER THEMES ON BODY TAG
+  // REMOVE OTHER THEMES ON BODY TAG
   body.classList.remove('custommode', 'pinkmode', 'greenmode', 'mauvemode', 'orangemode', 'redmode', 'purplemode', 'blackmode', 'budsmode', 'smashmode', 'splatmode')
 // END OTHER THEMES
 }
@@ -3825,7 +3825,7 @@ function Toggle_Theme_Mauve (zEvent) {
   body.classList.toggle(color_choice)
   if (theme_status !== color_choice) { localStorage.setItem('theme', color_choice) }
   if (theme_status === color_choice) { localStorage.setItem('theme', '') }
-// REMOVE OTHER THEMES ON BODY TAG
+  // REMOVE OTHER THEMES ON BODY TAG
   body.classList.remove('custommode', 'pinkmode', 'greenmode', 'bluemode', 'orangemode', 'redmode', 'purplemode', 'blackmode', 'budsmode', 'smashmode', 'splatmode')
 // END OTHER THEMES
 }
@@ -3838,7 +3838,7 @@ function Toggle_Theme_Orange (zEvent) {
   body.classList.toggle(color_choice)
   if (theme_status !== color_choice) { localStorage.setItem('theme', color_choice) }
   if (theme_status === color_choice) { localStorage.setItem('theme', '') }
-// REMOVE OTHER THEMES ON BODY TAG
+  // REMOVE OTHER THEMES ON BODY TAG
   body.classList.remove('custommode', 'pinkmode', 'greenmode', 'bluemode', 'mauvemode', 'redmode', 'purplemode', 'blackmode', 'budsmode', 'smashmode', 'splatmode')
 // END OTHER THEMES
 }
@@ -3851,7 +3851,7 @@ function Toggle_Theme_Red (zEvent) {
   body.classList.toggle(color_choice)
   if (theme_status !== color_choice) { localStorage.setItem('theme', color_choice) }
   if (theme_status === color_choice) { localStorage.setItem('theme', '') }
-// REMOVE OTHER THEMES ON BODY TAG
+  // REMOVE OTHER THEMES ON BODY TAG
   body.classList.remove('custommode', 'pinkmode', 'greenmode', 'bluemode', 'mauvemode', 'orangemode', 'purplemode', 'blackmode', 'budsmode', 'smashmode', 'splatmode')
 // END OTHER THEMES
 }
@@ -3864,7 +3864,7 @@ function Toggle_Theme_Purple (zEvent) {
   body.classList.toggle(color_choice)
   if (theme_status !== color_choice) { localStorage.setItem('theme', color_choice) }
   if (theme_status === color_choice) { localStorage.setItem('theme', '') }
-// REMOVE OTHER THEMES ON BODY TAG
+  // REMOVE OTHER THEMES ON BODY TAG
   body.classList.remove('custommode', 'pinkmode', 'greenmode', 'bluemode', 'mauvemode', 'orangemode', 'redmode', 'blackmode', 'budsmode', 'smashmode', 'splatmode')
 // END OTHER THEMES
 }
@@ -3877,7 +3877,7 @@ function Toggle_Theme_Black (zEvent) {
   body.classList.toggle(color_choice)
   if (theme_status !== color_choice) { localStorage.setItem('theme', color_choice) }
   if (theme_status === color_choice) { localStorage.setItem('theme', '') }
-// REMOVE OTHER THEMES ON BODY TAG
+  // REMOVE OTHER THEMES ON BODY TAG
   body.classList.remove('custommode', 'pinkmode', 'greenmode', 'bluemode', 'mauvemode', 'orangemode', 'redmode', 'purplemode', 'budsmode', 'smashmode', 'splatmode', 'dark')
 // END OTHER THEMES
 }
@@ -3890,7 +3890,7 @@ function Toggle_Theme_Buds (zEvent) {
   body.classList.toggle(color_choice)
   if (theme_status !== color_choice) { localStorage.setItem('theme', color_choice) }
   if (theme_status === color_choice) { localStorage.setItem('theme', '') }
-// REMOVE OTHER THEMES ON BODY TAG
+  // REMOVE OTHER THEMES ON BODY TAG
   body.classList.remove('custommode', 'pinkmode', 'greenmode', 'bluemode', 'mauvemode', 'orangemode', 'redmode', 'purplemode', 'blackmode', 'smashmode', 'splatmode')
 // END OTHER THEMES
 }
@@ -3903,7 +3903,7 @@ function Toggle_Theme_Splat (zEvent) {
   body.classList.toggle(color_choice)
   if (theme_status !== color_choice) { localStorage.setItem('theme', color_choice) }
   if (theme_status === color_choice) { localStorage.setItem('theme', '') }
-// REMOVE OTHER THEMES ON BODY TAG
+  // REMOVE OTHER THEMES ON BODY TAG
   body.classList.remove('custommode', 'pinkmode', 'greenmode', 'bluemode', 'mauvemode', 'orangemode', 'redmode', 'purplemode', 'blackmode', 'smashmode', 'budsmode')
 // END OTHER THEMES
 }

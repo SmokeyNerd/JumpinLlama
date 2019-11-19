@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.67
+// @version      2019.68
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -2732,11 +2732,24 @@ GamesIcon.setAttribute ('id', 'games__llamaOption');
 GamesIcon.setAttribute ('title', 'Mini Game Window');
 GamesIcon.innerHTML = (`
 <i class="fas fa-gamepad"></i>
+
 ` );
 
 chatShare_box.appendChild(GamesIcon);
 chatShare_box.insertBefore(GamesIcon, null);
 chatShare_box.insertBefore(GamesIcon, chatShare_box.childNodes[4] || null);
+
+var GamesHomeIcon = document.createElement('label');
+GamesHomeIcon.className = "button chat__HeaderOption games_home_button ";
+GamesHomeIcon.setAttribute ('id', 'gamesHome__llamaOption');
+GamesHomeIcon.setAttribute ('title', 'Game Homepage');
+GamesHomeIcon.innerHTML = (`
+<i class="fas fa-home" style="padding: 10px 0px;"></i>
+` );
+
+chatShare_box.appendChild(GamesHomeIcon);
+chatShare_box.insertBefore(GamesHomeIcon, null);
+chatShare_box.insertBefore(GamesHomeIcon, chatShare_box.childNodes[4] || null);
 
 document.getElementById ("games__llamaOption").addEventListener ("click", Toggle_Games, false);
 //------------ GAMES_MENU ----------------*/
@@ -2744,16 +2757,36 @@ var newGamesMenu = document.createElement('div');
 newGamesMenu.className = "dropdown__Options";
 newGamesMenu.setAttribute ('id', 'Llama_Games');
 newGamesMenu.innerHTML = (`
+<div id="mydiv">
+  <div id="mydivheader">Game Window - Drag to Move</div>
+<iframe src="https://smokeyllama.glitch.me/game_list.html" class="" id="game_window"  name="game_window"></iframe>
+</div>
 <style>
+#Llama_Games {display:none;}
+.game_window #Llama_Games {display:block;}
+#mydiv {
+  position: absolute;
+left:100px;
+  z-index: 7000;
+  background-color: #23272a;
+  text-align: center;
+  border: 1px solid #23272a;border-radius:10px;
+}
+
+#mydivheader {
+  padding: 10px;
+  cursor: move;
+  z-index: 8000;
+  background-color: #2196F3;
+  color: #fff;
+}
+body {overflow:hidden;}
 #layoutCenterer .ad {display:none;}
 #game_window {display:none;}
 .game_window #game_window:hover {height: 530px !important;opacity:1;}
 .game_window #game_window {opacity:0.6;
     display:block;
-    position: absolute;
-    bottom: 50px;
     z-index: 6000;
-    left: 200px;
     height: 115px;
     width: 350px;
     border:1px solid #23272a;
@@ -2762,18 +2795,8 @@ newGamesMenu.innerHTML = (`
 .games_home_button {display:none;}
 .game_window .games_home_button {
     display: block;
-    position: absolute;
-    bottom: 73px;
-    z-index: 6000;
-    left: 168px;
-    height: 35px;
-    width: 31px;
-    background-color: #313131;
-    border: 1px solid #23272a;
-    border-radius: 10px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;}
-.games_home_button:hover {background-color:#191919;}
+    z-index: 6000;}
+
 
 .pinkmode .fa-gamepad {color: var(--pinkmode-lightbgcolor);}
 .greenmode .fa-gamepad {color: var(--greenmode-lightbgcolor);}
@@ -2787,8 +2810,7 @@ newGamesMenu.innerHTML = (`
 .splatmode .fa-gamepad {color: var(--splatmode-lightbgcolor);}
 .custommode .fa-gamepad {color: var(--custommodebutton-textcolor);}
 </style>
-<div class="games_home_button" title="Game Homepage"><a href="https://smokeyllama.glitch.me/game_list.html" target="game_window"><i class="fas fa-home" style="padding: 11px;"></i></a></div>
-<iframe src="https://smokeyllama.glitch.me/game_list.html" class="" id="game_window"  name="game_window"></iframe>
+
 ` );
 el.insertBefore(newGamesMenu, el.childNodes[4] || null);
 //------------ CHAT_ICON ----------------*/
@@ -3079,7 +3101,53 @@ if(theme_status == "budsmode"){document.getElementById("theme_wizard").selectedI
 if(theme_status == "splatmode"){document.getElementById("theme_wizard").selectedIndex = 11;}
 if(theme_status == "custommode"){document.getElementById("theme_wizard").selectedIndex = 12;}
 
+// Make the DIV element draggable:
+dragElement(document.getElementById("mydiv"));
 
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    // if present, the header is where you move the DIV from:
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    // otherwise, move the DIV from anywhere inside the DIV:
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    // stop moving when mouse button is released:
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+
+
+
+//30seconds
 };
 
 
@@ -3884,3 +3952,6 @@ function Toggle_Theme_Splat (zEvent) {
         body.classList.remove("custommode","pinkmode","greenmode","bluemode","mauvemode","orangemode","redmode","purplemode","blackmode","smashmode","budsmode");
 //END OTHER THEMES
 };
+
+
+

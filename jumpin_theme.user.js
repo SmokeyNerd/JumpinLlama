@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    https://www.smokeyllama.com
-// @version      2019.76
+// @version      2019.77
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -1693,7 +1693,7 @@ LlamaNoticeNode.innerHTML = (`
 <div style="">Feedback? <a href="https://www.smokeyllama.com/" target="_blank" style="color:red;">smokeyllama.com</a></div>
 </div>
 <hr style="width:90%;border:1px solid #313131;">
-<img src="https://i.imgur.com/ThDMVQc.png" width="85%"><br>
+<img src="https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@d7234633117a2cb7c8543dc8e44988f8b2eab57b/SmokeyLlama.png" width="85%"><br>
 <hr style="width:90%;border:1px solid #191919;">
 <h2>Features/Icons Added:</h2>
 <div class="features_added">
@@ -1815,7 +1815,7 @@ function Toggle_Llama_Chat_Options (zEvent) {
   whatsNew.id = 'whatsNew_Box'
   var whatsNew_Box = document.getElementById('whatsNew_Box')
 
-// ------------ Whats_New ----------------*/
+  // ------------ Whats_New ----------------*/
   var WhatsNewIcon = document.createElement('label')
   WhatsNewIcon.className = 'button button-floating button-icon button--text roomHeader__UserAction LlamaOption_chat'
   WhatsNewIcon.setAttribute('id', 'Toggle_New_Llama_Notice')
@@ -1831,7 +1831,7 @@ function Toggle_Llama_Chat_Options (zEvent) {
   document.getElementById('New_Llama_Notice').addEventListener('click', Toggle_Notice, false)
   document.getElementById('Toggle_New_Llama_Notice').addEventListener('click', Toggle_Notice, false)
 
-// ------------ Hide_Header ----------------*/
+  // ------------ Hide_Header ----------------*/
   var HeaderHideIcon = document.createElement('label')
   HeaderHideIcon.className = 'LlamaOption_chat'
   HeaderHideIcon.setAttribute('id', 'Toggle_Hide_Header')
@@ -1845,7 +1845,7 @@ function Toggle_Llama_Chat_Options (zEvent) {
   whatsNew_Box.insertBefore(HeaderHideIcon, whatsNew_Box.childNodes[0] || null)
   document.getElementById('Toggle_Hide_Header').addEventListener('click', Toggle_Hide_Header, false)
 
-// ------------ MINI_YT_ICON ----------------*/
+  // ------------ MINI_YT_ICON ----------------*/
   var MiniYTIcon = document.createElement('label')
   MiniYTIcon.className = 'button chat__HeaderOption LlamaOption_miniyt'
   MiniYTIcon.setAttribute('id', 'miniyt__llamaOption')
@@ -1860,7 +1860,7 @@ function Toggle_Llama_Chat_Options (zEvent) {
 
   document.getElementById('miniyt__llamaOption').addEventListener('click', Toggle_MiniYT, false)
 
-// ------------ GAMES_ICON ----------------*/
+  // ------------ GAMES_ICON ----------------*/
   var GamesIcon = document.createElement('label')
   GamesIcon.className = 'button chat__HeaderOption LlamaOption_miniyt'
   GamesIcon.setAttribute('id', 'games__llamaOption')
@@ -1875,7 +1875,7 @@ function Toggle_Llama_Chat_Options (zEvent) {
   chatShare_box.insertBefore(GamesIcon, chatShare_box.childNodes[4] || null)
 
   document.getElementById('games__llamaOption').addEventListener('click', Toggle_Games, false)
-// ------------ GAMES_MENU ----------------*/
+  // ------------ GAMES_MENU ----------------*/
   var newGamesMenu = document.createElement('div')
   newGamesMenu.className = 'dropdown__Options'
   newGamesMenu.setAttribute('id', 'Llama_Games')
@@ -1921,7 +1921,7 @@ body {overflow:hidden;}
 
 `)
   el.insertBefore(newGamesMenu, el.childNodes[4] || null)
-// ------------ CHAT_ICON ----------------*/
+  // ------------ CHAT_ICON ----------------*/
   var newEl = document.createElement('label')
   newEl.className = 'button chat__HeaderOption LlamaOption_chat'
   newEl.setAttribute('id', 'chat__llamaOption')
@@ -1933,7 +1933,7 @@ body {overflow:hidden;}
   el.appendChild(newEl)
   el.insertBefore(newEl, null)
   el.insertBefore(newEl, el.childNodes[3] || null)
-// ------------ CHAT_MENU ----------------*/
+  // ------------ CHAT_MENU ----------------*/
   var newChatMenu = document.createElement('div')
   newChatMenu.className = 'dropdown__Options'
   newChatMenu.setAttribute('id', 'Llama_Chat')
@@ -1971,7 +1971,7 @@ body {overflow:hidden;}
 
   document.getElementById('ChatSettings').addEventListener('click', Hide_Llama_Chat_Options, false)
 
-// ------------ GRID_ICON ----------------*/
+  // ------------ GRID_ICON ----------------*/
   var newCamIcon = document.createElement('label')
   newCamIcon.className = 'button chat__HeaderOption'
   newCamIcon.setAttribute('id', 'cam__llamaOption')
@@ -1983,7 +1983,7 @@ body {overflow:hidden;}
   el.appendChild(newCamIcon)
   el.insertBefore(newCamIcon, null)
   el.insertBefore(newCamIcon, el.childNodes[4] || null)
-// ------------ GRID_MENU ----------------*/
+  // ------------ GRID_MENU ----------------*/
   var newCamMenu = document.createElement('div')
   newCamMenu.className = 'dropdown__Options'
   newCamMenu.setAttribute('id', 'Llama_Cam')
@@ -2004,7 +2004,7 @@ body {overflow:hidden;}
   var pad_status = localStorage.getItem('no_padding')
   if (pad_status === 'no_padding') { document.getElementById('cam_spacing_checkbox').checked = true }
 
-// ------------ THEME_ICON ----------------*/
+  // ------------ THEME_ICON ----------------*/
   var newThemeIcon = document.createElement('label')
   newThemeIcon.className = 'button chat__HeaderOption'
   newThemeIcon.setAttribute('id', 'theme__llamaOption')
@@ -2017,7 +2017,7 @@ body {overflow:hidden;}
   el.insertBefore(newThemeIcon, null)
   el.insertBefore(newThemeIcon, el.childNodes[6] || null)
 
-// ------------ THEME_MENU ----------------*/
+  // ------------ THEME_MENU ----------------*/
   var newThemeMenu = document.createElement('div')
   newThemeMenu.className = 'dropdown__Options'
   newThemeMenu.setAttribute('id', 'Llama_Theme')
@@ -2197,6 +2197,7 @@ USER BG
 
   var theme_status = localStorage.getItem('thememode')
 
+
 // ------- SET DROPDOWN CHOICE -------
   if (theme_status) { document.getElementById('theme_wizard').selectedIndex = 0 }
   if (theme_status === '') { document.getElementById('theme_wizard').selectedIndex = 1 }
@@ -2212,11 +2213,14 @@ USER BG
   if (theme_status === 'splat') { document.getElementById('theme_wizard').selectedIndex = 11 }
   if (theme_status === 'custommode') { document.getElementById('theme_wizard').selectedIndex = 12 }
 
-// Make the DIV element draggable:
+  // Make the DIV element draggable:
   dragElement(document.getElementById('mydiv'))
 
   function dragElement (elmnt) {
-    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0
+    var pos1 = 0
+    var pos2 = 0
+    var pos3 = 0
+    var pos4 = 0
     if (document.getElementById(elmnt.id + 'header')) {
     // if present, the header is where you move the DIV from:
       document.getElementById(elmnt.id + 'header').onmousedown = dragMouseDown
@@ -2228,23 +2232,23 @@ USER BG
     function dragMouseDown (e) {
       e = e || window.event
       e.preventDefault()
-    // get the mouse cursor position at startup:
+      // get the mouse cursor position at startup:
       pos3 = e.clientX
       pos4 = e.clientY
       document.onmouseup = closeDragElement
-    // call a function whenever the cursor moves:
+      // call a function whenever the cursor moves:
       document.onmousemove = elementDrag
     }
 
     function elementDrag (e) {
       e = e || window.event
       e.preventDefault()
-    // calculate the new cursor position:
+      // calculate the new cursor position:
       pos1 = pos3 - e.clientX
       pos2 = pos4 - e.clientY
       pos3 = e.clientX
       pos4 = e.clientY
-    // set the element's new position:
+      // set the element's new position:
       elmnt.style.top = (elmnt.offsetTop - pos2) + 'px'
       elmnt.style.left = (elmnt.offsetLeft - pos1) + 'px'
     }

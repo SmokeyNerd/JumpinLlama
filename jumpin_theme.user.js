@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.68
+// @version      2019.69
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -2739,17 +2739,7 @@ chatShare_box.appendChild(GamesIcon);
 chatShare_box.insertBefore(GamesIcon, null);
 chatShare_box.insertBefore(GamesIcon, chatShare_box.childNodes[4] || null);
 
-var GamesHomeIcon = document.createElement('label');
-GamesHomeIcon.className = "button chat__HeaderOption games_home_button ";
-GamesHomeIcon.setAttribute ('id', 'gamesHome__llamaOption');
-GamesHomeIcon.setAttribute ('title', 'Game Homepage');
-GamesHomeIcon.innerHTML = (`
-<i class="fas fa-home" style="padding: 10px 0px;"></i>
-` );
 
-chatShare_box.appendChild(GamesHomeIcon);
-chatShare_box.insertBefore(GamesHomeIcon, null);
-chatShare_box.insertBefore(GamesHomeIcon, chatShare_box.childNodes[4] || null);
 
 document.getElementById ("games__llamaOption").addEventListener ("click", Toggle_Games, false);
 //------------ GAMES_MENU ----------------*/
@@ -2758,15 +2748,23 @@ newGamesMenu.className = "dropdown__Options";
 newGamesMenu.setAttribute ('id', 'Llama_Games');
 newGamesMenu.innerHTML = (`
 <div id="mydiv">
-  <div id="mydivheader">Game Window - Drag to Move</div>
-<iframe src="https://smokeyllama.glitch.me/game_list.html" class="" id="game_window"  name="game_window"></iframe>
+  <div id="mydivheader" titl="Move Game Window"><i class="fas fa-mouse-pointer" style="color:white"></i></div>
+<div class="game_head">GAME WINDOW</div>
+<iframe src="https://smokeyllama.glitch.me/game_list_home.html" class="" id="game_list"  name="" style="border:0px;overflow:hidden;width:440px;"></iframe>
+
 </div>
 <style>
+.game_head {    color: white;
+    font-weight: 600;
+    font-size: 14pt;margin-top: 10px;
+}
+#game_list {height:20px;opacity:0.6;}
+#game_list:hover {height:570px;opacity:1;}
 #Llama_Games {display:none;}
 .game_window #Llama_Games {display:block;}
 #mydiv {
   position: absolute;
-left:100px;
+  left:100px;
   z-index: 7000;
   background-color: #23272a;
   text-align: center;
@@ -2774,30 +2772,16 @@ left:100px;
 }
 
 #mydivheader {
-  padding: 10px;
-  cursor: move;
-  z-index: 8000;
-  background-color: #2196F3;
-  color: #fff;
+border-radius:10px;
+    padding: 10px;
+    cursor: move;
+    z-index: 8000;
+    background-color: #2196F3;
+    color: #fff;
+    width: 30px;float:left;
+
 }
 body {overflow:hidden;}
-#layoutCenterer .ad {display:none;}
-#game_window {display:none;}
-.game_window #game_window:hover {height: 530px !important;opacity:1;}
-.game_window #game_window {opacity:0.6;
-    display:block;
-    z-index: 6000;
-    height: 115px;
-    width: 350px;
-    border:1px solid #23272a;
-    border-radius:10px;}
-
-.games_home_button {display:none;}
-.game_window .games_home_button {
-    display: block;
-    z-index: 6000;}
-
-
 .pinkmode .fa-gamepad {color: var(--pinkmode-lightbgcolor);}
 .greenmode .fa-gamepad {color: var(--greenmode-lightbgcolor);}
 .bluemode .fa-gamepad {color: var(--bluemode-lightbgcolor);}

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    http://www.smokeyllama.com
-// @version      2019.66
+// @version      2019.67
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -2745,16 +2745,16 @@ newGamesMenu.className = "dropdown__Options";
 newGamesMenu.setAttribute ('id', 'Llama_Games');
 newGamesMenu.innerHTML = (`
 <style>
-
+#layoutCenterer .ad {display:none;}
 #game_window {display:none;}
 .game_window #game_window:hover {height: 530px !important;opacity:1;}
-.game_window #game_window {opacity:0.4;
+.game_window #game_window {opacity:0.6;
     display:block;
     position: absolute;
     bottom: 50px;
     z-index: 6000;
     left: 200px;
-    height: 130px;
+    height: 115px;
     width: 350px;
     border:1px solid #23272a;
     border-radius:10px;}

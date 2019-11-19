@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    https://www.smokeyllama.com
-// @version      2019.77
+// @version      2019.78
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -2197,7 +2197,6 @@ USER BG
 
   var theme_status = localStorage.getItem('thememode')
 
-
 // ------- SET DROPDOWN CHOICE -------
   if (theme_status) { document.getElementById('theme_wizard').selectedIndex = 0 }
   if (theme_status === '') { document.getElementById('theme_wizard').selectedIndex = 1 }
@@ -2342,8 +2341,10 @@ var username_textcolor_selection = localStorage.getItem('llama_username_textcolo
 var theme_status = localStorage.getItem('thememode')
 // ----------------------------------------------------------------- REAPPLY_THEME_CHOICE -----------------------------------------------------------------
 
-if (theme_status) { body.classList.add('thememode')
-                  Toggle_Theme(theme_status)}
+if (theme_status) {
+  body.classList.add('thememode')
+  Toggle_Theme(theme_status)
+}
 
 if (theme_status === 'custommode') {
   body.classList.add('custommode')
@@ -2390,7 +2391,6 @@ function Toggle_Theme_Custom (zEvent) {
   body.classList.toggle(color_choice)
   if (theme_status !== color_choice) { localStorage.setItem('thememode', color_choice) }
   if (theme_status === color_choice) { localStorage.setItem('thememode', '') }
-
 }
 
 // ----------------------------------------------------------------- CAM_BG_COVER -----------------------------------------------------------------
@@ -2910,24 +2910,23 @@ function Toggle_MiniYT (zEvent) {
   if (yt_status === 'mini_yt') { localStorage.setItem('yt', '') }
 }
 
-
 // ----------------------------------------------------------------- THEME_TOGGLE -----------------------------------------------------------------
 function Toggle_DefaultTheme (color) {
   var thememode_status = localStorage.getItem('thememode')
   body.classList.remove('custommode')
   body.classList.remove('thememode')
-    localStorage.setItem('thememode', '')
-    document.documentElement.style.setProperty('--thememode-bgcolor', '')
-    document.documentElement.style.setProperty('--thememode-bordercolor', '')
-    document.documentElement.style.setProperty('--thememode-lightbgcolor', '')
-    document.documentElement.style.setProperty('--thememode-textcolor', '')
-    document.documentElement.style.setProperty('--thememode-buttontext', '')
+  localStorage.setItem('thememode', '')
+  document.documentElement.style.setProperty('--thememode-bgcolor', '')
+  document.documentElement.style.setProperty('--thememode-bordercolor', '')
+  document.documentElement.style.setProperty('--thememode-lightbgcolor', '')
+  document.documentElement.style.setProperty('--thememode-textcolor', '')
+  document.documentElement.style.setProperty('--thememode-buttontext', '')
 
-    document.documentElement.style.setProperty('--thememode-roombg', '')
-    document.documentElement.style.setProperty('--thememode-userbg', '')
-    document.documentElement.style.setProperty('--thememode-chatheaderbg', '')
-    document.documentElement.style.setProperty('--thememode-chatbg', '')
-    document.documentElement.style.setProperty('--thememode-messagebg', '')
+  document.documentElement.style.setProperty('--thememode-roombg', '')
+  document.documentElement.style.setProperty('--thememode-userbg', '')
+  document.documentElement.style.setProperty('--thememode-chatheaderbg', '')
+  document.documentElement.style.setProperty('--thememode-chatbg', '')
+  document.documentElement.style.setProperty('--thememode-messagebg', '')
 }
 
 function Toggle_Theme (color) {
@@ -2943,91 +2942,91 @@ function Toggle_Theme (color) {
   var llama_theme_chatbg = ''
   var llama_theme_messagebg = ''
 
-if (color === 'pink'){
-  var llama_theme_bgcolor = '#ffd1dc'
-  var llama_theme_bordercolor = '#ea98ab'
-  var llama_theme_lightbgcolor = '#ffe1e6'
-  var llama_theme_textcolor = '#FFFFFF'
-  var llama_theme_buttontext = '#ffd1dc'
-}
-if (color === 'green'){
-  var llama_theme_bgcolor = '#042500'
-  var llama_theme_bordercolor = '#217c16'
-  var llama_theme_lightbgcolor = '#00500d'
-  var llama_theme_textcolor = '#FFFFFF'
-  var llama_theme_buttontext = '#042500'
-}
-if (color === 'blue'){
-  var llama_theme_bgcolor = '#111949'
-  var llama_theme_bordercolor = '#596ce0'
-  var llama_theme_lightbgcolor = '#2a388b'
-  var llama_theme_textcolor = '#FFFFFF'
-  var llama_theme_buttontext = '#111949'
-}
-if (color === 'mauve'){
-  var llama_theme_bgcolor = '#9168b2'
-  var llama_theme_bordercolor = '#d6b7ef'
-  var llama_theme_lightbgcolor = '#BF8FE5'
-  var llama_theme_textcolor = '#000000'
-  var llama_theme_buttontext = '#9168b2'
-}
-if (color === 'orange'){
-  var llama_theme_bgcolor = '#b33700'
-  var llama_theme_bordercolor = '#ff8d10'
-  var llama_theme_lightbgcolor = '#ff4f00'
-  var llama_theme_textcolor = '#000000'
-  var llama_theme_buttontext = '#b33700'
-}
-if (color === 'red'){
-  var llama_theme_bgcolor = '#590000'
-  var llama_theme_bordercolor = '#d02323'
-  var llama_theme_lightbgcolor = '#860000'
-  var llama_theme_textcolor = '#FFFFFF'
-  var llama_theme_buttontext = '#590000'
-}
-if (color === 'purple'){
-  var llama_theme_bgcolor = '#280048'
-  var llama_theme_bordercolor = '#b14fff'
-  var llama_theme_lightbgcolor = '#550098'
-  var llama_theme_textcolor = '#FFFFFF'
-  var llama_theme_buttontext = '#280048'
-}
-if (color === 'black'){
-  var llama_theme_bgcolor = '#2C2F33'
-  var llama_theme_bordercolor = '#23272a'
-  var llama_theme_lightbgcolor = '#191919'
-  var llama_theme_textcolor = '#FFFFFF'
-  var llama_theme_buttontext = '#7289da'
-}
-if (color === 'buds'){
-  var llama_theme_bgcolor = '#042500'
-  var llama_theme_bordercolor = '#217c16'
-  var llama_theme_lightbgcolor = '#00500d'
-  var llama_theme_textcolor = '#FFFFFF'
-  var llama_theme_buttontext = '#042500'
-  var llama_theme_cambg = 'url(https://kpfa.org/wp-content/uploads/2015/10/weed-wallpaper-65.jpg)'
-}
-if (color === 'splat'){
-  var llama_theme_bgcolor = 'transparent'
-  var llama_theme_bordercolor = '#51bc02'
-  var llama_theme_lightbgcolor = '#282828'
-  var llama_theme_textcolor = '#FFFFFF'
-  var llama_theme_buttontext = '#FFFFFF'
-  var llama_theme_cambg = 'url(https://i.ibb.co/C18JNgK/splatbg.jpg)'
-  var llama_theme_userbg = 'url(https://i.ibb.co/7nrB9LT/test.png)'
-  var llama_theme_chatheaderbg = 'url(https://i.ibb.co/XsTjVk0/splay-bg-header2.png)'
-  var llama_theme_chatbg = 'url(https://i.ibb.co/TrKBZFn/splat-chat-bg3.png)'
-  var llama_theme_messagebg = 'url(https://i.ibb.co/FWFnhc4/messagebg.png)'
-}
-    document.documentElement.style.setProperty('--thememode-bgcolor', llama_theme_bgcolor)
-    document.documentElement.style.setProperty('--thememode-bordercolor', llama_theme_bordercolor)
-    document.documentElement.style.setProperty('--thememode-lightbgcolor', llama_theme_lightbgcolor)
-    document.documentElement.style.setProperty('--thememode-textcolor', llama_theme_textcolor)
-    document.documentElement.style.setProperty('--thememode-buttontext', llama_theme_buttontext)
+  if (color === 'pink') {
+    var llama_theme_bgcolor = '#ffd1dc'
+    var llama_theme_bordercolor = '#ea98ab'
+    var llama_theme_lightbgcolor = '#ffe1e6'
+    var llama_theme_textcolor = '#FFFFFF'
+    var llama_theme_buttontext = '#ffd1dc'
+  }
+  if (color === 'green') {
+    var llama_theme_bgcolor = '#042500'
+    var llama_theme_bordercolor = '#217c16'
+    var llama_theme_lightbgcolor = '#00500d'
+    var llama_theme_textcolor = '#FFFFFF'
+    var llama_theme_buttontext = '#042500'
+  }
+  if (color === 'blue') {
+    var llama_theme_bgcolor = '#111949'
+    var llama_theme_bordercolor = '#596ce0'
+    var llama_theme_lightbgcolor = '#2a388b'
+    var llama_theme_textcolor = '#FFFFFF'
+    var llama_theme_buttontext = '#111949'
+  }
+  if (color === 'mauve') {
+    var llama_theme_bgcolor = '#9168b2'
+    var llama_theme_bordercolor = '#d6b7ef'
+    var llama_theme_lightbgcolor = '#BF8FE5'
+    var llama_theme_textcolor = '#000000'
+    var llama_theme_buttontext = '#9168b2'
+  }
+  if (color === 'orange') {
+    var llama_theme_bgcolor = '#b33700'
+    var llama_theme_bordercolor = '#ff8d10'
+    var llama_theme_lightbgcolor = '#ff4f00'
+    var llama_theme_textcolor = '#000000'
+    var llama_theme_buttontext = '#b33700'
+  }
+  if (color === 'red') {
+    var llama_theme_bgcolor = '#590000'
+    var llama_theme_bordercolor = '#d02323'
+    var llama_theme_lightbgcolor = '#860000'
+    var llama_theme_textcolor = '#FFFFFF'
+    var llama_theme_buttontext = '#590000'
+  }
+  if (color === 'purple') {
+    var llama_theme_bgcolor = '#280048'
+    var llama_theme_bordercolor = '#b14fff'
+    var llama_theme_lightbgcolor = '#550098'
+    var llama_theme_textcolor = '#FFFFFF'
+    var llama_theme_buttontext = '#280048'
+  }
+  if (color === 'black') {
+    var llama_theme_bgcolor = '#2C2F33'
+    var llama_theme_bordercolor = '#23272a'
+    var llama_theme_lightbgcolor = '#191919'
+    var llama_theme_textcolor = '#FFFFFF'
+    var llama_theme_buttontext = '#7289da'
+  }
+  if (color === 'buds') {
+    var llama_theme_bgcolor = '#042500'
+    var llama_theme_bordercolor = '#217c16'
+    var llama_theme_lightbgcolor = '#00500d'
+    var llama_theme_textcolor = '#FFFFFF'
+    var llama_theme_buttontext = '#042500'
+    var llama_theme_cambg = 'url(https://kpfa.org/wp-content/uploads/2015/10/weed-wallpaper-65.jpg)'
+  }
+  if (color === 'splat') {
+    var llama_theme_bgcolor = 'transparent'
+    var llama_theme_bordercolor = '#51bc02'
+    var llama_theme_lightbgcolor = '#282828'
+    var llama_theme_textcolor = '#FFFFFF'
+    var llama_theme_buttontext = '#FFFFFF'
+    var llama_theme_cambg = 'url(https://i.ibb.co/C18JNgK/splatbg.jpg)'
+    var llama_theme_userbg = 'url(https://i.ibb.co/7nrB9LT/test.png)'
+    var llama_theme_chatheaderbg = 'url(https://i.ibb.co/XsTjVk0/splay-bg-header2.png)'
+    var llama_theme_chatbg = 'url(https://i.ibb.co/TrKBZFn/splat-chat-bg3.png)'
+    var llama_theme_messagebg = 'url(https://i.ibb.co/FWFnhc4/messagebg.png)'
+  }
+  document.documentElement.style.setProperty('--thememode-bgcolor', llama_theme_bgcolor)
+  document.documentElement.style.setProperty('--thememode-bordercolor', llama_theme_bordercolor)
+  document.documentElement.style.setProperty('--thememode-lightbgcolor', llama_theme_lightbgcolor)
+  document.documentElement.style.setProperty('--thememode-textcolor', llama_theme_textcolor)
+  document.documentElement.style.setProperty('--thememode-buttontext', llama_theme_buttontext)
 
-    document.documentElement.style.setProperty('--thememode-roombg', llama_theme_cambg)
-    document.documentElement.style.setProperty('--thememode-userbg', llama_theme_userbg)
-    document.documentElement.style.setProperty('--thememode-chatheaderbg', llama_theme_chatheaderbg)
-    document.documentElement.style.setProperty('--thememode-chatbg', llama_theme_chatbg)
-    document.documentElement.style.setProperty('--thememode-messagebg', llama_theme_messagebg)
+  document.documentElement.style.setProperty('--thememode-roombg', llama_theme_cambg)
+  document.documentElement.style.setProperty('--thememode-userbg', llama_theme_userbg)
+  document.documentElement.style.setProperty('--thememode-chatheaderbg', llama_theme_chatheaderbg)
+  document.documentElement.style.setProperty('--thememode-chatbg', llama_theme_chatbg)
+  document.documentElement.style.setProperty('--thememode-messagebg', llama_theme_messagebg)
 }

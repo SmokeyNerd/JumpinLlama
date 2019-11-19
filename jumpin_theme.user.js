@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    https://www.smokeyllama.com
-// @version      2019.72
+// @version      2019.73
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -97,16 +97,16 @@
 */
 
 function addGlobalStyle (css) {
-  var head, style;
-  head = document.getElementsByTagName('head')[0];
-  if (!head) { return; }
-  style = document.createElement('style');
-  style.type = 'text/css';
-  style.innerHTML = css;
-  head.appendChild(style);
+  var head, style
+  head = document.getElementsByTagName('head')[0]
+  if (!head) { return }
+  style = document.createElement('style')
+  style.type = 'text/css'
+  style.innerHTML = css
+  head.appendChild(style)
 }
 
-addGlobalStyle( `
+addGlobalStyle(`
 
 .button--text {text-shadow:none;}
 .hide_header #app {margin-top: -50px;}
@@ -393,16 +393,16 @@ padding-left: 15px;
 .chat__MessageBody-link {color:#ff0000;}
 .chat__Message:hover .chat__MessageTimestamp {color:#7289DA;}
 .chat__MessageBody  {
-	border-radius: 10px;
-	padding-right: 10px;
-	padding-left: 10px;}
+    border-radius: 10px;
+    padding-right: 10px;
+    padding-left: 10px;}
 .chat__MessageBody-status {
-	border-radius: 2px;
-	color: #fff;
-	background-color: #22add5;
-	min-height: 18px;
-	padding-left: 2px;
-	padding-right: 2px;}
+    border-radius: 2px;
+    color: #fff;
+    background-color: #22add5;
+    min-height: 18px;
+    padding-left: 2px;
+    padding-right: 2px;}
 /* ------------------ CHANGE_NICKNAME ------------------ */
 .dark .modal__Body, .dark .modal__Footer {
     border-top: 0px;}
@@ -2007,8 +2007,8 @@ color:black;
 /* --------- USERS LIST --------- */
 .splatmode .chat__UserListItem {background-image: var(--splatmode-messagebg) !important;    border: 1px solid #51bc02;border-radius:12px;}
 @keyframes animatedBackground {
-	from { background-position: 0 0; }
-	to { background-position: 0 100%; }
+    from { background-position: 0 0; }
+    to { background-position: 0 100%; }
 }
 .splatmode .chat__HeaderOption {
 background-image: var(--splatmode-messagebg);
@@ -2531,13 +2531,13 @@ src: url('data:application/font-ttf;base64,AAEAAAAQAQAABAAAR0RFRgsxCzIAAbicAAAAQ
 #Preview_Llama_Color:hover {background-color:yellow;}
 .no_hover:hover {background: #f7f7f7;cursor:default;}
 .no_hoverbackground-color: #d8d8d8 !important;}
-`);
+`)
 
 // ----------------------------------------------------------------- LLAMA_MENU -----------------------------------------------------------------*/
-var body = document.body;
+var body = document.body
 
 // ------------ LLAMA_NOTICE_CREATOR ----------------*/
-var LlamaNoticeNode = document.createElement('div');
+var LlamaNoticeNode = document.createElement('div')
 
 LlamaNoticeNode.innerHTML = (`
 <label style="cursor:pointer;">
@@ -2579,14 +2579,14 @@ LlamaNoticeNode.innerHTML = (`
 </div>
 </label>
 <div id="toggle_menu" style="background-color:transparent !important;border-color:transparent !important;"></div>
-`);
+`)
 
-LlamaNoticeNode.setAttribute('id', 'New_Llama_Notice');
-document.body.appendChild(LlamaNoticeNode);
+LlamaNoticeNode.setAttribute('id', 'New_Llama_Notice')
+document.body.appendChild(LlamaNoticeNode)
 
 // ----------------------------------------------------------------- SHOW_HIDE_LLAMA_MENU -----------------------------------------------------------------
 
-var CustomColorNode = document.createElement('div');
+var CustomColorNode = document.createElement('div')
 
 CustomColorNode.innerHTML = (`
 <div id="toggle_menu"></div>
@@ -2647,96 +2647,96 @@ CustomColorNode.innerHTML = (`
                 <input id="Save_Llama_Color" type="button" style="cursor:pointer;border-radius: 10px;width: 100%;border: 1px solid #ccc;" value="SAVE"></input>
             </span>
 </div>
-`);
+`)
 
-CustomColorNode.setAttribute('id', 'New_Custom_Mode');
-document.body.appendChild(CustomColorNode);
+CustomColorNode.setAttribute('id', 'New_Custom_Mode')
+document.body.appendChild(CustomColorNode)
 
 // ------------ LLAMA_MORE_MENU_OPTIONS ----------------*/
 
-var chat_option_activator = 'activate';
-if (chat_option_activator !== 'llama_chat_menu') { setTimeout(Toggle_Llama_Chat_Options, 3000); }
+var chat_option_activator = 'activate'
+if (chat_option_activator !== 'llama_chat_menu') { setTimeout(Toggle_Llama_Chat_Options, 3000) }
 
 function Toggle_Llama_Chat_Options (zEvent) {
-var lr = document.getElementsByClassName("room")[0];
-lr.id = "llama_Room";
-var xz = document.getElementsByClassName("chat__HeaderOptions")[1];
-xz.id = "chat__HeaderOptions";
-var el = document.getElementById("chat__HeaderOptions");
+  var lr = document.getElementsByClassName('room')[0]
+  lr.id = 'llama_Room'
+  var xz = document.getElementsByClassName('chat__HeaderOptions')[1]
+  xz.id = 'chat__HeaderOptions'
+  var el = document.getElementById('chat__HeaderOptions')
 
-var chatShare = document.getElementsByClassName("chat__Share")[0];
-chatShare.id = "chat__Share";
-var chatShare_box = document.getElementById("chat__Share");
+  var chatShare = document.getElementsByClassName('chat__Share')[0]
+  chatShare.id = 'chat__Share'
+  var chatShare_box = document.getElementById('chat__Share')
 
-var whatsNew = document.getElementsByClassName("roomHeader__UserActions")[0];
-whatsNew.id = "whatsNew_Box";
-var whatsNew_Box = document.getElementById("whatsNew_Box");
+  var whatsNew = document.getElementsByClassName('roomHeader__UserActions')[0]
+  whatsNew.id = 'whatsNew_Box'
+  var whatsNew_Box = document.getElementById('whatsNew_Box')
 
 // ------------ Whats_New ----------------*/
-var WhatsNewIcon = document.createElement('label');
-WhatsNewIcon.className = "button button-floating button-icon button--text roomHeader__UserAction LlamaOption_chat";
-WhatsNewIcon.setAttribute('id', 'Toggle_New_Llama_Notice');
-WhatsNewIcon.setAttribute('title', 'Whats New SmokeyLlama');
-WhatsNewIcon.innerHTML = (`
+  var WhatsNewIcon = document.createElement('label')
+  WhatsNewIcon.className = 'button button-floating button-icon button--text roomHeader__UserAction LlamaOption_chat'
+  WhatsNewIcon.setAttribute('id', 'Toggle_New_Llama_Notice')
+  WhatsNewIcon.setAttribute('title', 'Whats New SmokeyLlama')
+  WhatsNewIcon.innerHTML = (`
 <img src="https://cdn1.iconfinder.com/data/icons/MetroStation-PNG/128/MB__Llama.png" width="20px">
 <span class="mobileHidden" id="">Llama Info</span>
-` );
+`)
 
-whatsNew_Box.appendChild(WhatsNewIcon);
-whatsNew_Box.insertBefore(WhatsNewIcon, null);
-whatsNew_Box.insertBefore(WhatsNewIcon, whatsNew_Box.childNodes[0] || null);
-document.getElementById("New_Llama_Notice").addEventListener("click", Toggle_Notice, false);
-document.getElementById("Toggle_New_Llama_Notice").addEventListener("click", Toggle_Notice, false);
+  whatsNew_Box.appendChild(WhatsNewIcon)
+  whatsNew_Box.insertBefore(WhatsNewIcon, null)
+  whatsNew_Box.insertBefore(WhatsNewIcon, whatsNew_Box.childNodes[0] || null)
+  document.getElementById('New_Llama_Notice').addEventListener('click', Toggle_Notice, false)
+  document.getElementById('Toggle_New_Llama_Notice').addEventListener('click', Toggle_Notice, false)
 
 // ------------ Hide_Header ----------------*/
-var HeaderHideIcon = document.createElement('label');
-HeaderHideIcon.className = "LlamaOption_chat";
-HeaderHideIcon.setAttribute('id', 'Toggle_Hide_Header');
-HeaderHideIcon.setAttribute('title', 'Hide Header');
-HeaderHideIcon.innerHTML = (`
+  var HeaderHideIcon = document.createElement('label')
+  HeaderHideIcon.className = 'LlamaOption_chat'
+  HeaderHideIcon.setAttribute('id', 'Toggle_Hide_Header')
+  HeaderHideIcon.setAttribute('title', 'Hide Header')
+  HeaderHideIcon.innerHTML = (`
 <span id="header_hide_icon"><i class="fas fa-chevron-up" id="header_up"></i><i class="fas fa-chevron-down" id="header_down"></i></span>
-`);
+`)
 
-whatsNew_Box.appendChild(HeaderHideIcon);
-whatsNew_Box.insertBefore(HeaderHideIcon, null);
-whatsNew_Box.insertBefore(HeaderHideIcon, whatsNew_Box.childNodes[0] || null);
-document.getElementById("Toggle_Hide_Header").addEventListener("click", Toggle_Hide_Header, false);
+  whatsNew_Box.appendChild(HeaderHideIcon)
+  whatsNew_Box.insertBefore(HeaderHideIcon, null)
+  whatsNew_Box.insertBefore(HeaderHideIcon, whatsNew_Box.childNodes[0] || null)
+  document.getElementById('Toggle_Hide_Header').addEventListener('click', Toggle_Hide_Header, false)
 
 // ------------ MINI_YT_ICON ----------------*/
-var MiniYTIcon = document.createElement('label');
-MiniYTIcon.className = "button chat__HeaderOption LlamaOption_miniyt";
-MiniYTIcon.setAttribute('id', 'miniyt__llamaOption');
-MiniYTIcon.setAttribute('title', 'Mini Youtube Player');
-MiniYTIcon.innerHTML = (`
+  var MiniYTIcon = document.createElement('label')
+  MiniYTIcon.className = 'button chat__HeaderOption LlamaOption_miniyt'
+  MiniYTIcon.setAttribute('id', 'miniyt__llamaOption')
+  MiniYTIcon.setAttribute('title', 'Mini Youtube Player')
+  MiniYTIcon.innerHTML = (`
 <i class="fa fa-compress-arrows-alt"></i>
-` );
+`)
 
-chatShare_box.appendChild(MiniYTIcon);
-chatShare_box.insertBefore(MiniYTIcon, null);
-chatShare_box.insertBefore(MiniYTIcon, chatShare_box.childNodes[3] || null);
+  chatShare_box.appendChild(MiniYTIcon)
+  chatShare_box.insertBefore(MiniYTIcon, null)
+  chatShare_box.insertBefore(MiniYTIcon, chatShare_box.childNodes[3] || null)
 
-document.getElementById("miniyt__llamaOption").addEventListener("click", Toggle_MiniYT, false);
+  document.getElementById('miniyt__llamaOption').addEventListener('click', Toggle_MiniYT, false)
 
 // ------------ GAMES_ICON ----------------*/
-var GamesIcon = document.createElement('label');
-GamesIcon.className = "button chat__HeaderOption LlamaOption_miniyt";
-GamesIcon.setAttribute('id', 'games__llamaOption');
-GamesIcon.setAttribute('title', 'Mini Game Window');
-GamesIcon.innerHTML = (`
+  var GamesIcon = document.createElement('label')
+  GamesIcon.className = 'button chat__HeaderOption LlamaOption_miniyt'
+  GamesIcon.setAttribute('id', 'games__llamaOption')
+  GamesIcon.setAttribute('title', 'Mini Game Window')
+  GamesIcon.innerHTML = (`
 <i class="fas fa-gamepad"></i>
 
-`);
+`)
 
-chatShare_box.appendChild(GamesIcon);
-chatShare_box.insertBefore(GamesIcon, null);
-chatShare_box.insertBefore(GamesIcon, chatShare_box.childNodes[4] || null);
+  chatShare_box.appendChild(GamesIcon)
+  chatShare_box.insertBefore(GamesIcon, null)
+  chatShare_box.insertBefore(GamesIcon, chatShare_box.childNodes[4] || null)
 
-document.getElementById("games__llamaOption").addEventListener("click", Toggle_Games, false);
+  document.getElementById('games__llamaOption').addEventListener('click', Toggle_Games, false)
 // ------------ GAMES_MENU ----------------*/
-var newGamesMenu = document.createElement('div');
-newGamesMenu.className = "dropdown__Options";
-newGamesMenu.setAttribute('id', 'Llama_Games');
-newGamesMenu.innerHTML = (`
+  var newGamesMenu = document.createElement('div')
+  newGamesMenu.className = 'dropdown__Options'
+  newGamesMenu.setAttribute('id', 'Llama_Games')
+  newGamesMenu.innerHTML = (`
 <div id="mydiv">
   <div id="mydivheader" titl="Move Game Window"><i class="fas fa-mouse-pointer" style="color:white"></i></div>
 <div class="game_head">GAME WINDOW</div>
@@ -2784,109 +2784,109 @@ body {overflow:hidden;}
 .custommode .fa-gamepad {color: var(--custommodebutton-textcolor);}
 </style>
 
-`);
-el.insertBefore(newGamesMenu, el.childNodes[4] || null);
+`)
+  el.insertBefore(newGamesMenu, el.childNodes[4] || null)
 // ------------ CHAT_ICON ----------------*/
-var newEl = document.createElement('label');
-newEl.className = "button chat__HeaderOption LlamaOption_chat";
-newEl.setAttribute('id', 'chat__llamaOption');
-newEl.setAttribute('title', 'Extra Chat Options');
-newEl.innerHTML = (`
+  var newEl = document.createElement('label')
+  newEl.className = 'button chat__HeaderOption LlamaOption_chat'
+  newEl.setAttribute('id', 'chat__llamaOption')
+  newEl.setAttribute('title', 'Extra Chat Options')
+  newEl.innerHTML = (`
 <i class="fa fa-user-cog"></i>
-`);
+`)
 
-el.appendChild(newEl);
-el.insertBefore(newEl, null);
-el.insertBefore(newEl, el.childNodes[3] || null);
+  el.appendChild(newEl)
+  el.insertBefore(newEl, null)
+  el.insertBefore(newEl, el.childNodes[3] || null)
 // ------------ CHAT_MENU ----------------*/
-var newChatMenu = document.createElement('div');
-newChatMenu.className = "dropdown__Options";
-newChatMenu.setAttribute('id', 'Llama_Chat');
-newChatMenu.innerHTML = (`
+  var newChatMenu = document.createElement('div')
+  newChatMenu.className = 'dropdown__Options'
+  newChatMenu.setAttribute('id', 'Llama_Chat')
+  newChatMenu.innerHTML = (`
 <div class="dropdown__Option dropdown__Option-header">Chat settings</div>
 <span class="dropdown__Option" id="llama_robo">Roboto Font<input id="llama_robo_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_bubble_chat">Bubble Chat<input id="bubble_chat_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="chat_llama_hide">Toggle Chat<input id="hide_chat_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="userlist_llama_hide">Toggle Userlist<input id="hide_userlist_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="ltr_llama">LTR Mode<input id="ltr_llama_checkbox" class="jic-checkbox" type="checkbox"></span>
-`);
+`)
 
-el.insertBefore(newChatMenu, el.childNodes[4] || null);
-document.getElementById("chat__llamaOption").addEventListener("click", Toggle_Chat_Llama, false);
+  el.insertBefore(newChatMenu, el.childNodes[4] || null)
+  document.getElementById('chat__llamaOption').addEventListener('click', Toggle_Chat_Llama, false)
 
-document.getElementById("llama_robo").addEventListener("click", Toggle_Robo_Llama, false);
-var robo_status = localStorage.getItem('robo_status');
-if (robo_status === 'llama_robo') { document.getElementById("llama_robo_checkbox").checked = true; }
+  document.getElementById('llama_robo').addEventListener('click', Toggle_Robo_Llama, false)
+  var robo_status = localStorage.getItem('robo_status')
+  if (robo_status === 'llama_robo') { document.getElementById('llama_robo_checkbox').checked = true }
 
-document.getElementById("llama_bubble_chat").addEventListener("click", Toggle_Bubble_Chat, false);
-var bubble_status = localStorage.getItem('bubble_status');
-if (bubble_status === 'bubble_chat') { document.getElementById("bubble_chat_checkbox").checked = true; }
+  document.getElementById('llama_bubble_chat').addEventListener('click', Toggle_Bubble_Chat, false)
+  var bubble_status = localStorage.getItem('bubble_status')
+  if (bubble_status === 'bubble_chat') { document.getElementById('bubble_chat_checkbox').checked = true }
 
-document.getElementById("chat_llama_hide").addEventListener("click", Toggle_Chat, false);
-var chat_Status = localStorage.getItem('chat');
-if (chat_Status === 'hide_chat') { document.getElementById("hide_chat_checkbox").checked = true; }
+  document.getElementById('chat_llama_hide').addEventListener('click', Toggle_Chat, false)
+  var chat_Status = localStorage.getItem('chat')
+  if (chat_Status === 'hide_chat') { document.getElementById('hide_chat_checkbox').checked = true }
 
-document.getElementById("userlist_llama_hide").addEventListener("click", Toggle_UserList, false);
-var userlist_Status = localStorage.getItem('user_status');
-if(userlist_Status === 'hide_userlist') { document.getElementById("hide_userlist_checkbox").checked = true; }
+  document.getElementById('userlist_llama_hide').addEventListener('click', Toggle_UserList, false)
+  var userlist_Status = localStorage.getItem('user_status')
+  if (userlist_Status === 'hide_userlist') { document.getElementById('hide_userlist_checkbox').checked = true }
 
-document.getElementById("ltr_llama").addEventListener("click", Toggle_LTR, false);
-var ltr_Status = localStorage.getItem('ltr');
-if(ltr_Status === 'ltr_layout') { document.getElementById("ltr_llama_checkbox").checked = true; }
+  document.getElementById('ltr_llama').addEventListener('click', Toggle_LTR, false)
+  var ltr_Status = localStorage.getItem('ltr')
+  if (ltr_Status === 'ltr_layout') { document.getElementById('ltr_llama_checkbox').checked = true }
 
-document.getElementById("ChatSettings").addEventListener("click", Hide_Llama_Chat_Options, false);
+  document.getElementById('ChatSettings').addEventListener('click', Hide_Llama_Chat_Options, false)
 
 // ------------ GRID_ICON ----------------*/
-var newCamIcon = document.createElement('label');
-newCamIcon.className = "button chat__HeaderOption";
-newCamIcon.setAttribute('id', 'cam__llamaOption');
-newCamIcon.setAttribute('title', 'Extra Camera Options');
-newCamIcon.innerHTML = (`
+  var newCamIcon = document.createElement('label')
+  newCamIcon.className = 'button chat__HeaderOption'
+  newCamIcon.setAttribute('id', 'cam__llamaOption')
+  newCamIcon.setAttribute('title', 'Extra Camera Options')
+  newCamIcon.innerHTML = (`
 <i class="fa fa-th-large"></i>
-` );
+`)
 
-el.appendChild(newCamIcon);
-el.insertBefore(newCamIcon, null);
-el.insertBefore(newCamIcon, el.childNodes[4] || null);
+  el.appendChild(newCamIcon)
+  el.insertBefore(newCamIcon, null)
+  el.insertBefore(newCamIcon, el.childNodes[4] || null)
 // ------------ GRID_MENU ----------------*/
-var newCamMenu = document.createElement('div');
-newCamMenu.className = "dropdown__Options";
-newCamMenu.setAttribute('id', 'Llama_Cam');
-newCamMenu.innerHTML = (`
+  var newCamMenu = document.createElement('div')
+  newCamMenu.className = 'dropdown__Options'
+  newCamMenu.setAttribute('id', 'Llama_Cam')
+  newCamMenu.innerHTML = (`
 <div class="dropdown__Option dropdown__Option-header">Cam Settings</div>
 <span class="dropdown__Option" id="cam_border_llama">Cam Borders<input id="cam_border_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="cam_spacing_llama">Cam Spacing<input id="cam_spacing_checkbox" class="jic-checkbox" type="checkbox"></span>
-` );
+`)
 
-el.insertBefore(newCamMenu, el.childNodes[4] || null);
-document.getElementById("cam__llamaOption").addEventListener("click", Toggle_Cam_Llama, false);
+  el.insertBefore(newCamMenu, el.childNodes[4] || null)
+  document.getElementById('cam__llamaOption').addEventListener('click', Toggle_Cam_Llama, false)
 
-document.getElementById("cam_border_llama").addEventListener("click", Toggle_No_Border, false);
-var border_status = localStorage.getItem('no_border');
-if (border_status === 'no_border') { document.getElementById("cam_border_checkbox").checked = true; }
+  document.getElementById('cam_border_llama').addEventListener('click', Toggle_No_Border, false)
+  var border_status = localStorage.getItem('no_border')
+  if (border_status === 'no_border') { document.getElementById('cam_border_checkbox').checked = true }
 
-document.getElementById("cam_spacing_llama").addEventListener("click", Toggle_No_Padding, false);
-var pad_status = localStorage.getItem('no_padding');
-if (pad_status === 'no_padding') { document.getElementById("cam_spacing_checkbox").checked = true; }
+  document.getElementById('cam_spacing_llama').addEventListener('click', Toggle_No_Padding, false)
+  var pad_status = localStorage.getItem('no_padding')
+  if (pad_status === 'no_padding') { document.getElementById('cam_spacing_checkbox').checked = true }
 
 // ------------ THEME_ICON ----------------*/
-var newThemeIcon = document.createElement('label');
-newThemeIcon.className = "button chat__HeaderOption";
-newThemeIcon.setAttribute('id', 'theme__llamaOption');
-newThemeIcon.setAttribute('title', 'Theme Options');
-newThemeIcon.innerHTML = (`
+  var newThemeIcon = document.createElement('label')
+  newThemeIcon.className = 'button chat__HeaderOption'
+  newThemeIcon.setAttribute('id', 'theme__llamaOption')
+  newThemeIcon.setAttribute('title', 'Theme Options')
+  newThemeIcon.innerHTML = (`
 <i class="fa fa-palette"></i>
-`);
+`)
 
-el.appendChild(newThemeIcon);
-el.insertBefore(newThemeIcon, null);
-el.insertBefore(newThemeIcon, el.childNodes[6] || null);
+  el.appendChild(newThemeIcon)
+  el.insertBefore(newThemeIcon, null)
+  el.insertBefore(newThemeIcon, el.childNodes[6] || null)
 
 // ------------ THEME_MENU ----------------*/
-var newThemeMenu = document.createElement('div');
-newThemeMenu.className = "dropdown__Options";
-newThemeMenu.setAttribute('id', 'Llama_Theme');
-newThemeMenu.innerHTML = (`
+  var newThemeMenu = document.createElement('div')
+  newThemeMenu.className = 'dropdown__Options'
+  newThemeMenu.setAttribute('id', 'Llama_Theme')
+  newThemeMenu.innerHTML = (`
 <div class="dropdown__Option dropdown__Option-header">Theme Settings</div>
 <label class="dropdown__Option" id="cam_border_llama">
 <select id="theme_wizard">
@@ -2968,958 +2968,942 @@ USER BG
 </span>
 
 </div>
-` );
+`)
 
-el.insertBefore(newThemeMenu, el.childNodes[4] || null);
-document.getElementById("theme__llamaOption").addEventListener("click", Toggle_Theme_Llama, false);
-document.getElementById("cam_bg_llama").addEventListener("click", Toggle_User_BG, false);
+  el.insertBefore(newThemeMenu, el.childNodes[4] || null)
+  document.getElementById('theme__llamaOption').addEventListener('click', Toggle_Theme_Llama, false)
+  document.getElementById('cam_bg_llama').addEventListener('click', Toggle_User_BG, false)
 
-document.getElementById("cam_spacing_llama").addEventListener("click", Toggle_No_Padding, false);
+  document.getElementById('cam_spacing_llama').addEventListener('click', Toggle_No_Padding, false)
 
-document.getElementById("Preview_Llama_Color").addEventListener("click", Preview_Llama_Color, false);
-document.getElementById("Save_Llama_Color").addEventListener("click", Save_Llama_Color, false);
-document.getElementById("Reset_Llama_Color").addEventListener("click", Reset_Llama_Color, false);
+  document.getElementById('Preview_Llama_Color').addEventListener('click', Preview_Llama_Color, false)
+  document.getElementById('Save_Llama_Color').addEventListener('click', Save_Llama_Color, false)
+  document.getElementById('Reset_Llama_Color').addEventListener('click', Reset_Llama_Color, false)
 
-document.getElementById("Clear_Cam_BG").addEventListener("click", Clear_Cam_BG, false);
-document.getElementById("Clear_Chat_BG").addEventListener("click", Clear_Chat_BG, false);
-document.getElementById("Clear_Userlist_BG").addEventListener("click", Clear_Userlist_BG, false);
+  document.getElementById('Clear_Cam_BG').addEventListener('click', Clear_Cam_BG, false)
+  document.getElementById('Clear_Chat_BG').addEventListener('click', Clear_Chat_BG, false)
+  document.getElementById('Clear_Userlist_BG').addEventListener('click', Clear_Userlist_BG, false)
 
-document.getElementById("Save_Llama_BG").addEventListener("click", Save_Llama_BG, false);
+  document.getElementById('Save_Llama_BG').addEventListener('click', Save_Llama_BG, false)
 
-document.getElementById("cam_bg_cover").addEventListener("click", Cam_BG_Cover, false);
-document.getElementById("cam_bg_repeat").addEventListener("click", Cam_BG_Repeat, false);
-document.getElementById("cam_bg_center").addEventListener("click", Cam_BG_Center, false);
+  document.getElementById('cam_bg_cover').addEventListener('click', Cam_BG_Cover, false)
+  document.getElementById('cam_bg_repeat').addEventListener('click', Cam_BG_Repeat, false)
+  document.getElementById('cam_bg_center').addEventListener('click', Cam_BG_Center, false)
 
-document.getElementById("chat_bg_cover").addEventListener("click", Chat_BG_Cover, false);
-document.getElementById("chat_bg_repeat").addEventListener("click", Chat_BG_Repeat, false);
-document.getElementById("chat_bg_center").addEventListener("click", Chat_BG_Center, false);
+  document.getElementById('chat_bg_cover').addEventListener('click', Chat_BG_Cover, false)
+  document.getElementById('chat_bg_repeat').addEventListener('click', Chat_BG_Repeat, false)
+  document.getElementById('chat_bg_center').addEventListener('click', Chat_BG_Center, false)
 
-document.getElementById("userlist_bg_cover").addEventListener("click", Userlist_BG_Cover, false);
-document.getElementById("userlist_bg_repeat").addEventListener("click", Userlist_BG_Repeat, false);
-document.getElementById("userlist_bg_center").addEventListener("click", Userlist_BG_Center, false);
+  document.getElementById('userlist_bg_cover').addEventListener('click', Userlist_BG_Cover, false)
+  document.getElementById('userlist_bg_repeat').addEventListener('click', Userlist_BG_Repeat, false)
+  document.getElementById('userlist_bg_center').addEventListener('click', Userlist_BG_Center, false)
 
-document.addEventListener('input', function (event) {
+  document.addEventListener('input', function (event) {
     // Only run for #theme_wizard select
-    if (event.target.id !== 'theme_wizard') return;
-    if (event.target.value === 'Default Theme') { Toggle_Theme_Default(); }
-    if (event.target.value === 'PINK') { Toggle_Theme_Pink(); }
-    if (event.target.value === 'GREEN') { Toggle_Theme_Green(); }
-    if (event.target.value === 'BLUE') { Toggle_Theme_Blue(); }
-    if (event.target.value === 'MAUVE') { Toggle_Theme_Mauve(); }
-    if (event.target.value === 'ORANGE') { Toggle_Theme_Orange(); }
-    if (event.target.value === 'RED') {Toggle_Theme_Red(); }
-    if (event.target.value === 'PURPLE') { Toggle_Theme_Purple(); }
-    if (event.target.value === 'BLACK') { Toggle_Theme_Black(); }
-    if (event.target.value === 'BUDS') { Toggle_Theme_Buds(); }
-    if (event.target.value === 'SPLAT') { Toggle_Theme_Splat(); }
-    if (event.target.value === 'CUSTOM') { Toggle_Theme_Custom();Save_Llama_Color(); }
-}, false);
+    if (event.target.id !== 'theme_wizard') return
+    if (event.target.value === 'Default Theme') { Toggle_Theme_Default() }
+    if (event.target.value === 'PINK') { Toggle_Theme_Pink() }
+    if (event.target.value === 'GREEN') { Toggle_Theme_Green() }
+    if (event.target.value === 'BLUE') { Toggle_Theme_Blue() }
+    if (event.target.value === 'MAUVE') { Toggle_Theme_Mauve() }
+    if (event.target.value === 'ORANGE') { Toggle_Theme_Orange() }
+    if (event.target.value === 'RED') { Toggle_Theme_Red() }
+    if (event.target.value === 'PURPLE') { Toggle_Theme_Purple() }
+    if (event.target.value === 'BLACK') { Toggle_Theme_Black() }
+    if (event.target.value === 'BUDS') { Toggle_Theme_Buds() }
+    if (event.target.value === 'SPLAT') { Toggle_Theme_Splat() }
+    if (event.target.value === 'CUSTOM') { Toggle_Theme_Custom(); Save_Llama_Color() }
+  }, false)
 
-var llama_bg = localStorage.getItem('llama_bg1');
-var llama_bg_reloader = localStorage.getItem('llama_bg1_reload');
-if(llama_bg !== ''){document.documentElement.style.setProperty('--user-bg-image', llama_bg);}
-if(llama_bg){document.getElementById("bgSelection1").value = llama_bg_reloader;}
+  var llama_bg = localStorage.getItem('llama_bg1')
+  var llama_bg_reloader = localStorage.getItem('llama_bg1_reload')
+  if (llama_bg !== '') { document.documentElement.style.setProperty('--user-bg-image', llama_bg) }
+  if (llama_bg) { document.getElementById('bgSelection1').value = llama_bg_reloader }
 
-var llama_bg2 = localStorage.getItem('llama_bg2');
-var llama_bg2_reloader = localStorage.getItem('llama_bg2_reload');
-if(llama_bg2 !== ''){document.documentElement.style.setProperty('--user-bg2-image', llama_bg2);}
-if(llama_bg2){document.getElementById("bgSelection2").value = llama_bg_reloader2;}
+  var llama_bg2 = localStorage.getItem('llama_bg2')
+  var llama_bg2_reloader = localStorage.getItem('llama_bg2_reload')
+  if (llama_bg2 !== '') { document.documentElement.style.setProperty('--user-bg2-image', llama_bg2) }
+  if (llama_bg2) { document.getElementById('bgSelection2').value = llama_bg_reloader2 }
 
-var llama_bg3 = localStorage.getItem('llama_bg3');
-var llama_bg3_reloader = localStorage.getItem('llama_bg3_reload');
-if(llama_bg3 !== ''){document.documentElement.style.setProperty('--user-bg3-image', llama_bg3);}
-if(llama_bg3){document.getElementById("bgSelection3").value = llama_bg_reloader3;}
+  var llama_bg3 = localStorage.getItem('llama_bg3')
+  var llama_bg3_reloader = localStorage.getItem('llama_bg3_reload')
+  if (llama_bg3 !== '') { document.documentElement.style.setProperty('--user-bg3-image', llama_bg3) }
+  if (llama_bg3) { document.getElementById('bgSelection3').value = llama_bg_reloader3 }
 
-var cam_bg_cover = localStorage.getItem('cam_bg_cover');
-if(cam_bg_cover){document.getElementById("cam_bg_cover").checked = true;}
+  var cam_bg_cover = localStorage.getItem('cam_bg_cover')
+  if (cam_bg_cover) { document.getElementById('cam_bg_cover').checked = true }
 
-var cam_bg_repeat = localStorage.getItem('cam_bg_repeat');
-if(cam_bg_repeat){document.getElementById("cam_bg_repeat").checked = true;}
+  var cam_bg_repeat = localStorage.getItem('cam_bg_repeat')
+  if (cam_bg_repeat) { document.getElementById('cam_bg_repeat').checked = true }
 
-var cam_bg_center = localStorage.getItem('cam_bg_center');
-if(cam_bg_center){document.getElementById("cam_bg_center").checked = true;}
+  var cam_bg_center = localStorage.getItem('cam_bg_center')
+  if (cam_bg_center) { document.getElementById('cam_bg_center').checked = true }
 
-var chat_bg_cover = localStorage.getItem('chat_bg_cover');
-if(chat_bg_cover){document.getElementById("chat_bg_cover").checked = true;}
+  var chat_bg_cover = localStorage.getItem('chat_bg_cover')
+  if (chat_bg_cover) { document.getElementById('chat_bg_cover').checked = true }
 
-var chat_bg_repeat = localStorage.getItem('chat_bg_repeat');
-if(chat_bg_repeat){document.getElementById("chat_bg_repeat").checked = true;}
+  var chat_bg_repeat = localStorage.getItem('chat_bg_repeat')
+  if (chat_bg_repeat) { document.getElementById('chat_bg_repeat').checked = true }
 
-var chat_bg_center = localStorage.getItem('chat_bg_center');
-if(chat_bg_center){document.getElementById("chat_bg_center").checked = true;}
+  var chat_bg_center = localStorage.getItem('chat_bg_center')
+  if (chat_bg_center) { document.getElementById('chat_bg_center').checked = true }
 
-var userlist_bg_cover = localStorage.getItem('userlist_bg_cover');
-if(userlist_bg_cover){document.getElementById("userlist_bg_cover").checked = true;}
+  var userlist_bg_cover = localStorage.getItem('userlist_bg_cover')
+  if (userlist_bg_cover) { document.getElementById('userlist_bg_cover').checked = true }
 
-var userlist_bg_repeat = localStorage.getItem('userlist_bg_repeat');
-if(userlist_bg_repeat){document.getElementById("userlist_bg_repeat").checked = true;}
+  var userlist_bg_repeat = localStorage.getItem('userlist_bg_repeat')
+  if (userlist_bg_repeat) { document.getElementById('userlist_bg_repeat').checked = true }
 
-var userlist_bg_center = localStorage.getItem('userlist_bg_center');
-if(userlist_bg_center){document.getElementById("userlist_bg_center").checked = true;}
+  var userlist_bg_center = localStorage.getItem('userlist_bg_center')
+  if (userlist_bg_center) { document.getElementById('userlist_bg_center').checked = true }
 
-var userbg_status = localStorage.getItem('userbg');
-if(userbg_status === "user_bg"){document.getElementById("cam_bg_checkbox").checked = true;}
+  var userbg_status = localStorage.getItem('userbg')
+  if (userbg_status === 'user_bg') { document.getElementById('cam_bg_checkbox').checked = true }
 
-var theme_status = localStorage.getItem('theme');
+  var theme_status = localStorage.getItem('theme')
 
 // ------- SET DROPDOWN CHOICE -------
-if(theme_status === ""){document.getElementById("theme_wizard").selectedIndex = 0;}
-if(theme_status === "pinkmode"){document.getElementById("theme_wizard").selectedIndex = 2;}
-if(theme_status === "greenmode"){document.getElementById("theme_wizard").selectedIndex = 3;}
-if(theme_status === "bluemode"){document.getElementById("theme_wizard").selectedIndex = 4;}
-if(theme_status === "mauvemode"){document.getElementById("theme_wizard").selectedIndex = 5;}
-if(theme_status === "orangemode"){document.getElementById("theme_wizard").selectedIndex = 6;}
-if(theme_status === "redmode"){document.getElementById("theme_wizard").selectedIndex = 7;}
-if(theme_status === "purplemode"){document.getElementById("theme_wizard").selectedIndex = 8;}
-if(theme_status === "blackmode"){document.getElementById("theme_wizard").selectedIndex = 9;}
-if(theme_status === "budsmode"){document.getElementById("theme_wizard").selectedIndex = 10;}
-if(theme_status === "splatmode"){document.getElementById("theme_wizard").selectedIndex = 11;}
-if(theme_status === "custommode"){document.getElementById("theme_wizard").selectedIndex = 12;}
+  if (theme_status === '') { document.getElementById('theme_wizard').selectedIndex = 0 }
+  if (theme_status === 'pinkmode') { document.getElementById('theme_wizard').selectedIndex = 2 }
+  if (theme_status === 'greenmode') { document.getElementById('theme_wizard').selectedIndex = 3 }
+  if (theme_status === 'bluemode') { document.getElementById('theme_wizard').selectedIndex = 4 }
+  if (theme_status === 'mauvemode') { document.getElementById('theme_wizard').selectedIndex = 5 }
+  if (theme_status === 'orangemode') { document.getElementById('theme_wizard').selectedIndex = 6 }
+  if (theme_status === 'redmode') { document.getElementById('theme_wizard').selectedIndex = 7 }
+  if (theme_status === 'purplemode') { document.getElementById('theme_wizard').selectedIndex = 8 }
+  if (theme_status === 'blackmode') { document.getElementById('theme_wizard').selectedIndex = 9 }
+  if (theme_status === 'budsmode') { document.getElementById('theme_wizard').selectedIndex = 10 }
+  if (theme_status === 'splatmode') { document.getElementById('theme_wizard').selectedIndex = 11 }
+  if (theme_status === 'custommode') { document.getElementById('theme_wizard').selectedIndex = 12 }
 
 // Make the DIV element draggable:
-dragElement(document.getElementById("mydiv"));
+  dragElement(document.getElementById('mydiv'))
 
-function dragElement(elmnt) {
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  if (document.getElementById(elmnt.id + "header")) {
+  function dragElement (elmnt) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0
+    if (document.getElementById(elmnt.id + 'header')) {
     // if present, the header is where you move the DIV from:
-    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-  } else {
+      document.getElementById(elmnt.id + 'header').onmousedown = dragMouseDown
+    } else {
     // otherwise, move the DIV from anywhere inside the DIV:
-    elmnt.onmousedown = dragMouseDown;
-  }
+      elmnt.onmousedown = dragMouseDown
+    }
 
-  function dragMouseDown(e) {
-    e = e || window.event;
-    e.preventDefault();
+    function dragMouseDown (e) {
+      e = e || window.event
+      e.preventDefault()
     // get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
+      pos3 = e.clientX
+      pos4 = e.clientY
+      document.onmouseup = closeDragElement
     // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
-  }
+      document.onmousemove = elementDrag
+    }
 
-  function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
+    function elementDrag (e) {
+      e = e || window.event
+      e.preventDefault()
     // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
+      pos1 = pos3 - e.clientX
+      pos2 = pos4 - e.clientY
+      pos3 = e.clientX
+      pos4 = e.clientY
     // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-  }
+      elmnt.style.top = (elmnt.offsetTop - pos2) + 'px'
+      elmnt.style.left = (elmnt.offsetLeft - pos1) + 'px'
+    }
 
-  function closeDragElement() {
+    function closeDragElement () {
     // stop moving when mouse button is released:
-    document.onmouseup = null;
-    document.onmousemove = null;
+      document.onmouseup = null
+      document.onmousemove = null
+    }
   }
-}
-
-
 
 // 30seconds
 }
 
+function Toggle_Chat_Llama (zEvent) { body.classList.toggle('open_llama_chat'); Hide_Llama_Theme_Options() }
+function Toggle_Cam_Llama (zEvent) { body.classList.toggle('open_llama_cam'); Hide_Llama_Theme_Options() }
+function Toggle_Theme_Llama (zEvent) { body.classList.toggle('open_llama_theme') }
 
-function Toggle_Chat_Llama (zEvent) {body.classList.toggle("open_llama_chat");Hide_Llama_Theme_Options();}
-function Toggle_Cam_Llama (zEvent) {body.classList.toggle("open_llama_cam");Hide_Llama_Theme_Options();}
-function Toggle_Theme_Llama (zEvent) {body.classList.toggle("open_llama_theme");}
-
-function Hide_Llama_Chat_Options (zEvent) {body.classList.remove("open_llama_chat");}
-function Hide_Llama_Cam_Options (zEvent) {body.classList.remove("open_llama_cam");}
-function Hide_Llama_Theme_Options (zEvent) {body.classList.remove("open_llama_theme");}
+function Hide_Llama_Chat_Options (zEvent) { body.classList.remove('open_llama_chat') }
+function Hide_Llama_Cam_Options (zEvent) { body.classList.remove('open_llama_cam') }
+function Hide_Llama_Theme_Options (zEvent) { body.classList.remove('open_llama_theme') }
 
 // ------------ OTHER_SHIT ----------------*/
-window.addEventListener('click', function(e){
-  if (document.getElementById('chat__llamaOption').contains(e.target)){} else{Hide_Llama_Chat_Options(); }
-  if (document.getElementById('cam__llamaOption').contains(e.target)){} else{Hide_Llama_Cam_Options(); }
-});
-
+window.addEventListener('click', function (e) {
+  if (document.getElementById('chat__llamaOption').contains(e.target)) {} else { Hide_Llama_Chat_Options() }
+  if (document.getElementById('cam__llamaOption').contains(e.target)) {} else { Hide_Llama_Cam_Options() }
+})
 
 // --- TEST 2----------
 
 function Enter_Cheers (zEvent) {
-    var text = document.getElementById("chat__input");
-    text.value += "cheers!";
+  var text = document.getElementById('chat__input')
+  text.value += 'cheers!'
 }
-
 
 // Import Roboto Mono Regular v2.002 2015 ttfautohint v1.3
 // Apache License 2.0
 
-var robo_status = localStorage.getItem('robo_status');
-var llama_robo = 'llama_robo';
-if(robo_status){body.classList.add(llama_robo);}
+var robo_status = localStorage.getItem('robo_status')
+var llama_robo = 'llama_robo'
+if (robo_status) { body.classList.add(llama_robo) }
 
 function Toggle_Robo_Llama (cEvent) {
-    var robo_status = localStorage.getItem('robo_status');
-        body.classList.toggle("llama_robo");
-        if(robo_status !== "llama_robo"){localStorage.setItem('robo_status', 'llama_robo');document.getElementById("llama_robo_checkbox").checked = true;
-                                       } else {localStorage.setItem('robo_status', '');document.getElementById("llama_robo_checkbox").checked = false;}
+  var robo_status = localStorage.getItem('robo_status')
+  body.classList.toggle('llama_robo')
+  if (robo_status !== 'llama_robo') {
+    localStorage.setItem('robo_status', 'llama_robo'); document.getElementById('llama_robo_checkbox').checked = true
+  } else { localStorage.setItem('robo_status', ''); document.getElementById('llama_robo_checkbox').checked = false }
 }
 
 // ----------------------------------------------------------------- HIDE_NOTICE -----------------------------------------------------------------
 
 function Toggle_Notice (zEvent) {
-        body.classList.toggle("hide_notice");
+  body.classList.toggle('hide_notice')
 }
 
-var header_status = localStorage.getItem('header_status');
-var hide_header = 'hide_header';
-if(header_status){body.classList.add(hide_header);}
+var header_status = localStorage.getItem('header_status')
+var hide_header = 'hide_header'
+if (header_status) { body.classList.add(hide_header) }
 
 function Toggle_Hide_Header (zEvent) {
-    var header_status = localStorage.getItem('header_status');
-        body.classList.toggle("hide_header");
-        if(header_status !== "hide_header"){localStorage.setItem('header_status', 'hide_header');
-                                       } else {localStorage.setItem('header_status', '');}
+  var header_status = localStorage.getItem('header_status')
+  body.classList.toggle('hide_header')
+  if (header_status !== 'hide_header') {
+    localStorage.setItem('header_status', 'hide_header')
+  } else { localStorage.setItem('header_status', '') }
 }
 
 function Toggle_Games (zEvent) {
-        body.classList.toggle("game_window");
+  body.classList.toggle('game_window')
 }
 
 // ----------------------------------------------------------------- CUSTOM_MODE -----------------------------------------------------------------
 
-var header_bgcolor_selection = localStorage.getItem('llama_header_bgcolor');
-var bars_bgcolor_selection = localStorage.getItem('llama_bars_bgcolor');
-var cams_bgcolor_selection = localStorage.getItem('llama_cams_bgcolor');
+var header_bgcolor_selection = localStorage.getItem('llama_header_bgcolor')
+var bars_bgcolor_selection = localStorage.getItem('llama_bars_bgcolor')
+var cams_bgcolor_selection = localStorage.getItem('llama_cams_bgcolor')
 
-var button_bgcolor_selection = localStorage.getItem('llama_button_bgcolor');
-var button_textcolor_selection = localStorage.getItem('llama_button_textcolor');
-var button_bordercolor_selection = localStorage.getItem('llama_button_bordercolor');
+var button_bgcolor_selection = localStorage.getItem('llama_button_bgcolor')
+var button_textcolor_selection = localStorage.getItem('llama_button_textcolor')
+var button_bordercolor_selection = localStorage.getItem('llama_button_bordercolor')
 
-var chat_bgcolor_selection = localStorage.getItem('llama_chat_bgcolor');
-var chat_bubble_bgcolor_selection = localStorage.getItem('llama_chat_bubble_bgcolor');
-var chat_bubble_bordercolor_selection = localStorage.getItem('llama_chat_bubble_bordercolor');
+var chat_bgcolor_selection = localStorage.getItem('llama_chat_bgcolor')
+var chat_bubble_bgcolor_selection = localStorage.getItem('llama_chat_bubble_bgcolor')
+var chat_bubble_bordercolor_selection = localStorage.getItem('llama_chat_bubble_bordercolor')
 
-var user_bgcolor_selection = localStorage.getItem('llama_user_bgcolor');
-var username_bgcolor_selection = localStorage.getItem('llama_username_bgcolor');
-var username_textcolor_selection = localStorage.getItem('llama_username_textcolor');
+var user_bgcolor_selection = localStorage.getItem('llama_user_bgcolor')
+var username_bgcolor_selection = localStorage.getItem('llama_username_bgcolor')
+var username_textcolor_selection = localStorage.getItem('llama_username_textcolor')
 
-var theme_status = localStorage.getItem('theme');
+var theme_status = localStorage.getItem('theme')
 // ----------------------------------------------------------------- REAPPLY_THEME_CHOICE -----------------------------------------------------------------
 
-if(theme_status){body.classList.add(theme_status);}
-if(theme_status === "custommode"){
+if (theme_status) { body.classList.add(theme_status) }
+if (theme_status === 'custommode') {
+  document.documentElement.style.setProperty('--custommodeheader-bgcolor', '#' + header_bgcolor_selection)
+  document.documentElement.style.setProperty('--custommodebars-bgcolor', '#' + bars_bgcolor_selection)
+  document.documentElement.style.setProperty('--custommodecams-bgcolor', '#' + cams_bgcolor_selection)
 
-   document.documentElement.style.setProperty('--custommodeheader-bgcolor', '#' + header_bgcolor_selection);
-   document.documentElement.style.setProperty('--custommodebars-bgcolor', '#' + bars_bgcolor_selection);
-   document.documentElement.style.setProperty('--custommodecams-bgcolor', '#' + cams_bgcolor_selection);
+  document.documentElement.style.setProperty('--custommodebutton-bgcolor', '#' + button_bgcolor_selection)
+  document.documentElement.style.setProperty('--custommodebutton-textcolor', '#' + button_textcolor_selection)
+  document.documentElement.style.setProperty('--custommodebutton-bordercolor', '#' + button_bordercolor_selection)
 
-   document.documentElement.style.setProperty('--custommodebutton-bgcolor', '#' + button_bgcolor_selection);
-   document.documentElement.style.setProperty('--custommodebutton-textcolor', '#' + button_textcolor_selection);
-   document.documentElement.style.setProperty('--custommodebutton-bordercolor', '#' + button_bordercolor_selection);
+  document.documentElement.style.setProperty('--custommodechat-bgcolor', '#' + chat_bgcolor_selection)
+  document.documentElement.style.setProperty('--custommodechat-bubble-bgcolor', '#' + chat_bubble_bgcolor_selection)
+  document.documentElement.style.setProperty('--custommodechat-bubble-bordercolor', '#' + chat_bubble_bordercolor_selection)
 
-   document.documentElement.style.setProperty('--custommodechat-bgcolor', '#' + chat_bgcolor_selection);
-   document.documentElement.style.setProperty('--custommodechat-bubble-bgcolor', '#' + chat_bubble_bgcolor_selection);
-   document.documentElement.style.setProperty('--custommodechat-bubble-bordercolor', '#' + chat_bubble_bordercolor_selection);
-
-   document.documentElement.style.setProperty('--custommodeuser-bgcolor', '#' + user_bgcolor_selection);
-   document.documentElement.style.setProperty('--custommodeusername-bgcolor', '#' + username_bgcolor_selection);
-   document.documentElement.style.setProperty('--custommodeusername-textcolor', '#' + username_textcolor_selection);
+  document.documentElement.style.setProperty('--custommodeuser-bgcolor', '#' + user_bgcolor_selection)
+  document.documentElement.style.setProperty('--custommodeusername-bgcolor', '#' + username_bgcolor_selection)
+  document.documentElement.style.setProperty('--custommodeusername-textcolor', '#' + username_textcolor_selection)
 }
 
 if (header_bgcolor_selection) {
-    document.getElementById("llama_header_bgcolor_selection").value = header_bgcolor_selection;
-    document.getElementById("llama_bars_bgcolor_selection").value = bars_bgcolor_selection;
-    document.getElementById("llama_cams_bgcolor_selection").value = cams_bgcolor_selection;
+  document.getElementById('llama_header_bgcolor_selection').value = header_bgcolor_selection
+  document.getElementById('llama_bars_bgcolor_selection').value = bars_bgcolor_selection
+  document.getElementById('llama_cams_bgcolor_selection').value = cams_bgcolor_selection
 
-    document.getElementById("llama_button_bgcolor_selection").value = button_bgcolor_selection;
-    document.getElementById("llama_button_textcolor_selection").value = button_textcolor_selection;
-    document.getElementById("llama_button_bordercolor_selection").value = button_bordercolor_selection;
+  document.getElementById('llama_button_bgcolor_selection').value = button_bgcolor_selection
+  document.getElementById('llama_button_textcolor_selection').value = button_textcolor_selection
+  document.getElementById('llama_button_bordercolor_selection').value = button_bordercolor_selection
 
-    document.getElementById("llama_chat_bgcolor_selection").value = chat_bgcolor_selection;
-    document.getElementById("llama_chat_bubble_bgcolor_selection").value = chat_bubble_bgcolor_selection;
-    document.getElementById("llama_chat_bubble_bordercolor_selection").value = chat_bubble_bordercolor_selection;
+  document.getElementById('llama_chat_bgcolor_selection').value = chat_bgcolor_selection
+  document.getElementById('llama_chat_bubble_bgcolor_selection').value = chat_bubble_bgcolor_selection
+  document.getElementById('llama_chat_bubble_bordercolor_selection').value = chat_bubble_bordercolor_selection
 
-    document.getElementById("llama_user_bgcolor_selection").value = user_bgcolor_selection;
-    document.getElementById("llama_username_bgcolor_selection").value = username_bgcolor_selection;
-    document.getElementById("llama_username_textcolor_selection").value = username_textcolor_selection;
+  document.getElementById('llama_user_bgcolor_selection').value = user_bgcolor_selection
+  document.getElementById('llama_username_bgcolor_selection').value = username_bgcolor_selection
+  document.getElementById('llama_username_textcolor_selection').value = username_textcolor_selection
 }
-
-
 
 // ----------------------------------------------------------------- CUSTOM_MODE_TOGGLE -----------------------------------------------------------------
 
 function Toggle_Theme_Custom (zEvent) {
-    var color_choice = "custommode";
-    var themestatus = localStorage.getItem('theme');
-        body.classList.toggle(color_choice);
-        if (theme_status !== color_choice) { localStorage.setItem('theme', color_choice); }
-        if (theme_status === color_choice) { localStorage.setItem('theme', ''); }
+  var color_choice = 'custommode'
+  var themestatus = localStorage.getItem('theme')
+  body.classList.toggle(color_choice)
+  if (theme_status !== color_choice) { localStorage.setItem('theme', color_choice) }
+  if (theme_status === color_choice) { localStorage.setItem('theme', '') }
 // REMOVE OTHER THEMES ON BODY TAG
-        body.classList.remove("pinkmode","greenmode","bluemode","mauvemode","orangemode","redmode","purplemode","blackmode","budsmode","smashmode","splatmode","dark");
+  body.classList.remove('pinkmode', 'greenmode', 'bluemode', 'mauvemode', 'orangemode', 'redmode', 'purplemode', 'blackmode', 'budsmode', 'smashmode', 'splatmode', 'dark')
 // END OTHER THEMES
 }
 
 // ----------------------------------------------------------------- CAM_BG_COVER -----------------------------------------------------------------
-var cam_bg_cover = localStorage.getItem("cam_bg_cover");
-if(cam_bg_cover){body.classList.add("cam_cover_on");}
+var cam_bg_cover = localStorage.getItem('cam_bg_cover')
+if (cam_bg_cover) { body.classList.add('cam_cover_on') }
 
 function Cam_BG_Cover (zEvent) {
-    var cam_bg_cover_new = "cam_cover_on";
-    var cam_bg_cover_current = localStorage.getItem('cam_bg_cover');
-        body.classList.toggle(cam_bg_cover_new);
-        if(cam_bg_cover_current !== cam_bg_cover_new){localStorage.setItem('cam_bg_cover', cam_bg_cover_new);document.getElementById("cam_bg_cover").checked = true;
-                                      } else {localStorage.setItem('cam_bg_cover', '');document.getElementById("cam_bg_cover").checked = false;}
+  var cam_bg_cover_new = 'cam_cover_on'
+  var cam_bg_cover_current = localStorage.getItem('cam_bg_cover')
+  body.classList.toggle(cam_bg_cover_new)
+  if (cam_bg_cover_current !== cam_bg_cover_new) {
+    localStorage.setItem('cam_bg_cover', cam_bg_cover_new); document.getElementById('cam_bg_cover').checked = true
+  } else { localStorage.setItem('cam_bg_cover', ''); document.getElementById('cam_bg_cover').checked = false }
 }
 
 // ----------------------------------------------------------------- CAM_BG_REPEAT -----------------------------------------------------------------
-var cam_bg_repeat = localStorage.getItem('cam_bg_repeat');
-if(cam_bg_repeat){body.classList.add(cam_bg_repeat);}
+var cam_bg_repeat = localStorage.getItem('cam_bg_repeat')
+if (cam_bg_repeat) { body.classList.add(cam_bg_repeat) }
 
 function Cam_BG_Repeat (zEvent) {
-    var cam_bg_repeat_new = "cam_repeat_on";
-    var cam_bg_repeat_current = localStorage.getItem('cam_bg_repeat');
-        body.classList.toggle(cam_bg_repeat_new);
-        if(cam_bg_repeat_current !== cam_bg_repeat_new){localStorage.setItem('cam_bg_repeat', cam_bg_repeat_new);document.getElementById("cam_bg_repeat").checked = true;}
-        if(cam_bg_repeat_current === cam_bg_repeat_new){localStorage.setItem('cam_bg_repeat', '');document.getElementById("cam_bg_repeat").checked = false;}
+  var cam_bg_repeat_new = 'cam_repeat_on'
+  var cam_bg_repeat_current = localStorage.getItem('cam_bg_repeat')
+  body.classList.toggle(cam_bg_repeat_new)
+  if (cam_bg_repeat_current !== cam_bg_repeat_new) { localStorage.setItem('cam_bg_repeat', cam_bg_repeat_new); document.getElementById('cam_bg_repeat').checked = true }
+  if (cam_bg_repeat_current === cam_bg_repeat_new) { localStorage.setItem('cam_bg_repeat', ''); document.getElementById('cam_bg_repeat').checked = false }
 }
 
 // ----------------------------------------------------------------- CAM_BG_CENTER -----------------------------------------------------------------
-var cam_bg_center = localStorage.getItem('cam_bg_center');
-if(cam_bg_center){body.classList.add(cam_bg_center);}
+var cam_bg_center = localStorage.getItem('cam_bg_center')
+if (cam_bg_center) { body.classList.add(cam_bg_center) }
 
 function Cam_BG_Center (zEvent) {
-    var cam_bg_center_new = "cam_center_on";
-    var cam_bg_center_current = localStorage.getItem('cam_bg_center');
-        body.classList.toggle(cam_bg_center_new);
-        if(cam_bg_center_current !== cam_bg_center_new){localStorage.setItem('cam_bg_center', cam_bg_center_new);document.getElementById("cam_bg_center").checked = true;}
-        if(cam_bg_center_current === cam_bg_center_new){localStorage.setItem('cam_bg_center', '');document.getElementById("cam_bg_center").checked = false;}
+  var cam_bg_center_new = 'cam_center_on'
+  var cam_bg_center_current = localStorage.getItem('cam_bg_center')
+  body.classList.toggle(cam_bg_center_new)
+  if (cam_bg_center_current !== cam_bg_center_new) { localStorage.setItem('cam_bg_center', cam_bg_center_new); document.getElementById('cam_bg_center').checked = true }
+  if (cam_bg_center_current === cam_bg_center_new) { localStorage.setItem('cam_bg_center', ''); document.getElementById('cam_bg_center').checked = false }
 }
 
-
 // ----------------------------------------------------------------- Chat_BG_COVER -----------------------------------------------------------------
-var chat_bg_cover = localStorage.getItem("chat_bg_cover");
-if(chat_bg_cover){body.classList.add("chat_cover_on");}
+var chat_bg_cover = localStorage.getItem('chat_bg_cover')
+if (chat_bg_cover) { body.classList.add('chat_cover_on') }
 
 function Chat_BG_Cover (zEvent) {
-    var chat_bg_cover_new = "chat_cover_on";
-    var chat_bg_cover_current = localStorage.getItem('chat_bg_cover');
-        body.classList.toggle(chat_bg_cover_new);
-        if(chat_bg_cover_current !== chat_bg_cover_new){localStorage.setItem('chat_bg_cover', chat_bg_cover_new);document.getElementById("chat_bg_cover").checked = true;
-                                      } else {localStorage.setItem('chat_bg_cover', '');document.getElementById("chat_bg_cover").checked = false;}
+  var chat_bg_cover_new = 'chat_cover_on'
+  var chat_bg_cover_current = localStorage.getItem('chat_bg_cover')
+  body.classList.toggle(chat_bg_cover_new)
+  if (chat_bg_cover_current !== chat_bg_cover_new) {
+    localStorage.setItem('chat_bg_cover', chat_bg_cover_new); document.getElementById('chat_bg_cover').checked = true
+  } else { localStorage.setItem('chat_bg_cover', ''); document.getElementById('chat_bg_cover').checked = false }
 }
 
 // ----------------------------------------------------------------- Chat_BG_REPEAT -----------------------------------------------------------------
-var chat_bg_repeat = localStorage.getItem('chat_bg_repeat');
-if(chat_bg_repeat){body.classList.add(chat_bg_repeat);}
+var chat_bg_repeat = localStorage.getItem('chat_bg_repeat')
+if (chat_bg_repeat) { body.classList.add(chat_bg_repeat) }
 
 function Chat_BG_Repeat (zEvent) {
-    var chat_bg_repeat_new = "chat_repeat_on";
-    var chat_bg_repeat_current = localStorage.getItem('chat_bg_repeat');
-        body.classList.toggle(chat_bg_repeat_new);
-        if(chat_bg_repeat_current !== chat_bg_repeat_new){localStorage.setItem('chat_bg_repeat', chat_bg_repeat_new);document.getElementById("chat_bg_repeat").checked = true;}
-        if(chat_bg_repeat_current === chat_bg_repeat_new){localStorage.setItem('chat_bg_repeat', '');document.getElementById("chat_bg_repeat").checked = false;}
+  var chat_bg_repeat_new = 'chat_repeat_on'
+  var chat_bg_repeat_current = localStorage.getItem('chat_bg_repeat')
+  body.classList.toggle(chat_bg_repeat_new)
+  if (chat_bg_repeat_current !== chat_bg_repeat_new) { localStorage.setItem('chat_bg_repeat', chat_bg_repeat_new); document.getElementById('chat_bg_repeat').checked = true }
+  if (chat_bg_repeat_current === chat_bg_repeat_new) { localStorage.setItem('chat_bg_repeat', ''); document.getElementById('chat_bg_repeat').checked = false }
 }
 
 // ----------------------------------------------------------------- Chat_BG_CENTER -----------------------------------------------------------------
-var chat_bg_center = localStorage.getItem('chat_bg_center');
-if(chat_bg_center){body.classList.add(chat_bg_center);}
+var chat_bg_center = localStorage.getItem('chat_bg_center')
+if (chat_bg_center) { body.classList.add(chat_bg_center) }
 
 function Chat_BG_Center (zEvent) {
-    var chat_bg_center_new = "chat_center_on";
-    var chat_bg_center_current = localStorage.getItem('chat_bg_center');
-        body.classList.toggle(chat_bg_center_new);
-        if(chat_bg_center_current !== chat_bg_center_new){localStorage.setItem('chat_bg_center', chat_bg_center_new);document.getElementById("chat_bg_center").checked = true;}
-        if(chat_bg_center_current === chat_bg_center_new){localStorage.setItem('chat_bg_center', '');document.getElementById("chat_bg_center").checked = false;}
+  var chat_bg_center_new = 'chat_center_on'
+  var chat_bg_center_current = localStorage.getItem('chat_bg_center')
+  body.classList.toggle(chat_bg_center_new)
+  if (chat_bg_center_current !== chat_bg_center_new) { localStorage.setItem('chat_bg_center', chat_bg_center_new); document.getElementById('chat_bg_center').checked = true }
+  if (chat_bg_center_current === chat_bg_center_new) { localStorage.setItem('chat_bg_center', ''); document.getElementById('chat_bg_center').checked = false }
 }
 
 // ----------------------------------------------------------------- Userlist_BG_COVER -----------------------------------------------------------------
-var userlist_bg_cover = localStorage.getItem("userlist_bg_cover");
-if(userlist_bg_cover){body.classList.add("userlist_cover_on");}
+var userlist_bg_cover = localStorage.getItem('userlist_bg_cover')
+if (userlist_bg_cover) { body.classList.add('userlist_cover_on') }
 
 function Userlist_BG_Cover (zEvent) {
-    var userlist_bg_cover_new = "userlist_cover_on";
-    var userlist_bg_cover_current = localStorage.getItem('userlist_bg_cover');
-        body.classList.toggle(userlist_bg_cover_new);
-        if(userlist_bg_cover_current !== userlist_bg_cover_new){localStorage.setItem('userlist_bg_cover', userlist_bg_cover_new);document.getElementById("userlist_bg_cover").checked = true;
-                                      } else {localStorage.setItem('userlist_bg_cover', '');document.getElementById("userlist_bg_cover").checked = false;}
+  var userlist_bg_cover_new = 'userlist_cover_on'
+  var userlist_bg_cover_current = localStorage.getItem('userlist_bg_cover')
+  body.classList.toggle(userlist_bg_cover_new)
+  if (userlist_bg_cover_current !== userlist_bg_cover_new) {
+    localStorage.setItem('userlist_bg_cover', userlist_bg_cover_new); document.getElementById('userlist_bg_cover').checked = true
+  } else { localStorage.setItem('userlist_bg_cover', ''); document.getElementById('userlist_bg_cover').checked = false }
 }
 
 // ----------------------------------------------------------------- Userlist_BG_REPEAT -----------------------------------------------------------------
-var userlist_bg_repeat = localStorage.getItem('userlist_bg_repeat');
-if(userlist_bg_repeat){body.classList.add(userlist_bg_repeat);}
+var userlist_bg_repeat = localStorage.getItem('userlist_bg_repeat')
+if (userlist_bg_repeat) { body.classList.add(userlist_bg_repeat) }
 
 function Userlist_BG_Repeat (zEvent) {
-    var userlist_bg_repeat_new = "userlist_repeat_on";
-    var userlist_bg_repeat_current = localStorage.getItem('userlist_bg_repeat');
-        body.classList.toggle(userlist_bg_repeat_new);
-        if(userlist_bg_repeat_current !== userlist_bg_repeat_new){localStorage.setItem('userlist_bg_repeat', userlist_bg_repeat_new);document.getElementById("userlist_bg_repeat").checked = true;}
-        if(userlist_bg_repeat_current === userlist_bg_repeat_new){localStorage.setItem('userlist_bg_repeat', '');document.getElementById("userlist_bg_repeat").checked = false;}
+  var userlist_bg_repeat_new = 'userlist_repeat_on'
+  var userlist_bg_repeat_current = localStorage.getItem('userlist_bg_repeat')
+  body.classList.toggle(userlist_bg_repeat_new)
+  if (userlist_bg_repeat_current !== userlist_bg_repeat_new) { localStorage.setItem('userlist_bg_repeat', userlist_bg_repeat_new); document.getElementById('userlist_bg_repeat').checked = true }
+  if (userlist_bg_repeat_current === userlist_bg_repeat_new) { localStorage.setItem('userlist_bg_repeat', ''); document.getElementById('userlist_bg_repeat').checked = false }
 }
 
 // ----------------------------------------------------------------- Userlist_BG_CENTER -----------------------------------------------------------------
-var userlist_bg_center = localStorage.getItem('userlist_bg_center');
-if(userlist_bg_center){body.classList.add(userlist_bg_center);}
+var userlist_bg_center = localStorage.getItem('userlist_bg_center')
+if (userlist_bg_center) { body.classList.add(userlist_bg_center) }
 
 function Userlist_BG_Center (zEvent) {
-    var userlist_bg_center_new = "userlist_center_on";
-    var userlist_bg_center_current = localStorage.getItem('userlist_bg_center');
-        body.classList.toggle(userlist_bg_center_new);
-        if(userlist_bg_center_current !== userlist_bg_center_new){localStorage.setItem('userlist_bg_center', userlist_bg_center_new);document.getElementById("userlist_bg_center").checked = true;}
-        if(userlist_bg_center_current === userlist_bg_center_new){localStorage.setItem('userlist_bg_center', '');document.getElementById("userlist_bg_center").checked = false;}
+  var userlist_bg_center_new = 'userlist_center_on'
+  var userlist_bg_center_current = localStorage.getItem('userlist_bg_center')
+  body.classList.toggle(userlist_bg_center_new)
+  if (userlist_bg_center_current !== userlist_bg_center_new) { localStorage.setItem('userlist_bg_center', userlist_bg_center_new); document.getElementById('userlist_bg_center').checked = true }
+  if (userlist_bg_center_current === userlist_bg_center_new) { localStorage.setItem('userlist_bg_center', ''); document.getElementById('userlist_bg_center').checked = false }
 }
 
 // ----------------------------------------------------------------- CUSTOM_MODE_PREVIEW -----------------------------------------------------------------
 
 function Preview_Llama_Color (zEvent) {
-    var llama_header_bgcolor_input_prev = document.getElementById('llama_header_bgcolor_selection').value;
-    var llama_bars_bgcolor_input_prev = document.getElementById('llama_bars_bgcolor_selection').value;
-    var llama_cams_bgcolor_input_prev = document.getElementById('llama_cams_bgcolor_selection').value;
+  var llama_header_bgcolor_input_prev = document.getElementById('llama_header_bgcolor_selection').value
+  var llama_bars_bgcolor_input_prev = document.getElementById('llama_bars_bgcolor_selection').value
+  var llama_cams_bgcolor_input_prev = document.getElementById('llama_cams_bgcolor_selection').value
 
-    var llama_button_bgcolor_input_prev = document.getElementById('llama_button_bgcolor_selection').value;
-    var llama_button_textcolor_input_prev = document.getElementById('llama_button_textcolor_selection').value;
-    var llama_button_bordercolor_input_prev = document.getElementById('llama_button_bordercolor_selection').value;
+  var llama_button_bgcolor_input_prev = document.getElementById('llama_button_bgcolor_selection').value
+  var llama_button_textcolor_input_prev = document.getElementById('llama_button_textcolor_selection').value
+  var llama_button_bordercolor_input_prev = document.getElementById('llama_button_bordercolor_selection').value
 
-    var llama_chat_bgcolor_input_prev = document.getElementById('llama_chat_bgcolor_selection').value;
-    var llama_chat_bubble_bgcolor_input_prev = document.getElementById('llama_chat_bubble_bgcolor_selection').value;
-    var llama_chat_bubble_bordercolor_input_prev = document.getElementById('llama_chat_bubble_bordercolor_selection').value;
+  var llama_chat_bgcolor_input_prev = document.getElementById('llama_chat_bgcolor_selection').value
+  var llama_chat_bubble_bgcolor_input_prev = document.getElementById('llama_chat_bubble_bgcolor_selection').value
+  var llama_chat_bubble_bordercolor_input_prev = document.getElementById('llama_chat_bubble_bordercolor_selection').value
 
-    var llama_user_bgcolor_input_prev = document.getElementById('llama_user_bgcolor_selection').value;
-    var llama_username_bgcolor_input_prev = document.getElementById('llama_username_bgcolor_selection').value;
-    var llama_username_textcolor_input_prev = document.getElementById('llama_username_textcolor_selection').value;
+  var llama_user_bgcolor_input_prev = document.getElementById('llama_user_bgcolor_selection').value
+  var llama_username_bgcolor_input_prev = document.getElementById('llama_username_bgcolor_selection').value
+  var llama_username_textcolor_input_prev = document.getElementById('llama_username_textcolor_selection').value
 
-    document.documentElement.style.setProperty('--custommodeheader-bgcolor', '#' + llama_header_bgcolor_input_prev);
-    document.documentElement.style.setProperty('--custommodebars-bgcolor', '#' + llama_bars_bgcolor_input_prev);
-    document.documentElement.style.setProperty('--custommodecams-bgcolor', '#' + llama_cams_bgcolor_input_prev);
+  document.documentElement.style.setProperty('--custommodeheader-bgcolor', '#' + llama_header_bgcolor_input_prev)
+  document.documentElement.style.setProperty('--custommodebars-bgcolor', '#' + llama_bars_bgcolor_input_prev)
+  document.documentElement.style.setProperty('--custommodecams-bgcolor', '#' + llama_cams_bgcolor_input_prev)
 
-    document.documentElement.style.setProperty('--custommodebutton-bgcolor', '#' + llama_button_bgcolor_input_prev);
-    document.documentElement.style.setProperty('--custommodebutton-textcolor', '#' + llama_button_textcolor_input_prev);
-    document.documentElement.style.setProperty('--custommodebutton-bordercolor', '#' + llama_button_bordercolor_input_prev);
+  document.documentElement.style.setProperty('--custommodebutton-bgcolor', '#' + llama_button_bgcolor_input_prev)
+  document.documentElement.style.setProperty('--custommodebutton-textcolor', '#' + llama_button_textcolor_input_prev)
+  document.documentElement.style.setProperty('--custommodebutton-bordercolor', '#' + llama_button_bordercolor_input_prev)
 
-    document.documentElement.style.setProperty('--custommodechat-bgcolor', '#' + llama_chat_bgcolor_input_prev);
-    document.documentElement.style.setProperty('--custommodechat-bubble-bgcolor', '#' + llama_chat_bubble_bgcolor_input_prev);
-    document.documentElement.style.setProperty('--custommodechat-bubble-bordercolor', '#' + llama_chat_bubble_bordercolor_input_prev);
+  document.documentElement.style.setProperty('--custommodechat-bgcolor', '#' + llama_chat_bgcolor_input_prev)
+  document.documentElement.style.setProperty('--custommodechat-bubble-bgcolor', '#' + llama_chat_bubble_bgcolor_input_prev)
+  document.documentElement.style.setProperty('--custommodechat-bubble-bordercolor', '#' + llama_chat_bubble_bordercolor_input_prev)
 
-    document.documentElement.style.setProperty('--custommodeuser-bgcolor', '#' + llama_user_bgcolor_input_prev);
-    document.documentElement.style.setProperty('--custommodeusername-bgcolor', '#' + llama_username_bgcolor_input_prev);
-    document.documentElement.style.setProperty('--custommodeusername-textcolor', '#' + llama_username_textcolor_input_prev);
-
+  document.documentElement.style.setProperty('--custommodeuser-bgcolor', '#' + llama_user_bgcolor_input_prev)
+  document.documentElement.style.setProperty('--custommodeusername-bgcolor', '#' + llama_username_bgcolor_input_prev)
+  document.documentElement.style.setProperty('--custommodeusername-textcolor', '#' + llama_username_textcolor_input_prev)
 }
 // ----------------------------------------------------------------- CUSTOM_MODE_SAVE -----------------------------------------------------------------
 function Save_Llama_Color (zEvent) {
-    var llama_header_bgcolor = localStorage.getItem('llama_header_bgcolor');
-    var llama_bars_bgcolor = localStorage.getItem('llama_bars_bgcolor');
-    var llama_cams_bgcolor = localStorage.getItem('llama_cams_bgcolor');
+  var llama_header_bgcolor = localStorage.getItem('llama_header_bgcolor')
+  var llama_bars_bgcolor = localStorage.getItem('llama_bars_bgcolor')
+  var llama_cams_bgcolor = localStorage.getItem('llama_cams_bgcolor')
 
-    var llama_button_bgcolor = localStorage.getItem('llama_button_bgcolor');
-    var llama_button_textcolor = localStorage.getItem('llama_button_textcolor');
-    var llama_button_bordercolor = localStorage.getItem('llama_button_bordercolor');
+  var llama_button_bgcolor = localStorage.getItem('llama_button_bgcolor')
+  var llama_button_textcolor = localStorage.getItem('llama_button_textcolor')
+  var llama_button_bordercolor = localStorage.getItem('llama_button_bordercolor')
 
-    var llama_chat_bgcolor = localStorage.getItem('llama_chat_bgcolor');
-    var llama_chat_bubble_bgcolor = localStorage.getItem('llama_chat_bubble_bgcolor');
-    var llama_chat_bubble_bordercolor = localStorage.getItem('llama_chat_bubble_bordercolor');
+  var llama_chat_bgcolor = localStorage.getItem('llama_chat_bgcolor')
+  var llama_chat_bubble_bgcolor = localStorage.getItem('llama_chat_bubble_bgcolor')
+  var llama_chat_bubble_bordercolor = localStorage.getItem('llama_chat_bubble_bordercolor')
 
-    var llama_user_bgcolor = localStorage.getItem('llama_user_bgcolor');
-    var llama_username_bgcolor = localStorage.getItem('llama_username_bgcolor');
-    var llama_username_textcolor = localStorage.getItem('llama_username_textcolor');
+  var llama_user_bgcolor = localStorage.getItem('llama_user_bgcolor')
+  var llama_username_bgcolor = localStorage.getItem('llama_username_bgcolor')
+  var llama_username_textcolor = localStorage.getItem('llama_username_textcolor')
 
-    var llama_header_bgcolor_input_new = document.getElementById('llama_header_bgcolor_selection').value;
-    var llama_bars_bgcolor_input_new = document.getElementById('llama_bars_bgcolor_selection').value;
-    var llama_cams_bgcolor_input_new = document.getElementById('llama_cams_bgcolor_selection').value;
+  var llama_header_bgcolor_input_new = document.getElementById('llama_header_bgcolor_selection').value
+  var llama_bars_bgcolor_input_new = document.getElementById('llama_bars_bgcolor_selection').value
+  var llama_cams_bgcolor_input_new = document.getElementById('llama_cams_bgcolor_selection').value
 
-    var llama_button_bgcolor_input_new = document.getElementById('llama_button_bgcolor_selection').value;
-    var llama_button_textcolor_input_new = document.getElementById('llama_button_textcolor_selection').value;
-    var llama_button_bordercolor_input_new = document.getElementById('llama_button_bordercolor_selection').value;
+  var llama_button_bgcolor_input_new = document.getElementById('llama_button_bgcolor_selection').value
+  var llama_button_textcolor_input_new = document.getElementById('llama_button_textcolor_selection').value
+  var llama_button_bordercolor_input_new = document.getElementById('llama_button_bordercolor_selection').value
 
-    var llama_chat_bgcolor_input_new = document.getElementById('llama_chat_bgcolor_selection').value;
-    var llama_chat_bubble_bgcolor_input_new = document.getElementById('llama_chat_bubble_bgcolor_selection').value;
-    var llama_chat_bubble_bordercolor_input_new = document.getElementById('llama_chat_bubble_bordercolor_selection').value;
+  var llama_chat_bgcolor_input_new = document.getElementById('llama_chat_bgcolor_selection').value
+  var llama_chat_bubble_bgcolor_input_new = document.getElementById('llama_chat_bubble_bgcolor_selection').value
+  var llama_chat_bubble_bordercolor_input_new = document.getElementById('llama_chat_bubble_bordercolor_selection').value
 
-    var llama_user_bgcolor_input_new = document.getElementById('llama_user_bgcolor_selection').value;
-    var llama_username_bgcolor_input_new = document.getElementById('llama_username_bgcolor_selection').value;
-    var llama_username_textcolor_input_new = document.getElementById('llama_username_textcolor_selection').value;
+  var llama_user_bgcolor_input_new = document.getElementById('llama_user_bgcolor_selection').value
+  var llama_username_bgcolor_input_new = document.getElementById('llama_username_bgcolor_selection').value
+  var llama_username_textcolor_input_new = document.getElementById('llama_username_textcolor_selection').value
 
+  if (llama_header_bgcolor_input_new !== '') {
+    document.documentElement.style.setProperty('--custommodeheader-bgcolor', '#' + llama_header_bgcolor_input_new)
+    document.documentElement.style.setProperty('--custommodebars-bgcolor', '#' + llama_bars_bgcolor_input_new)
+    document.documentElement.style.setProperty('--custommodecams-bgcolor', '#' + llama_cams_bgcolor_input_new)
 
-        if(llama_header_bgcolor_input_new !== ""){
+    document.documentElement.style.setProperty('--custommodebutton-bgcolor', '#' + llama_button_bgcolor_input_new)
+    document.documentElement.style.setProperty('--custommodebutton-textcolor', '#' + llama_button_textcolor_input_new)
+    document.documentElement.style.setProperty('--custommodebutton-bordercolor', '#' + llama_button_bordercolor_input_new)
 
-            document.documentElement.style.setProperty('--custommodeheader-bgcolor', '#' + llama_header_bgcolor_input_new);
-            document.documentElement.style.setProperty('--custommodebars-bgcolor', '#' + llama_bars_bgcolor_input_new);
-            document.documentElement.style.setProperty('--custommodecams-bgcolor', '#' + llama_cams_bgcolor_input_new);
+    document.documentElement.style.setProperty('--custommodechat--bgcolor', '#' + llama_chat_bgcolor_input_new)
+    document.documentElement.style.setProperty('--custommodechat-bubble-bgcolor', '#' + llama_chat_bubble_bgcolor_input_new)
+    document.documentElement.style.setProperty('--custommodechat-bubble-bordercolor', '#' + llama_chat_bubble_bordercolor_input_new)
 
-            document.documentElement.style.setProperty('--custommodebutton-bgcolor', '#' + llama_button_bgcolor_input_new);
-            document.documentElement.style.setProperty('--custommodebutton-textcolor', '#' + llama_button_textcolor_input_new);
-            document.documentElement.style.setProperty('--custommodebutton-bordercolor', '#' + llama_button_bordercolor_input_new);
+    document.documentElement.style.setProperty('--custommodeuser-bgcolor', '#' + llama_user_bgcolor_input_new)
+    document.documentElement.style.setProperty('--custommodeusername-bgcolor', '#' + llama_username_bgcolor_input_new)
+    document.documentElement.style.setProperty('--custommodeusername-textcolor', '#' + llama_username_textcolor_input_new)
 
-            document.documentElement.style.setProperty('--custommodechat--bgcolor', '#' + llama_chat_bgcolor_input_new);
-            document.documentElement.style.setProperty('--custommodechat-bubble-bgcolor', '#' + llama_chat_bubble_bgcolor_input_new);
-            document.documentElement.style.setProperty('--custommodechat-bubble-bordercolor', '#' + llama_chat_bubble_bordercolor_input_new);
+    localStorage.setItem('llama_header_bgcolor', llama_header_bgcolor_input_new)
+    localStorage.setItem('llama_bars_bgcolor', llama_bars_bgcolor_input_new)
+    localStorage.setItem('llama_cams_bgcolor', llama_cams_bgcolor_input_new)
 
-            document.documentElement.style.setProperty('--custommodeuser-bgcolor', '#' + llama_user_bgcolor_input_new);
-            document.documentElement.style.setProperty('--custommodeusername-bgcolor', '#' + llama_username_bgcolor_input_new);
-            document.documentElement.style.setProperty('--custommodeusername-textcolor', '#' + llama_username_textcolor_input_new);
+    localStorage.setItem('llama_button_bgcolor', llama_button_bgcolor_input_new)
+    localStorage.setItem('llama_button_textcolor', llama_button_textcolor_input_new)
+    localStorage.setItem('llama_button_bordercolor', llama_button_bordercolor_input_new)
 
-            localStorage.setItem('llama_header_bgcolor', llama_header_bgcolor_input_new);
-            localStorage.setItem('llama_bars_bgcolor', llama_bars_bgcolor_input_new);
-            localStorage.setItem('llama_cams_bgcolor', llama_cams_bgcolor_input_new);
+    localStorage.setItem('llama_chat_bgcolor', llama_chat_bgcolor_input_new)
+    localStorage.setItem('llama_chat_bubble_bgcolor', llama_chat_bubble_bgcolor_input_new)
+    localStorage.setItem('llama_chat_bubble_bordercolor', llama_chat_bubble_bordercolor_input_new)
 
-            localStorage.setItem('llama_button_bgcolor', llama_button_bgcolor_input_new);
-            localStorage.setItem('llama_button_textcolor', llama_button_textcolor_input_new);
-            localStorage.setItem('llama_button_bordercolor', llama_button_bordercolor_input_new);
+    localStorage.setItem('llama_user_bgcolor', llama_user_bgcolor_input_new)
+    localStorage.setItem('llama_username_bgcolor', llama_username_bgcolor_input_new)
+    localStorage.setItem('llama_username_textcolor', llama_username_textcolor_input_new)
+  } else {
+    localStorage.setItem('llama_header_bgcolor', '')
+    localStorage.setItem('llama_bars_bgcolor', '')
+    localStorage.setItem('llama_cams_bgcolor', '')
 
-            localStorage.setItem('llama_chat_bgcolor', llama_chat_bgcolor_input_new);
-            localStorage.setItem('llama_chat_bubble_bgcolor', llama_chat_bubble_bgcolor_input_new);
-            localStorage.setItem('llama_chat_bubble_bordercolor', llama_chat_bubble_bordercolor_input_new);
+    localStorage.setItem('llama_button_bgcolor', '')
+    localStorage.setItem('llama_button_textcolor', '')
+    localStorage.setItem('llama_button_bordercolor', '')
 
-            localStorage.setItem('llama_user_bgcolor', llama_user_bgcolor_input_new);
-            localStorage.setItem('llama_username_bgcolor', llama_username_bgcolor_input_new);
-            localStorage.setItem('llama_username_textcolor', llama_username_textcolor_input_new);
-        } else {
+    localStorage.setItem('llama_chat_bgcolor', '')
+    localStorage.setItem('llama_chat_bubble_bgcolor', '')
+    localStorage.setItem('llama_chat_bubble_bordercolor', '')
 
-            localStorage.setItem('llama_header_bgcolor', '');
-            localStorage.setItem('llama_bars_bgcolor', '');
-            localStorage.setItem('llama_cams_bgcolor', '');
-
-            localStorage.setItem('llama_button_bgcolor', '');
-            localStorage.setItem('llama_button_textcolor', '');
-            localStorage.setItem('llama_button_bordercolor', '');
-
-            localStorage.setItem('llama_chat_bgcolor', '');
-            localStorage.setItem('llama_chat_bubble_bgcolor', '');
-            localStorage.setItem('llama_chat_bubble_bordercolor', '');
-
-            localStorage.setItem('llama_user_bgcolor', '');
-            localStorage.setItem('llama_username_bgcolor', '');
-            localStorage.setItem('llama_username_textcolor', '');
-
+    localStorage.setItem('llama_user_bgcolor', '')
+    localStorage.setItem('llama_username_bgcolor', '')
+    localStorage.setItem('llama_username_textcolor', '')
+  }
 }
-}
-
 
 // ----------------------------------------------------------------- CUSTOM_MODE_RESET -----------------------------------------------------------------
 
 function Reset_Llama_Color (zEvent) {
-    var llama_header_bgcolor = localStorage.getItem('llama_header_bgcolor');
-    var llama_bars_bgcolor = localStorage.getItem('llama_bars_bgcolor');
-    var llama_cams_bgcolor = localStorage.getItem('llama_cams_bgcolor');
+  var llama_header_bgcolor = localStorage.getItem('llama_header_bgcolor')
+  var llama_bars_bgcolor = localStorage.getItem('llama_bars_bgcolor')
+  var llama_cams_bgcolor = localStorage.getItem('llama_cams_bgcolor')
 
-    var llama_button_bgcolor = localStorage.getItem('llama_button_bgcolor');
-    var llama_button_textcolor = localStorage.getItem('llama_button_textcolor');
-    var llama_button_bordercolor = localStorage.getItem('llama_button_bordercolor');
+  var llama_button_bgcolor = localStorage.getItem('llama_button_bgcolor')
+  var llama_button_textcolor = localStorage.getItem('llama_button_textcolor')
+  var llama_button_bordercolor = localStorage.getItem('llama_button_bordercolor')
 
-    var llama_chat_bgcolor = localStorage.getItem('llama_chat_bgcolor');
-    var llama_chat_bubble_bgcolor = localStorage.getItem('llama_chat_bubble_bgcolor');
-    var llama_chat_bubble_bordercolor = localStorage.getItem('llama_chat_bubble_bordercolor');
+  var llama_chat_bgcolor = localStorage.getItem('llama_chat_bgcolor')
+  var llama_chat_bubble_bgcolor = localStorage.getItem('llama_chat_bubble_bgcolor')
+  var llama_chat_bubble_bordercolor = localStorage.getItem('llama_chat_bubble_bordercolor')
 
-    var llama_user_bgcolor = localStorage.getItem('llama_user_bgcolor');
-    var llama_username_bgcolor = localStorage.getItem('llama_username_bgcolor');
-    var llama_username_textcolor = localStorage.getItem('llama_username_textcolor');
+  var llama_user_bgcolor = localStorage.getItem('llama_user_bgcolor')
+  var llama_username_bgcolor = localStorage.getItem('llama_username_bgcolor')
+  var llama_username_textcolor = localStorage.getItem('llama_username_textcolor')
 
-    var llama_header_bgcolor_input = "22ADD5";
-    var llama_bars_bgcolor_input = "C7CFD9";
-    var llama_cams_bgcolor_input = "FFFFFF";
+  var llama_header_bgcolor_input = '22ADD5'
+  var llama_bars_bgcolor_input = 'C7CFD9'
+  var llama_cams_bgcolor_input = 'FFFFFF'
 
-    var llama_button_bgcolor_input = "C7CFD9";
-    var llama_button_textcolor_input = "FFFFFF";
-    var llama_button_bordercolor_input = "000000";
+  var llama_button_bgcolor_input = 'C7CFD9'
+  var llama_button_textcolor_input = 'FFFFFF'
+  var llama_button_bordercolor_input = '000000'
 
-    var llama_chat_bgcolor_input = "22ADD5";
-    var llama_chat_bubble_bgcolor_input = "C7CFD9";
-    var llama_chat_bubble_bordercolor_input = "FFFFFF";
+  var llama_chat_bgcolor_input = '22ADD5'
+  var llama_chat_bubble_bgcolor_input = 'C7CFD9'
+  var llama_chat_bubble_bordercolor_input = 'FFFFFF'
 
-    var llama_user_bgcolor_input = "22ADD5";
-    var llama_username_bgcolor_input = "C7CFD9";
-    var llama_username_textcolor_input = "FFFFFF";
+  var llama_user_bgcolor_input = '22ADD5'
+  var llama_username_bgcolor_input = 'C7CFD9'
+  var llama_username_textcolor_input = 'FFFFFF'
 
+  if (llama_header_bgcolor_input !== '') {
+    document.documentElement.style.setProperty('--custommodeheader-bgcolor', '#' + llama_header_bgcolor_input)
+    document.documentElement.style.setProperty('--custommodebars-bgcolor', '#' + llama_bars_bgcolor_input)
+    document.documentElement.style.setProperty('--custommodecams-bgcolor', '#' + llama_cams_bgcolor_input)
 
-        if(llama_header_bgcolor_input !== ""){
+    document.documentElement.style.setProperty('--custommodebutton-bgcolor', '#' + llama_button_bgcolor_input)
+    document.documentElement.style.setProperty('--custommodebutton-textcolor', '#' + llama_button_textcolor_input)
+    document.documentElement.style.setProperty('--custommodebutton-bordercolor', '#' + llama_button_bordercolor_input)
 
-            document.documentElement.style.setProperty('--custommodeheader-bgcolor', '#' + llama_header_bgcolor_input);
-            document.documentElement.style.setProperty('--custommodebars-bgcolor', '#' + llama_bars_bgcolor_input);
-            document.documentElement.style.setProperty('--custommodecams-bgcolor', '#' + llama_cams_bgcolor_input);
+    document.documentElement.style.setProperty('--custommodechat-bgcolor', '#' + llama_chat_bgcolor_input)
+    document.documentElement.style.setProperty('--custommodechat-bubble-bgcolor', '#' + llama_chat_bubble_bgcolor_input)
+    document.documentElement.style.setProperty('--custommodechat-bubble-bordercolor', '#' + llama_chat_bubble_bordercolor_input)
 
-            document.documentElement.style.setProperty('--custommodebutton-bgcolor', '#' + llama_button_bgcolor_input);
-            document.documentElement.style.setProperty('--custommodebutton-textcolor', '#' + llama_button_textcolor_input);
-            document.documentElement.style.setProperty('--custommodebutton-bordercolor', '#' + llama_button_bordercolor_input);
+    document.documentElement.style.setProperty('--custommodeuser-bgcolor', '#' + llama_user_bgcolor_input)
+    document.documentElement.style.setProperty('--custommodeusername-bgcolor', '#' + llama_username_bgcolor_input)
+    document.documentElement.style.setProperty('--custommodeusername-textcolor', '#' + llama_username_textcolor_input)
 
-            document.documentElement.style.setProperty('--custommodechat-bgcolor', '#' + llama_chat_bgcolor_input);
-            document.documentElement.style.setProperty('--custommodechat-bubble-bgcolor', '#' + llama_chat_bubble_bgcolor_input);
-            document.documentElement.style.setProperty('--custommodechat-bubble-bordercolor', '#' + llama_chat_bubble_bordercolor_input);
+    localStorage.setItem('llama_header_bgcolor', llama_header_bgcolor_input)
+    localStorage.setItem('llama_bars_bgcolor', llama_bars_bgcolor_input)
+    localStorage.setItem('llama_cams_bgcolor', llama_cams_bgcolor_input)
 
-            document.documentElement.style.setProperty('--custommodeuser-bgcolor', '#' + llama_user_bgcolor_input);
-            document.documentElement.style.setProperty('--custommodeusername-bgcolor', '#' + llama_username_bgcolor_input);
-            document.documentElement.style.setProperty('--custommodeusername-textcolor', '#' + llama_username_textcolor_input);
+    localStorage.setItem('llama_button_bgcolor', llama_button_bgcolor_input)
+    localStorage.setItem('llama_button_textcolor', llama_button_textcolor_input)
+    localStorage.setItem('llama_button_bordercolor', llama_button_bordercolor_input)
 
-            localStorage.setItem('llama_header_bgcolor', llama_header_bgcolor_input);
-            localStorage.setItem('llama_bars_bgcolor', llama_bars_bgcolor_input);
-            localStorage.setItem('llama_cams_bgcolor', llama_cams_bgcolor_input);
+    localStorage.setItem('llama_chat_bgcolor', llama_chat_bgcolor_input)
+    localStorage.setItem('llama_chat_bubble_bgcolor', llama_chat_bubble_bgcolor_input)
+    localStorage.setItem('llama_chat_bubble_bordercolor', llama_chat_bubble_bordercolor_input)
 
-            localStorage.setItem('llama_button_bgcolor', llama_button_bgcolor_input);
-            localStorage.setItem('llama_button_textcolor', llama_button_textcolor_input);
-            localStorage.setItem('llama_button_bordercolor', llama_button_bordercolor_input);
+    localStorage.setItem('llama_user_bgcolor', llama_user_bgcolor_input)
+    localStorage.setItem('llama_username_bgcolor', llama_username_bgcolor_input)
+    localStorage.setItem('llama_username_textcolor', llama_username_textcolor_input)
 
-            localStorage.setItem('llama_chat_bgcolor', llama_chat_bgcolor_input);
-            localStorage.setItem('llama_chat_bubble_bgcolor', llama_chat_bubble_bgcolor_input);
-            localStorage.setItem('llama_chat_bubble_bordercolor', llama_chat_bubble_bordercolor_input);
+    document.getElementById('llama_header_bgcolor_selection').value = llama_header_bgcolor_input
+    document.getElementById('llama_bars_bgcolor_selection').value = llama_bars_bgcolor_input
+    document.getElementById('llama_cams_bgcolor_selection').value = llama_cams_bgcolor_input
 
-            localStorage.setItem('llama_user_bgcolor', llama_user_bgcolor_input);
-            localStorage.setItem('llama_username_bgcolor', llama_username_bgcolor_input);
-            localStorage.setItem('llama_username_textcolor', llama_username_textcolor_input);
+    document.getElementById('llama_button_bgcolor_selection').value = llama_button_bgcolor_input
+    document.getElementById('llama_button_textcolor_selection').value = llama_button_textcolor_input
+    document.getElementById('llama_button_bordercolor_selection').value = llama_button_bordercolor_input
 
-    document.getElementById("llama_header_bgcolor_selection").value = llama_header_bgcolor_input;
-    document.getElementById("llama_bars_bgcolor_selection").value = llama_bars_bgcolor_input;
-    document.getElementById("llama_cams_bgcolor_selection").value = llama_cams_bgcolor_input;
+    document.getElementById('llama_chat_bgcolor_selection').value = llama_chat_bgcolor_input
+    document.getElementById('llama_chat_bubble_bgcolor_selection').value = llama_chat_bubble_bgcolor_input
+    document.getElementById('llama_chat_bubble_bordercolor_selection').value = llama_chat_bubble_bordercolor_input
 
-    document.getElementById("llama_button_bgcolor_selection").value = llama_button_bgcolor_input;
-    document.getElementById("llama_button_textcolor_selection").value = llama_button_textcolor_input;
-    document.getElementById("llama_button_bordercolor_selection").value = llama_button_bordercolor_input;
+    document.getElementById('llama_user_bgcolor_selection').value = llama_user_bgcolor_input
+    document.getElementById('llama_username_bgcolor_selection').value = llama_username_bgcolor_input
+    document.getElementById('llama_username_textcolor_selection').value = llama_username_textcolor_input
+  } else {
+    localStorage.setItem('llama_header_bgcolor', '')
+    localStorage.setItem('llama_bars_bgcolor', '')
+    localStorage.setItem('llama_cams_bgcolor', '')
 
-    document.getElementById("llama_chat_bgcolor_selection").value = llama_chat_bgcolor_input;
-    document.getElementById("llama_chat_bubble_bgcolor_selection").value = llama_chat_bubble_bgcolor_input;
-    document.getElementById("llama_chat_bubble_bordercolor_selection").value = llama_chat_bubble_bordercolor_input;
+    localStorage.setItem('llama_button_bgcolor', '')
+    localStorage.setItem('llama_button_textcolor', '')
+    localStorage.setItem('llama_button_bordercolor', '')
 
-    document.getElementById("llama_user_bgcolor_selection").value = llama_user_bgcolor_input;
-    document.getElementById("llama_username_bgcolor_selection").value = llama_username_bgcolor_input;
-    document.getElementById("llama_username_textcolor_selection").value = llama_username_textcolor_input;
+    localStorage.setItem('llama_chat_bgcolor', '')
+    localStorage.setItem('llama_chat_bubble_bgcolor', '')
+    localStorage.setItem('llama_chat_bubble_bordercolor', '')
 
-        } else {
-            localStorage.setItem('llama_header_bgcolor', '');
-            localStorage.setItem('llama_bars_bgcolor', '');
-            localStorage.setItem('llama_cams_bgcolor', '');
-
-            localStorage.setItem('llama_button_bgcolor', '');
-            localStorage.setItem('llama_button_textcolor', '');
-            localStorage.setItem('llama_button_bordercolor', '');
-
-            localStorage.setItem('llama_chat_bgcolor', '');
-            localStorage.setItem('llama_chat_bubble_bgcolor', '');
-            localStorage.setItem('llama_chat_bubble_bordercolor', '');
-
-            localStorage.setItem('llama_user_bgcolor', '');
-            localStorage.setItem('llama_username_bgcolor', '');
-            localStorage.setItem('llama_username_textcolor', '');
-
-}
+    localStorage.setItem('llama_user_bgcolor', '')
+    localStorage.setItem('llama_username_bgcolor', '')
+    localStorage.setItem('llama_username_textcolor', '')
+  }
 }
 
 // ----------------------------------------------------------------- CAM_BG_TOGGLE -----------------------------------------------------------------
 
 function Toggle_User_BG (zEvent) {
-    var userbg_status = localStorage.getItem('userbg');
-        body.classList.toggle("user_bg");
-        if(userbg_status !== "user_bg"){localStorage.setItem('userbg', 'user_bg');document.getElementById("cam_bg_checkbox").checked = true;
-                                      } else {localStorage.setItem('userbg', '');document.getElementById("cam_bg_checkbox").checked = false;}
+  var userbg_status = localStorage.getItem('userbg')
+  body.classList.toggle('user_bg')
+  if (userbg_status !== 'user_bg') {
+    localStorage.setItem('userbg', 'user_bg'); document.getElementById('cam_bg_checkbox').checked = true
+  } else { localStorage.setItem('userbg', ''); document.getElementById('cam_bg_checkbox').checked = false }
 }
 
 // ----------------------------------------------------------------- SAVE_CAM_BG -----------------------------------------------------------------
 
-var bg_status = localStorage.getItem('user_bg');
-var userbg_status = localStorage.getItem('userbg');
+var bg_status = localStorage.getItem('user_bg')
+var userbg_status = localStorage.getItem('userbg')
 
-var llama_bg = localStorage.getItem('llama_bg1');
-var llama_bg_reloader = localStorage.getItem('llama_bg1_reload');
+var llama_bg = localStorage.getItem('llama_bg1')
+var llama_bg_reloader = localStorage.getItem('llama_bg1_reload')
 
-var llama_bg2 = localStorage.getItem('llama_bg2');
-var llama_bg_reloader2 = localStorage.getItem('llama_bg2_reload');
+var llama_bg2 = localStorage.getItem('llama_bg2')
+var llama_bg_reloader2 = localStorage.getItem('llama_bg2_reload')
 
-var llama_bg3 = localStorage.getItem('llama_bg3');
-var llama_bg_reloader3 = localStorage.getItem('llama_bg3_reload');
+var llama_bg3 = localStorage.getItem('llama_bg3')
+var llama_bg_reloader3 = localStorage.getItem('llama_bg3_reload')
 
-if(userbg_status){body.classList.add(userbg_status);}
-if(llama_bg !== ''){document.documentElement.style.setProperty('--user-bg-image', llama_bg);}
+if (userbg_status) { body.classList.add(userbg_status) }
+if (llama_bg !== '') { document.documentElement.style.setProperty('--user-bg-image', llama_bg) }
 
-if(userbg_status){body.classList.add(userbg_status);}
-if(llama_bg2 !== ''){document.documentElement.style.setProperty('--user-bg2-image', llama_bg2);}
+if (userbg_status) { body.classList.add(userbg_status) }
+if (llama_bg2 !== '') { document.documentElement.style.setProperty('--user-bg2-image', llama_bg2) }
 
-if(userbg_status){body.classList.add(userbg_status);}
-if(llama_bg3 !== ''){document.documentElement.style.setProperty('--user-bg3-image', llama_bg3);}
+if (userbg_status) { body.classList.add(userbg_status) }
+if (llama_bg3 !== '') { document.documentElement.style.setProperty('--user-bg3-image', llama_bg3) }
 
 function Save_Llama_BG (zEvent) {
-    var llama_bg1 = localStorage.getItem('llama_bg1');
-    var llama_bg2 = localStorage.getItem('llama_bg2');
-    var llama_bg3 = localStorage.getItem('llama_bg3');
-    var llama_bginput1 = document.getElementById('bgSelection1').value;
-    var llama_bginput2 = document.getElementById('bgSelection2').value;
-    var llama_bginput3 = document.getElementById('bgSelection3').value;
+  var llama_bg1 = localStorage.getItem('llama_bg1')
+  var llama_bg2 = localStorage.getItem('llama_bg2')
+  var llama_bg3 = localStorage.getItem('llama_bg3')
+  var llama_bginput1 = document.getElementById('bgSelection1').value
+  var llama_bginput2 = document.getElementById('bgSelection2').value
+  var llama_bginput3 = document.getElementById('bgSelection3').value
 
-if(llama_bginput1 !== ""){
-            var llama_bginput1_url = 'url(' + llama_bginput1 + ')';
-            document.documentElement.style.setProperty('--user-bg-image', llama_bginput1_url);
-            localStorage.setItem('llama_bg1_reload', llama_bginput1);
-            localStorage.setItem('llama_bg1', llama_bginput1_url);
-        } else {
-            document.documentElement.style.setProperty('--user-bg-image', 'none');
-            localStorage.setItem('llama_bg1_reload', '');
-            localStorage.setItem('llama_bg1', '');
-}
+  if (llama_bginput1 !== '') {
+    var llama_bginput1_url = 'url(' + llama_bginput1 + ')'
+    document.documentElement.style.setProperty('--user-bg-image', llama_bginput1_url)
+    localStorage.setItem('llama_bg1_reload', llama_bginput1)
+    localStorage.setItem('llama_bg1', llama_bginput1_url)
+  } else {
+    document.documentElement.style.setProperty('--user-bg-image', 'none')
+    localStorage.setItem('llama_bg1_reload', '')
+    localStorage.setItem('llama_bg1', '')
+  }
 
-if(llama_bginput2 !== ""){
-            var llama_bginput2_url = 'url(' + llama_bginput2 + ')';
-            document.documentElement.style.setProperty('--user-bg2-image', llama_bginput2_url);
-            localStorage.setItem('llama_bg2_reload', llama_bginput2);
-            localStorage.setItem('llama_bg2', llama_bginput2_url);
-        } else {
-            document.documentElement.style.setProperty('--user-bg3-image', 'none');
-            localStorage.setItem('llama_bg2_reload', '');
-            localStorage.setItem('llama_bg2', '');
-}
+  if (llama_bginput2 !== '') {
+    var llama_bginput2_url = 'url(' + llama_bginput2 + ')'
+    document.documentElement.style.setProperty('--user-bg2-image', llama_bginput2_url)
+    localStorage.setItem('llama_bg2_reload', llama_bginput2)
+    localStorage.setItem('llama_bg2', llama_bginput2_url)
+  } else {
+    document.documentElement.style.setProperty('--user-bg3-image', 'none')
+    localStorage.setItem('llama_bg2_reload', '')
+    localStorage.setItem('llama_bg2', '')
+  }
 
-if(llama_bginput3 !== ""){
-            var llama_bginput3_url = 'url(' + llama_bginput3 + ')';
-            document.documentElement.style.setProperty('--user-bg3-image', llama_bginput3_url);
-            localStorage.setItem('llama_bg3_reload', llama_bginput3);
-            localStorage.setItem('llama_bg3', llama_bginput3_url);
-        } else {
-            document.documentElement.style.setProperty('--user-bg3-image', 'none');
-            localStorage.setItem('llama_bg3_reload', '');
-            localStorage.setItem('llama_bg3', '');
+  if (llama_bginput3 !== '') {
+    var llama_bginput3_url = 'url(' + llama_bginput3 + ')'
+    document.documentElement.style.setProperty('--user-bg3-image', llama_bginput3_url)
+    localStorage.setItem('llama_bg3_reload', llama_bginput3)
+    localStorage.setItem('llama_bg3', llama_bginput3_url)
+  } else {
+    document.documentElement.style.setProperty('--user-bg3-image', 'none')
+    localStorage.setItem('llama_bg3_reload', '')
+    localStorage.setItem('llama_bg3', '')
   }
 }
 
 function Clear_Cam_BG (zEvent) {
-            document.getElementById("bgSelection1").value = '';
-            document.documentElement.style.setProperty('--user-bg-image', 'none');
-            localStorage.setItem('llama_bg1_reload', '');
-            localStorage.setItem('llama_bg1', '');
+  document.getElementById('bgSelection1').value = ''
+  document.documentElement.style.setProperty('--user-bg-image', 'none')
+  localStorage.setItem('llama_bg1_reload', '')
+  localStorage.setItem('llama_bg1', '')
 }
 
 function Clear_Chat_BG (zEvent) {
-            document.getElementById("bgSelection2").value = '';
-            document.documentElement.style.setProperty('--user-bg2-image', 'none');
-            localStorage.setItem('llama_bg2_reload', '');
-            localStorage.setItem('llama_bg2', '');
+  document.getElementById('bgSelection2').value = ''
+  document.documentElement.style.setProperty('--user-bg2-image', 'none')
+  localStorage.setItem('llama_bg2_reload', '')
+  localStorage.setItem('llama_bg2', '')
 }
 
 function Clear_Userlist_BG (zEvent) {
-            document.getElementById("bgSelection3").value = '';
-            document.documentElement.style.setProperty('--user-bg3-image', 'none');
-            localStorage.setItem('llama_bg3_reload', '');
-            localStorage.setItem('llama_bg3', '');
+  document.getElementById('bgSelection3').value = ''
+  document.documentElement.style.setProperty('--user-bg3-image', 'none')
+  localStorage.setItem('llama_bg3_reload', '')
+  localStorage.setItem('llama_bg3', '')
 }
-
 
 // ----------------------------------------------------------------- BUBBLE_CHAT_TOGGLE -----------------------------------------------------------------
 
-var bubble_status = localStorage.getItem('bubble_status');
-if(bubble_status){body.classList.add(bubble_status);}
+var bubble_status = localStorage.getItem('bubble_status')
+if (bubble_status) { body.classList.add(bubble_status) }
 
 function Toggle_Bubble_Chat (zEvent) {
-    var bubble_status = localStorage.getItem('bubble_status');
-        body.classList.toggle("bubble_chat");
-        if (bubble_status !== "bubble_chat") { localStorage.setItem('bubble_status', 'bubble_chat');document.getElementById("bubble_chat_checkbox").checked = true;
-                                          } else { localStorage.setItem('bubble_status', '');document.getElementById("bubble_chat_checkbox").checked = false; }
+  var bubble_status = localStorage.getItem('bubble_status')
+  body.classList.toggle('bubble_chat')
+  if (bubble_status !== 'bubble_chat') {
+    localStorage.setItem('bubble_status', 'bubble_chat'); document.getElementById('bubble_chat_checkbox').checked = true
+  } else { localStorage.setItem('bubble_status', ''); document.getElementById('bubble_chat_checkbox').checked = false }
 }
 // ----------------------------------------------------------------- CHAT_TOGGLE -----------------------------------------------------------------
 
-var chat_Status = localStorage.getItem('chat');
-if(chat_Status){body.classList.add(chat_Status);}
+var chat_Status = localStorage.getItem('chat')
+if (chat_Status) { body.classList.add(chat_Status) }
 
 function Toggle_Chat (cEvent) {
-    var chat_Status = localStorage.getItem('chat');
-        body.classList.toggle("hide_chat");
-        if (chat_Status !== "hide_chat") { localStorage.setItem('chat', 'hide_chat');document.getElementById("hide_chat_checkbox").checked = true;
-                                      } else {localStorage.setItem('chat', '');document.getElementById("hide_chat_checkbox").checked = false; }
+  var chat_Status = localStorage.getItem('chat')
+  body.classList.toggle('hide_chat')
+  if (chat_Status !== 'hide_chat') {
+    localStorage.setItem('chat', 'hide_chat'); document.getElementById('hide_chat_checkbox').checked = true
+  } else { localStorage.setItem('chat', ''); document.getElementById('hide_chat_checkbox').checked = false }
 }
 
 // ----------------------------------------------------------------- USER_LIST_TOGGLE -----------------------------------------------------------------
 
-var userlist_Status = localStorage.getItem('user_status');
-if(userlist_Status){body.classList.add(userlist_Status);}
+var userlist_Status = localStorage.getItem('user_status')
+if (userlist_Status) { body.classList.add(userlist_Status) }
 
 function Toggle_UserList (cEvent) {
-
-
-    var userlist_Status = localStorage.getItem('user_status');
-        body.classList.toggle("hide_userlist");
-        if(userlist_Status !== "hide_userlist"){localStorage.setItem('user_status', 'hide_userlist');document.getElementById("hide_userlist_checkbox").checked = true;
-                                              } else {localStorage.setItem('user_status', '');document.getElementById("hide_userlist_checkbox").checked = false;}
+  var userlist_Status = localStorage.getItem('user_status')
+  body.classList.toggle('hide_userlist')
+  if (userlist_Status !== 'hide_userlist') {
+    localStorage.setItem('user_status', 'hide_userlist'); document.getElementById('hide_userlist_checkbox').checked = true
+  } else { localStorage.setItem('user_status', ''); document.getElementById('hide_userlist_checkbox').checked = false }
 }
 
 // ----------------------------------------------------------------- LTR_TOGGLE -----------------------------------------------------------------
 
-var ltr_Status = localStorage.getItem('ltr');
-if(ltr_Status){body.classList.add(ltr_Status);}
+var ltr_Status = localStorage.getItem('ltr')
+if (ltr_Status) { body.classList.add(ltr_Status) }
 
 function Toggle_LTR (cEvent) {
-    var ltr_Status = localStorage.getItem('ltr');
-        body.classList.toggle("ltr_layout");
-        if(ltr_Status !== "ltr_layout"){localStorage.setItem('ltr', 'ltr_layout');document.getElementById("ltr_llama_checkbox").checked = true;
-                                       } else {localStorage.setItem('ltr', '');document.getElementById("ltr_llama_checkbox").checked = false;}
+  var ltr_Status = localStorage.getItem('ltr')
+  body.classList.toggle('ltr_layout')
+  if (ltr_Status !== 'ltr_layout') {
+    localStorage.setItem('ltr', 'ltr_layout'); document.getElementById('ltr_llama_checkbox').checked = true
+  } else { localStorage.setItem('ltr', ''); document.getElementById('ltr_llama_checkbox').checked = false }
 }
 
 // ----------------------------------------------------------------- REMOVE_CAM_BORDERS -----------------------------------------------------------------
 
-var border_status = localStorage.getItem('no_border');
-if(border_status){body.classList.add(border_status);}
+var border_status = localStorage.getItem('no_border')
+if (border_status) { body.classList.add(border_status) }
 
 function Toggle_No_Border (zEvent) {
-    var yt_status = localStorage.getItem('no_border');
-        body.classList.toggle("no_border");
+  var yt_status = localStorage.getItem('no_border')
+  body.classList.toggle('no_border')
 
-        if(yt_status !== "no_border"){localStorage.setItem('no_border', 'no_border');document.getElementById("cam_border_checkbox").checked = true;}
-        if(yt_status === "no_border"){localStorage.setItem('no_border', '');document.getElementById("cam_border_checkbox").checked = false;}
+  if (yt_status !== 'no_border') { localStorage.setItem('no_border', 'no_border'); document.getElementById('cam_border_checkbox').checked = true }
+  if (yt_status === 'no_border') { localStorage.setItem('no_border', ''); document.getElementById('cam_border_checkbox').checked = false }
 }
-
 
 // ----------------------------------------------------------------- REMOVE_CAM_PADDING -----------------------------------------------------------------
 
-var pad_status = localStorage.getItem('no_padding');
-if(pad_status){body.classList.add(pad_status);}
+var pad_status = localStorage.getItem('no_padding')
+if (pad_status) { body.classList.add(pad_status) }
 
 function Toggle_No_Padding (zEvent) {
-    var pad_status = localStorage.getItem('no_padding');
-        body.classList.toggle("no_padding");
-        if(pad_status !== "no_padding"){localStorage.setItem('no_padding', 'no_padding');document.getElementById("cam_spacing_checkbox").checked = true;}
-        if(pad_status === "no_padding"){localStorage.setItem('no_padding', '');document.getElementById("cam_spacing_checkbox").checked = true;}
+  var pad_status = localStorage.getItem('no_padding')
+  body.classList.toggle('no_padding')
+  if (pad_status !== 'no_padding') { localStorage.setItem('no_padding', 'no_padding'); document.getElementById('cam_spacing_checkbox').checked = true }
+  if (pad_status === 'no_padding') { localStorage.setItem('no_padding', ''); document.getElementById('cam_spacing_checkbox').checked = true }
 }
 
 // ----------------------------------------------------------------- TOGGLE_MINI_YT -----------------------------------------------------------------
 
-var yt_status = localStorage.getItem('yt');
-if(yt_status){body.classList.add(yt_status);}
+var yt_status = localStorage.getItem('yt')
+if (yt_status) { body.classList.add(yt_status) }
 
 function Toggle_MiniYT (zEvent) {
-    var yt_status = localStorage.getItem('yt');
-        body.classList.toggle("mini_yt");
-        if(yt_status !== "mini_yt"){localStorage.setItem('yt', 'mini_yt');}
-        if(yt_status === "mini_yt"){localStorage.setItem('yt', '');}
+  var yt_status = localStorage.getItem('yt')
+  body.classList.toggle('mini_yt')
+  if (yt_status !== 'mini_yt') { localStorage.setItem('yt', 'mini_yt') }
+  if (yt_status === 'mini_yt') { localStorage.setItem('yt', '') }
 }
-
-
-
 
 // ----------------------------------------------------------------- THEME_TOGGLE_DEFAULT -----------------------------------------------------------------
 
 function Toggle_Theme_Default (zEvent) {
-    localStorage.setItem('theme', '');
+  localStorage.setItem('theme', '')
 // REMOVE OTHER THEMES ON BODY TAG
-        body.classList.remove("custommode","pinkmode","greenmode","bluemode","mauvemode","orangemode","redmode","purplemode","blackmode","whitemode","budsmode","smashmode","splatmode","dark");
+  body.classList.remove('custommode', 'pinkmode', 'greenmode', 'bluemode', 'mauvemode', 'orangemode', 'redmode', 'purplemode', 'blackmode', 'whitemode', 'budsmode', 'smashmode', 'splatmode', 'dark')
 // END OTHER THEMES
 }
 
 // ----------------------------------------------------------------- THEME_TOGGLE_PINK -----------------------------------------------------------------
 
 function Toggle_Theme_Pink (zEvent) {
-    var color_choice = "pinkmode";
-    var theme_status = localStorage.getItem('theme');
-        body.classList.toggle(color_choice);
-        if(theme_status !== color_choice){localStorage.setItem('theme', color_choice);}
-        if(theme_status === color_choice){localStorage.setItem('theme', '');}
+  var color_choice = 'pinkmode'
+  var theme_status = localStorage.getItem('theme')
+  body.classList.toggle(color_choice)
+  if (theme_status !== color_choice) { localStorage.setItem('theme', color_choice) }
+  if (theme_status === color_choice) { localStorage.setItem('theme', '') }
 // REMOVE OTHER THEMES ON BODY TAG
-        body.classList.remove("custommode","greenmode","bluemode","mauvemode","orangemode","redmode","purplemode","blackmode","whitemode","budsmode","smashmode","splatmode","dark");
+  body.classList.remove('custommode', 'greenmode', 'bluemode', 'mauvemode', 'orangemode', 'redmode', 'purplemode', 'blackmode', 'whitemode', 'budsmode', 'smashmode', 'splatmode', 'dark')
 // END OTHER THEMES
 }
 
 // ----------------------------------------------------------------- THEME_TOGGLE_GREEN -----------------------------------------------------------------
 
 function Toggle_Theme_Green (zEvent) {
-    var color_choice = "greenmode";
-    var theme_status = localStorage.getItem('theme');
-        body.classList.toggle(color_choice);
-        if(theme_status !== color_choice){localStorage.setItem('theme', color_choice);}
-        if(theme_status === color_choice){localStorage.setItem('theme', '');}
+  var color_choice = 'greenmode'
+  var theme_status = localStorage.getItem('theme')
+  body.classList.toggle(color_choice)
+  if (theme_status !== color_choice) { localStorage.setItem('theme', color_choice) }
+  if (theme_status === color_choice) { localStorage.setItem('theme', '') }
 // REMOVE OTHER THEMES ON BODY TAG
-        body.classList.remove("custommode","pinkmode","bluemode","mauvemode","orangemode","redmode","purplemode","blackmode","budsmode","smashmode","splatmode","dark");
+  body.classList.remove('custommode', 'pinkmode', 'bluemode', 'mauvemode', 'orangemode', 'redmode', 'purplemode', 'blackmode', 'budsmode', 'smashmode', 'splatmode', 'dark')
 // END OTHER THEMES
 }
 
 // ----------------------------------------------------------------- THEME_TOGGLE_BLUE -----------------------------------------------------------------
 
 function Toggle_Theme_Blue (zEvent) {
-    var color_choice = "bluemode";
-    var theme_status = localStorage.getItem('theme');
-        body.classList.toggle(color_choice);
-        if(theme_status !== color_choice){localStorage.setItem('theme', color_choice);}
-        if(theme_status === color_choice){localStorage.setItem('theme', '');}
+  var color_choice = 'bluemode'
+  var theme_status = localStorage.getItem('theme')
+  body.classList.toggle(color_choice)
+  if (theme_status !== color_choice) { localStorage.setItem('theme', color_choice) }
+  if (theme_status === color_choice) { localStorage.setItem('theme', '') }
 // REMOVE OTHER THEMES ON BODY TAG
-        body.classList.remove("custommode","pinkmode","greenmode","mauvemode","orangemode","redmode","purplemode","blackmode","budsmode","smashmode","splatmode");
+  body.classList.remove('custommode', 'pinkmode', 'greenmode', 'mauvemode', 'orangemode', 'redmode', 'purplemode', 'blackmode', 'budsmode', 'smashmode', 'splatmode')
 // END OTHER THEMES
 }
 
 // ----------------------------------------------------------------- THEME_TOGGLE_MAUVE -----------------------------------------------------------------
 
 function Toggle_Theme_Mauve (zEvent) {
-    var color_choice = "mauvemode";
-    var theme_status = localStorage.getItem('theme');
-        body.classList.toggle(color_choice);
-        if(theme_status !== color_choice){localStorage.setItem('theme', color_choice);}
-        if(theme_status === color_choice){localStorage.setItem('theme', '');}
+  var color_choice = 'mauvemode'
+  var theme_status = localStorage.getItem('theme')
+  body.classList.toggle(color_choice)
+  if (theme_status !== color_choice) { localStorage.setItem('theme', color_choice) }
+  if (theme_status === color_choice) { localStorage.setItem('theme', '') }
 // REMOVE OTHER THEMES ON BODY TAG
-        body.classList.remove("custommode","pinkmode","greenmode","bluemode","orangemode","redmode","purplemode","blackmode","budsmode","smashmode","splatmode");
+  body.classList.remove('custommode', 'pinkmode', 'greenmode', 'bluemode', 'orangemode', 'redmode', 'purplemode', 'blackmode', 'budsmode', 'smashmode', 'splatmode')
 // END OTHER THEMES
 }
 
 // ----------------------------------------------------------------- THEME_TOGGLE_ORANGE -----------------------------------------------------------------
 
 function Toggle_Theme_Orange (zEvent) {
-    var color_choice = "orangemode";
-    var theme_status = localStorage.getItem('theme');
-        body.classList.toggle(color_choice);
-        if(theme_status !== color_choice){localStorage.setItem('theme', color_choice);}
-        if(theme_status === color_choice){localStorage.setItem('theme', '');}
+  var color_choice = 'orangemode'
+  var theme_status = localStorage.getItem('theme')
+  body.classList.toggle(color_choice)
+  if (theme_status !== color_choice) { localStorage.setItem('theme', color_choice) }
+  if (theme_status === color_choice) { localStorage.setItem('theme', '') }
 // REMOVE OTHER THEMES ON BODY TAG
-        body.classList.remove("custommode","pinkmode","greenmode","bluemode","mauvemode","redmode","purplemode","blackmode","budsmode","smashmode","splatmode");
+  body.classList.remove('custommode', 'pinkmode', 'greenmode', 'bluemode', 'mauvemode', 'redmode', 'purplemode', 'blackmode', 'budsmode', 'smashmode', 'splatmode')
 // END OTHER THEMES
 }
 
 // ----------------------------------------------------------------- THEME_TOGGLE_RED -----------------------------------------------------------------
 
 function Toggle_Theme_Red (zEvent) {
-    var color_choice = "redmode";
-    var theme_status = localStorage.getItem('theme');
-        body.classList.toggle(color_choice);
-        if(theme_status !== color_choice){localStorage.setItem('theme', color_choice);}
-        if(theme_status === color_choice){localStorage.setItem('theme', '');}
+  var color_choice = 'redmode'
+  var theme_status = localStorage.getItem('theme')
+  body.classList.toggle(color_choice)
+  if (theme_status !== color_choice) { localStorage.setItem('theme', color_choice) }
+  if (theme_status === color_choice) { localStorage.setItem('theme', '') }
 // REMOVE OTHER THEMES ON BODY TAG
-        body.classList.remove("custommode","pinkmode","greenmode","bluemode","mauvemode","orangemode","purplemode","blackmode","budsmode","smashmode","splatmode");
+  body.classList.remove('custommode', 'pinkmode', 'greenmode', 'bluemode', 'mauvemode', 'orangemode', 'purplemode', 'blackmode', 'budsmode', 'smashmode', 'splatmode')
 // END OTHER THEMES
 }
 
 // ----------------------------------------------------------------- THEME_TOGGLE_PURPLE -----------------------------------------------------------------
 
 function Toggle_Theme_Purple (zEvent) {
-    var color_choice = "purplemode";
-    var theme_status = localStorage.getItem('theme');
-        body.classList.toggle(color_choice);
-        if(theme_status !== color_choice){localStorage.setItem('theme', color_choice);}
-        if(theme_status === color_choice){localStorage.setItem('theme', '');}
+  var color_choice = 'purplemode'
+  var theme_status = localStorage.getItem('theme')
+  body.classList.toggle(color_choice)
+  if (theme_status !== color_choice) { localStorage.setItem('theme', color_choice) }
+  if (theme_status === color_choice) { localStorage.setItem('theme', '') }
 // REMOVE OTHER THEMES ON BODY TAG
-        body.classList.remove("custommode","pinkmode","greenmode","bluemode","mauvemode","orangemode","redmode","blackmode","budsmode","smashmode","splatmode");
+  body.classList.remove('custommode', 'pinkmode', 'greenmode', 'bluemode', 'mauvemode', 'orangemode', 'redmode', 'blackmode', 'budsmode', 'smashmode', 'splatmode')
 // END OTHER THEMES
 }
 
 // ----------------------------------------------------------------- THEME_TOGGLE_BLACK -----------------------------------------------------------------
 
 function Toggle_Theme_Black (zEvent) {
-    var color_choice = "blackmode";
-    var theme_status = localStorage.getItem('theme');
-        body.classList.toggle(color_choice);
-        if(theme_status !== color_choice){localStorage.setItem('theme', color_choice);}
-        if(theme_status === color_choice){localStorage.setItem('theme', '');}
+  var color_choice = 'blackmode'
+  var theme_status = localStorage.getItem('theme')
+  body.classList.toggle(color_choice)
+  if (theme_status !== color_choice) { localStorage.setItem('theme', color_choice) }
+  if (theme_status === color_choice) { localStorage.setItem('theme', '') }
 // REMOVE OTHER THEMES ON BODY TAG
-        body.classList.remove("custommode","pinkmode","greenmode","bluemode","mauvemode","orangemode","redmode","purplemode","budsmode","smashmode","splatmode","dark");
+  body.classList.remove('custommode', 'pinkmode', 'greenmode', 'bluemode', 'mauvemode', 'orangemode', 'redmode', 'purplemode', 'budsmode', 'smashmode', 'splatmode', 'dark')
 // END OTHER THEMES
 }
 
 // ----------------------------------------------------------------- THEME_TOGGLE_BUDS -----------------------------------------------------------------
 
 function Toggle_Theme_Buds (zEvent) {
-    var color_choice = "budsmode";
-    var theme_status = localStorage.getItem('theme');
-        body.classList.toggle(color_choice);
-        if (theme_status !== color_choice) { localStorage.setItem('theme', color_choice); }
-        if (theme_status === color_choice) { localStorage.setItem('theme', ''); }
+  var color_choice = 'budsmode'
+  var theme_status = localStorage.getItem('theme')
+  body.classList.toggle(color_choice)
+  if (theme_status !== color_choice) { localStorage.setItem('theme', color_choice) }
+  if (theme_status === color_choice) { localStorage.setItem('theme', '') }
 // REMOVE OTHER THEMES ON BODY TAG
-        body.classList.remove("custommode","pinkmode","greenmode","bluemode","mauvemode","orangemode","redmode","purplemode","blackmode","smashmode","splatmode");
+  body.classList.remove('custommode', 'pinkmode', 'greenmode', 'bluemode', 'mauvemode', 'orangemode', 'redmode', 'purplemode', 'blackmode', 'smashmode', 'splatmode')
 // END OTHER THEMES
 }
 
 // ----------------------------------------------------------------- THEME_TOGGLE_SPLAT -----------------------------------------------------------------
 
 function Toggle_Theme_Splat (zEvent) {
-    var color_choice = "splatmode";
-    var theme_status = localStorage.getItem('theme');
-        body.classList.toggle(color_choice);
-        if(theme_status !== color_choice){localStorage.setItem('theme', color_choice);}
-        if(theme_status === color_choice){localStorage.setItem('theme', '');}
+  var color_choice = 'splatmode'
+  var theme_status = localStorage.getItem('theme')
+  body.classList.toggle(color_choice)
+  if (theme_status !== color_choice) { localStorage.setItem('theme', color_choice) }
+  if (theme_status === color_choice) { localStorage.setItem('theme', '') }
 // REMOVE OTHER THEMES ON BODY TAG
-        body.classList.remove("custommode","pinkmode","greenmode","bluemode","mauvemode","orangemode","redmode","purplemode","blackmode","smashmode","budsmode");
+  body.classList.remove('custommode', 'pinkmode', 'greenmode', 'bluemode', 'mauvemode', 'orangemode', 'redmode', 'purplemode', 'blackmode', 'smashmode', 'budsmode')
 // END OTHER THEMES
 }

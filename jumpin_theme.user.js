@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    https://www.smokeyllama.com
-// @version      2019.71
+// @version      2019.72
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -2497,8 +2497,8 @@ z-index:4000;
 #New_Llama_Notice {display:none;}
 #close_box {
     width: 40%;
-    background: black;
-    margin: 0 auto;padding:10px 0px;border-radius:50px;border:1px solid red;
+    background-color: #2C2F33;
+    margin: 0 auto;padding:10px 0px;border-radius:50px;border:1px solid #313131;
 }
 .theme_alert_notice {
 position: fixed;
@@ -2543,42 +2543,42 @@ LlamaNoticeNode.innerHTML = (`
 <label style="cursor:pointer;">
 <div class="theme_alert_notice">
 <div id="close_box"><center><h2>Thank you for installing MY Jumpin Theme!</h2>
-<hr style="width:90%;border-color:red;">
+<hr style="width:90%;border:1px solid #313131;">
 <div class="feat_info">
 <div style="float:left;width:50%;">Theme Last Updated: 11/19/2019</div>
 <div style="">Feedback? <a href="https://www.smokeyllama.com/" target="_blank" style="color:red;">smokeyllama.com</a></div>
 </div>
-<hr style="width:90%;border-color:red;">
+<hr style="width:90%;border:1px solid #313131;">
 <img src="https://i.imgur.com/ThDMVQc.png" width="85%"><br>
-<hr style="width:90%;border-color:red;">
+<hr style="width:90%;border:1px solid #191919;">
 <h2>Features/Icons Added:</h2>
 <div class="features_added">
-<label class="button chat__HeaderOption" title="Chat Settings" style="background-color:white;color: #ccc !important;">
+<label class="button chat__HeaderOption" title="Chat Settings" style="background-color:white;color: #313131 !important;">
 <i class="fa fa-user-cog"></i>
 </label><div class="feat_title">Chat Settings</div>
 <br>
-<label class="button chat__HeaderOption" title="Camera Border Settings" style="background-color:white;color: #ccc !important;">
+<label class="button chat__HeaderOption" title="Camera Border Settings" style="background-color:white;color: #313131 !important;">
 <i class="fa fa-th-large"></i>
 </label><div class="feat_title">Camera Border Settings</div>
 <br>
-<label class="button chat__HeaderOption" title="Theme Settings" style="background-color:white;color: #ccc !important;">
+<label class="button chat__HeaderOption" title="Theme Settings" style="background-color:white;color: #313131 !important;">
 <i class="fa fa-palette"></i>
 </label><div class="feat_title">Theme Settings</div>
 <br>
-<label class="button chat__HeaderOption" title="Make Youtube Smaller" style="background-color:white;color: #ccc !important;">
+<label class="button chat__HeaderOption" title="Make Youtube Smaller" style="background-color:white;color: #313131 !important;">
 <i class="fa fa-compress-arrows-alt"></i>
 </label><div class="feat_title">Make Youtube Smaller</div>
 <br>
-<label class="button chat__HeaderOption" title="SET CUSTOM COLORS" style="background-color:white;color: #ccc !important;">
-<img src="https://cdn1.iconfinder.com/data/icons/MetroStation-PNG/128/MB__Llama.png" width="20px">
-</label><div class="feat_title">SET CUSTOM COLORS</div>
+<label class="button chat__HeaderOption" title="SET CUSTOM COLORS" style="background-color:white;color: #313131 !important;">
+<i class="fas fa-gamepad" style="color: #313131"></i>
+</label><div class="feat_title">PLAY MINI-GAMES</div>
 </div>
 <br><br>
 (Click Anywhere to close)
 </center></div>
 </div>
 </label>
-<div id="toggle_menu">Loading SmokeyLlama...</div>
+<div id="toggle_menu" style="background-color:transparent !important;border-color:transparent !important;"></div>
 `);
 
 LlamaNoticeNode.setAttribute('id', 'New_Llama_Notice');
@@ -2808,7 +2808,7 @@ newChatMenu.innerHTML = (`
 <span class="dropdown__Option" id="llama_bubble_chat">Bubble Chat<input id="bubble_chat_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="chat_llama_hide">Toggle Chat<input id="hide_chat_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="userlist_llama_hide">Toggle Userlist<input id="hide_userlist_checkbox" class="jic-checkbox" type="checkbox"></span>
-<span class="dropdown__Option">LTR Mode<input class="jic-checkbox" type="checkbox"></span>
+<span class="dropdown__Option" id="ltr_llama">LTR Mode<input id="ltr_llama_checkbox" class="jic-checkbox" type="checkbox"></span>
 `);
 
 el.insertBefore(newChatMenu, el.childNodes[4] || null);
@@ -2829,6 +2829,10 @@ if (chat_Status === 'hide_chat') { document.getElementById("hide_chat_checkbox")
 document.getElementById("userlist_llama_hide").addEventListener("click", Toggle_UserList, false);
 var userlist_Status = localStorage.getItem('user_status');
 if(userlist_Status === 'hide_userlist') { document.getElementById("hide_userlist_checkbox").checked = true; }
+
+document.getElementById("ltr_llama").addEventListener("click", Toggle_LTR, false);
+var ltr_Status = localStorage.getItem('ltr');
+if(ltr_Status === 'ltr_layout') { document.getElementById("ltr_llama_checkbox").checked = true; }
 
 document.getElementById("ChatSettings").addEventListener("click", Hide_Llama_Chat_Options, false);
 
@@ -3736,7 +3740,8 @@ if(ltr_Status){body.classList.add(ltr_Status);}
 function Toggle_LTR (cEvent) {
     var ltr_Status = localStorage.getItem('ltr');
         body.classList.toggle("ltr_layout");
-        if(ltr_Status !== "ltr_layout"){localStorage.setItem('ltr', 'ltr_layout');} else {localStorage.setItem('ltr', '');}
+        if(ltr_Status !== "ltr_layout"){localStorage.setItem('ltr', 'ltr_layout');document.getElementById("ltr_llama_checkbox").checked = true;
+                                       } else {localStorage.setItem('ltr', '');document.getElementById("ltr_llama_checkbox").checked = false;}
 }
 
 // ----------------------------------------------------------------- REMOVE_CAM_BORDERS -----------------------------------------------------------------

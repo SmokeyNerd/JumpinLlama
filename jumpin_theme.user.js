@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    https://www.smokeyllama.com
-// @version      2019.85
+// @version      2019.86
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -177,12 +177,14 @@ addGlobalStyle(`
 .chat__HeaderOption:hover {
   opacity: 0.6;
 }
-
-/* ------- BUBBLE CHAT ----- */
 .thememode #llama_Room > div.cams > div.chat__Header.cams__Footer > div.chat__HeaderOptions > label.button.chat__HeaderOption.chat__HeaderOption-quality,
-.thememode .fa-gamepad {
+.thememode .fa-gamepad,
+.thememode .chat__HeaderOptionString {
   color: var(--thememode-buttontext);
 }
+.chat__HeaderOptionString {}
+/* ------- BUBBLE CHAT ----- */
+
 
 .bubble_chat .chat__Message {
   display: block;
@@ -641,10 +643,6 @@ option.buds_mode {
   background-color: var(--thememode-bordercolor);
 }
 
-.thememode .fa-envelope:before {
-  color: var(--thememode-bgcolor);
-}
-
 .thememode .chat__UserListItem {
   background-image: var(--thememode-messagebg);
   border-color: var(--thememode-bordercolor);
@@ -759,7 +757,7 @@ option.buds_mode {
 
 .thememode .button-blue {
   background-color: var(--thememode-bordercolor);
-  color: var(--thememode-lightbgcolor);
+  color: var(--thememode-buttontext);
   border: 1px solid  var(--thememode-bordercolor);
 }
 

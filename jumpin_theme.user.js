@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    https://www.smokeyllama.com
-// @version      2019.78
+// @version      2019.79
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -1815,6 +1815,9 @@ function Toggle_Llama_Chat_Options (zEvent) {
   whatsNew.id = 'whatsNew_Box'
   var whatsNew_Box = document.getElementById('whatsNew_Box')
 
+  var chatInputBox = document.getElementsByClassName('chat__Input')[0]
+  chatInputBox.id = 'chat_input_box'
+
   // ------------ Whats_New ----------------*/
   var WhatsNewIcon = document.createElement('label')
   WhatsNewIcon.className = 'button button-floating button-icon button--text roomHeader__UserAction LlamaOption_chat'
@@ -1844,6 +1847,33 @@ function Toggle_Llama_Chat_Options (zEvent) {
   whatsNew_Box.insertBefore(HeaderHideIcon, null)
   whatsNew_Box.insertBefore(HeaderHideIcon, whatsNew_Box.childNodes[0] || null)
   document.getElementById('Toggle_Hide_Header').addEventListener('click', Toggle_Hide_Header, false)
+
+  // ------------ WORD_MENU ----------------*/
+  var newWordMenu = document.createElement('div')
+  newWordMenu.className = 'dropdown__Options'
+  newWordMenu.setAttribute('id', 'Cheers_Button')
+  newWordMenu.innerHTML = (`
+<style>
+#Cheers_Button {cursor:pointer;}
+.cword1 {
+display:none;}
+.word_one .cword1 {
+display: block;
+    position: absolute;
+    bottom: 45px;
+    right: 228px;
+padding: 3px 10px;
+    background: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: var(--thememode-bgcolor);
+z-index:8000;}
+.word_one .cword1:hover {font-weight:bold;}
+</style>
+<div class="cword1">cheers!</div>
+`)
+
+  whatsNew_Box.insertBefore(newWordMenu, whatsNew_Box.childNodes[0] || null)
 
   // ------------ MINI_YT_ICON ----------------*/
   var MiniYTIcon = document.createElement('label')
@@ -1933,6 +1963,7 @@ body {overflow:hidden;}
   el.appendChild(newEl)
   el.insertBefore(newEl, null)
   el.insertBefore(newEl, el.childNodes[3] || null)
+
   // ------------ CHAT_MENU ----------------*/
   var newChatMenu = document.createElement('div')
   newChatMenu.className = 'dropdown__Options'
@@ -1944,9 +1975,13 @@ body {overflow:hidden;}
 <span class="dropdown__Option" id="chat_llama_hide">Toggle Chat<input id="hide_chat_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="userlist_llama_hide">Toggle Userlist<input id="hide_userlist_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="ltr_llama">LTR Mode<input id="ltr_llama_checkbox" class="jic-checkbox" type="checkbox"></span>
+
+<span class="dropdown__Option" id="cword1_llama">Cheers Button<input id="cword1_llama_checkbox" class="jic-checkbox" type="checkbox"></span>
+
 `)
 
   el.insertBefore(newChatMenu, el.childNodes[4] || null)
+
   document.getElementById('chat__llamaOption').addEventListener('click', Toggle_Chat_Llama, false)
 
   document.getElementById('llama_robo').addEventListener('click', Toggle_Robo_Llama, false)
@@ -2106,6 +2141,9 @@ USER BG
 `)
 
   el.insertBefore(newThemeMenu, el.childNodes[4] || null)
+
+  document.getElementById('cword1_llama').addEventListener('click', Toggle_Word_1, false)
+
   document.getElementById('theme__llamaOption').addEventListener('click', Toggle_Theme_Llama, false)
   document.getElementById('cam_bg_llama').addEventListener('click', Toggle_User_BG, false)
 
@@ -2258,7 +2296,13 @@ USER BG
       document.onmousemove = null
     }
   }
-
+function Toggle_Word_1_Action (zEvent) {
+  var text = document.getElementById('chat_input_box')
+  text.value += 'cheers! '
+}
+      document.getElementById('Cheers_Button').addEventListener('click', Toggle_Word_1_Action, false)
+      var cheers_status = localStorage.getItem('llama_btn_1')
+      if (cheers_status) { document.getElementById('cword1_llama_checkbox').checked = true }
 // 30seconds
 }
 
@@ -2271,17 +2315,18 @@ function Hide_Llama_Cam_Options (zEvent) { body.classList.remove('open_llama_cam
 function Hide_Llama_Theme_Options (zEvent) { body.classList.remove('open_llama_theme') }
 
 // ------------ OTHER_SHIT ----------------*/
-window.addEventListener('click', function (e) {
-  if (document.getElementById('chat__llamaOption').contains(e.target)) {} else { Hide_Llama_Chat_Options() }
-  if (document.getElementById('cam__llamaOption').contains(e.target)) {} else { Hide_Llama_Cam_Options() }
-})
 
-// --- TEST 2----------
+document.addEventListener('click', function(event) {
+    var cam_box = document.getElementById('cam__llamaOption')
+    var Click_In_Cam = cam_box.contains(event.target)
+    var chat_box = document.getElementById('chat__llamaOption')
+    var Click_In_Chat = chat_box.contains(event.target)
+    if (!Click_In_Cam) {
+        Hide_Llama_Cam_Options()
+    }
+});
 
-function Enter_Cheers (zEvent) {
-  var text = document.getElementById('chat__input')
-  text.value += 'cheers!'
-}
+
 
 // Import Roboto Mono Regular v2.002 2015 ttfautohint v1.3
 // Apache License 2.0
@@ -2319,6 +2364,18 @@ function Toggle_Hide_Header (zEvent) {
 function Toggle_Games (zEvent) {
   body.classList.toggle('game_window')
 }
+
+var cheers_btn = localStorage.getItem('llama_btn_1')
+if (cheers_btn) { body.classList.add('word_one') }
+
+function Toggle_Word_1 (zEvent) {
+  var word_one = 'word_one'
+  var cheers_btn = localStorage.getItem('llama_btn_1')
+  body.classList.toggle(word_one)
+  if (cheers_btn !== word_one) { localStorage.setItem('llama_btn_1', word_one); document.getElementById('cam_bg_repeat').checked = true }
+  if (cheers_btn === word_one) { localStorage.setItem('llama_btn_1', ''); document.getElementById('cam_bg_repeat').checked = false }
+}
+
 
 // ----------------------------------------------------------------- CUSTOM_MODE -----------------------------------------------------------------
 

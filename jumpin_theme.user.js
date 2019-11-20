@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    https://www.smokeyllama.com
-// @version      2019.84
+// @version      2019.85
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -179,6 +179,11 @@ addGlobalStyle(`
 }
 
 /* ------- BUBBLE CHAT ----- */
+.thememode #llama_Room > div.cams > div.chat__Header.cams__Footer > div.chat__HeaderOptions > label.button.chat__HeaderOption.chat__HeaderOption-quality,
+.thememode .fa-gamepad {
+  color: var(--thememode-buttontext);
+}
+
 .bubble_chat .chat__Message {
   display: block;
   padding-right: 0;

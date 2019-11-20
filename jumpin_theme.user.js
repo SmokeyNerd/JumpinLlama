@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    https://www.smokeyllama.com
-// @version      2019.80
+// @version      2019.81
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -2298,7 +2298,19 @@ USER BG
   }
 function Toggle_Word_1_Action (zEvent) {
   var text = document.getElementById('chat_input_box')
-  text.value += 'cheers! '
+  var cheers_status = localStorage.getItem('cheers_status')
+if (cheers_status === '') {
+  text.value = 'cheers!'
+  localStorage.setItem('cheers_status', '1')
+}
+if (cheers_status === '1') {
+  text.value = 'MEGA CHEERS!'
+  localStorage.setItem('cheers_status', '2')
+}
+if (cheers_status === '2') {
+  text.value = '▂▅▇ 🔥 CHEERS 🔥 ▇▅▂'
+  localStorage.setItem('cheers_status', '')
+}
 }
       document.getElementById('Cheers_Button').addEventListener('click', Toggle_Word_1_Action, false)
       var cheers_status = localStorage.getItem('llama_btn_1')

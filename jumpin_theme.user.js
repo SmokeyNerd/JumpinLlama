@@ -8,7 +8,7 @@
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        GM_listValues
-// @run-at       document-idle
+// @run-at       document-end
 // @license      MIT
 // @updateURL    https://github.com/SmokeyLlama/jumpinllama/raw/master/jumpin_theme.user.js
 // @downloadURL  https://github.com/SmokeyLlama/jumpinllama/raw/master/jumpin_theme.user.js

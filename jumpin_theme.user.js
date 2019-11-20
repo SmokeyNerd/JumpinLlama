@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    https://www.smokeyllama.com
-// @version      2019.83
+// @version      2019.84
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -2321,9 +2321,17 @@ if (cheers_status === '2') {
 // 30seconds
 }
 
-function Toggle_Chat_Llama (zEvent) { body.classList.toggle('open_llama_chat'); Hide_Llama_Theme_Options() }
-function Toggle_Cam_Llama (zEvent) { body.classList.toggle('open_llama_cam'); Hide_Llama_Theme_Options() }
-function Toggle_Theme_Llama (zEvent) { body.classList.toggle('open_llama_theme') }
+function Toggle_Chat_Llama (zEvent) { body.classList.toggle('open_llama_chat')
+                                    Hide_Llama_Theme_Options()
+                                    Hide_Llama_Cam_Options()
+                                    }
+function Toggle_Cam_Llama (zEvent) { body.classList.toggle('open_llama_cam')
+                                    Hide_Llama_Theme_Options()
+                                    Hide_Llama_Chat_Options()
+                                   }
+function Toggle_Theme_Llama (zEvent) { body.classList.toggle('open_llama_theme')
+                                    Hide_Llama_Cam_Options()
+                                    Hide_Llama_Chat_Options()}
 
 function Hide_Llama_Chat_Options (zEvent) { body.classList.remove('open_llama_chat') }
 function Hide_Llama_Cam_Options (zEvent) { body.classList.remove('open_llama_cam') }

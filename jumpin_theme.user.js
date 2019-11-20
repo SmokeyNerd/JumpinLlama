@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    https://www.smokeyllama.com
-// @version      2019.87
+// @version      2019.88
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -1702,7 +1702,7 @@ LlamaNoticeNode.innerHTML = `
 <div style="">Feedback? <a href="https://www.smokeyllama.com/" target="_blank" style="color:red;">smokeyllama.com</a></div>
 </div>
 <hr style="width:90%;border:1px solid #313131;">
-<img src="https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@d7234633117a2cb7c8543dc8e44988f8b2eab57b/SmokeyLlama.png" width="85%"><br>
+<img src="https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@f8df0dc70db8258c826896144b0b1f50f7bdbd56/SmokeyLlama.png" width="85%"><br>
 <hr style="width:90%;border:1px solid #191919;">
 <h2>Features/Icons Added:</h2>
 <div class="features_added">

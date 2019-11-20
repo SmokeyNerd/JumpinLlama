@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    https://www.smokeyllama.com
-// @version      2019.79
+// @version      2019.80
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -2302,7 +2302,7 @@ function Toggle_Word_1_Action (zEvent) {
 }
       document.getElementById('Cheers_Button').addEventListener('click', Toggle_Word_1_Action, false)
       var cheers_status = localStorage.getItem('llama_btn_1')
-      if (cheers_status) { document.getElementById('cword1_llama_checkbox').checked = true }
+      if (cheers_status) {document.getElementById('cword1_llama_checkbox').checked = true}
 // 30seconds
 }
 
@@ -2372,8 +2372,8 @@ function Toggle_Word_1 (zEvent) {
   var word_one = 'word_one'
   var cheers_btn = localStorage.getItem('llama_btn_1')
   body.classList.toggle(word_one)
-  if (cheers_btn !== word_one) { localStorage.setItem('llama_btn_1', word_one); document.getElementById('cam_bg_repeat').checked = true }
-  if (cheers_btn === word_one) { localStorage.setItem('llama_btn_1', ''); document.getElementById('cam_bg_repeat').checked = false }
+  if (cheers_btn !== word_one) { localStorage.setItem('llama_btn_1', word_one); document.getElementById('cword1_llama_checkbox').checked = true }
+  if (cheers_btn === word_one) { localStorage.setItem('llama_btn_1', ''); document.getElementById('cword1_llama_checkbox').checked = false }
 }
 
 

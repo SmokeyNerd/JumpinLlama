@@ -2481,6 +2481,7 @@ USER BG
       document.onmousemove = null
     }
   }
+
   function Toggle_Word_1_Action (zEvent) {
     var text = document.getElementById("chat_input_box")
     var cheers_status = localStorage.getItem("cheers_status")
@@ -2512,11 +2513,13 @@ function Toggle_Chat_Llama (zEvent) {
   Hide_Llama_Theme_Options()
   Hide_Llama_Cam_Options()
 }
+
 function Toggle_Cam_Llama (zEvent) {
   body.classList.toggle("open_llama_cam")
   Hide_Llama_Theme_Options()
   Hide_Llama_Chat_Options()
 }
+
 function Toggle_Theme_Llama (zEvent) {
   body.classList.toggle("open_llama_theme")
   Hide_Llama_Cam_Options()
@@ -2526,9 +2529,11 @@ function Toggle_Theme_Llama (zEvent) {
 function Hide_Llama_Chat_Options (zEvent) {
   body.classList.remove("open_llama_chat")
 }
+
 function Hide_Llama_Cam_Options (zEvent) {
   body.classList.remove("open_llama_cam")
 }
+
 function Hide_Llama_Theme_Options (zEvent) {
   body.classList.remove("open_llama_theme")
 }

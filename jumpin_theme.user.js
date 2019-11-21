@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    https://www.smokeyllama.com
-// @version      2019.88
+// @version      2019.89
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -1400,7 +1400,7 @@ screen and (min-height: 480px) and (min-width: 2500px) {
 }
 
 .user_bg .cams__ContainerInternal {
-  background-image: var(--user-bg-image);
+  background-image: var(--user-bg-image-cam);
 }
 
 .thememode .userList__UserHandle {
@@ -1408,11 +1408,11 @@ screen and (min-height: 480px) and (min-width: 2500px) {
 }
 
 .user_bg .chat__UserList {
-  background-image: var(--user-bg3-image);
+  background-image: var(--user-bg-image-users);
 }
 
 .user_bg .roomHeader {
-  background-image: var(--user-bg-image);
+  background-image: var(--user-bg-image-cam);
 }
 
 .user_bg.cam_cover_on .roomHeader {
@@ -1428,7 +1428,7 @@ screen and (min-height: 480px) and (min-width: 2500px) {
 }
 
 .user_bg .room {
-  background-image: var(--user-bg-image);
+  background-image: var(--user-bg-image-cam);
 }
 
 .user_bg.cam_cover_on .cams__ContainerInternal {
@@ -1468,7 +1468,7 @@ screen and (min-height: 480px) and (min-width: 2500px) {
 }
 
 .user_bg .chat__FeedWrapper {
-  background-image: var(--user-bg2-image);
+  background-image: var(--user-bg-image-chat);
   animation: none;
 }
 
@@ -2140,7 +2140,7 @@ body {overflow:hidden;}
 <span style="position: relative; left: -34px;">CAM BG Image URL</span>
 </span>
 <span class="dropdown__Option">
-<input type='text' name="server" id="bgSelection1" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 150px;border-radius: 2px;border: 1px solid #ccc;"/>
+<input type='text' name="server" id="bgSelectioncam" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 150px;border-radius: 2px;border: 1px solid #ccc;"/>
 <input id="Clear_Cam_BG" type="button" value="✘" style="border-radius: 10px;width: 45%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
 </span>
 
@@ -2149,7 +2149,7 @@ body {overflow:hidden;}
 <span style="position: relative; left: -28px;">CHAT BG Image URL</span>
 </span>
 <span class="dropdown__Option">
-<input type='text' name="server" id="bgSelection2" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 150px;border-radius: 2px;border: 1px solid #ccc;"/>
+<input type='text' name="server" id="bgSelectionchat" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 150px;border-radius: 2px;border: 1px solid #ccc;"/>
 <input id="Clear_Chat_BG" type="button" value="✘" style="border-radius: 10px;width: 45%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
 </span>
 
@@ -2158,7 +2158,7 @@ body {overflow:hidden;}
 <span style="position: relative; left: -19px;">USERS BG Image URL</span>
 </span>
 <span class="dropdown__Option">
-<input type='text' name="server" id="bgSelection3" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 150px;border-radius: 2px;border: 1px solid #ccc;"/>
+<input type='text' name="server" id="bgSelectionusers" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 150px;border-radius: 2px;border: 1px solid #ccc;"/>
 <input id="Clear_Userlist_BG" type="button" value="✘" style="border-radius: 10px;width: 45%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
 </span>
 
@@ -2225,13 +2225,16 @@ USER BG
 
   document
     .getElementById("Clear_Cam_BG")
-    .addEventListener("click", Clear_Cam_BG, false)
+    .addEventListener("click", function() {
+    Clear_BG('cam');}, false)
   document
     .getElementById("Clear_Chat_BG")
-    .addEventListener("click", Clear_Chat_BG, false)
+    .addEventListener("click", function() {
+    Clear_BG('chat');}, false)
   document
     .getElementById("Clear_Userlist_BG")
-    .addEventListener("click", Clear_Userlist_BG, false)
+    .addEventListener("click", function() {
+    Clear_BG('users');}, false)
 
   document
     .getElementById("Save_Llama_BG")
@@ -2315,31 +2318,31 @@ USER BG
     false
   )
 
-  var llama_bg = localStorage.getItem("llama_bg1")
-  var llama_bg_reloader = localStorage.getItem("llama_bg1_reload")
-  if (llama_bg !== "") {
-    document.documentElement.style.setProperty("--user-bg-image", llama_bg)
+  var llama_bg_cam = localStorage.getItem("llama_bg_cam")
+  var llama_bg_reloader_cam = localStorage.getItem("llama_bg_reload_cam")
+  if (llama_bg_cam !== "") {
+    document.documentElement.style.setProperty("--user-bg-image-cam", llama_bg_cam)
   }
-  if (llama_bg) {
-    document.getElementById("bgSelection1").value = llama_bg_reloader
-  }
-
-  var llama_bg2 = localStorage.getItem("llama_bg2")
-  var llama_bg2_reloader = localStorage.getItem("llama_bg2_reload")
-  if (llama_bg2 !== "") {
-    document.documentElement.style.setProperty("--user-bg2-image", llama_bg2)
-  }
-  if (llama_bg2) {
-    document.getElementById("bgSelection2").value = llama_bg_reloader2
+  if (llama_bg_cam) {
+    document.getElementById("bgSelectioncam").value = llama_bg_reloader_cam
   }
 
-  var llama_bg3 = localStorage.getItem("llama_bg3")
-  var llama_bg3_reloader = localStorage.getItem("llama_bg3_reload")
-  if (llama_bg3 !== "") {
-    document.documentElement.style.setProperty("--user-bg3-image", llama_bg3)
+  var llama_bg_chat = localStorage.getItem("llama_bg_chat")
+  var llama_bg_reloader_chat = localStorage.getItem("llama_bg_reload_chat")
+  if (llama_bg_chat !== "") {
+    document.documentElement.style.setProperty("--user-bg-image-chat", llama_bg_chat)
   }
-  if (llama_bg3) {
-    document.getElementById("bgSelection3").value = llama_bg_reloader3
+  if (llama_bg_chat) {
+    document.getElementById("bgSelectionchat").value = llama_bg_reloader_chat
+  }
+
+  var llama_bg_users = localStorage.getItem("llama_bg_users")
+  var llama_bg_reloader_users = localStorage.getItem("llama_bg_reload_users")
+  if (llama_bg_users !== "") {
+    document.documentElement.style.setProperty("--user-bg-image-users", llama_bg_users)
+  }
+  if (llama_bg_users) {
+    document.getElementById("bgSelectionusers").value = llama_bg_reloader_users
   }
 
   var cam_bg_cover = localStorage.getItem("cam_bg_cover")
@@ -2506,12 +2509,6 @@ USER BG
     document.getElementById("cword1_llama_checkbox").checked = true
   }
   // 30seconds
-}
-
-function Toggle_Chat_Llama (zEvent) {
-  body.classList.toggle("open_llama_chat")
-  Hide_Llama_Theme_Options()
-  Hide_Llama_Cam_Options()
 }
 
 function Toggle_Cam_Llama (zEvent) {
@@ -3405,106 +3402,111 @@ function Toggle_User_BG (zEvent) {
 var bg_status = localStorage.getItem("user_bg")
 var userbg_status = localStorage.getItem("userbg")
 
-var llama_bg = localStorage.getItem("llama_bg1")
-var llama_bg_reloader = localStorage.getItem("llama_bg1_reload")
+var llama_bg_cam = localStorage.getItem("llama_bg_cam")
+var llama_bg_reloader_cam = localStorage.getItem("llama_bg_reload_cam")
 
-var llama_bg2 = localStorage.getItem("llama_bg2")
-var llama_bg_reloader2 = localStorage.getItem("llama_bg2_reload")
+var llama_bg_chat = localStorage.getItem("llama_bg_chat")
+var llama_bg_reloader_chat = localStorage.getItem("llama_bg_reload_chat")
 
-var llama_bg3 = localStorage.getItem("llama_bg3")
-var llama_bg_reloader3 = localStorage.getItem("llama_bg3_reload")
-
-if (userbg_status) {
-  body.classList.add(userbg_status)
-}
-if (llama_bg !== "") {
-  document.documentElement.style.setProperty("--user-bg-image", llama_bg)
-}
+var llama_bg_users = localStorage.getItem("llama_bg_users")
+var llama_bg_reloader_users = localStorage.getItem("llama_bg_reload_users")
 
 if (userbg_status) {
   body.classList.add(userbg_status)
 }
-if (llama_bg2 !== "") {
-  document.documentElement.style.setProperty("--user-bg2-image", llama_bg2)
+if (llama_bg_cam !== "") {
+  document.documentElement.style.setProperty("--user-bg-image-cam", llama_bg_cam)
 }
 
 if (userbg_status) {
   body.classList.add(userbg_status)
 }
-if (llama_bg3 !== "") {
-  document.documentElement.style.setProperty("--user-bg3-image", llama_bg3)
+if (llama_bg_chat !== "") {
+  document.documentElement.style.setProperty("--user-bg-image-chat", llama_bg_chat)
+}
+
+if (userbg_status) {
+  body.classList.add(userbg_status)
+}
+if (llama_bg_users !== "") {
+  document.documentElement.style.setProperty("--user-bg-image-users", llama_bg_users)
 }
 
 function Save_Llama_BG (zEvent) {
-  var llama_bg1 = localStorage.getItem("llama_bg1")
-  var llama_bg2 = localStorage.getItem("llama_bg2")
-  var llama_bg3 = localStorage.getItem("llama_bg3")
-  var llama_bginput1 = document.getElementById("bgSelection1").value
-  var llama_bginput2 = document.getElementById("bgSelection2").value
-  var llama_bginput3 = document.getElementById("bgSelection3").value
+  var llama_bg_cam = localStorage.getItem("llama_bg_cam")
+  var llama_bg_chat = localStorage.getItem("llama_bg_chat")
+  var llama_bg_users = localStorage.getItem("llama_bg_users")
+  var llama_bginput_cam = document.getElementById("bgSelectioncam").value
+  var llama_bginput_chat = document.getElementById("bgSelectionchat").value
+  var llama_bginput_users = document.getElementById("bgSelectionusers").value
 
-  if (llama_bginput1 !== "") {
-    var llama_bginput1_url = "url(" + llama_bginput1 + ")"
+  if (llama_bginput_cam !== "") {
+    var llama_bginput_url_cam = "url(" + llama_bginput_cam + ")"
     document.documentElement.style.setProperty(
-      "--user-bg-image",
-      llama_bginput1_url
+      "--user-bg-image-cam",
+      llama_bginput_url_cam
     )
-    localStorage.setItem("llama_bg1_reload", llama_bginput1)
-    localStorage.setItem("llama_bg1", llama_bginput1_url)
+    localStorage.setItem("llama_bg_reload_cam", llama_bginput_cam)
+    localStorage.setItem("llama_bg_cam", llama_bginput_url_cam)
   } else {
-    document.documentElement.style.setProperty("--user-bg-image", "")
-    localStorage.setItem("llama_bg1_reload", "")
-    localStorage.setItem("llama_bg1", "")
+    document.documentElement.style.setProperty("--user-bg-image-cam", "")
+    localStorage.setItem("llama_bg_reload_cam", "")
+    localStorage.setItem("llama_bg_cam", "")
   }
 
-  if (llama_bginput2 !== "") {
-    var llama_bginput2_url = "url(" + llama_bginput2 + ")"
+  if (llama_bginput_chat !== "") {
+    var llama_bginput_url_chat = "url(" + llama_bginput_chat + ")"
     document.documentElement.style.setProperty(
-      "--user-bg2-image",
-      llama_bginput2_url
+      "--user-bg-image-chat",
+      llama_bginput_url_chat
     )
-    localStorage.setItem("llama_bg2_reload", llama_bginput2)
-    localStorage.setItem("llama_bg2", llama_bginput2_url)
+    localStorage.setItem("llama_bg_reload_chat", llama_bginput_chat)
+    localStorage.setItem("llama_bg_chat", llama_bginput_url_chat)
   } else {
-    document.documentElement.style.setProperty("--user-bg2-image", "")
-    localStorage.setItem("llama_bg2_reload", "")
-    localStorage.setItem("llama_bg2", "")
+    document.documentElement.style.setProperty("--user-bg-image-chat", "")
+    localStorage.setItem("llama_bg_reload_chat", "")
+    localStorage.setItem("llama_bg_chat", "")
   }
 
-  if (llama_bginput3 !== "") {
-    var llama_bginput3_url = "url(" + llama_bginput3 + ")"
+  if (llama_bginput_users !== "") {
+    var llama_bginput_url_users = "url(" + llama_bginput_users + ")"
     document.documentElement.style.setProperty(
-      "--user-bg3-image",
-      llama_bginput3_url
+      "--user-bg-image-users",
+      llama_bginput_url_users
     )
-    localStorage.setItem("llama_bg3_reload", llama_bginput3)
-    localStorage.setItem("llama_bg3", llama_bginput3_url)
+    localStorage.setItem("llama_bg_reload_users", llama_bginput_users)
+    localStorage.setItem("llama_bg_users", llama_bginput_url_users)
   } else {
-    document.documentElement.style.setProperty("--user-bg3-image", "")
-    localStorage.setItem("llama_bg3_reload", "")
-    localStorage.setItem("llama_bg3", "")
+    document.documentElement.style.setProperty("--user-bg-image-users", "")
+    localStorage.setItem("llama_bg_reload_users", "")
+    localStorage.setItem("llama_bg_users", "")
   }
 }
 
-function Clear_Cam_BG (zEvent) {
-  document.getElementById("bgSelection1").value = ""
-  document.documentElement.style.setProperty("--user-bg-image", "")
-  localStorage.setItem("llama_bg1_reload", "")
-  localStorage.setItem("llama_bg1", "")
+function Clear_BG (bgtype) {
+  var type = 'bgSelection' + bgtype;
+  var typevariable = '--user-bg-image-' + bgtype;
+  var storage = 'llama_bg_reload_' + bgtype;
+  var storage_input_reload = 'llama_bg_reload_' + bgtype;
+  document.getElementById(type).value = ""
+  document.documentElement.style.setProperty(typevariable, "")
+  localStorage.setItem(storage_input_reload, "")
+  localStorage.setItem(storage, "")
+
 }
 
 function Clear_Chat_BG (zEvent) {
-  document.getElementById("bgSelection2").value = ""
-  document.documentElement.style.setProperty("--user-bg2-image", "")
-  localStorage.setItem("llama_bg2_reload", "")
-  localStorage.setItem("llama_bg2", "")
+  document.getElementById("bgSelectionchat").value = ""
+  document.documentElement.style.setProperty("--user-bg-image-chat", "")
+  localStorage.setItem("llama_bg_reload_chat", "")
+  localStorage.setItem("llama_bg_chat", "")
 }
 
 function Clear_Userlist_BG (zEvent) {
-  document.getElementById("bgSelection3").value = ""
-  document.documentElement.style.setProperty("--user-bg3-image", "")
-  localStorage.setItem("llama_bg3_reload", "")
-  localStorage.setItem("llama_bg3", "")
+  document.getElementById("bgSelectioncams").value = ""
+  document.documentElement.style.setProperty("--user-bg-image-users", "")
+  localStorage.setItem("llama_bg_reload_users", "")
+  localStorage.setItem("llama_bg_users", "")
 }
 
 // ----------------------------------------------------------------- BUBBLE_CHAT_TOGGLE -----------------------------------------------------------------
@@ -3596,8 +3598,7 @@ function Toggle_No_Border (zEvent) {
   if (yt_status !== "no_border") {
     localStorage.setItem("no_border", "no_border")
     document.getElementById("cam_border_checkbox").checked = true
-  }
-  if (yt_status === "no_border") {
+  } else {
     localStorage.setItem("no_border", "")
     document.getElementById("cam_border_checkbox").checked = false
   }
@@ -3616,8 +3617,7 @@ function Toggle_No_Padding (zEvent) {
   if (pad_status !== "no_padding") {
     localStorage.setItem("no_padding", "no_padding")
     document.getElementById("cam_spacing_checkbox").checked = true
-  }
-  if (pad_status === "no_padding") {
+  } else {
     localStorage.setItem("no_padding", "")
     document.getElementById("cam_spacing_checkbox").checked = true
   }
@@ -3635,8 +3635,7 @@ function Toggle_MiniYT (zEvent) {
   body.classList.toggle("mini_yt")
   if (yt_status !== "mini_yt") {
     localStorage.setItem("yt", "mini_yt")
-  }
-  if (yt_status === "mini_yt") {
+  } else {
     localStorage.setItem("yt", "")
   }
 }
@@ -3668,90 +3667,97 @@ function Toggle_Theme (color) {
   if (thememode_status !== color) {
     localStorage.setItem(thememode_variable, color)
   }
+  var llama_theme_bgcolor
+  var llama_theme_bordercolor
+  var llama_theme_lightbgcolor
+  var llama_theme_textcolor
+  var llama_theme_buttontext
 
-  var llama_theme_cambg = ""
-  var llama_theme_userbg = ""
-  var llama_theme_chatheaderbg = ""
-  var llama_theme_chatbg = ""
-  var llama_theme_messagebg = ""
+  var llama_theme_cambg
+  var llama_theme_userbg
+  var llama_theme_chatheaderbg
+  var llama_theme_chatbg
+  var llama_theme_messagebg
 
   if (color === "pink") {
-    var llama_theme_bgcolor = "#ffd1dc"
-    var llama_theme_bordercolor = "#ea98ab"
-    var llama_theme_lightbgcolor = "#ffe1e6"
-    var llama_theme_textcolor = "#FFFFFF"
-    var llama_theme_buttontext = "#ffd1dc"
-  }
-  if (color === "green") {
-    var llama_theme_bgcolor = "#042500"
-    var llama_theme_bordercolor = "#217c16"
-    var llama_theme_lightbgcolor = "#00500d"
-    var llama_theme_textcolor = "#FFFFFF"
-    var llama_theme_buttontext = "#042500"
-  }
-  if (color === "blue") {
-    var llama_theme_bgcolor = "#111949"
-    var llama_theme_bordercolor = "#596ce0"
-    var llama_theme_lightbgcolor = "#2a388b"
-    var llama_theme_textcolor = "#FFFFFF"
-    var llama_theme_buttontext = "#111949"
-  }
-  if (color === "mauve") {
-    var llama_theme_bgcolor = "#9168b2"
-    var llama_theme_bordercolor = "#d6b7ef"
-    var llama_theme_lightbgcolor = "#BF8FE5"
-    var llama_theme_textcolor = "#000000"
-    var llama_theme_buttontext = "#9168b2"
-  }
-  if (color === "orange") {
-    var llama_theme_bgcolor = "#b33700"
-    var llama_theme_bordercolor = "#ff8d10"
-    var llama_theme_lightbgcolor = "#ff4f00"
-    var llama_theme_textcolor = "#000000"
-    var llama_theme_buttontext = "#b33700"
-  }
-  if (color === "red") {
-    var llama_theme_bgcolor = "#590000"
-    var llama_theme_bordercolor = "#d02323"
-    var llama_theme_lightbgcolor = "#860000"
-    var llama_theme_textcolor = "#FFFFFF"
-    var llama_theme_buttontext = "#590000"
-  }
-  if (color === "purple") {
-    var llama_theme_bgcolor = "#280048"
-    var llama_theme_bordercolor = "#b14fff"
-    var llama_theme_lightbgcolor = "#550098"
-    var llama_theme_textcolor = "#FFFFFF"
-    var llama_theme_buttontext = "#280048"
-  }
-  if (color === "black") {
-    var llama_theme_bgcolor = "#2C2F33"
-    var llama_theme_bordercolor = "#23272a"
-    var llama_theme_lightbgcolor = "#191919"
-    var llama_theme_textcolor = "#FFFFFF"
-    var llama_theme_buttontext = "#7289da"
-  }
-  if (color === "buds") {
-    var llama_theme_bgcolor = "#042500"
-    var llama_theme_bordercolor = "#217c16"
-    var llama_theme_lightbgcolor = "#00500d"
-    var llama_theme_textcolor = "#FFFFFF"
-    var llama_theme_buttontext = "#042500"
-    var llama_theme_cambg
+    llama_theme_bgcolor = "#ffd1dc"
+    llama_theme_bordercolor = "#ea98ab"
+    llama_theme_lightbgcolor = "#ffe1e6"
+    llama_theme_textcolor = "#FFFFFF"
+    llama_theme_buttontext = "#ffd1dc"
+  } else if (color === "green") {
+    llama_theme_bgcolor = "#042500"
+    llama_theme_bordercolor = "#217c16"
+    llama_theme_lightbgcolor = "#00500d"
+    llama_theme_textcolor = "#FFFFFF"
+    llama_theme_buttontext = "#042500"
+  } else if (color === "blue") {
+    llama_theme_bgcolor = "#111949"
+    llama_theme_bordercolor = "#596ce0"
+    llama_theme_lightbgcolor = "#2a388b"
+    llama_theme_textcolor = "#FFFFFF"
+    llama_theme_buttontext = "#111949"
+  } else if (color === "mauve") {
+    llama_theme_bgcolor = "#9168b2"
+    llama_theme_bordercolor = "#d6b7ef"
+    llama_theme_lightbgcolor = "#BF8FE5"
+    llama_theme_textcolor = "#000000"
+    llama_theme_buttontext = "#9168b2"
+  } else if (color === "orange") {
+    llama_theme_bgcolor = "#b33700"
+    llama_theme_bordercolor = "#ff8d10"
+    llama_theme_lightbgcolor = "#ff4f00"
+    llama_theme_textcolor = "#000000"
+    llama_theme_buttontext = "#b33700"
+  } else if (color === "red") {
+    llama_theme_bgcolor = "#590000"
+    llama_theme_bordercolor = "#d02323"
+    llama_theme_lightbgcolor = "#860000"
+    llama_theme_textcolor = "#FFFFFF"
+    llama_theme_buttontext = "#590000"
+  } else if (color === "purple") {
+    llama_theme_bgcolor = "#280048"
+    llama_theme_bordercolor = "#b14fff"
+    llama_theme_lightbgcolor = "#550098"
+    llama_theme_textcolor = "#FFFFFF"
+    llama_theme_buttontext = "#280048"
+  } else if (color === "black") {
+    llama_theme_bgcolor = "#2C2F33"
+    llama_theme_bordercolor = "#23272a"
+    llama_theme_lightbgcolor = "#191919"
+    llama_theme_textcolor = "#FFFFFF"
+    llama_theme_buttontext = "#7289da"
+  } else if (color === "buds") {
+    llama_theme_bgcolor = "#042500"
+    llama_theme_bordercolor = "#217c16"
+    llama_theme_lightbgcolor = "#00500d"
+    llama_theme_textcolor = "#FFFFFF"
+    llama_theme_buttontext = "#042500"
+    llama_theme_cambg
       = "url(https://kpfa.org/wp-content/uploads/2015/10/weed-wallpaper-65.jpg)"
-  }
-  if (color === "splat") {
-    var llama_theme_bgcolor = "transparent"
-    var llama_theme_bordercolor = "#51bc02"
-    var llama_theme_lightbgcolor = "#282828"
-    var llama_theme_textcolor = "#FFFFFF"
-    var llama_theme_buttontext = "#FFFFFF"
-    var llama_theme_cambg = "url(https://i.ibb.co/C18JNgK/splatbg.jpg)"
-    var llama_theme_userbg = "url(https://i.ibb.co/7nrB9LT/test.png)"
-    var llama_theme_chatheaderbg
+  } else if (color === "splat") {
+    llama_theme_bgcolor = "transparent"
+    llama_theme_bordercolor = "#51bc02"
+    llama_theme_lightbgcolor = "#282828"
+    llama_theme_textcolor = "#FFFFFF"
+    llama_theme_buttontext = "#FFFFFF"
+    llama_theme_cambg = "url(https://i.ibb.co/C18JNgK/splatbg.jpg)"
+    llama_theme_userbg = "url(https://i.ibb.co/7nrB9LT/test.png)"
+    llama_theme_chatheaderbg
       = "url(https://i.ibb.co/XsTjVk0/splay-bg-header2.png)"
-    var llama_theme_chatbg = "url(https://i.ibb.co/TrKBZFn/splat-chat-bg3.png)"
-    var llama_theme_messagebg = "url(https://i.ibb.co/FWFnhc4/messagebg.png)"
+    llama_theme_chatbg = "url(https://i.ibb.co/TrKBZFn/splat-chat-bg3.png)"
+    llama_theme_messagebg = "url(https://i.ibb.co/FWFnhc4/messagebg.png)"
+  } else {
+    llama_theme_bgcolor = ""
+    llama_theme_bordercolor = ""
+    llama_theme_lightbgcolor = ""
+    llama_theme_textcolor = ""
+    llama_theme_buttontext = ""
+    llama_theme_cambg = ""
+    llama_theme_userbg = ""
+    llama_theme_chatheaderbg = ""
+    llama_theme_chatbg = ""
+    llama_theme_messagebg = ""
   }
   document.documentElement.style.setProperty(
     "--thememode-bgcolor",
@@ -3773,7 +3779,7 @@ function Toggle_Theme (color) {
     "--thememode-buttontext",
     llama_theme_buttontext
   )
-
+ // THEME BACKGROUND IMAGES
   document.documentElement.style.setProperty(
     "--thememode-roombg",
     llama_theme_cambg

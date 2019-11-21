@@ -35,7 +35,7 @@
         "indent": ["error", 2],
         "key-spacing": error,
         "keyword-spacing": error,
-        "linebreak-style": ["error", "unix"],
+        "linebreak-style": ["error", "windows"],
         "no-lonely-if": error,
         "no-mixed-spaces-and-tabs": error,
         "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1 }],

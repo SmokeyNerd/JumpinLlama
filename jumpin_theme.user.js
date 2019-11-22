@@ -1641,21 +1641,92 @@ z-index:8000;}
   chatShare_box.appendChild(GamesIcon)
   chatShare_box.insertBefore(GamesIcon, null)
   chatShare_box.insertBefore(GamesIcon, chatShare_box.childNodes[4] || null)
-
+function Toggle_Games (zEvent) {
+  body.classList.toggle("game_window")
+}
   document
     .getElementById("games__llamaOption")
     .addEventListener("click", Toggle_Games, false)
+
+function TinyChatTube() {
+var loc = window.location.toString(),
+    params = loc.split('/')[3],
+    iframe = document.getElementById('game_list');
+    var tc = "https://tinychat.com/"
+
+iframe.src = tc + params;
+  }
+function HomeTube() {
+var loc = window.location.toString(),
+    params = loc.split('/')[3],
+    iframe = document.getElementById('game_list');
+    var tc = "https://smokeyllama.glitch.me/game_list_home.html"
+
+iframe.src = tc;
+          setTimeout(Scrollit, 3000)
+  }
+function Scrollit() {
+  var elmnt = document.getElementById("game_list");
+  elmnt.scrollTop = 10;
+}
   // ------------ GAMES_MENU ----------------*/
   var newGamesMenu = document.createElement("div")
   newGamesMenu.className = "dropdown__Options"
   newGamesMenu.setAttribute("id", "Llama_Games")
   newGamesMenu.innerHTML = `
 <div id="mydiv">
-  <div id="mydivheader" titl="Move Game Window"><i class="fas fa-mouse-pointer" style="color:white"></i></div>
-<div class="game_head">GAME WINDOW</div>
-<iframe src="https://smokeyllama.glitch.me/game_list_home.html" class="" id="game_list"  name="" style="border:0px;overflow:hidden;width:440px;"></iframe>
+<div id="mydivheader" title="Move Game Window">
+
+<div id="game_head" class="game_head">
+
+<div id="home_parent" class="tube_btn">
+<i class="fas fa-house-damage"></i>
+</div>
+
+GAME WINDOW
+<div id="tc_parent" class="tube_btn">
+<img src="https://lh3.googleusercontent.com/khRuu1Si6LyNF3LFmX_shxSbK1T7dyWP7x-VreRGzNFZPLUJSUZy4I4eSZ565xZSmsM=w512" style="width:20px">
+</div>
+
+<div id="control_grp" class="">
+<div id="Mini_Game" class="tube_btn" style="">
+<i class="fas fa-window-minimize"></i>
+</div>
+
+<div id="Max_Game" class="tube_btn" style="padding:0px;">
+<i class="fas fa-window-maximize"></i>
+</div>
+
+<div id="Close_Game_Btn" class="tube_btn" style="padding:0px;">
+<i class="far fa-window-close"></i>
+</div>
+</div>
+
+</div>
+
+</div>
+<div id="iframe_box">
+<div id="container2">
+<iframe src="https://smokeyllama.glitch.me/game_list_home.html" class="scrollingContainer" id="game_list"  name="" style="border:0px;width: 105%;overflow-x: hidden;" scrolling="yes" ></iframe>
+</div>
+</div>
 </div>
 <style>
+#control_grp {    display: inline-block;
+    float: right;
+    padding-right: 10px;}
+#iframe_box{
+border:0px;
+    height: 100%;
+    width: 450px;
+    overflow: hidden;
+}
+#container2{
+    width: 100%;
+    height: 99%;
+    overflow: hidden;
+    padding-right: 15px;
+}
 .game_head { color: white;
   font-weight: 600;
   font-size: 14pt;margin-top: 10px;
@@ -1664,6 +1735,18 @@ z-index:8000;}
 #game_list:hover {height:570px;opacity:1;}
 #Llama_Games {display:none;}
 .game_window #Llama_Games {display:block;}
+.tube_btn {
+    display: inline;
+    border-radius: 10px;
+
+    padding: 3px;
+    cursor: pointer;
+    z-index: 8000;
+    background-color: #2c2f33;
+    color: #fff;
+    width: 30px;
+}
+
 #mydiv {
   position: absolute;
   left:100px;
@@ -1673,13 +1756,13 @@ z-index:8000;}
   border: 1px solid #23272a;border-radius:10px;
 }
 #mydivheader {
-  border-radius:10px;
-  padding: 10px;
-  cursor: move;
-  z-index: 8000;
-  background-color: #2196F3;
-  color: #fff;
-  width: 30px;float:left;
+    border-radius: 10px;    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding: 5px;
+    cursor: move;
+    z-index: 8000;
+    background-color: #2c2f33;
+    color: #fff;
 }
 body {overflow:hidden;}
 .budsmode .fa-gamepad {color: var(--budsmode-lightbgcolor);}
@@ -1688,6 +1771,20 @@ body {overflow:hidden;}
 </style>
 `
   el.insertBefore(newGamesMenu, el.childNodes[4] || null)
+
+
+function Max_Game(zEvent) {
+document.getElementById("game_list").style.height = "570px"
+}
+function Mini_Game(zEvent) {
+document.getElementById("game_list").style.height = "20px"
+}
+
+document.getElementById("Mini_Game").addEventListener("click", Mini_Game);
+document.getElementById("Max_Game").addEventListener("click", Max_Game);
+document.getElementById("home_parent").addEventListener("click", HomeTube);
+document.getElementById("tc_parent").addEventListener("click", TinyChatTube);
+
   // ------------ CHAT_ICON ----------------*/
   var newEl = document.createElement("label")
   newEl.className = "button chat__HeaderOption LlamaOption_chat"
@@ -1973,7 +2070,7 @@ USER BG
   document
     .getElementById("userlist_bg_center")
     .addEventListener("click", Userlist_BG_Center, false)
-
+ // LOADING VARIABLES IN GROUPS
   document.addEventListener(
     "input",
     function (event) {
@@ -2021,85 +2118,75 @@ USER BG
     },
     false
   )
-
+document.getElementById("Close_Game_Btn").addEventListener("click", Toggle_Games);
   var llama_bg = localStorage.getItem("llama_bg1")
   var llama_bg_reloader = localStorage.getItem("llama_bg1_reload")
+  var llama_bg2 = localStorage.getItem("llama_bg2")
+  var llama_bg2_reloader = localStorage.getItem("llama_bg2_reload")
+  var llama_bg3 = localStorage.getItem("llama_bg3")
+  var llama_bg3_reloader = localStorage.getItem("llama_bg3_reload")
+
+  var cam_bg_cover = localStorage.getItem("cam_bg_cover")
+  var cam_bg_repeat = localStorage.getItem("cam_bg_repeat")
+  var cam_bg_center = localStorage.getItem("cam_bg_center")
+  var chat_bg_cover = localStorage.getItem("chat_bg_cover")
+  var chat_bg_center = localStorage.getItem("chat_bg_center")
+
+  var userlist_bg_cover = localStorage.getItem("userlist_bg_cover")
+  var userlist_bg_repeat = localStorage.getItem("userlist_bg_repeat")
+  var userlist_bg_center = localStorage.getItem("userlist_bg_center")
+  var userbg_status = localStorage.getItem("userbg")
+  var theme_status = localStorage.getItem("thememode")
+
   if (llama_bg !== "") {
     document.documentElement.style.setProperty("--user-bg-image", llama_bg)
   }
   if (llama_bg) {
     document.getElementById("bgSelection1").value = llama_bg_reloader
   }
-
-  var llama_bg2 = localStorage.getItem("llama_bg2")
-  var llama_bg2_reloader = localStorage.getItem("llama_bg2_reload")
   if (llama_bg2 !== "") {
     document.documentElement.style.setProperty("--user-bg2-image", llama_bg2)
   }
   if (llama_bg2) {
     document.getElementById("bgSelection2").value = llama_bg_reloader2
   }
-
-  var llama_bg3 = localStorage.getItem("llama_bg3")
-  var llama_bg3_reloader = localStorage.getItem("llama_bg3_reload")
   if (llama_bg3 !== "") {
     document.documentElement.style.setProperty("--user-bg3-image", llama_bg3)
   }
   if (llama_bg3) {
-    document.getElementById("bgSelection3").value = llama_bg_reloader3
+    document.getElementById("bgSelection3").value = llama_bg3_reloader
   }
-
-  var cam_bg_cover = localStorage.getItem("cam_bg_cover")
   if (cam_bg_cover) {
     document.getElementById("cam_bg_cover").checked = true
   }
-
-  var cam_bg_repeat = localStorage.getItem("cam_bg_repeat")
   if (cam_bg_repeat) {
     document.getElementById("cam_bg_repeat").checked = true
   }
-
-  var cam_bg_center = localStorage.getItem("cam_bg_center")
   if (cam_bg_center) {
     document.getElementById("cam_bg_center").checked = true
   }
-
-  var chat_bg_cover = localStorage.getItem("chat_bg_cover")
   if (chat_bg_cover) {
     document.getElementById("chat_bg_cover").checked = true
   }
-
   var chat_bg_repeat = localStorage.getItem("chat_bg_repeat")
   if (chat_bg_repeat) {
     document.getElementById("chat_bg_repeat").checked = true
   }
-
-  var chat_bg_center = localStorage.getItem("chat_bg_center")
   if (chat_bg_center) {
     document.getElementById("chat_bg_center").checked = true
   }
-
-  var userlist_bg_cover = localStorage.getItem("userlist_bg_cover")
   if (userlist_bg_cover) {
     document.getElementById("userlist_bg_cover").checked = true
   }
-
-  var userlist_bg_repeat = localStorage.getItem("userlist_bg_repeat")
   if (userlist_bg_repeat) {
     document.getElementById("userlist_bg_repeat").checked = true
   }
-
-  var userlist_bg_center = localStorage.getItem("userlist_bg_center")
   if (userlist_bg_center) {
     document.getElementById("userlist_bg_center").checked = true
   }
-
-  var userbg_status = localStorage.getItem("userbg")
   if (userbg_status === "user_bg") {
     document.getElementById("cam_bg_checkbox").checked = true
   }
-
-  var theme_status = localStorage.getItem("thememode")
 
   // ------- SET DROPDOWN CHOICE -------
   if (theme_status) {
@@ -2298,10 +2385,6 @@ function Toggle_Hide_Header (zEvent) {
   } else {
     localStorage.setItem("header_status", "")
   }
-}
-
-function Toggle_Games (zEvent) {
-  body.classList.toggle("game_window")
 }
 
 var cheers_btn = localStorage.getItem("llama_btn_1")

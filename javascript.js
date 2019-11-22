@@ -1,5 +1,5 @@
 var body = document.body
-
+var test = test
 // ------------ LLAMA_NOTICE_CREATOR ----------------*/
 var LlamaNoticeNode = document.createElement("div")
 

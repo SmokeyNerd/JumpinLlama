@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    https://www.smokeyllama.com
-// @version      2019.91
+// @version      2019.92
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -1547,6 +1547,7 @@ function Toggle_Llama_Chat_Options (zEvent) {
 
   var chatInputBox = document.getElementsByClassName("chat__Input")[0]
   chatInputBox.id = "chat_input_box"
+  chatInputBox.setAttribute('autocomplete', 'off')
 
   // ------------ Whats_New ----------------*/
   var WhatsNewIcon = document.createElement("label")
@@ -1652,7 +1653,7 @@ function TinyChatTube() {
 var loc = window.location.toString(),
     params = loc.split('/')[3],
     iframe = document.getElementById('game_list');
-    var tc = "https://tinychat.com/"
+    var tc = "https://tinychat.com/room/"
 
 iframe.src = tc + params;
   }
@@ -1707,7 +1708,7 @@ GAME WINDOW
 </div>
 <div id="iframe_box">
 <div id="container2">
-<iframe src="https://smokeyllama.glitch.me/game_list_home.html" class="scrollingContainer" id="game_list"  name="" style="border:0px;width: 105%;overflow-x: hidden;" scrolling="yes" ></iframe>
+<iframe src="https://smokeyllama.glitch.me/game_list_home.html" class="scrollingContainer" id="game_list"  name="" style="border:0px;width: 105%;overflow-x: hidden;" scrolling="yes" allow="autoplay"></iframe>
 </div>
 </div>
 </div>

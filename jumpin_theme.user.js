@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    https://www.smokeyllama.com
-// @version      2019.90
+// @version      2019.91
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
+// @exclude      https://jumpin.chat/smokeyllama
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        GM_listValues

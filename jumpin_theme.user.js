@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    https://www.smokeyllama.com
-// @version      2019.92
+// @version      2019.93
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -1776,9 +1776,16 @@ body {overflow:hidden;}
 
 function Max_Game(zEvent) {
 document.getElementById("game_list").style.height = "570px"
+document.getElementById("iframe_box").style.width = "450px"
+document.getElementById("iframe_box").style.height = "100%"
+document.getElementById("mydiv").setAttribute("style","left:23px; top:144px")
 }
 function Mini_Game(zEvent) {
 document.getElementById("game_list").style.height = "20px"
+document.getElementById("iframe_box").style.width = "279px"
+document.getElementById("iframe_box").style.height = "0px"
+document.getElementById("mydiv").setAttribute("style","left:325px; top:90.8%")
+
 }
 
 document.getElementById("Mini_Game").addEventListener("click", Mini_Game);

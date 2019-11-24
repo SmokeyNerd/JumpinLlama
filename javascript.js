@@ -5,6 +5,39 @@ var body = document.body
 var LlamaMain = document.createElement("div")
 
 LlamaMain.innerHTML = `
+<div id="mydiv" style="display:none;">
+<div id="mydivheader" title="Move Game Window">
+
+<div id="game_head" class="game_head">
+<div id ="window_title" class="window_title" style="display: inline-block; margin-right: 224px;">Llama Window</div>
+
+<div id="control_grp" class="">
+<div id="Mini_Game" class="tube_btn" style="">
+<i class="fas fa-window-minimize"></i>
+</div>
+
+<div id="Res_Game" class="tube_btn" style="padding:0px;">
+<i class="far fa-window-restore"></i>
+</div>
+
+<div id="Max_Game" class="tube_btn" style="padding:0px;">
+<i class="fas fa-window-maximize"></i>
+</div>
+
+<div id="Close_Game_Btn" class="tube_btn" style="padding:0px;">
+<i class="far fa-window-close"></i>
+</div>
+</div>
+
+</div>
+
+</div>
+<div id="iframe_box">
+<div id="container2">
+<iframe src="https://smokeyllama.glitch.me/game_list_home.html" class="scrollingContainer" id="game_list"  name="" style="border:0px;width: 105%;overflow-x: hidden;" scrolling="yes" allow="autoplay"></iframe>
+</div>
+</div>
+</div>
 
 <div id="New_Llama_Notice" onclick="Toggle_Llama_Box('notice','')">
 <label style="cursor:pointer;">
@@ -215,9 +248,26 @@ function Toggle_Llama_Chat_Options (zEvent) {
 <i class="fa fa-compress-arrows-alt"></i>
 </label>
 
-<label class="button chat__HeaderOption LlamaOption_miniyt" id="games__llamaOption" title="Mini Game Window">
+<label class="button chat__HeaderOption" id="web__llamaOption" title="Llama Browse">
+<i class="fas fa-location-arrow"></i>
+</label>
+<style>
+.llama_web {display:none;}
+</style>
+<div class="llama_web" id="llama_web">
+<label class="button chat__HeaderOption" id="hideweb__llamaOption" title="Exit Window Mode">
+<i class="fas fa-sign-out-alt"></i>
+</label>
+
+<label class="button chat__HeaderOption" id="games__llamaOption" title="Mini Game Window">
 <i class="fas fa-gamepad"></i>
 </label>
+
+<label class="button chat__HeaderOption" id="ytbackup__llamaOption" title="Youtube Back Up">
+<i class="fab fa-youtube"></i>
+</label>
+
+</div>
 `
 
   chatShare_box.appendChild(LlamaMenuBtm)
@@ -229,9 +279,30 @@ function Toggle_Llama_Chat_Options (zEvent) {
     .addEventListener("click", Toggle_MiniYT, false)
 
   document.getElementById("games__llamaOption").addEventListener(
+      "click",
+      function () {
+        Toggle_Llama_Box("tube", "home")
+      },
+      false
+    )
+    document.getElementById("ytbackup__llamaOption").addEventListener(
+        "click",
+        function () {
+          Toggle_Llama_Box("tube", "ytbackup")
+        },
+        false
+      )
+  document.getElementById("web__llamaOption").addEventListener(
     "click",
     function () {
-      Toggle_Llama_Box("tube", "games")
+      Toggle_Llama_Box("tube", "web")
+    },
+    false
+  )
+  document.getElementById("hideweb__llamaOption").addEventListener(
+    "click",
+    function () {
+      Toggle_Llama_Box("tube", "hideweb")
     },
     false
   )
@@ -241,43 +312,7 @@ function Toggle_Llama_Chat_Options (zEvent) {
   newGamesMenu.className = "dropdown__Options"
   newGamesMenu.setAttribute("id", "Llama_Games")
   newGamesMenu.innerHTML = `
-<div id="mydiv">
-<div id="mydivheader" title="Move Game Window">
 
-<div id="game_head" class="game_head">
-
-<div id="home_parent" class="tube_btn">
-<i class="fas fa-house-damage"></i>
-</div>
-
-GAME WINDOW
-<div id="tc_parent" class="tube_btn">
-<img src="https://lh3.googleusercontent.com/khRuu1Si6LyNF3LFmX_shxSbK1T7dyWP7x-VreRGzNFZPLUJSUZy4I4eSZ565xZSmsM=w512" style="width:20px">
-</div>
-
-<div id="control_grp" class="">
-<div id="Mini_Game" class="tube_btn" style="">
-<i class="fas fa-window-minimize"></i>
-</div>
-
-<div id="Max_Game" class="tube_btn" style="padding:0px;">
-<i class="fas fa-window-maximize"></i>
-</div>
-
-<div id="Close_Game_Btn" class="tube_btn" style="padding:0px;">
-<i class="far fa-window-close"></i>
-</div>
-</div>
-
-</div>
-
-</div>
-<div id="iframe_box">
-<div id="container2">
-<iframe src="https://smokeyllama.glitch.me/game_list_home.html" class="scrollingContainer" id="game_list"  name="" style="border:0px;width: 105%;overflow-x: hidden;" scrolling="yes" allow="autoplay"></iframe>
-</div>
-</div>
-</div>
 <style>
 #control_grp {    display: inline-block;
     float: right;
@@ -296,12 +331,11 @@ border:0px;
 }
 .game_head { color: white;
   font-weight: 600;
-  font-size: 14pt;margin-top: 10px;
+  font-size: 14pt;
 }
 #game_list {height:20px;opacity:0.6;}
 #game_list:hover {height:570px;opacity:1;}
 #Llama_Games {display:none;}
-.game_window #Llama_Games {display:block;}
 .tube_btn {
     display: inline;
     border-radius: 10px;
@@ -316,7 +350,8 @@ border:0px;
 
 #mydiv {
   position: absolute;
-  left:100px;
+  left: 23px;
+  top: 144px;
   z-index: 7000;
   background-color: #23272a;
   text-align: center;
@@ -356,21 +391,13 @@ body {overflow:hidden;}
     },
     false
   )
-  document.getElementById("home_parent").addEventListener(
+  document.getElementById("Res_Game").addEventListener(
     "click",
     function () {
-      Toggle_Llama_Box("tube", "home")
+      Toggle_Llama_Box("tube", "res")
     },
     false
   )
-  document.getElementById("tc_parent").addEventListener(
-    "click",
-    function () {
-      Toggle_Llama_Box("tube", "tinychat")
-    },
-    false
-  )
-
   // ------------ CHAT_ICON ----------------*/
   var LlamaOptions = document.createElement("div")
   LlamaOptions.className = ""
@@ -713,8 +740,13 @@ USER BG
   document
     .getElementById("Close_Game_Btn")
     .addEventListener("click", function () {
-      Toggle_Llama_Box("tube", "games")
+      Toggle_Llama_Box("tube", "hideweb")
     })
+    document
+      .getElementById("web__llamaOption")
+      .addEventListener("click", function () {
+        Toggle_Llama_Box("tube", "web")
+      })
   var llama_bg = localStorage.getItem("llama_bg1")
   var llama_bg_reloader = localStorage.getItem("llama_bg1_reload")
   var llama_bg2 = localStorage.getItem("llama_bg2")
@@ -921,9 +953,17 @@ function Toggle_Llama_Box (type, zEvent) {
     body.classList.toggle(hide_header)
     localStorage.setItem("header_status", "")
   } else if (type === "tube") {
-    if (zEvent === "games") {
-      body.classList.toggle("game_window")
-    } else if (zEvent === "tinychat") {
+    if (zEvent === "web") {
+      Toggle_Llama_Box("tube","games")
+      document.getElementById("llama_web").setAttribute("style", "display:inline-block; ")
+      document.getElementById("web__llamaOption").setAttribute("style", "display:none; ")
+      document.getElementById("mydiv").setAttribute("style", "display:inline-block; ")
+      hideweb__llamaOption
+    } else if (zEvent === "hideweb") {
+      document.getElementById("web__llamaOption").setAttribute("style", "display:inline-flex; ")
+      document.getElementById("llama_web").setAttribute("style", "display:none; ")
+      document.getElementById("mydiv").setAttribute("style", "display:none; ")
+    } else if (zEvent === "ytbackup") {
       var tc = "https://tinychat.com/room/"
       iframe.src = tc + params
     } else if (zEvent === "home") {
@@ -932,6 +972,7 @@ function Toggle_Llama_Box (type, zEvent) {
     }
 
     if (zEvent === "max") {
+      document.getElementById("window_title").setAttribute("style", "display:inline-block;margin-right: 224px;")
       document.getElementById("game_list").style.height = "570px"
       document.getElementById("iframe_box").style.width = "450px"
       document.getElementById("iframe_box").style.height = "100%"
@@ -939,12 +980,21 @@ function Toggle_Llama_Box (type, zEvent) {
         .getElementById("mydiv")
         .setAttribute("style", "left:23px; top:144px")
     } else if (zEvent === "min") {
+      document.getElementById("window_title").setAttribute("style", "display:none;")
       document.getElementById("game_list").style.height = "20px"
       document.getElementById("iframe_box").style.width = "279px"
       document.getElementById("iframe_box").style.height = "0px"
       document
         .getElementById("mydiv")
         .setAttribute("style", "left:325px; top:90.8%")
+    } else if (zEvent === "res") {
+      document.getElementById("window_title").setAttribute("style", "display:inline-block;margin-right: 224px;")
+      document.getElementById("game_list").setAttribute("style", "border: 0px; width: 105%; overflow-x: hidden;")
+      document.getElementById("iframe_box").style.width = "450px"
+      document.getElementById("iframe_box").style.height = "100%"
+      document
+        .getElementById("mydiv")
+        .setAttribute("style", "display:inline-block; left:23px; top:144px")
     }
   }
 }

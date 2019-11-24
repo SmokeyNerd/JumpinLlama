@@ -144,6 +144,9 @@ body {
 
 .thememode #llama_Room>div.cams>div.chat__Header.cams__Footer>div.chat__HeaderOptions>label.button.chat__HeaderOption.chat__HeaderOption-quality,
 .thememode .fa-gamepad,
+.thememode .fa-sign-out-alt,
+.thememode .fa-youtube,
+.thememode .fa-location-arrow,
 .thememode .chat__HeaderOptionString {
   color: var(--thememode-buttontext);
 }
@@ -1669,7 +1672,6 @@ screen and (min-height: 480px) and (min-width: 2500px) {
   color: white;
   font-weight: 600;
   font-size: 14pt;
-  margin-top: 10px;
 }
 
 #game_list {
@@ -1684,10 +1686,6 @@ screen and (min-height: 480px) and (min-width: 2500px) {
 
 #Llama_Games {
   display: none;
-}
-
-.game_window #Llama_Games {
-  display: block;
 }
 
 .tube_btn {

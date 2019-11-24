@@ -1968,14 +1968,14 @@ if (border_status) {
 }
 
 function Toggle_No_Border (zEvent) {
-  var yt_status = localStorage.getItem("no_border")
+  var border_status = localStorage.getItem("no_border")
   body.classList.toggle("no_border")
 
-  if (yt_status !== "no_border") {
+  if (border_status !== "no_border") {
     localStorage.setItem("no_border", "no_border")
     document.getElementById("cam_border_checkbox").checked = true
   }
-  if (yt_status === "no_border") {
+  if (border_status === "no_border") {
     localStorage.setItem("no_border", "")
     document.getElementById("cam_border_checkbox").checked = false
   }
@@ -1997,7 +1997,7 @@ function Toggle_No_Padding (zEvent) {
   }
   if (pad_status === "no_padding") {
     localStorage.setItem("no_padding", "")
-    document.getElementById("cam_spacing_checkbox").checked = true
+    document.getElementById("cam_spacing_checkbox").checked = false
   }
 }
 

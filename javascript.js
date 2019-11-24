@@ -990,7 +990,7 @@ function Toggle_Llama_Box (type, zEvent) {
       document.getElementById("window_title").setAttribute("style", "display:none;")
       document
         .getElementById("mydiv")
-        .setAttribute("style", "left:325px; top:90.8%; height:28px; width:221px;")
+        .setAttribute("style", "left:0px; top:92.4%; height:28px; width:221px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;")
     } else if (zEvent === "res") {
       document.getElementById("window_title").setAttribute("style", "display:inline-block;margin-right: 224px;")
       document.getElementById("window_title").setAttribute("style", "display:inline-block;margin-right: 224px;")

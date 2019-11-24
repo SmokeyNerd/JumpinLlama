@@ -135,7 +135,6 @@ z-index:8000;}
 LlamaMain.setAttribute("id", "Llama_Main")
 document.body.appendChild(LlamaMain)
 
-
 // ------------ LLAMA_MORE_MENU_OPTIONS ----------------*/
 
 var chat_option_activator = "activate"
@@ -160,7 +159,7 @@ function Toggle_Llama_Chat_Options (zEvent) {
 
   var chatInputBox = document.getElementsByClassName("chat__Input")[0]
   chatInputBox.id = "chat_input_box"
-  chatInputBox.setAttribute('autocomplete', 'off')
+  chatInputBox.setAttribute("autocomplete", "off")
 
   // ------------ Whats_New ----------------*/
   var WhatsNewIcon = document.createElement("label")
@@ -177,9 +176,13 @@ function Toggle_Llama_Chat_Options (zEvent) {
   whatsNew_Box.insertBefore(WhatsNewIcon, null)
   whatsNew_Box.insertBefore(WhatsNewIcon, whatsNew_Box.childNodes[0] || null)
 
-  document
-    .getElementById("Toggle_New_Llama_Notice")
-    .addEventListener("click", function () {Toggle_Llama_Box('notice')}, false)
+  document.getElementById("Toggle_New_Llama_Notice").addEventListener(
+    "click",
+    function () {
+      Toggle_Llama_Box("notice")
+    },
+    false
+  )
 
   // ------------ Hide_Header ----------------*/
   var HeaderHideIcon = document.createElement("label")
@@ -193,17 +196,20 @@ function Toggle_Llama_Chat_Options (zEvent) {
   whatsNew_Box.appendChild(HeaderHideIcon)
   whatsNew_Box.insertBefore(HeaderHideIcon, null)
   whatsNew_Box.insertBefore(HeaderHideIcon, whatsNew_Box.childNodes[0] || null)
-  document
-    .getElementById("Toggle_Hide_Header")
-    .addEventListener("click", function () {Toggle_Llama_Box('header','')}, false)
-
+  document.getElementById("Toggle_Hide_Header").addEventListener(
+    "click",
+    function () {
+      Toggle_Llama_Box("header", "")
+    },
+    false
+  )
 
   // ------------ SHARE BUTTON EXTRA MENU ----------------*/
   var LlamaMenuBtm = document.createElement("div")
   LlamaMenuBtm.className = ""
   LlamaMenuBtm.setAttribute("id", "Llama_MENU_Btm")
   LlamaMenuBtm.setAttribute("title", "Llama_MENU_Btm")
-  LlamaMenuBtm.setAttribute("style","position: relative; top: 4px;")
+  LlamaMenuBtm.setAttribute("style", "position: relative; top: 4px;")
   LlamaMenuBtm.innerHTML = `
 <label class="button chat__HeaderOption LlamaOption_miniyt" id="miniyt__llamaOption" title="Mini Youtube Player">
 <i class="fa fa-compress-arrows-alt"></i>
@@ -222,10 +228,13 @@ function Toggle_Llama_Chat_Options (zEvent) {
     .getElementById("miniyt__llamaOption")
     .addEventListener("click", Toggle_MiniYT, false)
 
-  document
-    .getElementById("games__llamaOption")
-    .addEventListener("click", function () {Toggle_Llama_Box('tube','games')}, false)
-
+  document.getElementById("games__llamaOption").addEventListener(
+    "click",
+    function () {
+      Toggle_Llama_Box("tube", "games")
+    },
+    false
+  )
 
   // ------------ GAMES_MENU ----------------*/
   var newGamesMenu = document.createElement("div")
@@ -328,13 +337,39 @@ body {overflow:hidden;}
 .custommode .fa-gamepad {color: var(--custommodebutton-textcolor);}
 </style>
 `
-  chat_headeroptions.insertBefore(newGamesMenu, chat_headeroptions.childNodes[4] || null)
+  chat_headeroptions.insertBefore(
+    newGamesMenu,
+    chat_headeroptions.childNodes[4] || null
+  )
 
-
-document.getElementById("Mini_Game").addEventListener("click", function() {Toggle_Llama_Box('tube','min')}, false)
-document.getElementById("Max_Game").addEventListener("click", function() {Toggle_Llama_Box('tube','max')}, false)
-document.getElementById("home_parent").addEventListener("click",  function() {Toggle_Llama_Box('tube','home')}, false)
-document.getElementById("tc_parent").addEventListener("click",  function() {Toggle_Llama_Box('tube','tinychat')}, false)
+  document.getElementById("Mini_Game").addEventListener(
+    "click",
+    function () {
+      Toggle_Llama_Box("tube", "min")
+    },
+    false
+  )
+  document.getElementById("Max_Game").addEventListener(
+    "click",
+    function () {
+      Toggle_Llama_Box("tube", "max")
+    },
+    false
+  )
+  document.getElementById("home_parent").addEventListener(
+    "click",
+    function () {
+      Toggle_Llama_Box("tube", "home")
+    },
+    false
+  )
+  document.getElementById("tc_parent").addEventListener(
+    "click",
+    function () {
+      Toggle_Llama_Box("tube", "tinychat")
+    },
+    false
+  )
 
   // ------------ CHAT_ICON ----------------*/
   var LlamaOptions = document.createElement("div")
@@ -357,13 +392,19 @@ document.getElementById("tc_parent").addEventListener("click",  function() {Togg
 
   chat_headeroptions.appendChild(LlamaOptions)
   chat_headeroptions.insertBefore(LlamaOptions, null)
-  chat_headeroptions.insertBefore(LlamaOptions, chat_headeroptions.childNodes[3] || null)
+  chat_headeroptions.insertBefore(
+    LlamaOptions,
+    chat_headeroptions.childNodes[3] || null
+  )
 
   // ------------ CHAT_MENU ----------------*/
   var newChatMenu = document.createElement("div")
   newChatMenu.className = ""
   newChatMenu.setAttribute("id", "LlamaOptions_Box")
-  newChatMenu.setAttribute("style", "display: block; top: 95px; position: absolute; right: 11px; border-radius: 3px; z-index: 4000;")
+  newChatMenu.setAttribute(
+    "style",
+    "display: block; top: 95px; position: absolute; right: 11px; border-radius: 3px; z-index: 4000;"
+  )
   newChatMenu.innerHTML = `
 <div class="dropdown__Options" id="Llama_Chat">
 <div class="dropdown__Option dropdown__Option-header">Chat settings</div>
@@ -460,11 +501,18 @@ USER BG
 </div>
 `
 
-  chat_headeroptions.insertBefore(newChatMenu, chat_headeroptions.childNodes[4] || null)
+  chat_headeroptions.insertBefore(
+    newChatMenu,
+    chat_headeroptions.childNodes[4] || null
+  )
 
-  document
-    .getElementById("chat__llamaOption")
-    .addEventListener("click", function() {Toggle_Llama_Box('chat','')}, false)
+  document.getElementById("chat__llamaOption").addEventListener(
+    "click",
+    function () {
+      Toggle_Llama_Box("chat", "")
+    },
+    false
+  )
 
   document
     .getElementById("llama_robo")
@@ -506,17 +554,29 @@ USER BG
     document.getElementById("ltr_llama_checkbox").checked = true
   }
 
-  document
-    .getElementById("ChatSettings")
-    .addEventListener("click", function() {Toggle_Llama_Box('chat','')}, false)
+  document.getElementById("ChatSettings").addEventListener(
+    "click",
+    function () {
+      Toggle_Llama_Box("chat", "")
+    },
+    false
+  )
 
-  document
-    .getElementById("cam__llamaOption")
-    .addEventListener("click", function() {Toggle_Llama_Box('cam','')}, false)
+  document.getElementById("cam__llamaOption").addEventListener(
+    "click",
+    function () {
+      Toggle_Llama_Box("cam", "")
+    },
+    false
+  )
 
-  document
-    .getElementById("theme__llamaOption")
-    .addEventListener("click", function() {Toggle_Llama_Box('theme','')}, false)
+  document.getElementById("theme__llamaOption").addEventListener(
+    "click",
+    function () {
+      Toggle_Llama_Box("theme", "")
+    },
+    false
+  )
 
   document
     .getElementById("cam_border_llama")
@@ -599,7 +659,7 @@ USER BG
   document
     .getElementById("userlist_bg_center")
     .addEventListener("click", Userlist_BG_Center, false)
- // LOADING VARIABLES IN GROUPS
+  // LOADING VARIABLES IN GROUPS
   document.addEventListener(
     "input",
     function (event) {
@@ -647,7 +707,11 @@ USER BG
     },
     false
   )
-document.getElementById("Close_Game_Btn").addEventListener("click", function () {Toggle_Llama_Box('tube','games')})
+  document
+    .getElementById("Close_Game_Btn")
+    .addEventListener("click", function () {
+      Toggle_Llama_Box("tube", "games")
+    })
   var llama_bg = localStorage.getItem("llama_bg1")
   var llama_bg_reloader = localStorage.getItem("llama_bg1_reload")
   var llama_bg2 = localStorage.getItem("llama_bg2")
@@ -831,60 +895,62 @@ document.getElementById("Close_Game_Btn").addEventListener("click", function () 
   // 30seconds
 }
 
-
-
 function Toggle_Llama_Box (type, zEvent) {
-      var loc = window.location.toString(),
-      params = loc.split('/')[3],
-      iframe = document.getElementById('game_list')
+  var loc = window.location.toString()
+  var params = loc.split("/")[3]
+  var iframe = document.getElementById("game_list")
 
-      if (type == 'cam') {
-        body.classList.toggle("open_llama_cam")
-        body.classList.remove("open_llama_chat")
-        body.classList.remove("open_llama_theme")
-      } else if (type == 'chat') {
-        body.classList.remove("open_llama_cam")
-        body.classList.toggle("open_llama_chat")
-        body.classList.remove("open_llama_theme")
-      } else if (type == 'theme') {
-        body.classList.remove("open_llama_cam")
-        body.classList.remove("open_llama_chat")
-        body.classList.toggle("open_llama_theme")
-      } else if (type == 'notice') {
-        body.classList.toggle("hide_notice")
-      } else if (type == 'header') {
-        body.classList.toggle(hide_header)
-        localStorage.setItem("header_status", "")
-      } else if (type == 'tube') {
-          if (zEvent == 'games') {
-              body.classList.toggle('game_window')
-          } else if (zEvent == 'tinychat') {
-              var tc = 'https://tinychat.com/room/'
-              iframe.src = tc + params;
-          } else if(zEvent == 'home') {
-              var tc = 'https://smokeyllama.glitch.me/game_list_home.html'
-              iframe.src = tc;
-          }
+  if (type === "cam") {
+    body.classList.toggle("open_llama_cam")
+    body.classList.remove("open_llama_chat")
+    body.classList.remove("open_llama_theme")
+  } else if (type === "chat") {
+    body.classList.remove("open_llama_cam")
+    body.classList.toggle("open_llama_chat")
+    body.classList.remove("open_llama_theme")
+  } else if (type === "theme") {
+    body.classList.remove("open_llama_cam")
+    body.classList.remove("open_llama_chat")
+    body.classList.toggle("open_llama_theme")
+  } else if (type === "notice") {
+    body.classList.toggle("hide_notice")
+  } else if (type === "header") {
+    body.classList.toggle(hide_header)
+    localStorage.setItem("header_status", "")
+  } else if (type === "tube") {
+    if (zEvent === "games") {
+      body.classList.toggle("game_window")
+    } else if (zEvent === "tinychat") {
+      var tc = "https://tinychat.com/room/"
+      iframe.src = tc + params
+    } else if (zEvent === "home") {
+      var tc = "https://smokeyllama.glitch.me/game_list_home.html"
+      iframe.src = tc
+    }
 
-          if (zEvent == 'max') {
-            document.getElementById('game_list').style.height = '570px'
-            document.getElementById('iframe_box').style.width = '450px'
-            document.getElementById('iframe_box').style.height = '100%'
-            document.getElementById('mydiv').setAttribute('style','left:23px; top:144px')
-          } else if(zEvent == 'min') {
-            document.getElementById('game_list').style.height = '20px'
-            document.getElementById('iframe_box').style.width = '279px'
-            document.getElementById('iframe_box').style.height = '0px'
-            document.getElementById('mydiv').setAttribute('style','left:325px; top:90.8%')
-          }
+    if (zEvent === "max") {
+      document.getElementById("game_list").style.height = "570px"
+      document.getElementById("iframe_box").style.width = "450px"
+      document.getElementById("iframe_box").style.height = "100%"
+      document
+        .getElementById("mydiv")
+        .setAttribute("style", "left:23px; top:144px")
+    } else if (zEvent === "min") {
+      document.getElementById("game_list").style.height = "20px"
+      document.getElementById("iframe_box").style.width = "279px"
+      document.getElementById("iframe_box").style.height = "0px"
+      document
+        .getElementById("mydiv")
+        .setAttribute("style", "left:325px; top:90.8%")
+    }
   }
 }
 
-  var header_status = localStorage.getItem("header_status")
-  var hide_header = "hide_header"
-  if (header_status) {
-    body.classList.add(hide_header)
-  }
+var header_status = localStorage.getItem("header_status")
+var hide_header = "hide_header"
+if (header_status) {
+  body.classList.add(hide_header)
+}
 
 // Import Roboto Mono Regular v2.002 2015 ttfautohint v1.3
 // Apache License 2.0
@@ -908,7 +974,6 @@ function Toggle_Robo_Llama (cEvent) {
 }
 
 // ----------------------------------------------------------------- HIDE_NOTICE -----------------------------------------------------------------
-
 
 var cheers_btn = localStorage.getItem("llama_btn_1")
 if (cheers_btn) {
@@ -1064,7 +1129,7 @@ if (header_bgcolor_selection) {
 
 function Toggle_Theme_Custom (zEvent) {
   var color_choice = "custommode"
-  var themestatus = localStorage.getItem("theme")
+  var theme_status = localStorage.getItem("theme")
   body.classList.toggle(color_choice)
   if (theme_status !== color_choice) {
     localStorage.setItem("thememode", color_choice)
@@ -1956,7 +2021,7 @@ function Toggle_MiniYT (zEvent) {
 
 // ----------------------------------------------------------------- THEME_TOGGLE -----------------------------------------------------------------
 function Toggle_DefaultTheme (color) {
-  var thememode_status = localStorage.getItem("thememode")
+  var theme_status = localStorage.getItem("thememode")
   body.classList.remove("custommode")
   body.classList.remove("thememode")
   localStorage.setItem("thememode", "")

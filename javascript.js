@@ -984,7 +984,7 @@ function Toggle_Llama_Box (type, zEvent) {
       document.getElementById("window_title").setAttribute("style", "display:inline-block;margin-right: 224px;")
       document
         .getElementById("mydiv")
-        .setAttribute("style", "left:23px; top:144px; height:570px;")
+        .setAttribute("style", "left:23px; top:144px; height:605px;")
     } else if (zEvent === "min") {
 
       document.getElementById("window_title").setAttribute("style", "display:none;")

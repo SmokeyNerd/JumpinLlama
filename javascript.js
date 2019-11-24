@@ -48,68 +48,6 @@ LlamaMain.innerHTML = `
 </div>
 <div id="toggle_menu" style="background-color:transparent !important;border-color:transparent !important;"></div>
 
-
-
-<div id="New_Custom_Mode">
-<div class="dropdown__Options" id="Llama_Custom">
-<div class="dropdown__Option dropdown__Option-header">Custom Settings<input id="Reset_Llama_Color" type="button" style="cursor:pointer;border-radius: 10px;width: 30%;border: 1px solid #ccc;" value="RESET"/></div>
-            <span class="dropdown__Option">
-                <span>Header</span>
-                <input class="jscolor {zIndex:'5000'}"  type='text' name="server" id="llama_header_bgcolor_selection" value="#22ADD5" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
-            </span>
-            <span class="dropdown__Option">
-                <span>Bars</span>
-                <input class="jscolor {zIndex:'5000'}"  type='text' name="server" id="llama_bars_bgcolor_selection" value="#C7CFD9" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
-            </span>
-            <span class="dropdown__Option">
-                <span>Cam BG</span>
-                <input class="jscolor {zIndex:'5000'}"  type='text' name="server" id="llama_cams_bgcolor_selection" value="#FFFFFF" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
-            </span>
-            <span class="dropdown__Option">
-                <span>Button BG</span>
-                <input class="jscolor {zIndex:'5000'}" type='text' name="server" id="llama_button_bgcolor_selection" value="#C7CFD9" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
-            </span>
-            <span class="dropdown__Option">
-                <span>Button Border</span>
-                <input class="jscolor {zIndex:'5000'}" type='text' name="server" id="llama_button_bordercolor_selection" value="#000000" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
-            </span>
-            <span class="dropdown__Option">
-                <span>Button Text</span>
-                <input class="jscolor {zIndex:'5000'}" type='text' name="server" id="llama_button_textcolor_selection" value="#FFFFFF" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
-            </span>
-            <span class="dropdown__Option">
-                <span>Chat BG</span>
-                <input class="jscolor {zIndex:'5000'}" type='text' name="server" id="llama_chat_bgcolor_selection" value="#22ADD5" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
-            </span>
-            <span class="dropdown__Option">
-                <span>Bubble Chat BG</span>
-                <input class="jscolor {zIndex:'5000'}" type='text' name="server" id="llama_chat_bubble_bgcolor_selection" value="#C7CFD9" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
-            </span>
-            <span class="dropdown__Option">
-                <span>Bubble Chat Border</span>
-                <input class="jscolor {zIndex:'5000'}" type='text' name="server" id="llama_chat_bubble_bordercolor_selection" value="#FFFFFF" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
-            </span>
-            <span class="dropdown__Option">
-                <span>UserList BG</span>
-                <input class="jscolor {zIndex:'5000'}" type='text' name="server" id="llama_user_bgcolor_selection" value="#22ADD5" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
-            </span>
-            <span class="dropdown__Option">
-                <span>User BG</span>
-                <input class="jscolor {zIndex:'5000'}" type='text' name="server" id="llama_username_bgcolor_selection" value="#C7CFD9" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
-            </span>
-            <span class="dropdown__Option">
-                <span>Username Text</span>
-                <input class="jscolor {zIndex:'5000'}" type='text' name="server" id="llama_username_textcolor_selection" value="#FFFFFF" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
-            </span>
-            <span class="dropdown__Option">
-                <input id="Preview_Llama_Color" type="button" style="cursor:pointer;border-radius: 10px;width: 100%;border: 1px solid #ccc;" value="PREVIEW"></input>
-            </span>
-            <span class="dropdown__Option">
-                <input id="Save_Llama_Color" type="button" style="cursor:pointer;border-radius: 10px;width: 100%;border: 1px solid #ccc;" value="SAVE"></input>
-            </span>
-</div>
-</div>
-
 <div class="dropdown__Options" id="Cheers_Button">
 <style>
 #Cheers_Button {cursor:pointer;}
@@ -406,6 +344,66 @@ body {overflow:hidden;}
     "display: block; top: 95px; position: absolute; right: 11px; border-radius: 3px; z-index: 4000;"
   )
   newChatMenu.innerHTML = `
+  <div id="New_Custom_Mode" style="float:left">
+  <div class="dropdown__Options" id="Llama_Custom">
+  <div class="dropdown__Option dropdown__Option-header">Custom Settings<input id="Reset_Llama_Color" type="button" style="cursor:pointer;border-radius: 10px;width: 30%;border: 1px solid #ccc;" value="RESET"></div>
+              <span class="dropdown__Option">
+                  <span>Header</span>
+                  <input class="jscolor {zIndex:'5000'}" type="text" name="server" id="llama_header_bgcolor_selection" value="#22ADD5" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;">
+              </span>
+              <span class="dropdown__Option">
+                  <span>Bars</span>
+                  <input class="jscolor {zIndex:'5000'}" type="text" name="server" id="llama_bars_bgcolor_selection" value="#C7CFD9" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;">
+              </span>
+              <span class="dropdown__Option">
+                  <span>Cam BG</span>
+                  <input class="jscolor {zIndex:'5000'}" type="text" name="server" id="llama_cams_bgcolor_selection" value="#FFFFFF" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;">
+              </span>
+              <span class="dropdown__Option">
+                  <span>Button BG</span>
+                  <input class="jscolor {zIndex:'5000'}" type="text" name="server" id="llama_button_bgcolor_selection" value="#C7CFD9" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;">
+              </span>
+              <span class="dropdown__Option">
+                  <span>Button Border</span>
+                  <input class="jscolor {zIndex:'5000'}" type="text" name="server" id="llama_button_bordercolor_selection" value="#000000" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;">
+              </span>
+              <span class="dropdown__Option">
+                  <span>Button Text</span>
+                  <input class="jscolor {zIndex:'5000'}" type="text" name="server" id="llama_button_textcolor_selection" value="#FFFFFF" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;">
+              </span>
+              <span class="dropdown__Option">
+                  <span>Chat BG</span>
+                  <input class="jscolor {zIndex:'5000'}" type="text" name="server" id="llama_chat_bgcolor_selection" value="#22ADD5" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;">
+              </span>
+              <span class="dropdown__Option">
+                  <span>Bubble Chat BG</span>
+                  <input class="jscolor {zIndex:'5000'}" type="text" name="server" id="llama_chat_bubble_bgcolor_selection" value="#C7CFD9" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;">
+              </span>
+              <span class="dropdown__Option">
+                  <span>Bubble Chat Border</span>
+                  <input class="jscolor {zIndex:'5000'}" type="text" name="server" id="llama_chat_bubble_bordercolor_selection" value="#FFFFFF" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;">
+              </span>
+              <span class="dropdown__Option">
+                  <span>UserList BG</span>
+                  <input class="jscolor {zIndex:'5000'}" type="text" name="server" id="llama_user_bgcolor_selection" value="#22ADD5" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;">
+              </span>
+              <span class="dropdown__Option">
+                  <span>User BG</span>
+                  <input class="jscolor {zIndex:'5000'}" type="text" name="server" id="llama_username_bgcolor_selection" value="#C7CFD9" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;">
+              </span>
+              <span class="dropdown__Option">
+                  <span>Username Text</span>
+                  <input class="jscolor {zIndex:'5000'}" type="text" name="server" id="llama_username_textcolor_selection" value="#FFFFFF" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;">
+              </span>
+              <span class="dropdown__Option">
+                  <input id="Preview_Llama_Color" type="button" style="cursor:pointer;border-radius: 10px;width: 100%;border: 1px solid #ccc;" value="PREVIEW">
+              </span>
+              <span class="dropdown__Option">
+                  <input id="Save_Llama_Color" type="button" style="cursor:pointer;border-radius: 10px;width: 100%;border: 1px solid #ccc;" value="SAVE">
+              </span>
+  </div>
+  </div>
+
 <div class="dropdown__Options" id="Llama_Chat">
 <div class="dropdown__Option dropdown__Option-header">Chat settings</div>
 <span class="dropdown__Option" id="llama_robo">Roboto Font<input id="llama_robo_checkbox" class="jic-checkbox" type="checkbox"></span>
@@ -421,6 +419,8 @@ body {overflow:hidden;}
 <span class="dropdown__Option" id="cam_border_llama">Cam Borders<input id="cam_border_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="cam_spacing_llama">Cam Spacing<input id="cam_spacing_checkbox" class="jic-checkbox" type="checkbox"></span>
 </div>
+
+
 
 <div class="dropdown__Options" id="Llama_Theme">
 <div class="dropdown__Option dropdown__Option-header">Theme Settings</div>

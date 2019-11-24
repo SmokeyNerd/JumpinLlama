@@ -6,25 +6,25 @@ var LlamaMain = document.createElement("div")
 
 LlamaMain.innerHTML = `
 <div id="mydiv" style="display:none;">
-<div id="mydivheader" title="Move Game Window">
+<div id="mydivheader">
 
 <div id="game_head" class="game_head">
 <div id ="window_title" class="window_title" style="display: inline-block; margin-right: 224px;">Llama Window</div>
 
 <div id="control_grp" class="">
-<div id="Mini_Game" class="tube_btn" style="">
+<div id="Mini_Game" class="tube_btn" style="" title="Minimize">
 <i class="fas fa-window-minimize"></i>
 </div>
 
-<div id="Res_Game" class="tube_btn" style="padding:0px;">
+<div id="Res_Game" class="tube_btn" style="padding:0px;" title="Restore Hover Effect">
 <i class="far fa-window-restore"></i>
 </div>
 
-<div id="Max_Game" class="tube_btn" style="padding:0px;">
+<div id="Max_Game" class="tube_btn" style="padding:0px;" title="Maximize/Lock Open">
 <i class="fas fa-window-maximize"></i>
 </div>
 
-<div id="Close_Game_Btn" class="tube_btn" style="padding:0px;">
+<div id="Close_Game_Btn" class="tube_btn" style="padding:0px;" title="Close">
 <i class="far fa-window-close"></i>
 </div>
 </div>

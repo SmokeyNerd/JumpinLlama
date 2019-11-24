@@ -451,11 +451,12 @@ div.modal__Body>form>input {
 
 .llama_robo .fa,
 .llama_robo .far,
-.llama_robo .fas,
-.llama_robo .fab {
+.llama_robo .fas {
   font-family: "Font Awesome 5 Free" !important;
 }
-
+.llama_robo .fab {
+  font-family: "Font Awesome 5 Brands" !important;
+}
 .cams,
 .chat,
 .chat__FeedWrapper {

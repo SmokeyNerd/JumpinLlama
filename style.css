@@ -882,20 +882,7 @@ option.buds_mode {
   display: none;
 }
 /* ------------------------------ LTR_LAYOUT -----------------------------------*/
-.hide_chat.hide_userlist.open_llama_chat .layout--horizontal #Llama_Chat,
-.hide_chat.hide_userlist.open_llama_cam .layout--horizontal #Llama_Cam,
-.hide_chat.hide_userlist.open_llama_theme .layout--horizontal #Llama_Theme {
-  position: absolute;
-  left: -161px;
-  top: 87px !important;
-}
-.hide_chat.hide_userlist.open_llama_chat #Llama_Chat,
-.hide_chat.hide_userlist.open_llama_cam #Llama_Cam,
-.hide_chat.hide_userlist.open_llama_theme #Llama_Theme {
-  position: absolute;
-  right: 75px;
-  top: -187px !important;
-}
+
 .hide_chat.hide_userlist .layout--horizontal #chat__llamaOption {
   position: absolute;
   top: 45px !important;
@@ -924,13 +911,6 @@ option.buds_mode {
 }
 .hide_chat.hide_userlist .room {
   grid-template-rows: 50px calc(100% - 50px);
-}
-.hide_chat.open_llama_theme .layout--horizontal #Llama_Theme,
-.hide_chat.open_llama_cam .layout--horizontal #Llama_Cam,
-.hide_chat.open_llama_chat .layout--horizontal #Llama_Chat {
-  position: absolute;
-  right: 205px;
-  top: 97px !important;
 }
 .hide_chat .layout--horizontal #chat__llamaOption {
   position: relative;
@@ -1198,31 +1178,27 @@ screen and (min-height: 480px) and (min-width: 2500px) {
   display: block;
 }
 /* ------------------------------ LLAMA_CHAT_MENU ----------------------------------- */
+.open_llama_theme #Llama_Theme {
+  display: block;
+  background: #f7f7f7;
+}
+
+
 .llama_robo.open_llama_chat #Llama_Chat {
   width: 175px;
 }
 .open_llama_chat #Llama_Chat {
   display: block;
-  top: 49%;
-  position: absolute;
-  right: 11px;
-  border-radius: 3px;
 }
 #Llama_Chat {
   display: none;
   width: 154px;
   z-index: 4000;
 }
-.room.layout--horizontal > div.chat > div.chat__Header > div.chat__HeaderOptions > div {
-  top: 94px !important;
-}
+
 /* ------------------------------ LLAMA_CAM_MENU ----------------------------------- */
 .open_llama_cam #Llama_Cam {
   display: block;
-  top: 58%;
-  position: absolute;
-  right: 11px;
-  border-radius: 3px;
 }
 #Llama_Cam {
   display: none;
@@ -1232,10 +1208,6 @@ screen and (min-height: 480px) and (min-width: 2500px) {
 /* ------------------------------ LLAMA_CUSTOM_MENU ----------------------------------- */
 .custommode.open_llama_theme #Llama_Custom {
   display: block;
-  top: 190px;
-  position: absolute;
-  right: 219px;
-  border-radius: 3px;
 }
 #Llama_Custom {
   display: none;
@@ -1248,10 +1220,6 @@ screen and (min-height: 480px) and (min-width: 2500px) {
 /* ------------------------------ LLAMA_THEME_MENU ----------------------------------- */
 .open_llama_theme #Llama_Theme {
   display: block;
-  top: 58%;
-  position: absolute;
-  right: 11px;
-  border-radius: 3px;
   background: #f7f7f7;
 }
 #Llama_Theme {
@@ -1260,12 +1228,9 @@ screen and (min-height: 480px) and (min-width: 2500px) {
   height: 90px;
   z-index: 4000;
 }
-.room.layout--horizontal > div.chat > div.chat__Header > div.chat__HeaderOptions > div {
-  top: 94px !important;
-}
+
 .user_bg.open_llama_theme #Llama_Theme {
   height: 450px;
-  top: 12%;
 }
 .dark .user_bg_settings {
   border-color: #665c54;
@@ -1364,3 +1329,61 @@ font-size: 9pt;
 }
 .dark .no_hover {background-color: #353535  !important;
 }
+
+/* ---------- Iframe Box CSS -------- */
+#control_grp {    display: inline-block;
+    float: right;
+    padding-right: 10px;}
+#iframe_box{
+border:0px;
+    height: 100%;
+    width: 450px;
+    overflow: hidden;
+}
+#container2{
+    width: 100%;
+    height: 99%;
+    overflow: hidden;
+    padding-right: 15px;
+}
+.game_head { color: white;
+  font-weight: 600;
+  font-size: 14pt;margin-top: 10px;
+}
+#game_list {height:20px;opacity:0.6;}
+#game_list:hover {height:570px;opacity:1;}
+#Llama_Games {display:none;}
+.game_window #Llama_Games {display:block;}
+.tube_btn {
+    display: inline;
+    border-radius: 10px;
+
+    padding: 3px;
+    cursor: pointer;
+    z-index: 8000;
+    background-color: #2c2f33;
+    color: #fff;
+    width: 30px;
+}
+
+#mydiv {
+  position: absolute;
+  left:100px;
+  z-index: 7000;
+  background-color: #23272a;
+  text-align: center;
+  border: 1px solid #23272a;border-radius:10px;
+}
+#mydivheader {
+    border-radius: 10px;    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding: 5px;
+    cursor: move;
+    z-index: 8000;
+    background-color: #2c2f33;
+    color: #fff;
+}
+body {overflow:hidden;}
+.budsmode .fa-gamepad {color: var(--budsmode-lightbgcolor);}
+.splatmode .fa-gamepad {color: var(--splatmode-lightbgcolor);}
+.custommode .fa-gamepad {color: var(--custommodebutton-textcolor);}

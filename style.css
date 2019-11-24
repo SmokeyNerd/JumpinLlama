@@ -146,7 +146,9 @@ body {
 .thememode .fa-gamepad,
 .thememode .fa-sign-out-alt,
 .thememode .fa-youtube,
+.thememode .fa-optin-monster,
 .thememode .fa-location-arrow,
+.thememode .fa-dice-d20,
 .thememode .chat__HeaderOptionString {
   color: var(--thememode-buttontext);
 }
@@ -1676,14 +1678,14 @@ screen and (min-height: 480px) and (min-width: 2500px) {
   font-size: 14pt;
 }
 
-#game_list {
-  height: 20px;
-  opacity: 0.6;
+#mydiv {
+  height: 81px;
+  overflow: hidden;
 }
 
-#game_list:hover {
+#mydiv:hover {
   height: 570px;
-  opacity: 1;
+
 }
 
 #Llama_Games {

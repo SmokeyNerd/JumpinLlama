@@ -34,7 +34,7 @@ LlamaMain.innerHTML = `
 </div>
 <div id="iframe_box">
 <div id="container2">
-<iframe src="https://smokeyllama.glitch.me/game_list_home.html" class="scrollingContainer" id="game_list"  name="" style="border:0px;width: 105%;overflow-x: hidden;" scrolling="yes" allow="autoplay"></iframe>
+<iframe src="https://smokeyllama.com/game_time/main/game/web_window.php" class="scrollingContainer" id="game_list"  name="" style="border:0px;width: 105%;overflow-x: hidden;height: 95%;" scrolling="yes" allow="autoplay"></iframe>
 </div>
 </div>
 </div>
@@ -263,6 +263,10 @@ function Toggle_Llama_Chat_Options (zEvent) {
 <i class="fas fa-gamepad"></i>
 </label>
 
+<label class="button chat__HeaderOption" id="pokemon__llamaOption" title="Pokemon Rise">
+<i class="fab fa-optin-monster"></i>
+</label>
+
 <label class="button chat__HeaderOption" id="ytbackup__llamaOption" title="Youtube Back Up">
 <i class="fab fa-youtube"></i>
 </label>
@@ -292,6 +296,13 @@ function Toggle_Llama_Chat_Options (zEvent) {
         },
         false
       )
+      document.getElementById("pokemon__llamaOption").addEventListener(
+          "click",
+          function () {
+            Toggle_Llama_Box("tube", "pokemon")
+          },
+          false
+        )
   document.getElementById("web__llamaOption").addEventListener(
     "click",
     function () {
@@ -317,12 +328,7 @@ function Toggle_Llama_Chat_Options (zEvent) {
 #control_grp {    display: inline-block;
     float: right;
     padding-right: 10px;}
-#iframe_box{
-border:0px;
-    height: 100%;
-    width: 450px;
-    overflow: hidden;
-}
+
 #container2{
     width: 100%;
     height: 99%;
@@ -333,8 +339,8 @@ border:0px;
   font-weight: 600;
   font-size: 14pt;
 }
-#game_list {height:20px;opacity:0.6;}
-#game_list:hover {height:570px;opacity:1;}
+#my_div {height:81px;opacity:0.6;}
+#my_div:hover {height:570px;opacity:1;}
 #Llama_Games {display:none;}
 .tube_btn {
     display: inline;
@@ -967,34 +973,30 @@ function Toggle_Llama_Box (type, zEvent) {
       var tc = "https://tinychat.com/room/"
       iframe.src = tc + params
     } else if (zEvent === "home") {
-      var tc = "https://smokeyllama.glitch.me/game_list_home.html"
-      iframe.src = tc
+      var home = "https://smokeyllama.com/game_time/main/game/web_window.php"
+      iframe.src = home
+    } else if (zEvent === "pokemon") {
+      window.open(
+        "https://pokemonrise.com/", "_blank");
     }
 
     if (zEvent === "max") {
       document.getElementById("window_title").setAttribute("style", "display:inline-block;margin-right: 224px;")
-      document.getElementById("game_list").style.height = "570px"
-      document.getElementById("iframe_box").style.width = "450px"
-      document.getElementById("iframe_box").style.height = "100%"
       document
         .getElementById("mydiv")
-        .setAttribute("style", "left:23px; top:144px")
+        .setAttribute("style", "left:23px; top:144px; height:570px;")
     } else if (zEvent === "min") {
+
       document.getElementById("window_title").setAttribute("style", "display:none;")
-      document.getElementById("game_list").style.height = "20px"
-      document.getElementById("iframe_box").style.width = "279px"
-      document.getElementById("iframe_box").style.height = "0px"
       document
         .getElementById("mydiv")
-        .setAttribute("style", "left:325px; top:90.8%")
+        .setAttribute("style", "left:325px; top:90.8%; height:28px; width:221px;")
     } else if (zEvent === "res") {
       document.getElementById("window_title").setAttribute("style", "display:inline-block;margin-right: 224px;")
-      document.getElementById("game_list").setAttribute("style", "border: 0px; width: 105%; overflow-x: hidden;")
-      document.getElementById("iframe_box").style.width = "450px"
-      document.getElementById("iframe_box").style.height = "100%"
+      document.getElementById("window_title").setAttribute("style", "display:inline-block;margin-right: 224px;")
       document
         .getElementById("mydiv")
-        .setAttribute("style", "display:inline-block; left:23px; top:144px")
+        .setAttribute("style", "display:inline-block; left:23px; top:144px;")
     }
   }
 }

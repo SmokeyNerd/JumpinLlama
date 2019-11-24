@@ -1,5 +1,4 @@
-:root {
-}
+/*:root {}*/
 .thememode .room {
   background-image: var(--thememode-roombg) !important;
   background-size: cover;
@@ -118,7 +117,7 @@
 .thememode .chat__HeaderOptionString {
   color: var(--thememode-buttontext);
 }
-.chat__HeaderOptionString {}
+/* .chat__HeaderOptionString {} */
 /* ------- BUBBLE CHAT ----- */
 .bubble_chat .chat__Message {
   display: block;
@@ -408,7 +407,7 @@ option.red_mode {
 }
 option.purple_mode {
   background-color: #550098;
-  border-color: ##b14fff;
+  border-color: #b14fff;
   color: #fff;
 }
 option.black_mode {
@@ -1331,7 +1330,7 @@ font-size: 9pt;
 }
 
 /* ---------- Iframe Box CSS -------- */
-#control_grp {    display: inline-block;
+#control_grp {    display: block;
     float: right;
     padding-right: 10px;}
 #iframe_box{
@@ -1363,7 +1362,6 @@ border:0px;
     z-index: 8000;
     background-color: #2c2f33;
     color: #fff;
-    width: 30px;
 }
 
 #mydiv {

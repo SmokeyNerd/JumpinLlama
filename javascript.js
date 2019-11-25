@@ -372,7 +372,7 @@ function Toggle_Llama_Chat_Options (zEvent) {
     background-color: #2c2f33;
     color: #fff;
 }
-body {overflow:hidden;}
+body.llama_window {overflow:hidden;}
 .budsmode .fa-gamepad {color: var(--budsmode-lightbgcolor);}
 .splatmode .fa-gamepad {color: var(--splatmode-lightbgcolor);}
 .custommode .fa-gamepad {color: var(--custommodebutton-textcolor);}
@@ -960,12 +960,14 @@ function Toggle_Llama_Box (type, zEvent) {
     localStorage.setItem("header_status", "")
   } else if (type === "tube") {
     if (zEvent === "web") {
+      body.classList.add("llama_window")
       Toggle_Llama_Box("tube","games")
       document.getElementById("llama_web").setAttribute("style", "display:inline-block; ")
       document.getElementById("web__llamaOption").setAttribute("style", "display:none; ")
       document.getElementById("mydiv").setAttribute("style", "display:inline-block; ")
       hideweb__llamaOption
     } else if (zEvent === "hideweb") {
+      body.classList.remove("llama_window")
       document.getElementById("web__llamaOption").setAttribute("style", "display:inline-flex; ")
       document.getElementById("llama_web").setAttribute("style", "display:none; ")
       document.getElementById("mydiv").setAttribute("style", "display:none; ")

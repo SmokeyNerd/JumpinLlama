@@ -1723,10 +1723,6 @@ screen and (min-height: 480px) and (min-width: 2500px) {
   color: #fff;
 }
 
-body {
-  overflow: hidden;
-}
-
 .budsmode .fa-gamepad {
   color: var(--budsmode-lightbgcolor);
 }

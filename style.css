@@ -1682,8 +1682,8 @@ screen and (min-height: 480px) and (min-width: 2500px) {
 }
 
 #mydiv {
-  height: 81px;
   overflow: hidden;
+  height:82px;
 }
 
 #mydiv:hover {

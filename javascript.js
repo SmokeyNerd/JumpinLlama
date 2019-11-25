@@ -921,20 +921,28 @@ function Toggle_Llama_Box (type, zEvent) {
     }
 
     if (zEvent === "max") {
-      document.getElementById("window_title").setAttribute("style", "display:inline-block;margin-right: 150px;")
-      document
-        .getElementById("mydiv")
-        .setAttribute("style", "left:23px; top:144px; height:605px;")
+      document.getElementById("window_title").setAttribute("style", "margin-right: 150px;display:inline-block;")
+      document.getElementById("iframe_box").style.display = ""
+      document.getElementById("mydiv").setAttribute("style", "left:20px; top:10%;")
+      document.getElementById("mydiv").style.height = "605px"
+      document.getElementById("Max_Game").style.display = "inline"
+      document.getElementById("Mini_Game").style.display = "inline"
     } else if (zEvent === "min") {
-      document.getElementById("window_title").setAttribute("style", "display:none;")
+      document.getElementById("window_title").style.display = "none"
+      document.getElementById("iframe_box").style.display = "none"
+      document.getElementById("mydiv").style.width = "221px"
+      document.getElementById("Max_Game").style.display = "none"
+      document.getElementById("Mini_Game").style.display = "none"
       document
         .getElementById("mydiv")
-        .setAttribute("style", "left:0px; top:92.4%; height:28px; width:221px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px; -webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;")
+        .setAttribute("style", "left:0px; top:92.4%; height:29px; border-bottom-right-radius: 0px;border-bottom-left-radius: 0px; -webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;")
     } else if (zEvent === "res") {
-      document.getElementById("window_title").setAttribute("style", "display:inline-block;margin-right: 150px;")
-      document
-        .getElementById("mydiv")
-        .setAttribute("style", "display:inline-block; left:23px; top:144px;")
+      document.getElementById("window_title").setAttribute("style", "margin-right: 150px;display:inline-block;")
+      document.getElementById("iframe_box").style.display = ""
+      document.getElementById("mydiv").setAttribute("style", "left:20px; top:10%;")
+      document.getElementById("mydiv").style.height = ""
+      document.getElementById("Max_Game").style.display = "inline"
+      document.getElementById("Mini_Game").style.display = "inline"
     }
   }
 }

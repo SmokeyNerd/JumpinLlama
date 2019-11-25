@@ -923,15 +923,16 @@ function Toggle_Llama_Box (type, zEvent) {
     if (zEvent === "max") {
       document.getElementById("window_title").setAttribute("style", "margin-right: 150px;display:inline-block;")
       document.getElementById("iframe_box").style.display = ""
+      document.getElementById("Max_Game").style.display = "none"
       document.getElementById("mydiv").style.height = "605px"
-      document.getElementById("Max_Game").style.display = "inline"
-      document.getElementById("Mini_Game").style.display = "inline"
+      document.getElementById("Res_Game").style.display = "inline"
     } else if (zEvent === "min") {
       document.getElementById("window_title").style.display = "none"
       document.getElementById("iframe_box").style.display = "none"
       document.getElementById("mydiv").style.width = "221px"
       document.getElementById("Max_Game").style.display = "none"
       document.getElementById("Mini_Game").style.display = "none"
+      document.getElementById("Res_Game").style.display = "inline"
       document
         .getElementById("mydiv")
         .setAttribute("style", "left:0px; top:92.4%; height:29px; border-bottom-right-radius: 0px;border-bottom-left-radius: 0px; -webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;")
@@ -942,6 +943,7 @@ function Toggle_Llama_Box (type, zEvent) {
       document.getElementById("mydiv").style.height = ""
       document.getElementById("Max_Game").style.display = "inline"
       document.getElementById("Mini_Game").style.display = "inline"
+      document.getElementById("Res_Game").style.display = "none"
     }
   }
 }

@@ -1691,6 +1691,10 @@ screen and (min-height: 480px) and (min-width: 2500px) {
 
 }
 
+#Res_Game {
+  display:none;
+}
+
 #Llama_Games {
   display: none;
 }

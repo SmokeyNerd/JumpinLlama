@@ -923,7 +923,6 @@ function Toggle_Llama_Box (type, zEvent) {
     if (zEvent === "max") {
       document.getElementById("window_title").setAttribute("style", "margin-right: 150px;display:inline-block;")
       document.getElementById("iframe_box").style.display = ""
-      document.getElementById("mydiv").setAttribute("style", "left:20px; top:10%;")
       document.getElementById("mydiv").style.height = "605px"
       document.getElementById("Max_Game").style.display = "inline"
       document.getElementById("Mini_Game").style.display = "inline"

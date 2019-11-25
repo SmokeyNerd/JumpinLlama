@@ -1,4 +1,7 @@
 /*:root {}*/
+.hero__Form {
+  padding-top: 0px;
+}
 .thememode .room {
   background-image: var(--thememode-roombg) !important;
   background-size: cover;

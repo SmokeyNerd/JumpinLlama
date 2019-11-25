@@ -5,11 +5,14 @@ var body = document.body
 var LlamaMain = document.createElement("div")
 
 LlamaMain.innerHTML = `
+<style>
+body.llama_window {overflow:hidden;}
+</style>
 <div id="mydiv" style="display:none;">
 <div id="mydivheader">
 
 <div id="game_head" class="game_head">
-<div id ="window_title" class="window_title" style="display: inline-block; margin-right: 224px;">Llama Window</div>
+<div id ="window_title" class="window_title" style="display: inline-block; margin-right: 150px;">Llama Window</div>
 
 <div id="control_grp" class="">
 <div id="Mini_Game" class="tube_btn" style="" title="Minimize">
@@ -316,71 +319,6 @@ function Toggle_Llama_Chat_Options (zEvent) {
       Toggle_Llama_Box("tube", "hideweb")
     },
     false
-  )
-
-  // ------------ GAMES_MENU ----------------*/
-  var newGamesMenu = document.createElement("div")
-  newGamesMenu.className = "dropdown__Options"
-  newGamesMenu.setAttribute("id", "Llama_Games")
-  newGamesMenu.innerHTML = `
-
-<style>
-#control_grp {    display: inline-block;
-    float: right;
-    padding-right: 10px;}
-
-#container2{
-    width: 100%;
-    height: 99%;
-    overflow: hidden;
-    padding-right: 15px;
-}
-.game_head { color: white;
-  font-weight: 600;
-  font-size: 14pt;
-}
-#my_div {height:81px;opacity:0.6;}
-#my_div:hover {height:570px;opacity:1;}
-#Llama_Games {display:none;}
-.tube_btn {
-    display: inline;
-    border-radius: 10px;
-
-    padding: 3px;
-    cursor: pointer;
-    z-index: 8000;
-    background-color: #2c2f33;
-    color: #fff;
-    width: 30px;
-}
-
-#mydiv {
-  position: absolute;
-  left: 23px;
-  top: 144px;
-  z-index: 7000;
-  background-color: #23272a;
-  text-align: center;
-  border: 1px solid #23272a;border-radius:10px;
-}
-#mydivheader {
-    border-radius: 10px;    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    padding: 5px;
-    cursor: move;
-    z-index: 8000;
-    background-color: #2c2f33;
-    color: #fff;
-}
-body.llama_window {overflow:hidden;}
-.budsmode .fa-gamepad {color: var(--budsmode-lightbgcolor);}
-.splatmode .fa-gamepad {color: var(--splatmode-lightbgcolor);}
-.custommode .fa-gamepad {color: var(--custommodebutton-textcolor);}
-</style>
-`
-  chat_headeroptions.insertBefore(
-    newGamesMenu,
-    chat_headeroptions.childNodes[4] || null
   )
 
   document.getElementById("Mini_Game").addEventListener(
@@ -983,19 +921,17 @@ function Toggle_Llama_Box (type, zEvent) {
     }
 
     if (zEvent === "max") {
-      document.getElementById("window_title").setAttribute("style", "display:inline-block;margin-right: 224px;")
+      document.getElementById("window_title").setAttribute("style", "display:inline-block;margin-right: 150px;")
       document
         .getElementById("mydiv")
         .setAttribute("style", "left:23px; top:144px; height:605px;")
     } else if (zEvent === "min") {
-
       document.getElementById("window_title").setAttribute("style", "display:none;")
       document
         .getElementById("mydiv")
-        .setAttribute("style", "left:0px; top:92.4%; height:28px; width:221px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;")
+        .setAttribute("style", "left:0px; top:92.4%; height:28px; width:221px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px; -webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;")
     } else if (zEvent === "res") {
-      document.getElementById("window_title").setAttribute("style", "display:inline-block;margin-right: 224px;")
-      document.getElementById("window_title").setAttribute("style", "display:inline-block;margin-right: 224px;")
+      document.getElementById("window_title").setAttribute("style", "display:inline-block;margin-right: 150px;")
       document
         .getElementById("mydiv")
         .setAttribute("style", "display:inline-block; left:23px; top:144px;")

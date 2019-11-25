@@ -1664,7 +1664,7 @@ screen and (min-height: 480px) and (min-width: 2500px) {
 #iframe_box {
   border: 0px;
   height: 100%;
-  width: 450px;
+  width: 395px;
   overflow: hidden;
 }
 
@@ -1712,11 +1712,11 @@ screen and (min-height: 480px) and (min-width: 2500px) {
   background-color: #23272a;
   text-align: center;
   border: 1px solid #23272a;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 #mydivheader {
-  border-radius: 10px;
+  border-radius: 5px;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
   padding: 5px;

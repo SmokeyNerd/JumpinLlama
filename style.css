@@ -47,7 +47,7 @@
   top: 35px;
   left: 283px;
   height: 10px !important;
-  background-color: #272727;
+  background-color: #c7cfd9;
   padding: 3px 15px;
   border-radius: 10px;
   border-bottom-left-radius: 0px;
@@ -242,7 +242,7 @@ body {
 .chat__UserListItem {
   border-radius: 5px;
   margin-top: 2px;
-  border: 1px solid black;
+  border: 1px solid transparent;
 }
 
 /* ------------------ MAIN_MESSAGES ------------------ */
@@ -427,7 +427,7 @@ div.modal__Body>form>input {
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
   background: #c7cfd9;
-  border: 1px solid black;
+  border: 1px solid transparent;
   border-right: 0px;
 }
 
@@ -435,7 +435,7 @@ div.modal__Body>form>input {
   border-radius: 100px;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
-  border: 1px solid black;
+  border: 1px solid transparent;
   border-left: 0px;
 }
 
@@ -451,7 +451,7 @@ div.modal__Body>form>input {
   border-radius: 5px;
   margin: 2px;
   min-height: 27px;
-  border: 1px solid black;
+  border: 1px solid transparent;
 }
 
 .llama_robo .fa,
@@ -462,10 +462,12 @@ div.modal__Body>form>input {
 .llama_robo .fab {
   font-family: "Font Awesome 5 Brands" !important;
 }
-.cams,
 .chat,
 .chat__FeedWrapper {
   background: transparent;
+}
+.cams {
+  background: #49535f;;
 }
 
 /*------------------------------------------------------------------------------------- THEME_MODE ---*/

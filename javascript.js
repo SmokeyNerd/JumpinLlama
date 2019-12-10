@@ -37,7 +37,7 @@ body.llama_window {overflow:hidden;}
 </div>
 <div id="iframe_box">
 <div id="container2">
-<iframe src="https://smokeyllama.com/game_time/main/game/web_window.php" class="scrollingContainer" id="game_list"  name="" style="border:0px;width: 105%;overflow-x: hidden;height: 95%;" scrolling="yes" allow="autoplay"></iframe>
+<iframe src="https://smokeyllama.com/game_time/main/game/web_window.php" class="scrollingContainer" id="game_list"  name="" style="border:0px;width: 105%;overflow-x: hidden;height: 95%;" scrolling="yes" allow="autoplay; microphone; camera"></iframe>
 </div>
 </div>
 </div>

@@ -286,26 +286,26 @@ function Toggle_Llama_Chat_Options (zEvent) {
     .addEventListener("click", Toggle_MiniYT, false)
 
   document.getElementById("games__llamaOption").addEventListener(
-      "click",
-      function () {
-        Toggle_Llama_Box("tube", "home")
-      },
-      false
-    )
-    document.getElementById("ytbackup__llamaOption").addEventListener(
-        "click",
-        function () {
-          Toggle_Llama_Box("tube", "ytbackup")
-        },
-        false
-      )
-      document.getElementById("pokemon__llamaOption").addEventListener(
-          "click",
-          function () {
-            Toggle_Llama_Box("tube", "pokemon")
-          },
-          false
-        )
+    "click",
+    function () {
+      Toggle_Llama_Box("tube", "home")
+    },
+    false
+  )
+  document.getElementById("ytbackup__llamaOption").addEventListener(
+    "click",
+    function () {
+      Toggle_Llama_Box("tube", "ytbackup")
+    },
+    false
+  )
+  document.getElementById("pokemon__llamaOption").addEventListener(
+    "click",
+    function () {
+      Toggle_Llama_Box("tube", "pokemon")
+    },
+    false
+  )
   document.getElementById("web__llamaOption").addEventListener(
     "click",
     function () {
@@ -686,11 +686,11 @@ USER BG
     .addEventListener("click", function () {
       Toggle_Llama_Box("tube", "hideweb")
     })
-    document
-      .getElementById("web__llamaOption")
-      .addEventListener("click", function () {
-        Toggle_Llama_Box("tube", "web")
-      })
+  document
+    .getElementById("web__llamaOption")
+    .addEventListener("click", function () {
+      Toggle_Llama_Box("tube", "web")
+    })
   var llama_bg = localStorage.getItem("llama_bg1")
   var llama_bg_reloader = localStorage.getItem("llama_bg1_reload")
   var llama_bg2 = localStorage.getItem("llama_bg2")
@@ -899,7 +899,7 @@ function Toggle_Llama_Box (type, zEvent) {
   } else if (type === "tube") {
     if (zEvent === "web") {
       body.classList.add("llama_window")
-      Toggle_Llama_Box("tube","games")
+      Toggle_Llama_Box("tube", "games")
       document.getElementById("llama_web").setAttribute("style", "display:inline-block; ")
       document.getElementById("web__llamaOption").setAttribute("style", "display:none; ")
       document.getElementById("mydiv").setAttribute("style", "display:inline-block; ")
@@ -917,7 +917,7 @@ function Toggle_Llama_Box (type, zEvent) {
       iframe.src = home
     } else if (zEvent === "pokemon") {
       window.open(
-        "https://pokemonrise.com/", "_blank");
+        "https://pokemonrise.com/", "_blank")
     }
 
     if (zEvent === "max") {

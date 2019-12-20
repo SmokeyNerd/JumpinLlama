@@ -371,7 +371,6 @@ div.modal__Body>form>input {
 }
 
 .mini_yt .layout--horizontal .youtube__VideoContainer>div>iframe {
-  height: 100px !important;
   border-radius: 10px;
 }
 

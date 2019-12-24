@@ -1,4 +1,7 @@
 /*:root {}*/
+.chat__MessageBody {
+  display: block;
+}
 .hero__Form {
   padding-top: 0px;
 }

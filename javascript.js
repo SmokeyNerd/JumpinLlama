@@ -2104,7 +2104,7 @@ function Toggle_Theme (color) {
     llama_theme_textcolor = "#FFFFFF"
     llama_theme_buttontext = "#042500"
     llama_theme_cambg
-      = "url(https://kpfa.org/wp-content/uploads/2015/10/weed-wallpaper-65.jpg)"
+      = "url(https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6a40bce97c841029ee442a8a297e2b2c976a8bd1/images/bud/mainbg.jpg)"
   } else if (color === "splat") {
     llama_theme_bgcolor = "transparent"
     llama_theme_bordercolor = "#51bc02"

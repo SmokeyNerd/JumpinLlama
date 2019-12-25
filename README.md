@@ -32,13 +32,12 @@
 ---
 # Chat Settings:
 ![Chat Settings](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/chat_settings.png)
----
+
 # Cam Settings:
 ![Cam Settings](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/cam_settings.png)
----
+
 # Theme Settings:
 ![Theme Settings](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/theme_settings.png)
-
 ---
 # Need more help?
 [<img src="https://discordapp.com/assets/e4923594e694a21542a489471ecffa50.svg" width="160" height="90" alt="Discord Invite" title="Join Discord">](https://discord.gg/F4EHtQy)

@@ -16,13 +16,6 @@
 ![Tampermonkey Settings](https://github.com/Technetium1/TinychatTheme/raw/master/Tampermonkey_Settings.png)
 
 ---
-
-# JumpinLlama Extra Feature Settings:
-![Theme Settings](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/theme_settings.png)
-![Chat Settings](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/chat_settings.png)
-![Cam Settings](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/cam_settings.png)
----
-
 # External Requests/Purpose:
 * Github.io
   * Loads javascript/style files here
@@ -35,6 +28,14 @@
   * Ex. If you are in jumpin room: jumpin.chat/blue, then this will the tinychat room: tinychat.com/room/blue
 * Pokemonrise.com
   * External Link to PokemonRise Game. Play with other Jumpers!
+
+---
+# JumpinLlama Extra Feature Settings:
+![Theme Settings](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/theme_settings.png)
+---
+![Chat Settings](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/chat_settings.png)
+---
+![Cam Settings](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/cam_settings.png)
 
 ---
 # Need more help?

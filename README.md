@@ -5,7 +5,7 @@
 
 ---
 # Icons Added
-![Icons Added](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/icons_added.png)
+![Icons Added](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/icons.png)
 ---
 
 * Developed on Chrome, working on Firefox, and Opera

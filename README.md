@@ -30,12 +30,14 @@
   * External Link to PokemonRise Game. Play with other Jumpers!
 
 ---
-# JumpinLlama Extra Feature Settings:
-![Theme Settings](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/theme_settings.png)
----
+# Chat Settings:
 ![Chat Settings](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/chat_settings.png)
 ---
+# Cam Settings:
 ![Cam Settings](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/cam_settings.png)
+---
+# Theme Settings:
+![Theme Settings](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/theme_settings.png)
 
 ---
 # Need more help?

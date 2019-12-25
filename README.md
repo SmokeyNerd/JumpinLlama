@@ -18,7 +18,23 @@
 ---
 
 # JumpinLlama Extra Feature Settings:
-![Jumpin Settings](https://github.com/SmokeyLlama/jumpinllama/raw/master/JI_Theme_Features.PNG)
+![Chat Settings](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/chat_settings.png)
+![Cam Settings](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/cam_settings.png)
+![Theme Settings](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/theme_settings.png)
+---
+
+# External Requests/Purpose:
+* Github.io
+  * Loads javascript/style files here
+* Jsdelivr
+  * Images used in the theme (llama icon, bud/splatoon theme, etc)
+* SmokeyLlama.com
+  * External Link to my website, used in the 'Llama Info' Button
+* Tinychat.com
+  * Used as a Youtube-Backup, so users of a room can listen to YT togerhter, when jumpins YT fails.
+  * Ex. If you are in jumpin room: jumpin.chat/blue, then this will the tinychat room: tinychat.com/room/blue
+* Pokemonrise.com
+  * External Link to PokemonRise Game. Play with other Jumpers!
 
 ---
 # Need more help?

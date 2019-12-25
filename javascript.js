@@ -204,7 +204,7 @@ function Toggle_Llama_Chat_Options (zEvent) {
   WhatsNewIcon.setAttribute("id", "Toggle_New_Llama_Notice")
   WhatsNewIcon.setAttribute("title", "Whats New SmokeyLlama")
   WhatsNewIcon.innerHTML = `
-<img src="https://cdn1.iconfinder.com/data/icons/MetroStation-PNG/128/MB__Llama.png" width="20px">
+<img src="https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@9ada4fbd26a289f24d0416136e05ae449c748437/images/llamaicon.png" width="20px">
 <span class="mobileHidden" id="">Llama Info</span>
 `
 
@@ -2104,19 +2104,19 @@ function Toggle_Theme (color) {
     llama_theme_textcolor = "#FFFFFF"
     llama_theme_buttontext = "#042500"
     llama_theme_cambg
-      = "url(https://kpfa.org/wp-content/uploads/2015/10/weed-wallpaper-65.jpg)"
+      = "url(https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6a40bce97c841029ee442a8a297e2b2c976a8bd1/images/bud/mainbg.jpg)"
   } else if (color === "splat") {
     llama_theme_bgcolor = "transparent"
     llama_theme_bordercolor = "#51bc02"
     llama_theme_lightbgcolor = "#282828"
     llama_theme_textcolor = "#FFFFFF"
     llama_theme_buttontext = "#FFFFFF"
-    llama_theme_cambg = "url(https://i.ibb.co/C18JNgK/splatbg.jpg)"
-    llama_theme_userbg = "url(https://i.ibb.co/7nrB9LT/test.png)"
+    llama_theme_cambg = "url(https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6157c7e0ae1a3a3149ac7629a50cd55fada590eb/images/splatoon/mainbg.jpg)"
+    llama_theme_userbg = "url(https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6157c7e0ae1a3a3149ac7629a50cd55fada590eb/images/splatoon/userbg.png)"
     llama_theme_chatheaderbg
-      = "url(https://i.ibb.co/XsTjVk0/splay-bg-header2.png)"
-    llama_theme_chatbg = "url(https://i.ibb.co/TrKBZFn/splat-chat-bg3.png)"
-    llama_theme_messagebg = "url(https://i.ibb.co/FWFnhc4/messagebg.png)"
+      = "url(https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6157c7e0ae1a3a3149ac7629a50cd55fada590eb/images/splatoon/headerbg.png)"
+    llama_theme_chatbg = "url(https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6157c7e0ae1a3a3149ac7629a50cd55fada590eb/images/splatoon/chatbg.png)"
+    llama_theme_messagebg = "url(https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6157c7e0ae1a3a3149ac7629a50cd55fada590eb/images/splatoon/messagebg.png)"
   }
   document.documentElement.style.setProperty(
     "--thememode-bgcolor",

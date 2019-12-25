@@ -204,7 +204,7 @@ function Toggle_Llama_Chat_Options (zEvent) {
   WhatsNewIcon.setAttribute("id", "Toggle_New_Llama_Notice")
   WhatsNewIcon.setAttribute("title", "Whats New SmokeyLlama")
   WhatsNewIcon.innerHTML = `
-<img src="https://cdn1.iconfinder.com/data/icons/MetroStation-PNG/128/MB__Llama.png" width="20px">
+<img src="https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@9ada4fbd26a289f24d0416136e05ae449c748437/images/llamaicon.png" width="20px">
 <span class="mobileHidden" id="">Llama Info</span>
 `
 

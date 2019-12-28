@@ -586,12 +586,12 @@ USER BG
     }, false)
   document
     .getElementById("Clear_Chat_BG")
-    .addEventListener("click",  function () {
+    .addEventListener("click", function () {
       Clear_User_BG("2")
     }, false)
   document
     .getElementById("Clear_Userlist_BG")
-    .addEventListener("click",  function () {
+    .addEventListener("click", function () {
       Clear_User_BG("3")
     }, false)
 
@@ -705,7 +705,7 @@ USER BG
       Toggle_Llama_Box("tube", "web")
     })
   var llamabgs = ["1", "2", "3"]
-  llamabgs.forEach(function (llamabg){
+  llamabgs.forEach(function (llamabg) {
     var llama_bg = localStorage.getItem("llama_bg" + llamabg)
     var llama_bg_reloader = localStorage.getItem("llama_bg" + llamabg + "_reload")
     if (llama_bg !== "") {
@@ -764,38 +764,35 @@ USER BG
     document.getElementById("theme_wizard").selectedIndex = 12
   }
 
-// ----------------------------------------------------------------- Userlist_BG_Settings -----------------------------------------------------------------
+  // ----------------------------------------------------------------- Userlist_BG_Settings -----------------------------------------------------------------
 
-var bgsets = ["cam", "chat", "userlist"]
-bgsets.forEach(function(bgset){
-  var bgsubs = ["cover", "repeat", "center"]
-  bgsubs.forEach(function(bgsub){
-   var bg_setting = localStorage.getItem(bgset + "_bg_" + bgsub)
-   if (bg_setting) {
-     body.classList.add(bgset + "_bg_" + bgsub)
-     document.getElementById(bgset + "_bg_" + bgsub).checked = true
-   }
+  var bgsets = ["cam", "chat", "userlist"]
+  bgsets.forEach(function (bgset) {
+    var bgsubs = ["cover", "repeat", "center"]
+    bgsubs.forEach(function (bgsub) {
+      var bg_setting = localStorage.getItem(bgset + "_bg_" + bgsub)
+      if (bg_setting) {
+        body.classList.add(bgset + "_bg_" + bgsub)
+        document.getElementById(bgset + "_bg_" + bgsub).checked = true
+      }
+    })
   })
-})
 
-function User_BG_Settings (type, subtype) {
-  var test = ["cam", "chat", "userlist"]
-  var subtest = ["cover", "repeat", "center"]
-
-  var bg_new = type + "_" + subtype + "_on"
-  var bg_get = type + "_bg_" + subtype
-  var bg_current = localStorage.getItem(bg_get)
-  body.classList.toggle(bg_new)
-  if(bg_current !== bg_new) {
-    localStorage.setItem(bg_get, bg_new)
-    document.getElementById(bg_get).checked = true
-  } else {
-    localStorage.setItem(bg_get, "")
-    document.getElementById(bg_get).checked = false
+  function User_BG_Settings (type, subtype) {
+    var bg_new = type + "_" + subtype + "_on"
+    var bg_get = type + "_bg_" + subtype
+    var bg_current = localStorage.getItem(bg_get)
+    body.classList.toggle(bg_new)
+    if (bg_current !== bg_new) {
+      localStorage.setItem(bg_get, bg_new)
+      document.getElementById(bg_get).checked = true
+    } else {
+      localStorage.setItem(bg_get, "")
+      document.getElementById(bg_get).checked = false
+    }
   }
-}
 
-// ----------------------------------------------------------------- Make the DIV element draggable:
+  // ----------------------------------------------------------------- Make the DIV element draggable:
   dragElement(document.getElementById("mydiv"))
 
   function dragElement (elmnt) {
@@ -1227,9 +1224,8 @@ function Preview_Llama_Color () {
     "#" + llama_username_textcolor_input_prev
   )
 }
-// ----------------------------------------------------------------- CUSTOM_MODE_SAVE -----------------------------------------------------------------
-function Save_Llama_Color () {
-
+  // ----------------------------------------------------------------- CUSTOM_MODE_SAVE -----------------------------------------------------------------
+  function Save_Llama_Color () {
   var llama_header_bgcolor_input_new = document.getElementById(
     "llama_header_bgcolor_selection"
   ).value
@@ -1378,7 +1374,6 @@ function Save_Llama_Color () {
 // ----------------------------------------------------------------- CUSTOM_MODE_RESET -----------------------------------------------------------------
 
 function Reset_Llama_Color () {
-
   var llama_header_bgcolor_input = "22ADD5"
   var llama_bars_bgcolor_input = "C7CFD9"
   var llama_cams_bgcolor_input = "FFFFFF"
@@ -1586,23 +1581,23 @@ if (llama_bg3 !== "") {
 function Save_Llama_BG () {
   var bgs = ["1", "2", "3"]
 
-  bgs.forEach(function(bg){
-  var save_bgelement = "bgSelection" + bg
-  var save_bgvar = "--user-bg" + bg + "-image"
-  var save_bgreload = "llama_bg" + bg + "_reload"
-  var save_bg = "llama_bg" + bg
-  var llama_bginput = document.getElementById(save_bgelement).value
+  bgs.forEach(function (bg) {
+    var save_bgelement = "bgSelection" + bg
+    var save_bgvar = "--user-bg" + bg + "-image"
+    var save_bgreload = "llama_bg" + bg + "_reload"
+    var save_bg = "llama_bg" + bg
+    var llama_bginput = document.getElementById(save_bgelement).value
 
-  if (llama_bginput !== "") {
-    var llama_bginput_url = "url(" + llama_bginput + ")"
-    document.documentElement.style.setProperty(save_bgvar, llama_bginput_url)
-    localStorage.setItem(save_bgreload, llama_bginput)
-    localStorage.setItem(save_bg, llama_bginput_url)
-  } else {
-    document.documentElement.style.setProperty(save_bgvar, "")
-    localStorage.setItem(save_bgreload, "")
-    localStorage.setItem(save_bg, "")
-  }
+    if (llama_bginput !== "") {
+      var llama_bginput_url = "url(" + llama_bginput + ")"
+      document.documentElement.style.setProperty(save_bgvar, llama_bginput_url)
+      localStorage.setItem(save_bgreload, llama_bginput)
+      localStorage.setItem(save_bg, llama_bginput_url)
+    } else {
+      document.documentElement.style.setProperty(save_bgvar, "")
+      localStorage.setItem(save_bgreload, "")
+      localStorage.setItem(save_bg, "")
+    }
   })
 }
 

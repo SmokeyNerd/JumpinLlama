@@ -5,7 +5,7 @@
     "rules": {
         "no-await-in-loop": error,
         "no-extra-semi": error,
-        "complexity": error,
+        "complexity": ["error", 30],
         "consistent-return": ["error", { "treatUndefinedAsUnspecified": true }],
         "curly": error,
         "dot-notation": error,

@@ -36,7 +36,7 @@ body.llama_window {overflow:hidden;}
 </div>
 <div id="iframe_box">
 <div id="container2">
-<iframe src="https://smokeyllama.com/game_time/main/game/web_window.php" class="scrollingContainer" id="game_list"  name="" style="border:0px;width: 105%;overflow-x: hidden;height: 95%;" scrolling="yes" allow="autoplay; microphone; camera"></iframe>
+<iframe src="" class="scrollingContainer" id="game_list"  name="" style="border:0px;width: 105%;overflow-x: hidden;height: 95%;" scrolling="yes" allow="autoplay; microphone; camera"></iframe>
 </div>
 </div>
 </div>
@@ -44,7 +44,7 @@ body.llama_window {overflow:hidden;}
 <div id="New_Llama_Notice" onclick="Toggle_Llama_Box('notice','')">
 <label style="cursor:pointer;">
 <div class="theme_alert_notice">
-<div id="close_box"><center><h2>Thank you for installing MY Jumpin Theme!</h2>
+<div id="close_box"><center><h4>Thank you for installing MY Jumpin Theme!</h4>
 <hr style="width:90%;border:1px solid #313131;">
 <div class="feat_info">
 <div style="float:left;width:50%;">Theme Last Updated: 11/19/2019</div>
@@ -867,7 +867,7 @@ function Toggle_Llama_Box (type, zEvent) {
   } else if (type === "tube") {
     if (zEvent === "web") {
       body.classList.add("llama_window")
-      Toggle_Llama_Box("tube", "games")
+      Toggle_Llama_Box("tube", "home")
       document.getElementById("llama_web").setAttribute("style", "display:inline-block; ")
       document.getElementById("web__llamaOption").setAttribute("style", "display:none; ")
       document.getElementById("mydiv").setAttribute("style", "display:inline-block; ")
@@ -876,6 +876,7 @@ function Toggle_Llama_Box (type, zEvent) {
       document.getElementById("web__llamaOption").setAttribute("style", "display:inline-flex; ")
       document.getElementById("llama_web").setAttribute("style", "display:none; ")
       document.getElementById("mydiv").setAttribute("style", "display:none; ")
+      iframe.src = ""
     } else if (zEvent === "ytbackup") {
       var tc = "https://tinychat.com/room/"
       iframe.src = tc + params

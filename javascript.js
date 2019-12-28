@@ -1,4 +1,3 @@
-// ----------------------------------------------------------------- LLAMA_MENU -----------------------------------------------------------------*/
 var body = document.body
 
 // ------------ LLAMA_NOTICE_CREATOR ----------------*/
@@ -1224,8 +1223,8 @@ function Preview_Llama_Color () {
     "#" + llama_username_textcolor_input_prev
   )
 }
-  // ----------------------------------------------------------------- CUSTOM_MODE_SAVE -----------------------------------------------------------------
-  function Save_Llama_Color () {
+// ----------------------------------------------------------------- CUSTOM_MODE_SAVE -----------------------------------------------------------------
+function Save_Llama_Color () {
   var llama_header_bgcolor_input_new = document.getElementById(
     "llama_header_bgcolor_selection"
   ).value
@@ -1544,39 +1543,20 @@ function Toggle_User_BG () {
 }
 
 // ----------------------------------------------------------------- SAVE_CAM_BG -----------------------------------------------------------------
-
-
 var userbg_status = localStorage.getItem("userbg")
 
-var llama_bg = localStorage.getItem("llama_bg1")
-var llama_bg_reloader = localStorage.getItem("llama_bg1_reload")
-
-var llama_bg2 = localStorage.getItem("llama_bg2")
-var llama_bg_reloader2 = localStorage.getItem("llama_bg2_reload")
-
-var llama_bg3 = localStorage.getItem("llama_bg3")
-var llama_bg_reloader3 = localStorage.getItem("llama_bg3_reload")
-
 if (userbg_status) {
   body.classList.add(userbg_status)
 }
-if (llama_bg !== "") {
-  document.documentElement.style.setProperty("--user-bg1-image", llama_bg)
-}
 
-if (userbg_status) {
-  body.classList.add(userbg_status)
-}
-if (llama_bg2 !== "") {
-  document.documentElement.style.setProperty("--user-bg2-image", llama_bg2)
-}
-
-if (userbg_status) {
-  body.classList.add(userbg_status)
-}
-if (llama_bg3 !== "") {
-  document.documentElement.style.setProperty("--user-bg3-image", llama_bg3)
-}
+var custombgs = ["1", "2", "3"]
+custombgs.forEach(function (custombg) {
+  var loadbg = localStorage.getItem("llama_bg" + custombg)
+  var reloadbg = localStorage.getItem("llama_bg" + custombg + "_reload")
+  if (loadbg !== "") {
+    document.documentElement.style.setProperty("--user-bg" + custombg + "-image", loadbg)
+  }
+})
 
 function Save_Llama_BG () {
   var bgs = ["1", "2", "3"]

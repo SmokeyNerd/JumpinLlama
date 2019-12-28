@@ -178,7 +178,7 @@ if (chat_option_activator !== "llama_chat_menu") {
   setTimeout(Toggle_Llama_Chat_Options, 3000)
 }
 
-function Toggle_Llama_Chat_Options (zEvent) {
+function Toggle_Llama_Chat_Options () {
   var lr = document.getElementsByClassName("room")[0]
   lr.id = "llama_Room"
   var xz = document.getElementsByClassName("chat__HeaderOptions")[1]
@@ -581,13 +581,19 @@ USER BG
 
   document
     .getElementById("Clear_Cam_BG")
-    .addEventListener("click", Clear_Cam_BG, false)
+    .addEventListener("click", function () {
+      Clear_User_BG("1")
+    }, false)
   document
     .getElementById("Clear_Chat_BG")
-    .addEventListener("click", Clear_Chat_BG, false)
+    .addEventListener("click",  function () {
+      Clear_User_BG("2")
+    }, false)
   document
     .getElementById("Clear_Userlist_BG")
-    .addEventListener("click", Clear_Userlist_BG, false)
+    .addEventListener("click",  function () {
+      Clear_User_BG("3")
+    }, false)
 
   document
     .getElementById("Save_Llama_BG")
@@ -595,33 +601,51 @@ USER BG
 
   document
     .getElementById("cam_bg_cover")
-    .addEventListener("click", Cam_BG_Cover, false)
+    .addEventListener("click", function () {
+      User_BG_Settings("cam", "cover")
+    }, false)
   document
     .getElementById("cam_bg_repeat")
-    .addEventListener("click", Cam_BG_Repeat, false)
+    .addEventListener("click", function () {
+      User_BG_Settings("cam", "repeat")
+    }, false)
   document
     .getElementById("cam_bg_center")
-    .addEventListener("click", Cam_BG_Center, false)
+    .addEventListener("click", function () {
+      User_BG_Settings("cam", "center")
+    }, false)
 
   document
     .getElementById("chat_bg_cover")
-    .addEventListener("click", Chat_BG_Cover, false)
+    .addEventListener("click", function () {
+      User_BG_Settings("chat", "cover")
+    }, false)
   document
     .getElementById("chat_bg_repeat")
-    .addEventListener("click", Chat_BG_Repeat, false)
+    .addEventListener("click", function () {
+      User_BG_Settings("chat", "repeat")
+    }, false)
   document
     .getElementById("chat_bg_center")
-    .addEventListener("click", Chat_BG_Center, false)
+    .addEventListener("click", function () {
+      User_BG_Settings("chat", "center")
+    }, false)
 
   document
     .getElementById("userlist_bg_cover")
-    .addEventListener("click", Userlist_BG_Cover, false)
+    .addEventListener("click", function () {
+      User_BG_Settings("userlist", "cover")
+    }, false)
   document
     .getElementById("userlist_bg_repeat")
-    .addEventListener("click", Userlist_BG_Repeat, false)
+    .addEventListener("click", function () {
+      User_BG_Settings("userlist", "repeat")
+    }, false)
   document
     .getElementById("userlist_bg_center")
-    .addEventListener("click", Userlist_BG_Center, false)
+    .addEventListener("click", function () {
+      User_BG_Settings("userlist", "center")
+    }, false)
   // LOADING VARIABLES IN GROUPS
   document.addEventListener(
     "input",
@@ -631,7 +655,7 @@ USER BG
         return
       }
       if (event.target.value === "Default Theme") {
-        Toggle_DefaultTheme()
+        Toggle_Theme("default")
       }
       if (event.target.value === "PINK") {
         Toggle_Theme("pink")
@@ -680,71 +704,21 @@ USER BG
     .addEventListener("click", function () {
       Toggle_Llama_Box("tube", "web")
     })
-  var llama_bg = localStorage.getItem("llama_bg1")
-  var llama_bg_reloader = localStorage.getItem("llama_bg1_reload")
-  var llama_bg2 = localStorage.getItem("llama_bg2")
-  var llama_bg2_reloader = localStorage.getItem("llama_bg2_reload")
-  var llama_bg3 = localStorage.getItem("llama_bg3")
-  var llama_bg3_reloader = localStorage.getItem("llama_bg3_reload")
+  var llamabgs = ["1", "2", "3"]
+  llamabgs.forEach(function (llamabg){
+    var llama_bg = localStorage.getItem("llama_bg" + llamabg)
+    var llama_bg_reloader = localStorage.getItem("llama_bg" + llamabg + "_reload")
+    if (llama_bg !== "") {
+      document.getElementById("bgSelection" + llamabg).value = llama_bg_reloader
+    }
+    if (llama_bg) {
+      document.documentElement.style.setProperty("--user-bg" + llamabg + "-image", llama_bg)
+    }
+  })
 
-  var cam_bg_cover = localStorage.getItem("cam_bg_cover")
-  var cam_bg_repeat = localStorage.getItem("cam_bg_repeat")
-  var cam_bg_center = localStorage.getItem("cam_bg_center")
-  var chat_bg_cover = localStorage.getItem("chat_bg_cover")
-  var chat_bg_center = localStorage.getItem("chat_bg_center")
-
-  var userlist_bg_cover = localStorage.getItem("userlist_bg_cover")
-  var userlist_bg_repeat = localStorage.getItem("userlist_bg_repeat")
-  var userlist_bg_center = localStorage.getItem("userlist_bg_center")
   var userbg_status = localStorage.getItem("userbg")
   var theme_status = localStorage.getItem("thememode")
 
-  if (llama_bg !== "") {
-    document.documentElement.style.setProperty("--user-bg-image", llama_bg)
-  }
-  if (llama_bg) {
-    document.getElementById("bgSelection1").value = llama_bg_reloader
-  }
-  if (llama_bg2 !== "") {
-    document.documentElement.style.setProperty("--user-bg2-image", llama_bg2)
-  }
-  if (llama_bg2) {
-    document.getElementById("bgSelection2").value = llama_bg_reloader2
-  }
-  if (llama_bg3 !== "") {
-    document.documentElement.style.setProperty("--user-bg3-image", llama_bg3)
-  }
-  if (llama_bg3) {
-    document.getElementById("bgSelection3").value = llama_bg3_reloader
-  }
-  if (cam_bg_cover) {
-    document.getElementById("cam_bg_cover").checked = true
-  }
-  if (cam_bg_repeat) {
-    document.getElementById("cam_bg_repeat").checked = true
-  }
-  if (cam_bg_center) {
-    document.getElementById("cam_bg_center").checked = true
-  }
-  if (chat_bg_cover) {
-    document.getElementById("chat_bg_cover").checked = true
-  }
-  var chat_bg_repeat = localStorage.getItem("chat_bg_repeat")
-  if (chat_bg_repeat) {
-    document.getElementById("chat_bg_repeat").checked = true
-  }
-  if (chat_bg_center) {
-    document.getElementById("chat_bg_center").checked = true
-  }
-  if (userlist_bg_cover) {
-    document.getElementById("userlist_bg_cover").checked = true
-  }
-  if (userlist_bg_repeat) {
-    document.getElementById("userlist_bg_repeat").checked = true
-  }
-  if (userlist_bg_center) {
-    document.getElementById("userlist_bg_center").checked = true
-  }
   if (userbg_status === "user_bg") {
     document.getElementById("cam_bg_checkbox").checked = true
   }
@@ -790,7 +764,38 @@ USER BG
     document.getElementById("theme_wizard").selectedIndex = 12
   }
 
-  // Make the DIV element draggable:
+// ----------------------------------------------------------------- Userlist_BG_Settings -----------------------------------------------------------------
+
+var bgsets = ["cam", "chat", "userlist"]
+bgsets.forEach(function(bgset){
+  var bgsubs = ["cover", "repeat", "center"]
+  bgsubs.forEach(function(bgsub){
+   var bg_setting = localStorage.getItem(bgset + "_bg_" + bgsub)
+   if (bg_setting) {
+     body.classList.add(bgset + "_bg_" + bgsub)
+     document.getElementById(bgset + "_bg_" + bgsub).checked = true
+   }
+  })
+})
+
+function User_BG_Settings (type, subtype) {
+  var test = ["cam", "chat", "userlist"]
+  var subtest = ["cover", "repeat", "center"]
+
+  var bg_new = type + "_" + subtype + "_on"
+  var bg_get = type + "_bg_" + subtype
+  var bg_current = localStorage.getItem(bg_get)
+  body.classList.toggle(bg_new)
+  if(bg_current !== bg_new) {
+    localStorage.setItem(bg_get, bg_new)
+    document.getElementById(bg_get).checked = true
+  } else {
+    localStorage.setItem(bg_get, "")
+    document.getElementById(bg_get).checked = false
+  }
+}
+
+// ----------------------------------------------------------------- Make the DIV element draggable:
   dragElement(document.getElementById("mydiv"))
 
   function dragElement (elmnt) {
@@ -837,7 +842,7 @@ USER BG
     }
   }
 
-  function Toggle_Word_1_Action (zEvent) {
+  function Toggle_Word_1_Action () {
     var text = document.getElementById("chat_input_box")
     var cheers_status = localStorage.getItem("cheers_status")
     if (!cheers_status) {
@@ -892,7 +897,6 @@ function Toggle_Llama_Box (type, zEvent) {
       document.getElementById("llama_web").setAttribute("style", "display:inline-block; ")
       document.getElementById("web__llamaOption").setAttribute("style", "display:none; ")
       document.getElementById("mydiv").setAttribute("style", "display:inline-block; ")
-      hideweb__llamaOption
     } else if (zEvent === "hideweb") {
       body.classList.remove("llama_window")
       document.getElementById("web__llamaOption").setAttribute("style", "display:inline-flex; ")
@@ -949,7 +953,7 @@ if (robo_status) {
   body.classList.add(llama_robo)
 }
 
-function Toggle_Robo_Llama (cEvent) {
+function Toggle_Robo_Llama () {
   var robo_status = localStorage.getItem("robo_status")
   body.classList.toggle("llama_robo")
   if (robo_status !== "llama_robo") {
@@ -968,7 +972,7 @@ if (cheers_btn) {
   body.classList.add("word_one")
 }
 
-function Toggle_Word_1 (zEvent) {
+function Toggle_Word_1 () {
   var word_one = "word_one"
   var cheers_btn = localStorage.getItem("llama_btn_1")
   body.classList.toggle(word_one)
@@ -1115,7 +1119,7 @@ if (header_bgcolor_selection) {
 
 // ----------------------------------------------------------------- CUSTOM_MODE_TOGGLE -----------------------------------------------------------------
 
-function Toggle_Theme_Custom (zEvent) {
+function Toggle_Theme_Custom () {
   var color_choice = "custommode"
   var theme_status = localStorage.getItem("thememode")
   body.classList.toggle(color_choice)
@@ -1127,186 +1131,10 @@ function Toggle_Theme_Custom (zEvent) {
   }
 }
 
-// ----------------------------------------------------------------- CAM_BG_COVER -----------------------------------------------------------------
-var cam_bg_cover = localStorage.getItem("cam_bg_cover")
-if (cam_bg_cover) {
-  body.classList.add("cam_cover_on")
-}
-
-function Cam_BG_Cover (zEvent) {
-  var cam_bg_cover_new = "cam_cover_on"
-  var cam_bg_cover_current = localStorage.getItem("cam_bg_cover")
-  body.classList.toggle(cam_bg_cover_new)
-  if (cam_bg_cover_current !== cam_bg_cover_new) {
-    localStorage.setItem("cam_bg_cover", cam_bg_cover_new)
-    document.getElementById("cam_bg_cover").checked = true
-  } else {
-    localStorage.setItem("cam_bg_cover", "")
-    document.getElementById("cam_bg_cover").checked = false
-  }
-}
-
-// ----------------------------------------------------------------- CAM_BG_REPEAT -----------------------------------------------------------------
-var cam_bg_repeat = localStorage.getItem("cam_bg_repeat")
-if (cam_bg_repeat) {
-  body.classList.add(cam_bg_repeat)
-}
-
-function Cam_BG_Repeat (zEvent) {
-  var cam_bg_repeat_new = "cam_repeat_on"
-  var cam_bg_repeat_current = localStorage.getItem("cam_bg_repeat")
-  body.classList.toggle(cam_bg_repeat_new)
-  if (cam_bg_repeat_current !== cam_bg_repeat_new) {
-    localStorage.setItem("cam_bg_repeat", cam_bg_repeat_new)
-    document.getElementById("cam_bg_repeat").checked = true
-  }
-  if (cam_bg_repeat_current === cam_bg_repeat_new) {
-    localStorage.setItem("cam_bg_repeat", "")
-    document.getElementById("cam_bg_repeat").checked = false
-  }
-}
-
-// ----------------------------------------------------------------- CAM_BG_CENTER -----------------------------------------------------------------
-var cam_bg_center = localStorage.getItem("cam_bg_center")
-if (cam_bg_center) {
-  body.classList.add(cam_bg_center)
-}
-
-function Cam_BG_Center (zEvent) {
-  var cam_bg_center_new = "cam_center_on"
-  var cam_bg_center_current = localStorage.getItem("cam_bg_center")
-  body.classList.toggle(cam_bg_center_new)
-  if (cam_bg_center_current !== cam_bg_center_new) {
-    localStorage.setItem("cam_bg_center", cam_bg_center_new)
-    document.getElementById("cam_bg_center").checked = true
-  }
-  if (cam_bg_center_current === cam_bg_center_new) {
-    localStorage.setItem("cam_bg_center", "")
-    document.getElementById("cam_bg_center").checked = false
-  }
-}
-
-// ----------------------------------------------------------------- Chat_BG_COVER -----------------------------------------------------------------
-var chat_bg_cover = localStorage.getItem("chat_bg_cover")
-if (chat_bg_cover) {
-  body.classList.add("chat_cover_on")
-}
-
-function Chat_BG_Cover (zEvent) {
-  var chat_bg_cover_new = "chat_cover_on"
-  var chat_bg_cover_current = localStorage.getItem("chat_bg_cover")
-  body.classList.toggle(chat_bg_cover_new)
-  if (chat_bg_cover_current !== chat_bg_cover_new) {
-    localStorage.setItem("chat_bg_cover", chat_bg_cover_new)
-    document.getElementById("chat_bg_cover").checked = true
-  } else {
-    localStorage.setItem("chat_bg_cover", "")
-    document.getElementById("chat_bg_cover").checked = false
-  }
-}
-
-// ----------------------------------------------------------------- Chat_BG_REPEAT -----------------------------------------------------------------
-var chat_bg_repeat = localStorage.getItem("chat_bg_repeat")
-if (chat_bg_repeat) {
-  body.classList.add(chat_bg_repeat)
-}
-
-function Chat_BG_Repeat (zEvent) {
-  var chat_bg_repeat_new = "chat_repeat_on"
-  var chat_bg_repeat_current = localStorage.getItem("chat_bg_repeat")
-  body.classList.toggle(chat_bg_repeat_new)
-  if (chat_bg_repeat_current !== chat_bg_repeat_new) {
-    localStorage.setItem("chat_bg_repeat", chat_bg_repeat_new)
-    document.getElementById("chat_bg_repeat").checked = true
-  }
-  if (chat_bg_repeat_current === chat_bg_repeat_new) {
-    localStorage.setItem("chat_bg_repeat", "")
-    document.getElementById("chat_bg_repeat").checked = false
-  }
-}
-
-// ----------------------------------------------------------------- Chat_BG_CENTER -----------------------------------------------------------------
-var chat_bg_center = localStorage.getItem("chat_bg_center")
-if (chat_bg_center) {
-  body.classList.add(chat_bg_center)
-}
-
-function Chat_BG_Center (zEvent) {
-  var chat_bg_center_new = "chat_center_on"
-  var chat_bg_center_current = localStorage.getItem("chat_bg_center")
-  body.classList.toggle(chat_bg_center_new)
-  if (chat_bg_center_current !== chat_bg_center_new) {
-    localStorage.setItem("chat_bg_center", chat_bg_center_new)
-    document.getElementById("chat_bg_center").checked = true
-  }
-  if (chat_bg_center_current === chat_bg_center_new) {
-    localStorage.setItem("chat_bg_center", "")
-    document.getElementById("chat_bg_center").checked = false
-  }
-}
-
-// ----------------------------------------------------------------- Userlist_BG_COVER -----------------------------------------------------------------
-var userlist_bg_cover = localStorage.getItem("userlist_bg_cover")
-if (userlist_bg_cover) {
-  body.classList.add("userlist_cover_on")
-}
-
-function Userlist_BG_Cover (zEvent) {
-  var userlist_bg_cover_new = "userlist_cover_on"
-  var userlist_bg_cover_current = localStorage.getItem("userlist_bg_cover")
-  body.classList.toggle(userlist_bg_cover_new)
-  if (userlist_bg_cover_current !== userlist_bg_cover_new) {
-    localStorage.setItem("userlist_bg_cover", userlist_bg_cover_new)
-    document.getElementById("userlist_bg_cover").checked = true
-  } else {
-    localStorage.setItem("userlist_bg_cover", "")
-    document.getElementById("userlist_bg_cover").checked = false
-  }
-}
-
-// ----------------------------------------------------------------- Userlist_BG_REPEAT -----------------------------------------------------------------
-var userlist_bg_repeat = localStorage.getItem("userlist_bg_repeat")
-if (userlist_bg_repeat) {
-  body.classList.add(userlist_bg_repeat)
-}
-
-function Userlist_BG_Repeat (zEvent) {
-  var userlist_bg_repeat_new = "userlist_repeat_on"
-  var userlist_bg_repeat_current = localStorage.getItem("userlist_bg_repeat")
-  body.classList.toggle(userlist_bg_repeat_new)
-  if (userlist_bg_repeat_current !== userlist_bg_repeat_new) {
-    localStorage.setItem("userlist_bg_repeat", userlist_bg_repeat_new)
-    document.getElementById("userlist_bg_repeat").checked = true
-  }
-  if (userlist_bg_repeat_current === userlist_bg_repeat_new) {
-    localStorage.setItem("userlist_bg_repeat", "")
-    document.getElementById("userlist_bg_repeat").checked = false
-  }
-}
-
-// ----------------------------------------------------------------- Userlist_BG_CENTER -----------------------------------------------------------------
-var userlist_bg_center = localStorage.getItem("userlist_bg_center")
-if (userlist_bg_center) {
-  body.classList.add(userlist_bg_center)
-}
-
-function Userlist_BG_Center (zEvent) {
-  var userlist_bg_center_new = "userlist_center_on"
-  var userlist_bg_center_current = localStorage.getItem("userlist_bg_center")
-  body.classList.toggle(userlist_bg_center_new)
-  if (userlist_bg_center_current !== userlist_bg_center_new) {
-    localStorage.setItem("userlist_bg_center", userlist_bg_center_new)
-    document.getElementById("userlist_bg_center").checked = true
-  }
-  if (userlist_bg_center_current === userlist_bg_center_new) {
-    localStorage.setItem("userlist_bg_center", "")
-    document.getElementById("userlist_bg_center").checked = false
-  }
-}
 
 // ----------------------------------------------------------------- CUSTOM_MODE_PREVIEW -----------------------------------------------------------------
 
-function Preview_Llama_Color (zEvent) {
+function Preview_Llama_Color () {
   var llama_header_bgcolor_input_prev = document.getElementById(
     "llama_header_bgcolor_selection"
   ).value
@@ -1400,30 +1228,7 @@ function Preview_Llama_Color (zEvent) {
   )
 }
 // ----------------------------------------------------------------- CUSTOM_MODE_SAVE -----------------------------------------------------------------
-function Save_Llama_Color (zEvent) {
-  var llama_header_bgcolor = localStorage.getItem("llama_header_bgcolor")
-  var llama_bars_bgcolor = localStorage.getItem("llama_bars_bgcolor")
-  var llama_cams_bgcolor = localStorage.getItem("llama_cams_bgcolor")
-
-  var llama_button_bgcolor = localStorage.getItem("llama_button_bgcolor")
-  var llama_button_textcolor = localStorage.getItem("llama_button_textcolor")
-  var llama_button_bordercolor = localStorage.getItem(
-    "llama_button_bordercolor"
-  )
-
-  var llama_chat_bgcolor = localStorage.getItem("llama_chat_bgcolor")
-  var llama_chat_bubble_bgcolor = localStorage.getItem(
-    "llama_chat_bubble_bgcolor"
-  )
-  var llama_chat_bubble_bordercolor = localStorage.getItem(
-    "llama_chat_bubble_bordercolor"
-  )
-
-  var llama_user_bgcolor = localStorage.getItem("llama_user_bgcolor")
-  var llama_username_bgcolor = localStorage.getItem("llama_username_bgcolor")
-  var llama_username_textcolor = localStorage.getItem(
-    "llama_username_textcolor"
-  )
+function Save_Llama_Color () {
 
   var llama_header_bgcolor_input_new = document.getElementById(
     "llama_header_bgcolor_selection"
@@ -1572,30 +1377,7 @@ function Save_Llama_Color (zEvent) {
 
 // ----------------------------------------------------------------- CUSTOM_MODE_RESET -----------------------------------------------------------------
 
-function Reset_Llama_Color (zEvent) {
-  var llama_header_bgcolor = localStorage.getItem("llama_header_bgcolor")
-  var llama_bars_bgcolor = localStorage.getItem("llama_bars_bgcolor")
-  var llama_cams_bgcolor = localStorage.getItem("llama_cams_bgcolor")
-
-  var llama_button_bgcolor = localStorage.getItem("llama_button_bgcolor")
-  var llama_button_textcolor = localStorage.getItem("llama_button_textcolor")
-  var llama_button_bordercolor = localStorage.getItem(
-    "llama_button_bordercolor"
-  )
-
-  var llama_chat_bgcolor = localStorage.getItem("llama_chat_bgcolor")
-  var llama_chat_bubble_bgcolor = localStorage.getItem(
-    "llama_chat_bubble_bgcolor"
-  )
-  var llama_chat_bubble_bordercolor = localStorage.getItem(
-    "llama_chat_bubble_bordercolor"
-  )
-
-  var llama_user_bgcolor = localStorage.getItem("llama_user_bgcolor")
-  var llama_username_bgcolor = localStorage.getItem("llama_username_bgcolor")
-  var llama_username_textcolor = localStorage.getItem(
-    "llama_username_textcolor"
-  )
+function Reset_Llama_Color () {
 
   var llama_header_bgcolor_input = "22ADD5"
   var llama_bars_bgcolor_input = "C7CFD9"
@@ -1754,7 +1536,7 @@ function Reset_Llama_Color (zEvent) {
 
 // ----------------------------------------------------------------- CAM_BG_TOGGLE -----------------------------------------------------------------
 
-function Toggle_User_BG (zEvent) {
+function Toggle_User_BG () {
   var userbg_status = localStorage.getItem("userbg")
   body.classList.toggle("user_bg")
   if (userbg_status !== "user_bg") {
@@ -1768,7 +1550,7 @@ function Toggle_User_BG (zEvent) {
 
 // ----------------------------------------------------------------- SAVE_CAM_BG -----------------------------------------------------------------
 
-var bg_status = localStorage.getItem("user_bg")
+
 var userbg_status = localStorage.getItem("userbg")
 
 var llama_bg = localStorage.getItem("llama_bg1")
@@ -1784,7 +1566,7 @@ if (userbg_status) {
   body.classList.add(userbg_status)
 }
 if (llama_bg !== "") {
-  document.documentElement.style.setProperty("--user-bg-image", llama_bg)
+  document.documentElement.style.setProperty("--user-bg1-image", llama_bg)
 }
 
 if (userbg_status) {
@@ -1801,78 +1583,40 @@ if (llama_bg3 !== "") {
   document.documentElement.style.setProperty("--user-bg3-image", llama_bg3)
 }
 
-function Save_Llama_BG (zEvent) {
-  var llama_bg1 = localStorage.getItem("llama_bg1")
-  var llama_bg2 = localStorage.getItem("llama_bg2")
-  var llama_bg3 = localStorage.getItem("llama_bg3")
-  var llama_bginput1 = document.getElementById("bgSelection1").value
-  var llama_bginput2 = document.getElementById("bgSelection2").value
-  var llama_bginput3 = document.getElementById("bgSelection3").value
+function Save_Llama_BG () {
+  var bgs = ["1", "2", "3"]
 
-  if (llama_bginput1 !== "") {
-    var llama_bginput1_url = "url(" + llama_bginput1 + ")"
-    document.documentElement.style.setProperty(
-      "--user-bg-image",
-      llama_bginput1_url
-    )
-    localStorage.setItem("llama_bg1_reload", llama_bginput1)
-    localStorage.setItem("llama_bg1", llama_bginput1_url)
+  bgs.forEach(function(bg){
+  var save_bgelement = "bgSelection" + bg
+  var save_bgvar = "--user-bg" + bg + "-image"
+  var save_bgreload = "llama_bg" + bg + "_reload"
+  var save_bg = "llama_bg" + bg
+  var llama_bginput = document.getElementById(save_bgelement).value
+
+  if (llama_bginput !== "") {
+    var llama_bginput_url = "url(" + llama_bginput + ")"
+    document.documentElement.style.setProperty(save_bgvar, llama_bginput_url)
+    localStorage.setItem(save_bgreload, llama_bginput)
+    localStorage.setItem(save_bg, llama_bginput_url)
   } else {
-    document.documentElement.style.setProperty("--user-bg-image", "")
-    localStorage.setItem("llama_bg1_reload", "")
-    localStorage.setItem("llama_bg1", "")
+    document.documentElement.style.setProperty(save_bgvar, "")
+    localStorage.setItem(save_bgreload, "")
+    localStorage.setItem(save_bg, "")
   }
-
-  if (llama_bginput2 !== "") {
-    var llama_bginput2_url = "url(" + llama_bginput2 + ")"
-    document.documentElement.style.setProperty(
-      "--user-bg2-image",
-      llama_bginput2_url
-    )
-    localStorage.setItem("llama_bg2_reload", llama_bginput2)
-    localStorage.setItem("llama_bg2", llama_bginput2_url)
-  } else {
-    document.documentElement.style.setProperty("--user-bg2-image", "")
-    localStorage.setItem("llama_bg2_reload", "")
-    localStorage.setItem("llama_bg2", "")
-  }
-
-  if (llama_bginput3 !== "") {
-    var llama_bginput3_url = "url(" + llama_bginput3 + ")"
-    document.documentElement.style.setProperty(
-      "--user-bg3-image",
-      llama_bginput3_url
-    )
-    localStorage.setItem("llama_bg3_reload", llama_bginput3)
-    localStorage.setItem("llama_bg3", llama_bginput3_url)
-  } else {
-    document.documentElement.style.setProperty("--user-bg3-image", "")
-    localStorage.setItem("llama_bg3_reload", "")
-    localStorage.setItem("llama_bg3", "")
-  }
+  })
 }
 
-function Clear_Cam_BG (zEvent) {
-  document.getElementById("bgSelection1").value = ""
-  document.documentElement.style.setProperty("--user-bg-image", "")
-  localStorage.setItem("llama_bg1_reload", "")
-  localStorage.setItem("llama_bg1", "")
-}
+function Clear_User_BG (type) {
+  var bgelement = "bgSelection" + type
+  var bgvar = "--user-bg" + type + "-image"
+  var bgreload = "llama_bg" + type + "_reload"
+  var bg = "llama_bg" + type
 
-function Clear_Chat_BG (zEvent) {
-  document.getElementById("bgSelection2").value = ""
-  document.documentElement.style.setProperty("--user-bg2-image", "")
-  localStorage.setItem("llama_bg2_reload", "")
-  localStorage.setItem("llama_bg2", "")
+  document.getElementById(bgelement).value = ""
+  document.documentElement.style.setProperty(bgvar, "")
+  localStorage.setItem(bgreload, "")
+  localStorage.setItem(bg, "")
 }
-
-function Clear_Userlist_BG (zEvent) {
-  document.getElementById("bgSelection3").value = ""
-  document.documentElement.style.setProperty("--user-bg3-image", "")
-  localStorage.setItem("llama_bg3_reload", "")
-  localStorage.setItem("llama_bg3", "")
-}
-
 // ----------------------------------------------------------------- BUBBLE_CHAT_TOGGLE -----------------------------------------------------------------
 
 var bubble_status = localStorage.getItem("bubble_status")
@@ -1880,7 +1624,7 @@ if (bubble_status) {
   body.classList.add(bubble_status)
 }
 
-function Toggle_Bubble_Chat (zEvent) {
+function Toggle_Bubble_Chat () {
   var bubble_status = localStorage.getItem("bubble_status")
   body.classList.toggle("bubble_chat")
   if (bubble_status !== "bubble_chat") {
@@ -1898,7 +1642,7 @@ if (chat_Status) {
   body.classList.add(chat_Status)
 }
 
-function Toggle_Chat (cEvent) {
+function Toggle_Chat () {
   var chat_Status = localStorage.getItem("chat")
   body.classList.toggle("hide_chat")
   if (chat_Status !== "hide_chat") {
@@ -1917,7 +1661,7 @@ if (userlist_Status) {
   body.classList.add(userlist_Status)
 }
 
-function Toggle_UserList (cEvent) {
+function Toggle_UserList () {
   var userlist_Status = localStorage.getItem("user_status")
   body.classList.toggle("hide_userlist")
   if (userlist_Status !== "hide_userlist") {
@@ -1936,7 +1680,7 @@ if (ltr_Status) {
   body.classList.add(ltr_Status)
 }
 
-function Toggle_LTR (cEvent) {
+function Toggle_LTR () {
   var ltr_Status = localStorage.getItem("ltr")
   body.classList.toggle("ltr_layout")
   if (ltr_Status !== "ltr_layout") {
@@ -1950,7 +1694,7 @@ function Toggle_LTR (cEvent) {
 
 // ----------------------------------------------------------------- REMOVE_CAM_BORDERS -----------------------------------------------------------------
 
-function Toggle_No_Border (zEvent) {
+function Toggle_No_Border () {
   var yt_status = localStorage.getItem("no_border")
   body.classList.toggle("no_border")
 
@@ -1966,7 +1710,7 @@ function Toggle_No_Border (zEvent) {
 
 // ----------------------------------------------------------------- REMOVE_CAM_PADDING -----------------------------------------------------------------
 
-function Toggle_No_Padding (zEvent) {
+function Toggle_No_Padding () {
   var pad_status = localStorage.getItem("no_padding")
   body.classList.toggle("no_padding")
   if (pad_status !== "no_padding") {
@@ -1986,7 +1730,7 @@ if (yt_status) {
   body.classList.add(yt_status)
 }
 
-function Toggle_MiniYT (zEvent) {
+function Toggle_MiniYT () {
   var yt_status = localStorage.getItem("yt")
   body.classList.toggle("mini_yt")
   if (yt_status !== "mini_yt") {
@@ -1998,23 +1742,6 @@ function Toggle_MiniYT (zEvent) {
 }
 
 // ----------------------------------------------------------------- THEME_TOGGLE -----------------------------------------------------------------
-function Toggle_DefaultTheme (color) {
-  var theme_status = localStorage.getItem("thememode")
-  body.classList.remove("custommode")
-  body.classList.remove("thememode")
-  localStorage.setItem("thememode", "")
-  document.documentElement.style.setProperty("--thememode-bgcolor", "")
-  document.documentElement.style.setProperty("--thememode-bordercolor", "")
-  document.documentElement.style.setProperty("--thememode-lightbgcolor", "")
-  document.documentElement.style.setProperty("--thememode-textcolor", "")
-  document.documentElement.style.setProperty("--thememode-buttontext", "")
-
-  document.documentElement.style.setProperty("--thememode-roombg", "")
-  document.documentElement.style.setProperty("--thememode-userbg", "")
-  document.documentElement.style.setProperty("--thememode-chatheaderbg", "")
-  document.documentElement.style.setProperty("--thememode-chatbg", "")
-  document.documentElement.style.setProperty("--thememode-messagebg", "")
-}
 
 function Toggle_Theme (color) {
   var thememode_variable = "thememode"
@@ -2034,8 +1761,22 @@ function Toggle_Theme (color) {
   var llama_theme_chatheaderbg = ""
   var llama_theme_chatbg = ""
   var llama_theme_messagebg = ""
+  if (color === "default") {
+    body.classList.remove("custommode")
+    body.classList.remove("thememode")
+    localStorage.setItem("thememode", "")
+    document.documentElement.style.setProperty("--thememode-bgcolor", "")
+    document.documentElement.style.setProperty("--thememode-bordercolor", "")
+    document.documentElement.style.setProperty("--thememode-lightbgcolor", "")
+    document.documentElement.style.setProperty("--thememode-textcolor", "")
+    document.documentElement.style.setProperty("--thememode-buttontext", "")
 
-  if (color === "pink") {
+    document.documentElement.style.setProperty("--thememode-roombg", "")
+    document.documentElement.style.setProperty("--thememode-userbg", "")
+    document.documentElement.style.setProperty("--thememode-chatheaderbg", "")
+    document.documentElement.style.setProperty("--thememode-chatbg", "")
+    document.documentElement.style.setProperty("--thememode-messagebg", "")
+  } else if (color === "pink") {
     llama_theme_bgcolor = "#ffd1dc"
     llama_theme_bordercolor = "#ea98ab"
     llama_theme_lightbgcolor = "#ffe1e6"

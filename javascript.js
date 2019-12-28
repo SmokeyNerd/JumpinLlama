@@ -655,38 +655,27 @@ USER BG
       }
       if (event.target.value === "Default Theme") {
         Toggle_Theme("default")
-      }
-      if (event.target.value === "PINK") {
+      } else if (event.target.value === "PINK") {
         Toggle_Theme("pink")
-      }
-      if (event.target.value === "GREEN") {
+      } else if (event.target.value === "GREEN") {
         Toggle_Theme("green")
-      }
-      if (event.target.value === "BLUE") {
+      } else if (event.target.value === "BLUE") {
         Toggle_Theme("blue")
-      }
-      if (event.target.value === "MAUVE") {
+      } else if (event.target.value === "MAUVE") {
         Toggle_Theme("mauve")
-      }
-      if (event.target.value === "ORANGE") {
+      } else if (event.target.value === "ORANGE") {
         Toggle_Theme("orange")
-      }
-      if (event.target.value === "RED") {
+      } else if (event.target.value === "RED") {
         Toggle_Theme("red")
-      }
-      if (event.target.value === "PURPLE") {
+      } else if (event.target.value === "PURPLE") {
         Toggle_Theme("purple")
-      }
-      if (event.target.value === "BLACK") {
+      } else if (event.target.value === "BLACK") {
         Toggle_Theme("black")
-      }
-      if (event.target.value === "BUDS") {
+      } else if (event.target.value === "BUDS") {
         Toggle_Theme("buds")
-      }
-      if (event.target.value === "SPLAT") {
+      } else if (event.target.value === "SPLAT") {
         Toggle_Theme("splat")
-      }
-      if (event.target.value === "CUSTOM") {
+      } else if (event.target.value === "CUSTOM") {
         Toggle_Theme_Custom()
         Save_Llama_Color()
       }
@@ -728,38 +717,27 @@ USER BG
   }
   if (theme_status === "") {
     document.getElementById("theme_wizard").selectedIndex = 1
-  }
-  if (theme_status === "pink") {
+  } else if (theme_status === "pink") {
     document.getElementById("theme_wizard").selectedIndex = 2
-  }
-  if (theme_status === "green") {
+  } else if (theme_status === "green") {
     document.getElementById("theme_wizard").selectedIndex = 3
-  }
-  if (theme_status === "blue") {
+  } else if (theme_status === "blue") {
     document.getElementById("theme_wizard").selectedIndex = 4
-  }
-  if (theme_status === "mauve") {
+  } else if (theme_status === "mauve") {
     document.getElementById("theme_wizard").selectedIndex = 5
-  }
-  if (theme_status === "orange") {
+  } else if (theme_status === "orange") {
     document.getElementById("theme_wizard").selectedIndex = 6
-  }
-  if (theme_status === "red") {
+  } else if (theme_status === "red") {
     document.getElementById("theme_wizard").selectedIndex = 7
-  }
-  if (theme_status === "purple") {
+  } else if (theme_status === "purple") {
     document.getElementById("theme_wizard").selectedIndex = 8
-  }
-  if (theme_status === "black") {
+  } else if (theme_status === "black") {
     document.getElementById("theme_wizard").selectedIndex = 9
-  }
-  if (theme_status === "buds") {
+  } else if (theme_status === "buds") {
     document.getElementById("theme_wizard").selectedIndex = 10
-  }
-  if (theme_status === "splat") {
+  } else if (theme_status === "splat") {
     document.getElementById("theme_wizard").selectedIndex = 11
-  }
-  if (theme_status === "custommode") {
+  } else if (theme_status === "custommode") {
     document.getElementById("theme_wizard").selectedIndex = 12
   }
 

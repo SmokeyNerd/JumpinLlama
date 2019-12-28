@@ -1552,7 +1552,6 @@ if (userbg_status) {
 var custombgs = ["1", "2", "3"]
 custombgs.forEach(function (custombg) {
   var loadbg = localStorage.getItem("llama_bg" + custombg)
-  var reloadbg = localStorage.getItem("llama_bg" + custombg + "_reload")
   if (loadbg !== "") {
     document.documentElement.style.setProperty("--user-bg" + custombg + "-image", loadbg)
   }

@@ -1385,7 +1385,7 @@ screen and (min-height: 480px) and (min-width: 2500px) {
 }
 
 .user_bg .cams__ContainerInternal {
-  background-image: var(--user-bg-image);
+  background-image: var(--user-bg1-image);
 }
 
 .thememode .userList__UserHandle {
@@ -1397,7 +1397,7 @@ screen and (min-height: 480px) and (min-width: 2500px) {
 }
 
 .user_bg .roomHeader {
-  background-image: var(--user-bg-image);
+  background-image: var(--user-bg1-image);
 }
 
 .user_bg.cam_cover_on .roomHeader {
@@ -1413,7 +1413,7 @@ screen and (min-height: 480px) and (min-width: 2500px) {
 }
 
 .user_bg .room {
-  background-image: var(--user-bg-image);
+  background-image: var(--user-bg1-image);
 }
 
 .user_bg.cam_cover_on .cams__ContainerInternal {

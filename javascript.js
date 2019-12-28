@@ -266,10 +266,6 @@ function Toggle_Llama_Chat_Options (zEvent) {
 <i class="fas fa-gamepad"></i>
 </label>
 
-<label class="button chat__HeaderOption" id="pokemon__llamaOption" title="Pokemon Rise">
-<i class="fab fa-optin-monster"></i>
-</label>
-
 <label class="button chat__HeaderOption" id="ytbackup__llamaOption" title="Youtube Back Up">
 <i class="fab fa-youtube"></i>
 </label>
@@ -296,13 +292,6 @@ function Toggle_Llama_Chat_Options (zEvent) {
     "click",
     function () {
       Toggle_Llama_Box("tube", "ytbackup")
-    },
-    false
-  )
-  document.getElementById("pokemon__llamaOption").addEventListener(
-    "click",
-    function () {
-      Toggle_Llama_Box("tube", "pokemon")
     },
     false
   )
@@ -915,9 +904,6 @@ function Toggle_Llama_Box (type, zEvent) {
     } else if (zEvent === "home") {
       var home = "https://smokeyllama.com/game_time/main/game/web_window.php"
       iframe.src = home
-    } else if (zEvent === "pokemon") {
-      window.open(
-        "https://pokemonrise.com/", "_blank")
     }
 
     if (zEvent === "max") {

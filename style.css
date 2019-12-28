@@ -1580,19 +1580,19 @@ screen and (min-height: 480px) and (min-width: 2500px) {
 }
 
 #close_box {
-  width: 40%;
+  width: 350px;
   background-color: #2c2f33;
   margin: 0 auto;
   padding: 10px 0px;
-  border-radius: 50px;
+  border-radius: 5px;
   border: 1px solid #313131;
 }
 
 .theme_alert_notice {
   position: fixed;
-  top: 15%;
-  /* right: 50%; */
-  width: 100%;
+  top: 30px;
+  right: 160px;
+  /* width: 100%; */
 }
 
 .feat_title {

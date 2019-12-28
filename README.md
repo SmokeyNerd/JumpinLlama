@@ -24,8 +24,6 @@
 * Tinychat.com
   * Used as a Youtube-Backup, so users of a room can listen to YT togerhter, when jumpins YT fails.
   * Ex. If you are in jumpin room: jumpin.chat/blue, then this will load the tinychat room: tinychat.com/room/blue
-* Pokemonrise.com
-  * External Link to PokemonRise Game. Play with other Jumpers!
 
 ---
 # Chat Settings:

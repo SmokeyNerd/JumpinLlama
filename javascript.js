@@ -40,44 +40,24 @@ body.llama_window {overflow:hidden;}
 </div>
 </div>
 </div>
-
+<style>
+#HW_JL_frame {
+    background: #fff;
+    border: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+    position: relative;
+    z-index: 2147483647;
+    transition: height 0.3s ease-out;}
+</style>
 <div id="New_Llama_Notice" onclick="Toggle_Llama_Box('notice','')">
 <label style="cursor:pointer;">
 <div class="theme_alert_notice">
-<div id="close_box"><center><h4>Thank you for installing MY Jumpin Theme!</h4>
-<hr style="width:90%;border:1px solid #313131;">
-<div class="feat_info">
-<div style="float:left;width:50%;">Theme Last Updated: 11/19/2019</div>
-<div style="">Feedback? <a href="https://www.smokeyllama.com/" target="_blank" style="color:red;">smokeyllama.com</a></div>
-</div>
-<hr style="width:90%;border:1px solid #313131;">
-<img src="https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@f8df0dc70db8258c826896144b0b1f50f7bdbd56/SmokeyLlama.png" width="85%"><br>
-<hr style="width:90%;border:1px solid #191919;">
-<h2>Features/Icons Added:</h2>
-<div class="features_added">
-<label class="button chat__HeaderOption" title="Chat Settings" style="background-color:white;color: #313131 !important;">
-<i class="fa fa-user-cog"></i>
-</label><div class="feat_title">Chat Settings</div>
-<br>
-<label class="button chat__HeaderOption" title="Camera Border Settings" style="background-color:white;color: #313131 !important;">
-<i class="fa fa-th-large"></i>
-</label><div class="feat_title">Camera Border Settings</div>
-<br>
-<label class="button chat__HeaderOption" title="Theme Settings" style="background-color:white;color: #313131 !important;">
-<i class="fa fa-palette"></i>
-</label><div class="feat_title">Theme Settings</div>
-<br>
-<label class="button chat__HeaderOption" title="Make Youtube Smaller" style="background-color:white;color: #313131 !important;">
-<i class="fa fa-compress-arrows-alt"></i>
-</label><div class="feat_title">Make Youtube Smaller</div>
-<br>
-<label class="button chat__HeaderOption" title="SET CUSTOM COLORS" style="background-color:white;color: #313131 !important;">
-<i class="fas fa-gamepad" style="color: #313131"></i>
-</label><div class="feat_title">PLAY MINI-GAMES</div>
-</div>
-<br><br>
-(Click Anywhere to close)
-</center></div>
+
+<iframe id="HW_JL_frame" src="https://headway-widget.net/widgets/7XkGbx" sandbox="allow-same-origin allow-scripts allow-top-navigation allow-popups allow-forms allow-popups-to-escape-sandbox" tabindex="0" aria-hidden="false" style="height:330px;width:345px;"></iframe>
+<br><div style="background: white;border-radius: 100px;"><center><small>Script Last Updated: 12/28/19</small><br><a href="https://www.smokeyllama.com/" style="color:gray;text-decoration:none;">Smokeyllama.com</a></center></div>
 </div>
 </label>
 </div>

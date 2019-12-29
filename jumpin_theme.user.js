@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2019 Theme
 // @namespace    https://www.smokeyllama.com
-// @version      2019.105
+// @version      2019.106
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -22,7 +22,7 @@
  * ------------------------------------------------------------------------
  */
 
-var llama_ver = "12"
+var llama_ver = "13"
 var file_style = "https://smokeyllama.github.io/JumpinLlama/style.css?ver" + llama_ver
 var file_java = "https://smokeyllama.github.io/JumpinLlama/javascript.js?ver" + llama_ver
 

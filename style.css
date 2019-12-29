@@ -1,4 +1,11 @@
 /*:root {}*/
+
+@media screen and (max-width: 1440px) {
+.chat__ShareInput, .chat__ShareCopy {
+    display: none;
+}
+}
+
 .chat__MessageBody {
   display: block;
 }

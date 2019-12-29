@@ -1745,3 +1745,68 @@ screen and (min-height: 480px) and (min-width: 2500px) {
 .custommode .fa-gamepad {
   color: var(--custommodebutton-textcolor);
 }
+
+/* ------------------------------ JUMPIN SETTINGS BOX ----------------------------------- */
+
+.settings__MobileMenuButton {display:flex !important;}
+
+@media screen and (min-height: 480px) and (min-width: 640px) {
+.settings__Page {
+    padding: 2.5em 0.5em 0;
+}
+}
+
+.settings__PopOver {
+    width: 350px !important;
+    height: 500px;
+    overflow: hidden;
+    overflow-y: auto;
+    background-color: var(--thememode-bgcolor);
+    background:white;
+}
+
+@media screen and (min-height: 480px) and (min-width: 640px) {
+.settings__MobileMenu {
+    display: block !important;
+}
+}
+
+.settings__MobileMenuButton {
+    width:32px;
+    height:32px;
+    position: relative;
+    left: -10px;
+    top: -11px;
+}
+.settings__Menu--open {
+    -webkit-transform: translate3d(0,0,0) !important;
+    transform: translate3d(0,0,0) !important;
+}
+@media screen and (min-height: 480px) and (min-width: 640px){
+.settings__Menu {
+    position: absolute;
+    -webkit-transform: translate3d(-100%,0,0);
+    transform: translate3d(-100%,0,0);
+}}
+.settings__CloseLabel, .settings__CloseButton {
+    display:none;
+}
+.settings__PopOver::-webkit-scrollbar {
+    width: 10px !important;
+    height: 10px !important;
+    background-color: rgb(47, 49, 54) !important;
+}
+
+.settings__PopOver::-webkit-scrollbar-thumb {
+    background-color: rgb(32, 34, 37) !important;
+    border-width: 2px !important;
+    border-style: solid !important;
+    border-color: rgb(54, 57, 63) !important;
+    border-image: initial !important;
+    border-radius: 100px !important;
+}
+
+.settings__PopOver::-webkit-scrollbar-track {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 6px inset !important;
+    background-color: rgb(47, 49, 54) !important;
+}

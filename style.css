@@ -1721,11 +1721,12 @@ screen and (min-height: 480px) and (min-width: 2500px) {
 .popchat #chat {
   overflow: hidden;
   height:605px;
+  opacity:0.6;
 }
 
 .popchat #chat:hover {
   height: 605px;
-
+  opacity:1;
 }
 
 #Res_Game {

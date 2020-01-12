@@ -1,5 +1,6 @@
 var body = document.body
 
+
 // ------------ LLAMA_NOTICE_CREATOR ----------------*/
 var LlamaMain = document.createElement("div")
 
@@ -158,6 +159,9 @@ if (chat_option_activator !== "llama_chat_menu") {
 }
 
 function Toggle_Llama_Chat_Options () {
+  var chat_drag = document.getElementsByClassName("chat")[0]
+  chat_drag.id = "chat"
+
   var lr = document.getElementsByClassName("room")[0]
   lr.id = "llama_Room"
   var xz = document.getElementsByClassName("chat__HeaderOptions")[1]
@@ -226,6 +230,10 @@ function Toggle_Llama_Chat_Options () {
   LlamaMenuBtm.setAttribute("title", "Llama_MENU_Btm")
   LlamaMenuBtm.setAttribute("style", "position: relative; top: 4px;")
   LlamaMenuBtm.innerHTML = `
+<label class="button chat__HeaderOption LlamaOption_poprestore" id="poprestore__llamaOption" title="Restore PopChat" style="display:none">
+<i class="fas fa-window-restore"></i>
+</label>
+
 <label class="button chat__HeaderOption LlamaOption_miniyt" id="miniyt__llamaOption" title="Mini Youtube Player">
 <i class="fa fa-compress-arrows-alt"></i>
 </label>
@@ -316,6 +324,10 @@ function Toggle_Llama_Chat_Options () {
   LlamaOptions.setAttribute("id", "LlamaOptions_Main")
   LlamaOptions.setAttribute("title", "Llama Options")
   LlamaOptions.innerHTML = `
+<label class="button chat__HeaderOption" id="popchat__llamaOption" title="Pop Out Chat">
+<i class="fas fa-window-restore"></i>
+</label>
+
 <label class="button chat__HeaderOption LlamaOption_chat" id="chat__llamaOption" title="Extra Cam Options">
 <i class="fa fa-user-cog"></i>
 </label>
@@ -460,6 +472,20 @@ USER BG
     "click",
     function () {
       Toggle_Llama_Box("chat", "")
+    },
+    false
+  )
+  document.getElementById("popchat__llamaOption").addEventListener(
+    "click",
+    function () {
+      Toggle_Llama_Box("popchat", "")
+    },
+    false
+  )
+  document.getElementById("poprestore__llamaOption").addEventListener(
+    "click",
+    function () {
+      Toggle_Llama_Box("popchat", "")
     },
     false
   )
@@ -750,16 +776,25 @@ USER BG
   }
 
   // ----------------------------------------------------------------- Make the DIV element draggable:
-  dragElement(document.getElementById("mydiv"))
 
+  dragElement(document.getElementById("mydiv"))
+  dragElement(document.getElementById("chat"))
+  var PADDING = 8;
+  var rect;
+  var viewport = {
+  bottom: 0,
+  left: 0,
+  right: 0,
+  top: 0
+}
   function dragElement (elmnt) {
     var pos1 = 0
     var pos2 = 0
     var pos3 = 0
     var pos4 = 0
-    if (document.getElementById(elmnt.id + "header")) {
+    if (document.getElementById(elmnt.id + "__Header")) {
       // If present, the header is where you move the DIV from:
-      document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown
+      document.getElementById(elmnt.id + "__Header").onmousedown = dragMouseDown
     } else {
       // Otherwise, move the DIV from anywhere inside the DIV:
       elmnt.onmousedown = dragMouseDown
@@ -767,10 +802,17 @@ USER BG
 
     function dragMouseDown (e) {
       e = e || window.event
-      e.preventDefault()
       // Get the mouse cursor position at startup:
       pos3 = e.clientX
       pos4 = e.clientY
+
+      // store the current viewport and element dimensions when a drag starts
+      rect = elmnt.getBoundingClientRect();
+      viewport.bottom = window.innerHeight - PADDING;
+      viewport.left = PADDING;
+      viewport.right = window.innerWidth - PADDING;
+      viewport.top = PADDING;
+
       document.onmouseup = closeDragElement
       // Call a function whenever the cursor moves:
       document.onmousemove = elementDrag
@@ -778,15 +820,23 @@ USER BG
 
     function elementDrag (e) {
       e = e || window.event
-      e.preventDefault()
+
       // Calculate the new cursor position:
       pos1 = pos3 - e.clientX
       pos2 = pos4 - e.clientY
       pos3 = e.clientX
       pos4 = e.clientY
       // Set the element's new position:
-      elmnt.style.top = elmnt.offsetTop - pos2 + "px"
-      elmnt.style.left = elmnt.offsetLeft - pos1 + "px"
+
+    // check to make sure the element will be within our viewport boundary
+    var newLeft = elmnt.offsetLeft - pos1;
+    var newTop = elmnt.offsetTop - pos2;
+
+
+      // set the element's new position:
+      elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+      elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+
     }
 
     function closeDragElement () {
@@ -795,6 +845,8 @@ USER BG
       document.onmousemove = null
     }
   }
+
+
 
   function Toggle_Word_1_Action () {
     var text = document.getElementById("chat_input_box")
@@ -831,14 +883,22 @@ function Toggle_Llama_Box (type, zEvent) {
     body.classList.toggle("open_llama_cam")
     body.classList.remove("open_llama_chat")
     body.classList.remove("open_llama_theme")
+    body.classList.remove("popchat")
+  } else if (type === "popchat") {
+    body.classList.remove("open_llama_cam")
+    body.classList.remove("open_llama_chat")
+    body.classList.remove("open_llama_theme")
+    body.classList.toggle("popchat")
   } else if (type === "chat") {
     body.classList.remove("open_llama_cam")
     body.classList.toggle("open_llama_chat")
     body.classList.remove("open_llama_theme")
+    body.classList.remove("popchat")
   } else if (type === "theme") {
     body.classList.remove("open_llama_cam")
     body.classList.remove("open_llama_chat")
     body.classList.toggle("open_llama_theme")
+    body.classList.remove("popchat")
   } else if (type === "notice") {
     body.classList.toggle("hide_notice")
   } else if (type === "header") {

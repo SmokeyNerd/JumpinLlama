@@ -224,8 +224,14 @@ body {
 }
 
 /* ------------------ MAIN_CHAT ------------------ */
+.popchat, body {overflow:hidden;}
+
 .chat__FeedWrapper {
   border-left: 1px solid #313131;
+}
+
+.popchat .chat__FeedWrapper {
+  width:400px;
 }
 
 .thememode .chat__FeedWrapper {
@@ -535,7 +541,9 @@ option.buds_mode {
 }
 
 .thememode .svg-inline--fa,
-.thememode .fa {
+.thememode .fa,
+.thememode .svg-inline--fas,
+.thememode .fas {
   color: var(--thememode-buttontext);
 }
 
@@ -1210,6 +1218,14 @@ option.buds_mode {
     "chat cams cams";
 }
 
+.popchat.ltr_layout .room.layout--horizontal {
+  grid-template-areas:
+        "header header header"
+        "cams cams chat";
+}
+
+
+
 screen and (min-height: 480px) and (min-width: 2500px) {
   .ltr_layout .room.layout--horizontal {
     grid-template-columns: 1fr 2fr 60rem;
@@ -1702,6 +1718,16 @@ screen and (min-height: 480px) and (min-width: 2500px) {
 
 }
 
+.popchat #chat {
+  overflow: hidden;
+  height:605px;
+}
+
+.popchat #chat:hover {
+  height: 605px;
+
+}
+
 #Res_Game {
   display:none;
 }
@@ -1731,6 +1757,31 @@ screen and (min-height: 480px) and (min-width: 2500px) {
 }
 
 #mydivheader {
+  border-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding: 5px;
+  cursor: move;
+  z-index: 8000;
+  background-color: #2c2f33;
+  color: #fff;
+}
+
+.popchat .room.layout--horizontal {
+  grid-template-columns: 1fr 1fr 0rem !important;
+}
+
+.popchat #chat {
+  position: absolute;
+  left: 20px;
+  top: 110px;
+  z-index: 7000;
+  background-color: var(--thememode-lightbgcolor);
+  border: 1px solid var(--thememode-bordercolor);
+  border-radius: 5px;
+}
+
+.popchat #chat__Header {
   border-radius: 5px;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;

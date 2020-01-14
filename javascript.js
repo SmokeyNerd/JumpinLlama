@@ -486,6 +486,7 @@ USER BG
     "click",
     function () {
       Toggle_Llama_Box("popchat", "")
+      document.getElementById("chat").setAttribute("style", "")
     },
     false
   )

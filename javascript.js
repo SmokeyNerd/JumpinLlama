@@ -57,7 +57,7 @@ body.llama_window {overflow:hidden;}
 <label style="cursor:pointer;">
 <div class="theme_alert_notice">
 
-<iframe id="HW_JL_frame" src="https://headway-widget.net/widgets/7XkGbx" sandbox="allow-same-origin allow-scripts allow-top-navigation allow-popups allow-forms allow-popups-to-escape-sandbox" tabindex="0" aria-hidden="false" style="height:330px;width:345px;"></iframe>
+<iframe id="HW_JL_frame" src="" sandbox="allow-same-origin allow-scripts allow-top-navigation allow-popups allow-forms allow-popups-to-escape-sandbox" tabindex="0" aria-hidden="false" style="height:330px;width:345px;"></iframe>
 <br><div style="background: white;border-radius: 100px;"><center><small>Script Last Updated: 12/28/19</small><br><a href="https://www.smokeyllama.com/" style="color:gray;text-decoration:none;">Smokeyllama.com</a></center></div>
 </div>
 </label>
@@ -159,6 +159,7 @@ if (chat_option_activator !== "llama_chat_menu") {
 }
 
 function Toggle_Llama_Chat_Options () {
+
   var chat_drag = document.getElementsByClassName("chat")[0]
   chat_drag.id = "chat"
 
@@ -879,7 +880,8 @@ function Toggle_Llama_Box (type, zEvent) {
   var loc = window.location.toString()
   var params = loc.split("/")[3]
   var iframe = document.getElementById("game_list")
-
+  var info_frame = document.getElementById("HW_JL_frame")
+  
   if (type === "cam") {
     body.classList.toggle("open_llama_cam")
     body.classList.remove("open_llama_chat")
@@ -902,6 +904,8 @@ function Toggle_Llama_Box (type, zEvent) {
     body.classList.remove("popchat")
   } else if (type === "notice") {
     body.classList.toggle("hide_notice")
+    var home = "https://headway-widget.net/widgets/7XkGbx"
+    info_frame.src = home
   } else if (type === "header") {
     body.classList.toggle(hide_header)
     localStorage.setItem("header_status", "")
@@ -985,7 +989,12 @@ function Toggle_Robo_Llama () {
 
 var cheers_btn = localStorage.getItem("llama_btn_1")
 if (cheers_btn) {
-  body.classList.add("word_one")
+  var loc = window.location.toString()
+  var pageName = loc.split("/")[3]
+
+  if (pageName != "" && pageName != "directory" && pageName != "support" && pageName != "profile" && pageName != "messages" && pageName != "settings") {
+   body.classList.add("word_one")
+  }
 }
 
 function Toggle_Word_1 () {

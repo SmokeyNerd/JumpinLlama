@@ -224,7 +224,7 @@ body {
 }
 
 /* ------------------ MAIN_CHAT ------------------ */
-.popchat, body {overflow:hidden;}
+body.popchat {overflow:hidden;}
 
 .chat__FeedWrapper {
   border-left: 1px solid #313131;

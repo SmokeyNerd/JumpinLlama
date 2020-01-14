@@ -226,6 +226,10 @@ body {
 /* ------------------ MAIN_CHAT ------------------ */
 body.popchat {overflow:hidden;}
 
+.popchat #poprestore__llamaOption {
+    display: inline-flex !important;
+}
+
 .chat__FeedWrapper {
   border-left: 1px solid #313131;
 }

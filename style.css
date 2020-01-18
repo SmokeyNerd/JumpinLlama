@@ -121,7 +121,6 @@
 }
 .hide_header #header_down {
   display: block;
-  opacity:0.5;
 }
 #header_down {
   display: none;
@@ -130,6 +129,7 @@
   margin-top: -50px;
 }
 .hide_header #llama_hide_header {
+  opacity:0.5;
   top: 50px;
   border: 1px solid #ccc;
   border-top: 0px;

@@ -40,12 +40,12 @@ function Start_The_Llama () {
 
 // ------------------------------------ LOAD : REGULAR VARIABLES -------------------------------------*/
 var theme_status = localStorage.getItem("thememode")
-var user_checkbox_settings = ["robo", "bubble", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg"]
+var user_checkbox_settings = ["robo", "bubble", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg", "trans_chat", "trans_users"]
 var user_button_settings = ["miniyt"]
 var top_buttons = ["chat", "cam", "theme", "notice"]
 var btmbuttons = ["poprestore", "web", "hideweb"]
 var checkbox_actions = ["bubble", "robo", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg",
-  "cambg_cover", "cambg_center", "cambg_repeat", "chatbg_cover", "chatbg_center", "chatbg_repeat", "userbg_cover", "userbg_center", "userbg_repeat"]
+  "cambg_cover", "cambg_center", "cambg_repeat", "chatbg_cover", "chatbg_center", "chatbg_repeat", "userbg_cover", "userbg_center", "userbg_repeat", "trans_chat", "trans_users"]
 var button_actions = ["miniyt", "hide_header", "save", "preview", "reset", "web", "hideweb", "games", "tiny", "min", "max", "res", "close", "clear_cam", "clear_chat", "clear_user", "apply_images", "popchat", "poprestore"]
 var menu_actions = ["chat", "cam", "theme", "notice"]
 var theme_options = ["pink", "green", "blue", "mauve", "orange", "red", "purple", "black", "buds", "splat", "custom"]
@@ -163,6 +163,7 @@ function Reload_User_Settings () {
     document.getElementById("llama_clear_chatbg").value = userbg_status
     Save_User_BG()
   }
+
   // ------- BG POSITION SETTING -------
   var bgsets = ["cambg", "chatbg", "userbg"]
   bgsets.forEach(function (bgset) {
@@ -412,6 +413,10 @@ function Checkbox_Action (type) {
   } else if (type === "userbg_center") {
     body.classList.toggle(type)
   } else if (type === "user_bg") {
+    body.classList.toggle(type)
+  } else if (type === "trans_chat") {
+    body.classList.toggle(type)
+  } else if (type === "trans_users") {
     body.classList.toggle(type)
   }
 }
@@ -726,6 +731,9 @@ function Create_Theme_Settings () {
 <input type='text' name="server" id="llama_clear_chatbg" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 150px;border-radius: 2px;border: 1px solid #ccc;"/>
 <input id="llama_clear_chat" type="button" value="✘" style="border-radius: 10px;width: 45%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
 </span>
+<span class="dropdown__Option">
+<span class="dropdown__Option" id="llama_trans_chat">Transparent Chat<input id="llama_trans_chat_checkbox" class="jic-checkbox" type="checkbox"></span>
+</span>
 <span class="dropdown__Option no_hover">
 <i class="fas fa-users" style="color:#5a6370;"></i>
 <span style="position: relative; left: -19px;">USERS BG Image URL</span>
@@ -733,6 +741,9 @@ function Create_Theme_Settings () {
 <span class="dropdown__Option">
 <input type='text' name="server" id="llama_clear_userbg" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 150px;border-radius: 2px;border: 1px solid #ccc;"/>
 <input id="llama_clear_user" type="button" value="✘" style="border-radius: 10px;width: 45%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
+</span>
+<span class="dropdown__Option">
+<span class="dropdown__Option" id="llama_trans_users">Transparent Users<input id="llama_trans_users_checkbox" class="jic-checkbox" type="checkbox"></span>
 </span>
 <span class="dropdown__Option"><input id="llama_apply_images" type="button" value="✔ Apply Images" style="border-radius: 10px;width: 100%;border: 0px;"/>
 </span>

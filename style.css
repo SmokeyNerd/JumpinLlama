@@ -695,6 +695,17 @@ option.buds_mode {
   top:-130px;
 
 }
+/*-------------------------------------------------------------------------- USER_TOGGLE_TRANSPARENT_CHAT_USERS */
+.trans_chat .chat__FeedWrapper {
+  background: transparent !important;}
+
+.trans_users .chat__UserList {
+  background-color: transparent !important;
+  border-left-color: transparent !important;}
+
+.trans_chat .chat, .trans_users .chat {
+  background: transparent;}
+.trans_chat .
 
 /*-------------------------------------------------------------------------- LEFT_TO_RIGHT */
 

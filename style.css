@@ -121,6 +121,7 @@
 }
 .hide_header #header_down {
   display: block;
+  opacity:0.5;
 }
 #header_down {
   display: none;
@@ -715,7 +716,7 @@ option.buds_mode {
     background-color: var(--thememode-bgcolor) !important;
 }
 .thememode #header_up, .thememode #header_down {
-    color: var(--thememode-bordercolor);
+    color: var(--thememode-textcolor);
 }
 .thememode.bubble .chat__MessageBody {
     background-color: var(--thememode-bgcolor);

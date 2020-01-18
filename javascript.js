@@ -218,9 +218,10 @@ function Bottom_Bar (type) {
 
 // ------------------------------------ ACTION : SAVE USERNAME COLOR -------------------------*/
 function Save_Username_Color (type) {
-  var usercolor_llama = document.getElementById("llama_clear_usercolorsrc").value
-  document.documentElement.style.setProperty("--thememode-usernamecolor", usercolor_llama)
+
   if (type === "save") {
+    var usercolor_llama = document.getElementById("llama_clear_usercolorsrc").value
+    document.documentElement.style.setProperty("--thememode-usernamecolor", usercolor_llama)
     body.classList.add("usercolor")
     localStorage.setItem("llama_username_color", usercolor_llama)
   } else if (type === "reset") {
@@ -323,8 +324,10 @@ function Button_Action (type) {
     } else {
       Clear_User_BG(type)
     }
-  } else if ("apply_images") {
+  } else if (type === "apply_images") {
     Save_User_BG()
+  } else if (type === "apply_colors") {
+    Save_Username_Color('save')
   }
 }
 
@@ -712,14 +715,13 @@ function Create_Cam_Settings () {
 <span class="dropdown__Option" id="llama_border">Cam Borders<input id="llama_border_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_spacing">Cam Spacing<input id="llama_spacing_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option no_hover">
-<i class="fas fa-comments" style="color:#5a6370;"></i>
-<span style="position: relative; left: -28px;">Color Settings</span>
+<span style="">Username Color</span>
 </span>
 <span class="dropdown__Option">
 <input type='text' name="server" id="llama_clear_usercolorsrc" placeholder="Color Name/#Hex.." style="opacity: 1;cursor: pointer; width: 120px;border-radius: 2px;border: 1px solid #ccc;"/>
 <input id="llama_clear_usercolor" type="button" value="✘" style="border-radius: 10px;width: 45%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
 </span>
-<span class="dropdown__Option"><input id="llama_apply_colors" type="button" value="✔ Apply Color" style="border-radius: 10px;width: 100%;border: 0px;"/>`
+<span class="dropdown__Option"><input id="llama_apply_colors" type="button" value="✔ Apply Color" style="border-radius: 10px;width: 100%;border: 0px;"/></span>`
   option_box.appendChild(cam_menu)
 }
 

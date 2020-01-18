@@ -62,6 +62,9 @@
 .userbg_color #userbg_off {
     display: none !important;
 }
+.dark .chat__FeedWrapper {
+    background-color: var(--thememode-lightbgcolor);
+}
 /*-------------------------------------------------------------------------- NO_CAM_BORDERS */
 
 .border .cams__Cam {

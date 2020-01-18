@@ -194,17 +194,26 @@ function Reload_User_Settings () {
 }
 
 // ------------------------------------ ACTION : TOP BAR ACTION -----------------------------*/
+
+
 function Top_Bar_Action (type) {
   menu_actions.forEach(function (menu_action) {
     if (menu_action !== type) {
       body.classList.toggle("open_llama_" + type)
       body.classList.remove("open_llama_" + menu_action)
-      if (type === "theme") {
-        var current_theme_selected = localStorage.getItem("thememode")
-        if (current_theme_selected === "custom") {
-          Toggle_Custom_Box("on")
-        }
+      var current_theme_selected = localStorage.getItem("thememode")
+      var custom_status = localStorage.getItem("custom_box_status")
+      if (type === "theme" && current_theme_selected === "custom" && custom_status === "open") {
+        Toggle_Custom_Box("off")
+        localStorage.setItem("custom_box_status", "closed")
+      } else if (type === "theme" && current_theme_selected === "custom" && custom_status === "closed") {
+        Toggle_Custom_Box("on")
+        localStorage.setItem("custom_box_status", "open")
+      } else {
+        Toggle_Custom_Box("off")
+        localStorage.setItem("custom_box_status", "closed")
       }
+
       if (type === "notice") {
         var loc = window.location.toString()
         var params = loc.split("/")[3]
@@ -700,9 +709,11 @@ function Create_Exit_Box () {
 // ------------------------------------ ACTION : EXIT BOX -----------------------------------*/
 function Exit_Box_Action () {
   Toggle_Custom_Box("off")
+  localStorage.setItem("custom_box_status", "closed")
   menu_actions.forEach(function (menu_action) {
     body.classList.remove("open_llama_" + menu_action)
   })
+
 }
 
 // ------------------------------------ CREATE : TOP SETTINGS OUTER BOX ---------------------*/

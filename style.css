@@ -36,6 +36,32 @@
 
 .cams__CamHandle {color: var(--thememode-usernamecolor);}
 .hide_usernames .cams__CamHandle {display: none;}
+
+.thememode.userbg_color .room {
+    background-color: var(--thememode-user_bgcolor);
+}
+
+#user_bgcolor {
+    display: none;
+}
+.userbg_color #user_bgcolor {
+    display:flex !important;
+}
+#userbg_on {
+    display: none;
+}
+
+.userbg_color #userbg_on {
+    display: inline-block !important;
+}
+
+#userbg_off {
+    display: inline-block;
+}
+
+.userbg_color #userbg_off {
+    display: none !important;
+}
 /*-------------------------------------------------------------------------- NO_CAM_BORDERS */
 
 .border .cams__Cam {
@@ -541,7 +567,19 @@ option.buds_mode {
 }
 
 /*-------------------------------------------------------------------------- THEME_MODE */
+.thememode .cams__Restrictions > span > .svg-inline--fa,
+.thememode .cams__Restrictions > span > .fa,
+.thememode .cams__Restrictions > span > .svg-inline--fas,
+.thememode .cams__Restrictions > span > .fas {
+    color: var(--thememode-textcolor);
+}
 
+.cams__RoomDisplayPic {
+  border-radius: 100px;
+}
+.thememode .button-blue:hover {
+    background-color: var(--thememode-lightbgcolor);
+}
 .thememode #llama_Room>div.cams>div.chat__Header.cams__Footer>div.chat__HeaderOptions>label.button.chat__HeaderOption.chat__HeaderOption-quality,
 .thememode .fa-gamepad,
 .thememode .fa-sign-out-alt,

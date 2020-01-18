@@ -40,15 +40,15 @@ function Start_The_Llama () {
 
 // ------------------------------------ LOAD : REGULAR VARIABLES -------------------------------------*/
 var theme_status = localStorage.getItem("thememode")
-var user_checkbox_settings = ["robo", "bubble", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg", "trans_chat", "trans_users", "hide_usernames"]
+var user_checkbox_settings = ["robo", "bubble", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg", "trans_chat", "trans_users", "hide_usernames", "user_bgcolor"]
 var user_button_settings = ["miniyt"]
 var top_buttons = ["chat", "cam", "theme", "notice"]
 var btmbuttons = ["poprestore", "web", "hideweb"]
 var checkbox_actions = ["bubble", "robo", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg",
   "cambg_cover", "cambg_center", "cambg_repeat", "chatbg_cover", "chatbg_center", "chatbg_repeat", "userbg_cover",
-  "userbg_center", "userbg_repeat", "trans_chat", "trans_users", "hide_usernames"]
+  "userbg_center", "userbg_repeat", "trans_chat", "trans_users", "hide_usernames", "user_bgcolor"]
 var button_actions = ["miniyt", "hide_header", "save", "preview", "reset", "web", "hideweb", "games",
-  "tiny", "min", "max", "res", "close", "clear_cam", "clear_chat", "clear_user", "apply_images", "popchat", "poprestore", "clear_usercolor", "apply_colors"]
+  "tiny", "min", "max", "res", "close", "clear_cam", "clear_chat", "clear_user", "apply_images", "popchat", "poprestore", "clear_usercolor", "apply_colors", "apply_bgcolors"]
 var menu_actions = ["chat", "cam", "theme", "notice"]
 var theme_options = ["pink", "green", "blue", "mauve", "orange", "red", "purple", "black", "buds", "splat", "custom"]
 var custom_settings = ["bgcolor", "bordercolor", "lightbgcolor", "textcolor", "buttontext"]
@@ -149,7 +149,13 @@ function Reload_User_Settings () {
       body.classList.add(user_button_setting)
     }
   })
-
+  var bgstorage = localStorage.getItem("llama_user_bgcolor")
+  if (bgstorage !== "") {
+    var bgstoragesrc = localStorage.getItem("llama_user_bgcolorsrc")
+    document.getElementById("llama_user_bgcolor_checkbox").checked = true
+    document.getElementById("llama_user_bgcolorsrc").value = bgstoragesrc
+    Save_User_BG_Color('save')
+  }
   // ------- SET DROPDOWN CHOICE -------
   const theme_dropdown = document.getElementById("theme_wizard")
   if (theme_status !== null) {
@@ -214,6 +220,26 @@ function Top_Bar_Action (type) {
 function Bottom_Bar (type) {
   if (type === "miniyt") {
     body.classList.toggle("")
+  }
+}
+
+// ------------------------------------ ACTION : SAVE USERNAME COLOR -------------------------*/
+function Save_User_BG_Color (type) {
+
+  if (type === "save") {
+    body.classList.add("userbg_color")
+    var usercolor_llama = document.getElementById("llama_user_bgcolorsrc").value
+    document.documentElement.style.setProperty("--thememode-user_bgcolor", usercolor_llama)
+    localStorage.setItem("llama_user_bgcolorsrc", usercolor_llama)
+  } else if (type === "reset") {
+    body.classList.remove("userbg_color")
+    document.documentElement.style.setProperty("--thememode-user_bgcolor", "")
+    document.getElementById("llama_user_bgcolorsrc").value = ""
+    document.documentElement.style.setProperty("--thememode-user_bgcolor", "")
+    localStorage.setItem("llama_user_bgcolorsrc", "")
+  } else if (type === "open") {
+    body.classList.toggle("userbg_color")
+
   }
 }
 
@@ -328,6 +354,8 @@ function Button_Action (type) {
     Save_User_BG()
   } else if (type === "apply_colors") {
     Save_Username_Color('save')
+  } else if (type === "apply_bgcolors") {
+    Save_User_BG_Color('save')
   }
 }
 
@@ -451,6 +479,9 @@ function Checkbox_Action (type) {
     body.classList.toggle(type)
   } else if (type === "hide_usernames") {
     body.classList.toggle(type)
+  } else if (type === "user_bgcolor") {
+    Save_User_BG_Color('open')
+
   }
 }
 
@@ -754,6 +785,15 @@ function Create_Theme_Settings () {
   <option value="CUSTOM" class="custom_mode">CUSTOM</option>
 </select>
 </label>
+
+<span class="dropdown__Option" id="llama_user_bgcolor">Custom BG Color : <span id="userbg_on">ON</span><span id="userbg_off">OFF</span><input id="llama_user_bgcolor_checkbox" class="jic-checkbox" type="checkbox"  style="display:none;"></span>
+<span class="dropdown__Option" id="user_bgcolor">
+    <span>BG Color</span>
+    <input type="color" name="colorpicker" id="llama_user_bgcolorsrc" value="#000000" style="width: 40px;border-radius: 3px;border: 1px solid #ccc;height: 18px;padding: 0px;"></input>
+    <input id="llama_apply_bgcolors" type="button" value="✔" style="border-radius: 5px;width: 20px;border: 0px;"/>
+</span>
+<span class="dropdown__Option" id="llama_trans_chat">Transparent Chat<input id="llama_trans_chat_checkbox" class="jic-checkbox" type="checkbox"></span>
+<span class="dropdown__Option" id="llama_trans_users">Transparent Users<input id="llama_trans_users_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_user_bg">Background Image<input id="llama_user_bg_checkbox" class="jic-checkbox" type="checkbox"></span>
 <div class="user_bg_settings">
 <div class="dropdown__Option dropdown__Option-header">BG Image Settings</div>
@@ -774,8 +814,6 @@ function Create_Theme_Settings () {
 <input id="llama_clear_chat" type="button" value="✘" style="border-radius: 10px;width: 45%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
 </span>
 
-<span class="dropdown__Option" id="llama_trans_chat">Transparent Chat<input id="llama_trans_chat_checkbox" class="jic-checkbox" type="checkbox"></span>
-
 <span class="dropdown__Option no_hover">
 <i class="fas fa-users" style="color:#5a6370;"></i>
 <span style="position: relative; left: -19px;">USERS BG Image URL</span>
@@ -784,8 +822,6 @@ function Create_Theme_Settings () {
 <input type='text' name="server" id="llama_clear_userbg" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 150px;border-radius: 2px;border: 1px solid #ccc;"/>
 <input id="llama_clear_user" type="button" value="✘" style="border-radius: 10px;width: 45%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
 </span>
-
-<span class="dropdown__Option" id="llama_trans_users">Transparent Users<input id="llama_trans_users_checkbox" class="jic-checkbox" type="checkbox"></span>
 
 <span class="dropdown__Option"><input id="llama_apply_images" type="button" value="✔ Apply Images" style="border-radius: 10px;width: 100%;border: 0px;"/>
 </span>

@@ -265,6 +265,7 @@ function Button_Action (type) {
   var secondUnderscore = string.indexOf("_", firstUnderscore + 1)
   var clear = [string.substring(5, secondUnderscore)]
 
+
   if (storage_status !== type) {
     localStorage.setItem(storage, type)
   } else {
@@ -291,7 +292,7 @@ function Button_Action (type) {
   } else if (type === "close") {
     body.classList.toggle("web")
     iframe.src = ""
-  } else if (clear === "clear") {
+  } else if (clear == "clear") {
     Clear_User_BG(type)
   } else if ("apply_images") {
     Save_User_BG()
@@ -420,7 +421,7 @@ function Cheers_Button () {
   var text = document.getElementById("chat_input_box")
   var cheers_status = localStorage.getItem("cheers_status")
   if (!cheers_status) {
-    text.value = "cheers!"
+    text.value = "!cheers"
     localStorage.setItem("cheers_status", "1")
   }
   if (cheers_status === "1") {

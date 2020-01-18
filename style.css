@@ -557,7 +557,7 @@ option.buds_mode {
     background-color: var(--thememode-lightbgcolor);
 }
 .thememode .chat, .chat__FeedWrapper {
-    background: transparent;
+    background: var(--thememode-lightbgcolor);
 }
 .thememode .layout--horizontal .chat__UserList {
     border-left-color: var(--thememode-bordercolor);

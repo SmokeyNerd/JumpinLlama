@@ -218,7 +218,6 @@ function Bottom_Bar (type) {
 
 // ------------------------------------ ACTION : SAVE USERNAME COLOR -------------------------*/
 function Save_Username_Color (type) {
-
   if (type === "save") {
     var usercolor_llama = document.getElementById("llama_clear_usercolorsrc").value
     document.documentElement.style.setProperty("--thememode-usernamecolor", usercolor_llama)
@@ -611,23 +610,23 @@ function Create_Custom_Mode () {
 <div class="dropdown__Option dropdown__Option-header">Custom Settings<input id="llama_reset" type="button" style="cursor:pointer;border-radius: 10px;width: 30%;border: 1px solid #ccc;" value="RESET"/></div>
             <span class="dropdown__Option">
                 <span>Bar Colors</span>
-                <input class="jscolor {zIndex:'5000'}"  type='text' name="server" id="llama_bgcolor" value="#22ADD5" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
+                <input class="jscolor {hash:true,zIndex:'5000'}"  type='text' name="server" id="llama_bgcolor" value="#22ADD5" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
             </span>
             <span class="dropdown__Option">
                 <span>Button Color</span>
-                <input class="jscolor {zIndex:'5000'}"  type='text' name="server" id="llama_bordercolor" value="#C7CFD9" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
+                <input class="jscolor {hash:true,zIndex:'5000'}"  type='text' name="server" id="llama_bordercolor" value="#C7CFD9" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
             </span>
             <span class="dropdown__Option">
                 <span>Background Color</span>
-                <input class="jscolor {zIndex:'5000'}"  type='text' name="server" id="llama_lightbgcolor" value="#FFFFFF" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
+                <input class="jscolor {hash:true,zIndex:'5000'}"  type='text' name="server" id="llama_lightbgcolor" value="#FFFFFF" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
             </span>
             <span class="dropdown__Option">
                 <span>Text Color</span>
-                <input class="jscolor {zIndex:'5000'}" type='text' name="server" id="llama_textcolor" value="#C7CFD9" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
+                <input class="jscolor {hash:true,zIndex:'5000'}" type='text' name="server" id="llama_textcolor" value="#C7CFD9" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
             </span>
             <span class="dropdown__Option">
                 <span>Button Text</span>
-                <input class="jscolor {zIndex:'5000'}" type='text' name="server" id="llama_buttontext" value="#000000" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
+                <input class="jscolor {hash:true,zIndex:'5000'}" type='text' name="server" id="llama_buttontext" value="#000000" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
             </span>
 
             <span class="dropdown__Option">
@@ -718,7 +717,7 @@ function Create_Cam_Settings () {
 <span style="">Username Color</span>
 </span>
 <span class="dropdown__Option">
-<input type='text' name="server" id="llama_clear_usercolorsrc" placeholder="Color Name/#Hex.." style="opacity: 1;cursor: pointer; width: 120px;border-radius: 2px;border: 1px solid #ccc;"/>
+<input type='text' name="server" id="llama_clear_usercolorsrc" placeholder="Color Name/#Hex.." style="opacity: 1;cursor: pointer; width: 120px;border-radius: 2px;border: 1px solid #ccc;" class="jscolor {hash:true,zIndex:'5000'}" />
 <input id="llama_clear_usercolor" type="button" value="✘" style="border-radius: 10px;width: 45%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
 </span>
 <span class="dropdown__Option"><input id="llama_apply_colors" type="button" value="✔ Apply Color" style="border-radius: 10px;width: 100%;border: 0px;"/></span>`

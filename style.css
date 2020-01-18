@@ -32,6 +32,7 @@
   border-top-right-radius: 100px;
   border-bottom-right-radius: 100px;
 }
+.cams__CamWatermark {display:none;}
 
 /*-------------------------------------------------------------------------- NO_CAM_BORDERS */
 

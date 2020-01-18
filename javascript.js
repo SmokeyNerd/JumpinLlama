@@ -731,9 +731,9 @@ function Create_Theme_Settings () {
 <input type='text' name="server" id="llama_clear_chatbg" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 150px;border-radius: 2px;border: 1px solid #ccc;"/>
 <input id="llama_clear_chat" type="button" value="✘" style="border-radius: 10px;width: 45%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
 </span>
-<span class="dropdown__Option">
+
 <span class="dropdown__Option" id="llama_trans_chat">Transparent Chat<input id="llama_trans_chat_checkbox" class="jic-checkbox" type="checkbox"></span>
-</span>
+
 <span class="dropdown__Option no_hover">
 <i class="fas fa-users" style="color:#5a6370;"></i>
 <span style="position: relative; left: -19px;">USERS BG Image URL</span>
@@ -742,9 +742,9 @@ function Create_Theme_Settings () {
 <input type='text' name="server" id="llama_clear_userbg" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 150px;border-radius: 2px;border: 1px solid #ccc;"/>
 <input id="llama_clear_user" type="button" value="✘" style="border-radius: 10px;width: 45%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
 </span>
-<span class="dropdown__Option">
+
 <span class="dropdown__Option" id="llama_trans_users">Transparent Users<input id="llama_trans_users_checkbox" class="jic-checkbox" type="checkbox"></span>
-</span>
+
 <span class="dropdown__Option"><input id="llama_apply_images" type="button" value="✔ Apply Images" style="border-radius: 10px;width: 100%;border: 0px;"/>
 </span>
 <span class="dropdown__Option no_hover">

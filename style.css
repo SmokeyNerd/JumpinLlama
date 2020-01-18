@@ -692,12 +692,7 @@ option.buds_mode {
 }
 #llama_btm_bar {position: relative;
     top: 4px;}
-.cams__VolumeSlider {
-  position:absolute;
-  left:369px;
-  top:-130px;
 
-}
 /*-------------------------------------------------------------------------- USER_TOGGLE_TRANSPARENT_CHAT_USERS */
 .trans_chat .chat__FeedWrapper {
   background: transparent !important;}

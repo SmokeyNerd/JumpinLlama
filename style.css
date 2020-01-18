@@ -657,8 +657,14 @@ option.buds_mode {
     margin-top: 2px;
     border: 1px solid transparent;
 }
+.thememode.dark .chat__UserListItem+.chat__UserListItem {
+    border-top-color: transparent !important;
+}
 .thememode .tabs__Item.active::after {
     background-color: var(--thememode-bordercolor);
+}
+.thememode .chat__MessageBody-status {
+  color: var(--thememode-textcolor);
 }
 .thememode .roomHeader__UserAction {
     background-color: var(--thememode-bordercolor);

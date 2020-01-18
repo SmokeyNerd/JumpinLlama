@@ -40,12 +40,13 @@ function Start_The_Llama () {
 
 // ------------------------------------ LOAD : REGULAR VARIABLES -------------------------------------*/
 var theme_status = localStorage.getItem("thememode")
-var user_checkbox_settings = ["robo", "bubble", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg", "trans_chat", "trans_users"]
+var user_checkbox_settings = ["robo", "bubble", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg", "trans_chat", "trans_users", "hide_usernames"]
 var user_button_settings = ["miniyt"]
 var top_buttons = ["chat", "cam", "theme", "notice"]
 var btmbuttons = ["poprestore", "web", "hideweb"]
 var checkbox_actions = ["bubble", "robo", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg",
-  "cambg_cover", "cambg_center", "cambg_repeat", "chatbg_cover", "chatbg_center", "chatbg_repeat", "userbg_cover", "userbg_center", "userbg_repeat", "trans_chat", "trans_users"]
+  "cambg_cover", "cambg_center", "cambg_repeat", "chatbg_cover", "chatbg_center", "chatbg_repeat", "userbg_cover",
+  "userbg_center", "userbg_repeat", "trans_chat", "trans_users", "hide_usernames"]
 var button_actions = ["miniyt", "hide_header", "save", "preview", "reset", "web", "hideweb", "games",
   "tiny", "min", "max", "res", "close", "clear_cam", "clear_chat", "clear_user", "apply_images", "popchat", "poprestore", "clear_usercolor", "apply_colors"]
 var menu_actions = ["chat", "cam", "theme", "notice"]
@@ -448,6 +449,8 @@ function Checkbox_Action (type) {
     body.classList.toggle(type)
   } else if (type === "trans_users") {
     body.classList.toggle(type)
+  } else if (type === "hide_usernames") {
+    body.classList.toggle(type)
   }
 }
 
@@ -713,6 +716,7 @@ function Create_Cam_Settings () {
 <div class="dropdown__Option dropdown__Option-header">Cam Settings</div>
 <span class="dropdown__Option" id="llama_border">Cam Borders<input id="llama_border_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_spacing">Cam Spacing<input id="llama_spacing_checkbox" class="jic-checkbox" type="checkbox"></span>
+<span class="dropdown__Option" id="llama_hide_usernames">Hide Usernames<input id="llama_hide_usernames_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option no_hover">
 <span style="">Username Color</span>
 </span>

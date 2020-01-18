@@ -35,7 +35,7 @@
 .cams__CamWatermark {display:none;}
 
 .cams__CamHandle {color: var(--thememode-usernamecolor);}
-
+.hide_usernames .cams__CamHandle {display: none;}
 /*-------------------------------------------------------------------------- NO_CAM_BORDERS */
 
 .border .cams__Cam {
@@ -703,7 +703,7 @@ option.buds_mode {
 
 .trans_chat .chat, .trans_users .chat {
   background: transparent;}
-.trans_chat .
+
 
 /*-------------------------------------------------------------------------- LEFT_TO_RIGHT */
 

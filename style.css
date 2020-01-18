@@ -34,6 +34,8 @@
 }
 .cams__CamWatermark {display:none;}
 
+.cams__CamHandle {color: var(--thememode-usernamecolor);}
+
 /*-------------------------------------------------------------------------- NO_CAM_BORDERS */
 
 .border .cams__Cam {

@@ -46,7 +46,8 @@ var top_buttons = ["chat", "cam", "theme", "notice"]
 var btmbuttons = ["poprestore", "web", "hideweb"]
 var checkbox_actions = ["bubble", "robo", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg",
   "cambg_cover", "cambg_center", "cambg_repeat", "chatbg_cover", "chatbg_center", "chatbg_repeat", "userbg_cover", "userbg_center", "userbg_repeat", "trans_chat", "trans_users"]
-var button_actions = ["miniyt", "hide_header", "save", "preview", "reset", "web", "hideweb", "games", "tiny", "min", "max", "res", "close", "clear_cam", "clear_chat", "clear_user", "apply_images", "popchat", "poprestore"]
+var button_actions = ["miniyt", "hide_header", "save", "preview", "reset", "web", "hideweb", "games",
+  "tiny", "min", "max", "res", "close", "clear_cam", "clear_chat", "clear_user", "apply_images", "popchat", "poprestore", "clear_usercolor", "apply_colors"]
 var menu_actions = ["chat", "cam", "theme", "notice"]
 var theme_options = ["pink", "green", "blue", "mauve", "orange", "red", "purple", "black", "buds", "splat", "custom"]
 var custom_settings = ["bgcolor", "bordercolor", "lightbgcolor", "textcolor", "buttontext"]
@@ -164,6 +165,13 @@ function Reload_User_Settings () {
     Save_User_BG()
   }
 
+  // ------- USERNAME COLOR -------
+  var usernamecolor_status = localStorage.getItem("llama_username_color")
+  if (usernamecolor_status) {
+    document.getElementById("llama_clear_usercolorsrc").value = usernamecolor_status
+    Save_Username_Color('save')
+  }
+
   // ------- BG POSITION SETTING -------
   var bgsets = ["cambg", "chatbg", "userbg"]
   bgsets.forEach(function (bgset) {
@@ -205,6 +213,22 @@ function Top_Bar_Action (type) {
 function Bottom_Bar (type) {
   if (type === "miniyt") {
     body.classList.toggle("")
+  }
+}
+
+// ------------------------------------ ACTION : SAVE USERNAME COLOR -------------------------*/
+function Save_Username_Color (type) {
+  var usercolor_llama = document.getElementById("llama_clear_usercolorsrc").value
+  document.documentElement.style.setProperty("--thememode-usernamecolor", usercolor_llama)
+  if (type === "save") {
+    body.classList.add("usercolor")
+    localStorage.setItem("llama_username_color", usercolor_llama)
+  } else if (type === "reset") {
+    body.classList.remove("usercolor")
+    document.documentElement.style.setProperty("--thememode-usernamecolor", "")
+    document.getElementById("llama_clear_usercolorsrc").value = ""
+    document.documentElement.style.setProperty("--thememode-usernamecolor", "")
+    localStorage.setItem("llama_username_color", "")
   }
 }
 
@@ -294,7 +318,11 @@ function Button_Action (type) {
     body.classList.toggle("web")
     iframe.src = ""
   } else if (clear == "clear") {
-    Clear_User_BG(type)
+    if (type === "clear_usercolor") {
+      Save_Username_Color('reset')
+    } else {
+      Clear_User_BG(type)
+    }
   } else if ("apply_images") {
     Save_User_BG()
   }
@@ -682,7 +710,16 @@ function Create_Cam_Settings () {
   cam_menu.innerHTML = `
 <div class="dropdown__Option dropdown__Option-header">Cam Settings</div>
 <span class="dropdown__Option" id="llama_border">Cam Borders<input id="llama_border_checkbox" class="jic-checkbox" type="checkbox"></span>
-<span class="dropdown__Option" id="llama_spacing">Cam Spacing<input id="llama_spacing_checkbox" class="jic-checkbox" type="checkbox"></span>`
+<span class="dropdown__Option" id="llama_spacing">Cam Spacing<input id="llama_spacing_checkbox" class="jic-checkbox" type="checkbox"></span>
+<span class="dropdown__Option no_hover">
+<i class="fas fa-comments" style="color:#5a6370;"></i>
+<span style="position: relative; left: -28px;">Color Settings</span>
+</span>
+<span class="dropdown__Option">
+<input type='text' name="server" id="llama_clear_usercolorsrc" placeholder="Color Name/#Hex.." style="opacity: 1;cursor: pointer; width: 120px;border-radius: 2px;border: 1px solid #ccc;"/>
+<input id="llama_clear_usercolor" type="button" value="✘" style="border-radius: 10px;width: 45%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
+</span>
+<span class="dropdown__Option"><input id="llama_apply_colors" type="button" value="✔ Apply Color" style="border-radius: 10px;width: 100%;border: 0px;"/>`
   option_box.appendChild(cam_menu)
 }
 

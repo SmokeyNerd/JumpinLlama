@@ -477,15 +477,23 @@ option.buds_mode {
 .thememode .privateMessages__Empty {background: var(--thememode-bgcolor)}
 
 /*-------------------------------------------------------------------------- CUSTOM_MODE */
-
+.robo.user_bg #Custom_Mode {
+    right: 213px;
+}
 #Custom_Mode {
     position: absolute;
-    right: 175px;
-    top: 125px;
+    right: 180px;
+    top: 95px;
+    z-index: 4000;
+}
+.hide_header #Custom_Mode {
+    position: absolute;
+    right: 180px;
+    top: 45px;
     z-index: 4000;
 }
 .user_bg #Custom_Mode {
-  right: 220px;
+  right: 200px;
 }
 .custom #Custom_Mode {
   display:block !important;

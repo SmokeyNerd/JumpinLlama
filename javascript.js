@@ -22,6 +22,7 @@ function Start_The_Llama () {
     Create_Chat_Settings()
     Create_Cam_Settings()
     Create_Theme_Settings()
+    Create_BG_Settings ()
 
     Create_Cheers()
 
@@ -47,8 +48,8 @@ var btmbuttons = ["poprestore", "web", "hideweb"]
 var checkbox_actions = ["bubble", "robo", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg",
   "cambg_cover", "cambg_center", "cambg_repeat", "chatbg_cover", "chatbg_center", "chatbg_repeat", "userbg_cover",
   "userbg_center", "userbg_repeat", "trans_chat", "trans_users", "hide_usernames", "user_bgcolor"]
-var button_actions = ["miniyt", "hide_header", "save", "preview", "reset", "web", "hideweb", "games",
-  "tiny", "min", "max", "res", "close", "clear_cam", "clear_chat", "clear_user", "apply_images", "popchat", "poprestore", "clear_usercolor", "apply_colors", "apply_bgcolors"]
+var button_actions = ["miniyt", "hide_header", "save", "reset", "web", "hideweb", "games",
+  "tiny", "min", "max", "res", "close", "clear_cam", "clear_chat", "clear_user", "apply_images", "popchat", "poprestore", "clear_usercolor"]
 var menu_actions = ["chat", "cam", "theme", "notice"]
 var theme_options = ["pink", "green", "blue", "mauve", "orange", "red", "purple", "black", "buds", "splat", "custom"]
 var custom_settings = ["bgcolor", "bordercolor", "lightbgcolor", "textcolor", "buttontext"]
@@ -194,8 +195,6 @@ function Reload_User_Settings () {
 }
 
 // ------------------------------------ ACTION : TOP BAR ACTION -----------------------------*/
-
-
 function Top_Bar_Action (type) {
   menu_actions.forEach(function (menu_action) {
     if (menu_action !== type) {
@@ -338,7 +337,7 @@ function Button_Action (type) {
     body.classList.toggle("popchat")
   } else if (type === "hide_header") {
     body.classList.toggle(type)
-  } else if (type === "save" || type === "reset" || type === "preview") {
+  } else if (type === "save" || type === "reset") {
     Save_Llama_Color(type)
   } else if (type === "web" || type === "hideweb") {
     body.classList.toggle("web")
@@ -673,11 +672,10 @@ function Create_Custom_Mode () {
             </span>
 
             <span class="dropdown__Option">
-                <input id="llama_reset" type="button" style="cursor:pointer;border-top-left-radius: 10px;border-bottom-left-radius: 10px;width: 45%;border: 1px solid #ccc;" value="RESET"/>
-                <input id="llama_preview" type="button" style="cursor:pointer;border-top-right-radius: 10px;border-bottom-right-radius: 10px;width: 60%;border: 1px solid #ccc;" value="PREVIEW"></input>
-            </span>
+                <input id="llama_reset" type="button" style="background: #5a6370;color: #fff;border:0px;cursor:pointer;border-radius: 10px;width: 150px;" value="RESET"/>
+                </span>
             <span class="dropdown__Option">
-                <input id="llama_save" type="button" style="cursor:pointer;border-radius: 10px;width: 100%;border: 1px solid #ccc;" value="SAVE"></input>
+                <input id="llama_save" type="button" style="background: #5a6370;color: #fff;border:0px;cursor:pointer;border-radius: 10px;width: 100%;" value="SAVE"></input>
             </span>
 </div>
 `
@@ -751,6 +749,7 @@ function Create_Chat_Settings () {
 
 // ------------------------------------ CREATE : CAM SETTINGS -------------------------------*/
 function Create_Cam_Settings () {
+
   var option_box = document.getElementById("LlamaOptions_Box")
   var cam_menu = document.createElement("div")
   cam_menu.className = "dropdown__Options"
@@ -761,12 +760,11 @@ function Create_Cam_Settings () {
 <span class="dropdown__Option" id="llama_spacing">Cam Spacing<input id="llama_spacing_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_hide_usernames">Hide Usernames<input id="llama_hide_usernames_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option no_hover">
-<span style="">Username Color</span><input type="color" name="colorpicker" value="#000000" name="server" id="llama_clear_usercolorsrc" style="opacity: 1;cursor: pointer; width: 20px;height:20px;border-radius: 2px;padding: 0px;"/>
+<span style="">Username Color</span><input type="color" name="colorpicker" value="#000000" onchange="Button_Action('apply_colors')" id="llama_clear_usercolorsrc" style="opacity: 1;cursor: pointer; width: 20px;height:20px;border-radius: 2px;padding: 0px;"/>
 </span>
 
 <span class="dropdown__Option">
-<input id="llama_clear_usercolor" type="button" value="✘ Reset" style="width: 65px;border: 0px; border-top-left-radius:10px; border-bottom-left-radius:10px;"/>
-<input id="llama_apply_colors" type="button" value="✔ Apply" style="border-top-right-radius:10px; border-bottom-right-radius:10px;width: 65px;border: 0px;"/></span>`
+<input id="llama_clear_usercolor" type="button" value="✘ Reset Color" style="background: #5a6370; color: #fff; width: 100%; border:0px; border-radius:10px;"/>`
   option_box.appendChild(cam_menu)
 }
 
@@ -798,47 +796,79 @@ function Create_Theme_Settings () {
 </label>
 
 <span class="dropdown__Option" id="llama_user_bgcolor">Custom BG Color : <span id="userbg_on">ON</span><span id="userbg_off">OFF</span><input id="llama_user_bgcolor_checkbox" class="jic-checkbox" type="checkbox"  style="display:none;"></span>
-<span class="dropdown__Option" id="user_bgcolor">
-    <span>BG Color</span>
-    <input type="color" name="colorpicker" id="llama_user_bgcolorsrc" value="#000000" style="width: 20px;border-radius: 3px;height: 18px;padding: 0px;"></input>
-    <input id="llama_apply_bgcolors" type="button" value="✔ Apply BG Color" style="border-radius: 5px;width: 20px;border: 0px;"/>
+<span class="dropdown__Option no_hover" id="user_bgcolor">
+    <span>Background Color</span>
+    <input type="color" name="colorpicker" id="llama_user_bgcolorsrc" value="#000000" onchange="Button_Action('apply_bgcolors')" style="width: 20px;border-radius: 3px;height: 18px;padding: 0px;"></input>
 </span>
 <span class="dropdown__Option" id="llama_trans_chat">Transparent Chat<input id="llama_trans_chat_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_trans_users">Transparent Users<input id="llama_trans_users_checkbox" class="jic-checkbox" type="checkbox"></span>
-<span class="dropdown__Option" id="llama_user_bg">Background Image<input id="llama_user_bg_checkbox" class="jic-checkbox" type="checkbox"></span>
-<div class="user_bg_settings">
+<span class="dropdown__Option" id="llama_user_bg">Background Images<input id="llama_user_bg_checkbox" class="jic-checkbox" type="checkbox"></span>
+
+</div>
+
+`
+  option_box.appendChild(theme_menu)
+}
+
+// ------------------------------------ CREATE : BG IMAGE SETTINGS -----------------------------*/
+function Create_BG_Settings () {
+  var option_box = document.getElementById("LlamaOptions_Box")
+  var theme_menu = document.createElement("div")
+  theme_menu.className = "dropdown__Options"
+  theme_menu.setAttribute("id", "llama_bg_settings")
+  theme_menu.setAttribute("style", "margin-top:10px;")
+  theme_menu.innerHTML = `
+<style>
+.open_llama_theme.user_bg #llama_bg_settings {
+display:block;
+}
+
+#llama_bg_settings {
+display:none;
+
+}
+
+</style>
 <div class="dropdown__Option dropdown__Option-header">BG Image Settings</div>
+
 <span class="dropdown__Option no_hover">
 <i class="fas fa-video" style="color:#5a6370;"></i>
 <span style="position: relative; left: -34px;">CAM BG Image URL</span>
 </span>
+
 <span class="dropdown__Option">
-<input type='text' name="server" id="llama_clear_cambg" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 150px;border-radius: 2px;border: 1px solid #ccc;"/>
-<input id="llama_clear_cam" type="button" value="✘" style="border-radius: 10px;width: 45%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
+<input type='text' name="server" id="llama_clear_cambg" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 130px;border-radius: 2px;border: 1px solid #ccc;"/>
+<input id="llama_clear_cam" type="button" value="✘" style="background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
 </span>
+
 <span class="dropdown__Option no_hover">
 <i class="fas fa-comments" style="color:#5a6370;"></i>
 <span style="position: relative; left: -28px;">CHAT BG Image URL</span>
 </span>
+
 <span class="dropdown__Option">
-<input type='text' name="server" id="llama_clear_chatbg" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 150px;border-radius: 2px;border: 1px solid #ccc;"/>
-<input id="llama_clear_chat" type="button" value="✘" style="border-radius: 10px;width: 45%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
+<input type='text' name="server" id="llama_clear_chatbg" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 130px;border-radius: 2px;border: 1px solid #ccc;"/>
+<input id="llama_clear_chat" type="button" value="✘" style="background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
 </span>
 
 <span class="dropdown__Option no_hover">
 <i class="fas fa-users" style="color:#5a6370;"></i>
 <span style="position: relative; left: -19px;">USERS BG Image URL</span>
 </span>
+
 <span class="dropdown__Option">
-<input type='text' name="server" id="llama_clear_userbg" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 150px;border-radius: 2px;border: 1px solid #ccc;"/>
-<input id="llama_clear_user" type="button" value="✘" style="border-radius: 10px;width: 45%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
+<input type='text' name="server" id="llama_clear_userbg" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 130px;border-radius: 2px;border: 1px solid #ccc;"/>
+<input id="llama_clear_user" type="button" value="✘" style="background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
 </span>
 
-<span class="dropdown__Option"><input id="llama_apply_images" type="button" value="✔ Apply Images" style="border-radius: 10px;width: 100%;border: 0px;"/>
+<span class="dropdown__Option">
+<input id="llama_apply_images" type="button" value="✔ Apply Images" style="background: #5a6370; color: #fff; border:0px; border-radius: 10px;width: 100%;"/>
 </span>
+
 <span class="dropdown__Option no_hover">
 COVER | REPEAT | CENTER
 </span>
+
 <span class="dropdown__Option">
 CAM BG
 <span style="margin-right: 20px;">
@@ -846,6 +876,7 @@ CAM BG
 <span id="llama_cambg_repeat"><input id="llama_cambg_repeat_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
 <span id="llama_cambg_center"><input id="llama_cambg_center_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
 </span>
+
 </span>
 <span class="dropdown__Option">
 CHAT BG
@@ -854,6 +885,7 @@ CHAT BG
 <span id="llama_chatbg_repeat"><input id="llama_chatbg_repeat_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
 <span id="llama_chatbg_center"><input id="llama_chatbg_center_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
 </span>
+
 </span>
 <span class="dropdown__Option">
 USER BG
@@ -863,11 +895,10 @@ USER BG
 <span id="llama_userbg_center"><input id="llama_userbg_center_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
 </span>
 </span>
-</div>
-</div>
 
 `
   option_box.appendChild(theme_menu)
+
 }
 
 // ------------------------------------ CREATE : BOTTOM ICONS -------------------------------*/
@@ -917,6 +948,7 @@ function Create_Bottom_Icons () {
 
 // ------------------------------------ CREATE : TOP ICONS ----------------------------------*/
 function Create_Top_Icons () {
+
   var chat_drag = document.getElementsByClassName("chat")[0]
   chat_drag.id = "chat"
 
@@ -1008,6 +1040,9 @@ function Create_Header_Hider () {
   info_box.appendChild(HeaderHideBtn)
   info_box.insertBefore(HeaderHideBtn, null)
   info_box.insertBefore(HeaderHideBtn, info_box.childNodes[0] || null)
+
+
+
 }
 
 // ------------------------------------ ACTION : TOGGLE THEME CHOICE ------------------------*/

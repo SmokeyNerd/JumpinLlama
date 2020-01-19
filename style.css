@@ -42,28 +42,28 @@
 }
 
 #user_bgcolor {
-    display: none;
+  display: none;
 }
-.userbg_color #user_bgcolor {
-    display:flex !important;
+.user_bgcolor #user_bgcolor {
+  display:flex !important;
 }
 #userbg_on {
-    display: none;
+  display: none;
 }
 
-.userbg_color #userbg_on {
-    display: inline-block !important;
+.user_bgcolor #userbg_on {
+  display: inline-block !important;
 }
 
 #userbg_off {
-    display: inline-block;
+  display: inline-block;
 }
 
-.userbg_color #userbg_off {
-    display: none !important;
+.user_bgcolor #userbg_off {
+  display: none !important;
 }
 .dark .chat__FeedWrapper {
-    background-color: var(--thememode-lightbgcolor);
+  background-color: var(--thememode-lightbgcolor);
 }
 
 input[type="color"] {
@@ -88,7 +88,7 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 .override_chatcolor .chat__MessageBody>span{
-color:var(--thememode-chatcolor) !important;
+  color:var(--thememode-chatcolor) !important;
 }
 /*-------------------------------------------------------------------------- USER_BG_SETTINGS */
 #cambg_settings {display:none;}

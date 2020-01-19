@@ -153,6 +153,13 @@ function Reload_User_Settings () {
       body.classList.add(user_button_setting)
     }
   })
+  // ------- SET DROPDOWN CHOICE -------
+  const theme_dropdown = document.getElementById("theme_wizard")
+  if (theme_status !== null) {
+    theme_dropdown.value = theme_status.toUpperCase()
+  }
+
+  // ------- USER BG COLOR -------
   var bgstorage = localStorage.getItem("llama_user_bgcolor")
   if (bgstorage !== "") {
     var bgstoragesrc = localStorage.getItem("llama_user_bgcolorsrc")
@@ -160,12 +167,8 @@ function Reload_User_Settings () {
     document.getElementById("llama_user_bgcolorsrc").value = bgstoragesrc
     Save_User_BG_Color('save')
   }
-  // ------- SET DROPDOWN CHOICE -------
-  const theme_dropdown = document.getElementById("theme_wizard")
-  if (theme_status !== null) {
-    theme_dropdown.value = theme_status.toUpperCase()
-  }
-  // ------- USER BGS -------
+
+  // ------- USER BG IMAGES -------
   var cambg_status = localStorage.getItem("llama_clear_cambg_reload")
   var chatbg_status = localStorage.getItem("llama_clear_chatbg_reload")
   var userbg_status = localStorage.getItem("llama_clear_userbg_reload")

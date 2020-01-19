@@ -114,6 +114,12 @@ input[type="color"]::-webkit-color-swatch {
   opacity:0.6;
 }
 
+.theme_wizard {
+  width: 100%;
+  border-radius: 10px;
+  border: 0px solid #ccc;
+}
+
 /*-------------------------------------------------------------------------- NO_CAM_BORDERS */
 
 .border .cams__Cam {

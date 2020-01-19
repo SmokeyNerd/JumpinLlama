@@ -41,7 +41,11 @@ function Start_The_Llama () {
 
 // ------------------------------------ LOAD : REGULAR VARIABLES -------------------------------------*/
 var theme_status = localStorage.getItem("thememode")
-var user_checkbox_settings = ["robo", "bubble", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg", "trans_chat", "trans_users", "hide_usernames", "user_bgcolor"]
+var user_checkbox_settings = ["robo", "bubble", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg",
+  "trans_chat", "trans_users", "hide_usernames", "user_bgcolor",
+  "cambg_cover", "cambg_center", "cambg_repeat",
+  "chatbg_cover", "chatbg_center", "chatbg_repeat",
+  "userbg_cover", "userbg_center", "userbg_repeat"]
 var user_button_settings = ["miniyt"]
 var top_buttons = ["chat", "cam", "theme", "notice"]
 var btmbuttons = ["poprestore", "web", "hideweb"]
@@ -49,7 +53,8 @@ var checkbox_actions = ["bubble", "robo", "hide_chat", "hide_userlist", "ltr", "
   "cambg_cover", "cambg_center", "cambg_repeat", "chatbg_cover", "chatbg_center", "chatbg_repeat", "userbg_cover",
   "userbg_center", "userbg_repeat", "trans_chat", "trans_users", "hide_usernames", "user_bgcolor"]
 var button_actions = ["miniyt", "hide_header", "save", "reset", "web", "hideweb", "games",
-  "tiny", "min", "max", "res", "close", "clear_cam", "clear_chat", "clear_user", "apply_images", "popchat", "poprestore", "clear_usercolor"]
+  "tiny", "min", "max", "res", "close", "clear_cam", "clear_chat", "clear_user", "apply_images",
+  "popchat", "poprestore", "clear_usercolor", "cambg_settings", "chatbg_settings", "userbg_settings"]
 var menu_actions = ["chat", "cam", "theme", "notice"]
 var theme_options = ["pink", "green", "blue", "mauve", "orange", "red", "purple", "black", "buds", "splat", "custom"]
 var custom_settings = ["bgcolor", "bordercolor", "lightbgcolor", "textcolor", "buttontext"]
@@ -185,10 +190,10 @@ function Reload_User_Settings () {
   bgsets.forEach(function (bgset) {
     var bgsubs = ["cover", "repeat", "center"]
     bgsubs.forEach(function (bgsub) {
-      var bg_setting = localStorage.getItem(bgset + "_" + bgsub)
+      var bg_setting = localStorage.getItem("llama_" + bgset + "_" + bgsub)
       if (bg_setting) {
         body.classList.add(bgset + "_" + bgsub)
-        document.getElementById(bgset + "_" + bgsub + "_checkbox").checked = true
+        document.getElementById("llama" + bgset + "_" + bgsub + "_checkbox").checked = true
       }
     })
   })
@@ -364,7 +369,21 @@ function Button_Action (type) {
     Save_Username_Color('save')
   } else if (type === "apply_bgcolors") {
     Save_User_BG_Color('save')
+  } else if (type === "cambg_settings" || type === "chatbg_settings" || type === "userbg_settings") {
+    USER_BG_MINI_MENU(type)
   }
+}
+
+// ------------------------------------ ACTION : MINI MENU USER BGS -----------------------------*/
+function USER_BG_MINI_MENU (type) {
+  var user_settings = ["cambg_settings", "chatbg_settings", "userbg_settings"]
+  user_settings.forEach(function (user_setting) {
+    if (user_setting === type) {
+      body.classList.toggle(type)
+    } else {
+      body.classList.remove(user_setting)
+    }
+  })
 }
 
 // ------------------------------------ ACTION : CLEAR USER BGS -----------------------------*/
@@ -671,10 +690,10 @@ function Create_Custom_Mode () {
                 <input type="color" name="colorpicker" id="llama_buttontext" value="#000000" style="width: 20px;border-radius: 3px;height: 18px;padding: 0px;" onchange="Save_Llama_Color()"></input>
             </span>
 
-            <span class="dropdown__Option">
+            <span class="dropdown__Option no_hoverbg">
                 <input id="llama_reset" type="button" style="background: #5a6370;color: #fff;border:0px;cursor:pointer;border-radius: 10px;width: 150px;" value="RESET"/>
                 </span>
-            <span class="dropdown__Option">
+            <span class="dropdown__Option no_hoverbg">
                 <input id="llama_save" type="button" style="background: #5a6370;color: #fff;border:0px;cursor:pointer;border-radius: 10px;width: 100%;" value="SAVE"></input>
             </span>
 </div>
@@ -759,12 +778,12 @@ function Create_Cam_Settings () {
 <span class="dropdown__Option" id="llama_border">Cam Borders<input id="llama_border_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_spacing">Cam Spacing<input id="llama_spacing_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_hide_usernames">Hide Usernames<input id="llama_hide_usernames_checkbox" class="jic-checkbox" type="checkbox"></span>
-<span class="dropdown__Option no_hover">
+<span class="dropdown__Option no_hoverbg">
 <span style="">Username Color</span><input type="color" name="colorpicker" value="#000000" onchange="Button_Action('apply_colors')" id="llama_clear_usercolorsrc" style="opacity: 1;cursor: pointer; width: 20px;height:20px;border-radius: 2px;padding: 0px;"/>
 </span>
 
-<span class="dropdown__Option">
-<input id="llama_clear_usercolor" type="button" value="✘ Reset Color" style="background: #5a6370; color: #fff; width: 100%; border:0px; border-radius:10px;"/>`
+<span class="dropdown__Option no_hover">
+<input id="llama_clear_usercolor" type="button" value="✘ Reset Color" style="cursor:pointer;background: #5a6370; color: #fff; width: 100%; border:0px; border-radius:10px;"/>`
   option_box.appendChild(cam_menu)
 }
 
@@ -796,7 +815,7 @@ function Create_Theme_Settings () {
 </label>
 
 <span class="dropdown__Option" id="llama_user_bgcolor">Custom BG Color : <span id="userbg_on">ON</span><span id="userbg_off">OFF</span><input id="llama_user_bgcolor_checkbox" class="jic-checkbox" type="checkbox"  style="display:none;"></span>
-<span class="dropdown__Option no_hover" id="user_bgcolor">
+<span class="dropdown__Option no_hoverbg" id="user_bgcolor">
     <span>Background Color</span>
     <input type="color" name="colorpicker" id="llama_user_bgcolorsrc" value="#000000" onchange="Button_Action('apply_bgcolors')" style="width: 20px;border-radius: 3px;height: 18px;padding: 0px;"></input>
 </span>
@@ -831,69 +850,59 @@ display:none;
 </style>
 <div class="dropdown__Option dropdown__Option-header">BG Image Settings</div>
 
-<span class="dropdown__Option no_hover">
+<span class="dropdown__Option no_hoverbg">
 <i class="fas fa-video" style="color:#5a6370;"></i>
 <span style="position: relative; left: -34px;">CAM BG Image URL</span>
 </span>
 
-<span class="dropdown__Option">
+<span class="dropdown__Option no_hover">
+<input id="llama_cambg_settings" title="Cam BG Settings" type="button" value="⚙" style="cursor:pointer;background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-right-radius:0px; border-bottom-right-radius:0px;"/>
 <input type='text' name="server" id="llama_clear_cambg" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 130px;border-radius: 2px;border: 1px solid #ccc;"/>
-<input id="llama_clear_cam" type="button" value="✘" style="background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
+<input id="llama_clear_cam" title="Clear Cam BG"type="button" value="✘" style="cursor:pointer;background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
 </span>
 
-<span class="dropdown__Option no_hover">
+<div id="cambg_settings">
+<span class="dropdown__Option" id="llama_cambg_cover">Cover Screen<input id="llama_cambg_cover_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
+<span class="dropdown__Option" id="llama_cambg_center">Center Image<input id="llama_cambg_center_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
+<span class="dropdown__Option" id="llama_cambg_repeat">Disable Repeat<input id="llama_cambg_repeat_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
+</div>
+
+<span class="dropdown__Option no_hoverbg">
 <i class="fas fa-comments" style="color:#5a6370;"></i>
 <span style="position: relative; left: -28px;">CHAT BG Image URL</span>
 </span>
 
-<span class="dropdown__Option">
+<span class="dropdown__Option no_hover">
+<input id="llama_chatbg_settings" title="Chat BG Settings" type="button" value="⚙" style="cursor:pointer;background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-right-radius:0px; border-bottom-right-radius:0px;"/>
 <input type='text' name="server" id="llama_clear_chatbg" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 130px;border-radius: 2px;border: 1px solid #ccc;"/>
-<input id="llama_clear_chat" type="button" value="✘" style="background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
+<input id="llama_clear_chat" title="Clear Chat BG" type="button" value="✘" style="cursor:pointer;background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
 </span>
 
-<span class="dropdown__Option no_hover">
+<div id="chatbg_settings">
+<span class="dropdown__Option" id="llama_chatbg_cover">Cover Screen<input id="llama_chatbg_cover_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
+<span class="dropdown__Option" id="llama_chatbg_center">Center Image<input id="llama_chatbg_center_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
+<span class="dropdown__Option" id="llama_chatbg_repeat">Disable Repeat<input id="llama_chatbg_repeat_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
+</div>
+
+<span class="dropdown__Option no_hoverbg">
 <i class="fas fa-users" style="color:#5a6370;"></i>
 <span style="position: relative; left: -19px;">USERS BG Image URL</span>
 </span>
 
-<span class="dropdown__Option">
-<input type='text' name="server" id="llama_clear_userbg" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 130px;border-radius: 2px;border: 1px solid #ccc;"/>
-<input id="llama_clear_user" type="button" value="✘" style="background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
-</span>
-
-<span class="dropdown__Option">
-<input id="llama_apply_images" type="button" value="✔ Apply Images" style="background: #5a6370; color: #fff; border:0px; border-radius: 10px;width: 100%;"/>
-</span>
-
 <span class="dropdown__Option no_hover">
-COVER | REPEAT | CENTER
+<input id="llama_userbg_settings" title="User BG Settings" type="button" value="⚙" style="cursor:pointer;background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-right-radius:0px; border-bottom-right-radius:0px;"/>
+<input type='text' name="server" id="llama_clear_userbg" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 130px;border-radius: 2px;border: 1px solid #ccc;"/>
+<input id="llama_clear_user" title="Clear User BG" type="button" value="✘" style="cursor:pointer;background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
 </span>
 
-<span class="dropdown__Option">
-CAM BG
-<span style="margin-right: 20px;">
-<span id="llama_cambg_cover"><input id="llama_cambg_cover_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
-<span id="llama_cambg_repeat"><input id="llama_cambg_repeat_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
-<span id="llama_cambg_center"><input id="llama_cambg_center_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
-</span>
+<div id="userbg_settings">
+<span class="dropdown__Option" id="llama_userbg_cover">Cover Screen<input id="llama_userbg_cover_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
+<span class="dropdown__Option" id="llama_userbg_center">Center Image<input id="llama_userbg_center_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
+<span class="dropdown__Option" id="llama_userbg_repeat">Disable Repeat<input id="llama_userbg_repeat_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
+</div>
 
-</span>
-<span class="dropdown__Option">
-CHAT BG
-<span style="margin-right: 20px;">
-<span id="llama_chatbg_cover"><input id="llama_chatbg_cover_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
-<span id="llama_chatbg_repeat"><input id="llama_chatbg_repeat_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
-<span id="llama_chatbg_center"><input id="llama_chatbg_center_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
-</span>
-
-</span>
-<span class="dropdown__Option">
-USER BG
-<span style="margin-right: 20px;">
-<span id="llama_userbg_cover"><input id="llama_userbg_cover_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
-<span id="llama_userbg_repeat"><input id="llama_userbg_repeat_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
-<span id="llama_userbg_center"><input id="llama_userbg_center_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
-</span>
+<span class="dropdown__Option no_hoverbg">
+<input id="llama_apply_images" type="button" value="✔ Apply Images" style="cursor:pointer;background: #5a6370; color: #fff; border:0px; border-radius: 10px;width: 100%;"/>
 </span>
 
 `

@@ -78,6 +78,42 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 input[type="color"]::-webkit-color-swatch {
 	border: none;
 }
+/*-------------------------------------------------------------------------- USER_BG_SETTINGS */
+#cambg_settings {display:none;}
+.cambg_settings #cambg_settings {display:block;}
+
+#chatbg_settings {display:none;}
+.chatbg_settings #chatbg_settings {display:block;}
+
+#userbg_settings {display:none;}
+.userbg_settings #userbg_settings {display:block;}
+
+#llama_cambg_settings:focus,
+#llama_chatbg_settings:focus,
+#llama_userbg_settings:focus,
+#llama_clear_cam:focus,
+#llama_clear_chat:focus,
+#llama_clear_user:focus,
+#llama_apply_images:focus,
+#llama_reset:focus,
+#llama_save:focus,
+#llama_clear_usercolor:focus {
+  outline:0;
+}
+
+#llama_cambg_settings:hover,
+#llama_chatbg_settings:hover,
+#llama_userbg_settings:hover,
+#llama_clear_cam:hover,
+#llama_clear_chat:hover,
+#llama_clear_user:hover,
+#llama_apply_images:hover,
+#llama_reset:hover,
+#llama_save:hover,
+#llama_clear_usercolor:hover {
+  opacity:0.6;
+}
+
 /*-------------------------------------------------------------------------- NO_CAM_BORDERS */
 
 .border .cams__Cam {
@@ -206,8 +242,20 @@ input[type="color"]::-webkit-color-swatch {
 .user_bg.userbg_center .chat__UserList {
   background-position: center center;
 }
-.no_hover {
+.no_hoverbg {
     background-color: #d8d8d8 !important;
+    font-size: 9pt;
+}
+.no_hoverbg:hover {
+    background: #f7f7f7;
+    cursor: default;
+}
+.dark .no_hoverbg {
+    background-color: #353535 !important;
+}
+
+.no_hover {
+    background-color: #f7f7f7 !important;
     font-size: 9pt;
 }
 .no_hover:hover {
@@ -215,8 +263,9 @@ input[type="color"]::-webkit-color-swatch {
     cursor: default;
 }
 .dark .no_hover {
-    background-color: #353535 !important;
+    background-color: #504945 !important;
 }
+
 .dark .dropdown__Option {
     border-color: #665c54;
     color: #fbf1c7;
@@ -493,7 +542,7 @@ option.buds_mode {
     z-index: 4000;
 }
 .user_bg #Custom_Mode {
-  right: 200px;
+  right: 220px;
 }
 .custom #Custom_Mode {
   display:block !important;

@@ -78,6 +78,18 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 input[type="color"]::-webkit-color-swatch {
 	border: none;
 }
+/*-------------------------------------------------------------------------- OVERRIDE_CHAT_COLOR */
+.override_chatcolor #llama_chat_color {
+  display:flex;
+}
+
+#llama_chat_color {
+  display:none;
+}
+
+.override_chatcolor .chat__MessageBody>span{
+color:var(--thememode-chatcolor) !important;
+}
 /*-------------------------------------------------------------------------- USER_BG_SETTINGS */
 #cambg_settings {display:none;}
 .cambg_settings #cambg_settings {display:block;}
@@ -533,7 +545,10 @@ option.buds_mode {
 
 /*-------------------------------------------------------------------------- CUSTOM_MODE */
 .robo.user_bg #Custom_Mode {
-    right: 213px;
+    right: 220px;
+}
+.robo #Custom_Mode {
+    right: 203px;
 }
 #Custom_Mode {
     position: absolute;

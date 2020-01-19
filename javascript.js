@@ -1,5 +1,5 @@
 var body = document.body
-
+console.log("Hello World")
 // ------------------------------------ DELAY FOR ELEMENTS TO LOAD ------------------------------------*/
 var starter = "activate"
 if (starter !== "start_delay") {
@@ -42,16 +42,14 @@ function Start_The_Llama () {
 // ------------------------------------ LOAD : REGULAR VARIABLES -------------------------------------*/
 var theme_status = localStorage.getItem("thememode")
 var user_checkbox_settings = ["robo", "bubble", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg",
-  "trans_chat", "trans_users", "hide_usernames", "user_bgcolor",
-  "cambg_cover", "cambg_center", "cambg_repeat",
-  "chatbg_cover", "chatbg_center", "chatbg_repeat",
-  "userbg_cover", "userbg_center", "userbg_repeat"]
+  "trans_chat", "trans_users", "hide_usernames", "user_bgcolor", "cambg_cover", "cambg_center", "cambg_repeat",
+  "chatbg_cover", "chatbg_center", "chatbg_repeat", "userbg_cover", "userbg_center", "userbg_repeat", "override_chatcolor"]
 var user_button_settings = ["miniyt"]
 var top_buttons = ["chat", "cam", "theme", "notice"]
 var btmbuttons = ["poprestore", "web", "hideweb"]
 var checkbox_actions = ["bubble", "robo", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg",
   "cambg_cover", "cambg_center", "cambg_repeat", "chatbg_cover", "chatbg_center", "chatbg_repeat", "userbg_cover",
-  "userbg_center", "userbg_repeat", "trans_chat", "trans_users", "hide_usernames", "user_bgcolor"]
+  "userbg_center", "userbg_repeat", "trans_chat", "trans_users", "hide_usernames", "user_bgcolor", "override_chatcolor"]
 var button_actions = ["miniyt", "hide_header", "save", "reset", "web", "hideweb", "games",
   "tiny", "min", "max", "res", "close", "clear_cam", "clear_chat", "clear_user", "apply_images",
   "popchat", "poprestore", "clear_usercolor", "cambg_settings", "chatbg_settings", "userbg_settings"]
@@ -185,6 +183,13 @@ function Reload_User_Settings () {
     Save_Username_Color('save')
   }
 
+  // ------- CHAT COLOR -------
+  var chatcolor_status = localStorage.getItem("llama_chat_color")
+  if (chatcolor_status) {
+    document.getElementById("llama_clear_chatcolorsrc").value = chatcolor_status
+    Save_Chat_Color('save')
+  }
+
 }
 
 // ------------------------------------ ACTION : TOP BAR ACTION -----------------------------*/
@@ -257,6 +262,22 @@ function Save_Username_Color (type) {
     document.getElementById("llama_clear_usercolorsrc").value = ""
     document.documentElement.style.setProperty("--thememode-usernamecolor", "")
     localStorage.setItem("llama_username_color", "")
+  }
+}
+
+// ------------------------------------ ACTION : SAVE CHAT COLOR -------------------------*/
+function Save_Chat_Color (type) {
+  if (type === "save") {
+    var chatcolor_llama = document.getElementById("llama_clear_chatcolorsrc").value
+    document.documentElement.style.setProperty("--thememode-chatcolor", chatcolor_llama)
+    body.classList.add("chat_color")
+    localStorage.setItem("llama_chat_color", chatcolor_llama)
+  } else if (type === "reset") {
+    body.classList.remove("chat_color")
+    document.documentElement.style.setProperty("--thememode-chatcolor", "")
+    document.getElementById("llama_clear_chatcolorsrc").value = ""
+    document.documentElement.style.setProperty("--thememode-chatcolor", "")
+    localStorage.setItem("llama_chat_color", "")
   }
 }
 
@@ -355,6 +376,8 @@ function Button_Action (type) {
     Save_User_BG()
   } else if (type === "apply_colors") {
     Save_Username_Color('save')
+  } else if (type === "apply_chat_color") {
+    Save_Chat_Color('save')
   } else if (type === "apply_bgcolors") {
     Save_User_BG_Color('save')
   } else if (type === "cambg_settings" || type === "chatbg_settings" || type === "userbg_settings") {
@@ -452,51 +475,22 @@ function Checkbox_Action (type) {
     localStorage.setItem(storage, "")
     document.getElementById(checkbox).checked = false
   }
-  if (type === "bubble") {
+  if (type === "bubble" || type === "robo" || type === "hide_chat" || type === "hide_userlist") {
     body.classList.toggle(type)
-  } else if (type === "robo") {
+  } else if (type === "ltr" || type === "cheers" || type === "border" || type === "spacing") {
     body.classList.toggle(type)
-  } else if (type === "hide_chat") {
+  } else if (type === "cambg_cover" || type === "cambg_center" || type === "cambg_repeat") {
     body.classList.toggle(type)
-  } else if (type === "hide_userlist") {
+  } else if (type === "chatbg_cover" || "chatbg_repeat" || "chatbg_center") {
     body.classList.toggle(type)
-  } else if (type === "ltr") {
+  } else if (type === "userbg_cover" || type === "userbg_repeat" || type === "userbg_center") {
     body.classList.toggle(type)
-  } else if (type === "cheers") {
-    body.classList.toggle(type)
-  } else if (type === "border") {
-    body.classList.toggle(type)
-  } else if (type === "spacing") {
-    body.classList.toggle(type)
-  } else if (type === "cambg_cover") {
-    body.classList.toggle(type)
-  } else if (type === "cambg_center") {
-    body.classList.toggle(type)
-  } else if (type === "cambg_repeat") {
-    body.classList.toggle(type)
-  } else if (type === "chatbg_cover") {
-    body.classList.toggle(type)
-  } else if (type === "chatbg_repeat") {
-    body.classList.toggle(type)
-  } else if (type === "chatbg_center") {
-    body.classList.toggle(type)
-  } else if (type === "userbg_cover") {
-    body.classList.toggle(type)
-  } else if (type === "userbg_repeat") {
-    body.classList.toggle(type)
-  } else if (type === "userbg_center") {
-    body.classList.toggle(type)
-  } else if (type === "user_bg") {
-    body.classList.toggle(type)
-  } else if (type === "trans_chat") {
-    body.classList.toggle(type)
-  } else if (type === "trans_users") {
-    body.classList.toggle(type)
-  } else if (type === "hide_usernames") {
+  } else if (type === "user_bg" || "trans_chat" || "trans_users" || "hide_usernames") {
     body.classList.toggle(type)
   } else if (type === "user_bgcolor") {
     Save_User_BG_Color('open')
-
+  } else if (type === "override_chatcolor") {
+    body.classList.toggle(type)
   }
 }
 
@@ -750,6 +744,10 @@ function Create_Chat_Settings () {
 <span class="dropdown__Option" id="llama_hide_userlist">Toggle Userlist<input id="llama_hide_userlist_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_ltr">LTR Mode<input id="llama_ltr_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_cheers">Cheers Button<input id="llama_cheers_checkbox" class="jic-checkbox" type="checkbox"></span>
+<span class="dropdown__Option" id="llama_override_chatcolor">Custom Chat Color<input id="llama_override_chatcolor_checkbox" class="jic-checkbox" type="checkbox"></span>
+<span class="dropdown__Option no_hoverbg" id="llama_chat_color">
+<span style="">Chat Color</span><input type="color" name="colorpicker" value="#000000" onchange="Button_Action('apply_chat_color')" id="llama_clear_chatcolorsrc" style="opacity: 1;cursor: pointer; width: 20px;height:20px;border-radius: 2px;padding: 0px;"/>
+</span>
 </div>`
   option_box.appendChild(chat_menu)
 }

@@ -185,18 +185,6 @@ function Reload_User_Settings () {
     Save_Username_Color('save')
   }
 
-  // ------- BG POSITION SETTING -------
-  var bgsets = ["cambg", "chatbg", "userbg"]
-  bgsets.forEach(function (bgset) {
-    var bgsubs = ["cover", "repeat", "center"]
-    bgsubs.forEach(function (bgsub) {
-      var bg_setting = localStorage.getItem("llama_" + bgset + "_" + bgsub)
-      if (bg_setting) {
-        body.classList.add(bgset + "_" + bgsub)
-        document.getElementById("llama" + bgset + "_" + bgsub + "_checkbox").checked = true
-      }
-    })
-  })
 }
 
 // ------------------------------------ ACTION : TOP BAR ACTION -----------------------------*/

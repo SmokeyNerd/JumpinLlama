@@ -650,30 +650,31 @@ function Create_Custom_Mode () {
 
   Custom_Mode.innerHTML = `
 <div class="dropdown__Options" id="Llama_Custom">
-<div class="dropdown__Option dropdown__Option-header">Custom Settings<input id="llama_reset" type="button" style="cursor:pointer;border-radius: 10px;width: 30%;border: 1px solid #ccc;" value="RESET"/></div>
+<div class="dropdown__Option dropdown__Option-header">Custom Settings</div>
             <span class="dropdown__Option">
                 <span>Bar Colors</span>
-                <input type="color" name="colorpicker" name="server" id="llama_bgcolor" value="#22ADD5" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
+                <input type="color" name="colorpicker" name="server" id="llama_bgcolor" value="#22ADD5" style="width: 20px;border-radius: 3px;height: 18px;padding: 0px;"></input>
             </span>
             <span class="dropdown__Option">
                 <span>Button Color</span>
-                <input type="color" name="colorpicker" name="server" id="llama_bordercolor" value="#C7CFD9" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
+                <input type="color" name="colorpicker" name="server" id="llama_bordercolor" value="#C7CFD9" style="width: 20px;border-radius: 3px;height: 18px;padding: 0px;"></input>
             </span>
             <span class="dropdown__Option">
                 <span>Background Color</span>
-                <input type="color" name="colorpicker" id="llama_lightbgcolor" value="#FFFFFF" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
+                <input type="color" name="colorpicker" id="llama_lightbgcolor" value="#FFFFFF" style="width: 20px;border-radius: 3px;height: 18px;padding: 0px;"></input>
             </span>
             <span class="dropdown__Option">
                 <span>Text Color</span>
-                <input type="color" name="colorpicker" id="llama_textcolor" value="#C7CFD9" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
+                <input type="color" name="colorpicker" id="llama_textcolor" value="#C7CFD9" style="width: 20px;border-radius: 3px;height: 18px;padding: 0px;"></input>
             </span>
             <span class="dropdown__Option">
                 <span>Button Text</span>
-                <input type="color" name="colorpicker" id="llama_buttontext" value="#000000" style="width: 100px;border-radius: 3px;border: 1px solid #ccc;height: 18px;"></input>
+                <input type="color" name="colorpicker" id="llama_buttontext" value="#000000" style="width: 20px;border-radius: 3px;height: 18px;padding: 0px;"></input>
             </span>
 
             <span class="dropdown__Option">
-                <input id="llama_preview" type="button" style="cursor:pointer;border-radius: 10px;width: 100%;border: 1px solid #ccc;" value="PREVIEW"></input>
+                <input id="llama_reset" type="button" style="cursor:pointer;border-top-left-radius: 10px;border-bottom-left-radius: 10px;width: 45%;border: 1px solid #ccc;" value="RESET"/>
+                <input id="llama_preview" type="button" style="cursor:pointer;border-top-right-radius: 10px;border-bottom-right-radius: 10px;width: 60%;border: 1px solid #ccc;" value="PREVIEW"></input>
             </span>
             <span class="dropdown__Option">
                 <input id="llama_save" type="button" style="cursor:pointer;border-radius: 10px;width: 100%;border: 1px solid #ccc;" value="SAVE"></input>
@@ -760,13 +761,12 @@ function Create_Cam_Settings () {
 <span class="dropdown__Option" id="llama_spacing">Cam Spacing<input id="llama_spacing_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_hide_usernames">Hide Usernames<input id="llama_hide_usernames_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option no_hover">
-<span style="">Username Color</span>
+<span style="">Username Color</span><input type="color" name="colorpicker" value="#000000" name="server" id="llama_clear_usercolorsrc" style="opacity: 1;cursor: pointer; width: 20px;height:20px;border-radius: 2px;padding: 0px;"/>
 </span>
+
 <span class="dropdown__Option">
-<input type="color" name="colorpicker" value="#000000" name="server" id="llama_clear_usercolorsrc" placeholder="Color Name/#Hex.." style="opacity: 1;cursor: pointer; width: 120px;border-radius: 2px;border: 1px solid #ccc;" class="jscolor {hash:true,zIndex:'5000'}" />
-<input id="llama_clear_usercolor" type="button" value="✘" style="border-radius: 10px;width: 45%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
-</span>
-<span class="dropdown__Option"><input id="llama_apply_colors" type="button" value="✔ Apply Color" style="border-radius: 10px;width: 100%;border: 0px;"/></span>`
+<input id="llama_clear_usercolor" type="button" value="✘ Reset" style="width: 65px;border: 0px; border-top-left-radius:10px; border-bottom-left-radius:10px;"/>
+<input id="llama_apply_colors" type="button" value="✔ Apply" style="border-top-right-radius:10px; border-bottom-right-radius:10px;width: 65px;border: 0px;"/></span>`
   option_box.appendChild(cam_menu)
 }
 
@@ -800,8 +800,8 @@ function Create_Theme_Settings () {
 <span class="dropdown__Option" id="llama_user_bgcolor">Custom BG Color : <span id="userbg_on">ON</span><span id="userbg_off">OFF</span><input id="llama_user_bgcolor_checkbox" class="jic-checkbox" type="checkbox"  style="display:none;"></span>
 <span class="dropdown__Option" id="user_bgcolor">
     <span>BG Color</span>
-    <input type="color" name="colorpicker" id="llama_user_bgcolorsrc" value="#000000" style="width: 40px;border-radius: 3px;border: 1px solid #ccc;height: 18px;padding: 0px;"></input>
-    <input id="llama_apply_bgcolors" type="button" value="✔" style="border-radius: 5px;width: 20px;border: 0px;"/>
+    <input type="color" name="colorpicker" id="llama_user_bgcolorsrc" value="#000000" style="width: 20px;border-radius: 3px;height: 18px;padding: 0px;"></input>
+    <input id="llama_apply_bgcolors" type="button" value="✔ Apply BG Color" style="border-radius: 5px;width: 20px;border: 0px;"/>
 </span>
 <span class="dropdown__Option" id="llama_trans_chat">Transparent Chat<input id="llama_trans_chat_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_trans_users">Transparent Users<input id="llama_trans_users_checkbox" class="jic-checkbox" type="checkbox"></span>

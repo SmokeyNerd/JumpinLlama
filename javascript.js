@@ -653,23 +653,23 @@ function Create_Custom_Mode () {
 <div class="dropdown__Option dropdown__Option-header">Custom Settings</div>
             <span class="dropdown__Option">
                 <span>Bar Colors</span>
-                <input type="color" name="colorpicker" name="server" id="llama_bgcolor" value="#22ADD5" style="width: 20px;border-radius: 3px;height: 18px;padding: 0px;"></input>
+                <input type="color" name="colorpicker" id="llama_bgcolor" value="#22ADD5" style="width: 20px;border-radius: 3px;height: 18px;padding: 0px;" onchange="Save_Llama_Color()"></input>
             </span>
             <span class="dropdown__Option">
                 <span>Button Color</span>
-                <input type="color" name="colorpicker" name="server" id="llama_bordercolor" value="#C7CFD9" style="width: 20px;border-radius: 3px;height: 18px;padding: 0px;"></input>
+                <input type="color" name="colorpicker" id="llama_bordercolor" value="#C7CFD9" style="width: 20px;border-radius: 3px;height: 18px;padding: 0px;" onchange="Save_Llama_Color()"></input>
             </span>
             <span class="dropdown__Option">
                 <span>Background Color</span>
-                <input type="color" name="colorpicker" id="llama_lightbgcolor" value="#FFFFFF" style="width: 20px;border-radius: 3px;height: 18px;padding: 0px;"></input>
+                <input type="color" name="colorpicker" id="llama_lightbgcolor" value="#FFFFFF" style="width: 20px;border-radius: 3px;height: 18px;padding: 0px;" onchange="Save_Llama_Color()"></input>
             </span>
             <span class="dropdown__Option">
                 <span>Text Color</span>
-                <input type="color" name="colorpicker" id="llama_textcolor" value="#C7CFD9" style="width: 20px;border-radius: 3px;height: 18px;padding: 0px;"></input>
+                <input type="color" name="colorpicker" id="llama_textcolor" value="#C7CFD9" style="width: 20px;border-radius: 3px;height: 18px;padding: 0px;" onchange="Save_Llama_Color()"></input>
             </span>
             <span class="dropdown__Option">
                 <span>Button Text</span>
-                <input type="color" name="colorpicker" id="llama_buttontext" value="#000000" style="width: 20px;border-radius: 3px;height: 18px;padding: 0px;"></input>
+                <input type="color" name="colorpicker" id="llama_buttontext" value="#000000" style="width: 20px;border-radius: 3px;height: 18px;padding: 0px;" onchange="Save_Llama_Color()"></input>
             </span>
 
             <span class="dropdown__Option">

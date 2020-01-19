@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JumpinLlama : 2020 Theme
 // @namespace    https://www.smokeyllama.com
-// @version      2020.5
+// @version      2020.6
 // @description  Editing Overall Theme of JumpIn. Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
@@ -21,7 +21,7 @@
  * ------------------------------------------------------------------------
  */
 
-var llama_ver = "17"
+var llama_ver = "18"
 var file_style = "https://smokeyllama.github.io/JumpinLlama/style.css?ver" + llama_ver
 var file_java = "https://smokeyllama.github.io/JumpinLlama/javascript.js?ver" + llama_ver
 
@@ -35,3 +35,5 @@ llama_java.setAttribute("src", file_java)
 
 document.getElementsByTagName("head")[0].appendChild(llama_style)
 document.body.appendChild(llama_java)
+
+console.log("SmokeyLlama")

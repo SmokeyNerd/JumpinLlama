@@ -873,7 +873,7 @@ option.buds_mode {
     "chat cams cams";
 }
 
-.popchat.ltr .room.layout--horizontal {
+.popchat:not(.hide_chat):not(.hide_userlist).ltr .room.layout--horizontal {
   grid-template-areas:
         "header header header"
         "cams cams chat";
@@ -881,12 +881,12 @@ option.buds_mode {
 
 /*-------------------------------------------------------------------------- POP_OUT_CHAT */
 
-body.popchat {overflow:hidden;}
-.popchat #llama_poprestore {
+body.popchat:not(.hide_chat):not(.hide_userlist) {overflow:hidden;}
+.popchat:not(.hide_chat):not(.hide_userlist) #llama_poprestore {
     display: inline-flex !important;
 }
 
-.popchat #chat {
+.popchat:not(.hide_chat):not(.hide_userlist) #chat {
     position: absolute;
     left: 20px;
     top: 110px;
@@ -898,25 +898,25 @@ body.popchat {overflow:hidden;}
 }
 
 
-.popchat #chat {
+.popchat:not(.hide_chat):not(.hide_userlist) #chat {
   overflow: hidden;
   height:45px;
   width:340px;
   opacity:0.7;
 }
 
-.popchat #chat:hover {
+.popchat:not(.hide_chat):not(.hide_userlist) #chat:hover {
   height: 605px;
   min-width:550px;
   opacity:1;
 }
 
 
-.popchat .room.layout--horizontal {
+.popchat:not(.hide_chat):not(.hide_userlist) .room.layout--horizontal {
   grid-template-columns: 1fr 1fr 0rem !important;
 }
 
-.popchat #chat {
+.popchat:not(.hide_chat):not(.hide_userlist) #chat {
   position: absolute;
   left: 20px;
   top: 110px;
@@ -926,7 +926,7 @@ body.popchat {overflow:hidden;}
   border-radius: 5px;
 }
 
-.popchat #chat__Header {
+.popchat:not(.hide_chat):not(.hide_userlist) #chat__Header {
   border-radius: 5px;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
@@ -939,7 +939,7 @@ body.popchat {overflow:hidden;}
 
 /*-------------------------------------------------------------------------- CHEERS_BUTTON */
 
-.popchat .cheers .cword1 {bottom:40px;}
+.popchat:not(.hide_chat):not(.hide_userlist) .cheers .cword1 {bottom:40px;}
 #Cheers_Button {cursor:pointer;}
 .cheers .cword1 {
     display: block;

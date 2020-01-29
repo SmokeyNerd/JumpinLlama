@@ -361,6 +361,14 @@ input[type="color"]::-webkit-color-swatch {
   height: 290px !important;
 }
 
+.miniyt .layout--horizontal button.youtube__VolumeControl {
+  position:absolute;
+  bottom:50px;
+  border-radius:10px;
+  border:0px;
+  padding:5px 10px;
+}
+
 .miniyt .layout--horizontal .youtube__VideoContainer>div>iframe:hover {
   height: 290px !important;
 }

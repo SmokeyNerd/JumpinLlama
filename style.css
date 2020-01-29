@@ -972,7 +972,7 @@ body.popchat:not(.hide_chat):not(.hide_userlist) {overflow:hidden;}
   display:inline-block;
 }
 .cheers #Cheers_Button:hover {
-  padding:5px;
+  transform: scale(1.15);
 }
 
 /*-------------------------------------------------------------------------- ROBOTO_MONO_FONT */

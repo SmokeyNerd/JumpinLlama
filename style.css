@@ -78,6 +78,16 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 input[type="color"]::-webkit-color-swatch {
 	border: none;
 }
+
+.miniyt .youtube__VideoContainer > .cams__CamOverlay:hover .cams__OptionsTrigger {
+    border-radius: 50px;
+    position: absolute;
+    top: 20%;
+    left: 1%;
+    width: 115px;
+    opacity:0.4;
+}
+
 /*-------------------------------------------------------------------------- OVERRIDE_CHAT_COLOR */
 .override_chatcolor #llama_chat_color {
   display:flex;

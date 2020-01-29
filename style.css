@@ -88,6 +88,11 @@ input[type="color"]::-webkit-color-swatch {
     opacity:0.4;
 }
 
+/*-------------------------------------------------------------------------- HIDE_EMOJIS_N_GIFTS */
+.hide_emojis .chat__InputAction.button {
+  display:none;
+}
+
 /*-------------------------------------------------------------------------- OVERRIDE_CHAT_COLOR */
 .override_chatcolor #llama_chat_color {
   display:flex;
@@ -958,27 +963,16 @@ body.popchat:not(.hide_chat):not(.hide_userlist) {overflow:hidden;}
 /*-------------------------------------------------------------------------- CHEERS_BUTTON */
 
 .popchat:not(.hide_chat):not(.hide_userlist) .cheers .cword1 {bottom:40px;}
-#Cheers_Button {cursor:pointer;}
-.cheers .cword1 {
-    display: block;
-    position: absolute;
-    bottom: 45px;
-    right: 228px;
-    padding: 3px 10px;
-    background: white;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    background-color: var(--thememode-bgcolor);
-    z-index: 8000;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+
+#Cheers_Button {
+  display:none;
+  cursor:pointer;
+  padding: 7px;}
+.cheers #Cheers_Button {
+  display:inline-block;
 }
-.word_one .cword1:hover {
-  font-weight:bold;}
-.cword1 {
-    display: none;
+.cheers #Cheers_Button:hover {
+  padding:5px;
 }
 
 /*-------------------------------------------------------------------------- ROBOTO_MONO_FONT */

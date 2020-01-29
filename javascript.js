@@ -11,6 +11,7 @@ function Start_The_Llama () {
   var loc = window.location.toString()
   var pageName = loc.split("/")[3]
   if (pageName !== "" && pageName !== "directory" && pageName !== "support" && pageName !== "profile" && pageName !== "messages" && pageName !== "settings") {
+    Create_Element_IDs()
     Create_Top_Icons()
     Create_Bottom_Icons()
 
@@ -43,13 +44,14 @@ function Start_The_Llama () {
 var theme_status = localStorage.getItem("thememode")
 var user_checkbox_settings = ["robo", "bubble", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg",
   "trans_chat", "trans_users", "hide_usernames", "user_bgcolor", "cambg_cover", "cambg_center", "cambg_repeat",
-  "chatbg_cover", "chatbg_center", "chatbg_repeat", "userbg_cover", "userbg_center", "userbg_repeat", "override_chatcolor"]
+  "chatbg_cover", "chatbg_center", "chatbg_repeat", "userbg_cover", "userbg_center", "userbg_repeat", "override_chatcolor", "hide_emojis"]
 var user_button_settings = ["miniyt"]
 var top_buttons = ["chat", "cam", "theme", "notice"]
 var btmbuttons = ["poprestore", "web", "hideweb"]
 var checkbox_actions = ["bubble", "robo", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg",
   "cambg_cover", "cambg_center", "cambg_repeat", "chatbg_cover", "chatbg_center", "chatbg_repeat", "userbg_cover",
-  "userbg_center", "userbg_repeat", "trans_chat", "trans_users", "hide_usernames", "user_bgcolor", "override_chatcolor"]
+  "userbg_center", "userbg_repeat", "trans_chat", "trans_users", "hide_usernames", "user_bgcolor", "override_chatcolor",
+  "hide_emojis"]
 var button_actions = ["miniyt", "hide_header", "save", "reset", "web", "hideweb", "games",
   "tiny", "min", "max", "res", "close", "clear_cam", "clear_chat", "clear_user", "apply_images",
   "popchat", "poprestore", "clear_usercolor", "cambg_settings", "chatbg_settings", "userbg_settings"]
@@ -193,6 +195,28 @@ function Reload_User_Settings () {
     Save_Chat_Color('save')
   }
 
+}
+
+// ------------------------------------ CREATE : ELEMENT IDS ----------------------------*/
+function Create_Element_IDs () {
+  var chatInputBox = document.getElementsByClassName("chat__Input")[0]
+  chatInputBox.id = "chat_input_box"
+  chatInputBox.setAttribute("autocomplete", "off")
+
+  var btm_bar = document.getElementsByClassName("chat__Share")[0]
+  btm_bar.id = "bottom_bar"
+
+  var chat_drag = document.getElementsByClassName("chat")[0]
+  chat_drag.id = "chat"
+
+  var up_bar = document.getElementsByClassName("chat__HeaderOptions")[1]
+  up_bar.id = "chat__HeaderOptions"
+
+  var info = document.getElementsByClassName("roomHeader__UserActions")[0]
+  info.id = "info_box"
+
+  var chat_box = document.getElementsByClassName("chat__InputWrapper")[0]
+  chat_box.id = "chat_box"
 }
 
 // ------------------------------------ ACTION : TOP BAR ACTION -----------------------------*/
@@ -494,6 +518,8 @@ function Checkbox_Action (type) {
     Save_User_BG_Color('open')
   } else if (type === "override_chatcolor") {
     body.classList.toggle(type)
+  } else if (type === "hide_emojis") {
+    body.classList.toggle(type)
   }
 }
 
@@ -526,9 +552,6 @@ function Toggle_Custom_Box (status) {
 
 // ------------------------------------ CREATE : EVENT LISTENERS ----------------------------*/
 function Add_Listeners () {
-  var chatInputBox = document.getElementsByClassName("chat__Input")[0]
-  chatInputBox.id = "chat_input_box"
-  chatInputBox.setAttribute("autocomplete", "off")
 
   document.getElementById("info_box").addEventListener("click", Bottom_Bar, false)
 
@@ -691,13 +714,14 @@ function Create_Custom_Mode () {
 // ------------------------------------ CREATE : CHEERS ELEMENT -----------------------------*/
 function Create_Cheers () {
   var cheers_btn = document.createElement("div")
-  cheers_btn.className = "dropdown__Options"
+  cheers_btn.className = "button-clear chat__InputAction"
   cheers_btn.setAttribute("id", "Cheers_Button")
+  cheers_btn.setAttribute("type", "button")
+  cheers_btn.setAttribute("onclick", "Cheers_Button()")
   cheers_btn.innerHTML = `
-
-<div class="cword1" onclick="Cheers_Button()">cheers!</div>
+<i class="fas fa-joint"></i>
 `
-  document.body.appendChild(cheers_btn)
+  chat_box.appendChild(cheers_btn)
 }
 
 // ------------------------------------ CREATE : EXIT BOX -----------------------------------*/
@@ -743,14 +767,18 @@ function Create_Chat_Settings () {
 <div class="dropdown__Option dropdown__Option-header">Chat settings</div>
 <span class="dropdown__Option" id="llama_robo">Roboto Font<input id="llama_robo_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_bubble">Bubble Chat<input id="llama_bubble_checkbox" class="jic-checkbox" type="checkbox"></span>
-<span class="dropdown__Option" id="llama_hide_chat">Toggle Chat<input id="llama_hide_chat_checkbox" class="jic-checkbox" type="checkbox"></span>
-<span class="dropdown__Option" id="llama_hide_userlist">Toggle Userlist<input id="llama_hide_userlist_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_ltr">LTR Mode<input id="llama_ltr_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_cheers">Cheers Button<input id="llama_cheers_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_override_chatcolor">Custom Chat Color<input id="llama_override_chatcolor_checkbox" class="jic-checkbox" type="checkbox"></span>
-<span class="dropdown__Option no_hoverbg" id="llama_chat_color">
+<span class="dropdown__Option" id="llama_chat_color">
 <span style="">Chat Color</span><input type="color" name="colorpicker" value="#000000" onchange="Button_Action('apply_chat_color')" id="llama_clear_chatcolorsrc" style="opacity: 1;cursor: pointer; width: 20px;height:20px;border-radius: 2px;padding: 0px;"/>
 </span>
+<span class="dropdown__Option no_hoverbg">
+<span>Show/Hide Elements</span>
+</span>
+<span class="dropdown__Option" id="llama_hide_chat">Chatbox<input id="llama_hide_chat_checkbox" class="jic-checkbox" type="checkbox"></span>
+<span class="dropdown__Option" id="llama_hide_userlist">Userlist<input id="llama_hide_userlist_checkbox" class="jic-checkbox" type="checkbox"></span>
+<span class="dropdown__Option" id="llama_hide_emojis">Emoji/Gift<input id="llama_hide_emojis_checkbox" class="jic-checkbox" type="checkbox"></span>
 </div>`
   option_box.appendChild(chat_menu)
 }
@@ -901,8 +929,6 @@ display:none;
 
 // ------------------------------------ CREATE : BOTTOM ICONS -------------------------------*/
 function Create_Bottom_Icons () {
-  var btm_bar = document.getElementsByClassName("chat__Share")[0]
-  btm_bar.id = "bottom_bar"
   var bottom_bar = document.getElementById("bottom_bar")
   var buttom_btns = document.createElement("div")
   buttom_btns.className = ""
@@ -946,12 +972,6 @@ function Create_Bottom_Icons () {
 
 // ------------------------------------ CREATE : TOP ICONS ----------------------------------*/
 function Create_Top_Icons () {
-
-  var chat_drag = document.getElementsByClassName("chat")[0]
-  chat_drag.id = "chat"
-
-  var up_bar = document.getElementsByClassName("chat__HeaderOptions")[1]
-  up_bar.id = "chat__HeaderOptions"
   var top_bar = document.getElementById("chat__HeaderOptions")
   var top_btns = document.createElement("div")
   top_btns.className = ""
@@ -984,8 +1004,6 @@ function Create_Top_Icons () {
 
 // ------------------------------------ CREATE : LLAMA INFO BUTTON --------------------------*/
 function Create_Llama_Info () {
-  var info = document.getElementsByClassName("roomHeader__UserActions")[0]
-  info.id = "info_box"
   var info_box = document.getElementById("info_box")
   var info_btns = document.createElement("label")
   info_btns.className
@@ -1025,8 +1043,6 @@ function Create_Llama_Notice () {
 
 // ------------------------------------ CREATE : HEADER HIDER -------------------------------*/
 function Create_Header_Hider () {
-  var info = document.getElementsByClassName("roomHeader__UserActions")[0]
-  info.id = "info_box"
   var info_box = document.getElementById("info_box")
   var HeaderHideBtn = document.createElement("label")
   HeaderHideBtn.className = "LlamaOption_chat"

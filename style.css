@@ -990,3 +990,11 @@ body.popchat:not(.hide_chat):not(.hide_userlist) {overflow:hidden;}
 .robo .fa, .robo .far, .robo .fas {
     font-family: "Font Awesome 5 Free" !important;
 }
+
+#chat_box > button > svg {
+    color: var(--thememode-bordercolor);
+}
+
+#chat_box > div > i {
+    color: var(--thememode-bordercolor);
+}

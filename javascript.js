@@ -1083,7 +1083,7 @@ function Toggle_Theme (color) {
   } else {
     if (color === "default") {
       body.classList.remove("thememode")
-      localStorage.setItem("thememode", "")
+      localStorage.removeItem("thememode")
       document.documentElement.style.setProperty("--thememode-bgcolor", "")
       document.documentElement.style.setProperty("--thememode-bordercolor", "")
       document.documentElement.style.setProperty("--thememode-lightbgcolor", "")

@@ -996,7 +996,7 @@ body.popchat:not(.hide_chat):not(.hide_userlist) {overflow:hidden;}
 
 /*-------------------------------------------------------------------------- HOMEPAGE_CSS */
 
-.full-width--white {
+.thememode .full-width--white {
   background-color: var(--thememode-lightbgcolor);
 }
 
@@ -1024,10 +1024,13 @@ body.popchat:not(.hide_chat):not(.hide_userlist) {overflow:hidden;}
   margin-right: 30px;
 }
 
-.room__Item {
+.thememode .room__Item {
     background: var(--thememode-bordercolor);
 }
-.room__Name, .room__DetailsDescription, .room__Broadcasters, .room__Viewers {
+.thememode .room__Name,
+.thememode .room__DetailsDescription,
+.thememode .room__Broadcasters,
+.thememode .room__Viewers {
   color: var(--thememode-textcolor);
 }
 
@@ -1046,123 +1049,128 @@ html::-webkit-scrollbar-thumb {
   background-color: var(--thememode-textcolor);
   border-radius:100px;}
 
-.profile__Container {
+.thememode .profile__Container {
   padding: 1em;
   background-color: var(--thememode-bgcolor);
   border: 1px solid var(--thememode-bordercolor);
 }
 
-.form__Header {
+.thememode .form__Header {
   color: var(--thememode-textcolor);
 }
 
-.section-header {
+.thememode .section-header {
   color: var(--thememode-textcolor);
 }
-.header {
+.thememode .header {
   background-color: var(--thememode-bordercolor);
 }
-.button--black {
+.thememode .button--black {
   background-color: var(--thememode-bordercolor);
 }
-.hero__FormInput {
+.thememode .hero__FormInput {
   border-color: var(--thememode-bordercolor);
 }
 
-.pagination__Page {
+.thememode .pagination__Page {
   background-color: var(--thememode-bgcolor);
   border-color: var(--thememode-bordercolor);
   color: var(--thememode-bordercolor);
 }
 
-.pagination__Page:hover {
+.thememode .pagination__Page:hover {
   background-color: var(--thememode-bordercolor);
   border-color: var(--thememode-bgcolor);
 }
 
-.pagination__Page--current {
+.thememode .pagination__Page--current {
   background-color: var(--thememode-bordercolor);
   border-color: var(--thememode-bgcolor);
   color: var(--thememode-bgcolor);
 }
-.messages__Conversation {
+
+.thememode .messages__Conversation {
   background-color: var(--thememode-bordercolor);
   border-color: var(--thememode-bgcolor);
 }
-.messages__Conversation:hover {
+
+.thememode .messages__Conversation:hover {
   background-color: var(--thememode-bgcolor);
   border-color: var(--thememode-bordercolor);
 }
 
-.button--black-transparent {
+.thememode .button--black-transparent {
   background-color: var(--thememode-bordercolor);
   border-color: var(--thememode-bordercolor);
   color: var(--thememode-textcolor);
 }
 
-
-.form__Input {
+.thememode .form__Input {
   background-color: var(--thememode-bordercolor);
   border-color: var(--thememode-bordercolor);
 }
-.profile__Container, .profile__ListItemTitle,
-.form__Label, .page-header, .button--black-transparent:hover,
-.messages__ConversationUser {
+.thememode .profile__Container,
+.thememode .profile__ListItemTitle,
+.thememode .form__Label,
+.thememode .page-header,
+.thememode .button--black-transparent:hover,
+.thememode .messages__ConversationUser {
   color: var(--thememode-textcolor);
 }
-.messages__Message {
+.thememode .messages__Message {
   background: var(--thememode-lightbgcolor);
   color: var(--thememode-textcolor);
 }
-.messages__Message::before {
+.thememode .messages__Message::before {
   border-top-color: var(--thememode-lightbgcolor);
 }
 
-.messages__Message--me {
+.thememode .messages__Message--me {
   background: var(--thememode-bordercolor);
   color: var(--thememode-textcolor);
 }
-.messages__Message--me::before {
+.thememode .messages__Message--me::before {
   border-top-color: var(--thememode-bordercolor);
 }
 
-.messages__Footer {
+.thememode .messages__Footer {
   color: var(--thememode-textcolor);
 }
 
-.support__Product {
+.thememode .support__Product {
   background: var(--thememode-bgcolor);
   color: var(--thememode-textcolor);
   border-color: var(--thememode-bordercolor);
 }
 
-.full-width--grey {
+.thememode .full-width--grey {
   background: var(--thememode-bgcolor);
   color: var(--thememode-textcolor);
 }
-pre, samp {
+.thememode pre, samp {
   color: var(--thememode-bgcolor);
 }
 
-.full-width--blue {
+.thememode .full-width--blue {
     background-color: var(--thememode-bgcolor);
 }
 
-.button--blue {
+.thememode .button--blue {
     background-color: var(--thememode-lightbgcolor);
   color: var(--thememode-textcolor);
 }
-.settings__MenuItemLink {
+.thememode .settings__MenuItemLink {
     background-color: var(--thememode-bgcolor);
   color: var(--thememode-textcolor);
 }
-.settings__MenuItem+.settings__MenuItem {
+.thememode .settings__MenuItem+.settings__MenuItem {
   border-color: var(--thememode-bordercolor);
 }
-.settings__Menu {
+.thememode .settings__Menu {
   border-color: var(--thememode-bordercolor);
 }
-.settings__MenuItemLink.active, .settings__MenuItemLink:hover {
+.thememode .settings__MenuItemLink.active,
+.thememode .settings__MenuItemLink:hover {
   background-color: var(--thememode-bordercolor);
   color: var(--thememode-textcolor);
 }

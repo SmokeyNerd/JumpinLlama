@@ -1024,9 +1024,18 @@ body.popchat:not(.hide_chat):not(.hide_userlist) {overflow:hidden;}
   margin-right: 30px;
 }
 
+.room__Item {
+    border: 2px solid transparent;
+}
 .thememode .room__Item {
     background: var(--thememode-bordercolor);
 }
+.room__Item:hover {
+    border: 2px solid #dadada;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
 .thememode .room__Name,
 .thememode .room__DetailsDescription,
 .thememode .room__Broadcasters,

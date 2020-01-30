@@ -88,6 +88,11 @@ input[type="color"]::-webkit-color-swatch {
     opacity:0.4;
 }
 
+/*-------------------------------------------------------------------------- PULL_AUDIO_INDICATOR_FORWARD */
+.cams__Cam-audioActive {
+    z-index: 2000;
+}
+
 /*-------------------------------------------------------------------------- HIDE_EMOJIS_N_GIFTS */
 .hide_emojis .chat__InputAction.button {
   display:none;

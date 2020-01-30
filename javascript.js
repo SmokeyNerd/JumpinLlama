@@ -35,8 +35,6 @@ function Start_The_Llama () {
     Add_Listeners()
 
     Reload_User_Settings()
-  } else {
-    body.classList.add("thememode")
   }
 }
 

@@ -750,7 +750,7 @@ function Create_Top_Setting_Box () {
   chat_menu.setAttribute("id", "LlamaOptions_Box")
   chat_menu.setAttribute(
     "style",
-    "display: block; top: 95px; position: absolute; right: 11px; border-radius: 3px; z-index: 4000;"
+    "display: block; top: 95px; position: absolute; right: 11px; border-radius: 3px; z-index: 2000;"
   )
   chat_menu.innerHTML = ""
   document.body.appendChild(chat_menu)
@@ -1009,7 +1009,7 @@ function Create_Llama_Info () {
   info_btns.className
     = "button button-floating button-icon button--text roomHeader__UserAction LlamaOption_chat"
   info_btns.setAttribute("id", "llama_notice")
-  info_btns.setAttribute("style", "z-index:4000")
+  info_btns.setAttribute("style", "z-index:2000")
   info_btns.setAttribute("title", "Whats New SmokeyLlama")
   info_btns.innerHTML = `
 <img src="https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@9ada4fbd26a289f24d0416136e05ae449c748437/images/llamaicon.png" width="20px">

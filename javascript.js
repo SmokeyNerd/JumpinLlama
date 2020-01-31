@@ -135,7 +135,11 @@ var splat_messagebg = "url(https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6
 Create_Custom_Mode()
 if (theme_status) {
   body.classList.add("thememode")
-  Toggle_Theme(theme_status)
+  if (theme_status === "custom") {
+    Save_Llama_Color("custom")
+  } else {
+    Toggle_Theme(theme_status)
+  }
 }
 
 // ------------------------------------ RELOAD : USER SETTINGS ------------------------------*/
@@ -153,11 +157,6 @@ function Reload_User_Settings () {
       body.classList.add(user_button_setting)
     }
   })
-  // ------- SET DROPDOWN CHOICE -------
-  const theme_dropdown = document.getElementById("theme_wizard")
-  if (theme_status !== null) {
-    theme_dropdown.value = theme_status.toUpperCase()
-  }
 
   // ------- USER BG COLOR -------
   var bgstorage = localStorage.getItem("llama_user_bgcolor")
@@ -583,42 +582,6 @@ function Add_Listeners () {
   document.getElementById("Exit_Box").addEventListener("click", function () {
     Exit_Box_Action()
   }, false)
-  document.addEventListener(
-    "input",
-    function (event) {
-      // Only run for #theme_wizard select
-      if (event.target.id !== "theme_wizard") {
-        return
-      }
-      if (event.target.value === "Default Theme") {
-        Toggle_Theme("default")
-      } else if (event.target.value === "PINK") {
-        Toggle_Theme("pink")
-      } else if (event.target.value === "GREEN") {
-        Toggle_Theme("green")
-      } else if (event.target.value === "BLUE") {
-        Toggle_Theme("blue")
-      } else if (event.target.value === "MAUVE") {
-        Toggle_Theme("mauve")
-      } else if (event.target.value === "ORANGE") {
-        Toggle_Theme("orange")
-      } else if (event.target.value === "RED") {
-        Toggle_Theme("red")
-      } else if (event.target.value === "PURPLE") {
-        Toggle_Theme("purple")
-      } else if (event.target.value === "BLACK") {
-        Toggle_Theme("black")
-      } else if (event.target.value === "BUDS") {
-        Toggle_Theme("buds")
-      } else if (event.target.value === "SPLAT") {
-        Toggle_Theme("splat")
-      } else if (event.target.value === "CUSTOM") {
-        Save_Llama_Color("custom")
-        Toggle_Custom_Box("on")
-      }
-    },
-    false
-  )
 }
 
 // ------------------------------------ CREATE : LLAMA WINDOW -------------------------------*/
@@ -811,22 +774,32 @@ function Create_Theme_Settings () {
   theme_menu.innerHTML = `
 <div class="dropdown__Options" id="llama_theme_settings">
 <div class="dropdown__Option dropdown__Option-header">Theme Settings</div>
-<label class="dropdown__Option" id="cam_border_llama">
-<select id="theme_wizard">
-  <option value="">Select Theme..</option>
-  <option value="Default Theme">Default Theme</option>
-  <option value="PINK" class="pink_mode">PINK</option>
-  <option value="GREEN" class="green_mode">GREEN</option>
-  <option value="BLUE" class="blue_mode">BLUE</option>
-  <option value="MAUVE" class="mauve_mode">MAUVE</option>
-  <option value="ORANGE" class="orange_mode">ORANGE</option>
-  <option value="RED" class="red_mode">RED</option>
-  <option value="PURPLE" class="purple_mode">PURPLE</option>
-  <option value="BLACK" class="black_mode">BLACK</option>
-  <option value="BUDS" class="buds_mode">BUDS</option>
-  <option value="SPLAT" class="splat_mode">SPLAT</option>
-  <option value="CUSTOM" class="custom_mode">CUSTOM</option>
-</select>
+<label class="dropdown__Option no_hoverbg">
+Preset Themes
+</label>
+<label class="dropdown__Option no_hoverbg">
+<div class="color_square default" onclick="Toggle_Theme('default')" title="default"></div>
+<div class="color_square pink" onclick="Toggle_Theme('pink')" title="pink"></div>
+<div class="color_square green" onclick="Toggle_Theme('green')" title="green"></div>
+<div class="color_square blue" onclick="Toggle_Theme('blue')" title="blue"></div>
+<div class="color_square mauve" onclick="Toggle_Theme('mauve')" title="mauve"></div>
+<div class="color_square orange" onclick="Toggle_Theme('orange')" title="orange"></div>
+</label>
+<label class="dropdown__Option no_hoverbg">
+<div class="color_square red" onclick="Toggle_Theme('red')" title="red"></div>
+<div class="color_square purple" onclick="Toggle_Theme('purple')" title="purple"></div>
+<div class="color_square black" onclick="Toggle_Theme('black')" title="black"></div>
+<div class="color_square buds" onclick="Toggle_Theme('buds')" title="buds"></div>
+<div class="color_square splat" onclick="Toggle_Theme('splat')" title="splat"></div>
+<!--<div class="color_square tech" onclick="Toggle_Theme('tech')" title="tech"></div>-->
+</label>
+<label class="dropdown__Option no_hoverbg">
+<div class="color_square cust" onclick="Toggle_Theme('custom')" title="custom" style="width: 100%;border-radius:20px;">
+<span style="position: relative; top: 3px;">Custom Mode
+<span class="on">ON</span>
+<span class="off">OFF</span>
+</span>
+</div>
 </label>
 
 <span class="dropdown__Option" id="llama_user_bgcolor">Custom BG Color : <span id="userbg_on">ON</span><span id="userbg_off">OFF</span><input id="llama_user_bgcolor_checkbox" class="jic-checkbox" type="checkbox"  style="display:none;"></span>
@@ -1061,9 +1034,6 @@ function Create_Header_Hider () {
 function Toggle_Theme (color) {
   var thememode_variable = "thememode"
   body.classList.add("thememode")
-  if (theme_status !== color) {
-    localStorage.setItem(thememode_variable, color)
-  }
 
   var llama_theme_bgcolor
   var llama_theme_bordercolor
@@ -1077,7 +1047,15 @@ function Toggle_Theme (color) {
   var llama_theme_messagebg = ""
 
   if (color === "custom") {
-    Save_Llama_Color("reset")
+    var current_status = localStorage.getItem("thememode")
+    if (current_status === "custom") {
+      Toggle_Theme("default")
+      Toggle_Custom_Box("off")
+      localStorage.removeItem("thememode")
+    } else {
+      Save_Llama_Color("custom")
+      Toggle_Custom_Box("on")
+    }
   } else {
     if (color === "default") {
       body.classList.remove("thememode")
@@ -1211,6 +1189,9 @@ function Toggle_Theme (color) {
       "--thememode-messagebg",
       llama_theme_messagebg
     )
+  }
+  if (theme_status !== color) {
+    localStorage.setItem(thememode_variable, color)
   }
 }
 

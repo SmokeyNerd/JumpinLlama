@@ -99,7 +99,6 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 .room {
-  background-color: red;
   background-image: var(--thememode-roombg);
   background-size: cover;
 }

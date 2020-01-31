@@ -120,7 +120,7 @@ input[type="color"]::-webkit-color-swatch {
   transform: scale(1.40);
 }
 
-.color_square.cust:hover {
+.color_square.cust_mode:hover {
   transform: scale(1.05);
 }
 .custom .on {
@@ -136,7 +136,7 @@ input[type="color"]::-webkit-color-swatch {
   color:green;
   background-color: green;
 }
-.cust > span > span {
+.cust_mode > span > span {
     border-radius: 100px;
     padding: 0px 10px;
     color:white;

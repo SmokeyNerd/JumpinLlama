@@ -787,10 +787,10 @@ Preset Themes
 <div class="color_square black_mode" onclick="Toggle_Theme('black')" title="black"></div>
 <div class="color_square buds_mode" onclick="Toggle_Theme('buds')" title="buds"></div>
 <div class="color_square splat_mode" onclick="Toggle_Theme('splat')" title="splat"></div>
-<!--<div class="color_square tech" onclick="Toggle_Theme('tech')" title="tech"></div>-->
+<!--<div class="color_square tech_mode" onclick="Toggle_Theme('tech')" title="tech"></div>-->
 </label>
 <label class="dropdown__Option no_hoverbg">
-<div class="color_square cust" onclick="Toggle_Theme('custom')" title="custom" style="width: 100%;border-radius:20px;">
+<div class="color_square cust_mode" onclick="Toggle_Theme('custom')" title="custom" style="width: 100%;border-radius:20px;">
 <span style="position: relative; top: 3px;">Custom Mode
 <span class="on">ON</span>
 <span class="off">OFF</span>

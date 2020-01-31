@@ -133,18 +133,19 @@ input[type="color"]::-webkit-color-swatch {
 
 .on {
   display:none;
-  color:green;
   background-color: green;
-}
-.cust_mode > span > span {
-    border-radius: 100px;
-    padding: 0px 10px;
-    color:white;
+  border-radius: 100px;
 }
 .off {
   display:inline-block;
   background-color: red;
+  border-radius: 100px;
 }
+.cust_mode > span > span {
+    padding: 0px 10px;
+    color:white;
+}
+
 
 .pink_mode {background-color: #ffd1dc;}
 .green_mode {background-color: #042500;}

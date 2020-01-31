@@ -98,6 +98,12 @@ input[type="color"]::-webkit-color-swatch {
   display:none;
 }
 
+.room {
+  background-color: red;
+  background-image: var(--thememode-roombg);
+  background-size: cover;
+}
+
 /*-------------------------------------------------------------------------- COLOR_SQUARES */
 .color_square {
   width: 20px;

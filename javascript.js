@@ -107,29 +107,25 @@ var black_lightbgcolor = "#191919"
 var black_textcolor = "#FFFFFF"
 var black_buttontext = "#7289da"
 
-var buds_bgcolor = "transparent"
-var buds_bordercolor = "#51bc02"
-var buds_lightbgcolor = "#282828"
+var buds_bgcolor = "#042500"
+var buds_bordercolor = "#217c16"
+var buds_lightbgcolor = "#00500d"
 var buds_textcolor = "#FFFFFF"
-var buds_buttontext = "#FFFFFF"
-var buds_cambg = "url(https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6157c7e0ae1a3a3149ac7629a50cd55fada590eb/images/splatoon/mainbg.jpg)"
-var buds_userbg = "url(https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6157c7e0ae1a3a3149ac7629a50cd55fada590eb/images/splatoon/userbg.png)"
-var buds_chatheaderbg
-    = "url(https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6157c7e0ae1a3a3149ac7629a50cd55fada590eb/images/splatoon/headerbg.png)"
-var buds_chatbg = "url(https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6157c7e0ae1a3a3149ac7629a50cd55fada590eb/images/splatoon/chatbg.png)"
-var buds_messagebg = "url(https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6157c7e0ae1a3a3149ac7629a50cd55fada590eb/images/splatoon/messagebg.png)"
+var buds_buttontext = "#042500"
+var buds_cambg = "url('https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6a40bce97c841029ee442a8a297e2b2c976a8bd1/images/bud/mainbg.jpg')"
+
 
 var splat_bgcolor = "transparent"
 var splat_bordercolor = "#51bc02"
 var splat_lightbgcolor = "#282828"
 var splat_textcolor = "#FFFFFF"
 var splat_buttontext = "#FFFFFF"
-var splat_cambg = "url(https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6157c7e0ae1a3a3149ac7629a50cd55fada590eb/images/splatoon/mainbg.jpg)"
-var splat_userbg = "url(https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6157c7e0ae1a3a3149ac7629a50cd55fada590eb/images/splatoon/userbg.png)"
+var splat_cambg = "url('https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6157c7e0ae1a3a3149ac7629a50cd55fada590eb/images/splatoon/mainbg.jpg')"
+var splat_userbg = "url('https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6157c7e0ae1a3a3149ac7629a50cd55fada590eb/images/splatoon/userbg.png')"
 var splat_chatheaderbg
-    = "url(https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6157c7e0ae1a3a3149ac7629a50cd55fada590eb/images/splatoon/headerbg.png)"
-var splat_chatbg = "url(https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6157c7e0ae1a3a3149ac7629a50cd55fada590eb/images/splatoon/chatbg.png)"
-var splat_messagebg = "url(https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6157c7e0ae1a3a3149ac7629a50cd55fada590eb/images/splatoon/messagebg.png)"
+    = "url('https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6157c7e0ae1a3a3149ac7629a50cd55fada590eb/images/splatoon/headerbg.png')"
+var splat_chatbg = "url('https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6157c7e0ae1a3a3149ac7629a50cd55fada590eb/images/splatoon/chatbg.png')"
+var splat_messagebg = "url('https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6157c7e0ae1a3a3149ac7629a50cd55fada590eb/images/splatoon/messagebg.png')"
 
 // ------------------------------------ LOAD : INSTANTLY THEME COLORS OR CUSTOM MODE ---------*/
 Create_Custom_Mode()

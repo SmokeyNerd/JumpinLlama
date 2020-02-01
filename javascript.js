@@ -1,5 +1,5 @@
 var body = document.body
-console.log("Hello World")
+
 // ------------------------------------ DELAY FOR ELEMENTS TO LOAD ------------------------------------*/
 var starter = "activate"
 if (starter !== "start_delay") {
@@ -23,7 +23,7 @@ function Start_The_Llama () {
     Create_Chat_Settings()
     Create_Cam_Settings()
     Create_Theme_Settings()
-    Create_BG_Settings ()
+    Create_BG_Settings()
 
     Create_Cheers()
 
@@ -55,7 +55,6 @@ var button_actions = ["miniyt", "hide_header", "save", "reset", "web", "hideweb"
   "tiny", "min", "max", "res", "close", "clear_cam", "clear_chat", "clear_user", "apply_images",
   "popchat", "poprestore", "cambg_settings", "chatbg_settings", "userbg_settings"]
 var menu_actions = ["chat", "cam", "theme", "notice"]
-var custom_settings = ["bgcolor", "bordercolor", "lightbgcolor", "textcolor", "buttontext", "userlist"]
 var draggable_windows = ["mydiv", "chat"]
 
 // ------------------------------------ LOAD : THEME VARIABLES ---------------------------------------*/
@@ -148,7 +147,7 @@ Create_Custom_Mode()
 if (theme_status) {
   body.classList.add("thememode")
   if (theme_status === "custom") {
-    var existing_colors = localStorage.getItem('llama_custom_bgcolor')
+    var existing_colors = localStorage.getItem("llama_custom_bgcolor")
     if (existing_colors) {
       Save_Llama_Color("reset")
     } else {
@@ -180,7 +179,7 @@ function Reload_User_Settings () {
   if (bgstorage !== "") {
     var bgstoragesrc = localStorage.getItem("llama_user_bgcolorsrc")
     document.getElementById("llama_clear_user_bgcolorsrc").value = bgstoragesrc
-    Save_User_BG_Color('save')
+    Save_User_BG_Color("save")
   }
 
   // ------- USER BG IMAGES -------
@@ -198,16 +197,15 @@ function Reload_User_Settings () {
   var usernamecolor_status = localStorage.getItem("llama_username_color")
   if (usernamecolor_status) {
     document.getElementById("llama_clear_usercolorsrc").value = usernamecolor_status
-    Save_Username_Color('save')
+    Save_Username_Color("save")
   }
 
   // ------- CHAT COLOR -------
   var chatcolor_status = localStorage.getItem("llama_chat_color")
   if (chatcolor_status) {
     document.getElementById("llama_clear_chatcolorsrc").value = chatcolor_status
-    Save_Chat_Color('save')
+    Save_Chat_Color("save")
   }
-
 }
 
 // ------------------------------------ CREATE : ELEMENT IDS ----------------------------*/
@@ -253,7 +251,6 @@ function Top_Bar_Action (type) {
 
       if (type === "notice") {
         var loc = window.location.toString()
-        var params = loc.split("/")[3]
         var info_frame = document.getElementById("HW_JL_frame")
         var home = "https://headway-widget.net/widgets/7XkGbx"
         info_frame.src = home
@@ -271,7 +268,6 @@ function Bottom_Bar (type) {
 
 // ------------------------------------ ACTION : SAVE USERNAME COLOR -------------------------*/
 function Save_User_BG_Color (type) {
-
   if (type === "save") {
     body.classList.add("userbg_color")
     var usercolor_llama = document.getElementById("llama_clear_user_bgcolorsrc").value
@@ -285,7 +281,6 @@ function Save_User_BG_Color (type) {
     localStorage.setItem("llama_user_bgcolorsrc", "")
   } else if (type === "open") {
     body.classList.toggle("userbg_color")
-
   }
 }
 
@@ -414,18 +409,18 @@ function Button_Action (type) {
     iframe.src = ""
   } else if (clear == "clear") {
     if (type === "clear_usercolor") {
-      Save_Username_Color('reset')
+      Save_Username_Color("reset")
     } else {
       Clear_User_BG(type)
     }
   } else if (type === "apply_images") {
     Save_User_BG()
   } else if (type === "apply_colors") {
-    Save_Username_Color('save')
+    Save_Username_Color("save")
   } else if (type === "apply_chat_color") {
-    Save_Chat_Color('save')
+    Save_Chat_Color("save")
   } else if (type === "apply_bgcolors") {
-    Save_User_BG_Color('save')
+    Save_User_BG_Color("save")
   } else if (type === "cambg_settings" || type === "chatbg_settings" || type === "userbg_settings") {
     USER_BG_MINI_MENU(type)
   }
@@ -527,19 +522,19 @@ function Checkbox_Action (type) {
     body.classList.toggle(type)
   } else if (type === "cambg_cover" || type === "cambg_center" || type === "cambg_repeat") {
     body.classList.toggle(type)
-  } else if (type === "chatbg_cover" || "chatbg_repeat" || "chatbg_center") {
+  } else if (type === "chatbg_cover" || type === "chatbg_repeat" || type === "chatbg_center") {
     body.classList.toggle(type)
   } else if (type === "userbg_cover" || type === "userbg_repeat" || type === "userbg_center") {
     body.classList.toggle(type)
-  } else if (type === "user_bg" || "trans_chat" || "trans_users" || "hide_usernames") {
+  } else if (type === "user_bg" || type === "trans_chat" || type === "trans_users" || type === "hide_usernames") {
     body.classList.toggle(type)
   } else if (type === "user_bgcolor") {
-    Save_User_BG_Color('open')
+    Save_User_BG_Color("open")
   } else if (type === "override_chatcolor" || type === "override_username") {
     body.classList.toggle(type)
   } else if (type === "override_user_bgcolor") {
     body.classList.toggle(type)
-    Save_User_BG_Color ('save')
+    Save_User_BG_Color("save")
   } else if (type === "hide_emojis") {
     body.classList.toggle(type)
   }
@@ -574,7 +569,6 @@ function Toggle_Custom_Box (status) {
 
 // ------------------------------------ CREATE : EVENT LISTENERS ----------------------------*/
 function Add_Listeners () {
-
   document.getElementById("info_box").addEventListener("click", Bottom_Bar, false)
 
   btmbuttons.forEach(function (btmbutton) {
@@ -594,13 +588,13 @@ function Add_Listeners () {
   checkbox_actions.forEach(function (checkbox_action) {
     var checkbox_action_element = "llama_" + checkbox_action
     document.getElementById(checkbox_action_element).addEventListener("click", function () {
-      Checkbox_Action(checkbox_action, "checkbox")
+      Checkbox_Action(checkbox_action")
     }, false)
   })
   button_actions.forEach(function (button_action) {
     var button_action_element = "llama_" + button_action
     document.getElementById(button_action_element).addEventListener("click", function () {
-      Button_Action(button_action, "checkbox")
+      Button_Action(button_action)
     }, false)
   }
   )
@@ -730,7 +724,6 @@ function Exit_Box_Action () {
   menu_actions.forEach(function (menu_action) {
     body.classList.remove("open_llama_" + menu_action)
   })
-
 }
 
 // ------------------------------------ CREATE : TOP SETTINGS OUTER BOX ---------------------*/
@@ -775,7 +768,6 @@ function Create_Chat_Settings () {
 
 // ------------------------------------ CREATE : CAM SETTINGS -------------------------------*/
 function Create_Cam_Settings () {
-
   var option_box = document.getElementById("LlamaOptions_Box")
   var cam_menu = document.createElement("div")
   cam_menu.className = ""
@@ -935,7 +927,6 @@ display:none;
 
 `
   option_box.appendChild(theme_menu)
-
 }
 
 // ------------------------------------ CREATE : BOTTOM ICONS -------------------------------*/

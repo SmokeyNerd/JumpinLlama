@@ -12,7 +12,7 @@
   * [**Chrome Extension**](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
   * [**Firefox Extension**](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/)
   * [**Opera Extension**](https://addons.opera.com/en/extensions/details/tampermonkey-beta/)
-  
+
 ---
 # External Requests/Purpose:
 * Github.io
@@ -36,8 +36,9 @@
 ![Theme Settings](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/theme_settings.png)
 
 ---
-# Change settings to allow auto-updating every 6-12 hours!:
-![Tampermonkey Settings](https://github.com/Technetium1/TinychatTheme/raw/master/Tampermonkey_Settings.png)
+# IMPORTANT!
+## Change settings to allow auto-updating every 6-12 hours & always update externals!:
+![Tampermonkey Settings](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/Tampermonkey_Settings.png)
 
 ---
 # Need more help?

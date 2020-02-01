@@ -576,8 +576,8 @@ function Add_Listeners () {
   document.getElementById("info_box").addEventListener("click", Bottom_Bar, false)
 
   document.getElementById("Cheers_Button").addEventListener("click", function () {
-      Cheers_Button()
-    }, false)
+    Cheers_Button()
+  }, false)
 
   btmbuttons.forEach(function (btmbutton) {
     var btm_btn = "llama_" + btmbutton

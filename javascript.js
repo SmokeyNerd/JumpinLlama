@@ -250,7 +250,6 @@ function Top_Bar_Action (type) {
       }
 
       if (type === "notice") {
-        var loc = window.location.toString()
         var info_frame = document.getElementById("HW_JL_frame")
         var home = "https://headway-widget.net/widgets/7XkGbx"
         info_frame.src = home
@@ -556,6 +555,11 @@ function Cheers_Button () {
     text.value = "▂▅▇ 🔥 CHEERS 🔥 ▇▅▂"
     localStorage.setItem("cheers_status", "")
   }
+  setTimeout(Reset_Cheers_Button, 10000)
+}
+
+function Reset_Cheers_Button () {
+  localStorage.removeItem("cheers_status")
 }
 
 // ------------------------------------ ACTION : CUSTOM MODE CHOICE -------------------------*/
@@ -570,6 +574,10 @@ function Toggle_Custom_Box (status) {
 // ------------------------------------ CREATE : EVENT LISTENERS ----------------------------*/
 function Add_Listeners () {
   document.getElementById("info_box").addEventListener("click", Bottom_Bar, false)
+
+  document.getElementById("Cheers_Button").addEventListener("click", function () {
+      Cheers_Button()
+    }, false)
 
   btmbuttons.forEach(function (btmbutton) {
     var btm_btn = "llama_" + btmbutton
@@ -701,7 +709,6 @@ function Create_Cheers () {
   cheers_btn.className = "button-clear chat__InputAction"
   cheers_btn.setAttribute("id", "Cheers_Button")
   cheers_btn.setAttribute("type", "button")
-  cheers_btn.setAttribute("onclick", "Cheers_Button()")
   cheers_btn.innerHTML = `
 <i class="fas fa-joint"></i>
 `
@@ -1260,7 +1267,6 @@ function Load_Draggables () {
 }
 
 var PADDING = 8
-var rect
 var viewport = {"bottom": 0,
   "left": 0,
   "right": 0,
@@ -1306,12 +1312,6 @@ function dragElement (elmnt) {
     pos2 = pos4 - e.clientY
     pos3 = e.clientX
     pos4 = e.clientY
-    // Set the element's new position:
-
-    // check to make sure the element will be within our viewport boundary
-    var newLeft = elmnt.offsetLeft - pos1
-    var newTop = elmnt.offsetTop - pos2
-
 
     // Set the element's new position:
     elmnt.style.top = (elmnt.offsetTop - pos2) + "px"

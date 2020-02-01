@@ -132,7 +132,12 @@ Create_Custom_Mode()
 if (theme_status) {
   body.classList.add("thememode")
   if (theme_status === "custom") {
-    Save_Llama_Color("custom")
+    var existing_colors = localStorage.getItem('llama_custom_bgcolor')
+    if (existing_colors) {
+      Save_Llama_Color("reset")
+    } else {
+      Save_Llama_Color("save")
+    }
   } else {
     Toggle_Theme(theme_status)
   }

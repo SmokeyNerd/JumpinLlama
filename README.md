@@ -1,5 +1,4 @@
 # Smokeyllama's Jumpin Theme
----
 ## [**🢂 CLICK HERE TO INSTALL! 🢀**](https://github.com/SmokeyLlama/jumpinllama/raw/master/jumpin_theme.user.js)
 
 ---
@@ -43,9 +42,9 @@
 ---
 ## Troubleshooting:
   * First be sure your [Tampermonkey Settings](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/Tampermonkey_Settings.png) match.
-  * be sure you have [the latest version](https://github.com/SmokeyLlama/jumpinllama/raw/master/jumpin_theme.user.js) of the script.
+  * Be sure you have [the latest version](https://github.com/SmokeyLlama/jumpinllama/raw/master/jumpin_theme.user.js) of the script.
   * Press `CTRL+SHIFT+R`(Windows/Linux) or `Cmd⌘+SHIFT+R`(Mac) to reload the page ignoring files you've cached.
-  * If it still isn't working clear your browsing data: [Chrome](https://support.google.com/chrome/answer/2392709) [Firefox](https://support.mozilla.org/kb/delete-browsing-search-download-history-firefox) [Opera](https://blogs.opera.com/mobile/2016/04/clear-browsing-history)
+  * If it still isn't working clear your browsing data: [Chrome](https://support.google.com/chrome/answer/2392709) [Firefox](https://support.mozilla.org/kb/delete-browsing-search-download-history-firefox) [Opera](https://blogs.opera.com/mobile/2016/04/clear-browsing-history).
 
 ---
 # FAQs:

@@ -121,19 +121,46 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 
-.pink_mode {background-color: #ffd1dc;}
-.green_mode {background-color: #042500;}
-.blue_mode {background-color: #111949;}
-.mauve_mode {background-color: #9168b2;}
-.orange_mode {background-color: #b33700;}
-.red_mode {background-color: #590000;}
-.purple_mode {background-color: #280048;}
-.black_mode {background-color: #2C2F33;}
-.buds_mode {background-color: transparent;border-color:transparent;background-image:url('https://i.ibb.co/0Dp3Knx/weed-logo2.png');background-size:25px 25px;background-position: -3px;}
-.splat_mode {background-color: transparent;border-color:transparent;background-image:url('https://i.ibb.co/FKNpP6D/squid.png');background-size:20px 20px;}
-.cust_mode {background-color: #5a6370; color: white;}
-.tech_mode {background-color: green;background-image:url('https://i.imgur.com/QZ88h5T.jpg');background-size:20px 20px;border-radius:100%;}
-.default_mode {background-color: white;}
+.pink_mode {
+  background-color: #ffd1dc;}
+.green_mode {
+  background-color: #042500;}
+.blue_mode {
+  background-color: #111949;}
+.mauve_mode {
+  background-color: #9168b2;}
+.orange_mode {
+  background-color: #b33700;}
+.red_mode {
+  background-color: #590000;}
+.purple_mode {
+  background-color: #280048;}
+.black_mode {
+  background-color: #2C2F33;}
+.buds_mode {
+  background-color: transparent;
+  border-color:transparent;
+  background-image:url('https://i.ibb.co/0Dp3Knx/weed-logo2.png');
+  background-size:25px 25px;
+  background-position: -3px;
+  background-repeat: no-repeat;}
+.splat_mode {
+  background-color: transparent;
+  border-color: transparent;
+  background-image:url('https://i.ibb.co/FKNpP6D/squid.png');
+  background-size:20px 20px;
+  background-repeat: no-repeat;}
+.cust_mode {
+  background-color: #5a6370;
+  color: white;}
+.tech_mode {
+  background-color: green;
+  background-image:url('https://i.imgur.com/QZ88h5T.jpg');
+  background-size:20px 20px;
+  border-radius:100%;
+  background-repeat: no-repeat;}
+.default_mode {
+  background-color: white;}
 
 
 /*-------------------------------------------------------------------------- OVERRIDE_CHAT_COLOR */

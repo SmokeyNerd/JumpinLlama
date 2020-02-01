@@ -122,10 +122,10 @@ var tech_buttontext = "#000000"
 var tech_userlist = "#000000"
 
 var buds_bgcolor = "#042500"
-var buds_bordercolor = "#217c16"
-var buds_lightbgcolor = "#00500d"
-var buds_textcolor = "#FFFFFF"
-var buds_buttontext = "#042500"
+var buds_bordercolor = "#1C1C1C"
+var buds_lightbgcolor = "#000000"
+var buds_textcolor = "#F0F0F0"
+var buds_buttontext = "#00FF00"
 var buds_userlist = "#042500"
 var buds_cambg = "url('https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6a40bce97c841029ee442a8a297e2b2c976a8bd1/images/bud/mainbg.jpg')"
 
@@ -823,7 +823,7 @@ function Create_Theme_Settings () {
 <div class="color_square black_mode" onclick="Toggle_Theme('black')" title="black"></div>
 <div class="color_square buds_mode" onclick="Toggle_Theme('buds')" title="buds"></div>
 <div class="color_square splat_mode" onclick="Toggle_Theme('splat')" title="splat"></div>
-<!--<div class="color_square tech_mode" onclick="Toggle_Theme('tech')" title="tech"></div>-->
+<div class="color_square tech_mode" onclick="Toggle_Theme('tech')" title="tech"></div>
 </label>
 <label class="dropdown__Option no_hoverbg">
 <div class="color_square cust_mode" onclick="Toggle_Theme('custom')" title="custom" style="width: 100%;border-radius:20px;">

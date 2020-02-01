@@ -2,7 +2,7 @@
 ## [**🢂 CLICK HERE TO INSTALL! 🢀**](https://github.com/SmokeyLlama/jumpinllama/raw/master/jumpin_theme.user.js)
 
 ---
-# Icons Added
+# Icons Added:
 ![Icons Added](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/icons.png)
 
 ---

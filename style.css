@@ -620,7 +620,7 @@ input[type="color"]::-webkit-color-swatch {
 }
 #Custom_Mode {
     position: absolute;
-    right: 180px;
+    right: 185px;
     top: 95px;
     z-index: 4000;
 }

@@ -757,7 +757,6 @@ function Create_Chat_Settings () {
 <div class="dropdown__Option dropdown__Option-header">Chat settings</div>
 <span class="dropdown__Option" id="llama_robo">Roboto Font<input id="llama_robo_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_bubble">Bubble Chat<input id="llama_bubble_checkbox" class="jic-checkbox" type="checkbox"></span>
-<span class="dropdown__Option" id="llama_ltr">LTR Mode<input id="llama_ltr_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_cheers">Cheers Button<input id="llama_cheers_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_override_chatcolor">Custom Chat Color<input id="llama_override_chatcolor_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option sub_llama" id="llama_chat_color">
@@ -806,14 +805,11 @@ function Create_Cam_Settings () {
 function Create_Theme_Settings () {
   var option_box = document.getElementById("LlamaOptions_Box")
   var theme_menu = document.createElement("div")
-  theme_menu.className = "dropdown__Options"
+  theme_menu.className = ""
   theme_menu.setAttribute("id", "llama_theme_settings")
   theme_menu.innerHTML = `
-<div class="dropdown__Options" id="llama_theme_settings">
-<div class="dropdown__Option dropdown__Option-header">Theme Settings</div>
-<label class="dropdown__Option no_hoverbg">
-Preset Themes
-</label>
+<div class="dropdown__Options">
+<div class="dropdown__Option dropdown__Option-header">Preset Themes</div>
 <label class="dropdown__Option no_hoverbg">
 <div class="color_square default_mode" onclick="Toggle_Theme('default')" title="default"></div>
 <div class="color_square pink_mode" onclick="Toggle_Theme('pink')" title="pink"></div>
@@ -838,15 +834,17 @@ Preset Themes
 </span>
 </div>
 </label>
+</div>
 
-
+<div class="dropdown__Options" style="margin-top:5px;">
+<div class="dropdown__Option dropdown__Option-header">Theme Settings</div>
+<span class="dropdown__Option" id="llama_ltr">LTR Mode<input id="llama_ltr_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_override_user_bg">Custom BG Color<input id="llama_override_user_bg_checkbox" class="jic-checkbox" type="checkbox"></span>
 
 <span class="dropdown__Option sub_llama" id="llama_user_bgcolor">
-<span style="">Background Color</span><input type="color" name="colorpicker" value="#000000" onchange="Button_Action('apply_bgcolors')" id="llama_clear_user_bgcolorsrc" style="opacity: 1;cursor: pointer; width: 20px;height:20px;border-radius: 2px;padding: 0px;"/>
+<span style="">Background Color</span>
+<input type="color" name="colorpicker" value="#000000" onchange="Button_Action('apply_bgcolors')" id="llama_clear_user_bgcolorsrc" style="opacity: 1;cursor: pointer; width: 20px;height:20px;border-radius: 2px;padding: 0px;"/>
 </span>
-
-
 
 
 <span class="dropdown__Option" id="llama_trans_chat">Transparent Chat<input id="llama_trans_chat_checkbox" class="jic-checkbox" type="checkbox"></span>

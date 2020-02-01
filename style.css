@@ -34,34 +34,8 @@
 }
 .cams__CamWatermark {display:none;}
 
-.cams__CamHandle {color: var(--thememode-usernamecolor);}
 .hide_usernames .cams__CamHandle {display: none;}
 
-.thememode.userbg_color .room {
-    background-color: var(--thememode-user_bgcolor);
-}
-
-#user_bgcolor {
-  display: none;
-}
-.user_bgcolor #user_bgcolor {
-  display:flex !important;
-}
-#userbg_on {
-  display: none;
-}
-
-.user_bgcolor #userbg_on {
-  display: inline-block !important;
-}
-
-#userbg_off {
-  display: inline-block;
-}
-
-.user_bgcolor #userbg_off {
-  display: none !important;
-}
 .dark .chat__FeedWrapper {
   background-color: var(--thememode-lightbgcolor);
 }
@@ -158,8 +132,9 @@ input[type="color"]::-webkit-color-swatch {
 .buds_mode {background-color: transparent;border-color:transparent;background-image:url('https://i.ibb.co/0Dp3Knx/weed-logo2.png');background-size:25px 25px;background-position: -3px;}
 .splat_mode {background-color: transparent;border-color:transparent;background-image:url('https://i.ibb.co/FKNpP6D/squid.png');background-size:20px 20px;}
 .cust_mode {background-color: #5a6370; color: white;}
-.tech_mode {background-color: green;background-image:url('https://i.imgur.com/QZ88h5T.jpg');background-size:20px 20px;}
+.tech_mode {background-color: green;background-image:url('https://i.imgur.com/QZ88h5T.jpg');background-size:20px 20px;border-radius:100%;}
 .default_mode {background-color: white;}
+
 
 /*-------------------------------------------------------------------------- OVERRIDE_CHAT_COLOR */
 .override_chatcolor #llama_chat_color {
@@ -173,6 +148,37 @@ input[type="color"]::-webkit-color-swatch {
 .override_chatcolor .chat__MessageBody>span{
   color:var(--thememode-chatcolor) !important;
 }
+
+/*-------------------------------------------------------------------------- OVERRIDE_USERNAME_COLOR */
+.override_username #llama_username_color {
+  display:flex;
+}
+
+#llama_username_color {
+  display:none;
+}
+
+.override_username .cams__CamHandle{
+  color:var(--thememode-usernamecolor) !important;
+}
+
+/*-------------------------------------------------------------------------- OVERRIDE_BG_COLOR */
+.override_user_bg #llama_user_bgcolor {
+  display:flex;
+}
+
+#llama_user_bgcolor {
+  display:none;
+}
+
+.override_user_bg .cams__CamHandle{
+}
+
+.thememode.override_user_bg .room {
+    background-color: var(--thememode-user_bgcolor);
+}
+
+
 /*-------------------------------------------------------------------------- USER_BG_SETTINGS */
 #cambg_settings {display:none;}
 .cambg_settings #cambg_settings {display:block;}
@@ -371,6 +377,13 @@ input[type="color"]::-webkit-color-swatch {
 .dark .dropdown__Option {
     border-color: #665c54;
     color: #fbf1c7;
+}
+
+.sub_llama {
+  background-color: #e7ecf2;
+}
+.dark .sub_llama {
+  background-color: #3c3836;
 }
 
 /*-------------------------------------------------------------------------- JUMPIN_SETTINGS_BOX */
@@ -840,7 +853,7 @@ input[type="color"]::-webkit-color-swatch {
     text-shadow: none;
 }
 .thememode .userList__UserHandle {
-    color: var(--thememode-textcolor);
+    color: var(--thememode-userlist);
 }
 .thememode .roomHeader__LogoText, .thememode .tabs__Item, .thememode .tabs__Item.active {
     color: var(--thememode-textcolor);
@@ -1207,6 +1220,15 @@ html::-webkit-scrollbar-thumb {
 .robo * {
   font-family: Roboto Mono;
   font-style: Regular;
+}
+
+.tech * {
+  font-family: Roboto Mono;
+  font-style: Regular;
+}
+
+.tech .fa, .tech .far, .tech .fas {
+    font-family: "Font Awesome 5 Free" !important;
 }
 
 .robo .fa, .robo .far, .robo .fas {

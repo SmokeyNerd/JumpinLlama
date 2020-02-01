@@ -41,21 +41,21 @@ function Start_The_Llama () {
 // ------------------------------------ LOAD : REGULAR VARIABLES -------------------------------------*/
 var theme_status = localStorage.getItem("thememode")
 var user_checkbox_settings = ["robo", "bubble", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg",
-  "trans_chat", "trans_users", "hide_usernames", "user_bgcolor", "cambg_cover", "cambg_center", "cambg_repeat",
-  "chatbg_cover", "chatbg_center", "chatbg_repeat", "userbg_cover", "userbg_center", "userbg_repeat", "override_chatcolor", "hide_emojis"]
+  "trans_chat", "trans_users", "hide_usernames", "cambg_cover", "cambg_center", "cambg_repeat",
+  "chatbg_cover", "chatbg_center", "chatbg_repeat", "userbg_cover", "userbg_center", "userbg_repeat",
+  "override_chatcolor", "override_username", "override_user_bg", "hide_emojis"]
 var user_button_settings = ["miniyt"]
 var top_buttons = ["chat", "cam", "theme", "notice"]
 var btmbuttons = ["poprestore", "web", "hideweb"]
-var checkbox_actions = ["bubble", "robo", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg",
-  "cambg_cover", "cambg_center", "cambg_repeat", "chatbg_cover", "chatbg_center", "chatbg_repeat", "userbg_cover",
-  "userbg_center", "userbg_repeat", "trans_chat", "trans_users", "hide_usernames", "user_bgcolor", "override_chatcolor",
-  "hide_emojis"]
+var checkbox_actions = ["robo", "bubble", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg",
+  "trans_chat", "trans_users", "hide_usernames", "cambg_cover", "cambg_center", "cambg_repeat",
+  "chatbg_cover", "chatbg_center", "chatbg_repeat", "userbg_cover", "userbg_center", "userbg_repeat",
+  "override_chatcolor", "override_username", "override_user_bg", "hide_emojis"]
 var button_actions = ["miniyt", "hide_header", "save", "reset", "web", "hideweb", "games",
   "tiny", "min", "max", "res", "close", "clear_cam", "clear_chat", "clear_user", "apply_images",
-  "popchat", "poprestore", "clear_usercolor", "cambg_settings", "chatbg_settings", "userbg_settings"]
+  "popchat", "poprestore", "cambg_settings", "chatbg_settings", "userbg_settings"]
 var menu_actions = ["chat", "cam", "theme", "notice"]
-var theme_options = ["pink", "green", "blue", "mauve", "orange", "red", "purple", "black", "buds", "splat", "custom"]
-var custom_settings = ["bgcolor", "bordercolor", "lightbgcolor", "textcolor", "buttontext"]
+var custom_settings = ["bgcolor", "bordercolor", "lightbgcolor", "textcolor", "buttontext", "userlist"]
 var draggable_windows = ["mydiv", "chat"]
 
 // ------------------------------------ LOAD : THEME VARIABLES ---------------------------------------*/
@@ -64,62 +64,78 @@ var pink_bordercolor = "#ea98ab"
 var pink_lightbgcolor = "#ffe1e6"
 var pink_textcolor = "#FFFFFF"
 var pink_buttontext = "#ffd1dc"
+var pink_userlist = "#FFFFFF"
 
 var green_bgcolor = "#042500"
 var green_bordercolor = "#217c16"
 var green_lightbgcolor = "#00500d"
 var green_textcolor = "#FFFFFF"
 var green_buttontext = "#042500"
+var green_userlist = "#FFFFFF"
 
 var blue_bgcolor = "#111949"
 var blue_bordercolor = "#596ce0"
 var blue_lightbgcolor = "#2a388b"
 var blue_textcolor = "#FFFFFF"
 var blue_buttontext = "#111949"
+var blue_userlist = "#FFFFFF"
 
 var mauve_bgcolor = "#9168b2"
 var mauve_bordercolor = "#d6b7ef"
 var mauve_lightbgcolor = "#BF8FE5"
 var mauve_textcolor = "#000000"
 var mauve_buttontext = "#9168b2"
+var mauve_userlist = "#000000"
 
 var orange_bgcolor = "#b33700"
 var orange_bordercolor = "#ff8d10"
 var orange_lightbgcolor = "#ff4f00"
 var orange_textcolor = "#000000"
 var orange_buttontext = "#b33700"
+var orange_userlist = "#000000"
 
 var red_bgcolor = "#590000"
 var red_bordercolor = "#d02323"
 var red_lightbgcolor = "#860000"
 var red_textcolor = "#FFFFFF"
 var red_buttontext = "#590000"
+var red_userlist = "#FFFFFF"
 
 var purple_bgcolor = "#280048"
 var purple_bordercolor = "#b14fff"
 var purple_lightbgcolor = "#550098"
 var purple_textcolor = "#FFFFFF"
 var purple_buttontext = "#280048"
+var purple_userlist = "#FFFFFF"
 
 var black_bgcolor = "#2C2F33"
 var black_bordercolor = "#23272a"
 var black_lightbgcolor = "#191919"
 var black_textcolor = "#FFFFFF"
 var black_buttontext = "#7289da"
+var black_userlist = "#FFFFFF"
+
+var tech_bgcolor = "#000000"
+var tech_bordercolor = "#39ff14"
+var tech_lightbgcolor = "#000000"
+var tech_textcolor = "#39ff14"
+var tech_buttontext = "#000000"
+var tech_userlist = "#000000"
 
 var buds_bgcolor = "#042500"
 var buds_bordercolor = "#217c16"
 var buds_lightbgcolor = "#00500d"
 var buds_textcolor = "#FFFFFF"
 var buds_buttontext = "#042500"
+var buds_userlist = "#042500"
 var buds_cambg = "url('https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6a40bce97c841029ee442a8a297e2b2c976a8bd1/images/bud/mainbg.jpg')"
-
 
 var splat_bgcolor = "transparent"
 var splat_bordercolor = "#51bc02"
 var splat_lightbgcolor = "#282828"
 var splat_textcolor = "#FFFFFF"
 var splat_buttontext = "#FFFFFF"
+var splat_userlist = "#FFFFFF"
 var splat_cambg = "url('https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6157c7e0ae1a3a3149ac7629a50cd55fada590eb/images/splatoon/mainbg.jpg')"
 var splat_userbg = "url('https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@6157c7e0ae1a3a3149ac7629a50cd55fada590eb/images/splatoon/userbg.png')"
 var splat_chatheaderbg
@@ -160,11 +176,10 @@ function Reload_User_Settings () {
   })
 
   // ------- USER BG COLOR -------
-  var bgstorage = localStorage.getItem("llama_user_bgcolor")
+  var bgstorage = localStorage.getItem("llama_override_user_bg")
   if (bgstorage !== "") {
     var bgstoragesrc = localStorage.getItem("llama_user_bgcolorsrc")
-    document.getElementById("llama_user_bgcolor_checkbox").checked = true
-    document.getElementById("llama_user_bgcolorsrc").value = bgstoragesrc
+    document.getElementById("llama_clear_user_bgcolorsrc").value = bgstoragesrc
     Save_User_BG_Color('save')
   }
 
@@ -259,7 +274,7 @@ function Save_User_BG_Color (type) {
 
   if (type === "save") {
     body.classList.add("userbg_color")
-    var usercolor_llama = document.getElementById("llama_user_bgcolorsrc").value
+    var usercolor_llama = document.getElementById("llama_clear_user_bgcolorsrc").value
     document.documentElement.style.setProperty("--thememode-user_bgcolor", usercolor_llama)
     localStorage.setItem("llama_user_bgcolorsrc", usercolor_llama)
   } else if (type === "reset") {
@@ -314,12 +329,14 @@ function Save_Llama_Color (type) {
   var lightbgcolor_llama = document.getElementById("llama_lightbgcolor").value
   var textcolor_llama = document.getElementById("llama_textcolor").value
   var buttontext_llama = document.getElementById("llama_buttontext").value
+  var userlist_llama = document.getElementById("llama_userlist").value
 
   document.documentElement.style.setProperty("--thememode-bgcolor", bgcolor_llama)
   document.documentElement.style.setProperty("--thememode-bordercolor", bordercolor_llama)
   document.documentElement.style.setProperty("--thememode-lightbgcolor", lightbgcolor_llama)
   document.documentElement.style.setProperty("--thememode-textcolor", textcolor_llama)
   document.documentElement.style.setProperty("--thememode-buttontext", buttontext_llama)
+  document.documentElement.style.setProperty("--thememode-userlist", userlist_llama)
 
   if (type === "save") {
     localStorage.setItem("llama_custom_bgcolor", bgcolor_llama)
@@ -327,22 +344,26 @@ function Save_Llama_Color (type) {
     localStorage.setItem("llama_custom_lightbgcolor", lightbgcolor_llama)
     localStorage.setItem("llama_custom_textcolor", textcolor_llama)
     localStorage.setItem("llama_custom_buttontext", buttontext_llama)
+    localStorage.setItem("llama_custom_userlist", userlist_llama)
   } else if (type === "reset") {
     var stored_bgcolor = localStorage.getItem("llama_custom_bgcolor")
     var stored_bordercolor = localStorage.getItem("llama_custom_bordercolor")
     var stored_lightbgcolor = localStorage.getItem("llama_custom_lightbgcolor")
     var stored_textcolor = localStorage.getItem("llama_custom_textcolor")
     var stored_buttontext = localStorage.getItem("llama_custom_buttontext")
+    var stored_userlist = localStorage.getItem("llama_custom_userlist")
     document.documentElement.style.setProperty("--thememode-bgcolor", stored_bgcolor)
     document.documentElement.style.setProperty("--thememode-bordercolor", stored_bordercolor)
     document.documentElement.style.setProperty("--thememode-lightbgcolor", stored_lightbgcolor)
     document.documentElement.style.setProperty("--thememode-textcolor", stored_textcolor)
     document.documentElement.style.setProperty("--thememode-buttontext", stored_buttontext)
+    document.documentElement.style.setProperty("--thememode-userlist", stored_userlist)
     document.getElementById("llama_bgcolor").value = stored_bgcolor
     document.getElementById("llama_bordercolor").value = stored_bordercolor
     document.getElementById("llama_lightbgcolor").value = stored_lightbgcolor
     document.getElementById("llama_textcolor").value = stored_textcolor
     document.getElementById("llama_buttontext").value = stored_buttontext
+    document.getElementById("llama_userlist").value = stored_userlist
     document.documentElement.style.setProperty("--thememode-roombg", "")
     document.documentElement.style.setProperty("--thememode-userbg", "")
     document.documentElement.style.setProperty("--thememode-chatheaderbg", "")
@@ -514,8 +535,11 @@ function Checkbox_Action (type) {
     body.classList.toggle(type)
   } else if (type === "user_bgcolor") {
     Save_User_BG_Color('open')
-  } else if (type === "override_chatcolor") {
+  } else if (type === "override_chatcolor" || type === "override_username") {
     body.classList.toggle(type)
+  } else if (type === "override_user_bgcolor") {
+    body.classList.toggle(type)
+    Save_User_BG_Color ('save')
   } else if (type === "hide_emojis") {
     body.classList.toggle(type)
   }
@@ -659,6 +683,10 @@ function Create_Custom_Mode () {
                 <span>Button Text</span>
                 <input type="color" name="colorpicker" id="llama_buttontext" value="#000000" style="width: 20px;border-radius: 3px;height: 18px;padding: 0px;" onchange="Save_Llama_Color()"></input>
             </span>
+            <span class="dropdown__Option">
+                <span>Userlist Text</span>
+                <input type="color" name="colorpicker" id="llama_userlist" value="#000000" style="width: 20px;border-radius: 3px;height: 18px;padding: 0px;" onchange="Save_Llama_Color()"></input>
+            </span>
 
             <span class="dropdown__Option no_hoverbg">
                 <input id="llama_reset" type="button" style="background: #5a6370;color: #fff;border:0px;cursor:pointer;border-radius: 10px;width: 150px;" value="RESET"/>
@@ -722,22 +750,23 @@ function Create_Top_Setting_Box () {
 function Create_Chat_Settings () {
   var option_box = document.getElementById("LlamaOptions_Box")
   var chat_menu = document.createElement("div")
-  chat_menu.className = "dropdown__Options"
+  chat_menu.className = ""
   chat_menu.setAttribute("id", "llama_chat_settings")
   chat_menu.innerHTML = `
-<div class="dropdown__Options" id="llama_chat_settings">
+<div class="dropdown__Options">
 <div class="dropdown__Option dropdown__Option-header">Chat settings</div>
 <span class="dropdown__Option" id="llama_robo">Roboto Font<input id="llama_robo_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_bubble">Bubble Chat<input id="llama_bubble_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_ltr">LTR Mode<input id="llama_ltr_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_cheers">Cheers Button<input id="llama_cheers_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_override_chatcolor">Custom Chat Color<input id="llama_override_chatcolor_checkbox" class="jic-checkbox" type="checkbox"></span>
-<span class="dropdown__Option" id="llama_chat_color">
+<span class="dropdown__Option sub_llama" id="llama_chat_color">
 <span style="">Chat Color</span><input type="color" name="colorpicker" value="#000000" onchange="Button_Action('apply_chat_color')" id="llama_clear_chatcolorsrc" style="opacity: 1;cursor: pointer; width: 20px;height:20px;border-radius: 2px;padding: 0px;"/>
 </span>
-<span class="dropdown__Option no_hoverbg">
-<span>Show/Hide Elements</span>
-</span>
+</div>
+
+<div class="dropdown__Options" style="margin-top: 5px;">
+<div class="dropdown__Option dropdown__Option-header">Hide Elements</div>
 <span class="dropdown__Option" id="llama_hide_chat">Chatbox<input id="llama_hide_chat_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_hide_userlist">Userlist<input id="llama_hide_userlist_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_hide_emojis">Emoji/Gift<input id="llama_hide_emojis_checkbox" class="jic-checkbox" type="checkbox"></span>
@@ -750,19 +779,26 @@ function Create_Cam_Settings () {
 
   var option_box = document.getElementById("LlamaOptions_Box")
   var cam_menu = document.createElement("div")
-  cam_menu.className = "dropdown__Options"
+  cam_menu.className = ""
   cam_menu.setAttribute("id", "llama_cam_settings")
   cam_menu.innerHTML = `
+<div class="dropdown__Options">
 <div class="dropdown__Option dropdown__Option-header">Cam Settings</div>
-<span class="dropdown__Option" id="llama_border">Cam Borders<input id="llama_border_checkbox" class="jic-checkbox" type="checkbox"></span>
-<span class="dropdown__Option" id="llama_spacing">Cam Spacing<input id="llama_spacing_checkbox" class="jic-checkbox" type="checkbox"></span>
-<span class="dropdown__Option" id="llama_hide_usernames">Hide Usernames<input id="llama_hide_usernames_checkbox" class="jic-checkbox" type="checkbox"></span>
-<span class="dropdown__Option no_hoverbg">
+
+<span class="dropdown__Option" id="llama_override_username">Custom Name Color<input id="llama_override_username_checkbox" class="jic-checkbox" type="checkbox"></span>
+
+<span class="dropdown__Option sub_llama" id="llama_username_color">
 <span style="">Username Color</span><input type="color" name="colorpicker" value="#000000" onchange="Button_Action('apply_colors')" id="llama_clear_usercolorsrc" style="opacity: 1;cursor: pointer; width: 20px;height:20px;border-radius: 2px;padding: 0px;"/>
 </span>
+</div>
 
-<span class="dropdown__Option no_hover">
-<input id="llama_clear_usercolor" type="button" value="✘ Reset Color" style="cursor:pointer;background: #5a6370; color: #fff; width: 100%; border:0px; border-radius:10px;"/>`
+<div class="dropdown__Options" style="margin-top: 5px;">
+<div class="dropdown__Option dropdown__Option-header">Hide Cam Elements</div>
+<span class="dropdown__Option" id="llama_border">Borders<input id="llama_border_checkbox" class="jic-checkbox" type="checkbox"></span>
+<span class="dropdown__Option" id="llama_spacing">Spacing<input id="llama_spacing_checkbox" class="jic-checkbox" type="checkbox"></span>
+<span class="dropdown__Option" id="llama_hide_usernames">Usernames<input id="llama_hide_usernames_checkbox" class="jic-checkbox" type="checkbox"></span>
+</div>
+`
   option_box.appendChild(cam_menu)
 }
 
@@ -803,11 +839,16 @@ Preset Themes
 </div>
 </label>
 
-<span class="dropdown__Option" id="llama_user_bgcolor">Custom BG Color : <span id="userbg_on">ON</span><span id="userbg_off">OFF</span><input id="llama_user_bgcolor_checkbox" class="jic-checkbox" type="checkbox"  style="display:none;"></span>
-<span class="dropdown__Option no_hoverbg" id="user_bgcolor">
-    <span>Background Color</span>
-    <input type="color" name="colorpicker" id="llama_user_bgcolorsrc" value="#000000" onchange="Button_Action('apply_bgcolors')" style="width: 20px;border-radius: 3px;height: 18px;padding: 0px;"></input>
+
+<span class="dropdown__Option" id="llama_override_user_bg">Custom BG Color<input id="llama_override_user_bg_checkbox" class="jic-checkbox" type="checkbox"></span>
+
+<span class="dropdown__Option sub_llama" id="llama_user_bgcolor">
+<span style="">Background Color</span><input type="color" name="colorpicker" value="#000000" onchange="Button_Action('apply_bgcolors')" id="llama_clear_user_bgcolorsrc" style="opacity: 1;cursor: pointer; width: 20px;height:20px;border-radius: 2px;padding: 0px;"/>
 </span>
+
+
+
+
 <span class="dropdown__Option" id="llama_trans_chat">Transparent Chat<input id="llama_trans_chat_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_trans_users">Transparent Users<input id="llama_trans_users_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_user_bg">Background Images<input id="llama_user_bg_checkbox" class="jic-checkbox" type="checkbox"></span>
@@ -824,7 +865,7 @@ function Create_BG_Settings () {
   var theme_menu = document.createElement("div")
   theme_menu.className = "dropdown__Options"
   theme_menu.setAttribute("id", "llama_bg_settings")
-  theme_menu.setAttribute("style", "margin-top:10px;")
+  theme_menu.setAttribute("style", "margin-top:5px;")
   theme_menu.innerHTML = `
 <style>
 .open_llama_theme.user_bg #llama_bg_settings {
@@ -1026,9 +1067,6 @@ function Create_Header_Hider () {
   info_box.appendChild(HeaderHideBtn)
   info_box.insertBefore(HeaderHideBtn, null)
   info_box.insertBefore(HeaderHideBtn, info_box.childNodes[0] || null)
-
-
-
 }
 
 // ------------------------------------ ACTION : TOGGLE THEME CHOICE ------------------------*/
@@ -1041,11 +1079,16 @@ function Toggle_Theme (color) {
   var llama_theme_lightbgcolor
   var llama_theme_textcolor
   var llama_theme_buttontext
+  var llama_theme_userlist
   var llama_theme_cambg = ""
   var llama_theme_userbg = ""
   var llama_theme_chatheaderbg = ""
   var llama_theme_chatbg = ""
   var llama_theme_messagebg = ""
+
+  if (color !== "tech") {
+    body.classList.remove("tech")
+  }
 
   if (color === "custom") {
     var current_status = localStorage.getItem("thememode")
@@ -1066,6 +1109,7 @@ function Toggle_Theme (color) {
       document.documentElement.style.setProperty("--thememode-lightbgcolor", "")
       document.documentElement.style.setProperty("--thememode-textcolor", "")
       document.documentElement.style.setProperty("--thememode-buttontext", "")
+      document.documentElement.style.setProperty("--thememode-userlist", "")
 
       document.documentElement.style.setProperty("--thememode-roombg", "")
       document.documentElement.style.setProperty("--thememode-userbg", "")
@@ -1078,6 +1122,7 @@ function Toggle_Theme (color) {
       llama_theme_lightbgcolor = pink_lightbgcolor
       llama_theme_textcolor = pink_textcolor
       llama_theme_buttontext = pink_buttontext
+      llama_theme_userlist = pink_userlist
       Toggle_Custom_Box("off")
     } else if (color === "green") {
       llama_theme_bgcolor = green_bgcolor
@@ -1085,6 +1130,7 @@ function Toggle_Theme (color) {
       llama_theme_lightbgcolor = green_lightbgcolor
       llama_theme_textcolor = green_textcolor
       llama_theme_buttontext = green_buttontext
+      llama_theme_userlist = green_userlist
       Toggle_Custom_Box("off")
     } else if (color === "blue") {
       llama_theme_bgcolor = blue_bgcolor
@@ -1092,6 +1138,7 @@ function Toggle_Theme (color) {
       llama_theme_lightbgcolor = blue_lightbgcolor
       llama_theme_textcolor = blue_textcolor
       llama_theme_buttontext = blue_buttontext
+      llama_theme_userlist = blue_userlist
       Toggle_Custom_Box("off")
     } else if (color === "mauve") {
       llama_theme_bgcolor = mauve_bgcolor
@@ -1099,6 +1146,7 @@ function Toggle_Theme (color) {
       llama_theme_lightbgcolor = mauve_lightbgcolor
       llama_theme_textcolor = mauve_textcolor
       llama_theme_buttontext = mauve_buttontext
+      llama_theme_userlist = mauve_userlist
       Toggle_Custom_Box("off")
     } else if (color === "orange") {
       llama_theme_bgcolor = orange_bgcolor
@@ -1106,6 +1154,7 @@ function Toggle_Theme (color) {
       llama_theme_lightbgcolor = orange_lightbgcolor
       llama_theme_textcolor = orange_textcolor
       llama_theme_buttontext = orange_buttontext
+      llama_theme_userlist = orange_userlist
       Toggle_Custom_Box("off")
     } else if (color === "red") {
       llama_theme_bgcolor = red_bgcolor
@@ -1113,6 +1162,7 @@ function Toggle_Theme (color) {
       llama_theme_lightbgcolor = red_lightbgcolor
       llama_theme_textcolor = red_textcolor
       llama_theme_buttontext = red_buttontext
+      llama_theme_userlist = red_userlist
       Toggle_Custom_Box("off")
     } else if (color === "purple") {
       llama_theme_bgcolor = purple_bgcolor
@@ -1120,6 +1170,7 @@ function Toggle_Theme (color) {
       llama_theme_lightbgcolor = purple_lightbgcolor
       llama_theme_textcolor = purple_textcolor
       llama_theme_buttontext = purple_buttontext
+      llama_theme_userlist = purple_userlist
       Toggle_Custom_Box("off")
     } else if (color === "black") {
       llama_theme_bgcolor = black_bgcolor
@@ -1127,6 +1178,7 @@ function Toggle_Theme (color) {
       llama_theme_lightbgcolor = black_lightbgcolor
       llama_theme_textcolor = black_textcolor
       llama_theme_buttontext = black_buttontext
+      llama_theme_userlist = black_userlist
       Toggle_Custom_Box("off")
     } else if (color === "buds") {
       llama_theme_bgcolor = buds_bgcolor
@@ -1135,6 +1187,7 @@ function Toggle_Theme (color) {
       llama_theme_textcolor = buds_textcolor
       llama_theme_buttontext = buds_buttontext
       llama_theme_cambg = buds_cambg
+      llama_theme_userlist = buds_userlist
       Toggle_Custom_Box("off")
     } else if (color === "splat") {
       llama_theme_bgcolor = splat_bgcolor
@@ -1147,6 +1200,16 @@ function Toggle_Theme (color) {
       llama_theme_chatheaderbg = splat_chatheaderbg
       llama_theme_chatbg = splat_chatbg
       llama_theme_messagebg = splat_messagebg
+      llama_theme_userlist = splat_userlist
+      Toggle_Custom_Box("off")
+    } else if (color === "tech") {
+      llama_theme_bgcolor = tech_bgcolor
+      llama_theme_bordercolor = tech_bordercolor
+      llama_theme_lightbgcolor = tech_lightbgcolor
+      llama_theme_textcolor = tech_textcolor
+      llama_theme_buttontext = tech_buttontext
+      llama_theme_userlist = tech_userlist
+      body.classList.add("tech")
       Toggle_Custom_Box("off")
     }
     document.documentElement.style.setProperty(
@@ -1189,6 +1252,10 @@ function Toggle_Theme (color) {
     document.documentElement.style.setProperty(
       "--thememode-messagebg",
       llama_theme_messagebg
+    )
+    document.documentElement.style.setProperty(
+      "--thememode-userlist",
+      llama_theme_userlist
     )
   }
   if (theme_status !== color) {

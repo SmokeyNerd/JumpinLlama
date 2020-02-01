@@ -588,7 +588,7 @@ function Add_Listeners () {
   checkbox_actions.forEach(function (checkbox_action) {
     var checkbox_action_element = "llama_" + checkbox_action
     document.getElementById(checkbox_action_element).addEventListener("click", function () {
-      Checkbox_Action(checkbox_action")
+      Checkbox_Action(checkbox_action)
     }, false)
   })
   button_actions.forEach(function (button_action) {

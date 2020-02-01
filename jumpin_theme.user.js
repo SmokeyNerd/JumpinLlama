@@ -35,5 +35,3 @@ llama_java.setAttribute("src", file_java)
 
 document.getElementsByTagName("head")[0].appendChild(llama_style)
 document.body.appendChild(llama_java)
-
-console.log("SmokeyLlama")

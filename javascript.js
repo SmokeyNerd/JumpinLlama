@@ -820,7 +820,7 @@ function Create_Theme_Settings () {
 <label class="dropdown__Option no_hoverbg">
 <div class="color_square red_mode" onclick="Toggle_Theme('red')" title="red"></div>
 <div class="color_square purple_mode" onclick="Toggle_Theme('purple')" title="purple"></div>
-<div class="color_square black_mode" onclick="Toggle_Theme('black')" title="black"></div>
+<div class="color_square black_mode" onclick="Toggle_Theme('black')" title="matte black"></div>
 <div class="color_square buds_mode" onclick="Toggle_Theme('buds')" title="buds"></div>
 <div class="color_square splat_mode" onclick="Toggle_Theme('splat')" title="splat"></div>
 <div class="color_square tech_mode" onclick="Toggle_Theme('tech')" title="tech"></div>
@@ -987,21 +987,29 @@ function Create_Top_Icons () {
   top_btns.setAttribute("id", "llama_top_bar")
   top_btns.setAttribute("title", "Llama Options")
   top_btns.innerHTML = `
-<label class="button chat__HeaderOption" id="llama_popchat" title="Pop Out Chat">
+<label class="button chat__HeaderOption" id="llama_popchat">
 <i class="fas fa-window-restore"></i>
 </label>
 
-<label class="button chat__HeaderOption LlamaOption_chat" id="llama_chat" title="Extra Cam Options">
+<span class="settings_title" id="llama_title_popchat">Popchat</span>
+
+<label class="button chat__HeaderOption LlamaOption_chat" id="llama_chat">
 <i class="fa fa-user-cog"></i>
 </label>
 
-<label class="button chat__HeaderOption" id="llama_cam" title="Extra Cam Options">
+<span class="settings_title" id="llama_title_chat">Chat Settings</span>
+
+<label class="button chat__HeaderOption" id="llama_cam">
 <i class="fa fa-th-large"></i>
 </label>
 
-<label class="button chat__HeaderOption" id="llama_theme" title="Extra Theme Options">
+<span class="settings_title" id="llama_title_cam">Cam Settings</span>
+
+<label class="button chat__HeaderOption" id="llama_theme">
 <i class="fa fa-palette"></i>
 </label>
+
+<span class="settings_title" id="llama_title_theme">Theme Settings</span>
 `
   top_bar.appendChild(top_btns)
   top_bar.insertBefore(top_btns, null)

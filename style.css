@@ -77,6 +77,87 @@ input[type="color"]::-webkit-color-swatch {
   background-size: cover;
 }
 
+
+
+.thememode .chat__UserListItem:hover {
+    transform: scale(1.02);
+    opacity: 0.5;
+}
+.thememode .chat__HeaderOption:hover {
+    transform: scale(1.05);
+}
+
+.dark .settings_title {
+  background-color: #7c6f64;
+}
+.dark .settings_title:before {
+  border-bottom-color: #7c6f64;
+}
+
+.settings_title {
+    top: 95px;
+    position: absolute;
+    background-color: #e8e8e8;
+    z-index: 5000;
+    padding: 2px 7px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px black;
+}
+
+.settings_title:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #e8e8e8;
+    clear: both;
+}
+#llama_title_popchat:before {
+    right: 25px;
+}
+
+#llama_title_chat:before {
+    right: 43px;
+}
+#llama_title_cam:before {
+    right: 37px;
+}
+
+#llama_title_theme:before {
+    right: 17px;
+}
+
+#llama_title_popchat {
+    display:none;
+    right: 148px;
+}
+#llama_title_cam {
+    display:none;
+    right: 41px;
+}
+
+#llama_title_theme {
+    display:none;
+    right: 14px;
+}
+
+#llama_title_chat {
+    display:none;
+    right: 82px;
+}
+
+#llama_popchat:hover + #llama_title_popchat,
+#llama_chat:hover + #llama_title_chat,
+#llama_cam:hover + #llama_title_cam,
+#llama_theme:hover + #llama_title_theme {
+    display:inline-block !important;
+}
+
+
+
 /*-------------------------------------------------------------------------- COLOR_SQUARES */
 .color_square {
   width: 20px;
@@ -278,7 +359,7 @@ input[type="color"]::-webkit-color-swatch {
   left: 0px;
 }
 #Exit_Box {display:none;}
-#chat__HeaderOptions {z-index:2000;}
+#chat__HeaderOptions {z-index:2001;}
 
 /*-------------------------------------------------------------------------- CUSTOM_THEME */
 

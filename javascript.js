@@ -985,7 +985,6 @@ function Create_Top_Icons () {
   var top_btns = document.createElement("div")
   top_btns.className = ""
   top_btns.setAttribute("id", "llama_top_bar")
-  top_btns.setAttribute("title", "Llama Options")
   top_btns.innerHTML = `
 <label class="button chat__HeaderOption" id="llama_popchat">
 <i class="fas fa-window-restore"></i>

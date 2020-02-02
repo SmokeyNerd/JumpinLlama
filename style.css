@@ -93,9 +93,13 @@ input[type="color"]::-webkit-color-swatch {
 .dark .settings_title:before {
   border-bottom-color: #7c6f64;
 }
-
+.layout--horizontal .settings_title {
+    top: 10%;
+}
 .settings_title {
-    top: 95px;
+    top: 73%;
+}
+.settings_title {
     position: absolute;
     background-color: #e8e8e8;
     z-index: 5000;
@@ -130,23 +134,40 @@ input[type="color"]::-webkit-color-swatch {
     right: 17px;
 }
 
-#llama_title_popchat {
+.layout--horizontal #llama_title_popchat {
     display:none;
     right: 148px;
 }
-#llama_title_cam {
+.layout--horizontal #llama_title_cam {
     display:none;
     right: 41px;
 }
 
-#llama_title_theme {
+.layout--horizontal #llama_title_theme {
     display:none;
     right: 14px;
 }
 
-#llama_title_chat {
+.layout--horizontal #llama_title_chat {
     display:none;
     right: 82px;
+}
+
+#llama_title_popchat {
+    display:none;
+    right: 160px;
+}
+#llama_title_cam {
+    display:none;
+    right: 53px;
+}
+#llama_title_chat {
+    display:none;
+    right: 94px;
+}
+#llama_title_theme {
+    display:none;
+    right: 26px;
 }
 
 #llama_popchat:hover + #llama_title_popchat,

@@ -119,7 +119,7 @@ var tech_bordercolor = "#1C1C1C"
 var tech_lightbgcolor = "#000000"
 var tech_textcolor = "#F0F0F0"
 var tech_buttontext = "#00FF00"
-var tech_userlist = "#000000"
+var tech_userlist = "#C8C8C8"
 
 var buds_bgcolor = "#042500"
 var buds_bordercolor = "#217c16"

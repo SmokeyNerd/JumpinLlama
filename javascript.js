@@ -43,14 +43,14 @@ var theme_status = localStorage.getItem("thememode")
 var user_checkbox_settings = ["robo", "bubble", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg",
   "trans_chat", "trans_users", "hide_usernames", "cambg_cover", "cambg_center", "cambg_repeat",
   "chatbg_cover", "chatbg_center", "chatbg_repeat", "userbg_cover", "userbg_center", "userbg_repeat",
-  "override_chatcolor", "override_username", "override_user_bg", "hide_emojis"]
+  "override_chatcolor", "override_username", "override_user_bg", "hide_emojis", "rounded_cams"]
 var user_button_settings = ["miniyt"]
 var top_buttons = ["chat", "cam", "theme", "notice"]
 var btmbuttons = ["poprestore", "web", "hideweb"]
 var checkbox_actions = ["robo", "bubble", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg",
   "trans_chat", "trans_users", "hide_usernames", "cambg_cover", "cambg_center", "cambg_repeat",
   "chatbg_cover", "chatbg_center", "chatbg_repeat", "userbg_cover", "userbg_center", "userbg_repeat",
-  "override_chatcolor", "override_username", "override_user_bg", "hide_emojis"]
+  "override_chatcolor", "override_username", "override_user_bg", "hide_emojis", "rounded_cams"]
 var button_actions = ["miniyt", "hide_header", "save", "reset", "web", "hideweb", "games",
   "tiny", "min", "max", "res", "close", "clear_cam", "clear_chat", "clear_user", "apply_images",
   "popchat", "poprestore", "cambg_settings", "chatbg_settings", "userbg_settings"]
@@ -517,7 +517,7 @@ function Checkbox_Action (type) {
   }
   if (type === "bubble" || type === "robo" || type === "hide_chat" || type === "hide_userlist") {
     body.classList.toggle(type)
-  } else if (type === "ltr" || type === "cheers" || type === "border" || type === "spacing") {
+  } else if (type === "ltr" || type === "cheers" || type === "border" || type === "spacing" || type === "rounded_cams") {
     body.classList.toggle(type)
   } else if (type === "cambg_cover" || type === "cambg_center" || type === "cambg_repeat") {
     body.classList.toggle(type)
@@ -783,6 +783,7 @@ function Create_Cam_Settings () {
 <div class="dropdown__Options">
 <div class="dropdown__Option dropdown__Option-header">Cam Settings</div>
 
+<span class="dropdown__Option" id="llama_rounded_cams">Rounded Cams<input id="llama_rounded_cams_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_override_username">Custom Name Color<input id="llama_override_username_checkbox" class="jic-checkbox" type="checkbox"></span>
 
 <span class="dropdown__Option sub_llama" id="llama_username_color">

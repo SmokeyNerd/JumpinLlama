@@ -1150,6 +1150,19 @@ body.popchat:not(.hide_chat):not(.hide_userlist) {overflow:hidden;}
   transform: scale(1.15);
 }
 
+/*-------------------------------------------------------------------------- ROUNDED_CAMS */
+.rounded_cams .cams__CamWrapper {
+  border-radius: 10px !important;
+}
+.rounded_cams .cams__LoadingWrapper {
+    border-radius: 10px !important;
+}
+.rounded_cams .cams__Cam {
+    border-width: 2px;
+    border-radius: 10px !important;
+    background: transparent !important;
+}
+
 /*-------------------------------------------------------------------------- HOMEPAGE_CSS */
 
 .thememode .full-width--white {

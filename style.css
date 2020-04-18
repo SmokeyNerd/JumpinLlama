@@ -100,6 +100,9 @@ input[type="color"]::-webkit-color-swatch {
 .form__Input-checkbox+label:before {
   background-color: transparent !important;
 }
+.settings__Page {
+  margin-right: 0px !important;
+}
 /*-------------------------------------------------------------------------- HIDE_EMOJIS_N_GIFTS */
 .hide_emojis .chat__InputAction.button {
   display:none;
@@ -607,13 +610,15 @@ input[type="color"]::-webkit-color-swatch {
 .settings__CloseLabel, .settings__CloseButton {
     display:none;
 }
-.settings__PopOver::-webkit-scrollbar {
+.settings__PopOver::-webkit-scrollbar,
+.settings__Page::-webkit-scrollbar {
     width: 10px !important;
     height: 10px !important;
     background-color: rgb(47, 49, 54) !important;
 }
 
-.settings__PopOver::-webkit-scrollbar-thumb {
+.settings__PopOver::-webkit-scrollbar-thumb,
+.settings__Page::-webkit-scrollbar-thumb {
     background-color: rgb(32, 34, 37) !important;
     border-width: 2px !important;
     border-style: solid !important;
@@ -622,7 +627,8 @@ input[type="color"]::-webkit-color-swatch {
     border-radius: 100px !important;
 }
 
-.settings__PopOver::-webkit-scrollbar-track {
+.settings__PopOver::-webkit-scrollbar-track,
+.settings__Page::-webkit-scrollbar-track {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 6px inset !important;
     background-color: rgb(47, 49, 54) !important;
 }

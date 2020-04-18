@@ -211,6 +211,9 @@ input[type="color"]::-webkit-color-swatch {
 
 
 /*-------------------------------------------------------------------------- COLOR_SQUARES */
+.userList__UserIcon > svg {
+  color: inherit !important;
+}
 .color_square {
   width: 20px;
   height: 20px;

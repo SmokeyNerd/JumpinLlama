@@ -40,6 +40,37 @@
   background-color: var(--thememode-lightbgcolor);
 }
 
+.dark:not(.thememode) .chat__FeedWrapper {
+    background-color: #3c3836 !important;
+}
+
+.trans_users:not(.thememode) .chat__UserList {
+    background-color: #49535f;
+}
+
+.trans_chat:not(.thememode) .chat {
+    background-color: #49535f;
+}
+
+.dark:not(.thememode).trans_chat .chat__FeedWrapper {
+    background-color: #282828 !important;
+}
+
+.dark:not(.thememode).trans_users .chat__UserList {
+    background-color: #282828 !important;
+}
+
+.dark:not(.thememode).trans_users .chat {
+    background-color: #282828 !important;
+}
+
+.dark:not(.thememode).trans_chat .chat {
+    background-color: #282828 !important;
+}
+
+.chat__UserListItem:hover {
+  transform: scale(1.05);
+}
 input[type="color"] {
 	-webkit-appearance: none;
 	border: none;
@@ -195,7 +226,9 @@ input[type="color"]::-webkit-color-swatch {
   box-shadow: 0 0 2px #191919;
   transform: scale(1.40);
 }
-
+.color_square.default_mode:hover {
+  transform: scale(1.05);
+}
 .color_square.cust_mode:hover {
   transform: scale(1.05);
 }
@@ -255,14 +288,16 @@ input[type="color"]::-webkit-color-swatch {
 .cust_mode {
   background-color: #5a6370;
   color: white;}
+.default_mode {
+  background-color: #5a6370;
+  color: white;}
 .tech_mode {
   background-color: green;
   background-image:url('https://i.imgur.com/QZ88h5T.jpg');
   background-size:20px 20px;
   border-radius:100%;
   background-repeat: no-repeat;}
-.default_mode {
-  background-color: white;}
+
 
 
 /*-------------------------------------------------------------------------- OVERRIDE_CHAT_COLOR */
@@ -390,13 +425,20 @@ input[type="color"]::-webkit-color-swatch {
     top: 34px;
     left: 283px;
     height: 10px !important;
-    background-color: #c7cfd9;
+    background-color: white;
     padding: 3px 15px;
     border-radius: 10px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-    border: 1px solid #ccc;
+    border: 1px solid white;
     border-bottom: 0px;
+}
+#llama_hide_header > span > i {
+    color: #c7cfd9;
+}
+.dark #llama_hide_header {
+    background-color: #504945;
+    border-color: #504945;
 }
 .hide_header #header_up {
   display: none;
@@ -663,6 +705,12 @@ input[type="color"]::-webkit-color-swatch {
   margin-bottom: 0px;
   margin-top: 0px;
   margin-right: 10px;
+}
+.dark.bubble .chat__MessageBody:not(.chat__MessageBody-status) {
+  background-color: #504945;
+}
+.dark.bubble .chat__MessageBody-status {
+  background-color: #458588;
 }
 .bubble .chat__MessageBody-status {
   color: #fff;

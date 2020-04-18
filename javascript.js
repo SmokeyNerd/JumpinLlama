@@ -811,15 +811,19 @@ function Create_Theme_Settings () {
 <div class="dropdown__Options">
 <div class="dropdown__Option dropdown__Option-header">Preset Themes</div>
 <label class="dropdown__Option no_hoverbg">
-<div class="color_square default_mode" onclick="Toggle_Theme('default')" title="default"></div>
+<div class="color_square default_mode" onclick="Toggle_Theme('default')" title="default" style="width: 100%;border-radius:20px;">
+<span style="position: relative; top: 3px;">Default
+</span></div>
+</label>
+<label class="dropdown__Option no_hoverbg">
 <div class="color_square pink_mode" onclick="Toggle_Theme('pink')" title="pink"></div>
 <div class="color_square green_mode" onclick="Toggle_Theme('green')" title="green"></div>
 <div class="color_square blue_mode" onclick="Toggle_Theme('blue')" title="blue"></div>
 <div class="color_square mauve_mode" onclick="Toggle_Theme('mauve')" title="mauve"></div>
 <div class="color_square orange_mode" onclick="Toggle_Theme('orange')" title="orange"></div>
+<div class="color_square red_mode" onclick="Toggle_Theme('red')" title="red"></div>
 </label>
 <label class="dropdown__Option no_hoverbg">
-<div class="color_square red_mode" onclick="Toggle_Theme('red')" title="red"></div>
 <div class="color_square purple_mode" onclick="Toggle_Theme('purple')" title="purple"></div>
 <div class="color_square black_mode" onclick="Toggle_Theme('black')" title="matte black"></div>
 <div class="color_square buds_mode" onclick="Toggle_Theme('buds')" title="buds"></div>

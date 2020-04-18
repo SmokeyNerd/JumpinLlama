@@ -21,7 +21,7 @@
  * ------------------------------------------------------------------------
  */
 
-var llama_ver = "22"
+var llama_ver = "23"
 var file_style = "https://smokeyllama.github.io/JumpinLlama/style.css?ver" + llama_ver
 var file_java = "https://smokeyllama.github.io/JumpinLlama/javascript.js?ver" + llama_ver
 

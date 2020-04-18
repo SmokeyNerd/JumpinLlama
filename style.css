@@ -709,7 +709,7 @@ input[type="color"]::-webkit-color-swatch {
   margin-top: 0px;
   margin-right: 10px;
 }
-.dark.bubble .chat__MessageBody:not(.chat__MessageBody-status) {
+.dark:not(.thememode).bubble .chat__MessageBody:not(.chat__MessageBody-status) {
   background-color: #504945;
 }
 .dark.bubble .chat__MessageBody-status {

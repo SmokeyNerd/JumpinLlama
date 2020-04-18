@@ -97,7 +97,9 @@ input[type="color"]::-webkit-color-swatch {
 .cams__Cam-audioActive {
     z-index: 2000;
 }
-
+.form__Input-checkbox+label:before {
+  background-color: transparent !important;
+}
 /*-------------------------------------------------------------------------- HIDE_EMOJIS_N_GIFTS */
 .hide_emojis .chat__InputAction.button {
   display:none;

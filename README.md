@@ -1,4 +1,4 @@
-# Smokeyllama's Jumpin Theme
+# [Smokeyllama's Jumpin Theme](https://smokeyllama.github.io/JumpinLlama/)
 
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/SmokeyLlama/JumpinLlama.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/SmokeyLlama/JumpinLlama/context:javascript) [![Total alerts](https://img.shields.io/lgtm/alerts/g/SmokeyLlama/JumpinLlama.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/SmokeyLlama/JumpinLlama/alerts/) [![DeepScan grade](https://deepscan.io/api/teams/6236/projects/8124/branches/92260/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=6236&pid=8124&bid=92260)
 

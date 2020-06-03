@@ -586,7 +586,7 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 .settings__PopOver {
-    width: 506px !important;
+    width: 635px !important;
     height: 525px;
     overflow: hidden;
     overflow-y: auto;

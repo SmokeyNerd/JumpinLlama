@@ -34,6 +34,8 @@
 }
 .cams__CamWatermark {display:none;}
 
+.cams__Cam {background: #FFFFFF00 !important;}
+
 .hide_usernames .cams__CamHandle {display: none;}
 
 .dark .chat__FeedWrapper {

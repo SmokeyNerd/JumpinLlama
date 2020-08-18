@@ -213,6 +213,7 @@ function Create_Element_IDs () {
   var chatInputBox = document.getElementsByClassName("chat__Input")[0]
   chatInputBox.id = "chat_input_box"
   chatInputBox.setAttribute("autocomplete", "off")
+  chatInputBox.setAttribute("onclick", "event.stopPropagation()")
 
   var btm_bar = document.getElementsByClassName("chat__Share")[0]
   btm_bar.id = "bottom_bar"
@@ -545,17 +546,35 @@ function Checkbox_Action (type) {
 function Cheers_Button () {
   var text = document.getElementById("chat_input_box")
   var cheers_status = localStorage.getItem("cheers_status")
-  if (!cheers_status) {
-    text.value = "!cheers"
-    localStorage.setItem("cheers_status", "1")
-  }
-  if (cheers_status === "1") {
-    text.value = "MEGA CHEERS!"
-    localStorage.setItem("cheers_status", "2")
-  }
-  if (cheers_status === "2") {
-    text.value = "▂▅▇ 🔥 CHEERS 🔥 ▇▅▂"
-    localStorage.setItem("cheers_status", "")
+  var loc = window.location.toString()
+  var pageName = loc.split("/")[3]
+  
+  if (pageName === "coffeepot") {
+   if (!cheers_status) {
+     text.value = ":coffeepot::cheer::coffeepot:"
+     localStorage.setItem("cheers_status", "1")
+   }
+   if (cheers_status === "1") {
+     text.value = ":letterc::letterh::lettere::lettere::letterr::letters:"
+     localStorage.setItem("cheers_status", "2")
+   }
+   if (cheers_status === "2") {
+     text.value = ":coffeepot::letterc::letterh::lettere::lettere::letterr::letters::coffeepot:"
+     localStorage.setItem("cheers_status", "")
+   }
+  } else {    
+   if (!cheers_status) {
+     text.value = "!cheers"
+     localStorage.setItem("cheers_status", "1")
+   }
+   if (cheers_status === "1") {
+     text.value = "MEGA CHEERS!"
+     localStorage.setItem("cheers_status", "2")
+   }
+   if (cheers_status === "2") {
+     text.value = "▂▅▇ 🔥 CHEERS 🔥 ▇▅▂"
+     localStorage.setItem("cheers_status", "")
+   }
   }
   setTimeout(Reset_Cheers_Button, 10000)
 }

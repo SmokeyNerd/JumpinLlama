@@ -1001,7 +1001,7 @@ input[type="color"]::-webkit-color-swatch {
     border-color: var(--thememode-bordercolor);
 }
 .thememode .chat__HeaderOption {
-      border-radius: 5px;
+    border-radius: 5px;
     margin: 2px;
     min-height: 27px;
     border: 1px solid transparent;
@@ -1017,13 +1017,14 @@ input[type="color"]::-webkit-color-swatch {
     color: var(--thememode-buttontext);
 }
 .thememode .chat__InputWrapper {
+    border-radius: 100px;
     border-color: var(--thememode-bordercolor);
     background-color: var(--thememode-bgcolor);
 }
 .thememode .chat__UserListItem {
     border-top-color: var(--thememode-bordercolor);
     background-color: var(--thememode-bordercolor);
-  border-radius: 5px;
+    border-radius: 5px;
     margin-top: 2px;
     border: 1px solid transparent;
 }
@@ -1034,7 +1035,7 @@ input[type="color"]::-webkit-color-swatch {
     background-color: var(--thememode-bordercolor);
 }
 .thememode .chat__MessageBody-status {
-  color: var(--thememode-textcolor);
+    color: var(--thememode-textcolor);
 }
 .thememode .roomHeader__UserAction {
     background-color: var(--thememode-bordercolor);
@@ -1078,7 +1079,6 @@ input[type="color"]::-webkit-color-swatch {
     background-color: var(--thememode-bordercolor);
 }
 .thememode .input {
-    border-radius: 100px !important;
     color: var(--thememode-textcolor) !important;
     border-color: var(--thememode-bordercolor) !important;
     background-color: var(--thememode-bgcolor) !important;

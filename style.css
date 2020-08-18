@@ -1078,6 +1078,7 @@ input[type="color"]::-webkit-color-swatch {
     background-color: var(--thememode-bordercolor);
 }
 .thememode .input {
+    border-radius: 100px !important;
     color: var(--thememode-textcolor) !important;
     border-color: var(--thememode-bordercolor) !important;
     background-color: var(--thememode-bgcolor) !important;

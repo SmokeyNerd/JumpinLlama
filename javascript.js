@@ -43,14 +43,14 @@ var theme_status = localStorage.getItem("thememode")
 var user_checkbox_settings = ["robo", "bubble", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg",
   "trans_chat", "trans_users", "hide_usernames", "cambg_cover", "cambg_center", "cambg_repeat",
   "chatbg_cover", "chatbg_center", "chatbg_repeat", "userbg_cover", "userbg_center", "userbg_repeat",
-  "override_chatcolor", "override_username", "override_user_bg", "hide_emojis", "rounded_cams"]
+  "override_chatcolor", "override_username", "override_user_bg", "hide_emojis", "hide_gifts", "rounded_cams"]
 var user_button_settings = ["miniyt"]
 var top_buttons = ["chat", "cam", "theme", "notice"]
 var btmbuttons = ["poprestore", "web", "hideweb"]
 var checkbox_actions = ["robo", "bubble", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg",
   "trans_chat", "trans_users", "hide_usernames", "cambg_cover", "cambg_center", "cambg_repeat",
   "chatbg_cover", "chatbg_center", "chatbg_repeat", "userbg_cover", "userbg_center", "userbg_repeat",
-  "override_chatcolor", "override_username", "override_user_bg", "hide_emojis", "rounded_cams"]
+  "override_chatcolor", "override_username", "override_user_bg", "hide_emojis", "hide_gifts", "rounded_cams"]
 var button_actions = ["miniyt", "hide_header", "save", "reset", "web", "hideweb", "games",
   "tiny", "min", "max", "res", "close", "clear_cam", "clear_chat", "clear_user", "apply_images",
   "popchat", "poprestore", "cambg_settings", "chatbg_settings", "userbg_settings"]
@@ -536,6 +536,8 @@ function Checkbox_Action (type) {
     Save_User_BG_Color("save")
   } else if (type === "hide_emojis") {
     body.classList.toggle(type)
+  } else if (type === "hide_gifts") {
+    body.classList.toggle(type)
   }
 }
 
@@ -574,10 +576,6 @@ function Toggle_Custom_Box (status) {
 // ------------------------------------ CREATE : EVENT LISTENERS ----------------------------*/
 function Add_Listeners () {
   document.getElementById("info_box").addEventListener("click", Bottom_Bar, false)
-
-  document.getElementById("Cheers_Button").addEventListener("click", function () {
-    Cheers_Button()
-  }, false)
 
   btmbuttons.forEach(function (btmbutton) {
     var btm_btn = "llama_" + btmbutton
@@ -709,6 +707,7 @@ function Create_Cheers () {
   cheers_btn.className = "button-clear chat__InputAction"
   cheers_btn.setAttribute("id", "Cheers_Button")
   cheers_btn.setAttribute("type", "button")
+  cheers_btn.setAttribute("onclick", "event.stopPropagation();Cheers_Button()")
   cheers_btn.innerHTML = `
 <i class="fas fa-joint"></i>
 `
@@ -768,7 +767,8 @@ function Create_Chat_Settings () {
 <div class="dropdown__Option dropdown__Option-header">Hide Elements</div>
 <span class="dropdown__Option" id="llama_hide_chat">Chatbox<input id="llama_hide_chat_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_hide_userlist">Userlist<input id="llama_hide_userlist_checkbox" class="jic-checkbox" type="checkbox"></span>
-<span class="dropdown__Option" id="llama_hide_emojis">Emoji/Gift<input id="llama_hide_emojis_checkbox" class="jic-checkbox" type="checkbox"></span>
+<span class="dropdown__Option" id="llama_hide_emojis">Emojis Button<input id="llama_hide_emojis_checkbox" class="jic-checkbox" type="checkbox"></span>
+<span class="dropdown__Option" id="llama_hide_gifts">Gifts Button<input id="llama_hide_gifts_checkbox" class="jic-checkbox" type="checkbox"></span>
 </div>`
   option_box.appendChild(chat_menu)
 }

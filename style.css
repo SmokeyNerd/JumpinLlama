@@ -116,7 +116,11 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 /*-------------------------------------------------------------------------- HIDE_EMOJIS_N_GIFTS */
-.hide_emojis .chat__InputAction.button {
+.hide_emojis #chat_box > button:nth-child(2) {
+  display:none;
+}
+
+.hide_gifts #chat_box > button:nth-child(3) {
   display:none;
 }
 

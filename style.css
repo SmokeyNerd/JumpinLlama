@@ -38,6 +38,20 @@
 
 .hide_usernames .cams__CamHandle {display: none;}
 
+.thememode .chat__InputWrapper:focus-within {
+  border-color: 0px;
+  -webkit-box-shadow: 0px -1px 15px -2px var(--thememode-bordercolor);
+  -moz-box-shadow: 0px -1px 15px -2px var(--thememode-bordercolor);
+  box-shadow: 0px -1px 15px -2px var(--thememode-bordercolor);
+}
+
+.thememode .dark .chat__InputWrapper:focus-within {
+  border-color: 0px;
+  -webkit-box-shadow: 0px -1px 15px -2px var(--thememode-bordercolor);
+  -moz-box-shadow: 0px -1px 15px -2px var(--thememode-bordercolor);
+  box-shadow: 0px -1px 15px -2px var(--thememode-bordercolor);
+}
+
 .dark .chat__FeedWrapper {
   background-color: var(--thememode-lightbgcolor);
 }

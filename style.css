@@ -43,6 +43,7 @@
   -webkit-box-shadow: 0px -1px 15px -2px var(--thememode-bordercolor);
   -moz-box-shadow: 0px -1px 15px -2px var(--thememode-bordercolor);
   box-shadow: 0px -1px 15px -2px var(--thememode-bordercolor);
+  color: 1px solid var(--thememode-bordercolor);
 }
 
 .thememode .dark .chat__InputWrapper:focus-within {
@@ -50,6 +51,7 @@
   -webkit-box-shadow: 0px -1px 15px -2px var(--thememode-bordercolor);
   -moz-box-shadow: 0px -1px 15px -2px var(--thememode-bordercolor);
   box-shadow: 0px -1px 15px -2px var(--thememode-bordercolor);
+  color: 1px solid var(--thememode-bordercolor);
 }
 
 .dark .chat__InputWrapper:focus-within {
@@ -57,6 +59,7 @@
   -webkit-box-shadow: 0px -1px 15px -2px var(--thememode-bordercolor);
   -moz-box-shadow: 0px -1px 15px -2px var(--thememode-bordercolor);
   box-shadow: 0px -1px 15px -2px var(--thememode-bordercolor);
+  color: 1px solid var(--thememode-bordercolor);
 }
 
 .dark .chat__FeedWrapper {

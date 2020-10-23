@@ -44,14 +44,14 @@ var user_checkbox_settings = ["robo", "bubble", "hide_chat", "hide_userlist", "l
   "trans_chat", "trans_users", "hide_usernames", "cambg_cover", "cambg_center", "cambg_repeat",
   "chatbg_cover", "chatbg_center", "chatbg_repeat", "userbg_cover", "userbg_center", "userbg_repeat",
   "override_chatcolor", "override_username", "override_user_bg", "hide_emojis", "hide_gifts", "rounded_cams"]
-var user_button_settings = ["miniyt"]
+var user_button_settings = ["audioonly_yt", "miniyt"]
 var top_buttons = ["chat", "cam", "theme", "notice"]
 var btmbuttons = ["poprestore", "web", "hideweb"]
 var checkbox_actions = ["robo", "bubble", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg",
   "trans_chat", "trans_users", "hide_usernames", "cambg_cover", "cambg_center", "cambg_repeat",
   "chatbg_cover", "chatbg_center", "chatbg_repeat", "userbg_cover", "userbg_center", "userbg_repeat",
   "override_chatcolor", "override_username", "override_user_bg", "hide_emojis", "hide_gifts", "rounded_cams"]
-var button_actions = ["miniyt", "hide_header", "save", "reset", "web", "hideweb", "games",
+var button_actions = ["audioonly_yt", "miniyt", "hide_header", "save", "reset", "web", "hideweb", "games",
   "tiny", "min", "max", "res", "close", "clear_cam", "clear_chat", "clear_user", "apply_images",
   "popchat", "poprestore", "cambg_settings", "chatbg_settings", "userbg_settings"]
 var menu_actions = ["chat", "cam", "theme", "notice"]
@@ -263,6 +263,12 @@ function Top_Bar_Action (type) {
 function Bottom_Bar (type) {
   if (type === "miniyt") {
     body.classList.toggle("")
+    body.classList.remove("audioonly_yt")
+    localStorage.setItem("llama_audioonly_yt", "")
+  } else if (type === "audioonly_yt") {
+    body.classList.toggle("")
+    body.classList.remove("miniyt")
+    localStorage.setItem("llama_miniyt", "")
   }
 }
 
@@ -388,6 +394,12 @@ function Button_Action (type) {
   }
   if (type === "miniyt") {
     body.classList.toggle(type)
+    body.classList.remove("audioonly_yt")
+    localStorage.setItem("llama_audioonly_yt", "")
+  } else if (type === "audioonly_yt") {
+    body.classList.toggle(type)
+    body.classList.remove("miniyt")
+    localStorage.setItem("llama_miniyt", "")
   } else if (type === "popchat" || type === "poprestore") {
     body.classList.toggle("popchat")
   } else if (type === "hide_header") {
@@ -974,6 +986,10 @@ function Create_Bottom_Icons () {
 
 <label class="button chat__HeaderOption LlamaOption_miniyt" id="llama_miniyt" title="Mini Youtube Player">
 <i class="fa fa-compress-arrows-alt"></i>
+</label>
+
+<label class="button chat__HeaderOption LlamaOption_audioonly_yt" id="llama_audioonly_yt" title="Audio Only Youtube Player">
+<i class="fas fa-music"></i>
 </label>
 
 <label class="button chat__HeaderOption" id="llama_web" title="Llama Browse">

@@ -670,6 +670,82 @@ input[type="color"]::-webkit-color-swatch {
     background-color: rgb(47, 49, 54) !important;
 }
 
+/*-------------------------------------------------------------------------- AUDIOONLY_YOUTUBE */
+.audioonly_yt .yt-uix-sessionlink {
+  visibility: unset !important;
+  display: block !important;
+  opcaity: 1 !important;
+  
+}
+.audioonly_yt .youtube__VideoWrapper {
+  visibility: hidden;
+}
+
+.audioonly_yt .youtube__VideoOverlay .youtube__Controls,
+.audioonly_yt .youtube__VideoOverlay .youtube__Progress {
+  opacity: 1;
+  margin-left: 30px;
+}
+
+.audioonly_yt .cams__CamOverlay.open, .cams__CamOverlay {
+  background-color: transparent !important;
+}
+
+.audioonly_yt .youtube__VideoContainer > .cams__CamOverlay:hover .cams__OptionsTrigger {
+  border-radius: 50px;
+  position: absolute;
+  top: 20%;
+  left: 1%;
+  width: 115px;
+  opacity: 0.4;
+}
+.audioonly_yt .youtube__VideoContainer > .cams__CamOverlay .cams__OptionsTrigger {
+  border-radius: 50px;
+  position: absolute;
+  top: 20%;
+  left: 1%;
+  width: 115px;
+  opacity: 0;
+}
+
+.audioonly_yt .layout--horizontal button.youtube__Control {
+  position:absolute;
+  bottom: 0px;
+  margin-left: -35px;
+  border:0px;
+  padding:5px 10px;
+}
+
+.audioonly_yt .layout--horizontal .youtube__VideoContainer>div>iframe:hover {
+  height: 290px !important;
+}
+
+.audioonly_yt .layout--horizontal .youtube__VideoContainer>div>iframe {
+  border-radius: 10px;
+}
+
+.audioonly_yt .layout--horizontal .youtube__VideoContainer {
+  width: 400px !important;
+  height: 100px !important;
+  position: absolute;
+  left: -2px;
+  bottom: 30px;
+  z-index: 4000;
+}
+
+.audioonly_yt .youtube__VideoContainer>div>iframe {
+  border-radius: 10px;
+}
+
+.audioonly_yt .youtube__VideoContainer {
+  width: 400px !important;
+  height: 100px !important;
+  position: absolute;
+  left: 6px;
+  bottom: 305px;
+  z-index: 4000;
+}
+
 /*-------------------------------------------------------------------------- MINI_YOUTUBE */
 
 .miniyt .layout--horizontal .youtube__VideoContainer:hover {

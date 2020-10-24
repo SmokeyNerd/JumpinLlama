@@ -1,11 +1,13 @@
 #llama_chat_settings,
 #llama_cam_settings,
 #llama_theme_settings,
+#llama_tube_settings,
 #notice_info,
 .user_bg_settings {
   display:none;
 }
 .open_llama_chat #llama_chat_settings,
+.open_llama_tube #llama_tube_settings,
 .open_llama_cam #llama_cam_settings,
 .open_llama_theme #llama_theme_settings,
 .open_llama_notice #notice_info,
@@ -107,15 +109,6 @@ input[type="color"]::-webkit-color-swatch {
 	border: none;
 }
 
-.miniyt .youtube__VideoContainer > .cams__CamOverlay:hover .cams__OptionsTrigger {
-    border-radius: 50px;
-    position: absolute;
-    top: 20%;
-    left: 1%;
-    width: 115px;
-    opacity:0.4;
-}
-
 /*-------------------------------------------------------------------------- PULL_AUDIO_INDICATOR_FORWARD */
 .cams__Cam-audioActive {
     z-index: 2000;
@@ -137,6 +130,7 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 /*-------------------------------------------------------------------------- HIDE_EMOJIS_N_GIFTS */
+
 .hide_emojis #chat_box > button:nth-child(2) {
   display:none;
 }
@@ -192,6 +186,10 @@ input[type="color"]::-webkit-color-swatch {
     border-bottom: 5px solid #e8e8e8;
     clear: both;
 }
+
+#llama_title_tube:before {
+    right: 25px;
+}
 #llama_title_popchat:before {
     right: 25px;
 }
@@ -205,6 +203,11 @@ input[type="color"]::-webkit-color-swatch {
 
 #llama_title_theme:before {
     right: 17px;
+}
+
+.layout--horizontal #llama_title_tube {
+    display:none;
+    right: 210px;
 }
 
 .layout--horizontal #llama_title_popchat {
@@ -226,6 +229,11 @@ input[type="color"]::-webkit-color-swatch {
     right: 82px;
 }
 
+#llama_title_tube {
+    display:none;
+    right: 210px;
+}
+
 #llama_title_popchat {
     display:none;
     right: 160px;
@@ -244,6 +252,7 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 #llama_popchat:hover + #llama_title_popchat,
+#llama_tube:hover + #llama_title_tube,
 #llama_chat:hover + #llama_title_chat,
 #llama_cam:hover + #llama_title_cam,
 #llama_theme:hover + #llama_title_theme {
@@ -448,6 +457,7 @@ input[type="color"]::-webkit-color-swatch {
 
 .open_llama_chat #Exit_Box,
 .open_llama_cam #Exit_Box,
+.open_llama_tube #Exit_Box,
 .open_llama_theme #Exit_Box,
 .open_llama_notice #Exit_Box {
   display:block;
@@ -747,6 +757,18 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 /*-------------------------------------------------------------------------- MINI_YOUTUBE */
+.miniyt .youtube__VideoWrapper {
+  visibility: unset;
+}
+
+.miniyt .youtube__VideoContainer > .cams__CamOverlay:hover .cams__OptionsTrigger {
+    border-radius: 50px;
+    position: absolute;
+    top: 20%;
+    left: 1%;
+    width: 115px;
+    opacity: 0.4;
+}
 
 .miniyt .layout--horizontal .youtube__VideoContainer:hover {
   width: 400px !important;
@@ -1098,7 +1120,7 @@ input[type="color"]::-webkit-color-swatch {
     border-color: var(--thememode-bordercolor);
 }
 .thememode .chat__HeaderOption {
-    border-radius: 5px;
+      border-radius: 5px;
     margin: 2px;
     min-height: 27px;
     border: 1px solid transparent;
@@ -1114,14 +1136,13 @@ input[type="color"]::-webkit-color-swatch {
     color: var(--thememode-buttontext);
 }
 .thememode .chat__InputWrapper {
-    border-radius: 100px;
     border-color: var(--thememode-bordercolor);
     background-color: var(--thememode-bgcolor);
 }
 .thememode .chat__UserListItem {
     border-top-color: var(--thememode-bordercolor);
     background-color: var(--thememode-bordercolor);
-    border-radius: 5px;
+  border-radius: 5px;
     margin-top: 2px;
     border: 1px solid transparent;
 }
@@ -1132,7 +1153,7 @@ input[type="color"]::-webkit-color-swatch {
     background-color: var(--thememode-bordercolor);
 }
 .thememode .chat__MessageBody-status {
-    color: var(--thememode-textcolor);
+  color: var(--thememode-textcolor);
 }
 .thememode .roomHeader__UserAction {
     background-color: var(--thememode-bordercolor);

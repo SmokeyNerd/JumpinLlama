@@ -1194,7 +1194,7 @@ function Create_Llama_Notice () {
 
 <iframe id="HW_JL_frame" src="" sandbox="allow-same-origin allow-scripts allow-top-navigation allow-popups allow-forms allow-popups-to-escape-sandbox" tabindex="0" aria-hidden="false" style="height:330px;width:345px;"></iframe>
 <br>
-<div class="info_footer"><center><small>Script Last Updated: 12/28/19</small>
+<div class="info_footer"><center><small>Script Last Updated: Oct, 24 2020</small>
 <br>
 <a href="https://www.smokeyllama.com/" style="color:gray;text-decoration:none;" target="_blank">Smokeyllama.com</a></div>
 </div>

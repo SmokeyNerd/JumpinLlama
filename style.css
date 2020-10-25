@@ -1240,10 +1240,20 @@ input[type="color"]::-webkit-color-swatch {
 
 
 /*-------------------------------------------------------------------------- LEFT_TO_RIGHT */
+.thememode .imageUpload__Container {
+  background-color: transparent;
+}
+
+.thememode .youtube__Result {
+  background-color: var(--thememode-buttontext);
+}
 
 .thememode .mediaSources__SourceWrapper {
   background-color: var(--thememode-lightbgcolor);
-    border-color: var( --thememode-bordercolor);
+  border-color: var( --thememode-bordercolor);
+}
+.thememode .mediaSources__SourceLabel {
+  color: var(--thememode-textcolor);
 }
 
 .thememode .scroll-shadow {  background-color: var(--thememode-bgcolor);background: var(--thememode-bgcolor);}

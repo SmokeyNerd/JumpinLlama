@@ -184,6 +184,12 @@ function Reload_User_Settings () {
     }
   })
 
+  // ------- ROOM HEADER -------
+  var roomheader_status = localStorage.getItem("llama_hide_header")
+  if (roomheader_status === "hide_header") {
+    body.classList.toggle("hide_header")
+  }
+
   // ------- USER BG COLOR -------
   var bgstorage = localStorage.getItem("llama_override_user_bg")
   if (bgstorage !== "") {

@@ -4,9 +4,9 @@ var body = document.body
 function Check_Site_Loaded() {
   var last_el = document.getElementsByClassName("chat__Input")[0]
   if (last_el) {
-    Start_The_Llama();
+    Start_The_Llama()
   } else {
-    setTimeout(Check_Site_Loaded, 3000);
+    setTimeout(Check_Site_Loaded, 3000)
   }
 }
 Check_Site_Loaded()
@@ -17,32 +17,32 @@ function Start_The_Llama () {
     var loc = window.location.toString()
     var pageName = loc.split("/")[3]
     if (pageName !== "" && pageName !== "directory" && pageName !== "support" && pageName !== "profile" && pageName !== "messages" && pageName !== "settings") {
-     Create_Element_IDs()
-     Create_Top_Icons()
-     Create_Bottom_Icons()
+      Create_Element_IDs()
+      Create_Top_Icons()
+      Create_Bottom_Icons()
 
-     Create_Top_Setting_Box()
+      Create_Top_Setting_Box()
 
-     Create_Llama_Window()
-     Load_Draggables()
+      Create_Llama_Window()
+      Load_Draggables()
 
-     Create_Chat_Settings()
-     Create_Cam_Settings()
-     Create_Tube_Settings()
-     Create_Theme_Settings()
-     Create_BG_Settings()
+      Create_Chat_Settings()
+      Create_Cam_Settings()
+      Create_Tube_Settings()
+      Create_Theme_Settings()
+      Create_BG_Settings()
 
-     Create_Cheers()
+      Create_Cheers()
 
-     Create_Exit_Box()
+      Create_Exit_Box()
 
-     Create_Llama_Info()
-     Create_Header_Hider()
+      Create_Llama_Info()
+      Create_Header_Hider()
 
-     Add_Listeners()
+      Add_Listeners()
 
-     Reload_User_Settings()
-   }
+      Reload_User_Settings()
+    }
   } else {
     setTimeout(Start_The_Llama, 3000)
   }
@@ -511,14 +511,15 @@ function Save_User_Tubes () {
     var save_tube = "llama_tube_url_" + tube_num
     var llama_tube_input = document.getElementById(save_tube_element).value
     
-    
     var save_tube_name_element = "llama_tube_name_" + tube_num
     var save_tube_name = "llama_tube_name_" + tube_num
     var llama_tube_name_input = document.getElementById(save_tube_name_element).value
-
+    
     if (llama_tube_name_input !== "") {
+      localStorage.setItem(save_tube, llama_tube_input)
       localStorage.setItem(save_tube_name, llama_tube_name_input)
     } else {
+      localStorage.setItem(save_tube, "")
       localStorage.setItem(save_tube_name, "")
     }
   })
@@ -623,31 +624,31 @@ function Cheers_Button () {
   var pageName = loc.split("/")[3]
   
   if (pageName === "coffeepot") {
-   if (!cheers_status) {
-     text.value = ":coffeepot::cheer::coffeepot:"
-     localStorage.setItem("cheers_status", "1")
-   }
-   if (cheers_status === "1") {
-     text.value = ":letterc::letterh::lettere::lettere::letterr::letters:"
-     localStorage.setItem("cheers_status", "2")
-   }
-   if (cheers_status === "2") {
-     text.value = ":coffeepot::letterc::letterh::lettere::lettere::letterr::letters::coffeepot:"
-     localStorage.setItem("cheers_status", "")
-   }
+    if (!cheers_status) {
+      text.value = ":coffeepot::cheer::coffeepot:"
+      localStorage.setItem("cheers_status", "1")
+    }
+    if (cheers_status === "1") {
+      text.value = ":letterc::letterh::lettere::lettere::letterr::letters:"
+      localStorage.setItem("cheers_status", "2")
+    }
+    if (cheers_status === "2") {
+      text.value = ":coffeepot::letterc::letterh::lettere::lettere::letterr::letters::coffeepot:"
+      localStorage.setItem("cheers_status", "")
+    }
   } else {    
-   if (!cheers_status) {
-     text.value = "!cheers"
-     localStorage.setItem("cheers_status", "1")
-   }
-   if (cheers_status === "1") {
-     text.value = "MEGA CHEERS!"
-     localStorage.setItem("cheers_status", "2")
-   }
-   if (cheers_status === "2") {
-     text.value = "▂▅▇ 🔥 CHEERS 🔥 ▇▅▂"
-     localStorage.setItem("cheers_status", "")
-   }
+    if (!cheers_status) {
+      text.value = "!cheers"
+      localStorage.setItem("cheers_status", "1")
+    }
+    if (cheers_status === "1") {
+      text.value = "MEGA CHEERS!"
+      localStorage.setItem("cheers_status", "2")
+    }
+    if (cheers_status === "2") {
+      text.value = "▂▅▇ 🔥 CHEERS 🔥 ▇▅▂"
+      localStorage.setItem("cheers_status", "")
+    }
   }
   setTimeout(Reset_Cheers_Button, 10000)
 }
@@ -656,7 +657,6 @@ function Reset_Cheers_Button () {
   localStorage.removeItem("cheers_status")
 }
 
-// ------------------------------------ ACTION : CUSTOM MODE CHOICE -------------------------*/
 function Toggle_Custom_Box (status) {
   if (status === "on") {
     body.classList.add("custom")
@@ -1439,15 +1439,22 @@ var viewport = {"bottom": 0,
 // ------------------------------------ CREATE : YOUTUBE IMPORT ----------------------------*/
 function Check_For_Youtube (song_index) {
   var video_button_starter = document.getElementsByClassName("chat__HeaderOption--video")[0]
-  if (video_button_starter) {Define_Youtube_Button(song_index)} else {setTimeout(function() {Check_For_Youtube(song_index)}, 3000)}
+  if (video_button_starter) {
+    Define_Youtube_Button(song_index)
+  } else {
+    setTimeout(function() {
+      Check_For_Youtube(song_index)
+    }, 3000)
+  }
 }
 
 function Define_Youtube_Button (song_index) {
   var video_button = document.getElementsByClassName("chat__HeaderOption--video")[0]
-  if (video_button) {video_button.id = "video_play_btn"}
+  if (video_button) {
+    video_button.id = "video_play_btn"
+  }
   // document.getElementById("video_play_btn").setAttribute("onclick", "Open_Youtube_Box()")
   Open_Youtube_Box(song_index)
-
 }
 
 function Open_Youtube_Box (song_index) {
@@ -1456,7 +1463,6 @@ function Open_Youtube_Box (song_index) {
     video_button.click()
     Define_Youtube_Search_Box(song_index)
   }
- 
 }
 
 function Define_Youtube_Search_Box (song_index) {

@@ -505,16 +505,14 @@ function Clear_User_BG (type) {
 // ------------------------------------ ACTION : SAVE TUBES ------------------------------*/
 function Save_User_Tubes () {
   var tube_nums = ["1", "2", "3", "4", "5"]
-
+  
   tube_nums.forEach(function (tube_num) {
     var save_tube_element = "llama_tube_url_" + tube_num
     var save_tube = "llama_tube_url_" + tube_num
     var llama_tube_input = document.getElementById(save_tube_element).value
-    
     var save_tube_name_element = "llama_tube_name_" + tube_num
     var save_tube_name = "llama_tube_name_" + tube_num
     var llama_tube_name_input = document.getElementById(save_tube_name_element).value
-    
     if (llama_tube_name_input !== "") {
       localStorage.setItem(save_tube, llama_tube_input)
       localStorage.setItem(save_tube_name, llama_tube_name_input)
@@ -622,7 +620,6 @@ function Cheers_Button () {
   var cheers_status = localStorage.getItem("cheers_status")
   var loc = window.location.toString()
   var pageName = loc.split("/")[3]
-  
   if (pageName === "coffeepot") {
     if (!cheers_status) {
       text.value = ":coffeepot::cheer::coffeepot:"
@@ -636,7 +633,7 @@ function Cheers_Button () {
       text.value = ":coffeepot::letterc::letterh::lettere::lettere::letterr::letters::coffeepot:"
       localStorage.setItem("cheers_status", "")
     }
-  } else {  
+  } else {
     if (!cheers_status) {
       text.value = "!cheers"
       localStorage.setItem("cheers_status", "1")

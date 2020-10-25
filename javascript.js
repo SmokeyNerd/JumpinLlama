@@ -605,7 +605,7 @@ function Checkbox_Action (type) {
     Save_User_BG_Color("open")
   } else if (type === "override_chatcolor" || type === "override_username") {
     body.classList.toggle(type)
-  } else if (type === "override_user_bgcolor") {
+  } else if (type === "override_user_bg") {
     body.classList.toggle(type)
     Save_User_BG_Color("save")
   } else if (type === "hide_emojis") {

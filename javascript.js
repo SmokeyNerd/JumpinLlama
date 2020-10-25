@@ -1,7 +1,7 @@
 var body = document.body
 
 // ------------------------------------ DELAY FOR ELEMENTS TO LOAD ------------------------------------*/
-function Check_Site_Loaded() {
+function Check_Site_Loaded () {
   var last_el = document.getElementsByClassName("chat__Input")[0]
   if (last_el) {
     Start_The_Llama()
@@ -636,7 +636,7 @@ function Cheers_Button () {
       text.value = ":coffeepot::letterc::letterh::lettere::lettere::letterr::letters::coffeepot:"
       localStorage.setItem("cheers_status", "")
     }
-  } else {    
+  } else {  
     if (!cheers_status) {
       text.value = "!cheers"
       localStorage.setItem("cheers_status", "1")
@@ -1442,7 +1442,7 @@ function Check_For_Youtube (song_index) {
   if (video_button_starter) {
     Define_Youtube_Button(song_index)
   } else {
-    setTimeout(function() {
+    setTimeout(function () {
       Check_For_Youtube(song_index)
     }, 3000)
   }
@@ -1453,7 +1453,6 @@ function Define_Youtube_Button (song_index) {
   if (video_button) {
     video_button.id = "video_play_btn"
   }
-  // document.getElementById("video_play_btn").setAttribute("onclick", "Open_Youtube_Box()")
   Open_Youtube_Box(song_index)
 }
 
@@ -1476,7 +1475,6 @@ function Define_Youtube_Search_Box (song_index) {
 function Enter_Youtube_URL (song_index) {
   var yt_search_box = document.getElementsByClassName("youtube__SearchInput")[0]
   if (yt_search_box) {
-    // yt_search_box.value = current_link
     var song_selected = document.getElementById("llama_tube_url_" + song_index).value
     yt_search_box.value = song_selected
   }

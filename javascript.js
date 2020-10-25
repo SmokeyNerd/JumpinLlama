@@ -1,45 +1,55 @@
 var body = document.body
 
 // ------------------------------------ DELAY FOR ELEMENTS TO LOAD ------------------------------------*/
-var starter = "activate"
-if (starter !== "start_delay") {
-  setTimeout(Start_The_Llama, 3000)
+function Check_Site_Loaded() {
+  var last_el = document.getElementsByClassName("chat__Input")[0]
+  if (last_el) {
+    Start_The_Llama();
+  } else {
+    setTimeout(Check_Site_Loaded, 3000);
+  }
 }
+Check_Site_Loaded()
 
 // ------------------------------------ START THE LLAMA ----------------------------------------------*/
 function Start_The_Llama () {
-  var loc = window.location.toString()
-  var pageName = loc.split("/")[3]
-  if (pageName !== "" && pageName !== "directory" && pageName !== "support" && pageName !== "profile" && pageName !== "messages" && pageName !== "settings") {
-    Create_Element_IDs()
-    Create_Top_Icons()
-    Create_Bottom_Icons()
+  if (script_variables) {
+    var loc = window.location.toString()
+    var pageName = loc.split("/")[3]
+    if (pageName !== "" && pageName !== "directory" && pageName !== "support" && pageName !== "profile" && pageName !== "messages" && pageName !== "settings") {
+     Create_Element_IDs()
+     Create_Top_Icons()
+     Create_Bottom_Icons()
 
-    Create_Top_Setting_Box()
+     Create_Top_Setting_Box()
 
-    Create_Llama_Window()
-    Load_Draggables()
+     Create_Llama_Window()
+     Load_Draggables()
 
-    Create_Chat_Settings()
-    Create_Cam_Settings()
-    Create_Tube_Settings()
-    Create_Theme_Settings()
-    Create_BG_Settings()
+     Create_Chat_Settings()
+     Create_Cam_Settings()
+     Create_Tube_Settings()
+     Create_Theme_Settings()
+     Create_BG_Settings()
 
-    Create_Cheers()
+     Create_Cheers()
 
-    Create_Exit_Box()
+     Create_Exit_Box()
 
-    Create_Llama_Info()
-    Create_Header_Hider()
+     Create_Llama_Info()
+     Create_Header_Hider()
 
-    Add_Listeners()
+     Add_Listeners()
 
-    Reload_User_Settings()
+     Reload_User_Settings()
+   }
+  } else {
+    setTimeout(Start_The_Llama, 3000)
   }
 }
 
 // ------------------------------------ LOAD : REGULAR VARIABLES -------------------------------------*/
+var script_variables = "loaded"
 var theme_status = localStorage.getItem("thememode")
 var user_checkbox_settings = ["robo", "bubble", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg",
   "trans_chat", "trans_users", "hide_usernames", "cambg_cover", "cambg_center", "cambg_repeat",

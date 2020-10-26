@@ -2,7 +2,7 @@
 // @name         JumpinLlama : 2020 Theme
 // @namespace    https://www.smokeyllama.com
 // @version      2020.18
-// @description  Editing Overall Theme of JumpIn. Install and refresh.
+// @description  Editing Overall Theme of JumpIn. Set Custom Background Images and Themes. Hide elements, and much more! Install and refresh.
 // @author       SmokeyLlama
 // @match        https://jumpin.chat/*
 // @exclude      https://jumpin.chat/smokeyllama

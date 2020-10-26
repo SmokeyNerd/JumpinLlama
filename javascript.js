@@ -41,6 +41,9 @@ function Start_The_Llama () {
 
       Add_Listeners()
 
+      Create_Song_Dropdown()
+      Create_Llama_Songs()
+
       Reload_User_Settings()
     }
   } else {
@@ -63,7 +66,7 @@ var checkbox_actions = ["robo", "bubble", "hide_chat", "hide_userlist", "ltr", "
   "chatbg_cover", "chatbg_center", "chatbg_repeat", "userbg_cover", "userbg_center", "userbg_repeat",
   "override_chatcolor", "override_username", "override_user_bg", "hide_emojis", "hide_gifts", "rounded_cams"]
 var button_actions = ["audioonly_yt", "miniyt", "hide_header", "save", "reset", "web", "hideweb", "games",
-  "tiny", "min", "max", "res", "close", "clear_cam", "clear_chat", "clear_user", "apply_images", "save_tubes",
+  "tiny", "min", "max", "res", "close", "clear_cam", "clear_chat", "clear_user", "apply_images",
   "popchat", "poprestore", "cambg_settings", "chatbg_settings", "userbg_settings"]
 var draggable_windows = ["mydiv", "chat"]
 
@@ -208,34 +211,7 @@ function Reload_User_Settings () {
     document.getElementById("llama_clear_chatbg").value = userbg_status
     Save_User_BG()
   }
-
-  // ------- USER YOUTUBE NAMES AND URLS -------
-  var yt_name_one = localStorage.getItem("llama_tube_name_1")
-  var yt_name_two = localStorage.getItem("llama_tube_name_2")
-  var yt_name_three = localStorage.getItem("llama_tube_name_3")
-  var yt_name_four = localStorage.getItem("llama_tube_name_4")
-  var yt_name_five = localStorage.getItem("llama_tube_name_5")
-  if (yt_name_one || yt_name_two || yt_name_three || yt_name_four || yt_name_five) {
-    document.getElementById("llama_tube_name_1").value = yt_name_one
-    document.getElementById("llama_tube_name_2").value = yt_name_two
-    document.getElementById("llama_tube_name_3").value = yt_name_three
-    document.getElementById("llama_tube_name_4").value = yt_name_four
-    document.getElementById("llama_tube_name_5").value = yt_name_five
-  }
-  var yt_one = localStorage.getItem("llama_tube_url_1")
-  var yt_two = localStorage.getItem("llama_tube_url_2")
-  var yt_three = localStorage.getItem("llama_tube_url_3")
-  var yt_four = localStorage.getItem("llama_tube_url_4")
-  var yt_five = localStorage.getItem("llama_tube_url_5")
-  if (yt_one || yt_two || yt_three || yt_four || yt_five) {
-    document.getElementById("llama_tube_url_1").value = yt_one
-    document.getElementById("llama_tube_url_2").value = yt_two
-    document.getElementById("llama_tube_url_3").value = yt_three
-    document.getElementById("llama_tube_url_4").value = yt_four
-    document.getElementById("llama_tube_url_5").value = yt_five
-    Save_User_Tubes()
-  }
-
+  
   // ------- USERNAME COLOR -------
   var usernamecolor_status = localStorage.getItem("llama_username_color")
   if (usernamecolor_status) {
@@ -506,29 +482,6 @@ function Clear_User_BG (type) {
   document.documentElement.style.setProperty(bgvar, "")
   localStorage.setItem(bgreload, "")
   localStorage.setItem(bg, "")
-}
-
-// ------------------------------------ ACTION : SAVE TUBES ------------------------------*/
-function Save_User_Tubes () {
-  var tube_nums = ["1", "2", "3", "4", "5"]
-
-  tube_nums.forEach(function (tube_num) {
-    var save_tube_element = "llama_tube_url_" + tube_num
-    var save_tube = "llama_tube_url_" + tube_num
-    var llama_tube_input = document.getElementById(save_tube_element).value
-
-    var save_tube_name_element = "llama_tube_name_" + tube_num
-    var save_tube_name = "llama_tube_name_" + tube_num
-    var llama_tube_name_input = document.getElementById(save_tube_name_element).value
-
-    if (llama_tube_name_input !== "") {
-      localStorage.setItem(save_tube, llama_tube_input)
-      localStorage.setItem(save_tube_name, llama_tube_name_input)
-    } else {
-      localStorage.setItem(save_tube, "")
-      localStorage.setItem(save_tube_name, "")
-    }
-  })
 }
 
 // ------------------------------------ ACTION : SAVE USER BGS ------------------------------*/
@@ -907,47 +860,35 @@ function Create_Tube_Settings () {
   tube_menu.innerHTML = `
 <div class="dropdown__Options">
 <div class="dropdown__Option dropdown__Option-header">Tube Settings</div>
-<span class="dropdown__Option no_hover">
-<input id="llama_queue_tube_url_1" title="Queue URL" type="button" value="▶" style="cursor:pointer;background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-right-radius:0px; border-bottom-right-radius:0px;" onclick="Check_For_Youtube('1')"/>
-<input type='text' name="server" id="llama_tube_name_1" autocomplete="off" placeholder="Link Name..." style="opacity: 1;cursor: pointer; width: 130px;border-radius: 2px;border: 1px solid #ccc;"/>
-<input type='text' name="server" id="llama_tube_url_1" autocomplete="off" placeholder="Youtube URL..." style="opacity: 1;cursor: pointer; width: 130px;border-radius: 2px;border: 1px solid #ccc;"/>
-<input id="llama_clear_tube_url_1" title="Clear User Tube" type="button" value="✘" style="cursor:pointer;background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
-</span>
 
-<span class="dropdown__Option no_hover">
-<input id="llama_queue_tube_url_2" title="Queue URL" type="button" value="▶" style="cursor:pointer;background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-right-radius:0px; border-bottom-right-radius:0px;" onclick="Check_For_Youtube('2')"/>
-<input type='text' name="server" id="llama_tube_name_2" autocomplete="off" placeholder="Link Name..." style="opacity: 1;cursor: pointer; width: 130px;border-radius: 2px;border: 1px solid #ccc;"/>
-<input type='text' name="server" id="llama_tube_url_2" autocomplete="off" placeholder="Youtube URL..." style="opacity: 1;cursor: pointer; width: 130px;border-radius: 2px;border: 1px solid #ccc;"/>
-<input id="llama_clear_tube_url_2" title="Clear User Tube" type="button" value="✘" style="cursor:pointer;background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
-</span>
 
-<span class="dropdown__Option no_hover">
-<input id="llama_queue_tube_url_3" title="Queue URL" type="button" value="▶" style="cursor:pointer;background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-right-radius:0px; border-bottom-right-radius:0px;" onclick="Check_For_Youtube('3')"/>
-<input type='text' name="server" id="llama_tube_name_3" autocomplete="off" placeholder="Link Name..." style="opacity: 1;cursor: pointer; width: 130px;border-radius: 2px;border: 1px solid #ccc;"/>
-<input type='text' name="server" id="llama_tube_url_3" autocomplete="off" placeholder="Youtube URL..." style="opacity: 1;cursor: pointer; width: 130px;border-radius: 2px;border: 1px solid #ccc;"/>
-<input id="llama_clear_tube_url_3" title="Clear User Tube" type="button" value="✘" style="cursor:pointer;background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
-</span>
-
-<span class="dropdown__Option no_hover">
-<input id="llama_queue_tube_url_4" title="Queue URL" type="button" value="▶" style="cursor:pointer;background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-right-radius:0px; border-bottom-right-radius:0px;" onclick="Check_For_Youtube('4')"/>
-<input type='text' name="server" id="llama_tube_name_4" autocomplete="off" placeholder="Link Name..." style="opacity: 1;cursor: pointer; width: 130px;border-radius: 2px;border: 1px solid #ccc;"/>
-<input type='text' name="server" id="llama_tube_url_4" autocomplete="off" placeholder="Youtube URL..." style="opacity: 1;cursor: pointer; width: 130px;border-radius: 2px;border: 1px solid #ccc;"/>
-<input id="llama_clear_tube_url_4" title="Clear User Tube" type="button" value="✘" style="cursor:pointer;background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
-</span>
-
-<span class="dropdown__Option no_hover">
-<input id="llama_queue_tube_url_5" title="Queue URL" type="button" value="▶" style="cursor:pointer;background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-right-radius:0px; border-bottom-right-radius:0px;" onclick="Check_For_Youtube('5')"/>
-<input type='text' name="server" id="llama_tube_name_5" autocomplete="off" placeholder="Link Name..." style="opacity: 1;cursor: pointer; width: 130px;border-radius: 2px;border: 1px solid #ccc;"/>
-<input type='text' name="server" id="llama_tube_url_5" pautocomplete="off" laceholder="Youtube URL..." style="opacity: 1;cursor: pointer; width: 130px;border-radius: 2px;border: 1px solid #ccc;"/>
-<input id="llama_clear_tube_url_5" title="Clear User Tube" type="button" value="✘" style="cursor:pointer;background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
+<span class="dropdown__Option no_hoverbg">
+<select id="song_dropdown" style="width: 100%; border-radius: 10px;">
+</select>
 </span>
 
 <span class="dropdown__Option no_hoverbg">
-<input id="llama_save_tubes" type="button" value="✔ Save Links" style="cursor:pointer;background: #5a6370; color: #fff; border:0px; border-radius: 10px;width: 100%;"/>
+<input id="llama_play_song" type="button" value="▶ Play Song" style="cursor:pointer;background: #5a6370; color: #fff; border:0px; border-radius: 10px;width: 100%;" onclick="Check_For_Youtube()"/>&nbsp;&nbsp;
+<input id="llama_delete_song" type="button" value="✘ Delete Song" style="cursor:pointer;background: #5a6370; color: #fff; border:0px; border-radius: 10px;width: 100%;" onclick="Delete_Song_Dropdown()"/>
 </span>
 
 </div>
 
+<div class="dropdown__Options" style="margin-top: 5px;">
+<div class="dropdown__Option dropdown__Option-header">Save A Song</div>
+<span class="dropdown__Option no_hover">
+<input type="text" id="llama_new_song_name" autocomplete="off" placeholder="Link Name..." style="opacity: 1;cursor: pointer; width: 100%;border-radius: 2px;border: 1px solid #ccc;"/>
+</span>
+
+<span class="dropdown__Option no_hover">
+<input type="text" id="llama_new_song_url" pautocomplete="off" placeholder="Youtube URL..." style="opacity: 1;cursor: pointer; width: 100%;border-radius: 2px;border: 1px solid #ccc;"/>
+</span>
+
+<span class="dropdown__Option no_hoverbg">
+<input id="llama_save_song" type="button" value="＋ Add Song" style="cursor:pointer;background: #5a6370; color: #fff; border:0px; border-radius: 10px;width: 100%;" onclick="Save_New_Song()"/>
+</span>
+
+</div>
 
 `
   option_box.appendChild(tube_menu)
@@ -1442,45 +1383,43 @@ var viewport = {"bottom": 0,
   "top": 0}
 
 // ------------------------------------ CREATE : YOUTUBE IMPORT ----------------------------*/
-function Check_For_Youtube (song_index) {
+// ------------------------------------ CREATE : YOUTUBE IMPORT ----------------------------*/
+function Check_For_Youtube () {
   var video_button_starter = document.getElementsByClassName("chat__HeaderOption--video")[0]
-  if (video_button_starter) {
-    Define_Youtube_Button(song_index)
-  } else {
-    setTimeout(function () {
-      Check_For_Youtube(song_index)
-    }, 3000)
-  }
+  if (video_button_starter) {Define_Youtube_Button()} else {setTimeout(function() {Check_For_Youtube()}, 3000)}
 }
 
-function Define_Youtube_Button (song_index) {
+function Define_Youtube_Button () {
   var video_button = document.getElementsByClassName("chat__HeaderOption--video")[0]
-  if (video_button) {
-    video_button.id = "video_play_btn"
-  }
-  Open_Youtube_Box(song_index)
+  if (video_button) {video_button.id = "video_play_btn"}
+  // document.getElementById("video_play_btn").setAttribute("onclick", "Open_Youtube_Box()")
+  Open_Youtube_Box()
+
 }
 
-function Open_Youtube_Box (song_index) {
+function Open_Youtube_Box () {
   var video_button = document.getElementsByClassName("chat__HeaderOption--video")[0]
   if (video_button) {
     video_button.click()
-    Define_Youtube_Search_Box(song_index)
+    Define_Youtube_Search_Box()
   }
+ 
 }
 
-function Define_Youtube_Search_Box (song_index) {
+function Define_Youtube_Search_Box () {
   var yt_search_box = document.getElementsByClassName("youtube__SearchInput")[0]
   if (yt_search_box) {
     yt_search_box.id = "yt_search_box"
   }
-  Enter_Youtube_URL(song_index)
+  Enter_Youtube_URL()
 }
 
-function Enter_Youtube_URL (song_index) {
+function Enter_Youtube_URL () {
   var yt_search_box = document.getElementsByClassName("youtube__SearchInput")[0]
   if (yt_search_box) {
-    var song_selected = document.getElementById("llama_tube_url_" + song_index).value
+    // yt_search_box.value = current_link
+    var selected_song = document.getElementById("song_dropdown");    
+    var song_selected = selected_song.options[ selected_song.selectedIndex ].value
     yt_search_box.value = song_selected
   }
   var yt_search_button = document.querySelector("body > div:nth-child(22) > div > div > div.modal__Body > div > form > button")
@@ -1502,6 +1441,74 @@ function Click_First_Youtube_Result () {
   var yt_first_result = document.getElementsByClassName("youtube__Result")[0]
   if (yt_first_result) {
     yt_first_result.click()
+  }
+}
+
+function Create_Llama_Songs () {
+  var current_songs = localStorage.getItem("llama_songs")
+  // alert(current_songs)
+  if (current_songs === null) {
+   var songs = []
+   var song1 = { song_name: "Youtube_Name", song_url:"Youtube_Link" }
+   songs.push(song1)
+   localStorage.setItem("llama_songs", JSON.stringify(songs))
+  }
+}
+
+function Save_New_Song () {
+  var new_song_name = document.getElementById("llama_new_song_name").value
+  var new_song_url = document.getElementById("llama_new_song_url").value
+  var stored_songs = JSON.parse(localStorage.getItem("llama_songs"))
+  var new_song = { song_name: new_song_name, song_url: new_song_url }
+  stored_songs.push(new_song)
+  localStorage.setItem("llama_songs", JSON.stringify(stored_songs))
+  var result = JSON.parse(localStorage.getItem("llama_songs"))
+  
+  document.getElementById("llama_new_song_name").value = ""
+  document.getElementById("llama_new_song_url").value = ""
+  Create_Song_Dropdown()
+}
+
+function Delete_Song_Dropdown () {
+  var selected_song = document.getElementById("song_dropdown");    
+  var song_selected = selected_song.options[ selected_song.selectedIndex ].innerHTML
+  var json = JSON.parse(localStorage["llama_songs"]);
+  var i
+  for (i=0;i<json.length;i++)
+   if (json[i].song_name == song_selected) {
+     json.splice(i,1);
+     localStorage["llama_songs"] = JSON.stringify(json);
+  }
+  Create_Song_Dropdown()
+}
+
+function Create_Song_Dropdown () {
+ var select_box = document.getElementById("song_dropdown")
+ select_box.innerHTML = ""
+ if (select_box) {
+    var current_songs = JSON.parse(localStorage.getItem("llama_songs"))
+    if (current_songs) {
+      var first_option = document.createElement("option")
+      first_option.setAttribute("disabled", "disabled")
+      first_option.setAttribute("selected", "selected")
+      first_option.innerHTML = "Select A Song..."
+      select_box.appendChild(first_option)
+      current_songs.forEach(function (current_song) {
+      var current_song_name_pre = JSON.stringify(current_song.song_name)
+      var current_song_url_pre = JSON.stringify(current_song.song_url)
+      var current_song_name = current_song_name_pre.replace(/['"]+/g, '')
+      var current_song_url = current_song_url_pre.replace(/['"]+/g, '')
+      if (current_song_name !== "Youtube_Name") {
+        var select_box = document.getElementById("song_dropdown")
+        var new_option = document.createElement("option")
+        new_option.setAttribute("value", current_song_url)
+        new_option.innerHTML = current_song_name
+        select_box.appendChild(new_option)
+       }
+     })
+    }
+  } else {
+    setTimeout(Create_Song_Dropdown, 3000)
   }
 }
 

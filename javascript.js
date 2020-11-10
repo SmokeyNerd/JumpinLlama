@@ -17,12 +17,11 @@ function Start_The_Llama () {
     var loc = window.location.toString()
     var pageName = loc.split("/")[3]
     if (pageName !== "" && pageName !== "directory" && pageName !== "support" && pageName !== "profile" && pageName !== "messages" && pageName !== "settings") {
-
       Create_Element_IDs()
-      
+
       Create_Top_Setting_Box()
       Create_Llama_Settings()
-      
+
       Create_Top_Icons()
       Create_Bottom_Icons()
 
@@ -217,7 +216,7 @@ function Reload_User_Settings () {
     document.getElementById("llama_clear_chatbg").value = userbg_status
     Save_User_BG()
   }
-  
+
   // ------- USERNAME COLOR -------
   var usernamecolor_status = localStorage.getItem("llama_username_color")
   if (usernamecolor_status) {
@@ -246,7 +245,7 @@ function Create_Element_IDs () {
   var chat_drag = document.getElementsByClassName("chat")[0]
   chat_drag.id = "chat"
 
-  // var up_bar = document.getElementsByClassName("chat__HeaderOptions")[1]
+  // Var up_bar = document.getElementsByClassName("chat__HeaderOptions")[1]
   // up_bar.id = "chat__HeaderOptions"
 
   var settings_bar = document.getElementsByClassName("chat__HeaderOptions")[1]
@@ -451,7 +450,7 @@ function Button_Action (type) {
   } else if (type === "close") {
     body.classList.toggle("web")
     iframe.src = ""
-  } else if (clear == "clear") {
+  } else if (clear === "clear") {
     if (type === "clear_usercolor") {
       Save_Username_Color("reset")
     } else {
@@ -1051,7 +1050,6 @@ function Create_Llama_Settings_Icon () {
     llama_settings_btns,
     jumpin_settings.childNodes[3] || null
   )
-  
 }
 
 // ------------------------------------ CREATE : BOTTOM ICONS -------------------------------*/
@@ -1155,7 +1153,7 @@ function Create_Top_Icons () {
 
 // ------------------------------------ CREATE : LLAMA INFO BUTTON --------------------------*/
 function Create_Llama_Info () {
-Create_Llama_Notice()
+  Create_Llama_Notice()
 }
 
 // ------------------------------------ CREATE : LLAMA INFO POPUP ---------------------------*/
@@ -1399,15 +1397,22 @@ var viewport = {"bottom": 0,
 // ------------------------------------ CREATE : YOUTUBE IMPORT ----------------------------*/
 function Check_For_Youtube () {
   var video_button_starter = document.getElementsByClassName("chat__HeaderOption--video")[0]
-  if (video_button_starter) {Define_Youtube_Button()} else {setTimeout(function() {Check_For_Youtube()}, 3000)}
+  if (video_button_starter) {
+    Define_Youtube_Button()
+  } else {
+    setTimeout(function () {
+      Check_For_Youtube()
+    }, 3000)
+  }
 }
 
 function Define_Youtube_Button () {
   var video_button = document.getElementsByClassName("chat__HeaderOption--video")[0]
-  if (video_button) {video_button.id = "video_play_btn"}
-  // document.getElementById("video_play_btn").setAttribute("onclick", "Open_Youtube_Box()")
+  if (video_button) {
+    video_button.id = "video_play_btn"
+  }
+  // Document.getElementById("video_play_btn").setAttribute("onclick", "Open_Youtube_Box()")
   Open_Youtube_Box()
-
 }
 
 function Open_Youtube_Box () {
@@ -1416,7 +1421,6 @@ function Open_Youtube_Box () {
     video_button.click()
     Define_Youtube_Search_Box()
   }
- 
 }
 
 function Define_Youtube_Search_Box () {
@@ -1430,9 +1434,9 @@ function Define_Youtube_Search_Box () {
 function Enter_Youtube_URL () {
   var yt_search_box = document.getElementsByClassName("youtube__SearchInput")[0]
   if (yt_search_box) {
-    // yt_search_box.value = current_link
-    var selected_song = document.getElementById("song_dropdown");    
-    var song_selected = selected_song.options[ selected_song.selectedIndex ].value
+    // Yt_search_box.value = current_link
+    var selected_song = document.getElementById("song_dropdown")
+    var song_selected = selected_song.options[selected_song.selectedIndex].value
     yt_search_box.value = song_selected
   }
   var yt_search_button = document.querySelector("body > div:nth-child(22) > div > div > div.modal__Body > div > form > button")
@@ -1459,12 +1463,12 @@ function Click_First_Youtube_Result () {
 
 function Create_Llama_Songs () {
   var current_songs = localStorage.getItem("llama_songs")
-  // alert(current_songs)
+  // Alert(current_songs)
   if (current_songs === null) {
-   var songs = []
-   var song1 = { song_name: "Youtube_Name", song_url:"Youtube_Link" }
-   songs.push(song1)
-   localStorage.setItem("llama_songs", JSON.stringify(songs))
+    var songs = []
+    var song1 = {"song_name": "Youtube_Name", "song_url": "Youtube_Link"}
+    songs.push(song1)
+    localStorage.setItem("llama_songs", JSON.stringify(songs))
   }
 }
 
@@ -1472,33 +1476,34 @@ function Save_New_Song () {
   var new_song_name = document.getElementById("llama_new_song_name").value
   var new_song_url = document.getElementById("llama_new_song_url").value
   var stored_songs = JSON.parse(localStorage.getItem("llama_songs"))
-  var new_song = { song_name: new_song_name, song_url: new_song_url }
+  var new_song = {"song_name": new_song_name, "song_url": new_song_url}
   stored_songs.push(new_song)
   localStorage.setItem("llama_songs", JSON.stringify(stored_songs))
   var result = JSON.parse(localStorage.getItem("llama_songs"))
-  
+
   document.getElementById("llama_new_song_name").value = ""
   document.getElementById("llama_new_song_url").value = ""
   Create_Song_Dropdown()
 }
 
 function Delete_Song_Dropdown () {
-  var selected_song = document.getElementById("song_dropdown");    
-  var song_selected = selected_song.options[ selected_song.selectedIndex ].innerHTML
-  var json = JSON.parse(localStorage["llama_songs"]);
+  var selected_song = document.getElementById("song_dropdown")
+  var song_selected = selected_song.options[selected_song.selectedIndex].innerHTML
+  var json = JSON.parse(localStorage.llama_songs)
   var i
-  for (i=0;i<json.length;i++)
-   if (json[i].song_name == song_selected) {
-     json.splice(i,1);
-     localStorage["llama_songs"] = JSON.stringify(json);
+  for (i=0; i<json.length; i++) {
+    if (json[i].song_name === song_selected) {
+      json.splice(i, 1)
+      localStorage.llama_songs = JSON.stringify(json)
+    }
   }
   Create_Song_Dropdown()
 }
 
 function Create_Song_Dropdown () {
- var select_box = document.getElementById("song_dropdown")
- select_box.innerHTML = ""
- if (select_box) {
+  var select_box = document.getElementById("song_dropdown")
+  select_box.innerHTML = ""
+  if (select_box) {
     var current_songs = JSON.parse(localStorage.getItem("llama_songs"))
     if (current_songs) {
       var first_option = document.createElement("option")
@@ -1507,18 +1512,18 @@ function Create_Song_Dropdown () {
       first_option.innerHTML = "Select A Song..."
       select_box.appendChild(first_option)
       current_songs.forEach(function (current_song) {
-      var current_song_name_pre = JSON.stringify(current_song.song_name)
-      var current_song_url_pre = JSON.stringify(current_song.song_url)
-      var current_song_name = current_song_name_pre.replace(/['"]+/g, '')
-      var current_song_url = current_song_url_pre.replace(/['"]+/g, '')
-      if (current_song_name !== "Youtube_Name") {
-        var select_box = document.getElementById("song_dropdown")
-        var new_option = document.createElement("option")
-        new_option.setAttribute("value", current_song_url)
-        new_option.innerHTML = current_song_name
-        select_box.appendChild(new_option)
-       }
-     })
+        var current_song_name_pre = JSON.stringify(current_song.song_name)
+        var current_song_url_pre = JSON.stringify(current_song.song_url)
+        var current_song_name = current_song_name_pre.replace(/['"]+/g, "")
+        var current_song_url = current_song_url_pre.replace(/['"]+/g, "")
+        if (current_song_name !== "Youtube_Name") {
+          var select_box = document.getElementById("song_dropdown")
+          var new_option = document.createElement("option")
+          new_option.setAttribute("value", current_song_url)
+          new_option.innerHTML = current_song_name
+          select_box.appendChild(new_option)
+        }
+      })
     }
   } else {
     setTimeout(Create_Song_Dropdown, 3000)

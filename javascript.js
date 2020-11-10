@@ -450,7 +450,7 @@ function Button_Action (type) {
   } else if (type === "close") {
     body.classList.toggle("web")
     iframe.src = ""
-  } else if (clear === "clear") {
+  } else if (clear == "clear") {
     if (type === "clear_usercolor") {
       Save_Username_Color("reset")
     } else {

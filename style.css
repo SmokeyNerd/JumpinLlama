@@ -941,7 +941,9 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 /*-------------------------------------------------------------------------- LLAMA_INFO_IFRAME */
-
+.thememode .cams__RoomDescription {
+    color: var(--thememode-userlist);
+}
 #HW_JL_frame {
     background: #fff;
     border: none;
@@ -960,7 +962,7 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 .info_footer center small{
-    color: var(--thememode-buttontext);
+    color: var(--thememode-userlist);
 }
 
 .info_footer center a{

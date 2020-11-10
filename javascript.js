@@ -88,41 +88,41 @@ var green_bgcolor = "#042500"
 var green_bordercolor = "#217c16"
 var green_lightbgcolor = "#00500d"
 var green_textcolor = "#FFFFFF"
-var green_buttontext = "#FFFFFF"
+var green_buttontext = "#042500"
 var green_userlist = "#FFFFFF"
 
 var blue_bgcolor = "#111949"
 var blue_bordercolor = "#596ce0"
 var blue_lightbgcolor = "#2a388b"
 var blue_textcolor = "#FFFFFF"
-var blue_buttontext = "#FFFFFF"
+var blue_buttontext = "#111949"
 var blue_userlist = "#FFFFFF"
 
 var mauve_bgcolor = "#9168b2"
 var mauve_bordercolor = "#d6b7ef"
 var mauve_lightbgcolor = "#BF8FE5"
 var mauve_textcolor = "#000000"
-var mauve_buttontext = "#000000"
+var mauve_buttontext = "#9168b2"
 var mauve_userlist = "#000000"
 
 var orange_bgcolor = "#b33700"
 var orange_bordercolor = "#ff8d10"
 var orange_lightbgcolor = "#ff4f00"
 var orange_textcolor = "#000000"
-var orange_buttontext = "#000000"
+var orange_buttontext = "#b33700"
 var orange_userlist = "#000000"
 
 var red_bgcolor = "#590000"
 var red_bordercolor = "#d02323"
 var red_lightbgcolor = "#860000"
 var red_textcolor = "#FFFFFF"
-var red_buttontext = "#FFFFFF"
+var red_buttontext = "#590000"
 var red_userlist = "#FFFFFF"
 
 var purple_bgcolor = "#280048"
 var purple_bordercolor = "#b14fff"
 var purple_lightbgcolor = "#550098"
-var purple_textcolor = "#FFFFFF"
+var purple_textcolor = "#280048"
 var purple_buttontext = "#FFFFFF"
 var purple_userlist = "#FFFFFF"
 
@@ -130,7 +130,7 @@ var black_bgcolor = "#2C2F33"
 var black_bordercolor = "#23272a"
 var black_lightbgcolor = "#191919"
 var black_textcolor = "#FFFFFF"
-var black_buttontext = "#FFFFFF"
+var black_buttontext = "#7289da"
 var black_userlist = "#FFFFFF"
 
 var tech_bgcolor = "#000000"
@@ -907,9 +907,9 @@ function Create_Llama_Settings () {
   theme_menu.className = "shadow-sm"
   theme_menu.setAttribute("id", "llama_settings")
   theme_menu.innerHTML = `
-<div id="" style="width:100%; font-weight:600; color: var(--thememode-buttontext); border-bottom: 1px solid var(--thememode-bordercolor);">
+<div id="" style="width:100%; font-weight:600; color: var(--thememode-userlist); border-bottom: 1px solid var(--thememode-bordercolor);">
 <h2 style="margin-left: 20px;">Jumpinllama Settings</h2>
-<i class="fas fa-times fa-lg" style="float: right; top: 20px; right: 20px; position: absolute; color: var(--thememode-buttontext);" onclick="Exit_Box_Action()"></i>
+<i class="fas fa-times fa-lg" style="float: right; top: 20px; right: 20px; position: absolute; color: var(--thememode-userlist);" onclick="Exit_Box_Action()"></i>
 </div>
 <div id="llama_settings_inner" style="width:100%; margin:5px;"></div>
 `

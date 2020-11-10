@@ -2,26 +2,50 @@
 #llama_cam_settings,
 #llama_theme_settings,
 #llama_tube_settings,
-#notice_info,
+#llama_hide_settings,
+#llama_bg_settings,
+#llama_settings,
+#llama_notice_settings,
 .user_bg_settings {
   display:none;
+  margin-top: 3px;
+  width: 66%;
 }
 .open_llama_chat #llama_chat_settings,
 .open_llama_tube #llama_tube_settings,
 .open_llama_cam #llama_cam_settings,
 .open_llama_theme #llama_theme_settings,
-.open_llama_notice #notice_info,
+.open_llama_hide #llama_hide_settings,
+.open_llama_bg #llama_bg_settings,
+.open_llama_notice #llama_notice_settings,
 .user_bg .user_bg_settings {
+  display: inline-block;
+}
+.open_llama_settings #llama_settings {
   display:block;
 }
-#notice_info {
-  position: relative;
-  text-align: right;
-  top: 25px;
-  left: -8%;
+#llama_top_bar {
+  vertical-align: top;
+  display: inline-block;
+  width: 30%;
+  margin-right: 10px;
 }
-#LlamaOptions_Box {
-  border-radius:5px;
+#llama_settings {
+  margin: 0;
+  background: var(--thememode-bgcolor);
+  border: 1px solid var(--thememode-bordercolor);
+  border-radius: 5px;
+  position: absolute;
+  top: 110px;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, 0%);
+  width: 550px;
+  height: 450px;
+  z-index: 2000;
+}
+#llama_settings > div:nth-child(1) > i:hover {
+  cursor: pointer;3
 }
 .hide_header #LlamaOptions_Box {
   top: 45px !important;
@@ -152,39 +176,6 @@ input[type="color"]::-webkit-color-swatch {
     transform: scale(1.05);
 }
 
-.dark .settings_title {
-  background-color: #7c6f64;
-}
-.dark .settings_title:before {
-  border-bottom-color: #7c6f64;
-}
-.layout--horizontal .settings_title {
-    top: 10%;
-}
-.settings_title {
-    top: 73%;
-}
-.settings_title {
-    position: absolute;
-    background-color: #e8e8e8;
-    z-index: 5000;
-    padding: 2px 7px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px black;
-}
-
-.settings_title:before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-bottom: 5px solid #e8e8e8;
-    clear: both;
-}
-
 #llama_title_tube:before {
     right: 25px;
 }
@@ -248,16 +239,6 @@ input[type="color"]::-webkit-color-swatch {
     display:none;
     right: 26px;
 }
-
-#llama_popchat:hover + #llama_title_popchat,
-#llama_tube:hover + #llama_title_tube,
-#llama_chat:hover + #llama_title_chat,
-#llama_cam:hover + #llama_title_cam,
-#llama_theme:hover + #llama_title_theme {
-    display:inline-block !important;
-}
-
-
 
 /*-------------------------------------------------------------------------- COLOR_SQUARES */
 .userList__UserIcon > svg {
@@ -456,6 +437,7 @@ input[type="color"]::-webkit-color-swatch {
 
 /*-------------------------------------------------------------------------- EXIT_BOX */
 
+.open_llama_settings #Exit_Box,
 .open_llama_chat #Exit_Box,
 .open_llama_cam #Exit_Box,
 .open_llama_tube #Exit_Box,
@@ -464,7 +446,7 @@ input[type="color"]::-webkit-color-swatch {
   display:block;
   width: 100%;
   height: 100%;
-  background-color: transparent;
+  background: rgba(0,0,0,.5);
   z-index: 1000;
   position: absolute;
   top: 0px;
@@ -607,10 +589,7 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 .sub_llama {
-  background-color: #e7ecf2;
-}
-.dark .sub_llama {
-  background-color: #3c3836;
+  background-color: var(--thememode-bordercolor) !important;
 }
 
 /*-------------------------------------------------------------------------- JUMPIN_SETTINGS_BOX */
@@ -972,16 +951,24 @@ input[type="color"]::-webkit-color-swatch {
     border-radius: 4px;
     position: relative;
     z-index: 4000;
-    transition: height 0.3s ease-out;}
+    transition: height 0.3s ease-out;
+}
 .info_footer {
-  width:200px;
-    z-index: 4000;
-      background: white;
-    border-radius: 100px;
-    float: right;
-    position: relative;
-    /* left: 1px; */
-    display: block;
+    position: absolute;
+    bottom: 2px;
+    width: 29%;
+}
+
+.info_footer center small{
+    color: var(--thememode-buttontext);
+}
+
+.info_footer center a{
+    color: var(--thememode-buttontext);
+}
+
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
 }
 
 /*-------------------------------------------------------------------------- LLAMA_WINDOW_IFRAME */
@@ -1112,7 +1099,7 @@ input[type="color"]::-webkit-color-swatch {
 .thememode .cams__Header {
     background-color: var(--thememode-bgcolor) !important;
     background-image: var(--thememode-userbg) !important;
-  border-radius: 100px;
+    border-radius: 100px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
     background: #c7cfd9;
@@ -1120,8 +1107,110 @@ input[type="color"]::-webkit-color-swatch {
     border-right: 0px;
     border-color: var(--thememode-bordercolor);
 }
+.chat__LlamaOption {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 2px;
+    min-height: 27px;
+    border: 1px solid transparent;
+    border-color: var(--thememode-bordercolor);
+    background-color: var(--thememode-bordercolor);
+    color: var(--thememode-buttontext);
+}
+.chat__LlamaOption:hover {
+    margin-left: 17px;
+    font-weight: 600;
+    width:90%;
+    color: var(--thememode-textcolor);
+}
+.chat__LlamaOption:hover > i {
+    color: var(--thememode-textcolor);
+}
+#llama_settings input[type="text"],
+#song_dropdown {
+    height: 25px;
+    opacity: 1;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    padding-left: 7px;
+    background-color: var(--thememode-bgcolor);
+    border: 1px solid var(--thememode-bordercolor);
+    color: var(--thememode-textcolor); 
+}
+#song_dropdown > option:hover,
+select:active, select:hover {
+    outline-color: red;
+    background-color: var(--thememode-bordercolor);
+}
+#llama_settings input[type="text"]::placeholder {
+    color: var(--thememode-textcolor); 
+}
+.apply_btn {
+    cursor:pointer;
+    background: var(--thememode-bordercolor);
+    color: var(--thememode-textcolor);
+    border:0px;
+    border-radius: 10px;
+    width: 100%;
+}
+@media screen and (max-width: 640px) {
+#llama_settings {
+    width: 415px;
+}
+#llama_top_bar {
+    width: 90%;
+}
+.chat__LlamaOption:hover,
+.chat__LlamaOption {
+    width: unset;
+}
+#llama_top_bar > hr,
+.info_footer {
+ display:none;
+}
+#llama_chat_settings,
+#llama_cam_settings,
+#llama_theme_settings,
+#llama_tube_settings,
+#llama_hide_settings,
+#llama_bg_settings,
+#llama_notice_settings {
+  width: 98%;
+}
+  
+#llama_settings {
+    height: 75%;
+}
+}
+.thememode .dropdown__Option-header, 
+.thememode .dropdown__Option-header:hover {
+    background: var(--thememode-bgcolor) !important;
+}
+.thememode .no_hoverbg {
+    background-color: var(--thememode-lightbgcolor) !important;
+}
+.thememode .dropdown__Options {
+    border: 1px solid var(--thememode-bordercolor);
+}
+.thememode .no_hover {
+    background-color: var(--thememode-bordercolor) !important;
+}
+.thememode .dropdown__Option {
+    background-color: var(--thememode-lightbgcolor);
+    border-color: var(--thememode-bordercolor);
+    color: var(--thememode-textcolor);
+}
 .thememode .chat__HeaderOption {
-      border-radius: 5px;
+    border-radius: 5px;
     margin: 2px;
     min-height: 27px;
     border: 1px solid transparent;
@@ -1564,7 +1653,7 @@ html::-webkit-scrollbar-thumb {
 
 @font-face {
   font-family: 'RobotoMono NF';
-    src: url('https://cdn.jsdelivr.net/gh/ryanoasis/nerd-fonts@5f748cdb104a241ec8ac229f24518f3f867e8eb2/patched-fonts/RobotoMono/Regular/complete/Roboto%20Mono%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf') format('truetype');
+  src: url('https://cdn.jsdelivr.net/gh/ryanoasis/nerd-fonts@5f748cdb104a241ec8ac229f24518f3f867e8eb2/patched-fonts/RobotoMono/Regular/complete/Roboto%20Mono%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   letter-spacing: -0.1em;

@@ -17,11 +17,16 @@ function Start_The_Llama () {
     var loc = window.location.toString()
     var pageName = loc.split("/")[3]
     if (pageName !== "" && pageName !== "directory" && pageName !== "support" && pageName !== "profile" && pageName !== "messages" && pageName !== "settings") {
+
       Create_Element_IDs()
+      
+      Create_Top_Setting_Box()
+      Create_Llama_Settings()
+      
       Create_Top_Icons()
       Create_Bottom_Icons()
 
-      Create_Top_Setting_Box()
+      Create_Llama_Settings_Icon()
 
       Create_Llama_Window()
       Load_Draggables()
@@ -31,6 +36,7 @@ function Start_The_Llama () {
       Create_Tube_Settings()
       Create_Theme_Settings()
       Create_BG_Settings()
+      Create_Hide_Settings()
 
       Create_Cheers()
 
@@ -59,7 +65,7 @@ var user_checkbox_settings = ["robo", "bubble", "hide_chat", "hide_userlist", "l
   "chatbg_cover", "chatbg_center", "chatbg_repeat", "userbg_cover", "userbg_center", "userbg_repeat",
   "override_chatcolor", "override_username", "override_user_bg", "hide_emojis", "hide_gifts", "rounded_cams"]
 var user_button_settings = ["audioonly_yt", "miniyt"]
-var top_buttons = ["chat", "cam", "theme", "notice", "tube"]
+var top_buttons = ["chat", "cam", "theme", "notice", "tube", "settings_icon", "hide", "bg"]
 var btmbuttons = ["poprestore", "web", "hideweb"]
 var checkbox_actions = ["robo", "bubble", "hide_chat", "hide_userlist", "ltr", "cheers", "border", "spacing", "user_bg",
   "trans_chat", "trans_users", "hide_usernames", "cambg_cover", "cambg_center", "cambg_repeat",
@@ -75,56 +81,56 @@ var pink_bgcolor = "#ffd1dc"
 var pink_bordercolor = "#ea98ab"
 var pink_lightbgcolor = "#ffe1e6"
 var pink_textcolor = "#FFFFFF"
-var pink_buttontext = "#ffd1dc"
+var pink_buttontext = "#FFFFFF"
 var pink_userlist = "#FFFFFF"
 
 var green_bgcolor = "#042500"
 var green_bordercolor = "#217c16"
 var green_lightbgcolor = "#00500d"
 var green_textcolor = "#FFFFFF"
-var green_buttontext = "#042500"
+var green_buttontext = "#FFFFFF"
 var green_userlist = "#FFFFFF"
 
 var blue_bgcolor = "#111949"
 var blue_bordercolor = "#596ce0"
 var blue_lightbgcolor = "#2a388b"
 var blue_textcolor = "#FFFFFF"
-var blue_buttontext = "#111949"
+var blue_buttontext = "#FFFFFF"
 var blue_userlist = "#FFFFFF"
 
 var mauve_bgcolor = "#9168b2"
 var mauve_bordercolor = "#d6b7ef"
 var mauve_lightbgcolor = "#BF8FE5"
 var mauve_textcolor = "#000000"
-var mauve_buttontext = "#9168b2"
+var mauve_buttontext = "#000000"
 var mauve_userlist = "#000000"
 
 var orange_bgcolor = "#b33700"
 var orange_bordercolor = "#ff8d10"
 var orange_lightbgcolor = "#ff4f00"
 var orange_textcolor = "#000000"
-var orange_buttontext = "#b33700"
+var orange_buttontext = "#000000"
 var orange_userlist = "#000000"
 
 var red_bgcolor = "#590000"
 var red_bordercolor = "#d02323"
 var red_lightbgcolor = "#860000"
 var red_textcolor = "#FFFFFF"
-var red_buttontext = "#590000"
+var red_buttontext = "#FFFFFF"
 var red_userlist = "#FFFFFF"
 
 var purple_bgcolor = "#280048"
 var purple_bordercolor = "#b14fff"
 var purple_lightbgcolor = "#550098"
 var purple_textcolor = "#FFFFFF"
-var purple_buttontext = "#280048"
+var purple_buttontext = "#FFFFFF"
 var purple_userlist = "#FFFFFF"
 
 var black_bgcolor = "#2C2F33"
 var black_bordercolor = "#23272a"
 var black_lightbgcolor = "#191919"
 var black_textcolor = "#FFFFFF"
-var black_buttontext = "#7289da"
+var black_buttontext = "#FFFFFF"
 var black_userlist = "#FFFFFF"
 
 var tech_bgcolor = "#000000"
@@ -240,8 +246,11 @@ function Create_Element_IDs () {
   var chat_drag = document.getElementsByClassName("chat")[0]
   chat_drag.id = "chat"
 
-  var up_bar = document.getElementsByClassName("chat__HeaderOptions")[1]
-  up_bar.id = "chat__HeaderOptions"
+  // var up_bar = document.getElementsByClassName("chat__HeaderOptions")[1]
+  // up_bar.id = "chat__HeaderOptions"
+
+  var settings_bar = document.getElementsByClassName("chat__HeaderOptions")[1]
+  settings_bar.id = "settings_bar"
 
   var info = document.getElementsByClassName("roomHeader__UserActions")[0]
   info.id = "info_box"
@@ -252,30 +261,34 @@ function Create_Element_IDs () {
 
 // ------------------------------------ ACTION : TOP BAR ACTION -----------------------------*/
 function Top_Bar_Action (type) {
-  body.classList.toggle("open_llama_" + type)
-  top_buttons.forEach(function (top_button) {
-    if (top_button !== type) {
-      body.classList.remove("open_llama_" + top_button)
-      var current_theme_selected = localStorage.getItem("thememode")
-      var custom_status = localStorage.getItem("custom_box_status")
-      if (type === "theme" && current_theme_selected === "custom" && custom_status === "open") {
-        Toggle_Custom_Box("off")
-        localStorage.setItem("custom_box_status", "closed")
-      } else if (type === "theme" && current_theme_selected === "custom" && custom_status === "closed") {
-        Toggle_Custom_Box("on")
-        localStorage.setItem("custom_box_status", "open")
-      } else {
-        Toggle_Custom_Box("off")
-        localStorage.setItem("custom_box_status", "closed")
-      }
+  if (type === "settings_icon") {
+    body.classList.toggle("open_llama_settings")
+  } else {
+    body.classList.toggle("open_llama_" + type)
+    top_buttons.forEach(function (top_button) {
+      if (top_button !== type) {
+        body.classList.remove("open_llama_" + top_button)
+        var current_theme_selected = localStorage.getItem("thememode")
+        var custom_status = localStorage.getItem("custom_box_status")
+        if (type === "theme" && current_theme_selected === "custom" && custom_status === "open") {
+          Toggle_Custom_Box("off")
+          localStorage.setItem("custom_box_status", "closed")
+        } else if (type === "theme" && current_theme_selected === "custom" && custom_status === "closed") {
+          Toggle_Custom_Box("on")
+          localStorage.setItem("custom_box_status", "open")
+        } else {
+          Toggle_Custom_Box("off")
+          localStorage.setItem("custom_box_status", "closed")
+        }
 
-      if (type === "notice") {
-        var info_frame = document.getElementById("HW_JL_frame")
-        var home = "https://headway-widget.net/widgets/7XkGbx"
-        info_frame.src = home
+        if (type === "notice") {
+          var info_frame = document.getElementById("HW_JL_frame")
+          var home = "https://headway-widget.net/widgets/7XkGbx"
+          info_frame.src = home
+        }
       }
-    }
-  })
+    })
+  }
 }
 
 // ------------------------------------ ACTION : BOTTOM BAR ACTION --------------------------*/
@@ -668,30 +681,23 @@ body.llama_window {overflow:hidden;}
 </style>
 <div id="mydiv" style="display:none;">
 <div id="mydivheader">
-
 <div id="game_head" class="game_head">
 <div id ="window_title" class="window_title" style="display: inline-block; margin-right: 150px;">Llama Window</div>
-
 <div id="control_grp" class="">
 <div id="llama_min" class="tube_btn" style="" title="Minimize">
 <i class="fas fa-window-minimize"></i>
 </div>
-
 <div id="llama_res" class="tube_btn" style="padding:0px;" title="Restore Hover Effect">
 <i class="far fa-window-restore"></i>
 </div>
-
 <div id="llama_max" class="tube_btn" style="padding:0px;" title="Maximize/Lock Open">
 <i class="fas fa-window-maximize"></i>
 </div>
-
 <div id="llama_close" class="tube_btn" style="padding:0px;" title="Close">
 <i class="far fa-window-close"></i>
 </div>
 </div>
-
 </div>
-
 </div>
 <div id="iframe_box">
 <div id="container2">
@@ -699,7 +705,6 @@ body.llama_window {overflow:hidden;}
 </div>
 </div>
 </div>
-
 <div id="toggle_menu" style="background-color:transparent !important;border-color:transparent !important;"></div>
 `
   Llama_Window.setAttribute("id", "llama_window")
@@ -737,7 +742,6 @@ function Create_Custom_Mode () {
                 <span>Userlist Text</span>
                 <input type="color" name="colorpicker" id="llama_userlist" value="#000000" style="width: 20px;border-radius: 3px;height: 18px;padding: 0px;" onchange="Save_Llama_Color()"></input>
             </span>
-
             <span class="dropdown__Option no_hoverbg">
                 <input id="llama_reset" type="button" style="background: #5a6370;color: #fff;border:0px;cursor:pointer;border-radius: 10px;width: 150px;" value="RESET"/>
                 </span>
@@ -779,6 +783,7 @@ function Exit_Box_Action () {
   localStorage.setItem("custom_box_status", "closed")
   top_buttons.forEach(function (top_button) {
     body.classList.remove("open_llama_" + top_button)
+    body.classList.remove("open_llama_settings")
   })
 }
 
@@ -787,23 +792,19 @@ function Create_Top_Setting_Box () {
   var chat_menu = document.createElement("div")
   chat_menu.className = ""
   chat_menu.setAttribute("id", "LlamaOptions_Box")
-  chat_menu.setAttribute(
-    "style",
-    "display: block; top: 95px; position: absolute; right: 11px; border-radius: 3px; z-index: 2000;"
-  )
   chat_menu.innerHTML = ""
   document.body.appendChild(chat_menu)
 }
 
 // ------------------------------------ CREATE : CHAT SETTINGS ------------------------------*/
 function Create_Chat_Settings () {
-  var option_box = document.getElementById("LlamaOptions_Box")
+  var option_box = document.getElementById("llama_settings_inner")
   var chat_menu = document.createElement("div")
   chat_menu.className = ""
   chat_menu.setAttribute("id", "llama_chat_settings")
   chat_menu.innerHTML = `
 <div class="dropdown__Options">
-<div class="dropdown__Option dropdown__Option-header">Chat settings</div>
+<div class="dropdown__Option dropdown__Option-header">Chat Options</div>
 <span class="dropdown__Option" id="llama_robo">Roboto Font<input id="llama_robo_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_bubble">Bubble Chat<input id="llama_bubble_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_cheers">Cheers Button<input id="llama_cheers_checkbox" class="jic-checkbox" type="checkbox"></span>
@@ -812,40 +813,47 @@ function Create_Chat_Settings () {
 <span style="">Chat Color</span><input type="color" name="colorpicker" value="#000000" onchange="Button_Action('apply_chat_color')" id="llama_clear_chatcolorsrc" style="opacity: 1;cursor: pointer; width: 20px;height:20px;border-radius: 2px;padding: 0px;"/>
 </span>
 </div>
+`
+  option_box.appendChild(chat_menu)
+}
 
-<div class="dropdown__Options" style="margin-top: 5px;">
+// ------------------------------------ CREATE : HIDE SETTINGS -------------------------------*/
+function Create_Hide_Settings () {
+  var option_box = document.getElementById("llama_settings_inner")
+  var cam_menu = document.createElement("div")
+  cam_menu.className = ""
+  cam_menu.setAttribute("id", "llama_hide_settings")
+  cam_menu.innerHTML = `
+<div class="dropdown__Options">
 <div class="dropdown__Option dropdown__Option-header">Hide Elements</div>
+<span class="dropdown__Option" id="llama_border">Cam Borders<input id="llama_border_checkbox" class="jic-checkbox" type="checkbox"></span>
+<span class="dropdown__Option" id="llama_spacing">Cam Spacing<input id="llama_spacing_checkbox" class="jic-checkbox" type="checkbox"></span>
+<span class="dropdown__Option" id="llama_hide_usernames">Cam Usernames<input id="llama_hide_usernames_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_hide_chat">Chatbox<input id="llama_hide_chat_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_hide_userlist">Userlist<input id="llama_hide_userlist_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_hide_emojis">Emojis Button<input id="llama_hide_emojis_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_hide_gifts">Gifts Button<input id="llama_hide_gifts_checkbox" class="jic-checkbox" type="checkbox"></span>
-</div>`
-  option_box.appendChild(chat_menu)
+</div>
+<div>
+
+`
+  option_box.appendChild(cam_menu)
 }
 
 // ------------------------------------ CREATE : CAM SETTINGS -------------------------------*/
 function Create_Cam_Settings () {
-  var option_box = document.getElementById("LlamaOptions_Box")
+  var option_box = document.getElementById("llama_settings_inner")
   var cam_menu = document.createElement("div")
   cam_menu.className = ""
   cam_menu.setAttribute("id", "llama_cam_settings")
   cam_menu.innerHTML = `
 <div class="dropdown__Options">
-<div class="dropdown__Option dropdown__Option-header">Cam Settings</div>
-
+<div class="dropdown__Option dropdown__Option-header">Cam Options</div>
 <span class="dropdown__Option" id="llama_rounded_cams">Rounded Cams<input id="llama_rounded_cams_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_override_username">Custom Name Color<input id="llama_override_username_checkbox" class="jic-checkbox" type="checkbox"></span>
-
 <span class="dropdown__Option sub_llama" id="llama_username_color">
 <span style="">Username Color</span><input type="color" name="colorpicker" value="#000000" onchange="Button_Action('apply_colors')" id="llama_clear_usercolorsrc" style="opacity: 1;cursor: pointer; width: 20px;height:20px;border-radius: 2px;padding: 0px;"/>
 </span>
-</div>
-
-<div class="dropdown__Options" style="margin-top: 5px;">
-<div class="dropdown__Option dropdown__Option-header">Hide Cam Elements</div>
-<span class="dropdown__Option" id="llama_border">Borders<input id="llama_border_checkbox" class="jic-checkbox" type="checkbox"></span>
-<span class="dropdown__Option" id="llama_spacing">Spacing<input id="llama_spacing_checkbox" class="jic-checkbox" type="checkbox"></span>
-<span class="dropdown__Option" id="llama_hide_usernames">Usernames<input id="llama_hide_usernames_checkbox" class="jic-checkbox" type="checkbox"></span>
 </div>
 `
   option_box.appendChild(cam_menu)
@@ -853,50 +861,65 @@ function Create_Cam_Settings () {
 
 // ------------------------------------ CREATE : TUBE SETTINGS -------------------------------*/
 function Create_Tube_Settings () {
-  var option_box = document.getElementById("LlamaOptions_Box")
+  var option_box = document.getElementById("llama_settings_inner")
   var tube_menu = document.createElement("div")
   tube_menu.className = ""
   tube_menu.setAttribute("id", "llama_tube_settings")
   tube_menu.innerHTML = `
-<div class="dropdown__Options">
-<div class="dropdown__Option dropdown__Option-header">Tube Settings</div>
+<div class="dropdown__Options" style="margin-bottom: 5px;">
+<div class="dropdown__Option dropdown__Option-header">Save A Song</div>
+<span class="dropdown__Option no_hover">
+<input type="text" id="llama_new_song_name" autocomplete="off" placeholder="Link Name..." style=""/>
+</span>
+<span class="dropdown__Option no_hover">
+<input type="text" id="llama_new_song_url" pautocomplete="off" placeholder="Youtube URL..."/>
+</span>
+<span class="dropdown__Option no_hoverbg">
+<input id="llama_save_song" type="button" value="＋ Add Song" class="apply_btn" onclick="Save_New_Song()"/>
+</span>
+</div>
 
-
+<div class="dropdown__Options" style="margin-bottom: 5px;">
+<div class="dropdown__Option dropdown__Option-header">Manage Saves</div>
 <span class="dropdown__Option no_hoverbg">
 <select id="song_dropdown" style="width: 100%; border-radius: 10px;">
 </select>
 </span>
-
 <span class="dropdown__Option no_hoverbg">
-<input id="llama_play_song" type="button" value="▶ Play Song" style="cursor:pointer;background: #5a6370; color: #fff; border:0px; border-radius: 10px;width: 100%;" onclick="Check_For_Youtube()"/>&nbsp;&nbsp;
-<input id="llama_delete_song" type="button" value="✘ Delete Song" style="cursor:pointer;background: #5a6370; color: #fff; border:0px; border-radius: 10px;width: 100%;" onclick="Delete_Song_Dropdown()"/>
+<input id="llama_play_song" type="button" value="▶ Play Song" class="apply_btn" onclick="Check_For_Youtube()"/>&nbsp;&nbsp;
+<input id="llama_delete_song" type="button" value="✘ Delete Song" class="apply_btn" onclick="Delete_Song_Dropdown()"/>
 </span>
-
 </div>
 
-<div class="dropdown__Options" style="margin-top: 5px;">
-<div class="dropdown__Option dropdown__Option-header">Save A Song</div>
-<span class="dropdown__Option no_hover">
-<input type="text" id="llama_new_song_name" autocomplete="off" placeholder="Link Name..." style="opacity: 1;cursor: pointer; width: 100%;border-radius: 2px;border: 1px solid #ccc;"/>
-</span>
-
-<span class="dropdown__Option no_hover">
-<input type="text" id="llama_new_song_url" pautocomplete="off" placeholder="Youtube URL..." style="opacity: 1;cursor: pointer; width: 100%;border-radius: 2px;border: 1px solid #ccc;"/>
-</span>
-
-<span class="dropdown__Option no_hoverbg">
-<input id="llama_save_song" type="button" value="＋ Add Song" style="cursor:pointer;background: #5a6370; color: #fff; border:0px; border-radius: 10px;width: 100%;" onclick="Save_New_Song()"/>
-</span>
-
+<div class="dropdown__Options">
+<div class="dropdown__Option dropdown__Option-header">Tube Options - COMING SOON!</div>
+<span class="dropdown__Option" id="llama_override_username">
+<s>Add Youtube Play Box to Page</s><input id="" class="jic-checkbox" type="checkbox"></span>
 </div>
-
 `
   option_box.appendChild(tube_menu)
 }
 
+// ------------------------------------ CREATE : LLAMA SETTINGS -----------------------------*/
+function Create_Llama_Settings () {
+  var option_box = document.getElementById("LlamaOptions_Box")
+  var theme_menu = document.createElement("div")
+  theme_menu.className = "shadow-sm"
+  theme_menu.setAttribute("id", "llama_settings")
+  theme_menu.innerHTML = `
+<div id="" style="width:100%; font-weight:600; color: var(--thememode-buttontext); border-bottom: 1px solid var(--thememode-bordercolor);">
+<h2 style="margin-left: 20px;">Jumpinllama Settings</h2>
+<i class="fas fa-times fa-lg" style="float: right; top: 20px; right: 20px; position: absolute; color: var(--thememode-buttontext);" onclick="Exit_Box_Action()"></i>
+</div>
+<div id="llama_settings_inner" style="width:100%; margin:5px;"></div>
+`
+  option_box.appendChild(theme_menu)
+}
+
+
 // ------------------------------------ CREATE : THEME SETTINGS -----------------------------*/
 function Create_Theme_Settings () {
-  var option_box = document.getElementById("LlamaOptions_Box")
+  var option_box = document.getElementById("llama_settings_inner")
   var theme_menu = document.createElement("div")
   theme_menu.className = ""
   theme_menu.setAttribute("id", "llama_theme_settings")
@@ -904,27 +927,28 @@ function Create_Theme_Settings () {
 <div class="dropdown__Options">
 <div class="dropdown__Option dropdown__Option-header">Preset Themes</div>
 <label class="dropdown__Option no_hoverbg">
-<div class="color_square default_mode" onclick="Toggle_Theme('default')" title="default" style="width: 100%;border-radius:20px;">
+<div class="color_square default_mode apply_btn" onclick="Toggle_Theme('default')" title="default" style="width: 100%;border-radius:20px;">
 <span style="position: relative; top: 3px;">Default
 </span></div>
 </label>
-<label class="dropdown__Option no_hoverbg">
+<label class="dropdown__Option no_hover">
 <div class="color_square pink_mode" onclick="Toggle_Theme('pink')" title="pink"></div>
 <div class="color_square green_mode" onclick="Toggle_Theme('green')" title="green"></div>
 <div class="color_square blue_mode" onclick="Toggle_Theme('blue')" title="blue"></div>
 <div class="color_square mauve_mode" onclick="Toggle_Theme('mauve')" title="mauve"></div>
 <div class="color_square orange_mode" onclick="Toggle_Theme('orange')" title="orange"></div>
 <div class="color_square red_mode" onclick="Toggle_Theme('red')" title="red"></div>
-</label>
-<label class="dropdown__Option no_hoverbg">
 <div class="color_square purple_mode" onclick="Toggle_Theme('purple')" title="purple"></div>
 <div class="color_square black_mode" onclick="Toggle_Theme('black')" title="matte black"></div>
+</label>
+
+<label class="dropdown__Option no_hover">
 <div class="color_square buds_mode" onclick="Toggle_Theme('buds')" title="buds"></div>
 <div class="color_square splat_mode" onclick="Toggle_Theme('splat')" title="splat"></div>
 <div class="color_square tech_mode" onclick="Toggle_Theme('tech')" title="tech"></div>
 </label>
 <label class="dropdown__Option no_hoverbg">
-<div class="color_square cust_mode" onclick="Toggle_Theme('custom')" title="custom" style="width: 100%;border-radius:20px;">
+<div class="color_square cust_mode apply_btn" onclick="Toggle_Theme('custom')" title="custom" style="width: 100%;border-radius:20px;">
 <span style="position: relative; top: 3px;">Custom Mode
 <span class="on">ON</span>
 <span class="off">OFF</span>
@@ -932,106 +956,102 @@ function Create_Theme_Settings () {
 </div>
 </label>
 </div>
-
 <div class="dropdown__Options" style="margin-top:5px;">
 <div class="dropdown__Option dropdown__Option-header">Theme Settings</div>
 <span class="dropdown__Option" id="llama_ltr">LTR Mode<input id="llama_ltr_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_override_user_bg">Custom BG Color<input id="llama_override_user_bg_checkbox" class="jic-checkbox" type="checkbox"></span>
-
 <span class="dropdown__Option sub_llama" id="llama_user_bgcolor">
 <span style="">Background Color</span>
 <input type="color" name="colorpicker" value="#000000" onchange="Button_Action('apply_bgcolors')" id="llama_clear_user_bgcolorsrc" style="opacity: 1;cursor: pointer; width: 20px;height:20px;border-radius: 2px;padding: 0px;"/>
 </span>
-
-
 <span class="dropdown__Option" id="llama_trans_chat">Transparent Chat<input id="llama_trans_chat_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_trans_users">Transparent Users<input id="llama_trans_users_checkbox" class="jic-checkbox" type="checkbox"></span>
-<span class="dropdown__Option" id="llama_user_bg">Background Images<input id="llama_user_bg_checkbox" class="jic-checkbox" type="checkbox"></span>
-
 </div>
-
 `
   option_box.appendChild(theme_menu)
 }
 
 // ------------------------------------ CREATE : BG IMAGE SETTINGS -----------------------------*/
 function Create_BG_Settings () {
-  var option_box = document.getElementById("LlamaOptions_Box")
+  var option_box = document.getElementById("llama_settings_inner")
   var theme_menu = document.createElement("div")
-  theme_menu.className = "dropdown__Options"
   theme_menu.setAttribute("id", "llama_bg_settings")
-  theme_menu.setAttribute("style", "margin-top:5px;")
   theme_menu.innerHTML = `
-<style>
-.open_llama_theme.user_bg #llama_bg_settings {
-display:block;
-}
+<div class="dropdown__Options" style="margin-bottom:5px;">
+<div class="dropdown__Option dropdown__Option-header">Enable/Disable Images</div>
+<span class="dropdown__Option" id="llama_user_bg">Background Images<input id="llama_user_bg_checkbox" class="jic-checkbox" type="checkbox"></span>
+</div>
 
-#llama_bg_settings {
-display:none;
-
-}
-
-</style>
-<div class="dropdown__Option dropdown__Option-header">BG Image Settings</div>
-
+<div class="dropdown__Options" style="margin-bottom:5px;">
+<div class="dropdown__Option dropdown__Option-header">CAM BG Image URL <i class="fas fa-video" style="color: var(--thememode-textcolor);"></i></div>
 <span class="dropdown__Option no_hoverbg">
-<i class="fas fa-video" style="color:#5a6370;"></i>
-<span style="position: relative; left: -34px;">CAM BG Image URL</span>
+<input id="llama_cambg_settings" title="Cam BG Settings" type="button" value="⚙" style="cursor:pointer;background: var(--thememode-bgcolor);color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-right-radius:0px; border-bottom-right-radius:0px;"/>
+<input type='text' name="server" id="llama_clear_cambg" placeholder="URL to image.."/>
+<input id="llama_clear_cam" title="Clear Cam BG"type="button" value="✘" style="cursor:pointer;background: var(--thememode-bgcolor);color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
 </span>
-
-<span class="dropdown__Option no_hover">
-<input id="llama_cambg_settings" title="Cam BG Settings" type="button" value="⚙" style="cursor:pointer;background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-right-radius:0px; border-bottom-right-radius:0px;"/>
-<input type='text' name="server" id="llama_clear_cambg" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 130px;border-radius: 2px;border: 1px solid #ccc;"/>
-<input id="llama_clear_cam" title="Clear Cam BG"type="button" value="✘" style="cursor:pointer;background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
-</span>
-
 <div id="cambg_settings">
 <span class="dropdown__Option" id="llama_cambg_cover">Cover Screen<input id="llama_cambg_cover_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
 <span class="dropdown__Option" id="llama_cambg_center">Center Image<input id="llama_cambg_center_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
 <span class="dropdown__Option" id="llama_cambg_repeat">Disable Repeat<input id="llama_cambg_repeat_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
 </div>
+</div>
 
+<div class="dropdown__Options" style="margin-bottom:5px;">
+<div class="dropdown__Option dropdown__Option-header">CHAT BG Image URL <i class="fas fa-comments" style="color: var(--thememode-textcolor);"></i></div>
 <span class="dropdown__Option no_hoverbg">
-<i class="fas fa-comments" style="color:#5a6370;"></i>
-<span style="position: relative; left: -28px;">CHAT BG Image URL</span>
+<input id="llama_chatbg_settings" title="Chat BG Settings" type="button" value="⚙" style="cursor:pointer;background: var(--thememode-bgcolor);color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-right-radius:0px; border-bottom-right-radius:0px;"/>
+<input type='text' name="server" id="llama_clear_chatbg" placeholder="URL to image.."/>
+<input id="llama_clear_chat" title="Clear Chat BG" type="button" value="✘" style="cursor:pointer;background: var(--thememode-bgcolor);color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
 </span>
-
-<span class="dropdown__Option no_hover">
-<input id="llama_chatbg_settings" title="Chat BG Settings" type="button" value="⚙" style="cursor:pointer;background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-right-radius:0px; border-bottom-right-radius:0px;"/>
-<input type='text' name="server" id="llama_clear_chatbg" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 130px;border-radius: 2px;border: 1px solid #ccc;"/>
-<input id="llama_clear_chat" title="Clear Chat BG" type="button" value="✘" style="cursor:pointer;background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
-</span>
-
 <div id="chatbg_settings">
 <span class="dropdown__Option" id="llama_chatbg_cover">Cover Screen<input id="llama_chatbg_cover_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
 <span class="dropdown__Option" id="llama_chatbg_center">Center Image<input id="llama_chatbg_center_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
 <span class="dropdown__Option" id="llama_chatbg_repeat">Disable Repeat<input id="llama_chatbg_repeat_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
 </div>
+</div>
 
+<div class="dropdown__Options" style="margin-bottom:5px;">
+<div class="dropdown__Option dropdown__Option-header">USERS BG Image URL <i class="fas fa-users" style="color: var(--thememode-textcolor);"></i></div>
 <span class="dropdown__Option no_hoverbg">
-<i class="fas fa-users" style="color:#5a6370;"></i>
-<span style="position: relative; left: -19px;">USERS BG Image URL</span>
+<input id="llama_userbg_settings" title="User BG Settings" type="button" value="⚙" style="cursor:pointer;background: var(--thememode-bgcolor);color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-right-radius:0px; border-bottom-right-radius:0px;"/>
+<input type='text' name="server" id="llama_clear_userbg" placeholder="URL to image.."/>
+<input id="llama_clear_user" title="Clear User BG" type="button" value="✘" style="cursor:pointer;background: var(--thememode-bgcolor);color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
 </span>
-
-<span class="dropdown__Option no_hover">
-<input id="llama_userbg_settings" title="User BG Settings" type="button" value="⚙" style="cursor:pointer;background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-right-radius:0px; border-bottom-right-radius:0px;"/>
-<input type='text' name="server" id="llama_clear_userbg" placeholder="URL to image.." style="opacity: 1;cursor: pointer; width: 130px;border-radius: 2px;border: 1px solid #ccc;"/>
-<input id="llama_clear_user" title="Clear User BG" type="button" value="✘" style="cursor:pointer;background: #5a6370;color: #fff;border:0px;border-radius: 10px;width: 15%;border: 0px; border-top-left-radius:0px; border-bottom-left-radius:0px;"/>
-</span>
-
 <div id="userbg_settings">
 <span class="dropdown__Option" id="llama_userbg_cover">Cover Screen<input id="llama_userbg_cover_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
 <span class="dropdown__Option" id="llama_userbg_center">Center Image<input id="llama_userbg_center_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
 <span class="dropdown__Option" id="llama_userbg_repeat">Disable Repeat<input id="llama_userbg_repeat_checkbox" class="jic-checkbox" type="checkbox" style="cursor:pointer;"></span>
 </div>
+</div>
 
+<div class="dropdown__Options" style="margin-bottom:5px;">
 <span class="dropdown__Option no_hoverbg">
-<input id="llama_apply_images" type="button" value="✔ Apply Images" style="cursor:pointer;background: #5a6370; color: #fff; border:0px; border-radius: 10px;width: 100%;"/>
+<input id="llama_apply_images" type="button" value="✔ Apply Images" class="apply_btn"/>
 </span>
-
+</div>
 `
   option_box.appendChild(theme_menu)
+}
+
+// ------------------------------------ CREATE : LLAMA SETTINGS ICONS -------------------------------*/
+function Create_Llama_Settings_Icon () {
+  var jumpin_settings = document.getElementById("settings_bar")
+  var jumpin_settings_button = document.getElementById("settings_bar")
+  var llama_settings_btns = document.createElement("button")
+  llama_settings_btns.className = "button chat__HeaderOption"
+  llama_settings_btns.setAttribute("type", "button")
+  llama_settings_btns.setAttribute("id", "llama_settings_icon")
+  llama_settings_btns.setAttribute("title", "llama_settings")
+  llama_settings_btns.innerHTML = `
+<i class="fas fa-cogs"></i>
+`
+  jumpin_settings.appendChild(llama_settings_btns)
+  jumpin_settings.insertBefore(llama_settings_btns, null)
+  jumpin_settings.insertBefore(
+    llama_settings_btns,
+    jumpin_settings.childNodes[3] || null
+  )
+  
 }
 
 // ------------------------------------ CREATE : BOTTOM ICONS -------------------------------*/
@@ -1045,32 +1065,25 @@ function Create_Bottom_Icons () {
 <label class="button chat__HeaderOption LlamaOption_poprestore" id="llama_poprestore" title="Restore PopChat" style="display:none">
 <i class="fas fa-window-restore"></i>
 </label>
-
 <label class="button chat__HeaderOption LlamaOption_miniyt" id="llama_miniyt" title="Mini Youtube Player">
 <i class="fa fa-compress-arrows-alt"></i>
 </label>
-
 <label class="button chat__HeaderOption LlamaOption_audioonly_yt" id="llama_audioonly_yt" title="Audio Only Youtube Player">
 <i class="fas fa-music"></i>
 </label>
-
 <label class="button chat__HeaderOption" id="llama_web" title="Llama Browse">
 <i class="fas fa-location-arrow"></i>
 </label>
-
 <div class="llama_web" id="llama_window">
 <label class="button chat__HeaderOption" id="llama_hideweb" title="Exit Window Mode">
 <i class="fas fa-sign-out-alt"></i>
 </label>
-
 <label class="button chat__HeaderOption" id="llama_games" title="Mini Game Window">
 <i class="fas fa-gamepad"></i>
 </label>
-
 <label class="button chat__HeaderOption" id="llama_tiny" title="Youtube Back Up">
 <i class="fab fa-youtube"></i>
 </label>
-
 </div>
 `
   bottom_bar.appendChild(buttom_btns)
@@ -1083,35 +1096,54 @@ function Create_Bottom_Icons () {
 
 // ------------------------------------ CREATE : TOP ICONS ----------------------------------*/
 function Create_Top_Icons () {
-  var top_bar = document.getElementById("chat__HeaderOptions")
+  var top_bar = document.getElementById("llama_settings_inner")
   var top_btns = document.createElement("div")
   top_btns.className = ""
   top_btns.setAttribute("id", "llama_top_bar")
   top_btns.innerHTML = `
-<label class="button chat__HeaderOption" id="llama_tube">
-<i class="fas fa-play-circle"></i>
+<label class="button chat__LlamaOption" id="llama_theme">
+<i class="fa fa-palette"></i> &nbsp; Themes
 </label>
-<span class="settings_title" id="llama_title_tube">Tube Settings</span>
 
-<label class="button chat__HeaderOption" id="llama_popchat">
-<i class="fas fa-window-restore"></i>
+<label class="button chat__LlamaOption" id="llama_bg">
+<i class="fas fa-images"></i> &nbsp; User Images
 </label>
-<span class="settings_title" id="llama_title_popchat">Popchat</span>
 
-<label class="button chat__HeaderOption LlamaOption_chat" id="llama_chat">
-<i class="fa fa-user-cog"></i>
+<label class="button chat__LlamaOption LlamaOption_chat" id="llama_chat">
+<i class="fa fa-user-cog"></i> &nbsp; Chat Options
 </label>
-<span class="settings_title" id="llama_title_chat">Chat Settings</span>
 
-<label class="button chat__HeaderOption" id="llama_cam">
-<i class="fa fa-th-large"></i>
+<label class="button chat__LlamaOption" id="llama_cam">
+<i class="fa fa-th-large"></i> &nbsp; Cam Options
 </label>
-<span class="settings_title" id="llama_title_cam">Cam Settings</span>
 
-<label class="button chat__HeaderOption" id="llama_theme">
-<i class="fa fa-palette"></i>
+<label class="button chat__LlamaOption" id="llama_hide">
+<i class="fas fa-eye-slash"></i> &nbsp; Hide Elements
 </label>
-<span class="settings_title" id="llama_title_theme">Theme Settings</span>
+
+<hr style="border:1px solid var(--thememode-bordercolor); margin-left: 5px; margin-right: 5px;">
+
+<label class="button chat__LlamaOption" id="llama_tube">
+<i class="fas fa-play-circle"></i> &nbsp; Tuber Saver
+</label>
+
+<hr style="border:1px solid var(--thememode-bordercolor); margin-left: 5px; margin-right: 5px;">
+
+<label class="button chat__LlamaOption" id="llama_popchat">
+<i class="fas fa-window-restore"></i> &nbsp; Popout Chat
+</label>
+
+<div class="info_footer">
+<label class="button chat__LlamaOption" id="llama_notice">
+<img src="https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@9ada4fbd26a289f24d0416136e05ae449c748437/images/llamaicon.png" width="20px"> &nbsp; Llama Info
+</label>
+
+<center><small>Updated Nov, 09 2020</small>
+<br>
+<a href="https://www.smokeyllama.com/" style="color:gray;text-decoration:none;" target="_blank">Smokeyllama.com</a></div>
+</div>
+</label>
+</div>
 `
   top_bar.appendChild(top_btns)
   top_bar.insertBefore(top_btns, null)
@@ -1123,41 +1155,22 @@ function Create_Top_Icons () {
 
 // ------------------------------------ CREATE : LLAMA INFO BUTTON --------------------------*/
 function Create_Llama_Info () {
-  var info_box = document.getElementById("info_box")
-  var info_btns = document.createElement("label")
-  info_btns.className
-    = "button button-floating button-icon button--text roomHeader__UserAction LlamaOption_chat"
-  info_btns.setAttribute("id", "llama_notice")
-  info_btns.setAttribute("style", "z-index:2000")
-  info_btns.setAttribute("title", "Whats New SmokeyLlama")
-  info_btns.innerHTML = `
-<img src="https://cdn.jsdelivr.net/gh/SmokeyLlama/JumpinLlama@9ada4fbd26a289f24d0416136e05ae449c748437/images/llamaicon.png" width="20px">
-<span class="mobileHidden" id="">Llama Info</span>
-`
-  info_box.appendChild(info_btns)
-  info_box.insertBefore(info_btns, null)
-  info_box.insertBefore(info_btns, info_box.childNodes[0] || null)
-  Create_Llama_Notice()
+Create_Llama_Notice()
 }
 
 // ------------------------------------ CREATE : LLAMA INFO POPUP ---------------------------*/
 function Create_Llama_Notice () {
+  var option_box = document.getElementById("llama_settings_inner")
   var Llama_Notice = document.createElement("div")
+  Llama_Notice.setAttribute("id", "llama_notice_settings")
   Llama_Notice.innerHTML = `
 <div id="notice_info">
 <label style="cursor:pointer;">
 <div class="theme_alert_notice">
-
 <iframe id="HW_JL_frame" src="" sandbox="allow-same-origin allow-scripts allow-top-navigation allow-popups allow-forms allow-popups-to-escape-sandbox" tabindex="0" aria-hidden="false" style="height:330px;width:345px;"></iframe>
-<br>
-<div class="info_footer"><center><small>Script Last Updated: Oct, 24 2020</small>
-<br>
-<a href="https://www.smokeyllama.com/" style="color:gray;text-decoration:none;" target="_blank">Smokeyllama.com</a></div>
 </div>
-</label>
-</div>`
-  Llama_Notice.setAttribute("id", "llama_notice_settings")
-  document.body.appendChild(Llama_Notice)
+`
+  option_box.appendChild(Llama_Notice)
 }
 
 // ------------------------------------ CREATE : HEADER HIDER -------------------------------*/

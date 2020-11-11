@@ -261,9 +261,10 @@ function Create_Element_IDs () {
 // ------------------------------------ ACTION : TOP BAR ACTION -----------------------------*/
 function Top_Bar_Action (type) {
   if (type === "settings_icon") {
+    body.classList.add("open_llama_theme")
     body.classList.toggle("open_llama_settings")
   } else {
-    body.classList.toggle("open_llama_" + type)
+    body.classList.add("open_llama_" + type)
     top_buttons.forEach(function (top_button) {
       if (top_button !== type) {
         body.classList.remove("open_llama_" + top_button)

@@ -1035,7 +1035,6 @@ function Create_BG_Settings () {
 // ------------------------------------ CREATE : LLAMA SETTINGS ICONS -------------------------------*/
 function Create_Llama_Settings_Icon () {
   var jumpin_settings = document.getElementById("settings_bar")
-  var jumpin_settings_button = document.getElementById("settings_bar")
   var llama_settings_btns = document.createElement("button")
   llama_settings_btns.className = "button chat__HeaderOption"
   llama_settings_btns.setAttribute("type", "button")
@@ -1479,7 +1478,6 @@ function Save_New_Song () {
   var new_song = {"song_name": new_song_name, "song_url": new_song_url}
   stored_songs.push(new_song)
   localStorage.setItem("llama_songs", JSON.stringify(stored_songs))
-  var result = JSON.parse(localStorage.getItem("llama_songs"))
 
   document.getElementById("llama_new_song_name").value = ""
   document.getElementById("llama_new_song_url").value = ""
@@ -1502,8 +1500,8 @@ function Delete_Song_Dropdown () {
 
 function Create_Song_Dropdown () {
   var select_box = document.getElementById("song_dropdown")
-  select_box.innerHTML = ""
   if (select_box) {
+    select_box.innerHTML = ""
     var current_songs = JSON.parse(localStorage.getItem("llama_songs"))
     if (current_songs) {
       var first_option = document.createElement("option")

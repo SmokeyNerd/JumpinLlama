@@ -43,6 +43,17 @@
   width: 550px;
   height: 450px;
   z-index: 2000;
+  background: #f7f7f7;
+  border: 1px solid #5a6370;
+}
+.thememode #llama_settings {
+  background: var(--thememode-bgcolor);
+  border: 1px solid var(--thememode-bordercolor);
+}
+
+.dark:not(.thememode) #llama_settings {
+  background: #504945;
+  border: 1px solid #fbf1c7;
 }
 #llama_settings > div:nth-child(1) > i:hover {
   cursor: pointer;3

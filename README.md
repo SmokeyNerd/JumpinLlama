@@ -6,9 +6,15 @@
 
 ---
 
-# Icons Added:
+# Icon Added:
 
-![Icons Added](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/icons.png)
+![Icons Added](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/Settings_Icon.png)
+
+---
+
+# Settings Preview:
+
+![Settings Preview](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/settings_preview.gif)
 
 ---
 
@@ -31,20 +37,6 @@
 - [Tinychat.com](https://tinychat.com)
   - Used as a Youtube Backup, so users of a room can listen to YT together, if Jumpin's YT quota is reached.
   - Example: You are in Jumpin room: jumpin.chat/blue, then it would load the Tinychat room: tinychat.com/room/blue
-
----
-
-# Chat Settings:
-
-![Chat Settings](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/chat_settings.png)
-
-# Cam Settings:
-
-![Cam Settings](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/cam_settings.png)
-
-# Theme Settings:
-
-![Theme Settings](https://raw.githubusercontent.com/SmokeyLlama/JumpinLlama/master/images/info/theme_settings.png)
 
 ---
 

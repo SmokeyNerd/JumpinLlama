@@ -807,7 +807,7 @@ function Create_Chat_Settings () {
 <div class="dropdown__Option dropdown__Option-header">Chat Options</div>
 <span class="dropdown__Option" id="llama_robo">Roboto Font<input id="llama_robo_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_bubble">Bubble Chat<input id="llama_bubble_checkbox" class="jic-checkbox" type="checkbox"></span>
-<span class="dropdown__Option" id="llama_cheers">Cheers Button<input id="llama_cheers_checkbox" class="jic-checkbox" type="checkbox"></span>
+<span class="dropdown__Option" id="llama_cheers">Cheers Button [WIP]<input id="llama_cheers_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_override_chatcolor">Custom Chat Color<input id="llama_override_chatcolor_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option sub_llama" id="llama_chat_color">
 <span style="">Chat Color</span><input type="color" name="colorpicker" value="#000000" onchange="Button_Action('apply_chat_color')" id="llama_clear_chatcolorsrc" style="opacity: 1;cursor: pointer; width: 20px;height:20px;border-radius: 2px;padding: 0px;"/>
@@ -826,9 +826,6 @@ function Create_Hide_Settings () {
   cam_menu.innerHTML = `
 <div class="dropdown__Options">
 <div class="dropdown__Option dropdown__Option-header">Hide Elements</div>
-<span class="dropdown__Option" id="llama_border">Cam Borders<input id="llama_border_checkbox" class="jic-checkbox" type="checkbox"></span>
-<span class="dropdown__Option" id="llama_spacing">Cam Spacing<input id="llama_spacing_checkbox" class="jic-checkbox" type="checkbox"></span>
-<span class="dropdown__Option" id="llama_hide_usernames">Cam Usernames<input id="llama_hide_usernames_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_hide_chat">Chatbox<input id="llama_hide_chat_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_hide_userlist">Userlist<input id="llama_hide_userlist_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option" id="llama_hide_emojis">Emojis Button<input id="llama_hide_emojis_checkbox" class="jic-checkbox" type="checkbox"></span>
@@ -849,8 +846,11 @@ function Create_Cam_Settings () {
   cam_menu.innerHTML = `
 <div class="dropdown__Options">
 <div class="dropdown__Option dropdown__Option-header">Cam Options</div>
-<span class="dropdown__Option" id="llama_rounded_cams">Rounded Cams<input id="llama_rounded_cams_checkbox" class="jic-checkbox" type="checkbox"></span>
-<span class="dropdown__Option" id="llama_override_username">Custom Name Color<input id="llama_override_username_checkbox" class="jic-checkbox" type="checkbox"></span>
+<span class="dropdown__Option" id="llama_rounded_cams">Rounded Borders<input id="llama_rounded_cams_checkbox" class="jic-checkbox" type="checkbox"></span>
+<span class="dropdown__Option" id="llama_border">Remove Borders<input id="llama_border_checkbox" class="jic-checkbox" type="checkbox"></span>
+<span class="dropdown__Option" id="llama_spacing">Remove Spacing<input id="llama_spacing_checkbox" class="jic-checkbox" type="checkbox"></span>
+<span class="dropdown__Option" id="llama_hide_usernames">Remove Usernames<input id="llama_hide_usernames_checkbox" class="jic-checkbox" type="checkbox"></span>
+<span class="dropdown__Option" id="llama_override_username">Custom Username Color<input id="llama_override_username_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option sub_llama" id="llama_username_color">
 <span style="">Username Color</span><input type="color" name="colorpicker" value="#000000" onchange="Button_Action('apply_colors')" id="llama_clear_usercolorsrc" style="opacity: 1;cursor: pointer; width: 20px;height:20px;border-radius: 2px;padding: 0px;"/>
 </span>
@@ -958,8 +958,8 @@ function Create_Theme_Settings () {
 </div>
 <div class="dropdown__Options" style="margin-top:5px;">
 <div class="dropdown__Option dropdown__Option-header">Theme Settings</div>
-<span class="dropdown__Option" id="llama_ltr">LTR Mode<input id="llama_ltr_checkbox" class="jic-checkbox" type="checkbox"></span>
-<span class="dropdown__Option" id="llama_override_user_bg">Custom BG Color<input id="llama_override_user_bg_checkbox" class="jic-checkbox" type="checkbox"></span>
+<span class="dropdown__Option" id="llama_ltr">Left-To-Right Mode<input id="llama_ltr_checkbox" class="jic-checkbox" type="checkbox"></span>
+<span class="dropdown__Option" id="llama_override_user_bg">Custom Background Color<input id="llama_override_user_bg_checkbox" class="jic-checkbox" type="checkbox"></span>
 <span class="dropdown__Option sub_llama" id="llama_user_bgcolor">
 <span style="">Background Color</span>
 <input type="color" name="colorpicker" value="#000000" onchange="Button_Action('apply_bgcolors')" id="llama_clear_user_bgcolorsrc" style="opacity: 1;cursor: pointer; width: 20px;height:20px;border-radius: 2px;padding: 0px;"/>

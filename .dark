@@ -50,16 +50,19 @@
   background: var(--thememode-bgcolor);
   border: 1px solid var(--thememode-bordercolor);
 }
-
 .dark:not(.thememode) #llama_settings {
   background: #504945;
-  border: 1px solid #fbf1c7;
+  border: 1px solid #504945;
 }
 .dark:not(.thememode) .chat__LlamaOption {
-    background: #353535;
+  background: #353535;
+  border-color: #353535;
+  color: #d8d8d8;
 }
 body:not(.thememode) .chat__LlamaOption {
-    background: #d8d8d8;
+  background: #5a6370;
+  border-color: #d8d8d8;
+  color: #d8d8d8;
 }
 #llama_settings > div:nth-child(1) > i:hover {
   cursor: pointer;3

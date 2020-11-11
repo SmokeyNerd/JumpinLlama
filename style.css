@@ -55,6 +55,12 @@
   background: #504945;
   border: 1px solid #fbf1c7;
 }
+.dark:not(.thememode) .chat__LlamaOption {
+    background: #353535;
+}
+body:not(.thememode) .chat__LlamaOption {
+    background: #d8d8d8;
+}
 #llama_settings > div:nth-child(1) > i:hover {
   cursor: pointer;3
 }

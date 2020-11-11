@@ -1156,7 +1156,28 @@ input[type="color"]::-webkit-color-swatch {
 .chat__LlamaOption:hover > i {
     color: var(--thememode-textcolor);
 }
+.open_llama_theme #llama_theme > i {
+  color: var(--thememode-textcolor);
+}
+.open_llama_bg #llama_bg > i {
+  color: var(--thememode-textcolor);
+}
+.open_llama_chat #llama_chat > i {
+  color: var(--thememode-textcolor);
+}
+.open_llama_cam #llama_cam > i {
+  color: var(--thememode-textcolor);
+}
+.open_llama_hide #llama_hide > i {
+  color: var(--thememode-textcolor);
+}
 .open_llama_theme #llama_theme {
+  margin-left: 17px;
+  font-weight: 600;
+  width: 90%;
+  color: var(--thememode-textcolor);
+}
+.open_llama_bg #llama_bg {
   margin-left: 17px;
   font-weight: 600;
   width: 90%;

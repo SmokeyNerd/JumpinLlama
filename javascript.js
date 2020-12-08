@@ -1,5 +1,8 @@
 var body = document.body
 
+// ------------------------------------ REMOVE CLOUDFLARE QUERY ------------------------------------*/
+if (location.search) { window.history.replaceState(null, document.title, window.location.pathname) }
+
 // ------------------------------------ DELAY FOR ELEMENTS TO LOAD ------------------------------------*/
 function Check_Site_Loaded () {
   var last_el = document.getElementsByClassName("chat__Input")[0]

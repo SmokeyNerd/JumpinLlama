@@ -841,6 +841,12 @@ input[type="color"]::-webkit-color-swatch {
   margin-left: 10px;
   display: inline-block;
 }
+
+.bubble .chat__MessageBody>strong,
+.bubble .chat__MessageBody>em {
+  margin-left: 10px;
+}
+
 .bubble .chat__MessageBody {
   border: 1px solid transparent;
   position: relative;
